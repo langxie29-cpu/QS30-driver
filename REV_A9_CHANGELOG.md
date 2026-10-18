@@ -11,6 +11,3 @@
 - 未实现：原生 EDA/ERC/DRC、Gerber、实物验证；禁止投板/下单。
 
 > 本变更未做 force push / reset --hard；旧提交与文件保留。
-
-- 已尝试自研 BJT 级 OVP 仿真：为 minispice 增加 Ebers-Moll，但 PNP 极性映射/收敛未通过，
-  该改动已回滚、产物已删除，并在 open_issues9 I9-03 记录；不把失败尝试写成验证。
