@@ -1,0 +1,2337 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "F01",
+      "status": "PASS",
+      "evidence": "R is the same DISPLAY electrical design with L→R, T1–3→T7–9 substitutions; not a third independent native project"
+    },
+    {
+      "id": "F02",
+      "status": "PASS",
+      "evidence": "90 unique (tube,digit) records"
+    },
+    {
+      "id": "F03",
+      "status": "PASS",
+      "evidence": "Every cathode has exactly the expected driver output and socket pin; 60 native + 30 R-template channels"
+    },
+    {
+      "id": "F04",
+      "status": "PASS",
+      "evidence": "No output assigned to two cathodes; each device uses HVOUT1–30 only"
+    },
+    {
+      "id": "F05",
+      "status": "PASS",
+      "evidence": "9 independent HV_BUS→10k→MID→10k→A_Tn→socket.2 branches; no anode uses a driver channel"
+    },
+    {
+      "id": "F06",
+      "status": "PASS",
+      "evidence": "HV5622 NC24/25/26/34 and unused HVOUT31/32 pins36/35, socket1/8 have no connected net"
+    },
+    {
+      "id": "F07",
+      "status": "PASS",
+      "evidence": "MCU→L up→HV→L down→R62→C up→HV→C down→R63→R up→HV→R down; no direct 12V DOUT on 3V3 DIN"
+    },
+    {
+      "id": "F08",
+      "status": "PASS",
+      "evidence": "36 mated pins match by number; C is an internal main-board interface"
+    },
+    {
+      "id": "F09",
+      "status": "PASS",
+      "evidence": "Power net groups remain distinct; LV connector has no HV_BUS/GND_HV"
+    },
+    {
+      "id": "F10",
+      "status": "PASS",
+      "evidence": "GND_HV/GND bond components=['R_HV_STAR']; module VSS=LV GND, only capacitor/bleeder uses HV return"
+    },
+    {
+      "id": "F11",
+      "status": "PASS",
+      "evidence": "96 falling-edge shift model confirms wire byte/bit order; R32→R1, C32→C1, L32→L1; physical walking-one still HOLD"
+    },
+    {
+      "id": "F12",
+      "status": "PASS",
+      "evidence": "Safety-loop endpoints exist through L/C/R; analog threshold/startup failure tests still HOLD"
+    }
+  ],
+  "channels": [
+    {
+      "tube": 1,
+      "digit": 0,
+      "net": "K_T1_0",
+      "hvout": 1,
+      "pin": 22,
+      "nodes": [
+        [
+          "J_T1",
+          "3"
+        ],
+        [
+          "U_L",
+          "22"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 1,
+      "net": "K_T1_1",
+      "hvout": 2,
+      "pin": 21,
+      "nodes": [
+        [
+          "J_T1",
+          "13"
+        ],
+        [
+          "U_L",
+          "21"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 2,
+      "net": "K_T1_2",
+      "hvout": 3,
+      "pin": 20,
+      "nodes": [
+        [
+          "J_T1",
+          "12"
+        ],
+        [
+          "U_L",
+          "20"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 3,
+      "net": "K_T1_3",
+      "hvout": 4,
+      "pin": 19,
+      "nodes": [
+        [
+          "J_T1",
+          "11"
+        ],
+        [
+          "U_L",
+          "19"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 4,
+      "net": "K_T1_4",
+      "hvout": 5,
+      "pin": 18,
+      "nodes": [
+        [
+          "J_T1",
+          "10"
+        ],
+        [
+          "U_L",
+          "18"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 5,
+      "net": "K_T1_5",
+      "hvout": 6,
+      "pin": 17,
+      "nodes": [
+        [
+          "J_T1",
+          "9"
+        ],
+        [
+          "U_L",
+          "17"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 6,
+      "net": "K_T1_6",
+      "hvout": 7,
+      "pin": 16,
+      "nodes": [
+        [
+          "J_T1",
+          "7"
+        ],
+        [
+          "U_L",
+          "16"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 7,
+      "net": "K_T1_7",
+      "hvout": 8,
+      "pin": 15,
+      "nodes": [
+        [
+          "J_T1",
+          "6"
+        ],
+        [
+          "U_L",
+          "15"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 8,
+      "net": "K_T1_8",
+      "hvout": 9,
+      "pin": 14,
+      "nodes": [
+        [
+          "J_T1",
+          "5"
+        ],
+        [
+          "U_L",
+          "14"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 1,
+      "digit": 9,
+      "net": "K_T1_9",
+      "hvout": 10,
+      "pin": 13,
+      "nodes": [
+        [
+          "J_T1",
+          "4"
+        ],
+        [
+          "U_L",
+          "13"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 0,
+      "net": "K_T2_0",
+      "hvout": 11,
+      "pin": 12,
+      "nodes": [
+        [
+          "J_T2",
+          "3"
+        ],
+        [
+          "U_L",
+          "12"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 1,
+      "net": "K_T2_1",
+      "hvout": 12,
+      "pin": 11,
+      "nodes": [
+        [
+          "J_T2",
+          "13"
+        ],
+        [
+          "U_L",
+          "11"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 2,
+      "net": "K_T2_2",
+      "hvout": 13,
+      "pin": 10,
+      "nodes": [
+        [
+          "J_T2",
+          "12"
+        ],
+        [
+          "U_L",
+          "10"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 3,
+      "net": "K_T2_3",
+      "hvout": 14,
+      "pin": 9,
+      "nodes": [
+        [
+          "J_T2",
+          "11"
+        ],
+        [
+          "U_L",
+          "9"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 4,
+      "net": "K_T2_4",
+      "hvout": 15,
+      "pin": 8,
+      "nodes": [
+        [
+          "J_T2",
+          "10"
+        ],
+        [
+          "U_L",
+          "8"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 5,
+      "net": "K_T2_5",
+      "hvout": 16,
+      "pin": 7,
+      "nodes": [
+        [
+          "J_T2",
+          "9"
+        ],
+        [
+          "U_L",
+          "7"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 6,
+      "net": "K_T2_6",
+      "hvout": 17,
+      "pin": 6,
+      "nodes": [
+        [
+          "J_T2",
+          "7"
+        ],
+        [
+          "U_L",
+          "6"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 7,
+      "net": "K_T2_7",
+      "hvout": 18,
+      "pin": 5,
+      "nodes": [
+        [
+          "J_T2",
+          "6"
+        ],
+        [
+          "U_L",
+          "5"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 8,
+      "net": "K_T2_8",
+      "hvout": 19,
+      "pin": 4,
+      "nodes": [
+        [
+          "J_T2",
+          "5"
+        ],
+        [
+          "U_L",
+          "4"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 2,
+      "digit": 9,
+      "net": "K_T2_9",
+      "hvout": 20,
+      "pin": 3,
+      "nodes": [
+        [
+          "J_T2",
+          "4"
+        ],
+        [
+          "U_L",
+          "3"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 0,
+      "net": "K_T3_0",
+      "hvout": 21,
+      "pin": 2,
+      "nodes": [
+        [
+          "J_T3",
+          "3"
+        ],
+        [
+          "U_L",
+          "2"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 1,
+      "net": "K_T3_1",
+      "hvout": 22,
+      "pin": 1,
+      "nodes": [
+        [
+          "J_T3",
+          "13"
+        ],
+        [
+          "U_L",
+          "1"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 2,
+      "net": "K_T3_2",
+      "hvout": 23,
+      "pin": 44,
+      "nodes": [
+        [
+          "J_T3",
+          "12"
+        ],
+        [
+          "U_L",
+          "44"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 3,
+      "net": "K_T3_3",
+      "hvout": 24,
+      "pin": 43,
+      "nodes": [
+        [
+          "J_T3",
+          "11"
+        ],
+        [
+          "U_L",
+          "43"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 4,
+      "net": "K_T3_4",
+      "hvout": 25,
+      "pin": 42,
+      "nodes": [
+        [
+          "J_T3",
+          "10"
+        ],
+        [
+          "U_L",
+          "42"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 5,
+      "net": "K_T3_5",
+      "hvout": 26,
+      "pin": 41,
+      "nodes": [
+        [
+          "J_T3",
+          "9"
+        ],
+        [
+          "U_L",
+          "41"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 6,
+      "net": "K_T3_6",
+      "hvout": 27,
+      "pin": 40,
+      "nodes": [
+        [
+          "J_T3",
+          "7"
+        ],
+        [
+          "U_L",
+          "40"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 7,
+      "net": "K_T3_7",
+      "hvout": 28,
+      "pin": 39,
+      "nodes": [
+        [
+          "J_T3",
+          "6"
+        ],
+        [
+          "U_L",
+          "39"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 8,
+      "net": "K_T3_8",
+      "hvout": 29,
+      "pin": 38,
+      "nodes": [
+        [
+          "J_T3",
+          "5"
+        ],
+        [
+          "U_L",
+          "38"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 3,
+      "digit": 9,
+      "net": "K_T3_9",
+      "hvout": 30,
+      "pin": 37,
+      "nodes": [
+        [
+          "J_T3",
+          "4"
+        ],
+        [
+          "U_L",
+          "37"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 0,
+      "net": "K_T4_0",
+      "hvout": 1,
+      "pin": 22,
+      "nodes": [
+        [
+          "J_T4",
+          "3"
+        ],
+        [
+          "U_C",
+          "22"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 1,
+      "net": "K_T4_1",
+      "hvout": 2,
+      "pin": 21,
+      "nodes": [
+        [
+          "J_T4",
+          "13"
+        ],
+        [
+          "U_C",
+          "21"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 2,
+      "net": "K_T4_2",
+      "hvout": 3,
+      "pin": 20,
+      "nodes": [
+        [
+          "J_T4",
+          "12"
+        ],
+        [
+          "U_C",
+          "20"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 3,
+      "net": "K_T4_3",
+      "hvout": 4,
+      "pin": 19,
+      "nodes": [
+        [
+          "J_T4",
+          "11"
+        ],
+        [
+          "U_C",
+          "19"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 4,
+      "net": "K_T4_4",
+      "hvout": 5,
+      "pin": 18,
+      "nodes": [
+        [
+          "J_T4",
+          "10"
+        ],
+        [
+          "U_C",
+          "18"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 5,
+      "net": "K_T4_5",
+      "hvout": 6,
+      "pin": 17,
+      "nodes": [
+        [
+          "J_T4",
+          "9"
+        ],
+        [
+          "U_C",
+          "17"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 6,
+      "net": "K_T4_6",
+      "hvout": 7,
+      "pin": 16,
+      "nodes": [
+        [
+          "J_T4",
+          "7"
+        ],
+        [
+          "U_C",
+          "16"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 7,
+      "net": "K_T4_7",
+      "hvout": 8,
+      "pin": 15,
+      "nodes": [
+        [
+          "J_T4",
+          "6"
+        ],
+        [
+          "U_C",
+          "15"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 8,
+      "net": "K_T4_8",
+      "hvout": 9,
+      "pin": 14,
+      "nodes": [
+        [
+          "J_T4",
+          "5"
+        ],
+        [
+          "U_C",
+          "14"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 4,
+      "digit": 9,
+      "net": "K_T4_9",
+      "hvout": 10,
+      "pin": 13,
+      "nodes": [
+        [
+          "J_T4",
+          "4"
+        ],
+        [
+          "U_C",
+          "13"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 0,
+      "net": "K_T5_0",
+      "hvout": 11,
+      "pin": 12,
+      "nodes": [
+        [
+          "J_T5",
+          "3"
+        ],
+        [
+          "U_C",
+          "12"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 1,
+      "net": "K_T5_1",
+      "hvout": 12,
+      "pin": 11,
+      "nodes": [
+        [
+          "J_T5",
+          "13"
+        ],
+        [
+          "U_C",
+          "11"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 2,
+      "net": "K_T5_2",
+      "hvout": 13,
+      "pin": 10,
+      "nodes": [
+        [
+          "J_T5",
+          "12"
+        ],
+        [
+          "U_C",
+          "10"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 3,
+      "net": "K_T5_3",
+      "hvout": 14,
+      "pin": 9,
+      "nodes": [
+        [
+          "J_T5",
+          "11"
+        ],
+        [
+          "U_C",
+          "9"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 4,
+      "net": "K_T5_4",
+      "hvout": 15,
+      "pin": 8,
+      "nodes": [
+        [
+          "J_T5",
+          "10"
+        ],
+        [
+          "U_C",
+          "8"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 5,
+      "net": "K_T5_5",
+      "hvout": 16,
+      "pin": 7,
+      "nodes": [
+        [
+          "J_T5",
+          "9"
+        ],
+        [
+          "U_C",
+          "7"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 6,
+      "net": "K_T5_6",
+      "hvout": 17,
+      "pin": 6,
+      "nodes": [
+        [
+          "J_T5",
+          "7"
+        ],
+        [
+          "U_C",
+          "6"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 7,
+      "net": "K_T5_7",
+      "hvout": 18,
+      "pin": 5,
+      "nodes": [
+        [
+          "J_T5",
+          "6"
+        ],
+        [
+          "U_C",
+          "5"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 8,
+      "net": "K_T5_8",
+      "hvout": 19,
+      "pin": 4,
+      "nodes": [
+        [
+          "J_T5",
+          "5"
+        ],
+        [
+          "U_C",
+          "4"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 5,
+      "digit": 9,
+      "net": "K_T5_9",
+      "hvout": 20,
+      "pin": 3,
+      "nodes": [
+        [
+          "J_T5",
+          "4"
+        ],
+        [
+          "U_C",
+          "3"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 0,
+      "net": "K_T6_0",
+      "hvout": 21,
+      "pin": 2,
+      "nodes": [
+        [
+          "J_T6",
+          "3"
+        ],
+        [
+          "U_C",
+          "2"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 1,
+      "net": "K_T6_1",
+      "hvout": 22,
+      "pin": 1,
+      "nodes": [
+        [
+          "J_T6",
+          "13"
+        ],
+        [
+          "U_C",
+          "1"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 2,
+      "net": "K_T6_2",
+      "hvout": 23,
+      "pin": 44,
+      "nodes": [
+        [
+          "J_T6",
+          "12"
+        ],
+        [
+          "U_C",
+          "44"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 3,
+      "net": "K_T6_3",
+      "hvout": 24,
+      "pin": 43,
+      "nodes": [
+        [
+          "J_T6",
+          "11"
+        ],
+        [
+          "U_C",
+          "43"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 4,
+      "net": "K_T6_4",
+      "hvout": 25,
+      "pin": 42,
+      "nodes": [
+        [
+          "J_T6",
+          "10"
+        ],
+        [
+          "U_C",
+          "42"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 5,
+      "net": "K_T6_5",
+      "hvout": 26,
+      "pin": 41,
+      "nodes": [
+        [
+          "J_T6",
+          "9"
+        ],
+        [
+          "U_C",
+          "41"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 6,
+      "net": "K_T6_6",
+      "hvout": 27,
+      "pin": 40,
+      "nodes": [
+        [
+          "J_T6",
+          "7"
+        ],
+        [
+          "U_C",
+          "40"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 7,
+      "net": "K_T6_7",
+      "hvout": 28,
+      "pin": 39,
+      "nodes": [
+        [
+          "J_T6",
+          "6"
+        ],
+        [
+          "U_C",
+          "39"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 8,
+      "net": "K_T6_8",
+      "hvout": 29,
+      "pin": 38,
+      "nodes": [
+        [
+          "J_T6",
+          "5"
+        ],
+        [
+          "U_C",
+          "38"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 6,
+      "digit": 9,
+      "net": "K_T6_9",
+      "hvout": 30,
+      "pin": 37,
+      "nodes": [
+        [
+          "J_T6",
+          "4"
+        ],
+        [
+          "U_C",
+          "37"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native"
+    },
+    {
+      "tube": 7,
+      "digit": 0,
+      "net": "K_T7_0",
+      "hvout": 1,
+      "pin": 22,
+      "nodes": [
+        [
+          "J_T7",
+          "3"
+        ],
+        [
+          "U_R",
+          "22"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 1,
+      "net": "K_T7_1",
+      "hvout": 2,
+      "pin": 21,
+      "nodes": [
+        [
+          "J_T7",
+          "13"
+        ],
+        [
+          "U_R",
+          "21"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 2,
+      "net": "K_T7_2",
+      "hvout": 3,
+      "pin": 20,
+      "nodes": [
+        [
+          "J_T7",
+          "12"
+        ],
+        [
+          "U_R",
+          "20"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 3,
+      "net": "K_T7_3",
+      "hvout": 4,
+      "pin": 19,
+      "nodes": [
+        [
+          "J_T7",
+          "11"
+        ],
+        [
+          "U_R",
+          "19"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 4,
+      "net": "K_T7_4",
+      "hvout": 5,
+      "pin": 18,
+      "nodes": [
+        [
+          "J_T7",
+          "10"
+        ],
+        [
+          "U_R",
+          "18"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 5,
+      "net": "K_T7_5",
+      "hvout": 6,
+      "pin": 17,
+      "nodes": [
+        [
+          "J_T7",
+          "9"
+        ],
+        [
+          "U_R",
+          "17"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 6,
+      "net": "K_T7_6",
+      "hvout": 7,
+      "pin": 16,
+      "nodes": [
+        [
+          "J_T7",
+          "7"
+        ],
+        [
+          "U_R",
+          "16"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 7,
+      "net": "K_T7_7",
+      "hvout": 8,
+      "pin": 15,
+      "nodes": [
+        [
+          "J_T7",
+          "6"
+        ],
+        [
+          "U_R",
+          "15"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 8,
+      "net": "K_T7_8",
+      "hvout": 9,
+      "pin": 14,
+      "nodes": [
+        [
+          "J_T7",
+          "5"
+        ],
+        [
+          "U_R",
+          "14"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 7,
+      "digit": 9,
+      "net": "K_T7_9",
+      "hvout": 10,
+      "pin": 13,
+      "nodes": [
+        [
+          "J_T7",
+          "4"
+        ],
+        [
+          "U_R",
+          "13"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 0,
+      "net": "K_T8_0",
+      "hvout": 11,
+      "pin": 12,
+      "nodes": [
+        [
+          "J_T8",
+          "3"
+        ],
+        [
+          "U_R",
+          "12"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 1,
+      "net": "K_T8_1",
+      "hvout": 12,
+      "pin": 11,
+      "nodes": [
+        [
+          "J_T8",
+          "13"
+        ],
+        [
+          "U_R",
+          "11"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 2,
+      "net": "K_T8_2",
+      "hvout": 13,
+      "pin": 10,
+      "nodes": [
+        [
+          "J_T8",
+          "12"
+        ],
+        [
+          "U_R",
+          "10"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 3,
+      "net": "K_T8_3",
+      "hvout": 14,
+      "pin": 9,
+      "nodes": [
+        [
+          "J_T8",
+          "11"
+        ],
+        [
+          "U_R",
+          "9"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 4,
+      "net": "K_T8_4",
+      "hvout": 15,
+      "pin": 8,
+      "nodes": [
+        [
+          "J_T8",
+          "10"
+        ],
+        [
+          "U_R",
+          "8"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 5,
+      "net": "K_T8_5",
+      "hvout": 16,
+      "pin": 7,
+      "nodes": [
+        [
+          "J_T8",
+          "9"
+        ],
+        [
+          "U_R",
+          "7"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 6,
+      "net": "K_T8_6",
+      "hvout": 17,
+      "pin": 6,
+      "nodes": [
+        [
+          "J_T8",
+          "7"
+        ],
+        [
+          "U_R",
+          "6"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 7,
+      "net": "K_T8_7",
+      "hvout": 18,
+      "pin": 5,
+      "nodes": [
+        [
+          "J_T8",
+          "6"
+        ],
+        [
+          "U_R",
+          "5"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 8,
+      "net": "K_T8_8",
+      "hvout": 19,
+      "pin": 4,
+      "nodes": [
+        [
+          "J_T8",
+          "5"
+        ],
+        [
+          "U_R",
+          "4"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 8,
+      "digit": 9,
+      "net": "K_T8_9",
+      "hvout": 20,
+      "pin": 3,
+      "nodes": [
+        [
+          "J_T8",
+          "4"
+        ],
+        [
+          "U_R",
+          "3"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 0,
+      "net": "K_T9_0",
+      "hvout": 21,
+      "pin": 2,
+      "nodes": [
+        [
+          "J_T9",
+          "3"
+        ],
+        [
+          "U_R",
+          "2"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 1,
+      "net": "K_T9_1",
+      "hvout": 22,
+      "pin": 1,
+      "nodes": [
+        [
+          "J_T9",
+          "13"
+        ],
+        [
+          "U_R",
+          "1"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 2,
+      "net": "K_T9_2",
+      "hvout": 23,
+      "pin": 44,
+      "nodes": [
+        [
+          "J_T9",
+          "12"
+        ],
+        [
+          "U_R",
+          "44"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 3,
+      "net": "K_T9_3",
+      "hvout": 24,
+      "pin": 43,
+      "nodes": [
+        [
+          "J_T9",
+          "11"
+        ],
+        [
+          "U_R",
+          "43"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 4,
+      "net": "K_T9_4",
+      "hvout": 25,
+      "pin": 42,
+      "nodes": [
+        [
+          "J_T9",
+          "10"
+        ],
+        [
+          "U_R",
+          "42"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 5,
+      "net": "K_T9_5",
+      "hvout": 26,
+      "pin": 41,
+      "nodes": [
+        [
+          "J_T9",
+          "9"
+        ],
+        [
+          "U_R",
+          "41"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 6,
+      "net": "K_T9_6",
+      "hvout": 27,
+      "pin": 40,
+      "nodes": [
+        [
+          "J_T9",
+          "7"
+        ],
+        [
+          "U_R",
+          "40"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 7,
+      "net": "K_T9_7",
+      "hvout": 28,
+      "pin": 39,
+      "nodes": [
+        [
+          "J_T9",
+          "6"
+        ],
+        [
+          "U_R",
+          "39"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 8,
+      "net": "K_T9_8",
+      "hvout": 29,
+      "pin": 38,
+      "nodes": [
+        [
+          "J_T9",
+          "5"
+        ],
+        [
+          "U_R",
+          "38"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    },
+    {
+      "tube": 9,
+      "digit": 9,
+      "net": "K_T9_9",
+      "hvout": 30,
+      "pin": 37,
+      "nodes": [
+        [
+          "J_T9",
+          "4"
+        ],
+        [
+          "U_R",
+          "37"
+        ]
+      ],
+      "status": "PASS",
+      "provenance": "native DISPLAY template + checked R equivalence"
+    }
+  ],
+  "anodes": [
+    {
+      "tube": 1,
+      "resistors": [
+        "R_AN1_1",
+        "R_AN1_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 2,
+      "resistors": [
+        "R_AN2_1",
+        "R_AN2_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 3,
+      "resistors": [
+        "R_AN3_1",
+        "R_AN3_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 4,
+      "resistors": [
+        "R_AN4_1",
+        "R_AN4_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 5,
+      "resistors": [
+        "R_AN5_1",
+        "R_AN5_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 6,
+      "resistors": [
+        "R_AN6_1",
+        "R_AN6_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 7,
+      "resistors": [
+        "R_AN7_1",
+        "R_AN7_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 8,
+      "resistors": [
+        "R_AN8_1",
+        "R_AN8_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    },
+    {
+      "tube": 9,
+      "resistors": [
+        "R_AN9_1",
+        "R_AN9_2"
+      ],
+      "ohms": 20000,
+      "status": "PASS"
+    }
+  ],
+  "connector_pairs": [
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "1",
+      "main": "3V3",
+      "module_net": "3V3",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "2",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "3",
+      "main": "DRV_VDD",
+      "module_net": "DRV_VDD",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "4",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "5",
+      "main": "MOD_L_DIN",
+      "module_net": "MOD_L_DIN",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "6",
+      "main": "MOD_L_DOUT",
+      "module_net": "MOD_L_DOUT",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "7",
+      "main": "DISP_CLK",
+      "module_net": "DISP_CLK",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "8",
+      "main": "DISP_LAT",
+      "module_net": "DISP_LAT",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "9",
+      "main": "DISP_ALLOW",
+      "module_net": "DISP_ALLOW",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "10",
+      "main": "SAFETY_LOOP_L_IN",
+      "module_net": "SAFETY_LOOP_L_IN",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "11",
+      "main": "SAFETY_LOOP_L_OUT",
+      "module_net": "SAFETY_LOOP_L_OUT",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "12",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "13",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "14",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "15",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "LV",
+      "pin": "16",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "HV",
+      "pin": "1",
+      "main": "HV_BUS",
+      "module_net": "HV_BUS",
+      "status": "PASS"
+    },
+    {
+      "module": "L",
+      "kind": "HV",
+      "pin": "2",
+      "main": "GND_HV",
+      "module_net": "GND_HV",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "1",
+      "main": "3V3",
+      "module_net": "3V3",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "2",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "3",
+      "main": "DRV_VDD",
+      "module_net": "DRV_VDD",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "4",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "5",
+      "main": "MOD_R_DIN",
+      "module_net": "MOD_R_DIN",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "6",
+      "main": "MOD_R_DOUT",
+      "module_net": "MOD_R_DOUT",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "7",
+      "main": "DISP_CLK",
+      "module_net": "DISP_CLK",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "8",
+      "main": "DISP_LAT",
+      "module_net": "DISP_LAT",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "9",
+      "main": "DISP_ALLOW",
+      "module_net": "DISP_ALLOW",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "10",
+      "main": "SAFETY_LOOP_R_IN",
+      "module_net": "SAFETY_LOOP_R_IN",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "11",
+      "main": "SAFETY_LOOP_R_OUT",
+      "module_net": "SAFETY_LOOP_R_OUT",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "12",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "13",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "14",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "15",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "LV",
+      "pin": "16",
+      "main": "GND",
+      "module_net": "GND",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "HV",
+      "pin": "1",
+      "main": "HV_BUS",
+      "module_net": "HV_BUS",
+      "status": "PASS"
+    },
+    {
+      "module": "R",
+      "kind": "HV",
+      "pin": "2",
+      "main": "GND_HV",
+      "module_net": "GND_HV",
+      "status": "PASS"
+    }
+  ],
+  "references": {
+    "QS30-9_DISPLAY": {
+      "C1": "C_DS_L",
+      "C2": "C_MOD_L_3V3",
+      "C3": "C_MOD_L_HV",
+      "C4": "C_MOD_L_VDD",
+      "J1": "J_MOD_L_HV",
+      "J2": "J_MOD_L_LV",
+      "J3": "J_T1",
+      "J4": "J_T2",
+      "J5": "J_T3",
+      "R1": "R_AN1_1",
+      "R2": "R_AN1_2",
+      "R3": "R_AN2_1",
+      "R4": "R_AN2_2",
+      "R5": "R_AN3_1",
+      "R6": "R_AN3_2",
+      "R7": "R_IN_L_BL",
+      "R8": "R_IN_L_CLK",
+      "R9": "R_IN_L_DIN",
+      "R10": "R_IN_L_DOUT",
+      "R11": "R_IN_L_LAT",
+      "R12": "R_LS_L_BL",
+      "R13": "R_LS_L_CLK",
+      "R14": "R_LS_L_DIN",
+      "R15": "R_LS_L_LAT",
+      "R16": "R_MOD_L_BLEED",
+      "R17": "R_SAFE_L",
+      "U1": "U_DS_L",
+      "U2": "U_L",
+      "U3": "U_LS_L"
+    },
+    "QS30-9_MAIN": {
+      "C1": "C1",
+      "C2": "C10",
+      "C3": "C11",
+      "C4": "C12",
+      "C5": "C13",
+      "C6": "C14",
+      "C7": "C15",
+      "C8": "C16",
+      "C9": "C17",
+      "C10": "C2",
+      "C11": "C4",
+      "C12": "C5",
+      "C13": "C6",
+      "C14": "C7",
+      "C15": "C8",
+      "C16": "C9",
+      "C17": "C_DS_C",
+      "C18": "C_MOD_C_3V3",
+      "C19": "C_MOD_C_HV",
+      "C20": "C_MOD_C_VDD",
+      "D1": "D1",
+      "D2": "D2",
+      "D3": "D20",
+      "D4": "D3",
+      "D5": "D4",
+      "F1": "F1",
+      "J1": "J1",
+      "J2": "J2",
+      "J3": "J3",
+      "J4": "J4",
+      "J5": "J_MAIN_L_HV",
+      "J6": "J_MAIN_L_LV",
+      "J7": "J_MAIN_R_HV",
+      "J8": "J_MAIN_R_LV",
+      "J9": "J_T4",
+      "J10": "J_T5",
+      "J11": "J_T6",
+      "L1": "L1",
+      "L2": "L20",
+      "L3": "L5",
+      "LED1": "LED1",
+      "Q1": "Q2",
+      "Q2": "Q20",
+      "Q3": "Q21",
+      "Q4": "Q22",
+      "Q5": "Q23",
+      "Q6": "Q24",
+      "Q7": "Q25",
+      "Q8": "Q3",
+      "Q9": "Q4",
+      "Q10": "Q5",
+      "R1": "R10",
+      "R2": "R11",
+      "R3": "R12",
+      "R4": "R15",
+      "R5": "R16",
+      "R6": "R17",
+      "R7": "R18",
+      "R8": "R19",
+      "R9": "R20",
+      "R10": "R21",
+      "R11": "R22",
+      "R12": "R23",
+      "R13": "R24",
+      "R14": "R25",
+      "R15": "R26",
+      "R16": "R27",
+      "R17": "R28",
+      "R18": "R29",
+      "R19": "R30",
+      "R20": "R31",
+      "R21": "R32",
+      "R22": "R33",
+      "R23": "R34",
+      "R24": "R35",
+      "R25": "R36",
+      "R26": "R37",
+      "R27": "R38",
+      "R28": "R38B",
+      "R29": "R39",
+      "R30": "R40",
+      "R31": "R41",
+      "R32": "R42",
+      "R33": "R43",
+      "R34": "R44",
+      "R35": "R45",
+      "R36": "R46",
+      "R37": "R46S",
+      "R38": "R47",
+      "R39": "R48",
+      "R40": "R49",
+      "R41": "R5",
+      "R42": "R50",
+      "R43": "R51",
+      "R44": "R52",
+      "R45": "R53",
+      "R46": "R54",
+      "R47": "R55",
+      "R48": "R56",
+      "R49": "R57",
+      "R50": "R58",
+      "R51": "R59",
+      "R52": "R6",
+      "R53": "R60",
+      "R54": "R61",
+      "R55": "R62",
+      "R56": "R63",
+      "R57": "R64",
+      "R58": "R7",
+      "R59": "R8",
+      "R60": "R9",
+      "R61": "R_AN4_1",
+      "R62": "R_AN4_2",
+      "R63": "R_AN5_1",
+      "R64": "R_AN5_2",
+      "R65": "R_AN6_1",
+      "R66": "R_AN6_2",
+      "R67": "R_HV_STAR",
+      "R68": "R_IN_C_BL",
+      "R69": "R_IN_C_CLK",
+      "R70": "R_IN_C_DIN",
+      "R71": "R_IN_C_DOUT",
+      "R72": "R_IN_C_LAT",
+      "R73": "R_LED",
+      "R74": "R_LS_C_BL",
+      "R75": "R_LS_C_CLK",
+      "R76": "R_LS_C_DIN",
+      "R77": "R_LS_C_LAT",
+      "R78": "R_MOD_C_BLEED",
+      "R79": "R_SAFE_C",
+      "SW1": "SW1",
+      "SW2": "SW2",
+      "SW3": "SW3",
+      "SW4": "SW4",
+      "TP1": "TP1",
+      "U1": "U1",
+      "U2": "U10",
+      "U3": "U11",
+      "U4": "U2",
+      "U5": "U20",
+      "U6": "U21",
+      "U7": "U23",
+      "U8": "U24",
+      "U9": "U5",
+      "U10": "U6",
+      "U11": "U7",
+      "U12": "U8",
+      "U13": "U9",
+      "U14": "U_C",
+      "U15": "U_DS_C",
+      "U16": "U_LS_C"
+    }
+  },
+  "limitation": "Topology PASS does not approve component functionality, footprint geometry, insulation, ERC, DRC or HV operation"
+}

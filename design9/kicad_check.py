@@ -61,7 +61,8 @@ def kicad_nets(netfile):
     return res, len(set(res.values()))
 
 
-def main():
+def legacy_main():
+    raise RuntimeError('Historical overwrite workflow disabled; use main() with --run NEW_NAME')
     rows = []
     js = {}
     for board, sheets in BOARDS.items():
@@ -121,5 +122,20 @@ def main():
     print("wrote kicad/EDA_CHECK_RESULTS.md + logs/")
 
 
+def main():
+    """REV.A9.1 safe entry point; historical checker retained above for review."""
+    import argparse
+    from pathlib import Path
+    from reconcile9 import capture
+    parser = argparse.ArgumentParser(description='Append-only native KiCad checks; never overwrites a run')
+    parser.add_argument('--run', required=True)
+    parser.add_argument('--publish', action='store_true')
+    args = parser.parse_args()
+    if Path(args.run).name != args.run or args.run in ('.', '..'):
+        parser.error('run must be a single new directory name')
+    result = capture(args.run, args.publish)
+    return 0 if all(b['reconciliation']=='PASS' for b in result['boards'].values()) else 1
+
+
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

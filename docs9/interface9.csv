@@ -1,19 +1,19 @@
-﻿connector,pin,signal,说明,额定/备注
-"J_MOD_x_LV (2x8 IDC, keyed)",1,3V3,3.3 V 逻辑供电（主板稳压）,≤100 mA
-"J_MOD_x_LV (2x8 IDC, keyed)",2,GND,逻辑地,
-"J_MOD_x_LV (2x8 IDC, keyed)",3,DRV_VDD,12 V 驱动供电（HV5622 VDD）,10.8–13.2 V
-"J_MOD_x_LV (2x8 IDC, keyed)",4,GND,驱动地,
-"J_MOD_x_LV (2x8 IDC, keyed)",5,MOD_x_DIN,串行数据输入（3.3 V）,MSB-first
-"J_MOD_x_LV (2x8 IDC, keyed)",6,MOD_x_DOUT,串行数据输出（3.3 V，回主板）,仅 L/R 模块
-"J_MOD_x_LV (2x8 IDC, keyed)",7,DISP_CLK,移位时钟（3.3 V）,≤200 kHz
-"J_MOD_x_LV (2x8 IDC, keyed)",8,DISP_LAT,锁存（3.3 V）,LE 高装载
-"J_MOD_x_LV (2x8 IDC, keyed)",9,DISP_ALLOW,消隐（3.3 V，高=正常）,BL=0 → 全关
-"J_MOD_x_LV (2x8 IDC, keyed)",10,SAFETY_x_IN,安全回路进,串行通过模块
-"J_MOD_x_LV (2x8 IDC, keyed)",11,SAFETY_x_OUT,安全回路出,任一模块断开→HV_EN=0
-"J_MOD_x_LV (2x8 IDC, keyed)",12,GND,逻辑地,
-"J_MOD_x_LV (2x8 IDC, keyed)",13,GND,逻辑地,
-"J_MOD_x_LV (2x8 IDC, keyed)",14,GND,逻辑地,
-"J_MOD_x_LV (2x8 IDC, keyed)",15,GND,逻辑地,
-"J_MOD_x_LV (2x8 IDC, keyed)",16,GND,逻辑地,
-"J_MOD_x_HV (2P, 5.08mm)",1,HV_BUS,172 V DC（危险）,≥300 V 额定连接器，防触碰，Pin1 标识
-"J_MOD_x_HV (2P, 5.08mm)",2,GND_HV,高压回流（单点接 GND）,独立线束
+﻿connector,pin,signal,direction,domain,default,may_float,fault,relationship
+LV16P,1,3V3,MAIN->MOD,3V3,supply established,NO,loss disables LS; transient HOLD,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,2,GND,RETURN,GND,bond MAIN,NO,loss of reference/cathode return,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,3,DRV_VDD,MAIN->MOD,10.8-13.2V,OFF,NO,PG/HV disable required; E09 OPEN,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,4,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,5,MOD_x_DIN,MAIN->MOD,3V3,100k pulldown,NO,no valid frame,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,6,MOD_x_DOUT,MOD->MAIN,3V3,100k pulldown,ONLY terminal consumer optional,raw DOUT requires DS,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,7,DISP_CLK,MAIN->MOD,3V3,100k pulldown,NO,no valid frame,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,8,DISP_LAT,MAIN->MOD,3V3,100k pulldown,NO,hold latch,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,9,DISP_ALLOW,MAIN->MOD,3V3,100k pulldown,NO,BL=0 all OFF with POL=HIGH,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,10,SAFETY_LOOP_x_IN,MAIN->MOD,3V3,R57 source,NO,open forces terminal LOW,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,11,SAFETY_LOOP_x_OUT,MOD->MAIN,3V3,0ohm link from10,NO,R58 terminal pulldown,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,12,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,13,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,14,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,15,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+LV16P,16,GND,RETURN,GND,bond MAIN,NO,same net as pin2,MAIN_L/R pinN <-> MOD_L/R pinN; C internal
+HV2P,1,HV_BUS,MAIN->MOD,172.18V nominal; peak TBD,OFF,NO,OVP E06-E10 OPEN,same pin both ends; actual rating UNKNOWN; target >=300V DC
+HV2P,2,GND_HV,MOD->MAIN,HV capacitor/bleeder return,MAIN star bond,NO,NO module GND bond,same pin both ends; actual rating UNKNOWN; target >=300V DC

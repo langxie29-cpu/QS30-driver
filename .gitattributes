@@ -1,0 +1,14 @@
+# REV.A9.1 evidence and hashed inputs must survive checkout byte-for-byte.
+# Historical root logs keep their existing attributes/content.
+/kicad/logs/*/** -text
+/kicad/projects/*/*.kicad_sch -text
+/kicad/projects/*/*.kicad_pcb -text
+/netlist9/QS30-9_REV.A_netlist.csv -text
+/design9/build9.py -text
+/design9/freeze9.py -text
+/design9/kicad_gen.py -text
+/design9/kicad_check.py -text
+/design9/reconcile9.py -text
+/design9/validate_freeze9.py -text
+/design9/report_freeze9.py -text
+/docs9/sources/A9_1/* -text

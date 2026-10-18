@@ -223,6 +223,8 @@ def build():
     add("U9", "74HC08", "74HC08", "门控 2：HV_EN 终级", "SOIC-14", S, "VERIFIED")
     d.conn("U9", 1, "HV_EN_B"); d.conn("U9", 2, "HV_EN_REQ"); d.conn("U9", 3, "HV_EN")
     d.conn("U9", 14, "3V3"); d.conn("U9", 7, "GND")
+    for pin in (4, 5, 9, 10, 12, 13):
+        d.conn("U9", pin, "GND")  # unused CMOS inputs must not float
     # Q2/Q3：DRV_VDD 高侧开关
     add("Q2", "DMP3098L", "P-FET-SOT23", "P-FET 30 V", "SOT-23", S, "VERIFIED")
     d.conn("Q2", "1", "DRV_VDD_G"); d.conn("Q2", "2", "EXT12"); d.conn("Q2", "3", "DRV_VDD")
@@ -414,7 +416,7 @@ def build():
         add(f"R_MOD_{m}_BLEED", "2x100k/2W", "R", "模块本地泄放", "2512x2", S)
         d.conn(f"R_MOD_{m}_BLEED", 1, "HV_BUS"); d.conn(f"R_MOD_{m}_BLEED", 2, "GND_HV")
         add(dev, "HV5622PG-G", "HV5622-PQFP44", "32 路高压驱动（PQFP-44）", "PQFP-44", S, "VERIFIED")
-        add(f"U_LS_{m}", "CD40109BE", "CD40109B", "3.3→12 V 电平转换", "SOIC-16", S, "VERIFIED")
+        add(f"U_LS_{m}", "CD40109BNSR", "CD40109B", "3.3→12 V 电平转换", "SOP-16-NS", S, "PROVISIONAL")
         ls = {1: "3V3", 2: "3V3", 3: f"MOD_{m}_DIN", 4: f"{dev}_DIN", 5: f"{dev}_CLK",
               6: "DISP_CLK", 7: "3V3", 8: "GND", 9: "3V3", 10: "DISP_LAT",
               11: f"{dev}_LAT", 12: None, 13: f"{dev}_BL", 14: "DISP_ALLOW",
@@ -446,7 +448,6 @@ def build():
             # 中心模块：安全回路与数据链在主板直连
             add("R_SAFE_C", "0", "R", "中心模块安全回路直通", "0603", S, "VERIFIED")
             d.conn("R_SAFE_C", 1, "SAFETY_LOOP_C_IN"); d.conn("R_SAFE_C", 2, "SAFETY_LOOP_C_OUT")
-            d.conn(dev, "32", "MOD_C_DIN")
         else:
             add(f"J_MOD_{m}_LV", "2x8-IDC-2.54-keyed", "CONN-LV-16", f"{name} 低压接口", "IDC-16", S)
             for pin, net in (("1", "3V3"), ("2", "GND"), ("3", "DRV_VDD"), ("4", "GND"),
@@ -469,39 +470,33 @@ def build():
                 d.conn(f"J_MAIN_{m}_LV", pin, net)
             add(f"J_MAIN_{m}_HV", "5.08mm-2P-HV", "CONN-HV-2", f"{name} HV 插座", "TERM-2-HV", "MB_CONN", S)
             d.conn(f"J_MAIN_{m}_HV", 1, "HV_BUS"); d.conn(f"J_MAIN_{m}_HV", 2, "GND_HV")
-    # 数据链：MCU → L → C → R；中心模块 DIN 来自 L DOUT
+    # REV.A9.1: all three DIN paths pass through their local up-shifter.
+    # DOUT is VDD-domain push-pull, never a 3V3 connector signal directly.
     d.conn("U10", "19", "MOD_L_DIN")
     d.conn("U10", "20", "DISP_CLK")
     d.conn("U10", "22", "DISP_LAT")
     d.conn("U10", "8", "DISP_ALLOW")
-    # 将 U_L 的 DOUT 连到中心模块 DIN；中心 DOUT 连到右模块 DIN
-    # （U_L/U_C/U_R 的 DOUT 已在上面按 f"{dev}_DOUT" 建网，这里改名对齐）
-    for dev, nm in (("U_L", "MOD_L_DOUT"), ("U_C", "MOD_C_DOUT"), ("U_R", "MOD_R_DOUT")):
-        try:
-            if d.parts[dev].nets.get("23") == f"{dev}_DOUT":
-                d.parts[dev].nets["23"] = nm
-        except Exception:
-            pass
-    d.conn("U10", "19", "MOD_L_DIN")
-    # 数据链网络（重命名后建立跨模块连接）
-    rename = {}
-    for p in d.parts.values():
-        for pin, net in list(p.nets.items()):
-            if net.endswith("_DOUT") and net.startswith("U_"):
-                rename[net] = "MOD_" + net[2] + "_DOUT"
-    for p in d.parts.values():
-        for pin, net in list(p.nets.items()):
-            if net in rename:
-                p.nets[pin] = rename[net]
-    d.parts["U_L"].nets["23"] = "MOD_L_DOUT"
-    d.parts["U_C"].nets["23"] = "MOD_C_DOUT"
-    d.parts["U_R"].nets["23"] = "MOD_R_DOUT"
+    for m in "LCR":
+        S = f"MOD_{m}"
+        dev = f"U_{m}"
+        down = f"U_DS_{m}"
+        add(down, "CD40109BNSR", "CD40109B", "12→3.3 V DOUT", "SOP-16-NS", S,
+            "PROVISIONAL", "TI SCHS099B p1 permits VCC>VDD; timing/power-loss validation pending")
+        for pin, net in {1: "DRV_VDD", 16: "3V3", 8: "GND", 2: "DRV_VDD",
+                         3: f"{dev}_DOUT", 4: f"MOD_{m}_DOUT",
+                         6: "GND", 7: "GND", 9: "GND", 10: "GND", 14: "GND", 15: "GND"}.items():
+            d.conn(down, pin, net)
+        add(f"C_DS_{m}", "100nF", "C", "DOUT down-shifter decoupling", "0603", S)
+        d.conn(f"C_DS_{m}", 1, "3V3"); d.conn(f"C_DS_{m}", 2, "GND")
+        for suffix, net in (("DIN", f"MOD_{m}_DIN"), ("CLK", "DISP_CLK"),
+                            ("LAT", "DISP_LAT"), ("BL", "DISP_ALLOW"), ("DOUT", f"MOD_{m}_DOUT")):
+            ref = f"R_IN_{m}_{suffix}"
+            add(ref, "100k", "R", "3V3 domain default low", "0603", S)
+            d.conn(ref, 1, net); d.conn(ref, 2, "GND")
     d.conn("J_MAIN_L_LV", "6", "MOD_L_DOUT")
     d.conn("J_MOD_L_LV", "6", "MOD_L_DOUT")
     d.conn("J_MAIN_L_LV", "5", "MOD_L_DIN")
     d.conn("J_MOD_L_LV", "5", "MOD_L_DIN")
-    d.conn("U_C", "32", "MOD_C_DIN")
-    d.conn("U_R", "32", "MOD_R_DIN")
     d.conn("J_MAIN_R_LV", "5", "MOD_R_DIN")
     d.conn("J_MOD_R_LV", "5", "MOD_R_DIN")
     d.conn("J_MAIN_R_LV", "6", "MOD_R_DOUT")
@@ -512,6 +507,10 @@ def build():
     d.conn("R63", 1, "MOD_C_DOUT"); d.conn("R63", 2, "MOD_R_DIN")
     add("R61", "100k", "R", "R 模块 DOUT 下拉（备用回线）", "0603", "MB_CONN", "VERIFIED")
     d.conn("R61", 1, "MOD_R_DOUT"); d.conn("R61", 2, "GND")
+    # Only MAIN bonds HV capacitor/bleeder return to common circuit ground.
+    # Remote VSS uses LV GND; no module GND_HV--GND bond / parallel cathode return.
+    add("R_HV_STAR", "0", "R", "HV return star bond", "1206", "MB_POWER", "PROVISIONAL")
+    d.conn("R_HV_STAR", 1, "GND_HV"); d.conn("R_HV_STAR", 2, "GND")
     d.classify()
     return d
 
@@ -636,10 +635,10 @@ def channel_map(d):
             for digit in range(10):
                 hv = 1 + 10 * t + digit
                 local = 10 * t + digit
-                serial = 32 * order + local          # 0 = 最先发送
+                serial = 32 * order + (32 - hv)      # first-in reaches HVOUT32
                 rows.append(dict(
                     tube=tube, digit=digit, module=m, device=dev,
-                    hvout=hv, socket_pin=SOCK_PIN[digit], cathode_net=f"K_T{tube}_{digit}",
+                    hvout=hv, driver_pin=HVOUT_PIN[hv], socket_pin=SOCK_PIN[digit], cathode_net=f"K_T{tube}_{digit}",
                     anode_net=f"A_T{tube}", serial_index=serial, frame_bit=95 - serial,
                     byte=serial // 8, bit_in_byte=7 - serial % 8,
                     status="PROVISIONAL(位序待 H04 级 walking-one 实测确认)"))
