@@ -1,0 +1,221 @@
+{
+ "facts": {
+  "U8_VCC": "3V3",
+  "U8_IN1m": "VREF_2V5",
+  "U8_IN2m": "VREF_2V5",
+  "U8_IN2p": "HVF_NODE",
+  "U23_VCC": "EXT12",
+  "U23_IN1m": "VREF_OVP",
+  "HV5622_mpn": [
+   "HV5622PJ"
+  ],
+  "HV5622_pkg": [
+   "PQFP-44"
+  ],
+  "n_tubes": 6,
+  "n_channels": 60,
+  "HV5622_count": 2,
+  "DRV_SNS_divider": [
+   "U8.3",
+   "R45.2",
+   "R46.1",
+   "C37.1"
+  ],
+  "VREF_OVP": [
+   "U23.2",
+   "U24.1",
+   "U24.2",
+   "R74.2",
+   "C57.1"
+  ]
+ },
+ "findings": [
+  {
+   "id": "P0-01",
+   "title": "LM393 输入共模越界（3.3 V 供电 + 2.5 V 基准）",
+   "where": "U8（LM393，VCC=3V3）IN1−/IN2− = VREF_2V5=2.5 V",
+   "evidence": "TI SLCS005AH Table: VICR = 0…VCC−1.5 V（25 °C）、0…VCC−2 V（全温区）；3.3 V 供电时允许上限 1.8 V / 1.3 V，2.5 V 越界 → DRV_PG 与 FAULT_OK 判定不可靠",
+   "status": "FAIL",
+   "action": "U8 改用 1.0 V 基准（由 2.5 V 基准电阻分压，1% 电阻）并重算 DRV_SNS/HVF_NODE 分压；或改轨到轨比较器（成本+）"
+  },
+  {
+   "id": "P0-02",
+   "title": "OVP 比较器 + PNP/NPN 锁存极性",
+   "where": "U23 IN1+=OVP_SNS / IN1−=VREF_OVP；OUT1=OVP_SET（R78 10k 上拉到 EXT12）；R80 10k → LATCH_B；Q21 PNP(E=EXT12,B=LATCH_B,C=OVP_LATCH)；Q22 NPN(B=OVP_LATCH,C=LATCH_B,E=GND)；Q23/Q24 由 OVP_LATCH 经 47k 驱动；Q25 复位",
+   "evidence": "逐管偏置推导：过压→OUT1 低→R80 拉低 LATCH_B→PNP 通→OVP_LATCH 高→NPN 通→自锁；复位（Q25 拉低 OVP_LATCH）仅在 OVP_SNS 已回落时有效（Q25 关断后 R80 会再次置位）→ 极性正确",
+   "status": "STRONGLY SUPPORTED",
+   "action": "结论为纸面推导；需 BJT 级 SPICE/实物确认（P0-02 仍列入 Gate G1 复核项），不得直接标 VERIFIED"
+  },
+  {
+   "id": "P0-03",
+   "title": "HV5622 料号与封装混用",
+   "where": "BOM: mpn=['HV5622PJ'] 封装=['PQFP-44']；model.py 把 HV5622PJ 解析到 HV5622-PQFP44 引脚表",
+   "evidence": "Findchips 分销数据（Microchip 在售）：HV5622PJ-G = PLCC-44（Tube，库存 1593，预计 EOL 2036-05-20）；HV5622PG-G = PQFP-44（Tray，库存 860，预计 EOL 2036-08-05）。即 PJ 是 PLCC、PG 是 PQFP；现设计用 PJ 料号 + PQFP 引脚映射 = 错误",
+   "status": "FAIL",
+   "action": "REV.A9 改用 HV5622PG-G（PQFP-44，沿用已验证引脚表）；若改用 PJ（PLCC-44）必须重做 PLCC 引脚表与焊盘并重新验证"
+  },
+  {
+   "id": "P1-01",
+   "title": "DRV_PG 欠压门槛低于 HV5622 推荐逻辑供电下限",
+   "where": "DRV_PG 由 DRV_SNS 分压 vs 2.5 V 基准，门槛约 10.41 V；HV5622 VDD 推荐 10.8–13.2 V",
+   "evidence": "设计计算（旧仓库 D 系列记录）+ HV5622 DS20005854A VDD=10.8–13.2 V",
+   "status": "FAIL",
+   "action": "门槛改为 11.0 V 上升 / 10.6 V 下降（约 0.4 V 迟滞），并做容差分析"
+  },
+  {
+   "id": "P1-02",
+   "title": "DCM/CCM 模型与真实工作模式不一致",
+   "where": "开环 SPICE 用固定 D=0.73（DCM 工作点）；平均模型按 CCM 方程；九管满载时 Iin≈0.41 A、ΔI≈0.65 A → 满载 CCM、轻载/空载 DCM",
+   "evidence": "本项目 9 管重算（power9.py）：满载 CCM、空载 DCM；两种模式都会出现",
+   "status": "FAIL",
+   "action": "REV.A9 采用分模式预算：满载用 CCM 公式、轻载/空载用 DCM 公式，并在 Gate G3 用实物/ngspice 交叉验证；不得再用单一模型下结论"
+  },
+  {
+   "id": "P1-03",
+   "title": "OVP 容差窗口过严",
+   "where": "旧验收 198.8 V ±1.5 V；实际含 TL431 ±0.5%、分压电阻 ±1%、LM393 Vos ±2…5 mV、温漂",
+   "evidence": "worst-case 计算（power9.py）：192.9–204.1 V（±5.6 V）→ 198.8±1.5 V 窗口无法覆盖",
+   "status": "FAIL",
+   "action": "REV.A9 验收窗口放宽为 193.0–204.5 V（1% 电阻计算值）；BOM-B/C 用 0.1% 电阻可收紧"
+  },
+  {
+   "id": "P1-04",
+   "title": "上电/失电/模块断连安全态",
+   "where": "3.3 V 丢失时 CD40109B ENABLE=3V3→高阻、12 V 域下拉使 BL=0（安全）；但 DRV_VDD 丢失而 HV 电容有电、以及显示模块拔线两种情况未定义",
+   "evidence": "旧设计只有 HV_EN=DRV_PG·FAULT_OK·HV_EN_REQ；无模块在位检测",
+   "status": "PROVISIONAL",
+   "action": "REV.A9 增加 SAFETY_LOOP（模块在位回路）+ HV_EN 串入；模块断连→HV_EN 断开→升压停→泄放；并加 HV 输出泄放电阻"
+  },
+  {
+   "id": "P2-01",
+   "title": "九位扩展需求",
+   "where": "旧系统 6 管/2×HV5622/64 bit 帧/单一 PCB",
+   "evidence": "旧 BOM/网表：227 器件、60 通道、2×HV5622",
+   "status": "UNVERIFIED",
+   "action": "REV.A9 重建为 3 模块 ×（1 HV5622 + 3 管）= 90 通道；96 bit 帧（3×32）"
+  },
+  {
+   "id": "P2-02",
+   "title": "成本与可制造性",
+   "where": "旧 BOM 无价格列；HV5622 报价 32.15 元/颗为零售、未核实",
+   "evidence": "Findchips 2026-10-18：HV5622PG-G 单颗 $8.81、100 片 $6.67；PJ-G 单颗 $8.32；零售 32.15 元与美元批发价不同渠道，均需询价确认",
+   "status": "UNKNOWN",
+   "action": "BOM-A/B/C 给出价格占位与询价状态；不得把估算当成交价"
+  },
+  {
+   "id": "P2-03",
+   "title": "EDA 原生工程缺失",
+   "where": "无立创EDA/KiCad；现有 PDF/CSV 不是可编辑工程",
+   "evidence": "open_issues I-19/I-20；环境限制",
+   "status": "UNKNOWN",
+   "action": "尝试 KiCad；不可行则提供可导入网表/符号/封装并标注 PROVISIONAL，不伪造 ERC/DRC"
+  }
+ ],
+ "diff": [
+  {
+   "item": "管数/位数",
+   "old": "6 位（J_T1…J_T6）",
+   "new": "9 位（3+3+3，模块化）",
+   "action": "重建",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "HV 驱动",
+   "old": "2×HV5622（64 路，60 用）",
+   "new": "3×HV5622PG-G（96 路，90 用）",
+   "action": "扩建+修正料号",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "串行链路",
+   "old": "64 bit 帧，U21→U22 级联",
+   "new": "96 bit 帧，3 级级联（含模块回线）",
+   "action": "修改",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "PCB 结构",
+   "old": "单板 230×120 mm",
+   "new": "3 块显示模块板 + 1 块中央主板（3+3+3）",
+   "action": "重建",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "电源",
+   "old": "单套 12V→172V UC3843，6 管负载",
+   "new": "同一套电源按 9 管重算（满载 CCM/轻载 DCM）",
+   "action": "修改+重算",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "OVP/锁存",
+   "old": "LM393+TL431+PNP/NPN SCR+Q23/Q24/Q25",
+   "new": "保留拓扑；修 P0-02 偏置复核 + P0-01 共模 + P1-03 容差",
+   "action": "修改",
+   "status": "STRONGLY SUPPORTED"
+  },
+  {
+   "item": "逻辑门控",
+   "old": "74HC08 三路 PG + HV_EN",
+   "new": "增加 SAFETY_LOOP、模块在位；DRV_PG 门槛 11.0/10.6 V",
+   "action": "修改",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "电平转换",
+   "old": "CD40109B ×2（64 bit 链路）",
+   "new": "每模块 1×CD40109B（或统一放主板，按接口方案）",
+   "action": "修改/评估",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "ESP32-S3 低压部分",
+   "old": "ESP32-S3-WROOM-1-N8 + USB + 3.3V + 双 OR",
+   "new": "继承（主板中央位置）",
+   "action": "继承",
+   "status": "VERIFIED"
+  },
+  {
+   "item": "QS30-1 电气映射",
+   "old": "2=A；3=K0…13=K1；1/8 内部电极开路",
+   "new": "完全继承（原厂映射不变）",
+   "action": "继承",
+   "status": "VERIFIED"
+  },
+  {
+   "item": "管座",
+   "old": "13 脚管座，TBD 尺寸（H03）",
+   "new": "3 模块×3 管座；方案 A/B/C 比较；TBD 保留",
+   "action": "重做机械",
+   "status": "UNKNOWN"
+  },
+  {
+   "item": "高压连接器",
+   "old": "无（单板直连）",
+   "new": "模块间 HV 线束 + 防触碰连接器 + Pin1 标识",
+   "action": "新增",
+   "status": "UNKNOWN"
+  },
+  {
+   "item": "旧六位资料",
+   "old": "docs/ 全部 REV.A 文档",
+   "new": "原样保留为 Legacy Reference",
+   "action": "保留",
+   "status": "VERIFIED"
+  },
+  {
+   "item": "测试计划",
+   "old": "37 项 A–E 阶段",
+   "new": "G0–G5 阶段门 + 模块化测试项",
+   "action": "扩展",
+   "status": "PROVISIONAL"
+  },
+  {
+   "item": "仿真",
+   "old": "SPICE 功率级/平均模型/OVP 行为模型",
+   "new": "重算 9 管；分模式；BJT 级 OVP 复核",
+   "action": "修改+新增",
+   "status": "PROVISIONAL"
+  }
+ ]
+}
