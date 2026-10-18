@@ -1,3 +1,22 @@
+# QS30 驱动 — 九位模块化（REV.A9）
+
+> **当前基线：QS30-9 / REV.A（九位 3+3+3 模块化）**
+> 先读 [`docs9/FINAL_REPORT9.md`](docs9/FINAL_REPORT9.md)（A–G 报告）与
+> [`docs9/AUDIT.md`](docs9/AUDIT.md)（旧六位审计/架构差异）、[`docs9/GATES.md`](docs9/GATES.md)（G0–G5）。
+>
+> - 架构/网表/ERC9：`docs9/ARCHITECTURE.md`、`netlist9/`、`docs9/ERC9.md`（**36/36 PASS**，规则级）
+> - 电源重算/OVP 容差/泄放：`docs9/POWER9.md`
+> - 驱动比较 / BOM-A/B/C / 成本：`docs9/DRIVER_COMPARE.md`、`bom9/`、`docs9/COST9.md`
+> - 接口与 90 路映射：`docs9/interface9.csv`、`docs9/channel_map9.csv`（位序 PROVISIONAL）
+> - 机械/PCB 尺寸：`docs9/MECH9.md`（结论：三管共板不进 100 mm 档，需支架或 100×150）
+> - 未冻结项：`HOLD_REGISTER9.md`；问题：`open_issues9.md`
+> - **未经授权不下单、不打样、不释放 Gerber；未验证项不得标为通过。**
+> - 旧六位 REV.A 设计完整保留为 Legacy（见文末"Legacy"与 `legacy/REV6/README.md`，commit `52eaa95`）。
+
+---
+
+## Legacy：六位 REV.A（REV6）原始文档
+
 # QS30-6 REV.A — 六位静态辉光钟（ESP32-S3 / 南昌 QS30-1 / 立创EDA）
 
 **工程状态：HOLD —— 可继续 PCB 预布局与实物验证，禁止投板、禁止生产放行。**
