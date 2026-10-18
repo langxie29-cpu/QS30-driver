@@ -50,7 +50,7 @@
 **已执行/机器可验证**：ERC9 36/36（规则级）；电源/OVP/泄放/门控为**解析计算**；旧六位的 SPICE/行为模型证据仍对 REV.A9 的**拓扑部分**有参考价值（UC3843 功率级、OVP 锁存拓扑、CD40109B 电平转换、QS30-1 映射）。
 
 **风险/未验证（不得当作已验证）**：
-- OVP 极性仅纸面偏置推导（STRONGLY SUPPORTED），无 BJT 级 SPICE、无实物；
+- OVP 极性仅纸面偏置推导（STRONGLY SUPPORTED），**BJT 级 SPICE 尝试失败**（自研求解器 PNP 模型未收敛，已记录 I9-03），需 ngspice/LTspice 或实物；
 - 90 路位序为**公式假设**（PROVISIONAL），必须 H04 级 walking-one 实测；
 - 管座机械尺寸 TBD（H03）→ PCB 尺寸/封装不能冻结；
 - HV 连接器 DC 额定/防触碰未核实（UNKNOWN）；
