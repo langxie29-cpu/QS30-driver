@@ -270,7 +270,7 @@ def main():
             b = Board.from_file(pcb_path, encoding="utf-8")
             status["parsed"] += [os.path.relpath(sch_path, ROOT),
                                  os.path.relpath(pcb_path, ROOT)]
-            status["netcheck"][name] = dict(netcheck(parts, sch_text),
+            status["netcheck"][name] = dict(netcheck(parts, sch_text), csv_parts=nparts,
                                              parsed_symbols=len(s.schematicSymbols),
                                              parsed_labels=len(s.globalLabels),
                                              parsed_footprints=len(b.footprints),
