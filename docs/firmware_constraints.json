@@ -1,0 +1,119 @@
+{
+ "control_pins": {
+  "DISP_DIN → DRV_DIN": "U10.19（IO11）",
+  "DISP_CLK → DRV_CLK": "U10.20（IO12）",
+  "DISP_LAT → DRV_LAT": "U10.22（IO14）",
+  "DISP_ALLOW → DRV_BL": "U10.8（IO15）",
+  "HV_EN_REQ": "U10.9（IO16）",
+  "OVP_RST": "U10.11（IO18）",
+  "HV_SENSE_ADC": "U10.39（IO1）",
+  "HVF_NODE": "U10.7（IO7）"
+ },
+ "frame": {
+  "bits": 64,
+  "n_devices": 2,
+  "devices": [
+   "U21",
+   "U22"
+  ],
+  "bit_order": "MSB-first（bit63 先发），ch → bit = 63-ch（H04 待实测确认）",
+  "used_channels": 60,
+  "spare_channels": 4
+ },
+ "constraints": [
+  {
+   "id": "F01",
+   "title": "帧长度 64 位",
+   "value": "64",
+   "detail": "2×HV5622（32 位/片），60 路已用、4 路备用；不得按 96 位或 60 位发送"
+  },
+  {
+   "id": "F02",
+   "title": "位序",
+   "value": "MSB-first，bit=63-ch",
+   "detail": "PROVISIONAL：必须由 B3 walking-one 实测回填 docs/channel_mapping.csv 后冻结"
+  },
+  {
+   "id": "F03",
+   "title": "SPI 时钟",
+   "value": "≤200 kHz，起始 100 kHz",
+   "detail": "CD40109B 电平转换 + 长线；先 100 kHz 验证，逐级提高"
+  },
+  {
+   "id": "F04",
+   "title": "时钟/锁存极性",
+   "value": "CLK 下降沿移位；LE 高装载",
+   "detail": "对应 HV5622 真值表（S15）；POL 硬接 DRV_VDD，固件不得控制 POL"
+  },
+  {
+   "id": "F05",
+   "title": "消隐",
+   "value": "MCU DISP_ALLOW(IO15) → CD40109B → DRV_BL；BL=0 → 全关",
+   "detail": "更新序列：BL=0 → 移位 → LE 脉冲 → BL=1；DRV_BL 有 10 kΩ 下拉，复位期间为安全态"
+  },
+  {
+   "id": "F06",
+   "title": "上电顺序依赖",
+   "value": "HV_EN_REQ 只在自检通过后置 1",
+   "detail": "HV_EN = DRV_PG·FAULT_OK·HV_EN_REQ；DRV_VDD_EN = EXT12_PG·3V3_PG·HV_EN_REQ；HV_EN_REQ/DISP_ALLOW 均有下拉，复位期间不得为高"
+  },
+  {
+   "id": "F07",
+   "title": "故障响应",
+   "value": "HVF_NODE 高 → 锁存故障；FAULT_OK=0 → 硬件立即关 HV",
+   "detail": "HVF_NODE 经 R31/R32/C29/D7/D8 到 U8 比较器与 MCU IO7；固件读 IO7 判故障，不得自动反复复位"
+  },
+  {
+   "id": "F08",
+   "title": "OVP 复位",
+   "value": "脉宽 ≥0.2 ms，且仅当 HV<198.8 V",
+   "detail": "OVP 有效时复位无效（等价 SCR 不可关断）；建议先读 HV_SENSE_ADC 确认 <190 V 再复位"
+  },
+  {
+   "id": "F09",
+   "title": "USB-only 供电",
+   "value": "总电流 ≤500 mA",
+   "detail": "USB-C 默认电流；固件应在仅 USB 供电时禁止点亮或大幅降占空比"
+  },
+  {
+   "id": "F10",
+   "title": "显示范围",
+   "value": "000000–999999，静态驱动",
+   "detail": "每管恒有 1 路阴极导通，无扫描；六位数字分别对应 J_T1..J_T6"
+  },
+  {
+   "id": "F13",
+   "title": "备用通道",
+   "value": "ch60–63 不使用（NC），发送时填 0",
+   "detail": "映射表 64 行中 60 路接 QS30-1、4 路预留；帧仍需发满 64 位"
+  },
+  {
+   "id": "F11",
+   "title": "恢复通道",
+   "value": "USB 原生下载 + UART0",
+   "detail": "Boot/复位时序见测试计划 A4/A5；TXD0 无过冲"
+  },
+  {
+   "id": "F12",
+   "title": "版本与位序冻结",
+   "value": "映射表 + 固件 LUT 同一版本号",
+   "detail": "H04 通过后同时冻结 docs/channel_mapping.csv 与固件 LUT 哈希"
+  }
+ ],
+ "networks": [
+  "HV_EN_REQ",
+  "HV_EN",
+  "FAULT_OK",
+  "DRV_BL",
+  "DRV_DIN",
+  "DRV_CLK",
+  "DRV_LAT",
+  "DISP_ALLOW",
+  "OVP_RST",
+  "HV_SENSE_ADC",
+  "DRV_VDD_EN",
+  "EXT12_PG",
+  "P3V3_PG",
+  "DRV_PG"
+ ]
+}

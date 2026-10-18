@@ -1,0 +1,52 @@
+{
+  "project": "QS30-6 REV.A",
+  "object": "QS30-1 nixie tube schematic symbol",
+  "status": "VERIFIED (electrical mapping) / footprint PROVISIONAL",
+  "source": "S6 南昌电子管厂 QS30 型辉光放电数码管说明书（原厂扫描件）",
+  "designator_prefix": "J_T",
+  "units": 1,
+  "body": {
+    "kind": "rectangle",
+    "width_mm": 20.0,
+    "height_mm": 30.0,
+    "note": "视觉比例，非机械尺寸；不要用符号尺寸推断管座机械尺寸"
+  },
+  "pins": [
+    {"number": "2",  "name": "A",              "type": "anode",        "side": "top",    "function": "阳极 A"},
+    {"number": "3",  "name": "K0",             "type": "cathode",      "side": "bottom", "function": "数字 0 阴极"},
+    {"number": "4",  "name": "K9",             "type": "cathode",      "side": "bottom", "function": "数字 9 阴极"},
+    {"number": "5",  "name": "K8",             "type": "cathode",      "side": "bottom", "function": "数字 8 阴极"},
+    {"number": "6",  "name": "K7",             "type": "cathode",      "side": "bottom", "function": "数字 7 阴极"},
+    {"number": "7",  "name": "K6",             "type": "cathode",      "side": "bottom", "function": "数字 6 阴极"},
+    {"number": "9",  "name": "K5",             "type": "cathode",      "side": "bottom", "function": "数字 5 阴极"},
+    {"number": "10", "name": "K4",             "type": "cathode",      "side": "bottom", "function": "数字 4 阴极"},
+    {"number": "11", "name": "K3",             "type": "cathode",      "side": "bottom", "function": "数字 3 阴极"},
+    {"number": "12", "name": "K2",             "type": "cathode",      "side": "bottom", "function": "数字 2 阴极"},
+    {"number": "13", "name": "K1",             "type": "cathode",      "side": "bottom", "function": "数字 1 阴极"},
+    {"number": "1",  "name": "IC_KEEP_OPEN",   "type": "no_connect",   "side": "left",   "function": "内部电极，悬空"},
+    {"number": "8",  "name": "IC8_KEEP_OPEN",  "type": "no_connect",   "side": "right",  "function": "内部电极，悬空且不接地"}
+  ],
+  "electrical_parameters": {
+    "Ea_nominal_V": 170,
+    "Ik_min_typ_max_mA": [1.5, 2.25, 3.0],
+    "Ra_recommended_kohm_at_170V": 20,
+    "strike_voltage_max_V": 150,
+    "extinction_voltage_min_V": 100,
+    "life_h": 1000,
+    "note": "参数来自 S6 原厂基本参数表；本设计工作点 172.18 V / 20 kΩ / ≈2.36 mA"
+  },
+  "pin_numbering_rule": "符号脚号 = 物理脚号 = 封装焊盘号（1:1）；禁止按数字 0..9 重排；禁止镜像",
+  "forbidden_practices": [
+    "把 3..7、9..13 按 0..9 顺序排列",
+    "把 1/8 脚接地或用作小数点",
+    "用 3D 外观或公共库同名条目替代原厂脚号核对",
+    "在 H03 未关闭时冻结封装焊盘坐标"
+  ],
+  "verification_checklist": [
+    "符号脚号 ↔ docs/qs30_1_pin_mapping.csv 逐行一致",
+    "符号脚号 ↔ 封装焊盘号 1:1 一致",
+    "1:1 打印图与实物管座叠图",
+    "1 脚方向图标注观察面",
+    "13 触点→焊脚通断表 (H03)"
+  ]
+}

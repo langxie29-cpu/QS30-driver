@@ -1,0 +1,7 @@
+* RL step response: tau = L/R = 1 mH / 10 ohm = 100 us
+V1 in 0 DC 5
+R1 in a 10
+L1 a 0 1m
+.tran 0.5u 600u
+.save v(a) i(L1)
+.end

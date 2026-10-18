@@ -1,0 +1,24 @@
+* QS30-6 REV.A  averaged closed-loop boost — load step + input step
+* -----------------------------------------------------------------------------
+* 同一平均模型（见 sim/boost_averaged.cir 头注释）。瞬态来源用 time 条件表达：
+*   t = 0.15 s 负载 +50%；t = 0.30 s 输入 12 V → 11.4 V。
+* 用于验证环路对负载/输入的调整能力与恢复时间；开关级纹波不在此模型内。
+* -----------------------------------------------------------------------------
+BIN   in  0  V = 12 - 0.6 * (time > 0.30)
+L1    in  swa 220u ic=0.22
+RL1   swa sw  0.3
+BSW   sw  0  V = (1 - V(ctrl)) * (V(out) + 0.6)
+BOUT  0   out I = (1 - V(ctrl)) * I(L1)
+COUT  out 0  20u ic=172
+RB    out 0  200k
+BTUBE out 0  I = 6 * max(0, (V(out) - 125) / 20000) * (1 + 0.5 * (time > 0.15))
+RFB1  out fb 1500k
+RFB2  fb  0  22.1k
+BERRP errp 0 V = 2.5 - V(fb)
+CINT  ci  0  22u ic=0.72
+BINT  0   ci I = max(-0.5m, min(0.5m, 1.3e-4 * V(errp)))
+BCTRL ctrl 0 V = max(0.02, min(0.95, 0.05 * V(errp) + V(ci)))
+.ic v(out)=172 v(ctrl)=0.931 v(ci)=0.931 v(fb)=2.497 i(l1)=0.22
+.tran 20u 500m
+.save v(out) v(fb) v(ctrl) i(l1)
+.end

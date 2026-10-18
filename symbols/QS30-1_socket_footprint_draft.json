@@ -1,0 +1,68 @@
+{
+  "project": "QS30-6 REV.A",
+  "object": "J13-1A 13-pin socket footprint for Nanchang QS30-1",
+  "status": "PROVISIONAL",
+  "blocked_by": "H03",
+  "note": "禁止据本文件投板；所有 TBD 字段必须有实测/原厂机械图后才能填并升版本",
+  "pad_count": 13,
+  "pad_numbering": {
+    "rule": "焊盘编号 = QS30-1 物理脚号 = 符号脚号（1:1），禁止按数字 0..9 重排",
+    "map": {
+      "1": "IC_KEEP_OPEN",
+      "2": "A",
+      "3": "K0",
+      "4": "K9",
+      "5": "K8",
+      "6": "K7",
+      "7": "K6",
+      "8": "IC8_KEEP_OPEN",
+      "9": "K5",
+      "10": "K4",
+      "11": "K3",
+      "12": "K2",
+      "13": "K1"
+    },
+    "electrical_only_note": "1/8 号焊盘保留但不接网络（悬空）"
+  },
+  "verified_from_datasheet": {
+    "source": "S6 南昌电子管厂 QS30 型式说明书（原厂扫描页）",
+    "tube_body_max_dia_mm": 30.2,
+    "tube_overall_height_mm": "34±1.5",
+    "tube_body_height_mm": "26±0.5",
+    "pin_count_and_dia": "13 × φ1.3 mm（管子引脚，非管座焊脚）",
+    "pin_layout": "13 脚圆周均布，编号 1..13 顺时针（按原厂电极接线图，观察方向待 H03）",
+    "base_standard": "GB 787-74 J13-1A"
+  },
+  "tbd_from_h03": {
+    "bolt_circle_diameter_mm": null,
+    "pad_drill_mm": null,
+    "pad_diameter_mm": null,
+    "pad_annular_ring_mm": null,
+    "pad_shape": "round THT（待定）",
+    "pad1_marker": null,
+    "keying_notch_or_pin1_reference": null,
+    "view_direction_of_pad_coordinates": null,
+    "socket_body_dia_mm": null,
+    "socket_seat_height_mm": null,
+    "socket_pin_length_mm": null,
+    "mechanical_fixing": null,
+    "insertion_force_and_travel_mm": null,
+    "socket_voltage_rating": null
+  },
+  "layout_placeholder": {
+    "angular_pitch_deg": 27.692307692307693,
+    "pin1_angle_deg": "TBD（以定位缺口或不对称脚位配准；不得用屏幕上的顺/逆时针编号）",
+    "mirroring_rule": "禁止镜像；管底视图/插入口顶视图/焊脚底视图/PCB 顶视封装图必须分别标注"
+  },
+  "verification_evidence_required": [
+    "带尺寸的实物照片（管座正/反/侧）",
+    "13 个触点 → 13 个焊脚逐一通断表（确认有无交叉引出）",
+    "各焊脚 XY 坐标 / 脚径或脚宽 / 公差 / 节圆或非等分位置",
+    "安装孔与外形尺寸、座高、插拔空间",
+    "1:1 打印图与实物叠图照片",
+    "试插样板或机械治具记录",
+    "标注观察面的 1 脚方向图"
+  ],
+  "no_guessed_geometry": true,
+  "generator_validation": "design/footprint_draft.py verify_no_guesses() PASS"
+}

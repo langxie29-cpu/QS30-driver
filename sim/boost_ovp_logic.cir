@@ -1,0 +1,36 @@
+* QS30-6 REV.A  OVP 保护逻辑行为模型（平均电流源等效，不含电感/开关动力学）
+* -----------------------------------------------------------------------------
+* 目的：在 SPICE 侧验证 独立 OVP → 锁存 → 关断 → 受控复位 → 故障未消除则再触发。
+* 简化：把升压级等效为"受控电流源 + 输出电容"（电流模式控制的内环远快于电压环，
+* 故这种等效适合验证保护逻辑的时序/阈值）。转换器最大输出电流被限幅（≈0.5 A），
+* 对应 UC3843 峰值电流限制下的功率包络，避免平均电感模型在故障下出现双向电流伪值。
+* 真实功率级/器件应力见 spice_tests/04（开关级）；OVP 锁存器件级行为见行为模型 S7/S8。
+* -----------------------------------------------------------------------------
+.param Imax=0.5
+COUT  out 0  20u ic=172
+RB    out 0  200k
+BTUBE out 0  I = 6 * max(0, (V(out) - 125) / 20000)
+* 反馈分压被开路（H06 的反馈断路故障）
+RFB1  out fb 1e12
+RFB2  fb  0  22.1k
+* 电压环积分器 → 电流指令（限幅 Imax）
+BERRP errp 0 V = 2.5 - V(fb)
+CINT  ci  0  22u ic=0.45
+BINT  0   ci I = max(-0.5m, min(0.5m, 1.3e-4 * V(errp)))
+* 转换器输出电流：EN=0 时完全关断（Q26 关断 + COMP 拉低）
+BINV  0   out I = V(en) * max(0, min(0.5, V(ci) * 1.6))
+* 独立 OVP：198.8 V 触发
+BOVP  ovp 0 V = 5 * min(1, max(0, (V(out) - 198.8) / 0.1))
+* 行为锁存（SCR 等价）：set 来自 OVP，hold 来自自身；reset 用压控开关硬拉低
+BEN   en  0 V = max(0, min(1, 1 - 10 * V(latch)))
+CLATCH latch 0 1u
+RLATCH latch 0 1k
+BLATCH 0 latch I = 1m * min(1, max(0, V(ovp) / 2.5)) + 1m * min(1, max(0, V(latch)))
+BRST  rst  0  V = V(reset) * max(0, 1 - min(1, V(ovp) / 2.5))
+SRST  latch 0 rst 0 SWRST
+VRST  reset 0 PULSE(0 1 0.6 1m 1m 5m 100)
+.model SWRST VSWITCH(Ron=10 Roff=1e9 Von=0.5 Voff=0.1)
+.ic v(out)=172 v(latch)=0
+.tran 20u 1.2
+.save v(out) v(latch) v(ovp) v(en) v(ci)
+.end

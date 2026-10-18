@@ -1,0 +1,12 @@
+﻿test_id,description,measured,unit,limit_min,limit_max,note
+A1-EXT12,12 V 输入保护后电压,FILL,V,11.3,11.7,12 V−SS54 压降
+A1-EXT5,12V→5V 输出,FILL,V,4.95,5.15,TPS54202 Vref 0.596
+A1-5VSYS,5V_SYS（双肖特基 OR 后）,FILL,V,4.3,4.9,
+A1-3V3,3.3 V 主电源,FILL,V,3.25,3.38,SY8089A 0.6 V 基准
+A1-DRVVDD,DRV_VDD,FILL,V,11.0,11.8,HV5622 需 10.8–13.2
+A2-USBmA,仅 USB 供电总电流,FILL,mA,0,500,USB-C 默认 500 mA
+A3-backmV,VBUS 反向回灌电压,FILL,mV,0,50,电源选择反向阻断
+A4-ENdelay,EN RC 释放延时,FILL,ms,5,30,10k×1µF ≈10 ms
+A6-HVENQ0,复位时 HV_EN_REQ 电平,FILL,V,0,0.2,外部下拉
+A6-BL0,复位时 DRV_BL 电平,FILL,V,0,0.2,12 V 域下拉
+A7-3V3min,Wi-Fi 发射时 3V3 最低值,FILL,V,3.0,3.6,

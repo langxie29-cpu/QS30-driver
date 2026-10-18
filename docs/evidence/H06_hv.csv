@@ -1,0 +1,15 @@
+﻿test_id,description,measured,unit,limit_min,limit_max,note
+C1-Vout,六管稳态输出,FILL,V,169.0,175.0,设计 172.2
+C1-ripple,输出纹波（示波器）,FILL,mVpp,0,200,SPICE 8.7 mV，含探针/振铃
+C2-overshoot,启动过冲峰值,FILL,V,0,190.0,仿真 180.7，OVP 198.8
+C3-line11.4-Vout,输入 11.4 V 时输出,FILL,V,168.0,175.0,
+C4-loadstep,负载突变恢复时间,FILL,ms,0,50,
+C5-OVPtrip,OVP 触发电压,FILL,V,197.3,200.3,198.8 V ±1.5 V（电阻/基准容差）
+C5-OVPcomp,OVP 后 COMP 电平,FILL,V,0,0.2,Q23 拉低
+C6-short-Vout,输出短路 10Ω 时电压,FILL,V,0,20,
+C7-discharge50,断电 172→50 V 时间,FILL,s,0.5,5.0,仿真 3.84 s（200 kΩ/20 µF）
+C8-inrush,启动浪涌峰值,FILL,A,0,3.5,仿真 2.9–3.1 A
+C9-anoderes,单管短路时阳极电阻温升,FILL,°C,0,60,1.48 W/管（2×2 W）
+C10-Q20,MOSFET 表面温升,FILL,°C,0,60,
+C10-D20,二极管表面温升,FILL,°C,0,60,
+C10-eff,整机效率（输出/输入）,FILL,%,60,90,仿真功率级 95.9%（不含 Coss）

@@ -1,0 +1,7102 @@
+{
+ "project": "QS30-6 REV.A",
+ "revision": "REV.A",
+ "note": "pin numbers per original datasheets; NC = no connect",
+ "parts": [
+  {
+   "ref": "J1",
+   "mpn": "DC-005-5.08-2P",
+   "value": "DC12 IN 5.08mm 2P",
+   "package": "TERM-2",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "D4",
+   "description": "12 V DC 输入端子（机械形式待结构确认）",
+   "flags": [],
+   "note": "H05/H07",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_RAW"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "F1",
+   "mpn": "PPTC-1.5A-1812",
+   "value": "1.5 A 自恢复保险丝",
+   "package": "1812",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "D4",
+   "description": "输入过流保护（保持电流 1.5 A）",
+   "flags": [],
+   "note": "H05",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_RAW"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EXT12_F"
+    }
+   ]
+  },
+  {
+   "ref": "D1",
+   "mpn": "SMBJ16A",
+   "value": "TVS 16 V 单向",
+   "package": "SMB",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "D4",
+   "description": "12 V 输入端瞬态抑制（Standoff 16 V）",
+   "flags": [],
+   "note": "H05",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "EXT12_F"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "D2",
+   "mpn": "SS54",
+   "value": "40 V 5 A 肖特基",
+   "package": "SMB",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "D4",
+   "description": "输入反接保护 + 反向阻断（Vf≈0.45 V @1 A）",
+   "flags": [],
+   "note": "H05：如需低压降可改理想二极管",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "EXT12_F"
+    }
+   ]
+  },
+  {
+   "ref": "C1",
+   "mpn": "100uF/25V",
+   "value": "100 µF 25 V 电解",
+   "package": "8x10.5 SMD",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "D4",
+   "description": "输入储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C2",
+   "mpn": "1uF/50V",
+   "value": "1 µF 50 V X7R",
+   "package": "1206",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "D4",
+   "description": "输入高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C3",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "D4",
+   "description": "输入高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U1",
+   "mpn": "TPS54202DDCR",
+   "value": "TPS54202 12V->5.0V 2A",
+   "package": "SOT-23-6",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "同步降压 12 V -> 5.08 V / 2 A, 500 kHz, 内置软启动",
+   "flags": [],
+   "note": "H05：纹波/温升/EMI 待测",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "2",
+     "name": "SW",
+     "net": "SW_U1"
+    },
+    {
+     "pin": "3",
+     "name": "VIN",
+     "net": "EXT12"
+    },
+    {
+     "pin": "4",
+     "name": "FB",
+     "net": "FB_U1"
+    },
+    {
+     "pin": "5",
+     "name": "EN",
+     "net": "EN_U1"
+    },
+    {
+     "pin": "6",
+     "name": "BOOT",
+     "net": "BOOT_U1"
+    }
+   ]
+  },
+  {
+   "ref": "R1",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "EN 分压上臂（UVLO≈4.8 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EN_U1"
+    }
+   ]
+  },
+  {
+   "ref": "R2",
+   "mpn": "33k",
+   "value": "33 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "EN 分压下臂",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EN_U1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C4",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "U1 输入旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C5",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "BOOT 自举电容",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "BOOT_U1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "SW_U1"
+    }
+   ]
+  },
+  {
+   "ref": "L1",
+   "mpn": "10uH/3A",
+   "value": "10 µH 3 A 屏蔽功率电感",
+   "package": "0630",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "S8",
+   "description": "U1 储能电感，Isat≥3 A",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "SW_U1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EXT5"
+    }
+   ]
+  },
+  {
+   "ref": "R3",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "5 V 反馈上臂",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT5"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "FB_U1"
+    }
+   ]
+  },
+  {
+   "ref": "R4",
+   "mpn": "13.3k",
+   "value": "13.3 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "5 V 反馈下臂 → Vout=0.596*(1+100/13.3)=5.08 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FB_U1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C6",
+   "mpn": "22uF/10V",
+   "value": "22 µF 10 V X5R",
+   "package": "0805",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "5 V 输出电容",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT5"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C7",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S8",
+   "description": "5 V 输出高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT5"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "D3",
+   "mpn": "SS14",
+   "value": "40 V 1 A 肖特基",
+   "package": "SMA",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S9",
+   "description": "外部 5 V 理想二极管/肖特基 OR（反向阻断）",
+   "flags": [],
+   "note": "H05：候选 B 为理想二极管 IC，本图为参考实现",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "EXT5"
+    }
+   ]
+  },
+  {
+   "ref": "D4",
+   "mpn": "SS14",
+   "value": "40 V 1 A 肖特基",
+   "package": "SMA",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S9",
+   "description": "USB VBUS OR 支路（反向阻断）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "VBUS"
+    }
+   ]
+  },
+  {
+   "ref": "C8",
+   "mpn": "22uF/10V",
+   "value": "22 µF 10 V X5R",
+   "package": "0805",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S9",
+   "description": "5V_SYS 储能（Wi-Fi 瞬态）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C9",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S9",
+   "description": "5V_SYS 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U2",
+   "mpn": "SY8089AAAC",
+   "value": "SY8089A 5V->3.3V 2A",
+   "package": "SOT-23-5",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "同步降压 5V_SYS -> 3.315 V / 2 A, 1 MHz",
+   "flags": [],
+   "note": "H05：3.3 V 容量按 800 mA 分配实测",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "EN",
+     "net": "EN_U2"
+    },
+    {
+     "pin": "2",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "LX",
+     "net": "SW_U2"
+    },
+    {
+     "pin": "4",
+     "name": "IN",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "5",
+     "name": "FB",
+     "net": "FB_U2"
+    }
+   ]
+  },
+  {
+   "ref": "R5",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "U2 EN 上拉（默认开启）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EN_U2"
+    }
+   ]
+  },
+  {
+   "ref": "C10",
+   "mpn": "10uF/10V",
+   "value": "10 µF 10 V X5R",
+   "package": "0805",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "U2 输入旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "5V_SYS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "L2",
+   "mpn": "2.2uH/3A",
+   "value": "2.2 µH 3 A 屏蔽功率电感",
+   "package": "0520",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "S10",
+   "description": "U2 储能电感",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "SW_U2"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R6",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "3.3 V 反馈上臂",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "FB_U2"
+    }
+   ]
+  },
+  {
+   "ref": "R7",
+   "mpn": "22.1k",
+   "value": "22.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "3.3 V 反馈下臂 → Vout=0.6*(1+100/22.1)=3.315 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FB_U2"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C11",
+   "mpn": "22uF/6.3V",
+   "value": "22 µF 6.3 V X5R",
+   "package": "0805",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "3.3 V 输出电容",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C12",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S10",
+   "description": "3.3 V 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "Q1",
+   "mpn": "DMP3098L",
+   "value": "P-MOSFET 30 V/3.8 A",
+   "package": "SOT-23",
+   "sheet": "01_PWR",
+   "status": "PROVISIONAL",
+   "source": "S11",
+   "description": "DRV_VDD 高边开关（±20 V Vgs，无需钳位）",
+   "flags": [],
+   "note": "H04",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "Q1_G"
+    },
+    {
+     "pin": "2",
+     "name": "S",
+     "net": "EXT12"
+    },
+    {
+     "pin": "3",
+     "name": "D",
+     "net": "DRV_VDD"
+    }
+   ]
+  },
+  {
+   "ref": "R8",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "Q1 栅极上拉至源极 → 默认关断",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q1_G"
+    }
+   ]
+  },
+  {
+   "ref": "Q2",
+   "mpn": "2N7002",
+   "value": "N-MOSFET 60 V",
+   "package": "SOT-23",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "Q1 栅极下拉驱动（低电平有效）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "Q2_G"
+    },
+    {
+     "pin": "2",
+     "name": "S",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "D",
+     "net": "Q1_G"
+    }
+   ]
+  },
+  {
+   "ref": "R9",
+   "mpn": "100Ω",
+   "value": "100 Ω 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "Q2 栅极串联电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD_EN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q2_G"
+    }
+   ]
+  },
+  {
+   "ref": "R10",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "Q2 栅极下拉 → 上电默认关断",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "Q2_G"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C13",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "DRV_VDD 储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C14",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V X7R",
+   "package": "0603",
+   "sheet": "01_PWR",
+   "status": "VERIFIED",
+   "source": "S11",
+   "description": "DRV_VDD 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U10",
+   "mpn": "ESP32-S3-WROOM-1-N8",
+   "value": "ESP32-S3 8MB Flash 无 PSRAM",
+   "package": "WROOM-1 41pad",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S1",
+   "description": "主控模组，板载 PCB 天线，焊盘编号按 Espressif 数据手册表 3-1",
+   "flags": [],
+   "note": "S1 焊盘表；H08 天线/整机 RF",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "2",
+     "name": "3V3",
+     "net": "3V3"
+    },
+    {
+     "pin": "3",
+     "name": "EN",
+     "net": "EN_MCU"
+    },
+    {
+     "pin": "4",
+     "name": "IO4",
+     "net": "KEY_SET"
+    },
+    {
+     "pin": "5",
+     "name": "IO5",
+     "net": "KEY_PLUS"
+    },
+    {
+     "pin": "6",
+     "name": "IO6",
+     "net": "KEY_MINUS"
+    },
+    {
+     "pin": "7",
+     "name": "IO7",
+     "net": "HVF_NODE"
+    },
+    {
+     "pin": "8",
+     "name": "IO15",
+     "net": "DISP_ALLOW"
+    },
+    {
+     "pin": "9",
+     "name": "IO16",
+     "net": "HV_EN_REQ"
+    },
+    {
+     "pin": "10",
+     "name": "IO17",
+     "net": "STATUS_LED"
+    },
+    {
+     "pin": "11",
+     "name": "IO18",
+     "net": "OVP_RST"
+    },
+    {
+     "pin": "12",
+     "name": "IO8",
+     "net": "I2C_SDA"
+    },
+    {
+     "pin": "13",
+     "name": "IO19",
+     "net": "USB_DM_MCU"
+    },
+    {
+     "pin": "14",
+     "name": "IO20",
+     "net": "USB_DP_MCU"
+    },
+    {
+     "pin": "15",
+     "name": "IO3",
+     "net": ""
+    },
+    {
+     "pin": "16",
+     "name": "IO46",
+     "net": "GPIO46_STRAP"
+    },
+    {
+     "pin": "17",
+     "name": "IO9",
+     "net": "I2C_SCL"
+    },
+    {
+     "pin": "18",
+     "name": "IO10",
+     "net": ""
+    },
+    {
+     "pin": "19",
+     "name": "IO11",
+     "net": "DISP_DIN"
+    },
+    {
+     "pin": "20",
+     "name": "IO12",
+     "net": "DISP_CLK"
+    },
+    {
+     "pin": "21",
+     "name": "IO13",
+     "net": "EXP_IO13"
+    },
+    {
+     "pin": "22",
+     "name": "IO14",
+     "net": "DISP_LAT"
+    },
+    {
+     "pin": "23",
+     "name": "IO21",
+     "net": "EXP_IO21"
+    },
+    {
+     "pin": "24",
+     "name": "IO47",
+     "net": ""
+    },
+    {
+     "pin": "25",
+     "name": "IO48",
+     "net": ""
+    },
+    {
+     "pin": "26",
+     "name": "IO45",
+     "net": ""
+    },
+    {
+     "pin": "27",
+     "name": "IO0",
+     "net": "BOOT_N"
+    },
+    {
+     "pin": "28",
+     "name": "IO35",
+     "net": ""
+    },
+    {
+     "pin": "29",
+     "name": "IO36",
+     "net": ""
+    },
+    {
+     "pin": "30",
+     "name": "IO37",
+     "net": ""
+    },
+    {
+     "pin": "31",
+     "name": "IO38",
+     "net": ""
+    },
+    {
+     "pin": "32",
+     "name": "IO39",
+     "net": ""
+    },
+    {
+     "pin": "33",
+     "name": "IO40",
+     "net": ""
+    },
+    {
+     "pin": "34",
+     "name": "IO41",
+     "net": ""
+    },
+    {
+     "pin": "35",
+     "name": "IO42",
+     "net": ""
+    },
+    {
+     "pin": "36",
+     "name": "IO44/RXD0",
+     "net": "UART0_RX"
+    },
+    {
+     "pin": "37",
+     "name": "IO43/TXD0",
+     "net": "UART0_TX"
+    },
+    {
+     "pin": "38",
+     "name": "IO2",
+     "net": ""
+    },
+    {
+     "pin": "39",
+     "name": "IO1",
+     "net": "HV_SENSE_ADC"
+    },
+    {
+     "pin": "40",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "41",
+     "name": "GND/EP",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C16",
+   "mpn": "22uF",
+   "value": "22uF 6.3V",
+   "package": "0805",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "模组 3V3 去耦",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C17",
+   "mpn": "1uF",
+   "value": "1uF 16V",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "模组 3V3 去耦",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C18",
+   "mpn": "100nF",
+   "value": "100nF 16V",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "模组 3V3 去耦",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R11",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "EN 上拉（Espressif 推荐 10 kΩ）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EN_MCU"
+    }
+   ]
+  },
+  {
+   "ref": "C19",
+   "mpn": "1uF/16V",
+   "value": "1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "EN RC 延时电容（Espressif 推荐 10k/1µF）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EN_MCU"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "SW1",
+   "mpn": "TS-1187A",
+   "value": "复位按键",
+   "package": "4P 6x6 SMD",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "RESET 按键（EN 拉低）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EN_MCU"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "SW2",
+   "mpn": "TS-1187A",
+   "value": "BOOT 按键",
+   "package": "4P 6x6 SMD",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S4",
+   "description": "强制下载（GPIO0 拉低后释放 RESET）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "BOOT_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R12",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S4",
+   "description": "GPIO0 上拉（Espressif 推荐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "BOOT_N"
+    }
+   ]
+  },
+  {
+   "ref": "R13",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "GPIO46 下拉（保持官方默认启动条件）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "GPIO46_STRAP"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "J2",
+   "mpn": "USB-C-16P-2.0",
+   "value": "USB-C 母座 16P USB2.0",
+   "package": "SMD 16P",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S2",
+   "description": "USB-C 设备端（USB 2.0 only）",
+   "flags": [],
+   "note": "H05：封装/沉板形式待确认",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "A1",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "A4",
+     "name": "VBUS",
+     "net": "VBUS"
+    },
+    {
+     "pin": "A5",
+     "name": "CC1",
+     "net": "CC1"
+    },
+    {
+     "pin": "A6",
+     "name": "D+",
+     "net": "USB_DP_CON"
+    },
+    {
+     "pin": "A7",
+     "name": "D-",
+     "net": "USB_DM_CON"
+    },
+    {
+     "pin": "A8",
+     "name": "SBU1",
+     "net": ""
+    },
+    {
+     "pin": "A9",
+     "name": "VBUS",
+     "net": "VBUS"
+    },
+    {
+     "pin": "A12",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "B1",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "B4",
+     "name": "VBUS",
+     "net": "VBUS"
+    },
+    {
+     "pin": "B5",
+     "name": "CC2",
+     "net": "CC2"
+    },
+    {
+     "pin": "B6",
+     "name": "D+",
+     "net": "USB_DP_CON"
+    },
+    {
+     "pin": "B7",
+     "name": "D-",
+     "net": "USB_DM_CON"
+    },
+    {
+     "pin": "B8",
+     "name": "SBU2",
+     "net": ""
+    },
+    {
+     "pin": "B9",
+     "name": "VBUS",
+     "net": "VBUS"
+    },
+    {
+     "pin": "B12",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "S1",
+     "name": "SHIELD",
+     "net": "SHIELD"
+    },
+    {
+     "pin": "S2",
+     "name": "SHIELD",
+     "net": "SHIELD"
+    },
+    {
+     "pin": "S3",
+     "name": "SHIELD",
+     "net": "SHIELD"
+    },
+    {
+     "pin": "S4",
+     "name": "SHIELD",
+     "net": "SHIELD"
+    }
+   ]
+  },
+  {
+   "ref": "R14",
+   "mpn": "5.1k",
+   "value": "5.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "CC1 下拉（UFP 5.1 kΩ）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CC1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R15",
+   "mpn": "5.1k",
+   "value": "5.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "CC2 下拉（UFP 5.1 kΩ）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CC2"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R16",
+   "mpn": "1M",
+   "value": "1 MΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "屏蔽层泄放（RC 并联到 GND）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "SHIELD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C20",
+   "mpn": "4.7nF/50V",
+   "value": "4.7 nF 50 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "屏蔽层高频接地",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "SHIELD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C21",
+   "mpn": "1uF/16V",
+   "value": "1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "VBUS 旁路（连接器侧）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VBUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C22",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S2",
+   "description": "VBUS 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VBUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U11",
+   "mpn": "USBLC6-2SC6",
+   "value": "USB ESD 保护",
+   "package": "SOT-23-6",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S12",
+   "description": "USB D+/D- ESD（I/O1: 1-6, I/O2: 3-4, VBUS:5）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "I/O1",
+     "net": "USB_DP_CON"
+    },
+    {
+     "pin": "2",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "I/O2",
+     "net": "USB_DM_CON"
+    },
+    {
+     "pin": "4",
+     "name": "I/O2",
+     "net": "USB_DM_ESD"
+    },
+    {
+     "pin": "5",
+     "name": "VBUS",
+     "net": "VBUS"
+    },
+    {
+     "pin": "6",
+     "name": "I/O1",
+     "net": "USB_DP_ESD"
+    }
+   ]
+  },
+  {
+   "ref": "R17",
+   "mpn": "22Ω",
+   "value": "22 Ω 1%",
+   "package": "0402",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S2",
+   "description": "USB D+ 串联电阻（Espressif 建议 22/33 Ω，实测调整）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "USB_DP_ESD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "USB_DP_MCU"
+    }
+   ]
+  },
+  {
+   "ref": "R18",
+   "mpn": "22Ω",
+   "value": "22 Ω 1%",
+   "package": "0402",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S2",
+   "description": "USB D- 串联电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "USB_DM_ESD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "USB_DM_MCU"
+    }
+   ]
+  },
+  {
+   "ref": "C23",
+   "mpn": "10pF/50V",
+   "value": "10 pF 50 V",
+   "package": "0402",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S2",
+   "description": "USB D+ 对地预留电容（默认不装）",
+   "flags": [
+    "DNP"
+   ],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "USB_DP_MCU"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C24",
+   "mpn": "10pF/50V",
+   "value": "10 pF 50 V",
+   "package": "0402",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S2",
+   "description": "USB D- 对地预留电容（默认不装）",
+   "flags": [
+    "DNP"
+   ],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "USB_DM_MCU"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "J3",
+   "mpn": "HDR-1x6-2.54",
+   "value": "UART0 恢复排针 1x6",
+   "package": "2.54mm",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "GND/3V3参考/TX/RX/EN/BOOT",
+   "flags": [],
+   "note": "3V3 参考点经 0Ω(DNP) 连接，不默认向外供电",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "GND"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "UART_3V3_REF"
+    },
+    {
+     "pin": "3",
+     "name": "3",
+     "net": "UART0_TX_H"
+    },
+    {
+     "pin": "4",
+     "name": "4",
+     "net": "UART0_RX"
+    },
+    {
+     "pin": "5",
+     "name": "5",
+     "net": "EN_MCU"
+    },
+    {
+     "pin": "6",
+     "name": "6",
+     "net": "BOOT_N"
+    }
+   ]
+  },
+  {
+   "ref": "R19",
+   "mpn": "499Ω",
+   "value": "499 Ω 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "U0TXD 串联电阻（Espressif 建议 499 Ω 抑制谐波）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "UART0_TX"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "UART0_TX_H"
+    }
+   ]
+  },
+  {
+   "ref": "R20",
+   "mpn": "0Ω",
+   "value": "0 Ω",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "3V3 参考点限流/隔离（默认不装）",
+   "flags": [
+    "DNP"
+   ],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "UART_3V3_REF"
+    }
+   ]
+  },
+  {
+   "ref": "SW3",
+   "mpn": "TS-1187A",
+   "value": "SET 按键",
+   "package": "4P 6x6 SMD",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "SET 键（按下拉低）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_SET"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "SW4",
+   "mpn": "TS-1187A",
+   "value": "PLUS 按键",
+   "package": "4P 6x6 SMD",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "PLUS 键（按下拉低）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_PLUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "SW5",
+   "mpn": "TS-1187A",
+   "value": "MINUS 按键",
+   "package": "4P 6x6 SMD",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "MINUS 键（按下拉低）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_MINUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R21",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_SET"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R22",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_PLUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R23",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_MINUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "C25",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键硬件去抖",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_SET"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C26",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键硬件去抖",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_PLUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C27",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "按键硬件去抖",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "KEY_MINUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "LED1",
+   "mpn": "LTST-C190KRKT",
+   "value": "红色 LED",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "状态指示（GPIO17 高有效）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "GND"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "LED1_A"
+    }
+   ]
+  },
+  {
+   "ref": "R24",
+   "mpn": "1k",
+   "value": "1 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "LED 限流（约 1.3 mA @3.3 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "STATUS_LED"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "LED1_A"
+    }
+   ]
+  },
+  {
+   "ref": "R25",
+   "mpn": "4.7k",
+   "value": "4.7 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "I2C SDA 上拉（预留，默认不装）",
+   "flags": [
+    "DNP"
+   ],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "I2C_SDA"
+    }
+   ]
+  },
+  {
+   "ref": "R26",
+   "mpn": "4.7k",
+   "value": "4.7 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "I2C SCL 上拉（预留，默认不装）",
+   "flags": [
+    "DNP"
+   ],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "I2C_SCL"
+    }
+   ]
+  },
+  {
+   "ref": "R27",
+   "mpn": "1M",
+   "value": "1 MΩ 1% 1206",
+   "package": "1206",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "HV 分压上臂 1/2（170 V 下每只约 85 V）",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HVS_MID"
+    }
+   ]
+  },
+  {
+   "ref": "R28",
+   "mpn": "1M",
+   "value": "1 MΩ 1% 1206",
+   "package": "1206",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "HV 分压上臂 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVS_MID"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HVS_NODE"
+    }
+   ]
+  },
+  {
+   "ref": "R29",
+   "mpn": "20k",
+   "value": "20 kΩ 1%",
+   "package": "0805",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "HV 分压下臂 → 172 V 对应 1.70 V（ADC1_CH0, ATTEN=3）",
+   "flags": [],
+   "note": "H06：分压比/钳位/回灌待复核",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVS_NODE"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R30",
+   "mpn": "1k",
+   "value": "1 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "ADC 输入串联限流",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVS_NODE"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HV_SENSE_ADC"
+    }
+   ]
+  },
+  {
+   "ref": "C28",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V X7R",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "ADC 滤波电容（Espressif 建议 0.1 µF）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_SENSE_ADC"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "D5",
+   "mpn": "BAT54",
+   "value": "肖特基 30 V",
+   "package": "SOD-323",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "HV_SENSE 上限钳位到 3V3",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "HV_SENSE_ADC"
+    }
+   ]
+  },
+  {
+   "ref": "D6",
+   "mpn": "BAT54",
+   "value": "肖特基 30 V",
+   "package": "SOD-323",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "HV_SENSE 下限钳位到 GND",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "HV_SENSE_ADC"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R31",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "故障开漏上拉分压上臂（DRV_VDD 11.5 V → 3.06 V）",
+   "flags": [],
+   "note": "H04",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_FAULT_OD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HVF_NODE"
+    }
+   ]
+  },
+  {
+   "ref": "R32",
+   "mpn": "36.5k",
+   "value": "36.5 kΩ 1%",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "PROVISIONAL",
+   "source": "S3",
+   "description": "故障分压下臂 → 无故障时 3.06 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVF_NODE"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C29",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "故障输入滤波",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVF_NODE"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "D7",
+   "mpn": "BAT54",
+   "value": "肖特基 30 V",
+   "package": "SOD-323",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "故障输入上限钳位",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "HVF_NODE"
+    }
+   ]
+  },
+  {
+   "ref": "D8",
+   "mpn": "BAT54",
+   "value": "肖特基 30 V",
+   "package": "SOD-323",
+   "sheet": "02_MCU",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "故障输入下限钳位",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "HVF_NODE"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U3",
+   "mpn": "CD40109B",
+   "value": "四路低→高电平转换 #1",
+   "package": "SOIC-16",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S13",
+   "description": "DIN/CLK/LAT/ALLOW → 12 V 域，输出三态",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "VCC",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "ENABLE A",
+     "net": "3V3"
+    },
+    {
+     "pin": "3",
+     "name": "A",
+     "net": "DISP_DIN"
+    },
+    {
+     "pin": "4",
+     "name": "E",
+     "net": "DRV_DIN"
+    },
+    {
+     "pin": "5",
+     "name": "F",
+     "net": "DRV_CLK"
+    },
+    {
+     "pin": "6",
+     "name": "B",
+     "net": "DISP_CLK"
+    },
+    {
+     "pin": "7",
+     "name": "ENABLE B",
+     "net": "3V3"
+    },
+    {
+     "pin": "8",
+     "name": "VSS",
+     "net": "GND"
+    },
+    {
+     "pin": "9",
+     "name": "ENABLE C",
+     "net": "3V3"
+    },
+    {
+     "pin": "10",
+     "name": "C",
+     "net": "DISP_LAT"
+    },
+    {
+     "pin": "11",
+     "name": "G",
+     "net": "DRV_LAT"
+    },
+    {
+     "pin": "12",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "13",
+     "name": "H",
+     "net": "DRV_BL"
+    },
+    {
+     "pin": "14",
+     "name": "D",
+     "net": "DISP_ALLOW"
+    },
+    {
+     "pin": "15",
+     "name": "ENABLE D",
+     "net": "3V3"
+    },
+    {
+     "pin": "16",
+     "name": "VDD",
+     "net": "DRV_VDD"
+    }
+   ]
+  },
+  {
+   "ref": "U4",
+   "mpn": "CD40109B",
+   "value": "四路低→高电平转换 #2",
+   "package": "SOIC-16",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S13",
+   "description": "HV_EN_REQ → 12 V 域；其余通道接地",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "VCC",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "ENABLE A",
+     "net": "3V3"
+    },
+    {
+     "pin": "3",
+     "name": "A",
+     "net": "HV_EN_REQ"
+    },
+    {
+     "pin": "4",
+     "name": "E",
+     "net": "DRV_HV_EN_REQ"
+    },
+    {
+     "pin": "5",
+     "name": "F",
+     "net": ""
+    },
+    {
+     "pin": "6",
+     "name": "B",
+     "net": "GND"
+    },
+    {
+     "pin": "7",
+     "name": "ENABLE B",
+     "net": "3V3"
+    },
+    {
+     "pin": "8",
+     "name": "VSS",
+     "net": "GND"
+    },
+    {
+     "pin": "9",
+     "name": "ENABLE C",
+     "net": "3V3"
+    },
+    {
+     "pin": "10",
+     "name": "C",
+     "net": "GND"
+    },
+    {
+     "pin": "11",
+     "name": "G",
+     "net": ""
+    },
+    {
+     "pin": "12",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "13",
+     "name": "H",
+     "net": ""
+    },
+    {
+     "pin": "14",
+     "name": "D",
+     "net": "GND"
+    },
+    {
+     "pin": "15",
+     "name": "ENABLE D",
+     "net": "3V3"
+    },
+    {
+     "pin": "16",
+     "name": "VDD",
+     "net": "DRV_VDD"
+    }
+   ]
+  },
+  {
+   "ref": "C30",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S13",
+   "description": "U3/U4 VCC 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C31",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S13",
+   "description": "U3/U4 VDD 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R33",
+   "mpn": "10k",
+   "value": "10k 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "12 V 域下拉：驱动未上电/高阻时保持低电平（BL 低=消隐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_DIN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R34",
+   "mpn": "10k",
+   "value": "10k 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "12 V 域下拉：驱动未上电/高阻时保持低电平（BL 低=消隐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_CLK"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R35",
+   "mpn": "10k",
+   "value": "10k 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "12 V 域下拉：驱动未上电/高阻时保持低电平（BL 低=消隐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_LAT"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R36",
+   "mpn": "10k",
+   "value": "10k 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "12 V 域下拉：驱动未上电/高阻时保持低电平（BL 低=消隐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_BL"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R37",
+   "mpn": "10k",
+   "value": "10k 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "12 V 域下拉：驱动未上电/高阻时保持低电平（BL 低=消隐）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_HV_EN_REQ"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U5",
+   "mpn": "LM393DR",
+   "value": "双比较器 #1（EXT12 / 3V3 监控）",
+   "package": "SOIC-8",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "开漏输出，VCC=3V3",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "OUT1",
+     "net": "EXT12_PG"
+    },
+    {
+     "pin": "2",
+     "name": "IN1-",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "3",
+     "name": "IN1+",
+     "net": "EXT12_SNS"
+    },
+    {
+     "pin": "4",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "5",
+     "name": "IN2+",
+     "net": "P3V3_SNS"
+    },
+    {
+     "pin": "6",
+     "name": "IN2-",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "7",
+     "name": "OUT2",
+     "net": "P3V3_PG"
+    },
+    {
+     "pin": "8",
+     "name": "VCC",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "U8",
+   "mpn": "LM393DR",
+   "value": "双比较器 #2（DRV_VDD / 故障状态）",
+   "package": "SOIC-8",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "开漏输出，VCC=3V3",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "OUT1",
+     "net": "DRV_PG"
+    },
+    {
+     "pin": "2",
+     "name": "IN1-",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "3",
+     "name": "IN1+",
+     "net": "DRV_SNS"
+    },
+    {
+     "pin": "4",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "5",
+     "name": "IN2+",
+     "net": "HVF_NODE"
+    },
+    {
+     "pin": "6",
+     "name": "IN2-",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "7",
+     "name": "OUT2",
+     "net": "FAULT_OK"
+    },
+    {
+     "pin": "8",
+     "name": "VCC",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "U6",
+   "mpn": "TL431",
+   "value": "2.5 V 并联基准",
+   "package": "SOT-23",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "VREF=2.5 V 基准（Ika≈1.18 mA）；DBZ 引脚 1=C/2=REF/3=A",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "CATHODE",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "2",
+     "name": "REF",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "3",
+     "name": "ANODE",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R38",
+   "mpn": "680Ω",
+   "value": "680 Ω 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "TL431 偏置（(3.3-2.5)/680 = 1.18 mA）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "VREF_2V5"
+    }
+   ]
+  },
+  {
+   "ref": "C32",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "基准旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VREF_2V5"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C33",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "U5 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C34",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "U8 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R39",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "EXT12 检测分压上臂 → 门限 10.80 V（=HV5622 VDD 下限）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EXT12_SNS"
+    }
+   ]
+  },
+  {
+   "ref": "R40",
+   "mpn": "30.1k",
+   "value": "30.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "EXT12 检测分压下臂（2.5 V*(130.1/30.1)=10.80 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C35",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "EXT12_PG 滤波（约 3 ms）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R41",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "EXT12_PG 上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_PG"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R42",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "3V3 检测分压上臂 → 门限 3.11 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "P3V3_SNS"
+    }
+   ]
+  },
+  {
+   "ref": "R43",
+   "mpn": "41.2k",
+   "value": "41.2 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "3V3 检测分压下臂（2.5 V*(51.2/41.2)=3.11 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "P3V3_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C36",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "3V3_PG 滤波",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "P3V3_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R44",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "3V3_PG 上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "P3V3_PG"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R45",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "DRV_VDD 检测分压上臂 → 门限 10.4 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "DRV_SNS"
+    }
+   ]
+  },
+  {
+   "ref": "R46",
+   "mpn": "31.6k",
+   "value": "31.6 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "DRV_VDD 检测分压下臂（2.5 V*(131.6/31.6)=10.41 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C37",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "DRV_PG 滤波",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R47",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "DRV_PG 上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_PG"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "R48",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S14",
+   "description": "FAULT_OK 上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FAULT_OK"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "U7",
+   "mpn": "74HC08",
+   "value": "四路与门",
+   "package": "SOIC-14",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S15",
+   "description": "DRV_VDD_EN / HV_EN 硬件门控（EXT12_PG×3V3_PG×请求×DRV_PG×无故障）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1A",
+     "net": "EXT12_PG"
+    },
+    {
+     "pin": "2",
+     "name": "1B",
+     "net": "P3V3_PG"
+    },
+    {
+     "pin": "3",
+     "name": "1Y",
+     "net": "PG_12V3V"
+    },
+    {
+     "pin": "4",
+     "name": "2A",
+     "net": "PG_12V3V"
+    },
+    {
+     "pin": "5",
+     "name": "2B",
+     "net": "HV_EN_REQ"
+    },
+    {
+     "pin": "6",
+     "name": "2Y",
+     "net": "DRV_VDD_EN"
+    },
+    {
+     "pin": "7",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "8",
+     "name": "3Y",
+     "net": "DRV_OK"
+    },
+    {
+     "pin": "9",
+     "name": "3A",
+     "net": "DRV_PG"
+    },
+    {
+     "pin": "10",
+     "name": "3B",
+     "net": "FAULT_OK"
+    },
+    {
+     "pin": "11",
+     "name": "4Y",
+     "net": "HV_EN"
+    },
+    {
+     "pin": "12",
+     "name": "4A",
+     "net": "DRV_OK"
+    },
+    {
+     "pin": "13",
+     "name": "4B",
+     "net": "HV_EN_REQ"
+    },
+    {
+     "pin": "14",
+     "name": "VCC",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "C38",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S15",
+   "description": "U7 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R49",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S15",
+   "description": "HV_EN 下拉 → 上电/复位默认关断",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_EN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R51",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "HV_EN_REQ 外部下拉 → 上电/复位默认不请求升压",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_EN_REQ"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R52",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "DISP_ALLOW 外部下拉 → 上电/复位默认消隐",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DISP_ALLOW"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U21",
+   "mpn": "HV5622PJ",
+   "value": "HV5622 32 路开漏高压驱动",
+   "package": "PQFP-44",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "32-bit 移位寄存器 + 32 路 220 V 开漏输出",
+   "flags": [],
+   "note": "S5：VPP 推荐 ≤220 V，绝对最大 230 V；VDD 10.8–13.2 V",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "HVOUT22",
+     "net": "K_T3_1"
+    },
+    {
+     "pin": "2",
+     "name": "HVOUT21",
+     "net": "K_T3_0"
+    },
+    {
+     "pin": "3",
+     "name": "HVOUT20",
+     "net": "K_T2_9"
+    },
+    {
+     "pin": "4",
+     "name": "HVOUT19",
+     "net": "K_T2_8"
+    },
+    {
+     "pin": "5",
+     "name": "HVOUT18",
+     "net": "K_T2_7"
+    },
+    {
+     "pin": "6",
+     "name": "HVOUT17",
+     "net": "K_T2_6"
+    },
+    {
+     "pin": "7",
+     "name": "HVOUT16",
+     "net": "K_T2_5"
+    },
+    {
+     "pin": "8",
+     "name": "HVOUT15",
+     "net": "K_T2_4"
+    },
+    {
+     "pin": "9",
+     "name": "HVOUT14",
+     "net": "K_T2_3"
+    },
+    {
+     "pin": "10",
+     "name": "HVOUT13",
+     "net": "K_T2_2"
+    },
+    {
+     "pin": "11",
+     "name": "HVOUT12",
+     "net": "K_T2_1"
+    },
+    {
+     "pin": "12",
+     "name": "HVOUT11",
+     "net": "K_T2_0"
+    },
+    {
+     "pin": "13",
+     "name": "HVOUT10",
+     "net": "K_T1_9"
+    },
+    {
+     "pin": "14",
+     "name": "HVOUT9",
+     "net": "K_T1_8"
+    },
+    {
+     "pin": "15",
+     "name": "HVOUT8",
+     "net": "K_T1_7"
+    },
+    {
+     "pin": "16",
+     "name": "HVOUT7",
+     "net": "K_T1_6"
+    },
+    {
+     "pin": "17",
+     "name": "HVOUT6",
+     "net": "K_T1_5"
+    },
+    {
+     "pin": "18",
+     "name": "HVOUT5",
+     "net": "K_T1_4"
+    },
+    {
+     "pin": "19",
+     "name": "HVOUT4",
+     "net": "K_T1_3"
+    },
+    {
+     "pin": "20",
+     "name": "HVOUT3",
+     "net": "K_T1_2"
+    },
+    {
+     "pin": "21",
+     "name": "HVOUT2",
+     "net": "K_T1_1"
+    },
+    {
+     "pin": "22",
+     "name": "HVOUT1",
+     "net": "K_T1_0"
+    },
+    {
+     "pin": "23",
+     "name": "DATA OUT",
+     "net": "DRV1_DOUT"
+    },
+    {
+     "pin": "24",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "25",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "26",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "27",
+     "name": "POL",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "28",
+     "name": "CLK",
+     "net": "DRV_CLK"
+    },
+    {
+     "pin": "29",
+     "name": "VSS",
+     "net": "GND"
+    },
+    {
+     "pin": "30",
+     "name": "VDD",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "31",
+     "name": "LE",
+     "net": "DRV_LAT"
+    },
+    {
+     "pin": "32",
+     "name": "DATA IN",
+     "net": "DRV_DIN"
+    },
+    {
+     "pin": "33",
+     "name": "BL",
+     "net": "DRV_BL"
+    },
+    {
+     "pin": "34",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "35",
+     "name": "HVOUT32",
+     "net": "K_T4_1"
+    },
+    {
+     "pin": "36",
+     "name": "HVOUT31",
+     "net": "K_T4_0"
+    },
+    {
+     "pin": "37",
+     "name": "HVOUT30",
+     "net": "K_T3_9"
+    },
+    {
+     "pin": "38",
+     "name": "HVOUT29",
+     "net": "K_T3_8"
+    },
+    {
+     "pin": "39",
+     "name": "HVOUT28",
+     "net": "K_T3_7"
+    },
+    {
+     "pin": "40",
+     "name": "HVOUT27",
+     "net": "K_T3_6"
+    },
+    {
+     "pin": "41",
+     "name": "HVOUT26",
+     "net": "K_T3_5"
+    },
+    {
+     "pin": "42",
+     "name": "HVOUT25",
+     "net": "K_T3_4"
+    },
+    {
+     "pin": "43",
+     "name": "HVOUT24",
+     "net": "K_T3_3"
+    },
+    {
+     "pin": "44",
+     "name": "HVOUT23",
+     "net": "K_T3_2"
+    }
+   ]
+  },
+  {
+   "ref": "C39",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "U21 VDD 储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C41",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V X7R",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "U21 VDD 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U22",
+   "mpn": "HV5622PJ",
+   "value": "HV5622 32 路开漏高压驱动",
+   "package": "PQFP-44",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "32-bit 移位寄存器 + 32 路 220 V 开漏输出",
+   "flags": [],
+   "note": "S5：VPP 推荐 ≤220 V，绝对最大 230 V；VDD 10.8–13.2 V",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "HVOUT22",
+     "net": "K_T6_3"
+    },
+    {
+     "pin": "2",
+     "name": "HVOUT21",
+     "net": "K_T6_2"
+    },
+    {
+     "pin": "3",
+     "name": "HVOUT20",
+     "net": "K_T6_1"
+    },
+    {
+     "pin": "4",
+     "name": "HVOUT19",
+     "net": "K_T6_0"
+    },
+    {
+     "pin": "5",
+     "name": "HVOUT18",
+     "net": "K_T5_9"
+    },
+    {
+     "pin": "6",
+     "name": "HVOUT17",
+     "net": "K_T5_8"
+    },
+    {
+     "pin": "7",
+     "name": "HVOUT16",
+     "net": "K_T5_7"
+    },
+    {
+     "pin": "8",
+     "name": "HVOUT15",
+     "net": "K_T5_6"
+    },
+    {
+     "pin": "9",
+     "name": "HVOUT14",
+     "net": "K_T5_5"
+    },
+    {
+     "pin": "10",
+     "name": "HVOUT13",
+     "net": "K_T5_4"
+    },
+    {
+     "pin": "11",
+     "name": "HVOUT12",
+     "net": "K_T5_3"
+    },
+    {
+     "pin": "12",
+     "name": "HVOUT11",
+     "net": "K_T5_2"
+    },
+    {
+     "pin": "13",
+     "name": "HVOUT10",
+     "net": "K_T5_1"
+    },
+    {
+     "pin": "14",
+     "name": "HVOUT9",
+     "net": "K_T5_0"
+    },
+    {
+     "pin": "15",
+     "name": "HVOUT8",
+     "net": "K_T4_9"
+    },
+    {
+     "pin": "16",
+     "name": "HVOUT7",
+     "net": "K_T4_8"
+    },
+    {
+     "pin": "17",
+     "name": "HVOUT6",
+     "net": "K_T4_7"
+    },
+    {
+     "pin": "18",
+     "name": "HVOUT5",
+     "net": "K_T4_6"
+    },
+    {
+     "pin": "19",
+     "name": "HVOUT4",
+     "net": "K_T4_5"
+    },
+    {
+     "pin": "20",
+     "name": "HVOUT3",
+     "net": "K_T4_4"
+    },
+    {
+     "pin": "21",
+     "name": "HVOUT2",
+     "net": "K_T4_3"
+    },
+    {
+     "pin": "22",
+     "name": "HVOUT1",
+     "net": "K_T4_2"
+    },
+    {
+     "pin": "23",
+     "name": "DATA OUT",
+     "net": "DRV2_DOUT"
+    },
+    {
+     "pin": "24",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "25",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "26",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "27",
+     "name": "POL",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "28",
+     "name": "CLK",
+     "net": "DRV_CLK"
+    },
+    {
+     "pin": "29",
+     "name": "VSS",
+     "net": "GND"
+    },
+    {
+     "pin": "30",
+     "name": "VDD",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "31",
+     "name": "LE",
+     "net": "DRV_LAT"
+    },
+    {
+     "pin": "32",
+     "name": "DATA IN",
+     "net": "DRV1_DOUT"
+    },
+    {
+     "pin": "33",
+     "name": "BL",
+     "net": "DRV_BL"
+    },
+    {
+     "pin": "34",
+     "name": "NC",
+     "net": ""
+    },
+    {
+     "pin": "35",
+     "name": "HVOUT32",
+     "net": ""
+    },
+    {
+     "pin": "36",
+     "name": "HVOUT31",
+     "net": ""
+    },
+    {
+     "pin": "37",
+     "name": "HVOUT30",
+     "net": ""
+    },
+    {
+     "pin": "38",
+     "name": "HVOUT29",
+     "net": ""
+    },
+    {
+     "pin": "39",
+     "name": "HVOUT28",
+     "net": "K_T6_9"
+    },
+    {
+     "pin": "40",
+     "name": "HVOUT27",
+     "net": "K_T6_8"
+    },
+    {
+     "pin": "41",
+     "name": "HVOUT26",
+     "net": "K_T6_7"
+    },
+    {
+     "pin": "42",
+     "name": "HVOUT25",
+     "net": "K_T6_6"
+    },
+    {
+     "pin": "43",
+     "name": "HVOUT24",
+     "net": "K_T6_5"
+    },
+    {
+     "pin": "44",
+     "name": "HVOUT23",
+     "net": "K_T6_4"
+    }
+   ]
+  },
+  {
+   "ref": "C40",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "U22 VDD 储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C42",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V X7R",
+   "package": "0603",
+   "sheet": "03_DRV",
+   "status": "VERIFIED",
+   "source": "S5",
+   "description": "U22 VDD 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "J31",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T1"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T1_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T1_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T1_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T1_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T1_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T1_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T1_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T1_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T1_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T1_1"
+    }
+   ]
+  },
+  {
+   "ref": "R90",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T1 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID1"
+    }
+   ]
+  },
+  {
+   "ref": "R91",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T1 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID1"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T1"
+    }
+   ]
+  },
+  {
+   "ref": "J32",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T2"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T2_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T2_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T2_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T2_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T2_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T2_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T2_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T2_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T2_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T2_1"
+    }
+   ]
+  },
+  {
+   "ref": "R92",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T2 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID2"
+    }
+   ]
+  },
+  {
+   "ref": "R93",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T2 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID2"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T2"
+    }
+   ]
+  },
+  {
+   "ref": "J33",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T3"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T3_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T3_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T3_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T3_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T3_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T3_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T3_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T3_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T3_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T3_1"
+    }
+   ]
+  },
+  {
+   "ref": "R94",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T3 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID3"
+    }
+   ]
+  },
+  {
+   "ref": "R95",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T3 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T3"
+    }
+   ]
+  },
+  {
+   "ref": "J34",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T4"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T4_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T4_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T4_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T4_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T4_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T4_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T4_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T4_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T4_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T4_1"
+    }
+   ]
+  },
+  {
+   "ref": "R96",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T4 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID4"
+    }
+   ]
+  },
+  {
+   "ref": "R97",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T4 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID4"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T4"
+    }
+   ]
+  },
+  {
+   "ref": "J35",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T5"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T5_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T5_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T5_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T5_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T5_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T5_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T5_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T5_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T5_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T5_1"
+    }
+   ]
+  },
+  {
+   "ref": "R98",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T5 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID5"
+    }
+   ]
+  },
+  {
+   "ref": "R99",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T5 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID5"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T5"
+    }
+   ]
+  },
+  {
+   "ref": "J36",
+   "mpn": "J13-1A-SOCKET",
+   "value": "13 脚可拆管座 (QS30-1)",
+   "package": "13P socket",
+   "sheet": "05_TUBE",
+   "status": "HOLD",
+   "source": "S6",
+   "description": "管座焊脚坐标/孔径/视图未实测，封装为 PROVISIONAL",
+   "flags": [],
+   "note": "H03：J13-1A 尺寸/触点/1 脚视图/1:1 比对",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "IC_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "A_T6"
+    },
+    {
+     "pin": "3",
+     "name": "K0",
+     "net": "K_T6_0"
+    },
+    {
+     "pin": "4",
+     "name": "K9",
+     "net": "K_T6_9"
+    },
+    {
+     "pin": "5",
+     "name": "K8",
+     "net": "K_T6_8"
+    },
+    {
+     "pin": "6",
+     "name": "K7",
+     "net": "K_T6_7"
+    },
+    {
+     "pin": "7",
+     "name": "K6",
+     "net": "K_T6_6"
+    },
+    {
+     "pin": "8",
+     "name": "IC8_KEEP_OPEN",
+     "net": ""
+    },
+    {
+     "pin": "9",
+     "name": "K5",
+     "net": "K_T6_5"
+    },
+    {
+     "pin": "10",
+     "name": "K4",
+     "net": "K_T6_4"
+    },
+    {
+     "pin": "11",
+     "name": "K3",
+     "net": "K_T6_3"
+    },
+    {
+     "pin": "12",
+     "name": "K2",
+     "net": "K_T6_2"
+    },
+    {
+     "pin": "13",
+     "name": "K1",
+     "net": "K_T6_1"
+    }
+   ]
+  },
+  {
+   "ref": "R100",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T6 阳极限流电阻 1/2（20 kΩ/2 W 支路）",
+   "flags": [],
+   "note": "H06：故障耗散 1.45 W 需实测/降额",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_MID6"
+    }
+   ]
+  },
+  {
+   "ref": "R101",
+   "mpn": "10k 2W",
+   "value": "10 kΩ 2 W 厚膜",
+   "package": "2512",
+   "sheet": "05_TUBE",
+   "status": "PROVISIONAL",
+   "source": "S6",
+   "description": "J_T6 阳极限流电阻 2/2",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "A_MID6"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "A_T6"
+    }
+   ]
+  },
+  {
+   "ref": "Q26",
+   "mpn": "DMP3098L",
+   "value": "P-MOSFET 30 V/3.8 A",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S16",
+   "description": "升压输入高边开关（HV_EN 硬件门控，默认关断）",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "Q26_G"
+    },
+    {
+     "pin": "2",
+     "name": "S",
+     "net": "EXT12"
+    },
+    {
+     "pin": "3",
+     "name": "D",
+     "net": "HV_IN"
+    }
+   ]
+  },
+  {
+   "ref": "R87",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S16",
+   "description": "Q26 栅极上拉 → 默认关断",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q26_G"
+    }
+   ]
+  },
+  {
+   "ref": "R88",
+   "mpn": "100Ω",
+   "value": "100 Ω 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S16",
+   "description": "Q27 栅极串联电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_EN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HV_EN_G"
+    }
+   ]
+  },
+  {
+   "ref": "Q27",
+   "mpn": "2N7002",
+   "value": "N-MOSFET 60 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S16",
+   "description": "Q26 栅极驱动",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "HV_EN_G"
+    },
+    {
+     "pin": "2",
+     "name": "S",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "D",
+     "net": "Q26_G"
+    }
+   ]
+  },
+  {
+   "ref": "R89",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S16",
+   "description": "Q27 栅极下拉 → HV_EN 悬空时关断",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_EN_G"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C43",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S16",
+   "description": "HV_IN 输入储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_IN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U20",
+   "mpn": "UC3843AN",
+   "value": "UC3843 电流型 PWM 控制器",
+   "package": "DIP-8/SOIC-8",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "升压控制器，fsw≈78 kHz，峰值电流限制≈1 A",
+   "flags": [],
+   "note": "H06：开关频率/占空比/环路待实测",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "COMP",
+     "net": "COMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "FB",
+     "net": "FB_HV"
+    },
+    {
+     "pin": "3",
+     "name": "CS",
+     "net": "CS_FILT"
+    },
+    {
+     "pin": "4",
+     "name": "RT/CT",
+     "net": "RCT_N"
+    },
+    {
+     "pin": "5",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "6",
+     "name": "OUT",
+     "net": "GATE_N"
+    },
+    {
+     "pin": "7",
+     "name": "VCC",
+     "net": "VCC_HV"
+    },
+    {
+     "pin": "8",
+     "name": "VREF",
+     "net": "VREF5_HV"
+    }
+   ]
+  },
+  {
+   "ref": "R60",
+   "mpn": "10Ω",
+   "value": "10 Ω 1%",
+   "package": "0805",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "VCC 滤波电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_IN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "VCC_HV"
+    }
+   ]
+  },
+  {
+   "ref": "C44",
+   "mpn": "10uF/25V",
+   "value": "10 µF 25 V X5R",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "VCC_HV 储能",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VCC_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C45",
+   "mpn": "100nF/25V",
+   "value": "0.1 µF 25 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "VCC_HV 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VCC_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C46",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "VREF 旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VREF5_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R61",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "RT（f≈1.72/(RT·CT)=78 kHz）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VREF5_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "RCT_N"
+    }
+   ]
+  },
+  {
+   "ref": "C47",
+   "mpn": "2.2nF/50V",
+   "value": "2.2 nF 50 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "CT",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "RCT_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R62",
+   "mpn": "1Ω 1W",
+   "value": "1 Ω 1 W 合金采样",
+   "package": "2512",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S17",
+   "description": "峰值电流采样（1 V 门限 → 1 A）",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CS_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R63",
+   "mpn": "100Ω",
+   "value": "100 Ω 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "CS 滤波电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CS_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "CS_FILT"
+    }
+   ]
+  },
+  {
+   "ref": "C48",
+   "mpn": "470pF/50V",
+   "value": "470 pF 50 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "CS 前沿消隐滤波（τ≈47 ns）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CS_FILT"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R64",
+   "mpn": "22Ω",
+   "value": "22 Ω 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "MOSFET 栅极串联电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "GATE_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q20_G"
+    }
+   ]
+  },
+  {
+   "ref": "R65",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "MOSFET 栅极下拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "Q20_G"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "Q20",
+   "mpn": "IRF740",
+   "value": "N-MOSFET 400 V/10 A",
+   "package": "TO-220",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S18",
+   "description": "升压主开关（400 V 器件，Vds 峰值≈172 V+振铃）",
+   "flags": [],
+   "note": "H06：需实测 Vds 振铃/温升/雪崩",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "Q20_G"
+    },
+    {
+     "pin": "2",
+     "name": "D",
+     "net": "SW_HV"
+    },
+    {
+     "pin": "3",
+     "name": "S",
+     "net": "CS_N"
+    }
+   ]
+  },
+  {
+   "ref": "L20",
+   "mpn": "220uH/5A",
+   "value": "220 µH ≥5 A 功率电感（Isat≥5A）",
+   "package": "12x12 屏蔽",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S17",
+   "description": "升压电感，Isat≥2 A，DCR 尽量低",
+   "flags": [],
+   "note": "H06：ΔI≈0.65 A @78 kHz",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_IN"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "SW_HV"
+    }
+   ]
+  },
+  {
+   "ref": "D20",
+   "mpn": "UF4007",
+   "value": "1000 V 1 A 快恢复",
+   "package": "SMA/DO-41",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "升压整流二极管（反压 172 V，1000 V 额定）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "SW_HV"
+    }
+   ]
+  },
+  {
+   "ref": "D21",
+   "mpn": "UF4007",
+   "value": "1000 V 1 A 快恢复",
+   "package": "SMA/DO-41",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "RCD 钳位二极管",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "K",
+     "net": "CLAMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "A",
+     "net": "SW_HV"
+    }
+   ]
+  },
+  {
+   "ref": "C49",
+   "mpn": "10nF/630V",
+   "value": "10 nF 630 V X7R",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "RCD 钳位电容",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CLAMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HV_BUS"
+    }
+   ]
+  },
+  {
+   "ref": "R66",
+   "mpn": "100k 2W",
+   "value": "100 kΩ 2 W",
+   "package": "2512",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S17",
+   "description": "RCD 钳位电阻",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "CLAMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "HV_BUS"
+    }
+   ]
+  },
+  {
+   "ref": "C50",
+   "mpn": "10uF/250V",
+   "value": "10 µF 250 V 电解",
+   "package": "10x12.5 SMD",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S17",
+   "description": "HV_BUS 储能",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C51",
+   "mpn": "10uF/250V",
+   "value": "10 µF 250 V 电解",
+   "package": "10x12.5 SMD",
+   "sheet": "04_HV",
+   "status": "PROVISIONAL",
+   "source": "S17",
+   "description": "HV_BUS 储能",
+   "flags": [],
+   "note": "H06",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C52",
+   "mpn": "100nF/630V",
+   "value": "0.1 µF 630 V",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV_BUS 高频旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R67",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 泄放电阻 1/2",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "BLEED_MID"
+    }
+   ]
+  },
+  {
+   "ref": "R68",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 泄放电阻 2/2（合计 200 kΩ，τ≈4.0 s）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "BLEED_MID"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C53",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 泄放交流旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "BLEED_MID"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R69",
+   "mpn": "750k",
+   "value": "750 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 反馈上臂 1/2",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "FB_MID"
+    }
+   ]
+  },
+  {
+   "ref": "R70",
+   "mpn": "750k",
+   "value": "750 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 反馈上臂 2/2",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FB_MID"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "FB_HV"
+    }
+   ]
+  },
+  {
+   "ref": "R71",
+   "mpn": "22.1k",
+   "value": "22.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "HV 反馈下臂 → Vout=172.2 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FB_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C54",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "反馈滤波",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "FB_HV"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C55",
+   "mpn": "22uF/16V",
+   "value": "22 µF 16 V X5R",
+   "package": "0805",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "COMP 软启动电容（≈50 ms）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "COMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R72",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "环路补偿零极点电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "COMP_N"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "COMP_R"
+    }
+   ]
+  },
+  {
+   "ref": "C56",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "环路补偿电容",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "COMP_R"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "U23",
+   "mpn": "LM393DR",
+   "value": "OVP 比较器",
+   "package": "SOIC-8",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "独立于 MCU 的过压检测（门限 198.8 V）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "OUT1",
+     "net": "OVP_SET"
+    },
+    {
+     "pin": "2",
+     "name": "IN1-",
+     "net": "VREF_OVP"
+    },
+    {
+     "pin": "3",
+     "name": "IN1+",
+     "net": "OVP_SNS"
+    },
+    {
+     "pin": "4",
+     "name": "GND",
+     "net": "GND"
+    },
+    {
+     "pin": "5",
+     "name": "IN2+",
+     "net": ""
+    },
+    {
+     "pin": "6",
+     "name": "IN2-",
+     "net": ""
+    },
+    {
+     "pin": "7",
+     "name": "OUT2",
+     "net": ""
+    },
+    {
+     "pin": "8",
+     "name": "VCC",
+     "net": "EXT12"
+    }
+   ]
+  },
+  {
+   "ref": "U24",
+   "mpn": "TL431",
+   "value": "2.5 V 基准",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S17",
+   "description": "OVP 基准（2.5 V），DBZ 1=C/2=REF/3=A",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "CATHODE",
+     "net": "VREF_OVP"
+    },
+    {
+     "pin": "2",
+     "name": "REF",
+     "net": "VREF_OVP"
+    },
+    {
+     "pin": "3",
+     "name": "ANODE",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R74",
+   "mpn": "4.7k",
+   "value": "4.7 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 基准偏置（(12-2.5)/4.7k≈2 mA）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "VREF_OVP"
+    }
+   ]
+  },
+  {
+   "ref": "C57",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 基准旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "VREF_OVP"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R75",
+   "mpn": "750k",
+   "value": "750 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 取样上臂 1/2",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "OVP_MID"
+    }
+   ]
+  },
+  {
+   "ref": "R76",
+   "mpn": "750k",
+   "value": "750 kΩ 1%",
+   "package": "1206",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 取样上臂 2/2",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_MID"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "OVP_SNS"
+    }
+   ]
+  },
+  {
+   "ref": "R77",
+   "mpn": "19.1k",
+   "value": "19.1 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 取样下臂 → 触发电压 2.5 V*(1519.1/19.1)=198.8 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C58",
+   "mpn": "100nF/50V",
+   "value": "0.1 µF 50 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 取样滤波（响应 τ≈2 ms）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_SNS"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "R78",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_SET 上拉",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_SET"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EXT12"
+    }
+   ]
+  },
+  {
+   "ref": "C59",
+   "mpn": "100nF/25V",
+   "value": "0.1 µF 25 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP 比较器旁路",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "Q21",
+   "mpn": "MMBT3906",
+   "value": "PNP 40 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存 SCR 上半（PNP）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "B",
+     "net": "LATCH_B"
+    },
+    {
+     "pin": "2",
+     "name": "E",
+     "net": "EXT12"
+    },
+    {
+     "pin": "3",
+     "name": "C",
+     "net": "OVP_LATCH"
+    }
+   ]
+  },
+  {
+   "ref": "Q22",
+   "mpn": "MMBT3904",
+   "value": "NPN 40 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存 SCR 下半（NPN）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "B",
+     "net": "OVP_LATCH"
+    },
+    {
+     "pin": "2",
+     "name": "E",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "C",
+     "net": "LATCH_B"
+    }
+   ]
+  },
+  {
+   "ref": "R79",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存初始关断偏置",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "LATCH_B"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "EXT12"
+    }
+   ]
+  },
+  {
+   "ref": "R80",
+   "mpn": "10k",
+   "value": "10 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_SET → 锁存置位注入",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_SET"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "LATCH_B"
+    }
+   ]
+  },
+  {
+   "ref": "R81",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_LATCH 关断偏置",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_LATCH"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C60",
+   "mpn": "100nF/25V",
+   "value": "0.1 µF 25 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存抗干扰",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_LATCH"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "Q23",
+   "mpn": "MMBT3904",
+   "value": "NPN 40 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存 → 拉低 COMP，强制占空比 0",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "B",
+     "net": "Q23_B"
+    },
+    {
+     "pin": "2",
+     "name": "E",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "C",
+     "net": "COMP_N"
+    }
+   ]
+  },
+  {
+   "ref": "R82",
+   "mpn": "47k",
+   "value": "47 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "Q23 基极电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_LATCH"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q23_B"
+    }
+   ]
+  },
+  {
+   "ref": "Q24",
+   "mpn": "MMBT3904",
+   "value": "NPN 40 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存 → 拉低 HV_FAULT_N（低有效故障）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "B",
+     "net": "Q24_B"
+    },
+    {
+     "pin": "2",
+     "name": "E",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "C",
+     "net": "HV_FAULT_OD"
+    }
+   ]
+  },
+  {
+   "ref": "R83",
+   "mpn": "47k",
+   "value": "47 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "Q24 基极电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_LATCH"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "Q24_B"
+    }
+   ]
+  },
+  {
+   "ref": "R84",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "HV_FAULT_OD 上拉至 DRV_VDD（失电时被下拉为故障态）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_FAULT_OD"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "DRV_VDD"
+    }
+   ]
+  },
+  {
+   "ref": "Q25",
+   "mpn": "2N7002",
+   "value": "N-MOSFET 60 V",
+   "package": "SOT-23",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "锁存复位开关（MCU GPIO18 脉冲高有效）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "G",
+     "net": "OVP_RST_G"
+    },
+    {
+     "pin": "2",
+     "name": "S",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "D",
+     "net": "OVP_LATCH"
+    }
+   ]
+  },
+  {
+   "ref": "R85",
+   "mpn": "1k",
+   "value": "1 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_RST 栅极串联电阻",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_RST"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "OVP_RST_G"
+    }
+   ]
+  },
+  {
+   "ref": "R86",
+   "mpn": "100k",
+   "value": "100 kΩ 1%",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_RST 栅极下拉 → 默认不复位",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_RST_G"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "C61",
+   "mpn": "100nF/16V",
+   "value": "0.1 µF 16 V",
+   "package": "0603",
+   "sheet": "04_HV",
+   "status": "VERIFIED",
+   "source": "S19",
+   "description": "OVP_RST 抗干扰",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_RST_G"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "TP1",
+   "mpn": "TP-EXT12",
+   "value": "测试点 EXT12",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "12 V 保护后输入",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12"
+    }
+   ]
+  },
+  {
+   "ref": "TP2",
+   "mpn": "TP-EXT5",
+   "value": "测试点 EXT5",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "12V->5V 输出",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT5"
+    }
+   ]
+  },
+  {
+   "ref": "TP3",
+   "mpn": "TP-5V_SYS",
+   "value": "测试点 5V_SYS",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "5 V 电源选择输出",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "5V_SYS"
+    }
+   ]
+  },
+  {
+   "ref": "TP4",
+   "mpn": "TP-3V3",
+   "value": "测试点 3V3",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "3.3 V 主电源",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    }
+   ]
+  },
+  {
+   "ref": "TP5",
+   "mpn": "TP-DRV_VDD",
+   "value": "测试点 DRV_VDD",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "HV5622 逻辑电源 12 V",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_VDD"
+    }
+   ]
+  },
+  {
+   "ref": "TP6",
+   "mpn": "TP-HV_BUS",
+   "value": "测试点 HV_BUS",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "170 V 高压母线",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_BUS"
+    }
+   ]
+  },
+  {
+   "ref": "TP7",
+   "mpn": "TP-GND",
+   "value": "测试点 GND",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "地",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "GND"
+    }
+   ]
+  },
+  {
+   "ref": "TP8",
+   "mpn": "TP-EN_MCU",
+   "value": "测试点 EN_MCU",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "模组 EN",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EN_MCU"
+    }
+   ]
+  },
+  {
+   "ref": "TP9",
+   "mpn": "TP-BOOT_N",
+   "value": "测试点 BOOT_N",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "GPIO0/BOOT",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "BOOT_N"
+    }
+   ]
+  },
+  {
+   "ref": "TP10",
+   "mpn": "TP-UART0_TX",
+   "value": "测试点 UART0_TX",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "UART0 TX",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "UART0_TX"
+    }
+   ]
+  },
+  {
+   "ref": "TP11",
+   "mpn": "TP-UART0_RX",
+   "value": "测试点 UART0_RX",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "UART0 RX",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "UART0_RX"
+    }
+   ]
+  },
+  {
+   "ref": "TP12",
+   "mpn": "TP-HV_SENSE_ADC",
+   "value": "测试点 HV_SENSE_ADC",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "HV 分压 ADC 节点",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_SENSE_ADC"
+    }
+   ]
+  },
+  {
+   "ref": "TP13",
+   "mpn": "TP-HVF_NODE",
+   "value": "测试点 HVF_NODE",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "故障检测节点",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HVF_NODE"
+    }
+   ]
+  },
+  {
+   "ref": "TP14",
+   "mpn": "TP-EXT12_PG",
+   "value": "测试点 EXT12_PG",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "12 V 电源良好",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "EXT12_PG"
+    }
+   ]
+  },
+  {
+   "ref": "TP15",
+   "mpn": "TP-P3V3_PG",
+   "value": "测试点 P3V3_PG",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "3.3 V 电源良好",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "P3V3_PG"
+    }
+   ]
+  },
+  {
+   "ref": "TP16",
+   "mpn": "TP-DRV_PG",
+   "value": "测试点 DRV_PG",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "DRV_VDD 电源良好",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_PG"
+    }
+   ]
+  },
+  {
+   "ref": "TP17",
+   "mpn": "TP-HV_EN",
+   "value": "测试点 HV_EN",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "高压使能（门控后）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "HV_EN"
+    }
+   ]
+  },
+  {
+   "ref": "TP18",
+   "mpn": "TP-DRV_HV_EN_REQ",
+   "value": "测试点 DRV_HV_EN_REQ",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "12 V 域高压请求",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV_HV_EN_REQ"
+    }
+   ]
+  },
+  {
+   "ref": "TP19",
+   "mpn": "TP-OVP_LATCH",
+   "value": "测试点 OVP_LATCH",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "过压锁存状态",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "OVP_LATCH"
+    }
+   ]
+  },
+  {
+   "ref": "TP20",
+   "mpn": "TP-DRV2_DOUT",
+   "value": "测试点 DRV2_DOUT",
+   "package": "1.0mm pad",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S20",
+   "description": "HV5622 级联数据输出",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "DRV2_DOUT"
+    }
+   ]
+  },
+  {
+   "ref": "J4",
+   "mpn": "HDR-1x6-2.54",
+   "value": "扩展接口 1x6",
+   "package": "2.54mm",
+   "sheet": "06_TP",
+   "status": "VERIFIED",
+   "source": "S3",
+   "description": "3V3/GND/IO13/IO21/I2C（未承诺接口）",
+   "flags": [],
+   "note": "",
+   "hw_lib": "",
+   "pins": [
+    {
+     "pin": "1",
+     "name": "1",
+     "net": "3V3"
+    },
+    {
+     "pin": "2",
+     "name": "2",
+     "net": "GND"
+    },
+    {
+     "pin": "3",
+     "name": "3",
+     "net": "EXP_IO13"
+    },
+    {
+     "pin": "4",
+     "name": "4",
+     "net": "EXP_IO21"
+    },
+    {
+     "pin": "5",
+     "name": "5",
+     "net": "I2C_SDA"
+    },
+    {
+     "pin": "6",
+     "name": "6",
+     "net": "I2C_SCL"
+    }
+   ]
+  }
+ ]
+}

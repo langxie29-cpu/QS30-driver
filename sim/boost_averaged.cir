@@ -1,0 +1,36 @@
+* QS30-6 REV.A  averaged closed-loop boost (average-value model)
+* -----------------------------------------------------------------------------
+* 为什么用平均模型：开关级闭环需要 ~170 ms（≈13000 个开关周期）才能稳定，
+* 纯 Python minispice 需要 >10^6 步，超出本环境算力（见 open_issues I-23）。
+* 平均模型保留**同一组控制参数**（CINT=22 µF, Ki=1.3e-4, Kp=0.05）与功率级
+* 能量关系，去掉开关纹波，因此可在算力内验证：启动/稳态误差/占空比/
+* 负载调整/输入调整。开关纹波与器件应力由 spice_tests/04（开关级）覆盖。
+*
+* 平均模型方程（CCM/DCM 统一的一阶平均）：
+*   v_sw = (1-d)·(Vout + Vf)
+*   L·diL/dt = Vin − v_sw − iL·(DCR+Rds)
+*   Cout·dVout/dt = (1−d)·iL − Iload(Vout)
+* -----------------------------------------------------------------------------
+.param Vf=0.6
+VIN   in  0  DC 12
+L1    in  swa 220u ic=0.22
+RL1   swa sw  0.3
+* 平均开关节点电压
+BSW   sw  0  V = (1 - V(ctrl)) * (V(out) + 0.6)
+* 平均二极管输出电流
+BOUT  0   out I = (1 - V(ctrl)) * I(L1)
+COUT  out 0  20u ic=172
+RB    out 0  200k
+BTUBE out 0  I = 6 * max(0, (V(out) - 125) / 20000)
+* 反馈分压（172.18 V）
+RFB1  out fb 1500k
+RFB2  fb  0  22.1k
+* UC3843 等效 PI 控制器（参数与 BOM/行为模型一致）
+BERRP errp 0 V = 2.5 - V(fb)
+CINT  ci  0  22u ic=0.72
+BINT  0   ci I = max(-0.5m, min(0.5m, 1.3e-4 * V(errp)))
+BCTRL ctrl 0 V = max(0.02, min(0.95, 0.05 * V(errp) + V(ci)))
+.ic v(out)=172 v(ctrl)=0.931 v(ci)=0.931 v(fb)=2.497 i(l1)=0.22
+.tran 20u 200m
+.save v(out) v(fb) v(ctrl) v(ci) i(l1)
+.end

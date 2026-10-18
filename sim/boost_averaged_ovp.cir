@@ -1,0 +1,45 @@
+* QS30-6 REV.A  averaged model + independent OVP latch (behavioural SCR equivalent)
+* -----------------------------------------------------------------------------
+* 目的：在 SPICE 侧验证"过压 → 锁存 → 关断 → 受控复位 → 过压未消除则再次触发"。
+* 真实 OVP 用 LM393 + 分立 SCR（Q21/Q22）+ Q23 拉低 COMP + Q24 故障输出，
+* 这里用平均模型 + 行为锁存节点等价表达（保持节点 = SCR 阳极/门极状态）：
+*   - EN = max(0, min(1, 1 - 10·V(latch)))：锁存后停止能量传输；
+*   - latch 节点由 set/hold/reset 三个电流项驱动，电容 CLATCH 提供记忆；
+*   - reset 来自测试用脉冲源（对应 MCU GPIO18 脉冲，实际由 Q25 拉低 OVP_LATCH）。
+* 说明：本文件验证**逻辑与阈值行为**，不替代器件级/实物验证（H06）。
+* -----------------------------------------------------------------------------
+VIN   in  0  DC 12
+L1    in  swa 220u ic=0.22
+RL1   swa sw  0.3
+* 平均开关节点与输出电流，带 EN 关断
+BEN   en  0  V = max(0, min(1, 1 - 10 * V(latch)))
+* 峰值电流限制（UC3843 CS 1 V / 1 Ω → 1 A）：iL>0.95 A 时占空比下降（关断开关、能量送输出）
+BD    d   0  V = min(0.98, max(0.02, V(ctrl) - max(0, (I(L1) - 0.95) * 50)))
+BSW   sw  0  V = V(en) * (1 - V(d)) * (V(out) + 0.6) + (1 - V(en)) * V(in)
+BOUT  0   out I = V(en) * (1 - V(d)) * I(L1)
+COUT  out 0  20u ic=172
+RB    out 0  200k
+BTUBE out 0  I = 6 * max(0, (V(out) - 125) / 20000)
+* 反馈分压被"开路"：模拟 H06 的反馈断路故障 —— 用极大阻值
+RFB1  out fb 1e12
+RFB2  fb  0  22.1k
+* 控制器（与 BOM 相同参数）
+BERRP errp 0 V = 2.5 - V(fb)
+CINT  ci  0  22u ic=0.931
+BINT  0   ci I = max(-0.5m, min(0.5m, 1.3e-4 * V(errp)))
+BCALC calcc 0 V = max(0.02, min(0.98, 0.05 * V(errp) + V(ci)))
+BCTRL ctrl 0 V = V(calcc) * V(en)
+* 独立 OVP：198.8 V 触发（对应 R75/R76/R77 + TL431 2.5 V）
+BOVP  ovp 0 V = 5 * min(1, max(0, (V(out) - 198.8) / 0.1))
+* 行为锁存：set 来自 OVP，hold 来自自身，reset 来自测试脉冲
+CLATCH latch 0 1u
+RLATCH latch 0 1k
+BLATCH 0 latch I = 1m * min(1, max(0, V(ovp) / 2.5)) + 1m * min(1, max(0, V(latch)))
+* 受控复位：reset 脉冲通过压控开关把 latch 硬拉到 0（对应 MCU GPIO18 → Q25）
+SRST  latch 0 reset 0 SWRST
+VRST  reset 0 PULSE(0 1 0.6 1m 1m 5m 100)
+.ic v(out)=172 v(latch)=0
+.model SWRST VSWITCH(Ron=10 Roff=1e9 Von=0.5 Voff=0.1)
+.tran 20u 1.2
+.save v(out) v(d) v(latch) v(ovp) v(en) i(l1)
+.end

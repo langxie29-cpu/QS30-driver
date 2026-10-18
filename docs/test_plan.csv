@@ -1,0 +1,38 @@
+﻿stage,id,test,acceptance,evidence_target,status
+A,A1,12V 上电测五路电源,"EXT5 5.08V±3%;5V_SYS≥4.4V;3V3 3.315V±2%;DRV_VDD 11.45V±0.3V",H05:H05_power.csv,待执行
+A,A2,仅 USB-C 供电,"5V_SYS≈4.65V;USB 电流≤500mA;HV_EN=0",H05:H05_power.csv,待执行
+A,A3,电源切换四状态,"5V_SYS 无回灌;3V3 不跌落至复位阈值",H05:H05_power.csv,待执行
+A,A4,BOOT/RESET/EN 时序,"EN RC 延时 10k×1uF;BOOT 可进下载",N/A:示波器截图,待执行
+A,A5,USB 原生下载与 UART0 恢复,"esptool 识别;UART0 收发正常",N/A:记录归档,待执行
+A,A6,GPIO 默认状态,"复位期间 HV_EN=0;DRV_BL=0",N/A:逻辑分析仪记录,待执行
+A,A7,Wi-Fi 峰值电流与 3V3 压降,"3V3 最低>3.0V",H05:H05_power.csv,待执行
+A,A8,按键/LED/I2C 预留,"消抖有效;LED 高有效",N/A:目视记录,待执行
+B,B1,3.3V→12V 电平转换,"逻辑同相;3.3V 断电后 12V 域低/高阻",N/A:示波器记录,待执行
+B,B2,64bit 帧时序,"CLK 下降沿移位;LE 高装载;100kHz 无误码",N/A:逻辑分析仪记录,待执行
+B,B3,walking-one 位序,"逐位点亮;回填串行位序",H04:H04_walking_one.csv,待执行
+B,B4,60 路通道映射,"无重复/交换/镜像",H04:H04_walking_one.csv,待执行
+B,B5,消隐与全关,"DRV_BL=0 全部关断;POL 恒高",N/A:示波器记录,待执行
+B,B6,上电/复位默认态,"无意外导通",N/A:示波器记录,待执行
+B,B7,更新流程,"消隐→移位→锁存→恢复",N/A:逻辑分析仪记录,待执行
+C,C0,PCB 高压间距/爬电实测,实测≥H07 定稿要求,H07:H07_spacing.csv,待执行
+C,C1,空载/单管/六管稳态,"172V±3V;纹波/效率记录",H06:H06_hv.csv,待执行
+C,C2,启动与软启动,"过冲≤190V;无 OVP 误触发",H06:H06_hv.csv,待执行
+C,C3,输入 11.4/12/12.6V,"输出稳定;PG 门限符合",H06:H06_hv.csv,待执行
+C,C4,负载突变 6→1→6,"恢复时间/过冲记录",H06:H06_hv.csv,待执行
+C,C5,反馈分压开路,"OVP 198.8V±1.5V 动作并锁存",H06:H06_hv.csv,待执行
+C,C6,输出短路 10Ω,"峰值限流;无损坏;OVP 不误动",H06:H06_hv.csv,待执行
+C,C7,输入突然断开,"泄放至 50V ≤5s",H06:H06_hv.csv,待执行
+C,C8,浪涌电流,"峰值≤3.5A;PPTC 不动作",H06:H06_hv.csv,待执行
+C,C9,阳极电阻单管短路,"温升≤额定 50%;无碳化",H06:H06_hv.csv,待执行
+C,C10,长时运行 30min,"温升记录",H06:H06_hv.csv,待执行
+D,D1,逐脚限流点亮,"2=A;3=K0..13=K1;1/8 无显示",H02:H02_tube_pin_test.csv,待执行
+D,D2,起辉/熄灭电压,"≤150V / ≥100V",H02:H02_tube_operating_point.csv,待执行
+D,D3,工作点,"172V+20kΩ 下 1.5–3mA",H02:H02_tube_operating_point.csv,待执行
+D,D4,管座插拔,"13 触点导通;与 1:1 图一致",H03:H03_socket_measurement.csv;H03:H03_socket_views.csv;H03:H03_socket_continuity.csv,待执行
+D,D5,批次记录,"商标/批次/方向照片归档",H02:H02_tube_operating_point.csv,待执行
+E,E1,静态六位 000000–999999,"无重影串亮;每位独立",N/A:视频记录,待执行
+E,E2,整机功耗与温升,"12V 输入≤0.8A;温升记录",H05:H05_power.csv,待执行
+E,E3,Wi-Fi 三状态干扰,"RSSI/吞吐/重连/距离对比;装壳复测",H08:H08_rf.csv,待执行
+E,E4,长时间显示与轮换,"≥8h;亮度/电流变化记录",N/A:记录归档,待执行
+E,E5,故障注入,"复位/看门狗/掉电/OVP/短路→安全态可恢复;OVP 复位脉宽≥0.2ms 且仅 HV<198.8V;读 HVF_NODE",N/A:记录归档,待执行
+E,E6,失效状态与下载恢复,"掉电顺序测试;UART0 恢复",N/A:记录归档,待执行

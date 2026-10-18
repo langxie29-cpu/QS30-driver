@@ -1,0 +1,7 @@
+* RC step response: tau = R*C = 1 k * 1 u = 1 ms
+V1 in 0 DC 5
+R1 in out 1k
+C1 out 0 1u
+.tran 2u 6m
+.save v(out)
+.end

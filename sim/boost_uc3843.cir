@@ -1,0 +1,51 @@
+* QS30-6 REV.A  12 V -> 172 V boost + behavioural UC3843 + OVP  (REFERENCE NETLIST)
+* -----------------------------------------------------------------------------
+* 状态：**未执行**。本环境没有 ngspice / LTspice（KiCad 安装需管理员、ngspice
+*       下载 403，见 open_issues.md I-19）。
+* 已执行且可作为证据的仿真：
+*   - 功率级 SPICE（不含控制环）：sim/spice_tests/04_boost_power_stage.cir
+*     由 sim/minispice.py 执行，结果见 sim/results/spice_validation.md；
+*   - 闭环/软启动/OVP 锁存/泄放：design/sim_boost.py（S1–S10，行为模型，Ts/80）。
+* 本文件保留为**在有 ngspice 的机器上复现闭环 SPICE 的参考网表**；其中
+* 误差放大器/比较器用 B 源与压控开关实现，B 源表达式在 ngspice 中需把
+* `time` 写作 `$time`（或改用 PULSE/行为元件）后再运行。
+* -----------------------------------------------------------------------------
+.param Vin=12
+.param Ts=12.820513u
+
+VIN   in  0  DC 12
+L1    in  swa 220u
+RL1   swa sw  0.3
+
+* PWM 锯齿波 0..1（每周期）
+VRAMP ramp 0 PULSE(0 1 0 {Ts} 1n 0.01n {Ts})
+
+* UC3843 误差放大器等效：PI（积分 + 比例）
+BERRP errp 0 V = 2.5 - V(fb)
+CINT  ci  0  22u
+BINT  0   ci I = max(-0.5m, min(0.5m, 1.3e-4 * V(errp)))
+BCOMP comp 0 V = max(0, min(0.98, 0.05 * V(errp) + V(ci)))
+
+* 功率级
+S1    sw  0  comp ramp SWMOD
+D1    sw  out DMOD
+COUT  out 0  20u
+RB    out 0  200k
+* 六管 QS30-1 等效负载（起辉 150 V 简化为 125 V 以上线性导通）
+BTUBE out 0  I = 6 * max(0, (V(out) - 125) / 20000)
+
+* 反馈分压：2.5 V * (1 + 1500k/22.1k) = 172.2 V
+RFB1  out fb 1500k
+RFB2  fb  0  22.1k
+
+* 独立 OVP（198.8 V）+ 故障关断：行为表达（锁存/SCR 见 design/sim_boost.py S7/S8）
+* 用连续斜坡代替布尔比较，避免 B 源出现布尔表达式
+BOVP  ovp 0 V = 5 * min(1, max(0, (V(out) - 198.8) / 0.1))
+RSD   comp ovp 10
+
+.model SWMOD VSWITCH(Ron=0.55 Roff=1e6 Von=0.002 Voff=-0.002)
+.model DMOD  D(Is=1e-9 N=1.05)
+
+.tran 10n 400m
+.save v(out) v(fb) v(comp) v(ramp) v(sw) i(l1) i(vin)
+.end
