@@ -1,0 +1,128 @@
+[
+  {
+    "case": "all_connected",
+    "cap_F": 2.03e-05,
+    "bleed_ohms": 50000.0,
+    "initial_V": 172.18,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 12.0,
+    "final_V": 0.00126318293,
+    "measured_t50_s": 1.25596,
+    "execution": "PASS",
+    "t50_test": "PASS"
+  },
+  {
+    "case": "all_high_rc",
+    "cap_F": 2.436e-05,
+    "bleed_ohms": 50500.0,
+    "initial_V": 220,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 12.0,
+    "final_V": 0.0127650663,
+    "measured_t50_s": 1.82296,
+    "execution": "PASS",
+    "t50_test": "PASS"
+  },
+  {
+    "case": "one_bleeder_open",
+    "cap_F": 2.03e-05,
+    "bleed_ohms": 66666.66666666667,
+    "initial_V": 172.18,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 12.0,
+    "final_V": 0.0242714374,
+    "measured_t50_s": 1.67396,
+    "execution": "PASS",
+    "t50_test": "PASS"
+  },
+  {
+    "case": "main_alone",
+    "cap_F": 2e-05,
+    "bleed_ohms": 200000.0,
+    "initial_V": 172.18,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 12.0,
+    "final_V": 8.5723373,
+    "measured_t50_s": 4.94696,
+    "execution": "PASS",
+    "t50_test": "PASS"
+  },
+  {
+    "case": "main_bleeder_open",
+    "cap_F": 2e-05,
+    "bleed_ohms": 1000000000000000.0,
+    "initial_V": 172.18,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 12.0,
+    "final_V": 172.18,
+    "measured_t50_s": null,
+    "execution": "PASS",
+    "t50_test": "FAIL"
+  },
+  {
+    "case": "detached_module",
+    "cap_F": 1e-07,
+    "bleed_ohms": 200000.0,
+    "initial_V": 172.18,
+    "argv": [
+      "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+      "-b",
+      "-o",
+      "ngspice.log",
+      "circuit.cir"
+    ],
+    "rc": 0,
+    "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+    "stderr": "",
+    "t_end_s": 0.15,
+    "final_V": 0.095230052,
+    "measured_t50_s": 0.0247396,
+    "execution": "PASS",
+    "t50_test": "PASS"
+  }
+]

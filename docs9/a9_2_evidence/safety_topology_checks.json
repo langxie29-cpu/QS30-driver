@@ -1,0 +1,32 @@
+[
+  {
+    "id": "A92-T01",
+    "status": "PASS",
+    "evidence": "OVP IN- senses bus; IN+ references TL431; rising HV pulls SET low"
+  },
+  {
+    "id": "A92-T02",
+    "status": "PASS",
+    "evidence": "R39 hazardous direct logic/gate link absent from native XML"
+  },
+  {
+    "id": "A92-T03",
+    "status": "PASS",
+    "evidence": "UC internal 5 V no longer shares 2.5 V TL431 shunt"
+  },
+  {
+    "id": "A92-T04",
+    "status": "PASS",
+    "evidence": "BAT54S middle junction is pad 3, upper rail cathode pad 2"
+  },
+  {
+    "id": "A92-T05",
+    "status": "PASS",
+    "evidence": "three explicit default-off 100k pull-downs"
+  },
+  {
+    "id": "A92-T06",
+    "status": "FAIL",
+    "evidence": "UNRESOLVED: wrong CS topology retained and explicitly FAIL for protection"
+  }
+]

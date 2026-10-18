@@ -1,7 +1,7 @@
 {
-  "revision": "REV.A9.1",
+  "revision": "REV.A9.2",
   "kicad_version": "10.0.6",
-  "run": "rev_a9_1_20261018",
+  "run": "a9_2_final",
   "boards": {
     "QS30-9_DISPLAY": {
       "netlist_rc": 0,
@@ -21,28 +21,24 @@
       "unexpected_nodes": {},
       "pcb_pad_mismatches": [],
       "erc": {
-        "total": 61,
+        "total": 58,
         "severity": {
-          "error": 3,
           "warning": 58
         },
         "by_type": {
-          "power_pin_not_driven": 3,
           "footprint_link_issues": 29,
           "lib_symbol_issues": 29
         }
       },
       "drc": {
-        "total": 159,
+        "total": 155,
         "severity": {
           "warning": 50,
-          "error": 109
+          "error": 105
         },
         "by_type": {
           "net_conflict": 17,
           "unconnected_items": 105,
-          "shorting_items": 2,
-          "solder_mask_bridge": 2,
           "lib_footprint_issues": 33
         }
       },
@@ -51,15 +47,15 @@
     "QS30-9_MAIN": {
       "netlist_rc": 0,
       "xml_rc": 0,
-      "expected_nodes": 532,
-      "actual_nodes": 570,
-      "expected_nets": 132,
-      "actual_nets": 170,
+      "expected_nodes": 536,
+      "actual_nodes": 574,
+      "expected_nets": 133,
+      "actual_nets": 171,
       "explicit_nc_nets": 38,
-      "connected_actual_nets": 132,
+      "connected_actual_nets": 133,
       "expected_nc_nodes": 38,
       "nc_inventory_matches": true,
-      "matched_nodes": 532,
+      "matched_nodes": 536,
       "mismatches": [],
       "merges": {},
       "splits": {},
@@ -68,29 +64,23 @@
       "erc": {
         "total": 306,
         "severity": {
-          "error": 4,
-          "warning": 302
+          "warning": 306
         },
         "by_type": {
-          "power_pin_not_driven": 4,
-          "footprint_link_issues": 151,
-          "lib_symbol_issues": 151
+          "footprint_link_issues": 153,
+          "lib_symbol_issues": 153
         }
       },
       "drc": {
-        "total": 1061,
+        "total": 598,
         "severity": {
-          "warning": 193,
-          "error": 868
+          "warning": 195,
+          "error": 403
         },
         "by_type": {
           "net_conflict": 38,
-          "unconnected_items": 384,
-          "shorting_items": 193,
-          "clearance": 90,
-          "copper_edge_clearance": 2,
-          "solder_mask_bridge": 199,
-          "lib_footprint_issues": 155
+          "unconnected_items": 403,
+          "lib_footprint_issues": 157
         }
       },
       "reconciliation": "PASS"
@@ -106,7 +96,7 @@
         "--format",
         "kicadsexpr",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.net",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.net",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch"
       ],
       "rc": 0,
@@ -122,7 +112,7 @@
         "--format",
         "kicadxml",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.xml",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.xml",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch"
       ],
       "rc": 0,
@@ -139,11 +129,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.erc.rpt",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.erc.rpt",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch"
       ],
       "rc": 5,
-      "stdout": "发现 61 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_DISPLAY.erc.rpt\n",
+      "stdout": "发现 58 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_DISPLAY.erc.rpt\n",
       "stderr": ""
     },
     {
@@ -156,11 +146,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.erc.json",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.erc.json",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch"
       ],
       "rc": 5,
-      "stdout": "发现 61 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_DISPLAY.erc.json\n",
+      "stdout": "发现 58 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_DISPLAY.erc.json\n",
       "stderr": ""
     },
     {
@@ -174,11 +164,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.drc.rpt",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.drc.rpt",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_pcb"
       ],
       "rc": 5,
-      "stdout": "发现 37 条违规项\n发现 105 个未连接的项目\n发现 17 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_DISPLAY.drc.rpt\n",
+      "stdout": "发现 33 条违规项\n发现 105 个未连接的项目\n发现 17 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_DISPLAY.drc.rpt\n",
       "stderr": ""
     },
     {
@@ -192,11 +182,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_DISPLAY.drc.json",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_DISPLAY.drc.json",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_pcb"
       ],
       "rc": 5,
-      "stdout": "发现 37 条违规项\n发现 105 个未连接的项目\n发现 17 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_DISPLAY.drc.json\n",
+      "stdout": "发现 33 条违规项\n发现 105 个未连接的项目\n发现 17 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_DISPLAY.drc.json\n",
       "stderr": ""
     },
     {
@@ -208,7 +198,7 @@
         "--format",
         "kicadsexpr",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.net",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.net",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch"
       ],
       "rc": 0,
@@ -224,7 +214,7 @@
         "--format",
         "kicadxml",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.xml",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.xml",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch"
       ],
       "rc": 0,
@@ -241,11 +231,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.erc.rpt",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.erc.rpt",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch"
       ],
       "rc": 5,
-      "stdout": "发现 306 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_MAIN.erc.rpt\n",
+      "stdout": "发现 306 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_MAIN.erc.rpt\n",
       "stderr": ""
     },
     {
@@ -258,11 +248,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.erc.json",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.erc.json",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch"
       ],
       "rc": 5,
-      "stdout": "发现 306 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_MAIN.erc.json\n",
+      "stdout": "发现 306 条违规项\n已将 ERC 报告保存到文件 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_MAIN.erc.json\n",
       "stderr": ""
     },
     {
@@ -276,11 +266,11 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.drc.rpt",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.drc.rpt",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_pcb"
       ],
       "rc": 5,
-      "stdout": "发现 639 条违规项\n发现 384 个未连接的项目\n发现 38 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_MAIN.drc.rpt\n",
+      "stdout": "发现 157 条违规项\n发现 403 个未连接的项目\n发现 38 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_MAIN.drc.rpt\n",
       "stderr": ""
     },
     {
@@ -294,41 +284,47 @@
         "--severity-all",
         "--exit-code-violations",
         "-o",
-        "D:\\dsharness\\QS30-1\\kicad\\logs\\rev_a9_1_20261018\\QS30-9_MAIN.drc.json",
+        "D:\\dsharness\\QS30-1\\kicad\\logs\\a9_2_final\\QS30-9_MAIN.drc.json",
         "D:\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_pcb"
       ],
       "rc": 5,
-      "stdout": "发现 639 条违规项\n发现 384 个未连接的项目\n发现 38 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/rev_a9_1_20261018/QS30-9_MAIN.drc.json\n",
+      "stdout": "发现 157 条违规项\n发现 403 个未连接的项目\n发现 38 个原理图一致性问题\n保存 DRC 报告到 D:/dsharness/QS30-1/kicad/logs/a9_2_final/QS30-9_MAIN.drc.json\n",
       "stderr": ""
     }
   ],
   "input_sha256": {
-    "netlist9\\QS30-9_REV.A_netlist.csv": "a2ac950338620cc0c81d8cf2e2913c6af78ea1887caae3989fd905821a13b58a",
-    "kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch": "becfff46cfd95763df685bc434d9dae576b3d9c947556051b263eeb66f30bec3",
-    "kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch": "f8d34aac76299b4d23dfdd62bc183e90d9858eda9856d2aaa3db25b1e478f310",
-    "kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_pcb": "c07aca441cd4d19c95c4e1d2b6a1b6ac67657bfbf2f0ccaf123c6e145dd99ce5",
-    "kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_pcb": "56e7f6fa4b2f548560ad3cde49d9444beee228280569b104bbcf85d0b6522fab",
-    "design9\\build9.py": "9a407f9e4f9f4f1b4082f720d3d35d6ba787d30cb05932a6f6d2d9697f324c59",
+    "netlist9\\QS30-9_REV.A_netlist.csv": "03a512ca3e74af8f129bad7f63cd79e1e90475dccea2fa55caab21c4bd65ff66",
+    "kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch": "0771e15d624157a3af951fca7dbcaf7698157201a6aa0758b76b4578245d7690",
+    "kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_sch": "a40e1c1d50d9cf819b479821f6d346f81d9a629e43b782942b8a1e8fa3313d1c",
+    "kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_pcb": "870a8c7af5a5549ad16469732063be49cface56c45e278fce8da8e425d7c8068",
+    "kicad\\projects\\QS30-9_MAIN\\QS30-9_MAIN.kicad_pcb": "a58d05ac5950c27d29917c8cf1f4feb7eccb969ddfd9ef09250f9814e52d3557",
+    "design9\\build9.py": "c56d001c75afd7ab1097fb6aabc6eef057ad254d8ccd65b6e83a293c9a473022",
     "design9\\freeze9.py": "31ae23548d4d017960d80d5c42dc932a57833b82df278ad2800c7a775d7c5ec8",
-    "design9\\kicad_gen.py": "efd23103160f499bb5d5b3ac666f47bb53c4bbeb3dd0ffe6e2d30da69bf00e74",
-    "design9\\reconcile9.py": "9cde38bfc36901203dc57ad76fa62fd4ba5a61b2954a490d8936a52f8ef2fc69",
+    "design9\\kicad_gen.py": "6e2627ac8512c41fbe4472b28611db140f11e9c58711e317d24801d9345d30cc",
+    "design9\\reconcile9.py": "b13eae3478a00416b95f5d763b832edfa79b7b7f2a54abbaa18cece41eec104a",
     "design9\\validate_freeze9.py": "c34882a49eac0dbe7bda9e2fbb1b72ba4d5fe5895340716d3920ace89628f7e8",
     "design9\\kicad_check.py": "42b9b52a2f7db671f937f6b91ed8752b191bdb04bea1f602d8607149db52f855"
   },
-  "review": {
-    "overall_status": "HOLD",
+  "overall_status": "FAIL/HOLD",
+  "safety_review": {
+    "revision": "REV.A9.2",
+    "review": "docs9/OVP_REVIEW_A9_2.md",
+    "simulation": "docs9/OVP_SIMULATION_RESULTS_A9_2.md",
+    "erc": "docs9/ERC_ROOT_CAUSE_A9_2.md",
+    "drc": "docs9/DRC_TRIAGE_A9_2.md",
+    "holds": "docs9/HOLD_REGISTER.md",
+    "native_errors": {
+      "erc": 0,
+      "drc": 508
+    },
+    "native_warnings": {
+      "erc": 364,
+      "drc": 245
+    },
+    "remaining_native_total": 1117,
+    "protection": "FAIL",
     "manufacturing": "HOLD",
-    "native_erc": "FAIL",
-    "native_drc": "FAIL",
-    "electrical_topology": "PASS",
-    "checks_passed": 12,
-    "checks_total": 12,
-    "fixed_roots": 10,
-    "remaining_native_violations": 1587,
-    "remaining_native_root_groups": 10,
-    "remaining_electrical_roots": 14,
-    "evidence": "kicad/logs/rev_a9_1_20261018",
-    "audit": "kicad/logs/rev_a9_1_20261018/electrical_audit.json",
-    "issues": "docs9/EDA_ISSUES_NATIVE.csv"
+    "previous_index": "kicad/logs/a9_2_before/previous_current_index.json",
+    "note": "0 ERC error is not full ERC pass; native --severity-all returns5. SPICE run success does not imply protection success."
   }
 }

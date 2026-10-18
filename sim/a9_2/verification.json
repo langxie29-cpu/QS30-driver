@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "V01",
+      "status": "PASS",
+      "evidence": "Completed endpoint accepted"
+    },
+    {
+      "id": "V02",
+      "status": "PASS",
+      "evidence": "rc=0 and linearized endpoint cannot conceal aborted analysis"
+    },
+    {
+      "id": "V03",
+      "status": "PASS",
+      "evidence": "rc=0 timestep failure rejected"
+    },
+    {
+      "id": "V04",
+      "status": "PASS",
+      "evidence": "rc=0 vector export failure rejected"
+    },
+    {
+      "id": "V05",
+      "status": "PASS",
+      "evidence": "Incomplete genuine endpoint rejected"
+    },
+    {
+      "id": "V06",
+      "status": "PASS",
+      "evidence": "nonzero return/missing wave rejected"
+    },
+    {
+      "id": "V-SIM-baseline_final_model",
+      "status": "PASS",
+      "evidence": "17 genuine completed runs; protection signoff remains FAIL"
+    },
+    {
+      "id": "V-SIM-final_actual_model",
+      "status": "PASS",
+      "evidence": "17 genuine completed runs; protection signoff remains FAIL"
+    },
+    {
+      "id": "V-SIM-comp_precharged",
+      "status": "PASS",
+      "evidence": "7 genuine completed runs; protection signoff remains FAIL"
+    },
+    {
+      "id": "V-SIM-full_ref_corners",
+      "status": "PASS",
+      "evidence": "2 genuine completed runs; protection signoff remains FAIL"
+    },
+    {
+      "id": "V07",
+      "status": "PASS",
+      "evidence": "All 17 aborted intermediate analyses are explicitly invalidated, prior JSON retained"
+    },
+    {
+      "id": "V-NET-QS30-9_DISPLAY",
+      "status": "PASS",
+      "evidence": "Exact native connected members / PCB attributes / explicit NC inventory"
+    },
+    {
+      "id": "V-NET-QS30-9_MAIN",
+      "status": "PASS",
+      "evidence": "Exact native connected members / PCB attributes / explicit NC inventory"
+    },
+    {
+      "id": "V08",
+      "status": "PASS",
+      "evidence": "ERC 7 original errors removed, 364 warnings remain"
+    },
+    {
+      "id": "V09",
+      "status": "PASS",
+      "evidence": "488 placeholder geometry findings removed, DRC still FAIL 753"
+    },
+    {
+      "id": "V10",
+      "status": "PASS",
+      "evidence": "Final native capture hashes still match current design inputs"
+    },
+    {
+      "id": "V11",
+      "status": "PASS",
+      "evidence": "Original 1587 means ERC+DRC; final 1117, delta470"
+    },
+    {
+      "id": "V12",
+      "status": "PASS",
+      "evidence": "Every before/final native item uniquely indexed; Chinese shorting descriptions mapped to real refs"
+    },
+    {
+      "id": "V13",
+      "status": "PASS",
+      "evidence": "12 architecture/90 cathode/9 anode/interface/return/serial checks still PASS"
+    }
+  ]
+}

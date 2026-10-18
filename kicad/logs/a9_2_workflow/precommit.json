@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--cached",
+    "--shortstat"
+  ],
+  "rc": 0,
+  "stdout": " 750 files changed, 308648 insertions(+), 3254 deletions(-)\n",
+  "stderr": "",
+  "unstaged_tracked": "",
+  "source_check": {
+    "argv": [
+      "git",
+      "-c",
+      "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".gitattributes",
+      ".gitignore",
+      "design9",
+      "docs9/*.md",
+      "kicad/projects",
+      "netlist9"
+    ],
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "commit_intent": "ordinary git commit on rev-a9-2-electrical-safety; no force/reset/clean; all FAIL/HOLD retained"
+}

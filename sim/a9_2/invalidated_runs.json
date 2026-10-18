@@ -1,0 +1,18 @@
+{
+  "baseline": {
+    "status": "FAIL",
+    "reason": "17 runs: device current vectors not explicitly saved; ngspice rc=0 despite export errors. All logs retained."
+  },
+  "baseline_repaired_vectors": {
+    "status": "SUPERSEDED_DIAGNOSTIC",
+    "reason": "Completed, but final model adds correct comparator supply enables, UVLO hysteresis and D4 diode pair; use baseline_final_model for direct comparison."
+  },
+  "a9_2_actual": {
+    "status": "FAIL",
+    "reason": "All 17 logs contain timestep too small/aborted at about 1.002 ms. Old parser only checked Error: and rc=0 and wrongly labeled execution PASS; those metrics/curves are invalid, not signoff. Retained unchanged as evidence. Final parser rejects aborted/timestep failures and checks measured end_time."
+  },
+  "a9_2_uvlo_repair": {
+    "status": "SUPERSEDED_DIAGNOSTIC",
+    "reason": "UVLO repaired, completed; D4 clamp pair still absent from this intermediate model. Use final_actual_model."
+  }
+}

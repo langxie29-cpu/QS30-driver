@@ -80,6 +80,13 @@ def reference_map(parts):
 def pin_type(part, num):
     name = part['pin_names'][num]
     key = part['pin_key']
+    # Scoped ERC supply-port declarations, equivalent to PWR_FLAG at each
+    # traced boundary. These do not certify regulation, protection or startup.
+    # No arbitrary flags on OVP/CS/reference nodes; see ERC_ROOT_CAUSE_A9_2.md.
+    sources = {('J_MOD_L_LV','1'), ('J_MOD_L_LV','2'), ('J_MOD_L_LV','3'),
+               ('J1','2'), ('D1','K'), ('L1','2'), ('Q2','3')}
+    if (part['ref'], num) in sources:
+        return 'power_out'
     if name == 'NC' or name.startswith('IC'):
         return 'no_connect'
     if key == 'HV5622-PQFP44':
@@ -164,7 +171,7 @@ def gen_sch(board_name, parts, paper="A3", title=""):
     out = ['(kicad_sch (version 20250114) (generator "eeschema") (generator_version "9.0")',
            f'  (uuid "{ROOT_UUID}")',
            f'  (paper "{paper}")',
-           f'  (title_block (title "{esc(title)}") (rev "REV.A9.1") (comment 1 "Electrical freeze; native checks in kicad/logs; manufacturing HOLD"))',
+           f'  (title_block (title "{esc(title)}") (rev "REV.A9.2") (comment 1 "Electrical safety review; native checks in kicad/logs; manufacturing HOLD"))',
            '  (lib_symbols']
     for n in sorted(libs):
         out.append(libs[n][1])
@@ -245,7 +252,7 @@ def gen_pcb(board_name, parts, w, h):
     out = ['(kicad_pcb (version 20221018) (generator pcbnew)',
            f'  (general (thickness 1.6))',
            f'  (paper "A4")',
-           f'  (title_block (title "{esc(board_name)} REV.A9.1 preliminary") (rev "REV.A9.1") (comment 1 "Native DRC evidence in logs; footprint dimensions and manufacturing HOLD"))',
+           f'  (title_block (title "{esc(board_name)} REV.A9.2 preliminary") (rev "REV.A9.2") (comment 1 "Native DRC evidence in logs; footprint dimensions and manufacturing HOLD"))',
            '  (layers (0 "F.Cu" signal) (31 "B.Cu" signal) (32 "B.Adhes" user "B.Adhesive")',
            '    (33 "F.Adhes" user "F.Adhesive") (34 "B.Paste" user) (35 "F.Paste" user)',
            '    (36 "B.SilkS" user "B.Silkscreen") (37 "F.SilkS" user "F.Silkscreen")',
@@ -270,13 +277,23 @@ def gen_pcb(board_name, parts, w, h):
         out.append(f'    (property "Reference" "H{mx:.0f}{my:.0f}" (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1))))')
         out.append('    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "*.Cu" "*.Mask")))')
     # 器件：简化封装（矩形焊盘按引脚数排布），仅用于初布局
-    i = 0
+    # A9.2 provisional electrical parking: height-aware column packing.
+    # Dimensions are ONLY the existing artificial pad envelopes, not packages.
+    # Reserve 7 mm edge/holes and 2 mm between envelopes. No rule relaxation.
+    heights = {r: 2 * ((len(p['pin_names']) + 1)//2 - 1) + 1 for r,p in parts.items()}
+    columns = [7.0] * int((w - 14) // 7)
+    positions = {}
+    for ref in sorted(parts, key=lambda r: (-heights[r], r)):
+        col = min(range(len(columns)), key=lambda k: columns[k])
+        height = heights[ref]
+        if columns[col] + height > h - 7:
+            raise ValueError(f'{board_name}: provisional pad envelopes do not fit; do not compress spacing')
+        positions[ref] = (8.75 + col * 7, columns[col] + height/2)
+        columns[col] += height + 2
     for ref in sorted(parts):
         p = parts[ref]
         n = len(p['pin_names'])
-        x = 8 + (i % 6) * ((w - 16) / 6)
-        y = 12 + (i // 6) * (h - 24) / max(1, (len(parts) // 6 + 1))
-        i += 1
+        x, y = positions[ref]
         out.append(f'  (footprint "QS30:PRELIM_{n}P" (layer "F.Cu") (at {x:.2f} {y:.2f})')
         out.append(f'    (path "/{ROOT_UUID}/{symbol_id(board_name, ref)}")')
         out.append(f'    (property "Reference" "{ref_map[ref]}" (at 0 -3 0) (layer "F.SilkS") (effects (font (size 1 1))))')
@@ -385,10 +402,10 @@ def main():
           'Connected pins from CSV; full pin inventory and explicit NCs from build9.PIN_DB.',
           'PCB pads remain mechanically PROVISIONAL; no routing/clearance approval.', '',
           '```json', json.dumps(status, ensure_ascii=False, indent=2), '```']
-    open(os.path.join(OUT, "GENERATED_STATUS_A9_1.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
-    json.dump(status, open(os.path.join(OUT, "generated_status_a9_1.json"), "w",
+    open(os.path.join(OUT, "GENERATED_STATUS_A9_2.md"), "w", encoding="utf-8").write("\n".join(md).replace('REV.A9.1 generation','REV.A9.2 generation') + "\n")
+    json.dump(status, open(os.path.join(OUT, "generated_status_a9_2.json"), "w",
                            encoding="utf-8"), ensure_ascii=False, indent=1)
-    print("wrote kicad/GENERATED_STATUS_A9_1.md + projects/; historical status retained")
+    print("wrote kicad/GENERATED_STATUS_A9_2.md + projects/; historical status retained")
 
 
 if __name__ == "__main__":

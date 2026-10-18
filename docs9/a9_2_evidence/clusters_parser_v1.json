@@ -1,0 +1,654 @@
+{
+  "a9_2_before/QS30-9_DISPLAY/erc": {
+    "counts": {
+      "power_pin_not_driven": 3,
+      "footprint_link_issues": 29,
+      "lib_symbol_issues": 29
+    },
+    "components": {
+      "power_pin_not_driven": {
+        "U_DS_L": 3
+      },
+      "footprint_link_issues": {},
+      "lib_symbol_issues": {}
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Global label only appears once in the schematic",
+        "key": "single_global_label"
+      },
+      {
+        "description": "Four connection points are joined together",
+        "key": "four_way_junction"
+      },
+      {
+        "description": "SPICE model issue",
+        "key": "simulation_model_issue"
+      },
+      {
+        "description": "Assigned footprint doesn't match footprint filters",
+        "key": "footprint_filter"
+      }
+    ]
+  },
+  "a9_2_before/QS30-9_DISPLAY/drc": {
+    "counts": {
+      "net_conflict": 17,
+      "unconnected_items": 105,
+      "shorting_items": 2,
+      "solder_mask_bridge": 2,
+      "lib_footprint_issues": 33
+    },
+    "components": {
+      "net_conflict": {},
+      "unconnected_items": {},
+      "shorting_items": {},
+      "solder_mask_bridge": {},
+      "lib_footprint_issues": {
+        "H44": 1,
+        "H964": 1,
+        "H496": 1,
+        "H9696": 1,
+        "C_DS_L": 1,
+        "C_MOD_L_3V3": 1,
+        "C_MOD_L_HV": 1,
+        "C_MOD_L_VDD": 1,
+        "J_MOD_L_HV": 1,
+        "J_MOD_L_LV": 1,
+        "J_T1": 1,
+        "J_T2": 1,
+        "J_T3": 1,
+        "R_AN1_1": 1,
+        "R_AN1_2": 1,
+        "R_AN2_1": 1,
+        "R_AN2_2": 1,
+        "R_AN3_1": 1,
+        "R_AN3_2": 1,
+        "R_IN_L_BL": 1,
+        "R_IN_L_CLK": 1,
+        "R_IN_L_DIN": 1,
+        "R_IN_L_DOUT": 1,
+        "R_IN_L_LAT": 1,
+        "R_LS_L_BL": 1,
+        "R_LS_L_CLK": 1,
+        "R_LS_L_DIN": 1,
+        "R_LS_L_LAT": 1,
+        "R_MOD_L_BLEED": 1,
+        "R_SAFE_L": 1,
+        "U_DS_L": 1,
+        "U_L": 1,
+        "U_LS_L": 1
+      }
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ]
+  },
+  "a9_2_before/QS30-9_MAIN/erc": {
+    "counts": {
+      "power_pin_not_driven": 4,
+      "footprint_link_issues": 151,
+      "lib_symbol_issues": 151
+    },
+    "components": {
+      "power_pin_not_driven": {
+        "U11": 2,
+        "U23": 1,
+        "U_C": 1
+      },
+      "footprint_link_issues": {},
+      "lib_symbol_issues": {}
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Global label only appears once in the schematic",
+        "key": "single_global_label"
+      },
+      {
+        "description": "Four connection points are joined together",
+        "key": "four_way_junction"
+      },
+      {
+        "description": "SPICE model issue",
+        "key": "simulation_model_issue"
+      },
+      {
+        "description": "Assigned footprint doesn't match footprint filters",
+        "key": "footprint_filter"
+      }
+    ]
+  },
+  "a9_2_before/QS30-9_MAIN/drc": {
+    "counts": {
+      "net_conflict": 38,
+      "unconnected_items": 384,
+      "shorting_items": 193,
+      "clearance": 90,
+      "copper_edge_clearance": 2,
+      "solder_mask_bridge": 199,
+      "lib_footprint_issues": 155
+    },
+    "components": {
+      "net_conflict": {},
+      "unconnected_items": {},
+      "shorting_items": {},
+      "clearance": {},
+      "copper_edge_clearance": {},
+      "solder_mask_bridge": {},
+      "lib_footprint_issues": {
+        "H44": 1,
+        "H1164": 1,
+        "H486": 1,
+        "H11686": 1,
+        "C1": 1,
+        "C10": 1,
+        "C11": 1,
+        "C12": 1,
+        "C13": 1,
+        "C14": 1,
+        "C15": 1,
+        "C16": 1,
+        "C17": 1,
+        "C2": 1,
+        "C4": 1,
+        "C5": 1,
+        "C6": 1,
+        "C7": 1,
+        "C8": 1,
+        "C9": 1,
+        "C_DS_C": 1,
+        "C_MOD_C_3V3": 1,
+        "C_MOD_C_HV": 1,
+        "C_MOD_C_VDD": 1,
+        "D1": 1,
+        "D2": 1,
+        "D20": 1,
+        "D3": 1,
+        "D4": 1,
+        "F1": 1,
+        "J1": 1,
+        "J2": 1,
+        "J3": 1,
+        "J4": 1,
+        "J_MAIN_L_HV": 1,
+        "J_MAIN_L_LV": 1,
+        "J_MAIN_R_HV": 1,
+        "J_MAIN_R_LV": 1,
+        "J_T4": 1,
+        "J_T5": 1,
+        "J_T6": 1,
+        "L1": 1,
+        "L20": 1,
+        "L5": 1,
+        "LED1": 1,
+        "Q2": 1,
+        "Q20": 1,
+        "Q21": 1,
+        "Q22": 1,
+        "Q23": 1,
+        "Q24": 1,
+        "Q25": 1,
+        "Q3": 1,
+        "Q4": 1,
+        "Q5": 1,
+        "R10": 1,
+        "R11": 1,
+        "R12": 1,
+        "R15": 1,
+        "R16": 1,
+        "R17": 1,
+        "R18": 1,
+        "R19": 1,
+        "R20": 1,
+        "R21": 1,
+        "R22": 1,
+        "R23": 1,
+        "R24": 1,
+        "R25": 1,
+        "R26": 1,
+        "R27": 1,
+        "R28": 1,
+        "R29": 1,
+        "R30": 1,
+        "R31": 1,
+        "R32": 1,
+        "R33": 1,
+        "R34": 1,
+        "R35": 1,
+        "R36": 1,
+        "R37": 1,
+        "R38": 1,
+        "R38B": 1,
+        "R39": 1,
+        "R40": 1,
+        "R41": 1,
+        "R42": 1,
+        "R43": 1,
+        "R44": 1,
+        "R45": 1,
+        "R46": 1,
+        "R46S": 1,
+        "R47": 1,
+        "R48": 1,
+        "R49": 1,
+        "R5": 1,
+        "R50": 1,
+        "R51": 1,
+        "R52": 1,
+        "R53": 1,
+        "R54": 1,
+        "R55": 1,
+        "R56": 1,
+        "R57": 1,
+        "R58": 1,
+        "R59": 1,
+        "R6": 1,
+        "R60": 1,
+        "R61": 1,
+        "R62": 1,
+        "R63": 1,
+        "R64": 1,
+        "R7": 1,
+        "R8": 1,
+        "R9": 1,
+        "R_AN4_1": 1,
+        "R_AN4_2": 1,
+        "R_AN5_1": 1,
+        "R_AN5_2": 1,
+        "R_AN6_1": 1,
+        "R_AN6_2": 1,
+        "R_HV_STAR": 1,
+        "R_IN_C_BL": 1,
+        "R_IN_C_CLK": 1,
+        "R_IN_C_DIN": 1,
+        "R_IN_C_DOUT": 1,
+        "R_IN_C_LAT": 1,
+        "R_LED": 1,
+        "R_LS_C_BL": 1,
+        "R_LS_C_CLK": 1,
+        "R_LS_C_DIN": 1,
+        "R_LS_C_LAT": 1,
+        "R_MOD_C_BLEED": 1,
+        "R_SAFE_C": 1,
+        "SW1": 1,
+        "SW2": 1,
+        "SW3": 1,
+        "SW4": 1,
+        "TP1": 1,
+        "U1": 1,
+        "U10": 1,
+        "U11": 1,
+        "U2": 1,
+        "U20": 1,
+        "U21": 1,
+        "U23": 1,
+        "U24": 1,
+        "U5": 1,
+        "U6": 1,
+        "U7": 1,
+        "U8": 1,
+        "U9": 1,
+        "U_C": 1,
+        "U_DS_C": 1,
+        "U_LS_C": 1
+      }
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ]
+  },
+  "a9_2_final/QS30-9_DISPLAY/erc": {
+    "counts": {
+      "footprint_link_issues": 29,
+      "lib_symbol_issues": 29
+    },
+    "components": {
+      "footprint_link_issues": {},
+      "lib_symbol_issues": {}
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Global label only appears once in the schematic",
+        "key": "single_global_label"
+      },
+      {
+        "description": "Four connection points are joined together",
+        "key": "four_way_junction"
+      },
+      {
+        "description": "SPICE model issue",
+        "key": "simulation_model_issue"
+      },
+      {
+        "description": "Assigned footprint doesn't match footprint filters",
+        "key": "footprint_filter"
+      }
+    ]
+  },
+  "a9_2_final/QS30-9_DISPLAY/drc": {
+    "counts": {
+      "net_conflict": 17,
+      "unconnected_items": 105,
+      "lib_footprint_issues": 33
+    },
+    "components": {
+      "net_conflict": {},
+      "unconnected_items": {},
+      "lib_footprint_issues": {
+        "H44": 1,
+        "H964": 1,
+        "H496": 1,
+        "H9696": 1,
+        "C_DS_L": 1,
+        "C_MOD_L_3V3": 1,
+        "C_MOD_L_HV": 1,
+        "C_MOD_L_VDD": 1,
+        "J_MOD_L_HV": 1,
+        "J_MOD_L_LV": 1,
+        "J_T1": 1,
+        "J_T2": 1,
+        "J_T3": 1,
+        "R_AN1_1": 1,
+        "R_AN1_2": 1,
+        "R_AN2_1": 1,
+        "R_AN2_2": 1,
+        "R_AN3_1": 1,
+        "R_AN3_2": 1,
+        "R_IN_L_BL": 1,
+        "R_IN_L_CLK": 1,
+        "R_IN_L_DIN": 1,
+        "R_IN_L_DOUT": 1,
+        "R_IN_L_LAT": 1,
+        "R_LS_L_BL": 1,
+        "R_LS_L_CLK": 1,
+        "R_LS_L_DIN": 1,
+        "R_LS_L_LAT": 1,
+        "R_MOD_L_BLEED": 1,
+        "R_SAFE_L": 1,
+        "U_DS_L": 1,
+        "U_L": 1,
+        "U_LS_L": 1
+      }
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ]
+  },
+  "a9_2_final/QS30-9_MAIN/erc": {
+    "counts": {
+      "footprint_link_issues": 153,
+      "lib_symbol_issues": 153
+    },
+    "components": {
+      "footprint_link_issues": {},
+      "lib_symbol_issues": {}
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Global label only appears once in the schematic",
+        "key": "single_global_label"
+      },
+      {
+        "description": "Four connection points are joined together",
+        "key": "four_way_junction"
+      },
+      {
+        "description": "SPICE model issue",
+        "key": "simulation_model_issue"
+      },
+      {
+        "description": "Assigned footprint doesn't match footprint filters",
+        "key": "footprint_filter"
+      }
+    ]
+  },
+  "a9_2_final/QS30-9_MAIN/drc": {
+    "counts": {
+      "net_conflict": 38,
+      "unconnected_items": 403,
+      "lib_footprint_issues": 157
+    },
+    "components": {
+      "net_conflict": {},
+      "unconnected_items": {},
+      "lib_footprint_issues": {
+        "H44": 1,
+        "H1164": 1,
+        "H486": 1,
+        "H11686": 1,
+        "C1": 1,
+        "C10": 1,
+        "C11": 1,
+        "C12": 1,
+        "C13": 1,
+        "C14": 1,
+        "C15": 1,
+        "C16": 1,
+        "C17": 1,
+        "C2": 1,
+        "C4": 1,
+        "C5": 1,
+        "C6": 1,
+        "C7": 1,
+        "C8": 1,
+        "C9": 1,
+        "C_DS_C": 1,
+        "C_MOD_C_3V3": 1,
+        "C_MOD_C_HV": 1,
+        "C_MOD_C_VDD": 1,
+        "D1": 1,
+        "D2": 1,
+        "D20": 1,
+        "D3": 1,
+        "D4": 1,
+        "F1": 1,
+        "J1": 1,
+        "J2": 1,
+        "J3": 1,
+        "J4": 1,
+        "J_MAIN_L_HV": 1,
+        "J_MAIN_L_LV": 1,
+        "J_MAIN_R_HV": 1,
+        "J_MAIN_R_LV": 1,
+        "J_T4": 1,
+        "J_T5": 1,
+        "J_T6": 1,
+        "L1": 1,
+        "L20": 1,
+        "L5": 1,
+        "LED1": 1,
+        "Q2": 1,
+        "Q20": 1,
+        "Q21": 1,
+        "Q22": 1,
+        "Q23": 1,
+        "Q24": 1,
+        "Q25": 1,
+        "Q3": 1,
+        "Q4": 1,
+        "Q5": 1,
+        "R10": 1,
+        "R11": 1,
+        "R12": 1,
+        "R15": 1,
+        "R16": 1,
+        "R17": 1,
+        "R18": 1,
+        "R19": 1,
+        "R20": 1,
+        "R21": 1,
+        "R22": 1,
+        "R23": 1,
+        "R24": 1,
+        "R25": 1,
+        "R26": 1,
+        "R27": 1,
+        "R28": 1,
+        "R29": 1,
+        "R30": 1,
+        "R31": 1,
+        "R32": 1,
+        "R33": 1,
+        "R34": 1,
+        "R35": 1,
+        "R36": 1,
+        "R37": 1,
+        "R38": 1,
+        "R38B": 1,
+        "R40": 1,
+        "R41": 1,
+        "R42": 1,
+        "R43": 1,
+        "R44": 1,
+        "R45": 1,
+        "R46": 1,
+        "R46S": 1,
+        "R47": 1,
+        "R48": 1,
+        "R49": 1,
+        "R5": 1,
+        "R50": 1,
+        "R51": 1,
+        "R52": 1,
+        "R53": 1,
+        "R54": 1,
+        "R55": 1,
+        "R56": 1,
+        "R57": 1,
+        "R58": 1,
+        "R59": 1,
+        "R6": 1,
+        "R60": 1,
+        "R61": 1,
+        "R62": 1,
+        "R63": 1,
+        "R64": 1,
+        "R7": 1,
+        "R8": 1,
+        "R9": 1,
+        "R_AN4_1": 1,
+        "R_AN4_2": 1,
+        "R_AN5_1": 1,
+        "R_AN5_2": 1,
+        "R_AN6_1": 1,
+        "R_AN6_2": 1,
+        "R_HV_REQ_PD": 1,
+        "R_HV_STAR": 1,
+        "R_IN_C_BL": 1,
+        "R_IN_C_CLK": 1,
+        "R_IN_C_DIN": 1,
+        "R_IN_C_DOUT": 1,
+        "R_IN_C_LAT": 1,
+        "R_LED": 1,
+        "R_LS_C_BL": 1,
+        "R_LS_C_CLK": 1,
+        "R_LS_C_DIN": 1,
+        "R_LS_C_LAT": 1,
+        "R_MOD_C_BLEED": 1,
+        "R_Q3_BE": 1,
+        "R_Q5_BE": 1,
+        "R_SAFE_C": 1,
+        "SW1": 1,
+        "SW2": 1,
+        "SW3": 1,
+        "SW4": 1,
+        "TP1": 1,
+        "U1": 1,
+        "U10": 1,
+        "U11": 1,
+        "U2": 1,
+        "U20": 1,
+        "U21": 1,
+        "U23": 1,
+        "U24": 1,
+        "U5": 1,
+        "U6": 1,
+        "U7": 1,
+        "U8": 1,
+        "U9": 1,
+        "U_C": 1,
+        "U_DS_C": 1,
+        "U_LS_C": 1
+      }
+    },
+    "inherited_ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ]
+  }
+}

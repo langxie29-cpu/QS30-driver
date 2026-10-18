@@ -1,0 +1,61 @@
+{
+  "baseline": "30441ec2ca9b23d7a09bcd71975503c9423b35d8",
+  "branch": "rev-a9-2-electrical-safety",
+  "initial_simulator_detection": "Get-Command, Program Files, LocalAppData Programs, uninstall registry: none found",
+  "downloads": [
+    {
+      "attempt": "latest/download",
+      "result": "tar.gz source returned instead of Windows binary; retained ignored tools/ngspice47/ngspice-47_64.7z",
+      "sha256": "894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f"
+    },
+    {
+      "url": "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47_64.7z",
+      "sha256": "59225971bd68cdd1199443649aa4615a9e6d684933f205ab49006a3942518f5a",
+      "official_page_sha256": "59225971bd68cdd1199443649aa4615a9e6d684933f205ab49006a3942518f5a",
+      "bytes": 13814879
+    }
+  ],
+  "extraction": "Windows tar -xf returned 1: empty/unreadable filename warnings; executable was extracted and --version works; validation smoke simulation follows",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "rc": 0,
+      "stdout": "?? kicad/logs/a9_2_before/\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "rc": 0,
+      "stdout": "rev-a9-2-electrical-safety\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "log",
+        "-1",
+        "--format=fuller"
+      ],
+      "rc": 0,
+      "stdout": "commit 30441ec2ca9b23d7a09bcd71975503c9423b35d8\nAuthor:     QS30-6 REV.A <qs30@local.invalid>\nAuthorDate: Sun Oct 18 16:26:45 2026 +0800\nCommit:     QS30-6 REV.A <qs30@local.invalid>\nCommitDate: Sun Oct 18 16:26:45 2026 +0800\n\n    REV.A9.1: freeze three-board architecture and reconcile native electrical nets\n    \n    Correct generated-label overlaps, full pin inventories, 96-bit ordering, DIN/DOUT voltage domains, and explicit HV return bond. Preserve baseline and intermediate native CLI evidence; add 90-channel/interface audits, per-violation issue IDs and OVP simulation inputs. ERC/DRC and mechanical/HV protection remain FAIL/HOLD; no manufacturing outputs.\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "--version"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "verification_first_attempt": {
+    "argv": [
+      "python",
+      "design9/verify_safety9.py"
+    ],
+    "rc": 1,
+    "error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0xb6 in position 3660 while reading UTF-8 native results.json",
+    "fix": "Explicit encoding=utf8 for native files; rerun passes"
+  },
+  "publish_first_attempt": {
+    "rc": 1,
+    "error": "same default GBK read of results.json",
+    "fix": "Explicit UTF8; previous_current_index.json already archived before failure, kept without overwrite"
+  },
+  "component_cluster_first_attempt": {
+    "rc": 0,
+    "problem": "English-only item pattern omitted refs in Chinese DRC JSON",
+    "fix": "Native ref inventory constrained token parsing; original derived parser_v1 outputs retained"
+  },
+  "staged_hash_first_attempt": {
+    "rc": 128,
+    "error": "git show :netlist9\\QS30-9_REV.A_netlist.csv failed: native metadata uses Windows separators",
+    "fix": "Normalize metadata path to / for Git; staged bytes match native capture SHA256"
+  }
+}

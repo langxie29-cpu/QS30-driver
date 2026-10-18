@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "git",
+    "-c",
+    "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    ".gitattributes",
+    ".gitignore",
+    "design9",
+    "docs9/*.md",
+    "kicad/projects",
+    "netlist9"
+  ],
+  "rc": 0,
+  "stdout": "",
+  "stderr": ""
+}

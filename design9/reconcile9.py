@@ -69,7 +69,7 @@ def capture(run, publish=False):
     rows = read_csv()
     model = build()
     version = subprocess.run([str(KC), 'version'], capture_output=True, text=True, check=True).stdout.strip()
-    result = {'revision': 'REV.A9.1', 'kicad_version': version, 'run': run, 'boards': {}, 'commands': []}
+    result = {'revision': 'REV.A9.2', 'kicad_version': version, 'run': run, 'boards': {}, 'commands': []}
     for board, prefixes in BOARDS.items():
         base = ROOT / 'kicad/projects' / board / board
         expected = {(r['ref'], r['pin']): r['net'] for r in rows if r['sheet'].startswith(prefixes)}

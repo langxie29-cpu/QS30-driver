@@ -1,0 +1,583 @@
+{
+  "native": "kicad\\logs\\a9_2_after\\QS30-9_MAIN.xml",
+  "csv": "netlist9\\QS30-9_REV.A_netlist.csv",
+  "sha256": {
+    "kicad\\logs\\a9_2_after\\QS30-9_MAIN.xml": "1fa78ae621024a64552c9ea36d578ed2f4ec0848c2b20ff93edeb55d7a6b5691",
+    "netlist9\\QS30-9_REV.A_netlist.csv": "48d844649580b7be8cba64fecc49398c375f5416a9027fc7dbe3d7eab13bcff6",
+    "tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+    "design9\\safety_sim9.py": "cdd9903cadb4fd7e2787248af7a7927e65faf99ec7f011b21401de1eecfc172f"
+  },
+  "results": [
+    {
+      "scenario": {
+        "id": "startup_9",
+        "mode": "boost"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617141,
+        "hv_end_V": 0.000342617141,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61331882e-06,
+        "q22_ic_abs_peak_A": 3.45906702e-06,
+        "q25_ic_abs_peak_A": 1.29899873e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "startup_no_load",
+        "tubes": 0
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617141,
+        "hv_end_V": 0.000342617141,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61331882e-06,
+        "q22_ic_abs_peak_A": 3.45906702e-06,
+        "q25_ic_abs_peak_A": 1.29899873e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "startup_6",
+        "tubes": 6
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617141,
+        "hv_end_V": 0.000342617141,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61331882e-06,
+        "q22_ic_abs_peak_A": 3.45906702e-06,
+        "q25_ic_abs_peak_A": 1.29899873e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "input_11_4",
+        "vin": 11.4
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000465234266,
+        "hv_end_V": 0.000465234266,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 3.95137916e-06,
+        "q22_ic_abs_peak_A": 2.96466862e-06,
+        "q25_ic_abs_peak_A": 9.40505048e-07,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00425026048,
+        "il_peak_A": 0.0240046264
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "input_12_6",
+        "vin": 12.6
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000265708882,
+        "hv_end_V": 0.000265708882,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 5.22194157e-06,
+        "q22_ic_abs_peak_A": 3.91529206e-06,
+        "q25_ic_abs_peak_A": 1.6883934e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00209751081,
+        "il_peak_A": 0.0180563739
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "line_step",
+        "vin_step": true
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000465234266,
+        "hv_end_V": 0.000465234266,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 3.95137916e-06,
+        "q22_ic_abs_peak_A": 2.96466862e-06,
+        "q25_ic_abs_peak_A": 9.40505048e-07,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00425026048,
+        "il_peak_A": 0.0240046264
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "six_to_nine",
+        "load_step": true
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617141,
+        "hv_end_V": 0.000342617141,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61331882e-06,
+        "q22_ic_abs_peak_A": 3.45906702e-06,
+        "q25_ic_abs_peak_A": 1.29899873e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "feedback_top_open",
+        "feedback": "top_open"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617406,
+        "hv_end_V": 0.000342617406,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.6123875e-06,
+        "q22_ic_abs_peak_A": 3.45918343e-06,
+        "q25_ic_abs_peak_A": 1.29888959e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "feedback_bottom_short",
+        "feedback": "bottom_short"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.00034261729,
+        "hv_end_V": 0.00034261729,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61494863e-06,
+        "q22_ic_abs_peak_A": 3.45929985e-06,
+        "q25_ic_abs_peak_A": 1.30036661e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "ovp_ramp",
+        "mode": "injection"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.2034887,
+        "hv_end_V": 85.2034887,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.54591377e-06,
+        "q22_ic_abs_peak_A": 3.40923866e-06,
+        "q25_ic_abs_peak_A": 1.35047976e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.78762205,
+        "il_peak_A": 0.0161924392,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.179026702,
+        "comp_end_V": 1.16045059e-08
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "ovp_initial",
+        "mode": "injection",
+        "initial_hv": true
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 230.0,
+        "hv_end_V": 230.0,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.38654011e-06,
+        "q22_ic_abs_peak_A": 3.28781422e-06,
+        "q25_ic_abs_peak_A": 1.45740358e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 2.26301328,
+        "il_peak_A": 0.352659712,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.164236854,
+        "comp_end_V": 1.79911474e-09
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "latch_recovery",
+        "mode": "injection",
+        "recover": true,
+        "reset": "pulse"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.2034887,
+        "hv_end_V": 85.2034887,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.54591377e-06,
+        "q22_ic_abs_peak_A": 3.40923866e-06,
+        "q25_ic_abs_peak_A": 1.35047976e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.78762205,
+        "il_peak_A": 0.0161924392,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.179026702,
+        "comp_end_V": 1.16045059e-08
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "reset_stuck",
+        "mode": "injection",
+        "reset": "stuck"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.2045179,
+        "hv_end_V": 85.2045179,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 5.47782889e-06,
+        "q22_ic_abs_peak_A": 4.10690827e-06,
+        "q25_ic_abs_peak_A": 1.29086632e-05,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.787567156,
+        "il_peak_A": 0.0159241097,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.00630226495,
+        "comp_end_V": 4.00021329e-08
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "corner_late",
+        "mode": "injection",
+        "rtop": "1515k",
+        "rbot": "18.909k",
+        "ref": 2.545,
+        "beta": 40,
+        "c16": "120n"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.2190693,
+        "hv_end_V": 85.2190693,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.55883605e-06,
+        "q22_ic_abs_peak_A": 3.42076281e-06,
+        "q25_ic_abs_peak_A": 1.37017941e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.787554108,
+        "il_peak_A": 0.0155690368,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.175478699,
+        "comp_end_V": 1.71589848e-07
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "corner_early",
+        "mode": "injection",
+        "rtop": "1485k",
+        "rbot": "19.291k",
+        "ref": 2.445,
+        "beta": 200,
+        "c16": "80n"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.1965048,
+        "hv_end_V": 85.1965048,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.51110578e-06,
+        "q22_ic_abs_peak_A": 3.38420242e-06,
+        "q25_ic_abs_peak_A": 1.48545598e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.787489354,
+        "il_peak_A": 0.0159257171,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.11119061,
+        "comp_end_V": 6.74233302e-09
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "mcu_poweroff",
+        "mode": "injection",
+        "mcu_off": true
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.04,
+        "hv_peak_V": 85.2034887,
+        "hv_end_V": 85.2034887,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.54591377e-06,
+        "q22_ic_abs_peak_A": 3.40923866e-06,
+        "q25_ic_abs_peak_A": 1.35047976e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.78762205,
+        "il_peak_A": 0.0161924392,
+        "sense_crossing_s": null,
+        "out_low_s": 0.00801,
+        "latch_end_V": 0.179026702,
+        "comp_end_V": 1.16045059e-08
+      },
+      "protection_signoff": "FAIL"
+    },
+    {
+      "scenario": {
+        "id": "input_poweroff",
+        "mode": "boost",
+        "poweroff": true
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 0.000342617141,
+        "hv_end_V": 0.000342617141,
+        "hv_in_peak_V": 8.4,
+        "q21_ic_abs_peak_A": 4.61331882e-06,
+        "q22_ic_abs_peak_A": 3.45906702e-06,
+        "q25_ic_abs_peak_A": 1.29899873e-06,
+        "comp_min_after_15ms_V": 0.0,
+        "vref_uc_peak_V": 0.0,
+        "cs_peak_V": 0.00296619932,
+        "il_peak_A": 0.0205602074
+      },
+      "protection_signoff": "FAIL"
+    }
+  ]
+}

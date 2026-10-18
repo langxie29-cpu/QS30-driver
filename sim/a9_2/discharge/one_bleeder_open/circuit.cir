@@ -1,0 +1,15 @@
+QS30 A9.2 isolated passive discharge one_bleeder_open
+* No converter energy input. Sense dividers omitted, bleeders only.
+COUT HV_BUS 0 2.03e-05 IC=172.18
+RBLEED HV_BUS 0 66666.66666666667
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 0.001 12 uic
+meas tran end_time MAX time
+meas tran final_voltage FIND v(HV_BUS) AT=12
+wrdata voltage.txt v(HV_BUS)
+quit
+.endc
+.end

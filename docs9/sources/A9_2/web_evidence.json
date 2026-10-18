@@ -1,0 +1,49 @@
+{
+  "BAT54S": {
+    "url": "https://assets.nexperia.com/documents/data-sheet/BAT54S.pdf",
+    "access": "official PDF read with web tool; urllib download HTTP403 retained in manifest",
+    "page": 1,
+    "facts": {
+      "pin1": "A1",
+      "pin2": "K2",
+      "pin3": "K1/A2"
+    }
+  },
+  "MMBT3904": {
+    "url": "https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf",
+    "access": "official PDF read with web tool; urllib download HTTP403",
+    "page": 1,
+    "facts": {
+      "pins": "1B/2E/3C",
+      "collector_current_max_A": 0.2
+    }
+  },
+  "DMP3098L": {
+    "url": "https://www.diodes.com/datasheet/download/DMP3098L.pdf",
+    "access": "official PDF read with web tool; urllib download HTTP403",
+    "page": 2,
+    "facts": {
+      "VGS_max_abs_V": 20,
+      "VDS_max_abs_V": 30
+    }
+  },
+  "TL431": {
+    "url": "https://www.ti.com/lit/ds/symlink/tl431.pdf",
+    "access": "archived PDF with SHA256",
+    "page": 4,
+    "facts": {
+      "TL431_DBZ_pins": "1K/2REF/3A",
+      "TL432_DBZ_pins": "1REF/2K/3A"
+    }
+  },
+  "UC3843": {
+    "url": "https://www.ti.com/lit/ds/symlink/uc3843.pdf",
+    "access": "archived A9.1 PDF; extracted A9.2 text",
+    "facts": {
+      "reference_V": 5,
+      "shutdown": "external COMP ground",
+      "sense_abs_max_V": 6.3,
+      "UVLO_V": "8.4/7.6 nominal"
+    }
+  }
+}

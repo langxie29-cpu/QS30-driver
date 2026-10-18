@@ -282,10 +282,12 @@ def build():
     for pin, net in (("1", "COMP_N"), ("2", "FB_HV"), ("3", "CS_FILT"), ("4", "RT_CT"),
                      ("5", "GND"), ("6", "HV_GATE"), ("7", "HV_IN"), ("8", "VREF_UC")):
         d.conn("U20", pin, net)
-    add("U21", "TL431", "TL431", "UC3843 VREF 2.5 V", "SOT-23", S, "VERIFIED")
-    d.conn("U21", 1, "VREF_UC"); d.conn("U21", 2, "VREF_UC"); d.conn("U21", 3, "GND")
+    # A9.2: never clamp the UC3843 internal 5 V output with a 2.5 V shunt.
+    # Retain the auxiliary shunt on its own net for traceable ref continuity.
+    add("U21", "TL431", "TL431", "isolated auxiliary 2.5 V reference", "SOT-23", S, "PROVISIONAL")
+    d.conn("U21", 1, "VREF_AUX_2V5"); d.conn("U21", 2, "VREF_AUX_2V5"); d.conn("U21", 3, "GND")
     add("R31", "4.7k", "R", "VREF 偏置", "0603", S, "VERIFIED")
-    d.conn("R31", 1, "EXT12"); d.conn("R31", 2, "VREF_UC")
+    d.conn("R31", 1, "EXT12"); d.conn("R31", 2, "VREF_AUX_2V5")
     add("R32", "10k", "R", "RT", "0603", S, "VERIFIED")
     d.conn("R32", 1, "RT_CT"); d.conn("R32", 2, "VREF_UC")
     add("C9", "2.2nF", "C", "CT", "0603", S, "VERIFIED")
@@ -326,8 +328,11 @@ def build():
     d.conn("Q5", 1, "Q5_B"); d.conn("Q5", 2, "GND"); d.conn("Q5", 3, "HV_EN_G")
     add("R38B", "10k", "R", "Q5 基极串阻", "0603", S, "VERIFIED")
     d.conn("R38B", 1, "HV_EN"); d.conn("R38B", 2, "Q5_B")
-    add("R39", "100", "R", "HV_EN 串阻", "0603", S, "VERIFIED")
-    d.conn("R39", 1, "HV_EN"); d.conn("R39", 2, "HV_EN_G")
+    # A9.2: remove the direct 12 V gate to 3V3 logic connection; Q5 is the driver.
+    # R39 is deliberately absent (not a hidden DNP link).
+    for ref, net in (("R_Q5_BE", "Q5_B"), ("R_Q3_BE", "Q3_B"), ("R_HV_REQ_PD", "HV_EN_REQ")):
+        add(ref, "100k", "R", "A9.2 default-off pull-down", "0603", S, "PROVISIONAL")
+        d.conn(ref, 1, net); d.conn(ref, 2, "GND")
     # OVP
     S = "MB_OVP"
     add("U24", "TL431", "TL431", "OVP 2.5 V 基准", "SOT-23", S, "VERIFIED")
@@ -341,7 +346,7 @@ def build():
     add("C16", "100nF", "C", "OVP 滤波", "0603", S, "VERIFIED")
     d.conn("C16", 1, "OVP_SNS"); d.conn("C16", 2, "GND")
     add("U23", "LM393DR", "LM393", "OVP 比较器（EXT12 供电）", "SOIC-8", S, "VERIFIED")
-    for pin, net in (("1", "OVP_SET"), ("2", "VREF_OVP"), ("3", "OVP_SNS"), ("4", "GND"),
+    for pin, net in (("1", "OVP_SET"), ("2", "OVP_SNS"), ("3", "VREF_OVP"), ("4", "GND"),
                      ("5", "GND"), ("6", "VREF_OVP"), ("8", "EXT12")):
         d.conn("U23", pin, net)
     d.nc.append(("U23", "7"))
@@ -372,7 +377,8 @@ def build():
     add("R51", "12k", "R", "故障分压下（正常 1.23 V）", "0603", S, "VERIFIED")
     d.conn("R51", 1, "HVF_NODE"); d.conn("R51", 2, "GND")
     add("D4", "BAT54S", "BAT54S", "钳位 3V3", "SOT-23", S, "VERIFIED")
-    d.conn("D4", "1", "GND"); d.conn("D4", "2", "HVF_NODE"); d.conn("D4", "3", "3V3")
+    # BAT54S: 1=A1, 2=K2, 3=K1/A2. The middle junction is pin 3.
+    d.conn("D4", "1", "GND"); d.conn("D4", "2", "3V3"); d.conn("D4", "3", "HVF_NODE")
     add("Q25", "MMBT3904", "Q_NPN", "OVP 复位", "SOT-23", S, "VERIFIED")
     d.conn("Q25", 1, "OVP_RST_G"); d.conn("Q25", 2, "GND"); d.conn("Q25", 3, "OVP_LATCH")
     add("R52", "10k", "R", "复位串阻", "0603", S, "VERIFIED")

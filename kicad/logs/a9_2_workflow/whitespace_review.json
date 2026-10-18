@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "git",
+    "-c",
+    "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "rc": 2,
+  "finding_count": 76182,
+  "by_file": {
+    "docs9/sources/A9_2/TI_TL431.txt": 473,
+    "docs9/sources/A9_2/TI_UC3843.txt": 637,
+    "sim/a9_2/discharge/all_connected/voltage.txt": 12012,
+    "sim/a9_2/discharge/all_high_rc/voltage.txt": 12012,
+    "sim/a9_2/discharge/detached_module/voltage.txt": 15012,
+    "sim/a9_2/discharge/main_alone/voltage.txt": 12012,
+    "sim/a9_2/discharge/main_bleeder_open/voltage.txt": 12012,
+    "sim/a9_2/discharge/one_bleeder_open/voltage.txt": 12012
+  },
+  "disposition": "Raw SPICE wrdata and extracted datasheet text preserve original whitespace; not hand-edited source. No evidence stripped. Code/docs check excludes raw source/evidence only."
+}
