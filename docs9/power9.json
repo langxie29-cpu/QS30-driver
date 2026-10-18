@@ -1,0 +1,67 @@
+{
+ "boost": {
+  "pout_typ": 3.486645,
+  "pout_max": 4.648860000000001,
+  "pin_typ": 4.189831521739131,
+  "pin_max": 5.453108695652175,
+  "iin_typ": 0.34915262681159426,
+  "iin_max": 0.45442572463768127,
+  "iin_worst": 0.47834286803966447,
+  "duty": 0.9303054942502033,
+  "delta_i": 0.6505632826924499,
+  "ccm_boundary": 0.32528164134622495,
+  "mode_typ": "CCM",
+  "mode_max": "CCM",
+  "i_peak_typ": 0.6744342681578193,
+  "i_peak_max": 0.7797073659839062,
+  "ripple_ccm_V": 0.012076080934978597,
+  "ripple_dcm_V": 0.012980769230769226,
+  "mosfet_Vstress": 198.007,
+  "diode_Vstress": 198.007,
+  "inductor_Isat_req": 5.0,
+  "l20_ok": true
+ },
+ "ovp": {
+  "nominal": 198.8,
+  "v_min": 192.89506768480123,
+  "v_max": 204.1090839921466,
+  "span": 11.21401630734536,
+  "window_used": [
+   192.5,
+   204.5
+  ],
+  "fits": true,
+  "with_01pct": {
+   "v_min": 196.75861660568492,
+   "note": "0.1% 电阻可收紧窗口（BOM-B/C）"
+  }
+ },
+ "feedback": {
+  "vout_nom": 171.83889140271492,
+  "vout_min": 167.64311928341027,
+  "vout_max": 176.1362800185109
+ },
+ "discharge": {
+  "energy_J": 0.27145952400000006,
+  "t_172_100_ms": 71.2888888888889,
+  "r_bleed_total_ohm": 49999.99999999999,
+  "tau_ms": 999.9999999999999,
+  "t_100_50_ms": 693.1471805599451,
+  "total_s": 0.7644360694488341,
+  "limit_s": 5.0,
+  "ok": true
+ },
+ "gate": {
+  "trip_v": 11.2,
+  "hyst_v": 0.33356220138028664,
+  "vdd_min": 10.8,
+  "ok": true
+ },
+ "ok": {
+  "boost": true,
+  "ovp": true,
+  "feedback": true,
+  "discharge": true,
+  "gate": true
+ }
+}
