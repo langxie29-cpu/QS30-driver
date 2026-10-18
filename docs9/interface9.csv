@@ -1,0 +1,19 @@
+﻿connector,pin,signal,说明,额定/备注
+"J_MOD_x_LV (2x8 IDC, keyed)",1,3V3,3.3 V 逻辑供电（主板稳压）,≤100 mA
+"J_MOD_x_LV (2x8 IDC, keyed)",2,GND,逻辑地,
+"J_MOD_x_LV (2x8 IDC, keyed)",3,DRV_VDD,12 V 驱动供电（HV5622 VDD）,10.8–13.2 V
+"J_MOD_x_LV (2x8 IDC, keyed)",4,GND,驱动地,
+"J_MOD_x_LV (2x8 IDC, keyed)",5,MOD_x_DIN,串行数据输入（3.3 V）,MSB-first
+"J_MOD_x_LV (2x8 IDC, keyed)",6,MOD_x_DOUT,串行数据输出（3.3 V，回主板）,仅 L/R 模块
+"J_MOD_x_LV (2x8 IDC, keyed)",7,DISP_CLK,移位时钟（3.3 V）,≤200 kHz
+"J_MOD_x_LV (2x8 IDC, keyed)",8,DISP_LAT,锁存（3.3 V）,LE 高装载
+"J_MOD_x_LV (2x8 IDC, keyed)",9,DISP_ALLOW,消隐（3.3 V，高=正常）,BL=0 → 全关
+"J_MOD_x_LV (2x8 IDC, keyed)",10,SAFETY_x_IN,安全回路进,串行通过模块
+"J_MOD_x_LV (2x8 IDC, keyed)",11,SAFETY_x_OUT,安全回路出,任一模块断开→HV_EN=0
+"J_MOD_x_LV (2x8 IDC, keyed)",12,GND,逻辑地,
+"J_MOD_x_LV (2x8 IDC, keyed)",13,GND,逻辑地,
+"J_MOD_x_LV (2x8 IDC, keyed)",14,GND,逻辑地,
+"J_MOD_x_LV (2x8 IDC, keyed)",15,GND,逻辑地,
+"J_MOD_x_LV (2x8 IDC, keyed)",16,GND,逻辑地,
+"J_MOD_x_HV (2P, 5.08mm)",1,HV_BUS,172 V DC（危险）,≥300 V 额定连接器，防触碰，Pin1 标识
+"J_MOD_x_HV (2P, 5.08mm)",2,GND_HV,高压回流（单点接 GND）,独立线束
