@@ -1,0 +1,55 @@
+Note: Starting dynamic gmin stepping
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Warning: source stepping failed
+Note: Transient op started
+Error: Transient op failed, timestep too small
+
+
+Error: The operating point could not be simulated successfully.
+    Any of the following steps may fail.!
+
+
+Error: Finding the operating point for transient simulation failed 
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: gate charge isolated device characterization, no boost workpoint
+
+Doing analysis at TEMP = 100.000000 and TNOM = 25.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Last Node Voltages
+------------------
+
+Node                                   Last Voltage        Previous Iter
+----                                   ------------        -------------
+xq.3                                      -nan(ind)            -nan(ind)
+xq.gx                                     -nan(ind)            -nan(ind)
+drain                                           nan            -nan(ind)
+xq.4                                      -nan(ind)            -nan(ind)
+gate                                      -nan(ind)            -nan(ind)
+xq.gy                                     -nan(ind)            -nan(ind)
+xq.100                                      1.34149              1.34149
+xq.200                                            1    
+doAnalyses: TRAN:  Timestep too small; initial timepoint: trouble with xq:jd-instance j.xq.j1
+
+
+tran simulation(s) aborted
+Error: no such vector v(gate)
+                1
+cl                                              400                  400
+gl                                               12                   12
+e.xq.etcv#branch                          -nan(ind)            -nan(ind)
+vgl#branch                                -nan(ind)            -nan(ind)
+vcl#branch                                -nan(ind)            -nan(ind)
+v.xq.vtcv#branch                                  0                    0
+
+
+No. of Data Rows : 0
+ngspice-47 done

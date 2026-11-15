@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {
+      "temperature_C": 25,
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 1.000602321538379e-06,
+      "finite": true,
+      "time_gate10V_s": 1.0006023194340064e-06,
+      "Qg_C": -9.998976805659936e-10,
+      "drain_initial_V": 400.01145529418795,
+      "execution": "FAIL",
+      "fit_screen": "NOT_PASSED"
+    },
+    {
+      "temperature_C": 25,
+      "step_s": 2.5e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 1.000506285048074e-06,
+      "finite": true,
+      "execution": "FAIL",
+      "fit_screen": "NOT_PASSED"
+    },
+    {
+      "temperature_C": 100,
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 1.000506393309153e-06,
+      "finite": true,
+      "execution": "FAIL",
+      "fit_screen": "EXPLORATORY_NOT_DATASHEET_CORNER"
+    },
+    {
+      "temperature_C": 100,
+      "step_s": 2.5e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 1.001824261928624e-06,
+      "finite": true,
+      "execution": "FAIL",
+      "fit_screen": "EXPLORATORY_NOT_DATASHEET_CORNER"
+    }
+  ],
+  "24V_07": "NOT_PASSED"
+}

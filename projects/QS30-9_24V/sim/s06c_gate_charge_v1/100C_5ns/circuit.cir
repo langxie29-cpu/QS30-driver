@@ -1,0 +1,23 @@
+Gate charge isolated device characterization, no boost workpoint
+.include vendor.lib
+XQ drain gate 0 SiHP8N50D
+ID 0 drain 4
+VCL cl 0 400
+DCL drain cl CLAMP
+VGL gl 0 12
+DGL gate gl CLAMP
+.model CLAMP D(IS=1p N=.01 RS=.001)
+IG 0 gate PULSE(0 1m 1u 1n 1n 100u 200u)
+RGDC gate 0 1G
+.temp 100
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=15
+tran 5n 40u 0 5n
+wrdata waves.txt v(gate) v(drain) i(vcl)
+quit
+.endc
+.end

@@ -1,0 +1,34 @@
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: gate charge isolated device characterization, no boost workpoint
+
+Doing analysis at TEMP = 100.000000 and TNOM = 25.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xq.3                                   20.9242
+xq.gx                                 0.341507
+drain                                  401.333
+xq.4                                   401.333
+gate                                   1.3e-05
+xq.gy                                  1.3e-05
+xq.100                                 1.34149
+xq.200                                       1
+cl                                         400
+gl                                          12
+e.xq.etcv#branch                             0
+vgl#branch                            -1.3e-11
+vcl#branch                                   4
+v.xq.vtcv#branch                             0
+
+
+No. of Data Rows : 16016
+ngspice-47 done

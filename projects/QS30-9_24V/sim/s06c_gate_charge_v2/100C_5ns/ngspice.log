@@ -1,0 +1,40 @@
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: gate charge isolated device characterization, no boost workpoint
+
+Doing analysis at TEMP = 100.000000 and TNOM = 25.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xq.3                                   20.9242
+xq.gx                                 0.341494
+drain                                  400.013
+xq.4                                   400.013
+gate                                   1.3e-12
+xq.gy                                  1.3e-12
+xq.100                                 1.34149
+xq.200                                       1
+cl                                         400
+gl                                          12
+reset                                        1
+e.xq.etcv#branch                             0
+vreset#branch                                0
+vgl#branch                            -1.3e-11
+vcl#branch                                   4
+v.xq.vtcv#branch                             0
+
+doAnalyses: TRAN:  Timestep too small; time = 1.00051e-06, timestep = 6.25e-21: trouble with node "gate"
+
+
+tran simulation(s) aborted
+
+No. of Data Rows : 226
+ngspice-47 done
