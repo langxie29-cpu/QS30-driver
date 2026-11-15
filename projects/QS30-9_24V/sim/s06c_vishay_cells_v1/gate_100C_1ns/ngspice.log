@@ -1,0 +1,33 @@
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: exact vishay alternate mos cell, not boost workpoint
+
+Doing analysis at TEMP = 100.000000 and TNOM = 25.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+bias                                       195
+d                                      194.999
+g                                            0
+xq.3                                   20.9241
+xq.gx                                 0.341494
+xq.4                                   194.999
+xq.gy                                        0
+xq.100                                 1.34149
+xq.200                                       1
+e.xq.etcv#branch                             0
+v.xq.vtcv#branch                             0
+vg#branch                                    0
+vbias#branch                      -2.92905e-06
+
+
+No. of Data Rows : 40042
+ngspice-47 done

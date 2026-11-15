@@ -1,0 +1,19 @@
+{
+  "scope": "SiHP8N50D-GE3 alternate candidate; UCC28C43 original START +22ohm direct gate.195V resistor-load device cell, not boost or precharged output. ForcedCS is not source-current feedback.",
+  "temperature_scope": "MOS electrical25/100C model; TI behavioral thresholds/delays nominal and not full-temperature guarantees",
+  "criteria": {
+    "stop_s": 6e-05,
+    "CS_half_to_VGS3_s_max": 3.7e-07,
+    "peak_controller_OUT_A_abs_max": 1,
+    "positive_charge_energy_J_max": 5e-06,
+    "half_step_delay_delta_s_max": 1e-08,
+    "half_step_peak_current_relative_delta_max": 0.03,
+    "half_step_energy_relative_delta_max": 0.03
+  },
+  "cases": "VDD12/12.6,MOS25/100C,maxstep2/1ns; same1nA/1uV/.001 tolerances",
+  "model_hashes": {
+    "MOS": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd",
+    "TI": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+  },
+  "timeout_s": 30
+}

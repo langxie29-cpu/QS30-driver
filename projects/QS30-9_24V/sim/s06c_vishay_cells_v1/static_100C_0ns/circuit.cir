@@ -1,0 +1,17 @@
+Exact Vishay alternate MOS cell, not boost workpoint
+.include vendor.lib
+VG g 0 10
+ID 0 d 4
+XQ d g 0 SiHP8N50D
+.temp 100
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=15
+op
+wrdata waves.txt v(d) v(g)
+quit
+.endc
+.end

@@ -1,0 +1,9 @@
+{
+  "candidate_mpn": "SiHP8N50D-GE3",
+  "model": "SiHP8N50D D G S, original vendor RevB electrical model",
+  "vendor_sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd",
+  "scope": "25/100C external-temperature electrical cells, no self-heating or boost startup. Vendor guideline characterizes25-150C,0-15V gate; not guaranteed part corners.",
+  "criteria": "rc0,finite native40us,no abort/error; list unsupported model warnings as qualification blockers;2/1ns convergence required",
+  "cases": "ideal gate same195V resistor bias as ST; static10V4A at25/100C",
+  "timeout_s": 30
+}

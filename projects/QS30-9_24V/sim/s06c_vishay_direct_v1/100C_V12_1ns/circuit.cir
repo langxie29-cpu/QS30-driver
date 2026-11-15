@@ -1,0 +1,30 @@
+Alternate exact transistor CS gate cell, not boost workpoint
+.include st.lib
+.include uc.lib
+VDD vdd 0 PWL(0 0 1u 12 60u 12)
+VBIAS bias 0 195
+RLOAD bias drain 200
+XQ drain gate src SiHP8N50D
+RSHUNT src 0 .82
+VPROBE out gr 0
+RG gr gate 22
+RGS gate src 10k
+XU comp fb cs ct 0 out vdd vref UCC28C43_START
+VFB fb 0 0
+VCS cs 0 PULSE(0 1.2 30u 1n 1n 10u 20u)
+RT vref ct 15.4k
+CT ct 0 1n
+CVREF vref 0 100n
+CCOMP comp 0 1n
+.temp 100
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=15
+tran 1n 60u 0 1n uic
+wrdata waves.txt v(cs) v(out) v(gate) v(src) v(drain) i(vprobe) i(vbias) v(vref)
+quit
+.endc
+.end

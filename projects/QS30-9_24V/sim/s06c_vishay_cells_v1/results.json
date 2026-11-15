@@ -1,0 +1,133 @@
+{
+  "cases": [
+    {
+      "kind": "gate",
+      "temperature_C": 25,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        4e-05,
+        0.0,
+        194.9999945899317,
+        9.613656497611268e-09,
+        -2.705034130023876e-08
+      ],
+      "samples": 20060,
+      "end_s": 4e-05,
+      "drain_min_V": 0.6212527309880064,
+      "drain_max_V": 198.0406297685174,
+      "gate_current_peak_A": 2.040911384663614,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    },
+    {
+      "kind": "gate",
+      "temperature_C": 25,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        4e-05,
+        0.0,
+        194.9999945897116,
+        9.61429606116915e-09,
+        -2.705144197534537e-08
+      ],
+      "samples": 40057,
+      "end_s": 4e-05,
+      "drain_min_V": 0.6216816430779888,
+      "drain_max_V": 198.0412520557311,
+      "gate_current_peak_A": 2.045968717246037,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    },
+    {
+      "kind": "static",
+      "temperature_C": 25,
+      "step_s": 0.0,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        10.0,
+        2.822272625200674,
+        10.0
+      ],
+      "samples": 1,
+      "Rds_model_ohm": 0.7055681563001684,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    },
+    {
+      "kind": "gate",
+      "temperature_C": 100,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        4e-05,
+        0.0,
+        194.999409448295,
+        2.36393677965907e-08,
+        -2.952758524799037e-06
+      ],
+      "samples": 20050,
+      "end_s": 4e-05,
+      "drain_min_V": 1.123042981786122,
+      "drain_max_V": 197.7276872549274,
+      "gate_current_peak_A": 1.972057276570574,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    },
+    {
+      "kind": "gate",
+      "temperature_C": 100,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        4e-05,
+        0.0,
+        194.9994094480657,
+        2.364044926483899e-08,
+        -2.952759671437377e-06
+      ],
+      "samples": 40042,
+      "end_s": 4e-05,
+      "drain_min_V": 1.124272474059918,
+      "drain_max_V": 197.7272809936545,
+      "gate_current_peak_A": 1.974528517297401,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    },
+    {
+      "kind": "static",
+      "temperature_C": 100,
+      "step_s": 0.0,
+      "rc": 0,
+      "parsed_error": false,
+      "model_warnings": [],
+      "finite": true,
+      "last_row": [
+        10.0,
+        5.046745517802343,
+        10.0
+      ],
+      "samples": 1,
+      "Rds_model_ohm": 1.2616863794505857,
+      "execution": "PASS",
+      "qualification": "PENDING_STEP_COMPARISON"
+    }
+  ],
+  "24V_07": "NOT_PASSED"
+}
