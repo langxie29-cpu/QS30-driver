@@ -1,0 +1,14 @@
+Exact device isolated cell 25C
+.include st.lib
+.include diode.lib
+VBIAS bias 0 195
+RLOAD bias d 200
+VG g 0 PULSE(0 12 20u 100n 100n 5u 10u)
+XQ d g 0 STP9NK50Z
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+
+.tran 1n 40u 0 1n
+.save V(g) V(d) I(VG) I(VBIAS)
+.options plotwinsize=0 numdgt=15
+.end
