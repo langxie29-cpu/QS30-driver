@@ -1,0 +1,44 @@
+********************************
+* Copyright:                   *
+* Vishay Intertechnology, Inc. *
+********************************
+*Jan 23, 2017
+*ECN S17-0112, Rev. B
+*This document is intended as a SPICE modeling guideline and does not
+*constitute a commercial product datasheet. Designers should refer to the
+*appropriate datasheet of the same number for guaranteed specification
+*limits.
+.SUBCKT SiHP8N50D D G S 
+M1 3 GX S S  NMOS W= 475688u  L= 1u 
+M2 S GX S D  PMOS W= 475688u  L= 2.118e-06 
+M2B S GX S 3 PMOS2 W= 475688u L= 2.118e-06 
+R1 D 4 3.153e-02 5.377e-02 -9.571e-05 
+RLK 3 S 1.6e9 
+J1 4 S 3 JD 475688u 
+.MODEL JD NJF (VTO = -1.600e+01 BETA = 1.144e-01 LAMBDA = 1.653e-02 
++BETATCE = -1.081e+00 VTOTC = 6.566e-02 IS = 1e-18 N = 10 ) 
+CGS GX S 4.265e-10 
+CGD GX D 3.205e-12 
+RG G GY 1.8 
+RTCV 100 S 1e6 6.432e-03 -2.505e-05 
+ETCV GX GY 100 200 1 
+ITCV S 100 1u 
+VTCV 200 S 1 
+DBD S D DBD 
+**************************************************************** 
+.MODEL NMOS NMOS ( LEVEL = 3 TOX = 15e-8 
++ RS = 0 KP = 6.594e-06 NSUB = 5.060e+16 
++ KAPPA = 4.393e-01 NFS = 4.553e+11 
++ LD = 0 IS = 0 TPG = 1 CAPOP = 12 ) 
+*************************************************************** 
+.MODEL PMOS PMOS ( LEVEL = 3 TOX = 15e-8 
++NSUB = 3.057e+14 IS = 0 TPG = -1 CAPOP = 12 ) 
+.MODEL PMOS2 PMOS ( LEVEL = 3 TOX = 15e-8 
++NSUB = 9e15 IS = 0 TPG = -1 CAPOP = 12 ) 
+**************************************************************** 
+.MODEL DBD D ( 
++FC = 0.1 TT = 1.04e-6 TREF = 25 BV = 501 
++RS = 5.833e-03 N = 1.577e+00 IS = 6.563e-09 
++EG = 1.217e+00 XTI = 4.116e-01 TRS = 4.110e-03 
++CJO = 1.026e-09 VJ = 6.258e-01 M = 6.026e-01 ) 
+.ENDS 

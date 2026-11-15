@@ -1,0 +1,543 @@
+                www.vishay.com                                                                SiHP8N50D
+
+                                                                                             Vishay Siliconix
+
+                                        D Series Power MOSFET
+
+PRODUCT SUMMARY                                                             FEATURES
+                                                                            � Optimal Design
+VDS (V) at TJ max.                                  550  0.85
+RDS(on) max. at 25 캜 ()            VGS = 10 V                                  - Low Area Specific On-Resistance
+
+Qg (max.) (nC)                          30                                      - Low Input Capacitance (Ciss)
+
+Qgs (nC)                                4                                       - Reduced Capacitive Switching Losses
+                                                                                - High Body Diode Ruggedness
+Qgd (nC)                                7                                       - Avalanche Energy Rated (UIS)
+                                                                            � Optimal Efficiency and Operation
+Configuration                           Single                                  - Low Cost
+                                                                                - Simple Gate Drive Circuitry
+          TO-220AB                                       D                                                                 compliance
+                                 S                                              - Low Figure-of-Merit (FOM): Ron x Qg
+                                        G
+                               D                         S                      - Fast Switching
+                            G                                               � Material categorization: For definitions of
+                                            N-Channel MOSFET
+                                                                              please see www.vishay.com/doc?99912
+
+                                                                            APPLICATIONS
+                                                                            � Consumer Electronics
+
+                                                                                - Displays (LCD or Plasma TV)
+                                                                            � Server and Telecom Power Supplies
+
+                                                                                - SMPS
+                                                                            � Industrial
+
+                                                                                - Welding
+                                                                                - Induction Heating
+                                                                                - Motor Drives
+                                                                            � Battery Chargers
+
+ORDERING INFORMATION                                                     TO-220AB
+                                                                         SiHP8N50D-E3
+Package                                                                  SiHP8N50D-GE3
+Lead (Pb)-free
+Lead (Pb)-free and Halogen-free
+
+ABSOLUTE MAXIMUM RATINGS (TC = 25 캜, unless otherwise noted)
+
+PARAMETER                                                                          SYMBOL        LIMIT                     UNIT
+                                                                                                   500
+Drain-Source Voltage                                                                    VDS       � 30                       V
+                                                                                                    30
+Gate-Source Voltage                                                                                8.7                       A
+Gate-Source Voltage AC (f > 1 Hz) VGS                                                              5.5
+                                                                                                    18                     W/캜
+Continuous Drain Current (TJ = 150 캜)                   VGS at 10 V  TC = 25 캜        ID        1.25                      mJ
+Pulsed Drain Currenta                                                                               29                       W
+                                                                      TC = 100 캜                  156                      캜
+                                                                                                                           V/ns
+                                                                                        IDM  - 55 to + 150                  캜
+                                                                                                    24
+Linear Derating Factor                                                                            0.37
+                                                                                                   300
+Single Pulse Avalanche Energyb                                                          EAS
+
+Maximum Power Dissipation                                                               PD
+
+Operating Junction and Storage Temperature Range                                   TJ, Tstg
+
+Drain-Source Voltage Slope                                     TJ = 125 캜         dV/dt
+Reverse Diode dV/dtd
+
+Soldering Recommendations (Peak Temperature)c                  for 10 s
+
+Notes
+
+a. Repetitive rating; pulse width limited by maximum junction temperature.
+b. VDD = 50 V, starting TJ = 25 캜, L = 2.3 mH, Rg = 25 , IAS = 5 A.
+c. 1.6 mm from case.
+d. ISD  ID, starting TJ = 25 캜.
+
+S12-0691-Rev. A, 02-Apr-12                                            1                      Document Number: 91488
+
+                                        For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+           www.vishay.com                                                                                          SiHP8N50D
+
+                                                                                                                  Vishay Siliconix
+
+THERMAL RESISTANCE RATINGS                         SYMBOL                TYP.                               MAX.               UNIT
+                                                      RthJA                -                                  62               캜/W
+PARAMETER                                             RthJC                -                                 0.8
+Maximum Junction-to-Ambient
+Maximum Junction-to-Case (Drain)
+
+SPECIFICATIONS (TJ = 25 캜, unless otherwise noted)
+
+PARAMETER                                SYMBOL       TEST CONDITIONS                                       MIN. TYP.          MAX. UNIT
+
+Static
+
+Drain-Source Breakdown Voltage             VDS        VGS = 0 V, ID = 250 A                                 500          -        -     V
+VDS Temperature Coefficient              VDS/TJ                                                                                   -   V/캜
+Gate-Source Threshold Voltage (N)         VGS(th)  Reference to 25 캜, ID = 250 A                           -            0.58     5
+Gate-Source Leakage                                                                                                            � 100    V
+                                           IGSS       VDS = VGS, ID = 250 A                                 3            -        1    nA
+Zero Gate Voltage Drain Current                                                                                                  10
+                                           IDSS                 VGS = � 30 V                                -            -     0.85    A
+Drain-Source On-State Resistance                                                                                                  -
+Forward Transconductancea                RDS(on)      VDS = 500 V, VGS = 0 V                                -            -             
+Dynamic                                     gfs                                                                                         S
+                                                   VDS = 400 V, VGS = 0 V, TJ = 125 캜                      -            -
+
+                                                   VGS = 10 V            ID = 4 A                           -            0.70
+
+                                                      VDS = 20 V, ID = 4 A                                  -            3
+
+Input Capacitance                        Ciss                  VGS = 0 V,                                   -            527   -
+                                         Coss                 VDS = 100 V,
+Output Capacitance                       Crss                                                               -            52    -
+                                         Co(er)                 f = 1 MHz
+Reverse Transfer Capacitance                                                                                -            8     -
+                                         Co(tr)    VDS = 0 V to 400 V, VGS = 0 V                                                         pF
+Effective Output Capacitance, Energy                                                                        -            46
+Relatedb                                                                                                                       -
+
+Effective Output Capacitance, Time                                                                          -            64    -
+Relatedc
+
+Total Gate Charge                         Qg                                                                -            15    30
+Gate-Source Charge                       Qgs
+Gate-Drain Charge                        Qgd       VGS = 10 V        ID = 4 A, VDS = 400 V                  -            4     -      nC
+Turn-On Delay Time                       td(on)
+Rise Time                                                                                                   -            7     -
+Turn-Off Delay Time                        tr
+Fall Time                                td(off)                                                            -            13    26
+Gate Input Resistance
+Drain-Source Body Diode Characteristics    tf          VDD = 400 V, ID = 4 A                                -            16    32
+                                          Rg          Rg = 9.1 , VGS = 10 V                                                                ns
+                                                                                                            -            17
+                                                      f = 1 MHz, open drain                                                    34
+
+                                                                                                            -            11    22
+
+                                                                                                            -            1.8   -      
+
+Continuous Source-Drain Diode Current    IS        MOSFET symbol                                         D  -            -     8
+                                                                                                                                           A
+                                                   showing the                G
+                                                                                                         S                     32
+Pulsed Diode Forward Current             ISM       integral reverse                                         -            -
+
+                                                   p - n junction diode
+
+Diode Forward Voltage                    VSD       TJ = 25 캜, IS = 4 A, VGS = 0 V                          -            -     1.2    V
+Reverse Recovery Time                     trr
+Reverse Recovery Charge                   Qrr          TJ = 25 캜, IF = IS = 4 A,                           -            308   -      ns
+Reverse Recovery Current                 IRRM        dI/dt = 100 A/s, VR = 20 V
+                                                                                                            -            1.8   -      C
+
+                                                                                                            -            11    -      A
+
+Notes
+
+a. Repetitive rating; pulse width limited by maximum junction temperature.
+b. Coss(er) is a fixed capacitance that gives the same energy as Coss while VDS is rising from 0 % to 80 % VDSS.
+c. Coss(tr) is a fixed capacitance that gives the same charging time as Coss while VDS is rising from 0 % to 80 % VDSS.
+
+S12-0691-Rev. A, 02-Apr-12                         2                                                              Document Number: 91488
+
+                                       For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                   www.vishay.com                                                                                                                                     SiHP8N50D
+TYPICAL CHARACTERISTICS (25 캜, unless otherwise noted)
+                                                                                                                                                                     Vishay Siliconix
+
+                                 20                                                                                                          3
+
+ID, Drain-to-Source Current (A)         TOP 15 V      TJ = 25 캜
+                                                14 V
+                                                                                          RDS(on), Drain-to-Source
+                                        13 V                                                 On Resistance (Normalized)                      2.5     ID = 4 A
+
+                                 16     12 V
+
+                                        11 V
+
+                                        10 V                                                                                                 2
+
+                                        9.0 V
+
+                                 12     8.0 V
+
+                                        7.0 V
+
+                                        6.0 V                                                                                                1.5
+
+                                 8
+
+                                 4                                                                                                             1
+
+                                                                                                                                                                                            VGS = 10 V
+                                                                                                                                             0.5
+
+                                 0                                                               0
+                                                                                                 - 60 - 40 - 20 0 20 40 60 80 100 120 140 160
+                                     0  5             10      15       20  25      30
+                                                                                                             TJ, Junction Temperature (캜)
+                                             VDS, Drain-to-Source Voltage (V)
+                                        Fig. 1 - Typical Output Characteristics           Fig. 4 - Normalized On-Resistance vs. Temperature
+
+                                 15                                                                         1000
+                                                                                                             100
+ID, Drain-to-Source Current (A)         TOP 15 V                                                                                                                Ciss
+                                                                                                                                                                          VGS = 0 V, f = 1 MHz
+                                        14 V                                                                                                                              Ciss = Cgs + Cgd, Cds Shorted
+                                                                                                                                                                          Crss = Cgd
+                                        13 V          TJ = 150 캜                                                                                                         Coss = Cds + Cgd
+
+                                 12     12 V
+
+                                        11 V                                              Capacitance (pF)                                           Coss
+
+                                        10 V
+
+                                        9.0 V
+
+                                 9      8.0 V
+
+                                        7.0 V
+
+                                        6.0 V
+
+                                        5.0 V
+
+                                 6                                                                                                           10 Crss
+
+                                 3
+
+                                 0                                                                                                           1
+
+                                     0  5             10      15       20  25      30                                                             0        100  200  300  400                           500
+
+                                        VDS, Drain-to-Source Voltage (V)                                                                             VDS, Drain-to-Source Voltage (V)
+
+                                        Fig. 2 - Typical Output Characteristics           Fig. 5 - Typical Capacitance vs. Drain-to-Source Voltage
+
+                                 20                                                                                                          24
+
+ID, Drain-to-Source Current (A)                                                                             VGS, Gate-to-Source Voltage (V)                          VDS = 400 V
+
+                                                                                                                                             20                      VDS = 250 V
+
+                                 16                                                                                                                                  VDS = 100 V
+
+                                                                                                                                             16
+
+                                 12
+
+                                                                                                                                             12
+
+                                 8
+
+                                                                                                                                             8
+
+                                       TJ = 150 캜                                                                                           4
+                                 4
+
+                                                      TJ = 25 캜
+
+                                 0                                                                                                           0
+
+                                     0     5              10       15      20      25                                                             0        5    10   15   20                            25
+
+                                        VGS, Gate-to-Source Voltage (V)                                                                                    Qg, Total Gate Charge (nC)
+
+                                        Fig. 3 - Typical Transfer Characteristics         Fig. 6 - Typical Gate Charge vs. Gate-to-Source Voltage
+
+S12-0691-Rev. A, 02-Apr-12                                                             3                                                                                 Document Number: 91488
+
+                                                                           For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                                                                       www.vishay.com                                                                                                        SiHP8N50D
+
+                                                                                                                                                                                                            Vishay Siliconix
+
+                                                       100                                                                                                                             10
+
+ISD, Reverse Drain Current (A)                                             TJ = 150 캜                                                                          ID, Drain Current (A)  8
+                                                        10 TJ = 25 캜
+
+                                                                                                                                                                                       6
+
+                                                                                                                                                                                       4
+
+                                      1                                                                                                                                                2
+
+                                                                                     VGS = 0 V                                                                                         0
+                                    0.1
+                                                                                                                                                                                           25  50       75  100  125         150
+                                        0.2 0.4 0.6 0.8 1 1.2 1.4 1.6
+                                                 VSD, Source-Drain Voltage (V)                                                                                                                 TJ, Case Temperature (캜)
+
+                              Fig. 7 - Typical Source-Drain Diode Forward Voltage                                                                               Fig. 9 - Maximum Drain Current vs. Case Temperature
+
+                                                       100                                                                                                              625
+                                                                Operation in this area limited by RDS(on)                                                               600
+                                                                                                                                                                        575
+                                ID, Drain Current (A)  10                                                                               VDS, Drain-to-Source            550
+                                                                                                                          100 s             Brakdown Voltage (V)        525
+                                                                                                                                                                        500
+                                                       1                                                                       1 ms                                     475
+                                                            Limited by RDS(on)*
+                                                                                                                                                                            - 60 - 40 - 20 0 20 40 60 80 100 120 140 160
+                                                        0.1                                                          10 ms                                                             TJ, Junction Temperature (캜)
+                                                                 TC = 25 캜                    BVDSS Limited
+                                                                 TJ = 150 캜                                                                                    Fig. 10 - Typical Drain-to-Source Voltage vs. Temperature
+                                                                 Single Pulse
+
+                                                       0.01
+
+                                                       1                               10                          100         1000
+
+                                                                 VDS, Drain-to-Source Voltage (V)
+                                                       * VGS > minimum VGS at which RDS(on) is specified
+
+                                                       Fig. 8 - Maximum Safe Operating Area
+
+                                                       Normalized Effective Transient    1
+                                                          Thermal Impedance                      Duty Cycle = 0.5
+
+                                                                                                           0.2
+                                                                                                0.1
+                                                                                               0.05
+                                                                                       0.1
+                                                                                                0.02
+
+                                                                                                  Single Pulse
+
+                                                          0.01
+
+                                                                                       0.0001                           0.001           0.01                                                       0.1                    1
+
+                                                                                                                                     Pulse Time (s)
+
+                                                                                               Fig. 11 - Normalized Thermal Transient Impedance, Junction-to-Case
+
+S12-0691-Rev. A, 02-Apr-12                                                                                                           4                                                                      Document Number: 91488
+
+                                                                                                                        For technical questions, contact: hvm@vishay.com
+
+                                THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                                                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+       www.vishay.com                                                                                                SiHP8N50D
+
+                                                                                                                    Vishay Siliconix
+
+                 VDS                    RD                               10 V                               QG
+          VGS                     D.U.T.                                                                    QGD
+     RG
+                                               +                               QGS
+                                               - VDD
+
+        10 V                                                             VG
+
+     Pulse width  1 탎
+     Duty factor  0.1 %
+
+Fig. 12 - Switching Time Test Circuit                                                          Charge
+                                                                         Fig. 16 - Basic Gate Charge Waveform
+
+ VDS                                                                             Current regulator
+90 %                                                                           Same type as D.U.T.
+
+                                                                                                      50 k
+
+                                                                         12 V                 0.2 킚
+
+                                                                                                            0.3 킚
+
+10 %                                                                                                                D.U.T.  +
+  VGS                                                                                                                       - VDS
+
+       td(on) tr                  td(off) tf                             VGS
+
+                                                                                                      3 mA
+
+Fig. 13 - Switching Time Waveforms
+
+                                                                                                            IG      ID
+
+                                                                                                      Current sampling resistors
+
+                                                                         Fig. 17 - Gate Charge Test Circuit
+
+                        VDS              L                     +
+Vary tp to obtain                                              - VDD
+required IAS                        D.U.T
+                                  IAS
+                 RG
+                                        0.01 
+                   10 V
+                              tp
+
+Fig. 14 - Unclamped Inductive Test Circuit
+
+                                                 VDS
+
+                                  tp
+                                                          VDD
+
+VDS
+
+  IAS
+Fig. 15 - Unclamped Inductive Waveforms
+
+S12-0691-Rev. A, 02-Apr-12                                            5                                             Document Number: 91488
+
+                                            For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com                                                                                                                    SiHP8N50D
+
+                                    D.U.T.                                                                                       Vishay Siliconix
+                                 +
+                                 -                Peak Diode Recovery dV/dt Test Circuit
+
+                                                             +             Circuit layout considerations
+
+                                                                              � Low stray inductance
+                                                                              � Ground plane
+                                                                              � Low leakage inductance
+
+                                                                              current transformer
+
+                                                             -
+
+                                                                                         -         +
+
+                            Rg                                  � dV/dt controlled by Rg                                  +
+
+                                                                � Driver same type as D.U.T.                              - VDD
+
+                                                                � ISD controlled by duty factor "D"
+                                                                � D.U.T. - device under test
+
+                                        Driver gate drive
+
+                                            P.W.           Period                        D = P.W.
+                                                                                               Period
+
+                                                                                                          VGS = 10 Va
+
+                                        D.U.T. lSD waveform
+
+                            Reverse
+
+                            recovery                         Body diode forward
+                            current                                   current
+                                                                                  dI/dt
+
+                                        D.U.T. VDS waveform        Diode recovery
+
+                                                                           dV/dt
+                                                                                                                     VDD
+
+                            Re-applied                          Body diode forward drop
+                            voltage     Inductor current
+
+                                                           Ripple  5 %                                    ISD
+
+                                        Note
+                                        a. VGS = 5 V for logic level devices
+
+                                                           Fig. 18 - For N-Channel
+
+Vishay Siliconix maintains worldwide manufacturing capability. Products may be manufactured at one of several qualified locations. Reliability data for Silicon
+Technology and Package Reliability represent a composite of all qualified locations. For related documents such as package/tape drawings, part marking, and
+reliability data, see www.vishay.com/ppg?91488.
+
+S12-0691-Rev. A, 02-Apr-12                                              6                                                        Document Number: 91488
+
+                                        For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com                                              Legal Disclaimer Notice
+
+                                                                                          Vishay
+
+                       Disclaimer
+
+ALL PRODUCT, PRODUCT SPECIFICATIONS AND DATA ARE SUBJECT TO CHANGE WITHOUT NOTICE TO IMPROVE
+RELIABILITY, FUNCTION OR DESIGN OR OTHERWISE.
+
+Vishay Intertechnology, Inc., its affiliates, agents, and employees, and all persons acting on its or their behalf (collectively,
+"Vishay"), disclaim any and all liability for any errors, inaccuracies or incompleteness contained in any datasheet or in any other
+disclosure relating to any product.
+
+Vishay makes no warranty, representation or guarantee regarding the suitability of the products for any particular purpose or
+the continuing production of any product. To the maximum extent permitted by applicable law, Vishay disclaims (i) any and all
+liability arising out of the application or use of any product, (ii) any and all liability, including without limitation special,
+consequential or incidental damages, and (iii) any and all implied warranties, including warranties of fitness for particular
+purpose, non-infringement and merchantability.
+
+Statements regarding the suitability of products for certain types of applications are based on Vishay's knowledge of typical
+requirements that are often placed on Vishay products in generic applications. Such statements are not binding statements
+about the suitability of products for a particular application. It is the customer's responsibility to validate that a particular product
+with the properties described in the product specification is suitable for use in a particular application. Parameters provided in
+datasheets and / or specifications may vary in different applications and performance may vary over time. All operating
+parameters, including typical parameters, must be validated for each customer application by the customer's technical experts.
+Product specifications do not expand or otherwise modify Vishay's terms and conditions of purchase, including but not limited
+to the warranty expressed therein.
+
+Hyperlinks included in this datasheet may direct users to third-party websites. These links are provided as a convenience and
+for informational purposes only. Inclusion of these hyperlinks does not constitute an endorsement or an approval by Vishay of
+any of the products, services or opinions of the corporation, organization or individual associated with the third-party website.
+Vishay disclaims any and all liability and bears no responsibility for the accuracy, legality or content of the third-party website
+or for that of subsequent links.
+
+Vishay products are not designed for use in life-saving or life-sustaining applications or any application in which the failure of
+the Vishay product could result in personal injury or death unless specifically qualified in writing by Vishay. Customers using or
+selling Vishay products not expressly indicated for use in such applications do so at their own risk. Please contact authorized
+Vishay personnel to obtain written terms and conditions regarding products designed for such applications.
+
+No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted by this document or by
+any conduct of Vishay. Product names and markings noted herein may be trademarks of their respective owners.
+
+� 2026 VISHAY INTERTECHNOLOGY, INC. ALL RIGHTS RESERVED
+
+Revision: 01-Jan-2026                                    1  Document Number: 91000
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+

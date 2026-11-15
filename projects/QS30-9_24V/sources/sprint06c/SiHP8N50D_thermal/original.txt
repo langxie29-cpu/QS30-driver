@@ -1,0 +1,108 @@
+www.vishay.com                                                                      SiHP8N50D_RC
+
+                                                                                        Vishay Siliconix
+
+                                R-C Thermal Model Parameters
+
+DESCRIPTION                                                    These RC values can be used in the P-SPICE simulation to
+                                                               evaluate the thermal behavior of the MOSFET junction
+The parametric values in the R-C thermal model have been       temperature under a defined power profile. These
+derived using curve-fitting techniques. R-C values for the     techniques are described in application note AN609,
+electrical circuit in the Foster/tank and Cauer/filter         "Thermal Simulation of Power MOSFETs on the P-SPICE
+configurations are included. When implemented in P-SPICE,      Platform".
+these values have matching characteristic curves to the
+single-pulse transient thermal impedance curves for the
+MOSFET.
+
+R-C THERMAL MODEL FOR TANK CONFIGURATION
+
+T (Junction)                    RT1       RT2                  RT3             RT4  T (Ambient)
+
+                                CT1       CT2                  CT3             CT4
+
+R-C VALUES FOR TANK CONFIGURATION
+
+                                     THERMAL RESISTANCE (°C/W)
+
+Junction to                          Ambient                        Case            Foot
+                                                                                    N/A
+RT1                                  N/A                            256.9903m       N/A
+                                                                                    N/A
+RT2                                  N/A                            272.9500m       N/A
+
+RT3                                  N/A                            85.7760m        Foot
+                                                                                    N/A
+RT4                                  N/A                            184.2837m       N/A
+                                                                                    N/A
+                                     THERMAL CAPACITANCE (Joules/°C)                N/A
+
+Junction to                          Ambient                        Case
+
+CT1                                  N/A                            85.3571m
+
+CT2                                  N/A                            79.6989m
+
+CT3                                  N/A                            2.3811m
+
+CT4                                  N/A                            121.9051m
+
+Note
+· n/a indicates not applicable
+
+This document is intended as a SPICE modeling guideline and does not constitute a commercial product datasheet. Designers should refer to
+the appropriate datasheet of the same number for guaranteed specification limits.
+
+Revision: 30-May-12                                         1                       Document Number: 90778
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                   www.vishay.com                                                         SiHP8N50D_RC
+R-C THERMAL MODEL FOR FILTER CONFIGURATION
+                                                                                              Vishay Siliconix
+
+T (Junction)                         RF1        RF2           RF3                    RF4  T (Ambient)
+                                          CF2           CF3                   CF4             GND
+                                CF1
+
+R-C VALUES FOR FILTER CONFIGURATION
+
+                                          THERMAL RESISTANCE (°C/W)
+
+Junction to                               Ambient                  Case                   Foot
+                                                                                          N/A
+RF1                                       N/A                      90.3760m               N/A
+                                                                                          N/A
+RF2                                       N/A                      386.4432m              N/A
+
+RF3                                       N/A                      65.4255m               Foot
+                                                                                          N/A
+RF4                                       N/A                      257.7553m              N/A
+                                                                                          N/A
+                                          THERMAL CAPACITANCE (Joules/°C)                 N/A
+
+Junction to                               Ambient                  Case
+
+CF1                                       N/A                      1.8515m
+
+CF2                                       N/A                      25.5365m
+
+CF3                                       N/A                      7.2093m
+
+CF4                                       N/A                      9.1947m
+
+Note
+· n/a indicates not applicable
+
+Revision: 30-May-12                                  2                                    Document Number: 90778
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com          SiHP8N50D_RC
+
+                            Vishay Siliconix
+
+Revision: 30-May-12  3  Document Number: 90778
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+

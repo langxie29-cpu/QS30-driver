@@ -1,0 +1,468 @@
+                                                                      STP7N65M2, STU7N65M2
+
+                     N-channel 650 V, 0.98  typ., 5 A MDmeshTM M2
+
+                     Power MOSFETs in TO-220 and IPAK packages
+
+                                                                                                     Datasheet - production data
+
+                     TAB                                              Features            VDS RDS(on) ID
+                                                                                                        max
+TAB                                                                3         Order code
+                                                                            STP7N65M2    650 V 1.15  5 A
+                                    TO-220 1 2                              STU7N65M2    650 V 1.15  5 A
+
+IPAK            123                                                    Extremely low gate charge
+                                                                       Excellent output capacitance (Coss) profile
+Figure 1: Internal schematic diagram                                   100% avalanche tested
+                                                                       Zener-protected
+                               D(2, TAB)
+                                                                      Applications
+          G(1)
+                                                                       Switching applications
+
+                                                                      Description
+
+                                                                      These devices are N-channel Power MOSFETs
+                                                                      developed using the MDmeshTM M2 technology.
+                                                                      Thanks to the strip layout associated with an
+                                                                      improved vertical structure, the device exhibits
+                                                                      both low on-resistance and optimized switching
+                                                                      characteristics. It is therefore suitable for the
+                                                                      most demanding high efficiency converters.
+
+                              S(3)  AM01476v1_tab
+
+Order code                          Table 1: Device summary
+STP7N65M2
+STU7N65M2                           Marking                           Package            Packaging
+                                                                                             Tube
+                                    7N65M2                            TO-220                 Tube
+                                    7N65M2                             IPAK
+
+May 2015                            DocID026788 Rev 3                                           1/18
+
+This is information on a product in full production.                                     www.st.com
+Contents                     STP7N65M2, STU7N65M2
+
+Contents
+
+1 Electrical ratings ............................................................................. 3
+
+2 Electrical characteristics ................................................................ 4
+
+      2.1 Electrical characteristics (curves) ...................................................... 6
+
+3 Test circuits ..................................................................................... 9
+
+4 Package information ..................................................................... 10
+
+      4.1 TO-220 type A package information................................................ 11
+
+      4.2 IPAK(TO-251) type A package information ..................................... 13
+
+      4.3 IPAK (TO-251) type C package information .................................... 15
+
+5 Revision history ............................................................................ 17
+
+2/18      DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                  Electrical ratings
+
+1  Electrical ratings
+
+                      Table 2: Absolute maximum ratings
+
+   Symbol                          Parameter                          Value                            Unit
+
+   VGS        Gate-source voltage                                     ± 25                             V
+
+   ID         Drain current (continuous) at TC = 25 °C                5                                A
+
+     ID       Drain current (continuous) at TC = 100 °C               3.2                              A
+   IDM(1)     Drain current (pulsed)
+                                                                      20                               A
+
+    PTOT      Total dissipation at TC = 25 °C                         60                               W
+   dv/dt (2)  Peak diode recovery voltage slope
+   dv/dt (3)  MOSFET dv/dt ruggedness                                 15
+                                                                                       V/ns
+
+                                                                      50
+
+   Tstg       Storage temperature                                     - 55 to 150                      °C
+
+   Tj         Operating junction temperature
+
+   Notes:
+   (1)Pulse width limited by safe operating area
+   (2)ISD  5 A, di/dt  400 A/µs; VDSpeak < V(BR)DSS, VDD=400 V
+   (3)VDS  520 V
+
+                                   Table 3: Thermal data
+
+                                                                Value                                  Unit
+
+   Symbol              Parameter                                                                       °C/W
+                                                                                                       °C/W
+                                                                TO-220 IPAK
+
+   Rthj-case  Thermal resistance junction-case max                    2.08
+   Rthj-amb   Thermal resistance junction-ambient max
+                                                                62.5                           100
+
+   Symbol                                 Table 4: Avalanche characteristics                   Value Unit
+      IAR                                               Parameter
+      EAS                                                                                           1  A
+              Avalanche current, repetitive or not repetitive (pulse width limited by Tjmax )
+              Single pulse avalanche energy (starting Tj=25°C, ID= IAR; VDD=50 V)                   103 mJ
+
+                      DocID026788 Rev 3                                                                3/18
+Electrical characteristics                                                      STP7N65M2, STU7N65M2
+
+2     Electrical characteristics
+
+      (TC = 25 °C unless otherwise specified)
+
+                                                Table 5: On /off states
+
+      Symbol                Parameter           Test conditions                 Min. Typ. Max. Unit
+
+      V(BR)DSS Drain-source breakdown VGS = 0, ID = 1 mA 650 V
+                    voltage
+
+                    Zero gate voltage           VGS = 0, VDS = 650 V                       1 µA
+         IDSS drain current                                                               100 µA
+                                                VGS = 0, VDS = 650 V,
+                                                TC=125 °C
+
+                    Gate-body leakage           VDS = 0, VGS = ± 25 V                     ±10 µA
+         IGSS current
+
+      VGS(th) Gate threshold voltage            VDS = VGS, ID = 250 µA             2  3      4                    V
+
+      RDS(on)        Static drain-source        VGS = 10 V, ID = 2.5 A                0.98 1.15 
+                     on-resistance
+
+      Symbol                  Parameter            Table 6: Dynamic             Min. Typ. Max. Unit
+         Ciss                                              Test conditions
+                     Input capacitance                                          -     270 -
+      Coss           Output capacitance         VDS = 100 V, f = 1 MHz,
+                     Reverse transfer           VGS = 0                            - 14.5 - pF
+      Crss           capacitance                                                   - 0.8 -
+                     Equivalent output          VDS = 0 to 520 V, VGS = 0
+      Coss eq.  (1)  capacitance                f = 1 MHz open drain               - 108 -                        pF
+                     Intrinsic gate resistance  VDD = 520 V, ID = 5 A,
+         RG          Total gate charge          VGS = 10 V                         -  7      -                    
+         Qg          Gate-source charge         (see Figure 17: "Gate charge
+         Qgs                                    test circuit")                     -  9      - nC
+                     Gate-drain charge
+         Qgd                                                                       - 2.3 - nC
+
+                                                                                   - 4.3 - nC
+
+      Notes:
+      (1)Coss eq. is defined as a constant equivalent capacitance giving the same charging time as Coss when VDS
+      increases from 0 to 80% VDSS
+
+      Symbol          Parameter               Table 7: Switching times          Min. Typ. Max. Unit
+        td(on)                                     Test conditions
+          tr         Turn-on                                                       -  8      -                    ns
+        td(off)      delay time  VDD = 325 V, ID = 2.5 A,
+          tf         Rise time   RG = 4.7 , VGS = 10 V                             -  20     -                    ns
+                     Turn-off    (see Figure 16: "Switching times test circuit
+                     delay time  for resistive load"and Figure 21: "Switching      -  30     -                    ns
+                     Fall time   time waveform" )
+
+                                                                                   -  20     -                    ns
+
+4/18                                      DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                             Electrical characteristics
+
+Symbol           Parameter      Table 8: Source drain diode      Min. Typ. Max. Unit
+   ISD                                       Test conditions
+          Source-drain current                                   -       5  A
+ ISDM(1)                        ISD = 5 A, VGS = 0
+ VSD(2)   Source-drain current                                   -       20 A
+          (pulsed)              ISD = 5 A, di/dt = 100 A/µs
+    trr                         VDD = 60 V (see Figure 21:       -       1.6 V
+   Qrr    Forward on voltage    "Switching time waveform")
+  IRRM                                                           - 275      ns
+    trr   Reverse recovery      ISD = 5 A, di/dt = 100 A/µs
+   Qrr    time                  VDD = 60 V, Tj = 150 °C          - 1.62     µC
+  IRRM                          (see Figure 21: "Switching time
+          Reverse recovery      waveform")                       - 11.8     A
+          charge
+                                                                 - 430      ns
+          Reverse recovery
+          current                                                - 2.54     µC
+
+          Reverse recovery                                       - 11.9     A
+          time
+
+          Reverse recovery
+          charge
+
+          Reverse recovery
+          current
+
+Notes:
+(1)Pulse width limited by safe operating area.
+(2)Pulsed: pulse duration = 300 µs, duty cycle 1.5%
+
+                                DocID026788 Rev 3                           5/18
+Electrical characteristics                                     STP7N65M2, STU7N65M2
+
+2.1   Electrical characteristics (curves)
+
+      Figure 2: Safe operating area for TO-220  Figure 3: Thermal impedance for TO-220
+
+      Figure 4: Safe operating area for IPAK      Figure 5: Thermal impedance for IPAK
+          Figure 6: Output characteristics
+                                                                                                                                   CG34360
+
+                                                K
+
+                                                100
+
+                                                                                                                                                                   c
+
+                                                10-1
+
+                                                10-2     10-4  10-3  10-2  10-1              tp (s)
+                                                   10-5
+
+                                                         Figure 7: Transfer characteristics
+
+6/18                        DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                           Electrical characteristics
+               Figure 8: Gate charge vs gate-source voltage  Figure 9: Static drain-source on-resistance
+
+Figure 10: Capacitance variations                            Figure 11: Output capacitance stored energy
+
+Figure 12: Normalized gate threshold voltage vs              Figure 13: Normalized on-resistance vs
+                         temperature                                            temperature
+
+DocID026788 Rev 3                                            7/18
+Electrical characteristics                                                      STP7N65M2, STU7N65M2
+                                                           Figure 15: Normalized V(BR)DSS vs temperature
+                    Figure 14: Source-drain diode forward
+                                     characteristics
+
+8/18  DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                                         Test circuits
+                                                       Figure 17: Gate charge test circuit
+3  Test circuits
+
+Figure 16: Switching times test circuit for resistive
+                                 load
+
+Figure 18: Test circuit for inductive load switching   Figure 19: Unclamped inductive load test circuit
+                 and diode recovery times
+
+   Figure 20: Unclamped inductive waveform             Figure 21: Switching time waveform
+
+                      DocID026788 Rev 3                                                    9/18
+Package information                     STP7N65M2, STU7N65M2
+
+4      Package information
+
+       In order to meet environmental requirements, ST offers these devices in different grades of
+       ECOPACK® packages, depending on their level of environmental compliance. ECOPACK®
+       specifications, grade definitions and product status are available at: www.st.com.
+       ECOPACK® is an ST trademark.
+
+10/18                DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                            Package information
+
+4.1  TO-220 type A package information
+
+                      Figure 22: TO-220 type A package outline
+
+                      DocID026788 Rev 3                         11/18
+Package information                                                                   STP7N65M2, STU7N65M2
+                                    Table 9: TO-220 type A mechanical data
+                              Dim.
+                                                                              mm
+                                A
+                                b   Min.               Typ.   Max.
+                               b1
+                                c   4.40                      4.60
+                                D
+                               D1   0.61                      0.88
+                                E
+                                e   1.14                      1.70
+                               e1
+                                F   0.48                      0.70
+                               H1
+                               J1   15.25                     15.75
+                                L
+                               L1                      1.27
+                              L20
+                              L30   10                        10.40
+                               øP
+                                Q   2.40                      2.70
+
+                                    4.95                      5.15
+
+                                    1.23                      1.32
+
+                                    6.20                      6.60
+
+                                    2.40                      2.72
+
+                                    13                        14
+
+                                    3.50                      3.93
+
+                                                       16.40
+
+                                                       28.90
+
+                                    3.75                      3.85
+
+                                    2.65                      2.95
+
+12/18                               DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                   Package information
+
+4.2  IPAK(TO-251) type A package information
+
+                      Figure 23: IPAK (TO-251) type A package outline
+
+                      DocID026788 Rev 3                                13/18
+Package information                                                                               STP7N65M2, STU7N65M2
+                                     Table 10: IPAK (TO-251) type A package mechanical data
+                               Dim.
+                                                                                            mm
+                   A
+                   A1                           Min.          Typ.              Max.
+                   b                 2.20                           2.40
+                   b2
+                   b4                0.90                           1.10
+                   B5
+                   c                 0.64                           0.90
+                   c2
+                   D                                                0.95
+                   E
+                   e                 5.20                           5.40
+                   e1
+                   H                                  0.30
+                   L
+                   L1                0.45                           0.60
+                   L2
+                   V1                0.48                           0.60
+
+                                     6.00                           6.20
+
+                                     6.40                           6.60
+
+                                                      2.28
+
+                                     4.40                           4.60
+
+                                                      16.10
+
+                                     9.00                           9.40
+
+                                     0.80                           1.20
+
+                                                      0.80          1.00
+
+                                                      10°
+
+14/18                                      DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                   Package information
+
+4.3  IPAK (TO-251) type C package information
+
+                      Figure 24: IPAK (TO-251) type C package outline
+
+                                                                       0068771_IK_typeC_rev13
+
+                      DocID026788 Rev 3                                15/18
+Package information                                                                              STP7N65M2, STU7N65M2
+                                    Table 11: IPAK (TO-251) type C package mechanical data
+                              Dim.
+                                                                                          mm
+                   A
+                   A1                            Min.              Typ.              Max.
+                   b                2.20               2.30              2.35
+                   b2
+                   b4               0.90               1.00              1.10
+                   c
+                   c2               0.66                                 0.79
+                   D
+                   D1                                                    0.90
+                   E
+                   E1               5.23               5.33              5.43
+                   e
+                   e1               0.46                                 0.59
+                   H
+                   L                0.46                                 0.59
+                   L1
+                   L2               6.00               6.10              6.20
+                   1
+                   2                5.20               5.37              5.55
+
+                                    6.50               6.60              6.70
+
+                                    4.60               4.78              4.95
+
+                                    2.20               2.25              2.30
+
+                                    4.40               4.50              4.60
+                                    16.18              16.48             16.78
+                                    9.00               9.30              9.60
+                                    0.90               1.00              1.20
+                                    0.90               1.08              1.25
+                                    3°                 5°                7°
+
+                                    1°                 3°                5°
+
+16/18                                      DocID026788 Rev 3
+STP7N65M2, STU7N65M2                                                 Revision history
+
+5  Revision history
+
+                                Table 12: Document revision history
+
+   Date               Revision                       Changes
+
+   07-Aug-2014        1         First release.
+
+                                Added and .
+
+   09-Oct-2014        2         Updated not found.
+
+                                Minor text changes.
+
+   28-May-2015                   Document status promoted form preliminary to production data.
+                      3
+
+                                 Updated package information.
+
+                                DocID026788 Rev 3                                               17/18
+                                                                                                       STP7N65M2, STU7N65M2
+
+                                        IMPORTANT NOTICE - PLEASE READ CAREFULLY
+
+STMicroelectronics NV and its subsidiaries ("ST") reserve the right to make changes, corrections, enhancements, modifications, and
+improvements to ST products and/or to this document at any time without notice. Purchasers should obtain the latest relevant information on ST
+products before placing orders. ST products are sold pursuant to ST's terms and conditions of sale in place at the time of order
+acknowledgement.
+
+Purchasers are solely responsible for the choice, selection, and use of ST products and ST assumes no liability for application assistance or the
+design of Purchasers' products.
+
+No license, express or implied, to any intellectual property right is granted by ST herein.
+
+Resale of ST products with provisions different from the information set forth herein shall void any warranty granted by ST for such product.
+
+ST and the ST logo are trademarks of ST. All other product or service names are the property of their respective owners.
+
+Information in this document supersedes and replaces information previously supplied in any prior versions of this document.
+
+                                                   © 2015 STMicroelectronics - All rights reserved
+
+18/18  DocID026788 Rev 3
+

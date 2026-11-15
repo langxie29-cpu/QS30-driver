@@ -1,0 +1,625 @@
+IPP60R360P7
+
+MOSFET                                                                 PG-TO220
+
+600VCoolMOSªP7PowerTransistor                                                      tab
+
+TheCoolMOSTM7thgenerationplatformisarevolutionarytechnologyfor                                           Drain
+highvoltagepowerMOSFETs,designedaccordingtothesuperjunction                                           Pin 2, Tab
+(SJ)principleandpioneeredbyInfineonTechnologies.The600V                               Gate
+CoolMOSTMP7seriesisthesuccessortotheCoolMOSTMP6series.It                              Pin 1
+combinesthebenefitsofafastswitchingSJMOSFETwithexcellentease
+ofuse,e.g.verylowringingtendency,outstandingrobustnessofbody                                             Source
+diodeagainsthardcommutationandexcellentESDcapability.                                                     Pin 3
+Furthermore,extremelylowswitchingandconductionlossesmake
+switchingapplicationsevenmoreefficient,morecompactandmuch       RelatedLinks
+cooler.                                                                 see Appendix A
+
+Features
+
+·Suitableforhardandsoftswitching(PFCandLLC)duetoanoutstanding
+commutationruggedness
+·Significantreductionofswitchingandconductionlosses
+·ExcellentESDrobustness>2kV(HBM)forallproducts
+·BetterRDS(on)/packageproductscomparedtocompetitionenabledbya
+lowRDS(on)*A(below1Ohm*mm²)
+·Fullyqualifiedacc.JEDECforIndustrialApplications
+
+Benefits
+
+·Easeofuseandfastdesign-inthroughlowringingtendencyandusage
+acrossPFCandPWMstages
+·Simplifiedthermalmanagementduetolowswitchingandconduction
+losses
+·Increasedpowerdensitysolutionsenabledbyusingproductswith
+smallerfootprintandhighermanufacturingqualitydueto>2kVESD
+protection
+·Suitableforawidevarietyofapplicationsandpowerranges
+
+Potentialapplications
+
+PFCstages,hardswitchingPWMstagesandresonantswitchingstages
+fore.g.PCSilverbox,Adapter,LCD&PDPTV,Lighting,Server,Telecom
+andUPS.
+
+Pleasenote:ForMOSFETparallelingtheuseofferritebeadsonthegate
+orseparatetotempolesisgenerallyrecommended.
+
+Table1KeyPerformanceParameters
+
+Parameter          Value             Unit
+
+VDS @ Tj,max       650               V
+
+RDS(on),max        360               m
+
+Qg,typ             13                nC
+
+ID,pulse           26                A
+
+Eoss @ 400V        1.6               µJ
+
+Body diode diF/dt  900               A/µs
+
+Type/OrderingCode       Package                Marking
+IPP60R360P7             PG-TO 220-3           60R360P7
+
+Final Data Sheet                           1                    Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+TableofContents
+
+    Description . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+    Maximum ratings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+    Thermal characteristics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+    Electrical characteristics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+    Electrical characteristics diagrams . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+    Test Circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+    Package Outlines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+    Appendix A . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+    Revision History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+    Trademarks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+    Disclaimer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+Final Data Sheet  2  Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+1Maximumratings
+
+atTj=25°C,unlessotherwisespecified
+
+Table2Maximumratings                Symbol                          Values        Unit Note/TestCondition
+
+Parameter                                                     Min.  Typ. Max.
+                                                              -
+Continuous drain current1)          ID                        -     -       9     A     TC=25°C
+                                                              -                         TC=100°C
+Pulsed drain current2)              ID,pulse                  -     -       6     A     TC=25°C
+Avalanche energy, single pulse      EAS                       -                   mJ    ID=2.5A; VDD=50V; see table 10
+Avalanche energy, repetitive        EAR                       -     -       26    mJ    ID=2.5A; VDD=50V; see table 10
+Avalanche current, single pulse     IAS                       -                   A     -
+MOSFET dv/dt ruggedness             dv/dt                     -20   -       27    V/ns  VDS=0...400V
+Gate source voltage (static)        VGS                       -30                 V     static;
+Gate source voltage (dynamic)       VGS                       -     -       0.14  V     AC (f>1 Hz)
+Power dissipation                   Ptot                      -55                 W     TC=25°C
+Storage temperature                 Tstg                      -55   -       2.5   °C    -
+Operating junction temperature      Tj                        -                   °C    -
+Mounting torque                     -                         -     -       80    Ncm   M3 and M3.5 screws
+Continuous diode forward current    IS                        -                   A     TC=25°C
+Diode pulse current2)               IS,pulse                        -       20    A     TC=25°C
+                                                              -                         VDS=0...400V,ISD<=9A,Tj=25°C
+Reverse diode dv/dt3)               dv/dt                           -       30    V/ns  see table 8
+                                                              -                         VDS=0...400V,ISD<=9A,Tj=25°C
+                                                                    -       41    A/µs  see table 8
+                                                              -                         Vrms,TC=25°C,t=1min
+                                                                    -       150   V
+
+                                                                    -       150
+
+                                                                    -       60
+
+                                                                    -       9
+
+                                                                    -       26
+
+                                                                    -       50
+
+Maximum diode commutation speed     diF/dt                          -       900
+Insulation withstand voltage        VISO
+                                                                    -       n.a.
+
+1) Limited by Tj,max. Maximum Duty Cycle D = 0.50
+2) Pulse width tp limited by Tj,max
+3) Identical low side and high side switch with identical RG
+
+Final Data Sheet                                              3                         Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+2Thermalcharacteristics
+
+Table3Thermalcharacteristics
+
+Parameter         Symbol                                                    Values
+                                                                                                  Unit Note/TestCondition
+
+                                                                  Min. Typ. Max.
+
+Thermal resistance, junction - case RthJC                         -     -  3.04 °C/W -
+Thermal resistance, junction - ambient RthJA
+for SMD version Thermal resistance, junction - ambient RthJA      -     -  62 °C/W leaded
+only allowed at leads Soldering temperature, wavesoldering Tsold
+                                                                  -     -  -  °C/W -
+
+                                                                  -     -  260 °C 1.6mm (0.063 in.) from case for 10s
+
+Final Data Sheet                                                     4                     Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+3Electricalcharacteristics
+
+atTj=25°C,unlessotherwisespecified
+
+Table4Staticcharacteristics
+
+Parameter                             Symbol          Values        Unit  Note/TestCondition
+
+                                                Min.  Typ. Max.     V     VGS=0V,ID=1mA
+                                                600                 V     VDS=VGS,ID=0.14mA
+Drain-source breakdown voltage        V(BR)DSS  3     -       -     µA    VDS=600V,VGS=0V,Tj=25°C
+Gate threshold voltage                V(GS)th                       nA    VDS=600V,VGS=0V,Tj=150°C
+Zero gate voltage drain current       IDSS      -     3.5 4               VGS=20V,VDS=0V
+Gate-source leakage current           IGSS      -                         VGS=10V,ID=2.7A,Tj=25°C
+Drain-source on-state resistance      RDS(on)         -       1           VGS=10V,ID=2.7A,Tj=150°C
+Gate resistance                       RG        -                         f=1MHz,opendrain
+                                                      10 -
+                                                -
+                                                -     -       1000
+
+                                                -     0.300 0.360
+                                                      0.702 -
+
+                                                      6.2 -
+
+Table5Dynamiccharacteristics
+
+Parameter                             Symbol    Min.  Values        Unit Note/TestCondition
+                                                -     Typ. Max.
+Input capacitance                     Ciss      -     555 -         pF VGS=0V,VDS=400V,f=250kHz
+Output capacitance                    Coss            10 -          pF VGS=0V,VDS=400V,f=250kHz
+Effective output capacitance, energy  Co(er)    -                   pF VGS=0V,VDS=0...400V
+related1)                                             20 -
+Effective output capacitance, time    Co(tr)
+related2)                                       -     214 -         pF ID=constant,VGS=0V,VDS=0...400V
+                                      td(on)
+Turn-on delay time                              - 8 - ns VDD=400V,VGS=13V,ID=2.7A, RG=10.0;seetable9
+                                                - 7 - ns VDD=400V,VGS=13V,ID=2.7A, RG=10.0;seetable9
+Rise time                             tr        - 42 - ns VDD=400V,VGS=13V,ID=2.7A, RG=10.0;seetable9
+                                                - 10 - ns VDD=400V,VGS=13V,ID=2.7A, RG=10.0;seetable9
+Turn-off delay time                   td(off)
+
+Fall time                             tf
+
+Table6Gatechargecharacteristics
+
+Parameter                             Symbol          Values        Unit Note/TestCondition
+
+                                                Min.  Typ. Max.     nC VDD=400V,ID=2.7A,VGS=0to10V
+                                                -                   nC VDD=400V,ID=2.7A,VGS=0to10V
+Gate to source charge                 Qgs       -     3       -     nC VDD=400V,ID=2.7A,VGS=0to10V
+Gate to drain charge                  Qgd       -                   V VDD=400V,ID=2.7A,VGS=0to10V
+Gate charge total                     Qg        -     4       -
+Gate plateau voltage                  Vplateau
+                                                      13 -
+
+                                                      5.2 -
+
+1)Co(er)isafixedcapacitancethatgivesthesamestoredenergyasCosswhileVDSisrisingfrom0to400V
+2)Co(tr)isafixedcapacitancethatgivesthesamechargingtimeasCosswhileVDSisrisingfrom0to400V
+
+Final Data Sheet                                   5                                      Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+Table7Reversediodecharacteristics
+
+Parameter                      Symbol  Min.  Values     Unit Note/TestCondition
+                                       -     Typ. Max.
+Diode forward voltage          VSD     -     0.9 -      V VGS=0V,IF=2.7A,Tj=25°C
+                                             145 -      ns VR=400V,IF=1A,diF/dt=100A/µs; see table 8
+Reverse recovery time          trr     -                µC VR=400V,IF=1A,diF/dt=100A/µs; see table 8
+                                             0.74 -     A VR=400V,IF=1A,diF/dt=100A/µs; see table 8
+Reverse recovery charge        Qrr     -
+                                             11 -
+Peak reverse recovery current  Irrm
+
+Final Data Sheet                       6                Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+4Electricalcharacteristicsdiagrams
+
+Diagram1:Powerdissipation                                                       Diagram2:Safeoperatingarea
+       50                                                                             102
+
+                                                                                                    101 1 µs
+40
+
+                                                                                                                                                   10 µs
+
+                                                                                                    100
+
+                                                                                                                                                            100 µs
+30
+
+Ptot[W]                                                                                                                                      1 ms
+                                                                                          ID[A]
+                                                                                                      10-1                            10 ms
+
+20                                                                                                                                    DC
+
+                                                                                                      10-2
+
+10
+                                                                                                   10-3
+
+0                                                                                                     10-4  100              101              102                   103
+
+      0           25  50    75                    100   125                150
+
+                           TC[°C]                                                                                                     VDS[V]
+
+Ptot=f(TC)                                                                      ID=f(VDS);TC=25°C;D=0;parameter:tp
+
+Diagram3:Safeoperatingarea                                                      Diagram4:Max.transientthermalimpedance
+      102                                                                             101
+
+101                                                                                                              0.5
+                                                                     1 µs
+
+                                                               10 µs
+100
+
+                                                         100 µs
+
+ID[A]                                             1 ms
+                                                                                          ZthJC[K/W]
+10-1                        10 ms                                                                     100
+                                                                                                                0.2
+
+                                              DC                                                                 0.1
+10-2
+
+                                                                                                                 0.05
+
+10-3                                                                                                             0.02
+
+                                                                                                                 0.01
+                                                                                                                        single pulse
+
+10-4                  101                         102                                    10-1                          10-4           10-3         10-2             10-1
+     100                                                                   103 10-5
+
+                           VDS[V]                                                                                                     tp[s]
+
+ID=f(VDS);TC=80°C;D=0;parameter:tp                                              ZthJC=f(tP);parameter:D=tp/T
+
+Final Data Sheet                                                           7                                                                 Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+Diagram5:Typ.outputcharacteristics                        20 V    Diagram6:Typ.outputcharacteristics                                                                                         20 V
+       40                                             10 V               20                                                                                                          10 V
+
+       30                                           8 V                  15                                                                                                       8 V
+                                                7 V
+       20                                                                                                                                                                    7 V
+
+                                                                                                                                    6 V
+
+ID[A]                                                                                                          10
+                                                                                          ID[A]                                                                       5.5 V
+
+                                                6 V
+
+10                                                                                                             5                    5 V
+
+                                          5.5 V
+
+                                                                                                                                    4.5 V
+
+                                                5 V
+
+0 4.5 V 0
+
+       0          5              10   15              20                                                              0  5  10                                               15  20
+
+                     VDS[V]                                                                                                 VDS[V]
+
+ID=f(VDS);Tj=25°C;parameter:VGS                                   ID=f(VDS);Tj=125°C;parameter:VGS
+
+Diagram7:Typ.drain-sourceon-stateresistance                       Diagram8:Drain-sourceon-stateresistance
+                                                                     3.000
+1.400
+                                                                     2.500
+                                           6 V
+                     5.5 V                                           2.000
+
+1.300
+
+1.200                                           6.5 V
+1.100                                                7 V
+                                                         10 V
+RDS(on)[]
+1.000                                                                                     RDS(on)[normalized]  1.500
+
+0.900                                           20 V
+0.800
+0.700                                                                                                          1.000
+                                                                                                               0.500
+
+0.600                                                                                                          0.000
+        0
+                  5              10   15              20                                                       -50 -25   0  25 50 75                                         100 125 150
+
+                     ID[A]                                                                                                  Tj[°C]
+
+RDS(on)=f(ID);Tj=125°C;parameter:VGS                              RDS(on)=f(Tj);ID=2.7A;VGS=10V
+
+Final Data Sheet                                               8                                                                Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+Diagram9:Typ.transfercharacteristics                                                            Diagram10:Typ.gatecharge                                     400 V
+       30                                                                                              12
+                                                      25 °C
+                                                                                                       10
+       25                                                                                                                                120 V
+
+       20                                                                                                8
+                                                                    150 °C
+                                                                                                         6
+       15
+ID[A]
+                                                                                          VGS[V]
+
+10                                                                                                 4
+
+5                                                                                                  2
+
+0                                                                                                  0
+
+     0            2     4       6    8                                      10  12                     0       5                                10           15     20
+
+                             VGS[V]                                                                                        Qgate[nC]
+
+ID=f(VGS);VDS=20V;parameter:Tj                                                      VGS=f(Qgate);ID=2.7Apulsed;parameter:VDD
+
+Diagram11:Forwardcharacteristicsofreversediode                                                  Diagram12:Avalancheenergy
+      102                                                                                              30
+
+                                                                                                   25
+
+101                                                                                                20
+
+IF[A]                125 °C          25 °C                                                         15
+                                                                                          EAS[mJ]
+
+100                                                                                                10
+
+                                                                                                   5
+
+10-1                                                                                               0
+      0.0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 1.6 1.8
+                                      VSD[V]                                                           25  50              75                           100  125    150
+
+                                                                                                                                                Tj[°C]
+
+IF=f(VSD);parameter:Tj                                                                          EAS=f(Tj);ID=2.5A;VDD=50V
+
+Final Data Sheet                                                                9                                                                   Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+Diagram13:Drain-sourcebreakdownvoltage                 Diagram14:Typ.capacitances
+
+          690                                                                                    104
+
+          680
+
+          670
+
+          660
+
+          650                                                                                    103                 Ciss
+
+          640
+
+          630
+
+VBR(DSS)[V]
+                                                                                          C[pF]
+          620
+                                                                                                                102
+
+          610
+
+          600                                                                                                        Coss
+
+          590
+
+          580 101
+          570
+
+          560 Crss
+          550
+
+          540                                                                                    100
+                                                                                                       0
+          -50 -25       0  25 50 75 100 125 150                                                                      100   200          300  400  500
+
+                                Tj[°C]                                                                                          VDS[V]
+
+VBR(DSS)=f(Tj);ID=1mA                                  C=f(VDS);VGS=0V;f=250kHz
+
+Diagram15:Typ.Cossstoredenergy
+       2.5
+
+          2.0
+
+          1.5
+
+Eoss[µJ]
+
+          1.0
+
+          0.5
+
+          0.0      100     200          300  400  500
+               0
+
+                                VDS[V]
+
+Eoss=f(VDS)
+
+Final Data Sheet                                  10                                                                            Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor                                 Diode recovery waveform
+
+IPP60R360P7
+
+5TestCircuits
+
+Table8Diodecharacteristics
+          Test circuit for diode characteristics
+
+               Rg1
+
+              VDS
+               Rg 2
+
+                IF
+           Rg1 = Rg 2
+
+Table9Switchingtimes                                          Switching times waveform
+
+    Switching times test circuit for inductive load
+
+                      VDS                                VDS      90%
+                                                         VGS
+VGS                                                           10%
+                                                                    td(on) tr
+                                                                          ton  td(off) tf
+                                                                                     toff
+
+Table10Unclampedinductiveload                                 Unclamped inductive waveform
+
+          Unclamped inductive load test circuit                                           V(BR)DS
+
+                  ID  VDS
+
+                                                         VDS                                       VDS
+                                                                    ID
+
+Final Data Sheet                                     11                        Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+6PackageOutlines
+
+Figure1OutlinePG-TO220-3,dimensionsinmm/inches
+
+Final Data Sheet  12                            Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+7AppendixA
+
+Table11RelatedLinks
+
+· IFXCoolMOSP7Webpage:www.infineon.com
+· IFXCoolMOSP7applicationnote:www.infineon.com
+· IFXCoolMOSP7simulationmodel:www.infineon.com
+· IFXDesigntools:www.infineon.com
+
+Final Data Sheet  13                            Rev.2.3,2018-06-07
+600VCoolMOSªP7PowerTransistor
+
+IPP60R360P7
+
+RevisionHistory
+
+IPP60R360P7
+
+Revision:2018-06-07,Rev.2.3
+
+Previous Revision
+
+Revision Date      Subjects (major changes since last revision)
+
+2.0  2017-02-03 Release of final version
+
+2.1  2017-02-17 Modified Safe Operating Area diagrams on page 7
+
+2.2  2017-03-02 updated y-axis label diagram 8
+
+2.3                Updated Co(er); Co(tr); Eoss; diagram scalings; Nomenclature of product qualification
+     2018-06-07 grade was changed, updated RDSon typ at 25°C and 150°C
+
+Trademarks
+Allreferencedproductorservicenamesandtrademarksarethepropertyoftheirrespectiveowners.
+
+WeListentoYourComments
+Anyinformationwithinthisdocumentthatyoufeeliswrong,unclearormissingatall?Yourfeedbackwillhelpustocontinuously
+improvethequalityofthisdocument.Pleasesendyourproposal(includingareferencetothisdocument)to:
+erratum@infineon.com
+
+Publishedby
+InfineonTechnologiesAG
+81726München,Germany
+©2018InfineonTechnologiesAG
+AllRightsReserved.
+
+LegalDisclaimer
+Theinformationgiveninthisdocumentshallinnoeventberegardedasaguaranteeofconditionsorcharacteristics
+("Beschaffenheitsgarantie").
+
+Withrespecttoanyexamples,hintsoranytypicalvaluesstatedhereinand/oranyinformationregardingtheapplicationofthe
+product,InfineonTechnologiesherebydisclaimsanyandallwarrantiesandliabilitiesofanykind,includingwithoutlimitation
+warrantiesofnon-infringementofintellectualpropertyrightsofanythirdparty.
+Inaddition,anyinformationgiveninthisdocumentissubjecttocustomer'scompliancewithitsobligationsstatedinthis
+documentandanyapplicablelegalrequirements,normsandstandardsconcerningcustomer'sproductsandanyuseofthe
+productofInfineonTechnologiesincustomer'sapplications.
+Thedatacontainedinthisdocumentisexclusivelyintendedfortechnicallytrainedstaff.Itistheresponsibilityofcustomer's
+technicaldepartmentstoevaluatethesuitabilityoftheproductfortheintendedapplicationandthecompletenessoftheproduct
+informationgiveninthisdocumentwithrespecttosuchapplication.
+
+Information
+Forfurtherinformationontechnology,deliverytermsandconditionsandpricespleasecontactyournearestInfineon
+TechnologiesOffice(www.infineon.com).
+
+Warnings
+Duetotechnicalrequirements,componentsmaycontaindangeroussubstances.Forinformationonthetypesinquestion,
+pleasecontactthenearestInfineonTechnologiesOffice.
+TheInfineonTechnologiescomponentdescribedinthisDataSheetmaybeusedinlife-supportdevicesorsystemsand/or
+automotive,aviationandaerospaceapplicationsorsystemsonlywiththeexpresswrittenapprovalofInfineonTechnologies,ifa
+failureofsuchcomponentscanreasonablybeexpectedtocausethefailureofthatlife-support,automotive,aviationand
+aerospacedeviceorsystemortoaffectthesafetyoreffectivenessofthatdeviceorsystem.Lifesupportdevicesorsystemsare
+intendedtobeimplantedinthehumanbodyortosupportand/ormaintainandsustainand/orprotecthumanlife.Iftheyfail,itis
+reasonabletoassumethatthehealthoftheuserorotherpersonsmaybeendangered.
+
+Final Data Sheet                          14                                           Rev.2.3,2018-06-07
+

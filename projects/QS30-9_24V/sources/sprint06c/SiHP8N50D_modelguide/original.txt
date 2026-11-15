@@ -1,0 +1,213 @@
+www.vishay.com                                                    SPICE Device Model SiHP8N50D
+
+                                                                                                  Vishay Siliconix
+
+                            D Series Power MOSFET
+
+DESCRIPTION                                                       CHARACTERISTICS
+                                                                  · N-channel vertical DMOS
+The attached SPICE model describes the typical electrical         · Macro model (subcircuit model)
+characteristics of the n-channel vertical DMOS. The               · Level 3 MOS
+subcircuit model is extracted and optimized over 25 °C to         · Apply for both linear and switching application
+150 °C temperature ranges under the pulsed 0 V to 15 V            · Accurate over 25 °C to 150 °C temperature range
+gate drive. The saturated output impedance is best fit at the     · Model the gate charge
+gate bias near the threshold voltage.
+A novel gate-to-drain feedback capacitance network is used          
+to model the gate charge characteristics while avoiding
+convergence difficulties of the switched Cgd model. All
+model parameter values are optimized to provide a best fit
+to the measured electrical data and are not intended as an
+exact physical interpretation of the device.
+
+
+
+SUBCIRCUIT MODEL SCHEMATIC
+
+                                                                  D
+
+                                    M2 CGD
+
+                                    M2B                             R1
+                                                                    4
+                            Gy      Gx                            J1    DBD
+                                                                    3
+G                               -+
+                                                                   M1
+                            RG ETCV CGS
+
+                                                                  S
+
+Note
+
+· This document is intended as a SPICE modeling guideline and does not constitute a commercial product datasheet. Designers should refer
+    to the appropriate datasheet of the same number for guaranteed specification limits.
+
+S17-0112-Rev. B, 23-Jan-17                                     1                  Document Number: 91532
+
+                                For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+           www.vishay.com                            SPICE Device Model SiHP8N50D
+
+                                                                                     Vishay Siliconix
+
+SPECIFICATIONS (TJ = 25 °C, unless otherwise noted)
+
+PARAMETER                         SYMBOL          TEST CONDITIONS                    SIMULATED MEASURED  UNIT
+                                                                                                           V
+                                                                                     DATA  DATA            
+                                                                                                           S
+Static
+                                                                                                          pF
+Gate-Source Threshold Voltage            VGS(th)         VDS = VGS, ID = 250 A       4.1   -
+                                                           VGS = 10 V, ID = 4 A                           nC
+Drain-Source On-State Resistance         RDS(on)           VDS = 20 V, ID = 4 A      0.7   0.7
+                                                                                                           V
+Forward Transconductance                 gfs      VDS = 100 V, VGS = 0 V, f = 1 MHz  3.1   3               ns
+                                                                                                          C
+Dynamic                                           VDS = 400 V, VGS = 10 V, ID = 4 A
+
+Input Capacitance                        Ciss       TJ = 25 °C, IS = 4 A, VGS = 0 V  540   527
+                                                        TJ = 25 °C, IF = IS = 4 A,
+Output Capacitance                       Coss                                        55    52
+                                                      di/dt = 100 A/s, VR = 20 V
+Reverse Transfer Capacitance             Crss                                        8     8
+
+Total Gate Charge                        Qg                                          15    15
+
+Gate-Source Charge                       Qgs                                         4     4
+
+Gate-Drain Charge                        Qgd                                         7     7
+
+Drain-Source Body Diode Characteristics
+
+Diode Forward Voltage                    VSD                                         0.9   -
+
+Reverse Recovery Time                    trr                                         260   308
+
+Reverse Recovery Charge                  Qrr                                         3.1   1.8
+
+S17-0112-Rev. B, 23-Jan-17                        2                                        Document Number: 91532
+
+                                  For technical questions, contact: hvm@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                         www.vishay.com                                                                  SPICE Device Model SiHP8N50D
+
+                                                                                                                                                         Vishay Siliconix
+
+COMPARISON OF MODEL WITH MEASURED DATA (TJ = 25 °C, unless otherwise noted)
+
+                                  20                                                                                                              20
+
+                                                   VGS = 15 V, 12 V, 10 V
+
+                                  16                                                                                                              16
+
+ID - Drain Current (A)            12                                                                                     ID - Drain Current (A)   12
+
+                                   8                                                  VGS = 8 V
+
+                                   4                                                  VGS = 7 V                                                   8
+                                                                                      VGS = 6 V                                                              Tj = 150 °C Tj = 25 °C
+                                   0
+                                      0                                                                                                           4
+
+                                                                                                                                                  0
+
+                                         5     10      15      20                 25                          30                                       0  5    10                       15          20                                    25
+
+                                               VDS - Drain-to-Source Voltage (V)                                                                               VGS - Gate-to-Source Voltage (V)
+
+ID - Drain Current (A)            15                                                                                     C - Capacitance (pF)     1000
+                                                                                     VGS = 15 V, 12 V, 10 V                                                                                                                         Ciss
+
+                                  12                                                                                                               100
+
+                                   9 VGS = 8 V                                                                                                    10                                                      Coss
+                                                                                                                                                                                                        Crss
+                                   6 VGS = 7 V                                                                                                     1
+                                                                                                           VGS = 6 V                                  0
+
+                                   3
+
+                                  0
+
+                                      0  5     10      15      20                 25                          30                                          100  200                   300            400                                   500
+
+                                               VDS - Drain-to-Source Voltage (V)                                                                             VDS - Drain-to-Source Voltage (V)
+
+                                  24                                                                                                              100
+
+VGS - Gate-to-Source Voltage (V)  20                                                                                     IS - Source Current (A)             Tj = 150 °C                Tj = 25 °C
+                                                                                        VDS = 250 V
+                                                                                                                                                  10
+                                  16
+                                                                                                                                                  1
+                                                                  VDS = 100 V
+                                  12
+
+                                                                                                 VDS = 400 V
+                                   8
+
+                                  4
+
+                                  0                                                                                                               0.1
+
+                                      0     5      10      15                     20                          25                                       0.2 0.4 0.6 0.8               1      1.2 1.4 1.6
+
+                                               Qg - Total Gate Charge (nC)                                                                                   VSD - Source-to-Drain Voltage (V)
+
+Note
+· Dots and squares represent measured data.
+
+Copyright: Vishay Intertechnology, Inc.
+
+S17-0112-Rev. B, 23-Jan-17                                                                                            3                                                                     Document Number: 91532
+
+                                                                            For technical questions, contact: hvm@vishay.com
+
+                                  THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                                                            ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com                   Legal Disclaimer Notice
+
+                                                               Vishay
+
+                     Disclaimer
+
+
+ALL PRODUCT, PRODUCT SPECIFICATIONS AND DATA ARE SUBJECT TO CHANGE WITHOUT NOTICE TO IMPROVE
+RELIABILITY, FUNCTION OR DESIGN OR OTHERWISE.
+
+Vishay Intertechnology, Inc., its affiliates, agents, and employees, and all persons acting on its or their behalf (collectively,
+"Vishay"), disclaim any and all liability for any errors, inaccuracies or incompleteness contained in any datasheet or in any other
+disclosure relating to any product.
+
+Vishay makes no warranty, representation or guarantee regarding the suitability of the products for any particular purpose or
+the continuing production of any product. To the maximum extent permitted by applicable law, Vishay disclaims (i) any and all
+liability arising out of the application or use of any product, (ii) any and all liability, including without limitation special,
+consequential or incidental damages, and (iii) any and all implied warranties, including warranties of fitness for particular
+purpose, non-infringement and merchantability.
+
+Statements regarding the suitability of products for certain types of applications are based on Vishay's knowledge of
+typical requirements that are often placed on Vishay products in generic applications. Such statements are not binding
+statements about the suitability of products for a particular application. It is the customer's responsibility to validate that a
+particular product with the properties described in the product specification is suitable for use in a particular application.
+Parameters provided in datasheets and / or specifications may vary in different applications and performance may vary over
+time. All operating parameters, including typical parameters, must be validated for each customer application by the customer's
+technical experts. Product specifications do not expand or otherwise modify Vishay's terms and conditions of purchase,
+including but not limited to the warranty expressed therein.
+
+Except as expressly indicated in writing, Vishay products are not designed for use in medical, life-saving, or life-sustaining
+applications or for any other application in which the failure of the Vishay product could result in personal injury or death.
+Customers using or selling Vishay products not expressly indicated for use in such applications do so at their own risk.
+Please contact authorized Vishay personnel to obtain written terms and conditions regarding products designed for
+such applications.
+
+No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted by this document
+or by any conduct of Vishay. Product names and markings noted herein may be trademarks of their respective owners.
+
+Revision: 13-Jun-16  1           Document Number: 91000
+
