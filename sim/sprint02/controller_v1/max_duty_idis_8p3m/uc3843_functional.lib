@@ -1,0 +1,31 @@
+* QS30 A9.3 original functional diagnostic model, NOT a vendor transistor model.
+* Physical 8-pin order: COMP FB CS CT GND OUT VCC REF.
+* TI SLUS223H: 8.4/7.6 UVLO; CT approximately 1..2.7 V; 6 mA discharge;
+* 5 V reference; reset-dominant per-cycle inhibit; CS 1 V, gain 3.
+* Parametric values are nominal assumptions, not production guarantees.
+.subckt UC3843_FUNC COMP FB CS CT GND OUT VCC REF params: IDIS=6m VON=8.4 VOFF=7.6 VEA=2.5
+.model UVSW SW(RON=1 ROFF=1e12 VT={(VON+VOFF)/2} VH={(VON-VOFF)/2})
+.model OSW SW(RON=1 ROFF=1e12 VT=1.85 VH=.85)
+VONE ONE GND 1
+SUV ONE OK VCC GND UVSW
+RUV OK GND 1k
+BREF GND REF I= v(OK,GND)>.5 ? min(max((5-v(REF,GND))/.2,0),.05) : -v(REF,GND)/100
+RREF REF GND 1meg
+SSTATE ONE DIS CT GND OSW
+RSTATE DIS GND 1k
+BDIS CT GND I= v(OK,GND)>.5 ? IDIS*v(DIS,GND) : v(CT,GND)/100
+* Error amp limited to nominal 0.8 mA source / 6 mA sink, 6 V / .7 V rails.
+BEA GND COMP I= v(OK,GND)>.5 ? min(max((VEA-v(FB,GND))*.1,-.006),.0008) - max(v(COMP,GND)-6,0)/10 + max(.7-v(COMP,GND),0)/10 : -v(COMP,GND)/100
+CCOMP COMP GND 100p
+BTH TH GND V=min(max((v(COMP,GND)-1.4)/3,0),1)
+* Capacitive analog memory holds inhibit after a current trip until next clock.
+BMEM GND MEM I= (v(DIS,GND)>.5 || v(OK,GND)<.5) ? -v(MEM,GND)/10 : ((v(CS,GND)>v(TH,GND) || v(COMP,GND)<1.4) ? (1-v(MEM,GND))/10 : 0)
+CMEM MEM GND 1n IC=0
+RMEM MEM GND 1e12
+BRAW RAW GND V=(v(OK,GND)>.5 && v(REF,GND)>4.5 && v(DIS,GND)<.5 && v(MEM,GND)<.5 && v(COMP,GND)>1.4) ? max(v(VCC,GND)-1.5,0) : 0
+* 50 ns pole + 10 ohm drive; NOT guaranteed 300 ns worst-case propagation.
+RPROP RAW DEL 1k
+CPROP DEL GND 50p
+EOUT DRIVE GND DEL GND 1
+ROUT DRIVE OUT 10
+.ends UC3843_FUNC

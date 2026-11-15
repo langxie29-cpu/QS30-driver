@@ -1,0 +1,199 @@
+{
+  "preregister": {
+    "date": "2026-11-14",
+    "scope": "TI UCC28C43 standalone model, no boost, MOS, OVP or precharged HV",
+    "model_source": "https://www.ti.com/lit/zip/slum521",
+    "model_sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+    "adaptation": "None to model bytes. Local .spiceinit enables ngbehavior=ps; no numerical value edits.",
+    "execution_acceptance": "rc0, no error/aborted/timestep-too-small, native endpoint, finite waves",
+    "oscillator_acceptance_Hz": [
+      93500,
+      126500
+    ],
+    "CT_buffer_load_frequency_delta_max_fraction": 0.02,
+    "UVLO_model_nominal_V": [
+      8.4,
+      7.6
+    ],
+    "UVLO_acceptance_V": [
+      7.8,
+      9,
+      7,
+      8.2
+    ],
+    "CS_delay_acceptance_s": 7e-08,
+    "step_s": [
+      1e-08,
+      5e-09
+    ],
+    "step_sensitivity_frequency_max_fraction": 0.01,
+    "step_sensitivity_delay_s_max": 1e-08,
+    "timeout_s_each": 30,
+    "model_temperature_note": "27C only in this run; model scope and lack of guaranteed corner coverage remain gate items"
+  },
+  "cases": [
+    {
+      "case": "osc_nominal",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 53084,
+      "max_out_V": 12.156467,
+      "frequency_Hz": 115105.05728508778,
+      "CT_min_V": 0.498968142,
+      "CT_max_V": 2.39999773
+    },
+    {
+      "case": "osc_nominal",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 102363,
+      "max_out_V": 12.1544723,
+      "frequency_Hz": 115228.12174866375,
+      "CT_min_V": 0.500518161,
+      "CT_max_V": 2.3999953
+    },
+    {
+      "case": "osc_load10k",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "FAIL_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 50110,
+      "max_out_V": 0.0725270124,
+      "frequency_Hz": 0.0,
+      "CT_min_V": 1.96842765,
+      "CT_max_V": 1.96842765
+    },
+    {
+      "case": "osc_buffer1meg",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 52916,
+      "max_out_V": 12.1334638,
+      "frequency_Hz": 114528.06876814968,
+      "CT_min_V": 0.503745744,
+      "CT_max_V": 2.39945436
+    },
+    {
+      "case": "uvlo",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_UVLO_NOMINAL",
+      "end_s": 0.0005,
+      "samples": 51194,
+      "max_out_V": 12.156467,
+      "transitions": [
+        {
+          "time_s": 0.000150007693,
+          "VDD_V": 8.40046157,
+          "reference_on": true
+        },
+        {
+          "time_s": 0.000333343149,
+          "VDD_V": 7.59941107,
+          "reference_on": false
+        }
+      ]
+    },
+    {
+      "case": "cs_step",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_CS_DELAY",
+      "end_s": 0.0005,
+      "samples": 52975,
+      "max_out_V": 12.156467,
+      "CS_to_OUT_6V_delay_s": [
+        5.210589623698891e-08,
+        5.2105897442459095e-08
+      ]
+    },
+    {
+      "case": "cs_step",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_CS_DELAY",
+      "end_s": 0.0005,
+      "samples": 102324,
+      "max_out_V": 12.156567,
+      "CS_to_OUT_6V_delay_s": [
+        5.257478403596517e-08,
+        5.2574785157572315e-08
+      ]
+    },
+    {
+      "case": "cs_gate64nc",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "FAIL_GATE_ALLOC_SCREEN",
+      "end_s": 0.0005,
+      "samples": 52113,
+      "max_out_V": 12.1301795,
+      "CS_to_OUT_6V_delay_s": [
+        5.3113063023103695e-08,
+        5.311307428297694e-08
+      ],
+      "CS_to_gate_below3V_s": [
+        2.595197252325352e-07,
+        2.5951986976405737e-07
+      ],
+      "gate_scope": "64nC/12V equivalent linear capacitance, source grounded, no real MOS/Miller; diagnostic only"
+    },
+    {
+      "case": "cs_gate64nc",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "FAIL_GATE_ALLOC_SCREEN",
+      "end_s": 0.0005,
+      "samples": 101754,
+      "max_out_V": 12.1312331,
+      "CS_to_OUT_6V_delay_s": [
+        5.358217078626354e-08,
+        5.3582177346608254e-08
+      ],
+      "CS_to_gate_below3V_s": [
+        2.60118454025154e-07,
+        2.601185259575771e-07
+      ],
+      "gate_scope": "64nC/12V equivalent linear capacitance, source grounded, no real MOS/Miller; diagnostic only"
+    }
+  ],
+  "24V_07": "NOT_PASSED_UNTIL_ALL_REQUIRED_UNITS_QUALIFIED",
+  "CT_loading_comparison": [
+    {
+      "case": "osc_load10k",
+      "frequency_delta_fraction": -1.0,
+      "engineering": "FAIL_LOAD_LIMIT"
+    },
+    {
+      "case": "osc_buffer1meg",
+      "frequency_delta_fraction": -0.00501271213052823,
+      "engineering": "PASS_LOAD_LIMIT"
+    }
+  ],
+  "frequency_step_delta_fraction": 0.0010680071991835405
+}

@@ -1,0 +1,242 @@
+                                                                                                                      DN-40
+
+Design Note
+
+              THE EFFECTS OF OSCILLATOR DISCHARGE CURRENT VARIATIONS
+                              ON MAXIMUM DUTY CYCLE AND FREQUENCY
+                                    IN UC3842 AND UC3842−"A" PWM ICs
+
+                                              by  YEAM CHONG HOCK
+
+
+
+
+Many designers tr y to program a precise maximum
+duty cycle and operating frequency by careful se-
+lection of the oscillator timing components, Rt and
+C t. Because of the var iat ions in oscillator discharge
+current, ver y accurate programming is not easily
+obtainable. However, it is possible with ICs which
+contain a "trimmed" discharge current which has
+specified limits. This Design Note will detail pro-
+gramming frequency and maximum duty cycle with
+both types of oscillators. Simplified equations will
+be used to develop obtainable ranges for these pa-
+rameters over IC tolerances.
+
+ON-TIME
+M aximum  o n-t im e direct ly corre spo nd s t o th e maxi-      Figure 2: Timing Wavefor ms and Design Equations
+mum charging time of the timing capacitor. Charg-
+ing time (TC) is deter mined by the timing capacitor                                                value (Ct), the charging current (IRt) and the volt-
+                                                                  age amplitude between the upper and lower oscil-
+                                                                  lator thresholds.
+
+                                                                  OFF-TIME (DEADTIME)
+                                                                  The off-time occurs while the timing capacitor is
+                                                                  discharged from the oscillator upper threshold to its
+                                                                  lower threshold. The discharge current actually
+                                                                  sinks two currents to ground. One current is flowing
+                                                                  from the discharging timing capacitor. Another cur-
+                                                                  rent flows from the timing resistor (Rt) pulling to
+                                                                  Vref. Therefore, the effective timing capacitor dis-
+                                                                  charge current (ICt) is the ICs discharge current
+                                                                  (Id) minus the timing resistor charging current (IRt).
+                                                                  Maximum duty cycle and switching frequency can
+
+
+      Figure 1: Basic UC3842 Oscillator Circuit
+Design Note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    DN-40
+
+be controlled by accurately setting the ratio of                                                             D = 0.60 ( 60% )
+these currents and capacitor value. The related                                                              Based on the 10mA discharging current and the
+equations are listed below.                                                                                  equations previously mentioned;
+CHARGING:                                                                                                    IRt = 4mA, and Tc = 6us
+
+ICt = C ×             dVTcICt = C ×           dV ∕ Tc                                                        Using the same Rt and Ct values with a discharge
+                                                                                                             current of 6mA results in:
+ICt =   5VRt    (approximation)                                                                              Dmax = 0.33 ( 30% )
+                                                                                                             F = 55kHz
+TC = c ×            dVIRt                                                                                    When the highest discharge current of 14mA is
+DISCHARGING:                                                                                                 used, the results are:
+ICt = Id − IRt                                                                                               Dmax = 0.71 ( 71% )
+                                                                                                             F = 118kHz
+Td = c ×                                                                   dv( IRt − Id )                    Therefore, the total possible range due to dis-
+                                                                                                             charge current variations in maximum duty cycle
+Td =   ( Id − IRt )Id                                                                                        and frequency is:
+DUTY CYCLE:                                                                                                  Dmax = 33 71 percent
+                                                                                                             Frequency = 55 118kHz
+D =                                                           Tc( Tc + Td )                                  In most applications this range is far too wide to
+                                                                                                             use in a high volume production environment. One
+D =  ( Id − Rt )                                                                                             technique to minimize the effects of the discharge
+              Id                                                                                             current is to have the ICs sor ted into different
+SWITCHING FREQUENCY:                                                                                         groups. Each group can have a tight distribution or
+                                                                                                             tolerance and will use a specific timing resistor and
+F =                          1 =                                                                 1           capacitor to achieve the desired frequency and
+       Tp  er       ( Tc + Td )                                                                              duty cycle. Each other group will also need a spe-
+                                                                                                             cific R t and Ct for that group. Keeping these groups
+F =  ( Id − IRt )( Id ×           Tc  )                                                                      separated can create problems in some production
+                                                                                                             situations. One alter native is to have the ICs meas-
+EXAMPLE 1:                                                                                                   ured and "binned" at the factor y. Another way is to
+This example will calculate the potential variations                                                         use only ICs within one distribution group, for ex-
+in maximum duty cycle and frequency using a                                                                  ample, 10mA +/- 1mA. Listed below is a general
+standard UC3842 device. A ten milliamp internal                                                              procedure to follow with grouped par  ts.
+discharge current (Id = 10mA) will be used for in-                                                           1. Sor  t ICs by discharge current range
+itial programming. The worst case limits of 6 and 14                                                         ex: 7mA +/- 1mA (6-8mA total)
+milliamp discharge currents will be used to analyze                                                          2. Select Rt and Ct using previous equations and
+the possible var iations. A target of 100kHz at 60%                                                          worst case conditions.
+duty cycle will be used.                                                                                     Table 1 shows the results of selecting ICs by dis-
+Id = 10mA (typical)                                                                                          charge current. The oscillator was programmed not
+Id ( mi n  )    =   6 mA, Id ( max ) = 14mA                                                                  to exceed 100kHz and 60% maximum duty cycle.
+
+F ( ty p  )  = 100kHz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                        2
+Design Note                                                                                                                                                                                                                                                           DN-40
+
+
+                                    I Discharge                           Rt                 Ct                   Minimum                       Maximum                         Minimum                            Maximum
+                                    (+/- 1mA)                             (k)                (nF)                 Duty%                         Duty%                           Freq (kHz )                        Freq (kHz )
+
+                                    7mA                                                                                                                                                      1.56                                         11.3                                                       47                                                                                                                                            60                                                                                                                                                 77.8                                                                                                                                       100
+
+                                    9mA                                                                                                                                                      1.25                                         14.1                                                       50                                                                                                                                            60                                                                                                                                                 83.3                                                                                                                                       100
+
+                                    11mA                                                                                                                                  1.04                                         16.9                                                       52                                                                                                                                            60                                                                                                                                                 86.7                                                                                                                                       100
+
+
+
+                                                                                                                                                  D ( max ) = 62%
+TRIMMED DISCHARGE CURRENT:                                                                                                                        F ( min ) = 92.9kHz
+Ver y repeatable and predictable high volume pro-                                                                                                 F ( max ) = 103.8kHz
+duction can be rescued from these variations by                                                                                                   This is a significant improvement over the non "A:
+using the right IC, one with a trimmed discharge                                                                                                  version devices. The accuracy of these ICs will im-
+current. The UC3842A, UC3843A, UC3844A and                                                                                                        prove when these ICs are used at wider maximum
+U C3845A devices have an inter nal factor y trimmed                                                                                               duty cycles, for example 65 to 85 percent. The
+discharge current with a tight distribution. This is                                                                                              UC3844A and UC3845A are intended for 50%
+set at 8.3mA typically, and can only var y between a                                                                                              maximum duty cycle applications and contain a flip
+low of 7.5mA and a high of 8.8mA. Programming                                                                                                     flop to insure that 50%  D(max) is never exceeded.
+these ICs for a 50% maximum duty cycle and                                                                                                        The UC3842A and UC3843A have maximum duty
+100kHz switching frequency will result in worst                                                                                                   cycles near 100% and can be adjusted lower using
+case variations of:                                                                                                                               the appropriate Rt and Ct components.
+D ( min ) = 56%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UNITRODE CORPORATION
+7 CONTINENTAL BLVD. • MERRIMACK, NH 03054
+T EL. (603) 424-2410 • FAX (603) 424- 3460
+
+
+                                                                                                                                           3
+                                                  IMPORTANT NOTICE
+
+Texas Instruments and its subsidiaries (TI) reserve the right to make changes to their products or to discontinue
+any product or service without notice, and advise customers to obtain the latest version of relevant information
+to verify, before placing orders, that information being relied on is current and complete. All products are sold
+subject to the terms and conditions of sale supplied at the time of order acknowledgement, including those
+pertaining to warranty, patent infringement, and limitation of liability.
+
+TI warrants performance of its semiconductor products to the specifications applicable at the time of sale in
+accordance with TI’s standard warranty. Testing and other quality control techniques are utilized to the extent
+TI deems necessary to support this warranty. Specific testing of all parameters of each device is not necessarily
+performed, except those mandated by government requirements.
+
+CERTAIN APPLICATIONS USING SEMICONDUCTOR PRODUCTS MAY INVOLVE POTENTIAL RISKS OF
+DEATH, PERSONAL INJURY, OR SEVERE PROPERTY OR ENVIRONMENTAL DAMAGE (“CRITICAL
+APPLICATIONS”). TI SEMICONDUCTOR PRODUCTS ARE NOT DESIGNED, AUTHORIZED, OR
+WARRANTED TO BE SUITABLE FOR USE IN LIFE-SUPPORT DEVICES OR SYSTEMS OR OTHER
+CRITICAL APPLICATIONS. INCLUSION OF TI PRODUCTS IN SUCH APPLICATIONS IS UNDERSTOOD TO
+BE FULLY AT THE CUSTOMER’S RISK.
+
+In order to minimize risks associated with the customer ’s applications, adequate design and operating
+safeguards must be provided by the customer to minimize inherent or procedural hazards.
+
+TI assumes no liability for applications assistance or customer product design. TI does not warrant or represent
+that any license, either express or implied, is granted under any patent right, copyright, mask work right, or other
+intellectual property right of TI covering or relating to any combination, machine, or process in which such
+semiconductor products or services might be or are used. TI’s publication of information regarding any third
+party’s products or services does not constitute TI’s approval, warranty or endorsement thereof.
+
+
+
+
+
+
+
+
+
+
+
+
+                                 Copyright        1999, Texas Instruments Incorporated

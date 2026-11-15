@@ -1,0 +1,611 @@
+{
+  "system_status": "FAIL/HOLD",
+  "gate1": "BLOCKED",
+  "native_writeback": "NOT_PERFORMED",
+  "tests": [
+    {
+      "id": "SIM-01",
+      "status": "FAIL",
+      "reason": "Actual netlist startup still fails; isolated candidates do not meet acceptance"
+    },
+    {
+      "id": "SIM-02",
+      "status": "FAIL",
+      "reason": "No accepted steady state; binary-switch commutation model cannot qualify device stress"
+    },
+    {
+      "id": "SIM-03",
+      "status": "BLOCKED",
+      "reason": "No accepted nominal operating point; full load matrix deferred at Gate1"
+    },
+    {
+      "id": "SIM-04",
+      "status": "BLOCKED",
+      "reason": "Exact supply specification and duty margin not frozen; prior Sprint01 failure retained"
+    },
+    {
+      "id": "SIM-05",
+      "status": "BLOCKED",
+      "reason": "Prerequisite normal-operation/model gates not met; actual CS/latch remain known FAIL"
+    },
+    {
+      "id": "SIM-06",
+      "status": "BLOCKED",
+      "reason": "No validated autonomous HV startup for a credible complete shutdown test; prior passive RC results retained"
+    }
+  ],
+  "diagnostics": [
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "max_duty",
+        "comp_force": 5,
+        "stop": 0.004,
+        "step": 5e-08,
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.004,
+        "ref_final": 4.99974,
+        "ct_max": 2.6999,
+        "ct_min": 0.997229
+      },
+      "metrics": {
+        "ref_end_V": 4.9997387,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.5823691,
+        "late_frequency_Hz": 77972.28397194005,
+        "late_duty": 0.9497715987966725,
+        "ct_min_V": 0.997229057,
+        "ct_max_V": 2.69989953,
+        "first_pulse_s": 0.000709213074
+      },
+      "cause": null
+    },
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "cs_latch",
+        "comp_force": 5,
+        "stop": 0.003,
+        "step": 2e-08,
+        "cs": "BCS cs 0 V=(v(ct)>1.8 && v(ct)<2.2) ? 1.2 : 0",
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.003,
+        "ref_final": 4.99973,
+        "ct_max": 2.69991,
+        "ct_min": 0.999391
+      },
+      "metrics": {
+        "ref_end_V": 4.99973122,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.4989501,
+        "late_frequency_Hz": 77860.27506477913,
+        "late_duty": 0.3835697813840938,
+        "ct_min_V": 0.999391438,
+        "ct_max_V": 2.69991115,
+        "first_pulse_s": 0.000709191771,
+        "cs_trip_off_fraction": 0.9137087810300111,
+        "retrigger_samples_same_cycle": 0,
+        "cs_to_output_low_max_s": 1.8281000000027955e-07,
+        "cs_tested_edges": 155
+      },
+      "cause": null
+    },
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "uvlo",
+        "supply": "PWL(0 0 3m 12 4m 12 7m 0 10m 0)",
+        "comp_force": 5,
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.01,
+        "ref_final": 3.16341e-219,
+        "ct_max": 9.37975e-132,
+        "ct_min": 3.20397e-221
+      },
+      "metrics": {
+        "ref_end_V": 3.16340856e-219,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.618239,
+        "late_frequency_Hz": null,
+        "late_duty": 0.0,
+        "ct_min_V": 3.20397074e-221,
+        "ct_max_V": 9.37975204e-132,
+        "first_pulse_s": 0.00210919416,
+        "ref_valid_vcc_V": 8.43650725,
+        "off_after_uvlo": true
+      },
+      "cause": null
+    },
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "max_duty_idis_2p8m",
+        "comp_force": 5,
+        "idis": 0.0028,
+        "stop": 0.004,
+        "step": 5e-08,
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.004,
+        "ref_final": 4.99975,
+        "ct_max": 2.69951,
+        "ct_min": 1.00884
+      },
+      "metrics": {
+        "ref_end_V": 4.99975216,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.5842129,
+        "late_frequency_Hz": 73217.91261588645,
+        "late_duty": 0.8917551001917451,
+        "ct_min_V": 1.00883565,
+        "ct_max_V": 2.69950608,
+        "first_pulse_s": 0.000709213074
+      },
+      "cause": null
+    },
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "max_duty_idis_8p3m",
+        "comp_force": 5,
+        "idis": 0.0083,
+        "stop": 0.004,
+        "step": 5e-08,
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.004,
+        "ref_final": 4.99975,
+        "ct_max": 2.6996,
+        "ct_min": 1.00087
+      },
+      "metrics": {
+        "ref_end_V": 4.9997483,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.5832546,
+        "late_frequency_Hz": 78966.54898018499,
+        "late_duty": 0.9641234955426462,
+        "ct_min_V": 1.000867,
+        "ct_max_V": 2.69959609,
+        "first_pulse_s": 0.000709213074
+      },
+      "cause": null
+    },
+    {
+      "run": "controller_v1",
+      "case": {
+        "id": "max_duty_rt22k",
+        "comp_force": 5,
+        "rt": 22000,
+        "ct": 1e-09,
+        "stop": 0.004,
+        "step": 5e-08,
+        "stage": "controller"
+      },
+      "execution": "PASS",
+      "engineering": "MODEL_CHECK_PASS",
+      "native": {
+        "end_time": 0.004,
+        "ref_final": 4.99978,
+        "ct_max": 2.69973,
+        "ct_min": 1.00006
+      },
+      "metrics": {
+        "ref_end_V": 4.99977599,
+        "comp_end_V": 5.0,
+        "out_max_V": 10.5844121,
+        "late_frequency_Hz": 80244.77867286331,
+        "late_duty": 0.9775601371546313,
+        "ct_min_V": 1.00005713,
+        "ct_max_V": 2.69972596,
+        "first_pulse_s": 0.000709212368
+      },
+      "cause": null
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "actual_cs_fixture",
+        "closed": true,
+        "wrong_cs": true,
+        "c10": 1e-08,
+        "stop": 0.06,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "FAIL",
+      "native": {
+        "end_time": 0.06,
+        "hv_peak": 16.6746,
+        "il_peak": 2.35614,
+        "sw_peak": 17.5628,
+        "mos_i_peak": 0.00050091,
+        "il_rms": 1.52108e-07,
+        "mos_i_rms": 4.10288e-06,
+        "hv_avg": 15.7098,
+        "hv_min": 15.6301,
+        "hv_max": 15.7899,
+        "vds_peak": 17.5628,
+        "diode_reverse": 9.62585,
+        "input_power": 1.82526e-06,
+        "mos_loss": 1.151e-07
+      },
+      "metrics": {
+        "hv_end_V": 15.6300722,
+        "hv_peak_V": 16.6745929,
+        "hv_late_average_V": 15.70982893395747,
+        "hv_late_pp_V": 0.1597843000000001,
+        "inductor_peak_A": 2.35613961,
+        "switch_peak_V": 17.5628181,
+        "cs_peak_V": 16.0519812,
+        "late_gate_duty": 0.0,
+        "feedback_end_V": 0.226939489,
+        "comp_end_V": 2.83198134,
+        "current_window_A": [
+          1.42156642e-07,
+          1.5331444e-07
+        ],
+        "reached_169V_s": null,
+        "load_active": false
+      },
+      "cause": "PERFORMANCE_FAIL"
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "direct_ramp_stalled",
+        "closed": true,
+        "c10": 1e-08,
+        "stop": 0.06,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "FAIL",
+      "native": {
+        "end_time": 0.06,
+        "hv_peak": 16.6746,
+        "il_peak": 2.35611,
+        "sw_peak": 17.5628,
+        "mos_i_peak": 0.000502178,
+        "il_rms": 1.52105e-07,
+        "mos_i_rms": 2.21199e-09,
+        "hv_avg": 15.7098,
+        "hv_min": 15.6301,
+        "hv_max": 15.7899,
+        "vds_peak": 17.5628,
+        "diode_reverse": 9.63355,
+        "input_power": 1.82525e-06,
+        "mos_loss": 2.65438e-08
+      },
+      "metrics": {
+        "hv_end_V": 15.6300838,
+        "hv_peak_V": 16.6746104,
+        "hv_late_average_V": 15.709841006236935,
+        "hv_late_pp_V": 0.15978519999999996,
+        "inductor_peak_A": 2.3561128,
+        "switch_peak_V": 17.5628347,
+        "cs_peak_V": 0.362419032,
+        "late_gate_duty": 0.0,
+        "feedback_end_V": 0.226939658,
+        "comp_end_V": 2.83198134,
+        "current_window_A": [
+          1.512936e-07,
+          1.52917829e-07
+        ],
+        "reached_169V_s": null,
+        "load_active": false
+      },
+      "cause": "PERFORMANCE_FAIL"
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "buffered_existing_c10",
+        "closed": true,
+        "c10": 1e-08,
+        "buffer": true,
+        "stop": 0.12,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "FAIL",
+      "native": {
+        "end_time": 0.12,
+        "hv_peak": 135.2,
+        "il_peak": 2.35611,
+        "sw_peak": 136.316,
+        "mos_i_peak": 78.0259,
+        "il_rms": 0.790668,
+        "mos_i_rms": 1.20836,
+        "hv_avg": 130.384,
+        "hv_min": 90.3277,
+        "hv_max": 135.2,
+        "vds_peak": 136.316,
+        "diode_reverse": 135.502,
+        "input_power": 4.8957,
+        "mos_loss": 0.8707
+      },
+      "metrics": {
+        "hv_end_V": 134.491659,
+        "hv_peak_V": 135.199611,
+        "hv_late_average_V": 130.38369718892795,
+        "hv_late_pp_V": 44.8718939,
+        "inductor_peak_A": 2.35610889,
+        "switch_peak_V": 136.315911,
+        "cs_peak_V": 1.22723713,
+        "late_gate_duty": 0.712730408963051,
+        "feedback_end_V": 1.95274007,
+        "comp_end_V": 5.00391722,
+        "current_window_A": [
+          -0.83192432,
+          1.52436602
+        ],
+        "reached_169V_s": null,
+        "load_active": true
+      },
+      "cause": "PERFORMANCE_FAIL"
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "buffered_no_c10",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "stop": 0.12,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "FAIL",
+      "native": {
+        "end_time": 0.12,
+        "hv_peak": 191.159,
+        "il_peak": 2.75395,
+        "sw_peak": 181.529,
+        "mos_i_peak": 107.373,
+        "il_rms": 0.11101,
+        "mos_i_rms": 0.108198,
+        "hv_avg": 157.076,
+        "hv_min": 153.863,
+        "hv_max": 161.026,
+        "vds_peak": 181.572,
+        "diode_reverse": 180.323,
+        "input_power": 0.545742,
+        "mos_loss": 0.017793
+      },
+      "metrics": {
+        "hv_end_V": 153.881825,
+        "hv_peak_V": 191.159199,
+        "hv_late_average_V": 157.0757328895076,
+        "hv_late_pp_V": 7.163633000000004,
+        "inductor_peak_A": 2.75394648,
+        "switch_peak_V": 181.529217,
+        "cs_peak_V": 0.835825269,
+        "late_gate_duty": 0.3800044440057811,
+        "feedback_end_V": 2.23427391,
+        "comp_end_V": 2.57577512,
+        "current_window_A": [
+          -0.133303761,
+          0.339231608
+        ],
+        "reached_169V_s": 0.0877258405,
+        "load_active": true
+      },
+      "cause": "PERFORMANCE_FAIL"
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "buffered_type2",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "compensation": "type2",
+        "rt": 22000,
+        "ct": 1e-09,
+        "stop": 0.15,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "FAIL",
+      "native": {
+        "end_time": 0.15,
+        "hv_peak": 175.038,
+        "il_peak": 4.05341,
+        "sw_peak": 167.814,
+        "mos_i_peak": 98.3273,
+        "il_rms": 0.455958,
+        "mos_i_rms": 0.536321,
+        "hv_avg": 165.723,
+        "hv_min": 116.381,
+        "hv_max": 175.038,
+        "vds_peak": 167.848,
+        "diode_reverse": 166.972,
+        "input_power": 4.503,
+        "mos_loss": 0.271481
+      },
+      "metrics": {
+        "hv_end_V": 166.229089,
+        "hv_peak_V": 175.037644,
+        "hv_late_average_V": 165.7231082145568,
+        "hv_late_pp_V": 58.656638,
+        "inductor_peak_A": 4.0534058,
+        "switch_peak_V": 167.813775,
+        "cs_peak_V": 0.741458813,
+        "late_gate_duty": 0.9145494451471726,
+        "feedback_end_V": 2.49996032,
+        "comp_end_V": 3.17584931,
+        "current_window_A": [
+          -0.138692121,
+          0.870697422
+        ],
+        "reached_169V_s": 0.110433348,
+        "load_active": true
+      },
+      "cause": "PERFORMANCE_FAIL"
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "open_original_c10",
+        "closed": false,
+        "c10": 1e-08,
+        "duty": 0.93,
+        "resistive": true,
+        "stop": 0.03,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "OBSERVATION",
+      "native": {
+        "end_time": 0.03,
+        "hv_peak": 200.601,
+        "il_peak": 10.457,
+        "sw_peak": 203.099,
+        "mos_i_peak": 190.803,
+        "il_rms": 3.40012,
+        "mos_i_rms": 5.34688,
+        "hv_avg": 192.275,
+        "hv_min": 97.2738,
+        "hv_max": 200.601,
+        "vds_peak": 203.099,
+        "diode_reverse": 197.159,
+        "input_power": 40.7578,
+        "mos_loss": 16.0863
+      },
+      "metrics": {
+        "hv_end_V": 200.494122,
+        "hv_peak_V": 200.601089,
+        "hv_late_average_V": 192.27454954353277,
+        "hv_late_pp_V": 103.3272944,
+        "inductor_peak_A": 10.4570021,
+        "switch_peak_V": 203.099133,
+        "cs_peak_V": 0.0,
+        "late_gate_duty": 0.9323846700000021,
+        "feedback_end_V": 2.91105716,
+        "comp_end_V": 0.0,
+        "current_window_A": [
+          3.07551191,
+          3.73274459
+        ],
+        "reached_169V_s": 0.0140376255,
+        "load_active": true
+      },
+      "cause": null
+    },
+    {
+      "run": "power_v1",
+      "case": {
+        "id": "open_no_c10",
+        "closed": false,
+        "c10": 0,
+        "duty": 0.93,
+        "resistive": true,
+        "stop": 0.03,
+        "stage": "power"
+      },
+      "execution": "PASS",
+      "engineering": "OBSERVATION",
+      "native": {
+        "end_time": 0.03,
+        "hv_peak": 184.796,
+        "il_peak": 10.4105,
+        "sw_peak": 178.206,
+        "mos_i_peak": 115.001,
+        "il_rms": 0.555421,
+        "mos_i_rms": 0.670318,
+        "hv_avg": 175.613,
+        "hv_min": 116.79,
+        "hv_max": 184.796,
+        "vds_peak": 178.206,
+        "diode_reverse": 176.749,
+        "input_power": 6.26557,
+        "mos_loss": 0.483246
+      },
+      "metrics": {
+        "hv_end_V": 176.902584,
+        "hv_peak_V": 184.795959,
+        "hv_late_average_V": 175.61278568411188,
+        "hv_late_pp_V": 68.00637800000001,
+        "inductor_peak_A": 10.4105356,
+        "switch_peak_V": 178.205535,
+        "cs_peak_V": 0.0,
+        "late_gate_duty": 0.9323920800000027,
+        "feedback_end_V": 2.56852185,
+        "comp_end_V": 0.0,
+        "current_window_A": [
+          0.137496898,
+          0.94863453
+        ],
+        "reached_169V_s": 0.0111923263,
+        "load_active": true
+      },
+      "cause": null
+    },
+    {
+      "run": "slope_candidate_v1",
+      "case": {
+        "id": "ramp_ratio_derived_generic",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "compensation": "type2",
+        "rt": 22000,
+        "ct": 1e-09,
+        "rramp": 1500,
+        "stop": 0.3,
+        "stage": "candidate"
+      },
+      "execution": "FAIL",
+      "engineering": "BLOCKED",
+      "native": {},
+      "metrics": {},
+      "cause": "UNSUPPORTED"
+    },
+    {
+      "run": "slope_candidate_v1",
+      "case": {
+        "id": "ramp_ratio_derived_vendor_diode",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "compensation": "type2",
+        "rt": 22000,
+        "ct": 1e-09,
+        "rramp": 1500,
+        "vendor_diode": true,
+        "stop": 0.3,
+        "stage": "candidate"
+      },
+      "execution": "FAIL",
+      "engineering": "BLOCKED",
+      "native": {},
+      "metrics": {},
+      "cause": "UNSUPPORTED"
+    }
+  ],
+  "checks": {
+    "inherited_inputs_unchanged": true,
+    "native_stats_identical": true,
+    "native_inputs_identical": true,
+    "12_mapping_audits": true,
+    "wave_archives_exact": true
+  }
+}

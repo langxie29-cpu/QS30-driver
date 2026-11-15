@@ -1,0 +1,8 @@
+﻿rail,voltage_V,current_A,power_W,scope,evidence
+HV_BUS,175.1,0.031857736370340124,5.578289638446556,all HV loads; driver drain conduction included,calculated load envelope; tubes unmeasured
+DRV12,12.6,0.055,0.693,subset of AUX12; do not add twice,HV5622 45mA datasheet test bound plus level shifts 10mA allocation
+AUX12,12.6,0.09809599999999999,1.2360095999999998,includes DRV12/controller/gate/protection/other,"allocation at upper voltage, not measured current"
+3V3,3.465,0.8,2.7720000000000002,"MCU/logic/peripherals, external power mode",800mA inherited allocation at upper voltage; measurement pending
+5V_SYS,5,0.6930000000000001,3.4650000000000003,"upstream of 3V3, no duplicate addition",eta3V3=0.80 allocation
+VIN24,21.6,0.6325917369411453,13.663981517928741,"total at connector, includes all conversion budgets","efficiency floors are requirements, not verified"
+USB_VBUS_configured,4.75,0.41664473684210523,1.9790625,"USB-only scenario, excludes AUX/HV",500mA configured USB; pre-enumeration unresolved

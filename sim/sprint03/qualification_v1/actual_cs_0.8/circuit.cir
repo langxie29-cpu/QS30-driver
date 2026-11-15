@@ -1,0 +1,20 @@
+Known-current excitation, disconnected controller
+VSW sw 0 12
+ILOAD sw drain 0.8
+VPROBE drain src 0
+VSOURCE src 0 0
+R36 sw cs 100k
+C13 cs 0 470p
+
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1e-07 0.0005 0 1e-07 uic
+meas tran end_time MAX time
+
+wrdata waves.txt i(vprobe) v(cs) v(src)
+quit
+.endc
+.end

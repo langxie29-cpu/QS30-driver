@@ -1,5 +1,9 @@
 # QS30 驱动 — 九位模块化（REV.A9）
 
+> 最新进度（2026-11-15）：[24V重构项目](projects/QS30-9_24V/README.md)、[S06B资格审查报告](projects/QS30-9_24V/docs/SPRINT06B_REPORT.md)及[S06C续作计划](projects/QS30-9_24V/docs/S06C_PLAN.md)。24V-07未通过、08未进入，制造HOLD；[工程进展与知识书稿](output/nxt_book/书稿.md)。仿真大文件恢复见[归档说明](docs9/SIMULATION_ARCHIVES.md)。
+
+> 最新实测入口（2026-11-10–11）：[Electrical Closure Sprint 01](docs9/ELECTRICAL_CLOSURE_SPRINT01.md)。DRC 753→698，ERC 0错误/364警告；高压启动/保护仍FAIL/HOLD，禁止投板。
+
 > **当前基线：QS30-9 / REV.A（九位 3+3+3 模块化）**
 > 先读 [`docs9/FINAL_REPORT9.md`](docs9/FINAL_REPORT9.md)（A–G 报告）与
 > [`docs9/AUDIT.md`](docs9/AUDIT.md)（旧六位审计/架构差异）、[`docs9/GATES.md`](docs9/GATES.md)（G0–G5）。

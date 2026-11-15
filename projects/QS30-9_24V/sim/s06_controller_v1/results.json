@@ -1,0 +1,159 @@
+{
+  "preregister": {
+    "date": "2026-11-14",
+    "scope": "TI UCC28C43 standalone model, no boost, MOS, OVP or precharged HV",
+    "model_source": "https://www.ti.com/lit/zip/slum521",
+    "model_sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+    "adaptation": "None to model bytes. Local .spiceinit enables ngbehavior=ps; no numerical value edits.",
+    "execution_acceptance": "rc0, no error/aborted/timestep-too-small, native endpoint, finite waves",
+    "oscillator_acceptance_Hz": [
+      93500,
+      126500
+    ],
+    "CT_buffer_load_frequency_delta_max_fraction": 0.02,
+    "UVLO_model_nominal_V": [
+      8.4,
+      7.6
+    ],
+    "UVLO_acceptance_V": [
+      7.8,
+      9,
+      7,
+      8.2
+    ],
+    "CS_delay_acceptance_s": 7e-08,
+    "step_s": [
+      1e-08,
+      5e-09
+    ],
+    "step_sensitivity_frequency_max_fraction": 0.01,
+    "step_sensitivity_delay_s_max": 1e-08,
+    "timeout_s_each": 30,
+    "model_temperature_note": "27C only in this run; model scope and lack of guaranteed corner coverage remain gate items"
+  },
+  "cases": [
+    {
+      "case": "osc_nominal",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 53017,
+      "max_out_V": 12.1566215,
+      "frequency_Hz": 115319.37368437719,
+      "CT_min_V": 0.499674494,
+      "CT_max_V": 2.39997804
+    },
+    {
+      "case": "osc_nominal",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 102373,
+      "max_out_V": 12.1546217,
+      "frequency_Hz": 115288.63688972095,
+      "CT_min_V": 0.501438448,
+      "CT_max_V": 2.39999466
+    },
+    {
+      "case": "osc_load10k",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "FAIL_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 50106,
+      "max_out_V": 0.0725847854,
+      "frequency_Hz": 0.0,
+      "CT_min_V": 1.96842765,
+      "CT_max_V": 1.96842765
+    },
+    {
+      "case": "osc_buffer1meg",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_OSC_BAND",
+      "end_s": 0.0005,
+      "samples": 52905,
+      "max_out_V": 12.1335956,
+      "frequency_Hz": 114526.37674161713,
+      "CT_min_V": 0.50376876,
+      "CT_max_V": 2.39948644
+    },
+    {
+      "case": "uvlo",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_UVLO_NOMINAL",
+      "end_s": 0.0005,
+      "samples": 51187,
+      "max_out_V": 12.1566215,
+      "transitions": [
+        {
+          "time_s": 0.000150007693,
+          "VDD_V": 8.40046155,
+          "reference_on": true
+        },
+        {
+          "time_s": 0.000333346226,
+          "VDD_V": 7.59922645,
+          "reference_on": false
+        }
+      ]
+    },
+    {
+      "case": "cs_step",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_CS_DELAY",
+      "end_s": 0.0005,
+      "samples": 52918,
+      "max_out_V": 12.1566215,
+      "CS_to_OUT_6V_delay_s": [
+        5.210188917331932e-08,
+        5.210189034490819e-08
+      ]
+    },
+    {
+      "case": "cs_step",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": false,
+      "execution": "PASS",
+      "engineering": "PASS_CS_DELAY",
+      "end_s": 0.0005,
+      "samples": 102342,
+      "max_out_V": 12.1567215,
+      "CS_to_OUT_6V_delay_s": [
+        5.257077025121789e-08,
+        5.2570771382366016e-08
+      ]
+    }
+  ],
+  "24V_07": "NOT_PASSED_UNTIL_ALL_REQUIRED_UNITS_QUALIFIED",
+  "CT_loading_comparison": [
+    {
+      "case": "osc_load10k",
+      "frequency_delta_fraction": -1.0,
+      "engineering": "FAIL_LOAD_LIMIT"
+    },
+    {
+      "case": "osc_buffer1meg",
+      "frequency_delta_fraction": -0.006876528352733224,
+      "engineering": "PASS_LOAD_LIMIT"
+    }
+  ],
+  "frequency_step_delta_fraction": 0.0002666073212891362
+}

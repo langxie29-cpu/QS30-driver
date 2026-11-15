@@ -1,0 +1,120 @@
+{
+  "preregister": {
+    "date": "2026-11-15",
+    "scope": "TI UCC28C43_START driving exact ST model through resistor; 195V resistor drain bias only, no boost, no170V precharge or closed loop",
+    "ST_source": "https://www.st.com.cn/resource/en/spice_model/stp9nk50z_spice.zip",
+    "ST_sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "ST_model_pin_order": "D,G,S (different from physical G,D,S!)",
+    "temperature_C": 25,
+    "temperature_validity": "ST header expressly permits25C only; not hot/cold corners",
+    "criteria": {
+      "stop_s": 6e-05,
+      "CS_to_VGS3V_s_max": 3.7e-07,
+      "peak_controller_output_A_max": 1,
+      "output_cap_energy_J_max": 5e-06,
+      "step_delta_s_max": 1e-08
+    },
+    "stimulus": "CS forced1.2V step; actual0.82ohm source shunt included but not connected to CS in this device-cell stimulus. Does not qualify current-feedback loop.",
+    "cases": "Rgate15/22, VDD11.4/12.6, maxstep2ns/1ns",
+    "timeout_s": 40
+  },
+  "cases": [
+    {
+      "rg_ohm": 15,
+      "VDD_V": 11.4,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7.36842104192191e-07,
+      "finite": true,
+      "peak_output_A": 0.3768286214190933,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 15,
+      "VDD_V": 11.4,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7.368420726770347e-07,
+      "finite": true,
+      "peak_output_A": 0.3787668418267551,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 15,
+      "VDD_V": 12.6,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 6.666673804328443e-07,
+      "finite": true,
+      "peak_output_A": 0.3768284662816767,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 15,
+      "VDD_V": 12.6,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 6.666681375056106e-07,
+      "finite": true,
+      "peak_output_A": 0.3787667370279879,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 22,
+      "VDD_V": 11.4,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7.373328484837051e-07,
+      "finite": true,
+      "peak_output_A": 0.361340101175047,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 22,
+      "VDD_V": 11.4,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7.363907904190819e-07,
+      "finite": true,
+      "peak_output_A": 0.3638021048522089,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 22,
+      "VDD_V": 12.6,
+      "step_s": 2e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 6.666665253278818e-07,
+      "finite": true,
+      "peak_output_A": 0.3613400135293426,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    },
+    {
+      "rg_ohm": 22,
+      "VDD_V": 12.6,
+      "step_s": 1e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 6.666671655526638e-07,
+      "finite": true,
+      "peak_output_A": 0.3638020413386569,
+      "execution": "FAIL",
+      "engineering": "FAIL"
+    }
+  ],
+  "24V_07": "NOT_PASSED"
+}

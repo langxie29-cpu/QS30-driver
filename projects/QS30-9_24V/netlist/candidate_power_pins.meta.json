@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "UNREVIEWED_CANDIDATE",
+  "approved_for_native_generation": false,
+  "rows": 189,
+  "scope": "Power core pin candidates only; not complete assembly netlist",
+  "missing": [
+    "decoupling and passive MPN completion",
+    "hardware PG and permit drivers",
+    "OVP/OC latch/reset",
+    "COMP/soft-start/ramp",
+    "USB current protocol/ESD paths",
+    "module/MCU full netlist"
+  ],
+  "native_export_policy": "Refuse native output until reviewed connection set and all required approvals/qualification evidence exist"
+}

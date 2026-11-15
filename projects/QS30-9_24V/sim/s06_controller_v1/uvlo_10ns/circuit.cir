@@ -1,0 +1,23 @@
+S06 TI UCC28C43 standalone uvlo
+.include vendor.lib
+VDD vdd 0 PWL(0 0 10u 0 210u 12 260u 12 460u 0 500u 0)
+VFB fb 0 0
+VCS cs 0 0
+XU comp fb cs ct 0 out vdd vref UCC28C43_START
+RT vref ct 15.4k
+CT ct 0 1n
+CVREF vref 0 100n
+CCOMP comp 0 1n
+COUT out 0 1n
+
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1e-08 500u 0 1e-08 uic
+meas tran native_end MAX time
+wrdata waves.txt v(vdd) v(vref) v(ct) v(out) v(cs) v(comp)
+quit
+.endc
+.end

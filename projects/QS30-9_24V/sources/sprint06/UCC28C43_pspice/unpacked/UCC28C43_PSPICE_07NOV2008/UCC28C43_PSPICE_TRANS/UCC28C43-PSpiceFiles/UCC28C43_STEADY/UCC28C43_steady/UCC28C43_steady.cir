@@ -1,0 +1,26 @@
+** Profile: "UCC28C43_STEADY-UCC28C43_steady"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerreview\ucc28c43_pspice_07nov2008\ucc28c43_pspice_07nov2008\ucc28c43_pspice_trans\ucc28c43-pspicefiles\ucc28c43_steady\ucc28c43_steady.sim ] 
+
+** Creating circuit file "UCC28C43_steady.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../ucc28c43.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.0\tools\PSpice\PSpice.ini file:
+.lib "C:\Cadence\SPB_16.0\tools\pspice\library\nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 9m 5m {SCHEDULE(0,1000ns,6m,20ns)} SKIPBP 
+.OPTIONS STEPGMIN
+.OPTIONS ABSTOL= 1u
+.OPTIONS CHGTOL= 0.1p
+.OPTIONS GMIN= 1.0E-10
+.OPTIONS ITL4= 5000
+.OPTIONS RELTOL= 0.01
+.OPTIONS VNTOL= 1m
+.PROBE V(*) I(*) D(*) 
+.INC "..\UCC28C43_STEADY.net" 
+
+
+.END

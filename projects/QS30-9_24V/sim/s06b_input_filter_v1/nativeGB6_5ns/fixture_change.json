@@ -1,0 +1,4 @@
+{
+  "diff": "--- \n+++ \n@@ -11,7 +11,9 @@\n COUT out 0 1p\n .include driver_compat.lib\n VINHIBIT inhibit 0 PULSE(0 3.3 375u 1n 1n 20u 1m)\n-XD out inhibit 0 vdd dh dl UCC27511_TRANS\n+RINPUT out din 100\n+CINPUT din 0 100p\n+XD din inhibit 0 vdd dh dl UCC27511_TRANS\n RGON dh gate 10\n RGOFF dl gate 2.2\n CG gate 0 5.333333n\n",
+  "nativeGB6": true
+}

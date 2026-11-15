@@ -1,0 +1,26 @@
+﻿role,exact_candidate_mpn_package,primary_source_and_review,remaining_qualification,status
+适配器,GST40A24-P1J / 外置桌面式,[MEAN WELL规格](https://www.meanwell.com/Upload/PDF/GST40A/GST40A-SPEC.PDF) p2：24V/1.67A，±2.5%、150mVpp,实际线缆、插拔、AC线及地区认证标签,CANDIDATE_NOT_RELEASED
+U100/U101输入/HV切断,TPS26601RHFR / RHF QFN24，EP,[TI TPS2660 Rev.G](https://www.ti.com/lit/ds/symlink/tps2660.pdf) §5–9：4.2–60V、集成背靠背MOS、26601的MODE开路为断路器锁存；**不是26600自动重试型号**,RHF真实焊盘、原厂动态模型兼容、短路及SOA/热验证,CANDIDATE_NOT_RELEASED
+D100输入TVS,SMBJ33CA-E3/52 / SMB,[Vishay 88392](https://www.vishay.com/docs/88392/smbj.pdf)：33V双向，表内53.3V@11.3A，600W规定脉冲,源阻、温度与寄生L；600W不等于允许持续过压,CANDIDATE_NOT_RELEASED
+F100,0451001.MRL / 2410,[Littelfuse 451系列入口](https://www.littelfuse.com/products/fuses/surface-mount-fuses/nano2-fuses/451),精确额定表和I²t原厂全文未取得；暂定1A，不能声称能清除所有限流电源故障,CANDIDATE_NOT_RELEASED
+C100输入大电容,EEUFR1J470 / 径向,[Panasonic FR资料入口](https://industrial.panasonic.com/ww/products/pt/aluminum-cap-lead/models/EEUFR1J470)：候选47µF/63V,原厂完整参数下载未成功；ESR、纹波、寿命、机械图待审,CANDIDATE_NOT_RELEASED
+C101/CIN去耦,GRM188R72A104KA35D / 0603,[Murata精确料号查询](https://www.murata.com/en-us/products/productdetail?partno=GRM188R72A104KA35D)：候选100n/100V,精确产品页/偏压曲线待归档，不继承旧25V电容,CANDIDATE_NOT_RELEASED
+U110/U120,LMR51610XDBVR / DBV SOT23-6,[TI Rev.B](https://www.ti.com/lit/ds/symlink/lmr51610.pdf) §4–6、§8：65V、1A、400kHz、PFM、0.8V参考；该X型号明确为400kHz,PFM纹波、LC稳定性、热与短路；没有PG脚,CANDIDATE_NOT_RELEASED
+L110 AUX12,MSS1260-104MLD / 12.3×12.3mm系列,[Coilcraft MSS1260](https://www.coilcraft.com/getmedia/febefb9b-60f9-4a2c-8525-9c396f34e363/mss1260.pdf)：100µH ±20%,低负载PFM与温升,CANDIDATE_NOT_RELEASED
+L120 5V,MSS1260-333MLD / 同系列,同上：33µH ±20%,开关峰流、温度与布局,CANDIDATE_NOT_RELEASED
+U111受控DRV,TPS22810DBVR / SOT23-6,[TI Rev.C](https://www.ti.com/lit/ds/symlink/tps22810.pdf) §5–7：2.7–18V，DBV为6脚；CT与QOD,默认关、掉电反灌、QOD能量、驱动器掉电隔离；不将其视为反向阻断器,CANDIDATE_NOT_RELEASED
+U121电源选择,TPS2116DRLR / DRL SOT-5X3-8,[TI Rev.A](https://www.ti.com/lit/ds/symlink/tps2116.pdf) §5、§7–8：1.6–5.5V、2.5A，反向阻断、优先模式、先断后合,供电切换、输入过压、USB浪涌；不是USB协议限流器,CANDIDATE_NOT_RELEASED
+U122逻辑降压,TPS62162DSGR / DSG WSON8+EP,[TI TPS6216x Rev.E](https://www.ti.com/lit/ds/symlink/tps62162.pdf) §5–6、§9：固定3.3V、3–17V、1A，带PG；固定型号FB接AGND,PSM输出容差、USB启动与WSON焊接散热,CANDIDATE_NOT_RELEASED
+L122,MSS1260-222NLD / 2.2µH ±30%,Coilcraft原厂表，作为TI推荐2.2µH量级的具体候选,1.54µH最低值下纹波/峰流与控制稳定性；尺寸非优化,CANDIDATE_NOT_RELEASED
+U20 PWM,UCC28C43DR / D SOIC8,[TI Rev.I](https://www.ti.com/lit/ds/symlink/ucc28c43.pdf) §6–8：CS 0.9–1.1V、延迟最大70ns（规定条件）；RT15.4k/CT1n示例110kHz,偏置12V及温度下完整规格/模型、启动跨模式和斜坡；不复用旧UC3843行为模型,CANDIDATE_NOT_RELEASED
+L20 HV磁件,MSS1260-154KLD / 系列机械图,Coilcraft原厂PDF：150µH ±10%，DCR最大216mΩ；25°C的10%降感电流1.58A、20°C温升RMS1.20A,热态L(I)、磁损与温升；网页取整1.6A不用于扩大裕量,CANDIDATE_NOT_RELEASED
+Q20,STP9NK50Z / TO220，1G/2D+tab/3S,[ST DS2787 Rev.3](https://www.st.com/resource/en/datasheet/stp9nk50z.pdf) p1–3：500V、RDS(on)≤0.85Ω@10V；Qg典型32nC；[官方产品状态](https://www.st.com/en/power-transistors/stp9nk50z.html)为Active,本地PDF下载超时，网页原厂已读；Qg按64nC分配不是原厂最大保证；非线性Coss/门驱与SOA,CANDIDATE_NOT_RELEASED
+D20,US1G-E3/61T / SMA DO214AC,[Vishay 88768](https://www.vishay.com/docs/88768/us1_test_dcicons.pdf) p1–2：400V/1A，50ns恢复的指定测试条件,真实工作点恢复/结电容/热；旧Diotec UF4007模型不代表Vishay,CANDIDATE_NOT_RELEASED
+R230新电流分流,RL2512FK-070R82L / 2512，候选0.82Ω/1%,[Yageo原厂入口](https://www.yageo.com/en/Product/Index/rchip)：RL低阻系列,精确原厂全文/脉冲/温漂待取得；计算按1W设计分配，未取得保证不能签核,CANDIDATE_NOT_RELEASED
+R34A/B反馈上臂,TNPW12061M00BEEA ×2 / 1206,[Vishay TNPW e3](https://www.vishay.com/docs/28758/tnpw_e3.pdf)：选0.1%、25ppm级，1M编码,完整订货码/可供值与温漂、工作电压复核,CANDIDATE_NOT_RELEASED
+R35A/B反馈下臂,TNPW060329K4BEEA + TNPW0603453RBEEA / 0603,同上，29.4k+453Ω=29.853k,初始容差之外的偏流/热漂，不能只验名义比值,CANDIDATE_NOT_RELEASED
+C11/C12,ECQE2106JF ×2 / THT薄膜候选,[Panasonic型号目录](https://industrial.panasonic.com/ww/products/pt/film-cap-electroequip/models?list=1&order=atr-ind-pRDI0000J1_3_A002&page=1&sort=desc)；[原厂型号编码说明](https://api.pim.na.industrial.panasonic.com/file_stream/main/fileversion/4042)：2=250V、106=10µF、J=5%,原厂逐型号尺寸/允许纹波/dVdt全文待取得；**尺寸明显大于旧占位SMD，不可直接落板**,CANDIDATE_NOT_RELEASED
+RT / CT,RC0603FR-0715K4L / 15.4k；GRM1885C1H102JA01D / 1n C0G50V,TI UCC28C43 §8.2.2.6示例确定参数；Yageo/Murata精确产品资料待归档,CT加载、阈值和频差未资格化,CANDIDATE_NOT_RELEASED
+CS滤波,RC0603FR-07100RL / 100Ω；GRM1885C1H221JA01D / 220p C0G50V,22ns设计时间常数；最小单元6例结果在`sim/cs_v1`,真实噪声和源极寄生仍未知,CANDIDATE_NOT_RELEASED
+可选RC吸收,GRM31A5C2J101JW01D / 100p630V；CRCW2512330RFKEG / 330Ω,仅具体检索候选，[Murata入口](https://www.murata.com/en-us/products/productdetail?partno=GRM31A5C2J101JW01D)、[Vishay CRCW](https://www.vishay.com/en/resistors-fixed/crcw/),原厂料号表、脉冲功率及封装待审；DNP，不计作已有吸收设计,CANDIDATE_NOT_RELEASED
+保留三片HV驱动,HV5622PG-G / PQFP44,[Microchip DS20005854A](https://ww1.microchip.com/downloads/en/DeviceDoc/20005854A.pdf) p4–5：VDD10.8–13.2V，高速测试最大15mA/片,三模块真实刷新、消隐、掉电反灌与96bit链回归,CANDIDATE_NOT_RELEASED

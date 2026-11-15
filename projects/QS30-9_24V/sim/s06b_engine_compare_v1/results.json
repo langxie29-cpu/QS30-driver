@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case": "shared_driver",
+      "engine": "shared",
+      "rc": 0,
+      "parsed_error": true,
+      "execution": "FAIL"
+    },
+    {
+      "case": "shared_integrated",
+      "engine": "shared",
+      "rc": 0,
+      "parsed_error": true,
+      "execution": "FAIL"
+    },
+    {
+      "case": "klu_integrated",
+      "engine": "klu",
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7.21207089e-05,
+      "samples": 18753,
+      "finite": true,
+      "execution": "FAIL"
+    }
+  ],
+  "24V_07": "NOT_PASSED"
+}

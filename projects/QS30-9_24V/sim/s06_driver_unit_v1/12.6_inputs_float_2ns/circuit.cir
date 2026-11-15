@@ -1,0 +1,21 @@
+S06 independent UCC27511 driver inputs_float
+.include driver.lib
+VDD vdd 0 PWL(0 0 1u 12.6 100u 12.6)
+RFP inp 0 1G
+RFM inm 0 1G
+XD inp inm 0 vdd dh dl UCC27511_TRANS
+RGON dh gate 10
+RGOFF dl gate 2.2
+RGS gate 0 10k
+CG gate 0 5.333333n
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 2e-09 100u 0 2e-09 uic
+meas tran native_end MAX time
+wrdata waves.txt v(inp) v(inm) v(gate)
+quit
+.endc
+.end

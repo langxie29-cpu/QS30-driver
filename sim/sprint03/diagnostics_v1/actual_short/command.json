@@ -1,0 +1,35 @@
+{
+  "id": "actual_short",
+  "purpose": "5ms original-wiring screen; not autonomous startup acceptance",
+  "exit_code": 0,
+  "duration_s": 1.6406364000285976,
+  "execution": "PASS",
+  "engineering": "FAIL",
+  "source_sha256": "2e64d081280cadd4ee68d0e847c4dd8d01dc93a48167bc22af43038e40fd0565",
+  "controller": "Inherited diagnostic, not A-series qualification",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "metrics": {
+    "v(hv_bus)": {
+      "end": 16.867535,
+      "peak": 16.9373326
+    },
+    "v(cs_filt)": {
+      "end": 11.9951054,
+      "peak": 15.786404
+    },
+    "v(hv_gate)": {
+      "end": 0.0,
+      "peak": 0.0
+    },
+    "i(l20)": {
+      "end": 6.96852451e-06,
+      "peak": 2.54763702
+    }
+  }
+}

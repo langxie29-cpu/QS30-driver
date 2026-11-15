@@ -1,0 +1,48 @@
+{
+  "stage": "power",
+  "case": {
+    "id": "closed_cs_repair_only",
+    "closed": true,
+    "c10": 1e-08
+  },
+  "argv": [
+    "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 11.35895037651062,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.15,
+  "deck_sha256": "dc4366580c40a1bba223d74adfa9f0b5812aee3804c849cfe050015b80e92c5f",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "hv_end_V": 14.2628451,
+    "hv_peak_V": 16.6746104,
+    "hv_late_average_V": 14.335625695022527,
+    "hv_late_pp_V": 0.14580839999999995,
+    "inductor_peak_A": 2.3561128,
+    "switch_peak_V": 17.5628347,
+    "cs_peak_V": 0.36238386
+  },
+  "native_measurements": {
+    "end_time": 0.15,
+    "hv_peak": 16.6746,
+    "il_peak": 2.35611,
+    "sw_peak": 17.5628,
+    "mos_i_peak": 0.000502178,
+    "il_rms": 1.38139e-07,
+    "mos_i_rms": 2.212e-09,
+    "hv_avg": 14.3356,
+    "hv_min": 14.2628,
+    "hv_max": 14.4087,
+    "input_power": 1.65766e-06,
+    "mos_loss": 2.65439e-08
+  },
+  "engineering": "FAIL"
+}

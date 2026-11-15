@@ -1,0 +1,61 @@
+{
+  "preregister": {
+    "date": "2026-11-15",
+    "scope": "TI UCC28C43 standalone model, no boost, MOS, OVP or precharged HV",
+    "model_source": "https://www.ti.com/lit/zip/slum521",
+    "model_sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+    "adaptation": "None to model bytes. Local .spiceinit enables ngbehavior=ps; no numerical value edits.",
+    "execution_acceptance": "rc0, no error/aborted/timestep-too-small, native endpoint, finite waves",
+    "oscillator_acceptance_Hz": [
+      93500,
+      126500
+    ],
+    "CT_buffer_load_frequency_delta_max_fraction": 0.02,
+    "UVLO_model_nominal_V": [
+      8.4,
+      7.6
+    ],
+    "UVLO_acceptance_V": [
+      7.8,
+      9,
+      7,
+      8.2
+    ],
+    "CS_delay_acceptance_s": 7e-08,
+    "CS_to_gate_3V_alloc_s": 1.7e-07,
+    "gate_fixture": "64nC/12V equivalent linear cap 5.333nF, 22ohm series, 10k pulldown; OUT test cap reduced to1pF to avoid adding the separate 1nF timing-test load",
+    "step_s": [
+      1e-08,
+      5e-09
+    ],
+    "step_sensitivity_frequency_max_fraction": 0.01,
+    "step_sensitivity_delay_s_max": 1e-08,
+    "timeout_s_each": 30,
+    "model_temperature_note": "27C only in this run; model scope and lack of guaranteed corner coverage remain gate items"
+  },
+  "cases": [
+    {
+      "case": "cs_gate_buffered",
+      "step_s": 1e-08,
+      "rc": 0,
+      "parsed_error": true,
+      "execution": "FAIL",
+      "engineering": "NOT_EVALUATED",
+      "end_s": 4.6069756e-05,
+      "samples": 7376,
+      "max_out_V": 13.7541432
+    },
+    {
+      "case": "cs_gate_buffered",
+      "step_s": 5e-09,
+      "rc": 0,
+      "parsed_error": true,
+      "execution": "FAIL",
+      "engineering": "NOT_EVALUATED",
+      "end_s": 2.00361092e-05,
+      "samples": 5016,
+      "max_out_V": 13.7513516
+    }
+  ],
+  "24V_07": "NOT_PASSED_UNTIL_ALL_REQUIRED_UNITS_QUALIFIED"
+}

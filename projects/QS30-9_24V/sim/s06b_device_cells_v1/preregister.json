@@ -1,0 +1,12 @@
+{
+  "scope": "25C exact ST/Vishay isolated cells; .op and transient model validity, not thermal/recovery guarantee",
+  "criteria": "finite output, rc0, no abort/error; transient must reach native endpoint; no altered vendor parameters",
+  "cases": [
+    "ST_gate_ideal_OP",
+    "ST_gate_ideal_ramp_UIC",
+    "ST_DC_VGS10_Id3p6",
+    "Vishay_US1G_DC1A",
+    "Vishay_US1G_reverse195"
+  ],
+  "timeout_s": 30
+}

@@ -1,0 +1,27 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: diotec uf4007 vendor model iv probe
+
+Warning: Model issue on line 35 :
+  .model xtest:rectifier d(is=    1.250000000000000e-07     bv=    1.05000 ...
+unrecognized parameter (vpk) - ignored
+unrecognized parameter (iave) - ignored
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+a                                 -5.62117e-19
+
+
+No. of Data Rows : 1019
+end_time            =  1.00000e-03 at=  1.00000e-03
+diode_v             =  8.93149e-01
+ngspice-47 done

@@ -1,0 +1,3915 @@
+(export
+	(version "E")
+	(design
+		(source "D:\\PROJECTS\\dsharness\\QS30-1\\kicad\\projects\\QS30-9_DISPLAY\\QS30-9_DISPLAY.kicad_sch")
+		(date "2026-11-10T23:55:15")
+		(tool "Eeschema 10.0.8")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "QS30-9 DISPLAY module (3x QS30-1 + HV5622)")
+				(company)
+				(rev "REV.A9.2")
+				(date)
+				(source "QS30-9_DISPLAY.kicad_sch")
+				(comment
+					(number "1")
+					(value "Electrical safety review; native checks in kicad/logs; manufacturing HOLD")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "DOUT down-shifter decoupling")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "C_DS_L")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "C_DS_L")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "222c1bbb-5f23-5a54-8e61-031089eee561")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "3V3 去耦")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "C_MOD_L_3V3")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "C_MOD_L_3V3")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "47e6758b-c1de-522a-95e7-5a405d956c7b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "HV 去耦")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "C_MOD_L_HV")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "C_MOD_L_HV")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "722d8c34-135b-552f-b9eb-da20dd936de3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "DRV_VDD 去耦")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "C_MOD_L_VDD")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "C_MOD_L_VDD")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9c1dbba8-741e-5c78-b08e-e3f52e55987a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "HV 接口（防触碰，额定待核）")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "J_MOD_L_HV")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_60c4a92f13")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "J_MOD_L_HV")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f5a025a8-e634-5e2b-b791-cb0f7555f9a9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "left 低压接口")
+			(footprint "QS30:PRELIM_16P")
+			(fields
+				(field
+					(name "DesignRef") "J_MOD_L_LV")
+				(field
+					(name "Footprint") "QS30:PRELIM_16P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN16_47df59327b")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "J_MOD_L_LV")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "10be1f0b-c607-5b2d-8996-d4f4f28e0b70")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "第 1 位管座（TBD）")
+			(footprint "QS30:PRELIM_13P")
+			(fields
+				(field
+					(name "DesignRef") "J_T1")
+				(field
+					(name "Footprint") "QS30:PRELIM_13P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN13_2ac0ca03b6")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "J_T1")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e42cd805-b6d4-5471-a3b9-abff7fede937")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "第 2 位管座（TBD）")
+			(footprint "QS30:PRELIM_13P")
+			(fields
+				(field
+					(name "DesignRef") "J_T2")
+				(field
+					(name "Footprint") "QS30:PRELIM_13P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN13_2ac0ca03b6")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "J_T2")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9ad2212c-1cdb-536e-a815-e91e7e59a2ec")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J5")
+			(value "第 3 位管座（TBD）")
+			(footprint "QS30:PRELIM_13P")
+			(fields
+				(field
+					(name "DesignRef") "J_T3")
+				(field
+					(name "Footprint") "QS30:PRELIM_13P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN13_2ac0ca03b6")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "J_T3")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3ebdd3ec-add4-5102-9c45-1bebe34dc814")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "阳极 1/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN1_1")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN1_1")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6c24deeb-6fe9-5136-adf5-fd1fbff3a4dd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "阳极 2/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN1_2")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN1_2")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3bc12dc8-cd47-5b59-8180-d1b9eea81123")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "阳极 1/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN2_1")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN2_1")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "40832776-8469-5d4f-958f-102e490571f8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "阳极 2/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN2_2")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN2_2")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2c4a12c1-716b-5a4d-9604-6031851d29ea")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "阳极 1/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN3_1")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN3_1")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cdc108b4-6e84-5ef9-adaf-fd4f12037d87")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "阳极 2/2")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_AN3_2")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_AN3_2")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e2603004-157c-5b7e-b83c-211aefcc49b9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "3V3 domain default low")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_IN_L_BL")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_IN_L_BL")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bcc916ad-b7da-5e41-a369-3181c9893c55")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "3V3 domain default low")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_IN_L_CLK")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_IN_L_CLK")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f5b39541-90ef-592b-a8da-0e8852fed33b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "3V3 domain default low")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_IN_L_DIN")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_IN_L_DIN")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "86c146ee-37c1-5116-bc3f-a73661bd22e9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "3V3 domain default low")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_IN_L_DOUT")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_IN_L_DOUT")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1c007405-da5c-5339-ae88-cf2d379158ec")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R11")
+			(value "3V3 domain default low")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_IN_L_LAT")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_IN_L_LAT")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "058fdb90-1d51-5b8c-85a0-6fd9806f6a46")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R12")
+			(value "12 V 域下拉")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_LS_L_BL")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_LS_L_BL")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5492bca1-d905-57ce-9191-c0731a9f91cb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R13")
+			(value "12 V 域下拉")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_LS_L_CLK")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_LS_L_CLK")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5e2834e9-b13e-5955-bd77-3a78f69adc87")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R14")
+			(value "12 V 域下拉")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_LS_L_DIN")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_LS_L_DIN")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a3e4781c-39b6-506c-873c-26bc484e1cb1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R15")
+			(value "12 V 域下拉")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_LS_L_LAT")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_LS_L_LAT")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cef261e7-6a89-5a0b-8a7b-76f7e12059de")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R16")
+			(value "模块本地泄放")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_MOD_L_BLEED")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_MOD_L_BLEED")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ea9f84ab-84f9-5394-82ef-bcc32c53c7d6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R17")
+			(value "模块安全回路直通")
+			(footprint "QS30:PRELIM_2P")
+			(fields
+				(field
+					(name "DesignRef") "R_SAFE_L")
+				(field
+					(name "Footprint") "QS30:PRELIM_2P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN2_0583c2a755")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "R_SAFE_L")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b5287020-f1ef-52c3-bd20-1d04c0ef4199")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "12→3.3 V DOUT")
+			(footprint "QS30:PRELIM_16P")
+			(fields
+				(field
+					(name "DesignRef") "U_DS_L")
+				(field
+					(name "Footprint") "QS30:PRELIM_16P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN16_8946b2a592")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "U_DS_L")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b48a3ff7-d17e-524d-bbb4-4c53bbd53908")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "32 路高压驱动（PQFP-44）")
+			(footprint "QS30:PRELIM_44P")
+			(fields
+				(field
+					(name "DesignRef") "U_L")
+				(field
+					(name "Footprint") "QS30:PRELIM_44P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN44_1e3e1c1076")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "U_L")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3e59c860-e212-55fc-bc7a-2e30300ab4e1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "33")
+						)
+						(pin
+							(num "34")
+						)
+						(pin
+							(num "35")
+						)
+						(pin
+							(num "36")
+						)
+						(pin
+							(num "37")
+						)
+						(pin
+							(num "38")
+						)
+						(pin
+							(num "39")
+						)
+						(pin
+							(num "40")
+						)
+						(pin
+							(num "41")
+						)
+						(pin
+							(num "42")
+						)
+						(pin
+							(num "43")
+						)
+						(pin
+							(num "44")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "3.3→12 V 电平转换")
+			(footprint "QS30:PRELIM_16P")
+			(fields
+				(field
+					(name "DesignRef") "U_LS_L")
+				(field
+					(name "Footprint") "QS30:PRELIM_16P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "QS30")
+				(part "GEN16_8946b2a592")
+				(description "")
+			)
+			(property
+				(name "DesignRef")
+				(value "U_LS_L")
+			)
+			(property
+				(name "Sheetname")
+				(value "QS30-9_DISPLAY")
+			)
+			(property
+				(name "Sheetfile")
+				(value "QS30-9_DISPLAY.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ba69a5fc-87a5-5d25-bbae-39d02d3a20f6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "QS30")
+			(part "GEN13_2ac0ca03b6")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "IC_KEEP_OPEN")
+					(type "no_connect")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "K0")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "K9")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "K8")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "K7")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "K6")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "IC8_KEEP_OPEN")
+					(type "no_connect")
+				)
+				(pin
+					(num "9")
+					(name "K5")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "K4")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "K3")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "K2")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "K1")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "QS30")
+			(part "GEN16_47df59327b")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "power_out")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "power_out")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "power_out")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "5")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "6")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "7")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "8")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "9")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "10")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "11")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "12")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "13")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "14")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "15")
+					(type "passive")
+				)
+				(pin
+					(num "16")
+					(name "16")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "QS30")
+			(part "GEN16_8946b2a592")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VCC")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "ENABLE_A")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "A")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "E")
+					(type "tri_state")
+				)
+				(pin
+					(num "5")
+					(name "F")
+					(type "tri_state")
+				)
+				(pin
+					(num "6")
+					(name "B")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "ENABLE_B")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "ENABLE_C")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "C")
+					(type "input")
+				)
+				(pin
+					(num "11")
+					(name "G")
+					(type "tri_state")
+				)
+				(pin
+					(num "12")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "13")
+					(name "H")
+					(type "tri_state")
+				)
+				(pin
+					(num "14")
+					(name "D")
+					(type "input")
+				)
+				(pin
+					(num "15")
+					(name "ENABLE_D")
+					(type "input")
+				)
+				(pin
+					(num "16")
+					(name "VDD")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "QS30")
+			(part "GEN2_0583c2a755")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "QS30")
+			(part "GEN2_60c4a92f13")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "HV+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "HV_RET")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "QS30")
+			(part "GEN44_1e3e1c1076")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "GEN")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "HVOUT22")
+					(type "open_collector")
+				)
+				(pin
+					(num "2")
+					(name "HVOUT21")
+					(type "open_collector")
+				)
+				(pin
+					(num "3")
+					(name "HVOUT20")
+					(type "open_collector")
+				)
+				(pin
+					(num "4")
+					(name "HVOUT19")
+					(type "open_collector")
+				)
+				(pin
+					(num "5")
+					(name "HVOUT18")
+					(type "open_collector")
+				)
+				(pin
+					(num "6")
+					(name "HVOUT17")
+					(type "open_collector")
+				)
+				(pin
+					(num "7")
+					(name "HVOUT16")
+					(type "open_collector")
+				)
+				(pin
+					(num "8")
+					(name "HVOUT15")
+					(type "open_collector")
+				)
+				(pin
+					(num "9")
+					(name "HVOUT14")
+					(type "open_collector")
+				)
+				(pin
+					(num "10")
+					(name "HVOUT13")
+					(type "open_collector")
+				)
+				(pin
+					(num "11")
+					(name "HVOUT12")
+					(type "open_collector")
+				)
+				(pin
+					(num "12")
+					(name "HVOUT11")
+					(type "open_collector")
+				)
+				(pin
+					(num "13")
+					(name "HVOUT10")
+					(type "open_collector")
+				)
+				(pin
+					(num "14")
+					(name "HVOUT9")
+					(type "open_collector")
+				)
+				(pin
+					(num "15")
+					(name "HVOUT8")
+					(type "open_collector")
+				)
+				(pin
+					(num "16")
+					(name "HVOUT7")
+					(type "open_collector")
+				)
+				(pin
+					(num "17")
+					(name "HVOUT6")
+					(type "open_collector")
+				)
+				(pin
+					(num "18")
+					(name "HVOUT5")
+					(type "open_collector")
+				)
+				(pin
+					(num "19")
+					(name "HVOUT4")
+					(type "open_collector")
+				)
+				(pin
+					(num "20")
+					(name "HVOUT3")
+					(type "open_collector")
+				)
+				(pin
+					(num "21")
+					(name "HVOUT2")
+					(type "open_collector")
+				)
+				(pin
+					(num "22")
+					(name "HVOUT1")
+					(type "open_collector")
+				)
+				(pin
+					(num "23")
+					(name "DATA_OUT")
+					(type "output")
+				)
+				(pin
+					(num "24")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "25")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "26")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "27")
+					(name "POL")
+					(type "input")
+				)
+				(pin
+					(num "28")
+					(name "CLK")
+					(type "input")
+				)
+				(pin
+					(num "29")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "30")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "31")
+					(name "LE")
+					(type "input")
+				)
+				(pin
+					(num "32")
+					(name "DATA_IN")
+					(type "input")
+				)
+				(pin
+					(num "33")
+					(name "BL")
+					(type "input")
+				)
+				(pin
+					(num "34")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "35")
+					(name "HVOUT32")
+					(type "open_collector")
+				)
+				(pin
+					(num "36")
+					(name "HVOUT31")
+					(type "open_collector")
+				)
+				(pin
+					(num "37")
+					(name "HVOUT30")
+					(type "open_collector")
+				)
+				(pin
+					(num "38")
+					(name "HVOUT29")
+					(type "open_collector")
+				)
+				(pin
+					(num "39")
+					(name "HVOUT28")
+					(type "open_collector")
+				)
+				(pin
+					(num "40")
+					(name "HVOUT27")
+					(type "open_collector")
+				)
+				(pin
+					(num "41")
+					(name "HVOUT26")
+					(type "open_collector")
+				)
+				(pin
+					(num "42")
+					(name "HVOUT25")
+					(type "open_collector")
+				)
+				(pin
+					(num "43")
+					(name "HVOUT24")
+					(type "open_collector")
+				)
+				(pin
+					(num "44")
+					(name "HVOUT23")
+					(type "open_collector")
+				)
+			)
+		)
+	)
+	(libraries)
+	(nets
+		(net
+			(code "1")
+			(name "3V3")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "VDD_16")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "VCC_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "15")
+				(pinfunction "ENABLE_D_15")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "ENABLE_A_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "ENABLE_B_7")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "9")
+				(pinfunction "ENABLE_C_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "2")
+			(name "A_T1")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "3")
+			(name "A_T1_MID")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "4")
+			(name "A_T2")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "A_T2_MID")
+			(class "Default")
+			(node
+				(ref "R3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "A_T3")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "A_T3_MID")
+			(class "Default")
+			(node
+				(ref "R5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "DISP_ALLOW")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "9")
+				(pinfunction "9_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "14")
+				(pinfunction "D_14")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "9")
+			(name "DISP_CLK")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "7")
+				(pinfunction "7_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "B_6")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "10")
+			(name "DISP_LAT")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "8")
+				(pinfunction "8_8")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "10")
+				(pinfunction "C_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "11")
+			(name "DRV_VDD")
+			(class "Default")
+			(node
+				(ref "C4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "VCC_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "ENABLE_A_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "27")
+				(pinfunction "POL_27")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "30")
+				(pinfunction "VDD_30")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "16")
+				(pinfunction "VDD_16")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "12")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "12")
+				(pinfunction "12_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "13")
+				(pinfunction "13_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "14")
+				(pinfunction "14_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "15")
+				(pinfunction "15_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "16")
+				(pinfunction "16_16")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "J2")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R12")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R13")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R14")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R15")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "C_10")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "D_14")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "ENABLE_D_15")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "B_6")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "ENABLE_B_7")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "VSS_8")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "ENABLE_C_9")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "29")
+				(pinfunction "VSS_29")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "VSS_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "13")
+			(name "GND_HV")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "HV_RET_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R16")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "HV_BUS")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "HV+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R16")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "15")
+			(name "K_T1_0")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "3")
+				(pinfunction "K0_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "22")
+				(pinfunction "HVOUT1_22")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "16")
+			(name "K_T1_1")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "13")
+				(pinfunction "K1_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "21")
+				(pinfunction "HVOUT2_21")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "17")
+			(name "K_T1_2")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "12")
+				(pinfunction "K2_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "20")
+				(pinfunction "HVOUT3_20")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "18")
+			(name "K_T1_3")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "11")
+				(pinfunction "K3_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "19")
+				(pinfunction "HVOUT4_19")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "19")
+			(name "K_T1_4")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "10")
+				(pinfunction "K4_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "18")
+				(pinfunction "HVOUT5_18")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "20")
+			(name "K_T1_5")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "9")
+				(pinfunction "K5_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "17")
+				(pinfunction "HVOUT6_17")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "21")
+			(name "K_T1_6")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "7")
+				(pinfunction "K6_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "16")
+				(pinfunction "HVOUT7_16")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "22")
+			(name "K_T1_7")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "6")
+				(pinfunction "K7_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "15")
+				(pinfunction "HVOUT8_15")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "23")
+			(name "K_T1_8")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "5")
+				(pinfunction "K8_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "14")
+				(pinfunction "HVOUT9_14")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "24")
+			(name "K_T1_9")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "K9_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "13")
+				(pinfunction "HVOUT10_13")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "25")
+			(name "K_T2_0")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "K0_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "12")
+				(pinfunction "HVOUT11_12")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "26")
+			(name "K_T2_1")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "13")
+				(pinfunction "K1_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "11")
+				(pinfunction "HVOUT12_11")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "27")
+			(name "K_T2_2")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "12")
+				(pinfunction "K2_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "10")
+				(pinfunction "HVOUT13_10")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "28")
+			(name "K_T2_3")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "11")
+				(pinfunction "K3_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "9")
+				(pinfunction "HVOUT14_9")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "29")
+			(name "K_T2_4")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "10")
+				(pinfunction "K4_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "HVOUT15_8")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "30")
+			(name "K_T2_5")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "9")
+				(pinfunction "K5_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "HVOUT16_7")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "31")
+			(name "K_T2_6")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "7")
+				(pinfunction "K6_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "HVOUT17_6")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "32")
+			(name "K_T2_7")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "6")
+				(pinfunction "K7_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "HVOUT18_5")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "33")
+			(name "K_T2_8")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "5")
+				(pinfunction "K8_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "HVOUT19_4")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "34")
+			(name "K_T2_9")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "4")
+				(pinfunction "K9_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "HVOUT20_3")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "35")
+			(name "K_T3_0")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "3")
+				(pinfunction "K0_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "HVOUT21_2")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "36")
+			(name "K_T3_1")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "13")
+				(pinfunction "K1_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "HVOUT22_1")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "37")
+			(name "K_T3_2")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "12")
+				(pinfunction "K2_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "44")
+				(pinfunction "HVOUT23_44")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "38")
+			(name "K_T3_3")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "11")
+				(pinfunction "K3_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "43")
+				(pinfunction "HVOUT24_43")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "39")
+			(name "K_T3_4")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "10")
+				(pinfunction "K4_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "42")
+				(pinfunction "HVOUT25_42")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "40")
+			(name "K_T3_5")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "9")
+				(pinfunction "K5_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "41")
+				(pinfunction "HVOUT26_41")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "41")
+			(name "K_T3_6")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "7")
+				(pinfunction "K6_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "40")
+				(pinfunction "HVOUT27_40")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "42")
+			(name "K_T3_7")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "6")
+				(pinfunction "K7_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "39")
+				(pinfunction "HVOUT28_39")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "43")
+			(name "K_T3_8")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "5")
+				(pinfunction "K8_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "38")
+				(pinfunction "HVOUT29_38")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "44")
+			(name "K_T3_9")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "4")
+				(pinfunction "K9_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "37")
+				(pinfunction "HVOUT30_37")
+				(pintype "open_collector")
+			)
+		)
+		(net
+			(code "45")
+			(name "MOD_L_DIN")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "5")
+				(pinfunction "5_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "A_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "46")
+			(name "MOD_L_DOUT")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "6")
+				(pinfunction "6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "E_4")
+				(pintype "tri_state")
+			)
+		)
+		(net
+			(code "47")
+			(name "SAFETY_LOOP_L_IN")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "10")
+				(pinfunction "10_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "R17")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "48")
+			(name "SAFETY_LOOP_L_OUT")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "11")
+				(pinfunction "11_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "R17")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "49")
+			(name "U_L_BL")
+			(class "Default")
+			(node
+				(ref "R12")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "33")
+				(pinfunction "BL_33")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "13")
+				(pinfunction "H_13")
+				(pintype "tri_state")
+			)
+		)
+		(net
+			(code "50")
+			(name "U_L_CLK")
+			(class "Default")
+			(node
+				(ref "R13")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "28")
+				(pinfunction "CLK_28")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "F_5")
+				(pintype "tri_state")
+			)
+		)
+		(net
+			(code "51")
+			(name "U_L_DIN")
+			(class "Default")
+			(node
+				(ref "R14")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "32")
+				(pinfunction "DATA_IN_32")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "E_4")
+				(pintype "tri_state")
+			)
+		)
+		(net
+			(code "52")
+			(name "U_L_DOUT")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "A_3")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "23")
+				(pinfunction "DATA_OUT_23")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "53")
+			(name "U_L_LAT")
+			(class "Default")
+			(node
+				(ref "R15")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "31")
+				(pinfunction "LE_31")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "11")
+				(pinfunction "G_11")
+				(pintype "tri_state")
+			)
+		)
+		(net
+			(code "54")
+			(name "unconnected-(J3-IC8_KEEP_OPEN-Pad8)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "8")
+				(pinfunction "IC8_KEEP_OPEN_8")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(J3-IC_KEEP_OPEN-Pad1)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "IC_KEEP_OPEN_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(J4-IC8_KEEP_OPEN-Pad8)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "8")
+				(pinfunction "IC8_KEEP_OPEN_8")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(J4-IC_KEEP_OPEN-Pad1)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "IC_KEEP_OPEN_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "58")
+			(name "unconnected-(J5-IC8_KEEP_OPEN-Pad8)")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "8")
+				(pinfunction "IC8_KEEP_OPEN_8")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "59")
+			(name "unconnected-(J5-IC_KEEP_OPEN-Pad1)")
+			(class "Default")
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "IC_KEEP_OPEN_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U1-F-Pad5)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "F_5")
+				(pintype "tri_state+no_connect")
+			)
+		)
+		(net
+			(code "61")
+			(name "unconnected-(U1-G-Pad11)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "G_11")
+				(pintype "tri_state+no_connect")
+			)
+		)
+		(net
+			(code "62")
+			(name "unconnected-(U1-H-Pad13)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "H_13")
+				(pintype "tri_state+no_connect")
+			)
+		)
+		(net
+			(code "63")
+			(name "unconnected-(U1-NC-Pad12)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "NC_12")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "64")
+			(name "unconnected-(U2-HVOUT31-Pad36)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "36")
+				(pinfunction "HVOUT31_36")
+				(pintype "open_collector+no_connect")
+			)
+		)
+		(net
+			(code "65")
+			(name "unconnected-(U2-HVOUT32-Pad35)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "35")
+				(pinfunction "HVOUT32_35")
+				(pintype "open_collector+no_connect")
+			)
+		)
+		(net
+			(code "66")
+			(name "unconnected-(U2-NC-Pad24)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "24")
+				(pinfunction "NC_24")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "67")
+			(name "unconnected-(U2-NC-Pad25)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "25")
+				(pinfunction "NC_25")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "68")
+			(name "unconnected-(U2-NC-Pad26)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "26")
+				(pinfunction "NC_26")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "69")
+			(name "unconnected-(U2-NC-Pad34)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "34")
+				(pinfunction "NC_34")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "70")
+			(name "unconnected-(U3-NC-Pad12)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "12")
+				(pinfunction "NC_12")
+				(pintype "no_connect")
+			)
+		)
+	)
+)

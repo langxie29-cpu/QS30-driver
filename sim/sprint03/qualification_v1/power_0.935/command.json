@@ -1,0 +1,63 @@
+{
+  "id": "power_0.935",
+  "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+  "kind": "power",
+  "parameters": {
+    "vin_V": 11.4,
+    "duty": 0.935,
+    "c10_F": 0
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.4611079999594949,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "6a8d91033e89d8949c86f545bdd665f75f46940dc30300cd1a6cb1e4322de99d",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 172.16775204806618,
+      "min": 120.854946,
+      "max": 176.332419,
+      "pp": 55.47747299999999,
+      "slope_V_per_s": 225.62551106163463
+    },
+    "capacitor": {
+      "mean": 172.16822191173637,
+      "min": 172.148774,
+      "max": 172.189313,
+      "pp": 0.04053899999999544,
+      "slope_V_per_s": -44.46877300570672
+    },
+    "i(l20)": {
+      "min": 0.227550008,
+      "max": 1.07833952,
+      "late_rms": 0.5575567091140841
+    },
+    "v(gate)": {
+      "min": 0.0,
+      "max": 10.0,
+      "late_rms": 9.665622318330625
+    },
+    "v(sw)": {
+      "min": 0.15809774,
+      "max": 173.97793,
+      "late_rms": 43.31560650457702
+    },
+    "i(vdprobe)": {
+      "min": -102.698267,
+      "max": 10.730205,
+      "late_rms": 0.48541562339332267
+    }
+  }
+}

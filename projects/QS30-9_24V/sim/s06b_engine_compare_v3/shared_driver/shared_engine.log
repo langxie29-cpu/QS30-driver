@@ -1,0 +1,40 @@
+stderr Warning: can't find the initialization file spinit.
+stdout ******
+stdout ** ngspice-46 shared library
+stdout ** Creation Date: Oct 29 2026   04:58:07
+stdout ******
+stdout ******
+stdout ** ngspice-46 : Circuit level simulation program
+stdout ** Compiled with KLU Direct Linear Solver
+stdout ** The U. C. Berkeley CAD Group
+stdout ** Copyright 1985-1994, Regents of the University of California.
+stdout ** Copyright 2001-2025, The ngspice team.
+stdout ** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+stdout ** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html
+stdout ** Creation Date: Oct 29 2026   04:58:07
+stdout ******
+stderr Error opening code model "analog.cm"
+stderr Error: Library analog.cm couldn't be loaded!
+stderr Error opening code model "digital.cm"
+stderr Error: Library digital.cm couldn't be loaded!
+stderr Error opening code model "spice2poly.cm"
+stderr Error: Library spice2poly.cm couldn't be loaded!
+stderr Error opening code model "table.cm"
+stderr Error: Library table.cm couldn't be loaded!
+stderr Error opening code model "tlines.cm"
+stderr Error: Library tlines.cm couldn't be loaded!
+stderr Error opening code model "xtradev.cm"
+stderr Error: Library xtradev.cm couldn't be loaded!
+stderr Error opening code model "xtraevt.cm"
+stderr Error: Library xtraevt.cm couldn't be loaded!
+stdout Note: gnd in a subcircuit is not set to 0 automatically
+stdout Note: Compatibility modes selected: ps
+stderr Warning: code models like analog.cm have not been loaded successfully.
+stderr Any of the following steps may fail, if code models are involved!.
+stdout Circuit: s06 independent ucc27511 driver switch
+Prepare Deck
+Parse
+stderr Error on line 56 or its substitute:
+stderr a.xd.ag_u3_g1 %v xd.g_u3_g1_int2 %v xd.g_u3_g1_int1 xd:xfer_g_u3_g1
+stderr MIF-ERROR - unable to find definition of model xd:xfer_g_u3_g1
+stderr Simulation interrupted due to error!

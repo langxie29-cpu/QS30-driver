@@ -1,0 +1,19 @@
+Exact device isolated cell 25C
+.include st.lib
+.include diode.lib
+VBIAS bias 0 195
+RLOAD bias d 200
+VG g 0 PULSE(0 12 20u 100n 100n 5u 10u)
+XQ d g 0 STP9NK50Z
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=trap itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=15
+tran 1n 40u 0 1n
+wrdata waves.txt v(g) v(d) i(vg) i(vbias)
+quit
+.endc
+.end

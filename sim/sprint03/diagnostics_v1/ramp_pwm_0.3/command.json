@@ -1,0 +1,33 @@
+{
+  "id": "ramp_pwm_0.3",
+  "purpose": "Unloaded CT reference ramp via ideal measurement, thresholds .3/.6/.9V; tests latch and pulse consistency",
+  "kind": "oscillator",
+  "parameters": {
+    "threshold_V": 0.3,
+    "cs": "ideal observer; no ramp loading"
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.5893083999981172,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "76a345b0b1888fe49c24ef270760ab698f40109c09bd73a409b291f59d811ef5",
+  "requested_stop_s": 0.001,
+  "metrics": {
+    "ct_min_V": 1.00185444,
+    "ct_max_V": 2.69999957,
+    "frequency_Hz": 79626.31687993491,
+    "period_pp_s": 8.001000000013546e-08,
+    "duty": 0.23546115912441426
+  }
+}

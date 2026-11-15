@@ -1,0 +1,32 @@
+{
+  "id": "pwm_cs_0.3",
+  "purpose": "Known CS threshold changes pulse width at fixed COMP",
+  "kind": "oscillator",
+  "parameters": {
+    "cs_V": 0.3
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.5484900999581441,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "af485495d076a8909f96f1c98ad1403b669e87285db6c39b2b838f2a0562fc20",
+  "requested_stop_s": 0.001,
+  "metrics": {
+    "ct_min_V": 0.997943124,
+    "ct_max_V": 2.69905004,
+    "frequency_Hz": 78947.81509948052,
+    "period_pp_s": 1.0000001044244144e-12,
+    "duty": 0.9637830164561991
+  }
+}

@@ -1,0 +1,68 @@
+UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+SLUS223H – APRIL 1997 – REVISED OCTOBER 2024                                                                                                    www.ti.com
+6.5 Electrical Characteristics (continued)
+over operating free-air temperature range (unless otherwise noted) –55°C ≤ TA ≤ 125°C for the UC184x; –40°C ≤ TA ≤ 85°C
+for the UC284x, 0°C ≤ TA ≤ 70°C for the UC384x, VVCC = 15 V(2); 0.1 µF capacitor from VCC to GROUND, 0.1 µF capacitor
+from VREF to GROUND, RRT = 10 kΩ; CCT = 3.3 nF, TJ = TA.
+                  PARAMETER                                        TEST CONDITIONS                              MIN          TYP         MAX       UNIT
+ ACS           Gain                                  See (4) (6)                                                2.85            3        3.15       V/V
+ VISENSE       Maximum input signal                  VCOMP = 5 V (4)                                             0.9            1          1.1       V
+ PSRR          Power supply rejection ratio          12 V ≤ VVCC ≤ 25 V (1) (4)                                                70                   dB
+
+ IISENSE       Input bias current                                                                                              –2         –10       µA
+ tDLY          Delay to output                       VISENSE stepped from 0 V to 2 V (1)                                     150          300       ns
+
+ OUTPUT SECTION
+ V      Low    Low-level OUTPUT voltage              ISINK = 20 mA                                                            0.1          0.4       V
+   OUT                                               I     = 200 mA                                                           1.5          2.2
+                                                     SINK
+ V      High   High-level OUTPUT voltage             ISOURCE = 20 mA                                              13         13.5                    V
+   OUT                                               I        = 200 mA                                            12         13.5
+                                                     SOURCE
+ tRISE         Rise time (1)                         COUTPUT = 1 nF, TJ = 25°C                                                 25         150       ns
+ tFALL         Fall time (1)                         COUTPUT = 1 nF, TJ = 25°C,                                                25         150       ns
+
+ UNDERVOLTAGE LOCKOUT (UVLO)
+                                                     UC1842/4 and UC2842/4                                        15           16          17
+ VCCON         Enable threshold                      UC3842/4                                                   14.5           16        17.5        V
+                                                     UCx843/5                                                    7.8          8.4            9
+                                                     UC1842/4 and UC2842/4                                         9           10           11
+ VCCOFF        UVLO off threshold                    UC3842/4                                                    8.5           10         11.5       V
+                                                     UCx843/5                                                      7          7.6          8.2
+ PWM
+                                                     UCx842/3                                                   92%         97%         100%
+ DMAX          Maximum duty cycle                    UC1844/5 and UC2844/5                                      46%         48%          50%
+                                                     UC3844/5                                                   47%         48%          50%
+ DMIN          Minimum duty cycle                                                                                                          0%
+ TOTAL STANDBY CURRENT
+ IVCC          Start-up current                                                                                               0.5            1      mA
+ IVCC          Operating supply current              VVFB = VISENSE= 0 V                                                       11          17
+               VCC Zener voltage                     IVCC = 25 mA                                                 30           39                    V
+
+(1)    Specified by design. Not production tested.
+(2)    Adjust VCC above the start threshold before setting at 15 V
+(3)    Temperature stability, sometimes referred to as average temperature coefficient, is described by the equation:
+
+                                            VREFmin and VREFmax are the maximum and minimum reference voltages measured over the
+       appropriate temperature range. Note that the extremes in voltage do not necessarily occur at the extremes in temperature.
+(4)    Parameter measured at trip point of latch with VFB = 0 V.
+(5)    OUTPUT switching frequency, fSW, equals the oscillator frequency, fOSC, for the UCx842 and UCx843. OUTPUT switching frequency,
+       fSW, is one half oscillator frequency, fOSC, for the UCx844 and UCx845.
+(6)    Gain defined as: A = ΔVCOMP/ΔVISENSE, 0 V ≤ VISENSE ≤ 0.8 V.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8      Submit Document Feedback                                                                              Copyright © 2024 Texas Instruments Incorporated
+       Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

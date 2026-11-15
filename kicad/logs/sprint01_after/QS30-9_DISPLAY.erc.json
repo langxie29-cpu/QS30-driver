@@ -1,0 +1,908 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-10T23:55:16",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/00000000-0000-4000-8000-000000000001",
+            "violations": [
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C1 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 25.4
+                            },
+                            "uuid": "222c1bbb-5f23-5a54-8e61-031089eee561"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C1 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 25.4
+                            },
+                            "uuid": "222c1bbb-5f23-5a54-8e61-031089eee561"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C2 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 45.72
+                            },
+                            "uuid": "47e6758b-c1de-522a-95e7-5a405d956c7b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C2 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 45.72
+                            },
+                            "uuid": "47e6758b-c1de-522a-95e7-5a405d956c7b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C3 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 66.04
+                            },
+                            "uuid": "722d8c34-135b-552f-b9eb-da20dd936de3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C3 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 66.04
+                            },
+                            "uuid": "722d8c34-135b-552f-b9eb-da20dd936de3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C4 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 86.36
+                            },
+                            "uuid": "9c1dbba8-741e-5c78-b08e-e3f52e55987a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 C4 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 86.36
+                            },
+                            "uuid": "9c1dbba8-741e-5c78-b08e-e3f52e55987a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J1 [GEN2_60c4a92f13]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 106.68
+                            },
+                            "uuid": "f5a025a8-e634-5e2b-b791-cb0f7555f9a9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J1 [GEN2_60c4a92f13]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 106.68
+                            },
+                            "uuid": "f5a025a8-e634-5e2b-b791-cb0f7555f9a9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J2 [GEN16_47df59327b]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 135.89
+                            },
+                            "uuid": "10be1f0b-c607-5b2d-8996-d4f4f28e0b70"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J2 [GEN16_47df59327b]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 135.89
+                            },
+                            "uuid": "10be1f0b-c607-5b2d-8996-d4f4f28e0b70"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J3 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 172.72
+                            },
+                            "uuid": "e42cd805-b6d4-5471-a3b9-abff7fede937"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J3 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 172.72
+                            },
+                            "uuid": "e42cd805-b6d4-5471-a3b9-abff7fede937"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J4 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 208.28
+                            },
+                            "uuid": "9ad2212c-1cdb-536e-a815-e91e7e59a2ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J4 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 208.28
+                            },
+                            "uuid": "9ad2212c-1cdb-536e-a815-e91e7e59a2ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J5 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 243.84
+                            },
+                            "uuid": "3ebdd3ec-add4-5102-9c45-1bebe34dc814"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 J5 [GEN13_2ac0ca03b6]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 243.84
+                            },
+                            "uuid": "3ebdd3ec-add4-5102-9c45-1bebe34dc814"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R1 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 271.78
+                            },
+                            "uuid": "6c24deeb-6fe9-5136-adf5-fd1fbff3a4dd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R1 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 271.78
+                            },
+                            "uuid": "6c24deeb-6fe9-5136-adf5-fd1fbff3a4dd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R2 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 292.1
+                            },
+                            "uuid": "3bc12dc8-cd47-5b59-8180-d1b9eea81123"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R2 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 292.1
+                            },
+                            "uuid": "3bc12dc8-cd47-5b59-8180-d1b9eea81123"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R3 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 312.42
+                            },
+                            "uuid": "40832776-8469-5d4f-958f-102e490571f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R3 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 312.42
+                            },
+                            "uuid": "40832776-8469-5d4f-958f-102e490571f8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R4 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 332.74
+                            },
+                            "uuid": "2c4a12c1-716b-5a4d-9604-6031851d29ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R4 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 332.74
+                            },
+                            "uuid": "2c4a12c1-716b-5a4d-9604-6031851d29ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R5 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 353.06
+                            },
+                            "uuid": "cdc108b4-6e84-5ef9-adaf-fd4f12037d87"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R5 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 353.06
+                            },
+                            "uuid": "cdc108b4-6e84-5ef9-adaf-fd4f12037d87"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R6 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 373.38
+                            },
+                            "uuid": "e2603004-157c-5b7e-b83c-211aefcc49b9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R6 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 373.38
+                            },
+                            "uuid": "e2603004-157c-5b7e-b83c-211aefcc49b9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R7 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 393.7
+                            },
+                            "uuid": "bcc916ad-b7da-5e41-a369-3181c9893c55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R7 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 393.7
+                            },
+                            "uuid": "bcc916ad-b7da-5e41-a369-3181c9893c55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R8 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 414.02
+                            },
+                            "uuid": "f5b39541-90ef-592b-a8da-0e8852fed33b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R8 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 414.02
+                            },
+                            "uuid": "f5b39541-90ef-592b-a8da-0e8852fed33b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R9 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 434.34
+                            },
+                            "uuid": "86c146ee-37c1-5116-bc3f-a73661bd22e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R9 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 434.34
+                            },
+                            "uuid": "86c146ee-37c1-5116-bc3f-a73661bd22e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R10 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 454.66
+                            },
+                            "uuid": "1c007405-da5c-5339-ae88-cf2d379158ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R10 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 454.66
+                            },
+                            "uuid": "1c007405-da5c-5339-ae88-cf2d379158ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R11 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 474.98
+                            },
+                            "uuid": "058fdb90-1d51-5b8c-85a0-6fd9806f6a46"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R11 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 474.98
+                            },
+                            "uuid": "058fdb90-1d51-5b8c-85a0-6fd9806f6a46"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R12 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 495.3
+                            },
+                            "uuid": "5492bca1-d905-57ce-9191-c0731a9f91cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R12 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 495.3
+                            },
+                            "uuid": "5492bca1-d905-57ce-9191-c0731a9f91cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R13 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 515.62
+                            },
+                            "uuid": "5e2834e9-b13e-5955-bd77-3a78f69adc87"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R13 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 515.62
+                            },
+                            "uuid": "5e2834e9-b13e-5955-bd77-3a78f69adc87"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R14 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 535.94
+                            },
+                            "uuid": "a3e4781c-39b6-506c-873c-26bc484e1cb1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R14 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 535.94
+                            },
+                            "uuid": "a3e4781c-39b6-506c-873c-26bc484e1cb1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R15 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 556.26
+                            },
+                            "uuid": "cef261e7-6a89-5a0b-8a7b-76f7e12059de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R15 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 556.26
+                            },
+                            "uuid": "cef261e7-6a89-5a0b-8a7b-76f7e12059de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R16 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 576.58
+                            },
+                            "uuid": "ea9f84ab-84f9-5394-82ef-bcc32c53c7d6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R16 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 576.58
+                            },
+                            "uuid": "ea9f84ab-84f9-5394-82ef-bcc32c53c7d6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R17 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 596.9
+                            },
+                            "uuid": "b5287020-f1ef-52c3-bd20-1d04c0ef4199"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 R17 [GEN2_0583c2a755]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 596.9
+                            },
+                            "uuid": "b5287020-f1ef-52c3-bd20-1d04c0ef4199"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U1 [GEN16_8946b2a592]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 626.11
+                            },
+                            "uuid": "b48a3ff7-d17e-524d-bbb4-4c53bbd53908"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U1 [GEN16_8946b2a592]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 626.11
+                            },
+                            "uuid": "b48a3ff7-d17e-524d-bbb4-4c53bbd53908"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U2 [GEN44_1e3e1c1076]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 681.99
+                            },
+                            "uuid": "3e59c860-e212-55fc-bc7a-2e30300ab4e1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U2 [GEN44_1e3e1c1076]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 681.99
+                            },
+                            "uuid": "3e59c860-e212-55fc-bc7a-2e30300ab4e1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U3 [GEN16_8946b2a592]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 737.87
+                            },
+                            "uuid": "ba69a5fc-87a5-5d25-bbae-39d02d3a20f6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'QS30'",
+                    "items": [
+                        {
+                            "description": "符号 U3 [GEN16_8946b2a592]",
+                            "pos": {
+                                "x": 101.6,
+                                "y": 737.87
+                            },
+                            "uuid": "ba69a5fc-87a5-5d25-bbae-39d02d3a20f6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        }
+    ],
+    "source": "QS30-9_DISPLAY.kicad_sch"
+}

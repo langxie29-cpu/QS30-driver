@@ -1,0 +1,599 @@
+      www.vishay.com                                                                                       VOS618A
+
+                                                                                             Vishay Semiconductors
+
+   Optocoupler, Phototransistor Output, Low Input Current,
+                SSOP-4, Half Pitch, Mini-Flat Package
+
+                         A1                  4C                           FEATURES
+                         C2                  3E                           · High CTR with low input current
+                                                                          · Low profile package (half pitch)
+      22628-1                                                             · High collector emitter voltage, VCEO = 80 V
+                                                                          · Isolation test voltage = 3750 VRMS
+DESCRIPTION                                                               · Low coupling capacitance
+The VOS618A series has a GaAs infrared emitting diode                     · High common mode transient immunity
+emitter, which is optically coupled to a silicon planar                   · Material categorization:
+phototransistor detector, and is incorporated in a 4-pin
+50 mil lead pitch mini-flat package.                                        for definitions of compliance please see
+It features a high current transfer ratio at low input current,             www.vishay.com/doc?99912
+low coupling capacitance, and high isolation voltage.
+The coupling devices are designed for signal transmission                 APPLICATIONS
+between two electrically separated circuits.                              · Telecom
+                                                                          · Industrial controls
+                                                                          · Battery powered equipment
+                                                                          · Office machines
+                                                                          · Programmable controllers
+
+                                                                          AGENCY APPROVALS
+                                                                          Safety application model number covering all products in
+                                                                          this datasheet is VOS618A. This model number should be
+                                                                          used when consulting safety agency documents.
+                                                                          · UL1577, file no. E52744
+                                                                          · cUL
+                                                                          · DIN EN 60747-5-5 (VDE 0884-5), available with option 1
+                                                                          · FIMKO EN 60065, EN 60950-1
+                                                                          · CQC GB4943.1-2011 and GB8898-2011 (suitable for
+
+                                                                            installation altitude below 2000 m)
+
+ORDERING INFORMATION
+
+V  O  S               6  1         8   A  -      #                     X  0  0            1  T               SSOP-4
+
+                      PART NUMBER            CTR                          PACKAGE OPTION       TAPE            5 mm
+                                                                                               AND
+                                             BIN                                               REEL              130 to 260
+                                                                                                                VOS618A-8T
+AGENCY                                                                          CTR (%)           80 to 160
+CERTIFIED/PACKAGE                                                                 1 mA          VOS618A-7T       130 to 260
+                                                                                                             VOS618A-8X001T
+UL, cUL, FIMKO, CQC         50 to 600        63 to 125                         100 to 200         80 to 160
+                                                                             VOS618A-3T      VOS618A-7X001T
+SSOP-4, 50 mil pitch        VOS618AT      VOS618A-2T
+                                                                               100 to 200
+UL, cUL, FIMKO,             50 to 600        63 to 125
+CQC, VDE (option 1)                                                       VOS618A-3X001T
+
+SSOP-4, 50 mil pitch     VOS618A-X001T VOS618A-2X001T
+
+Note
+· Additional options may be possible, please contact sales office.
+
+Rev. 1.6, 13-Mar-15                                                 1                           Document Number: 83465
+
+                            For technical questions, contact: optocoupleranswers@vishay.com
+
+   THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                             ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+            www.vishay.com                                                                                                                           VOS618A
+
+                                                                                                                                       Vishay Semiconductors
+
+ABSOLUTE MAXIMUM RATINGS (Tamb = 25 °C, unless otherwise specified)
+
+PARAMETER                     TEST CONDITION                        SYMBOL                                                             VALUE                          UNIT
+
+INPUT
+
+Reverse voltage                                                                                                               VR       6                              V
+Power dissipation
+Forward current                                                                                                               Pdiss    70                             mW
+OUTPUT
+                                                                                                                              IF       50                             mA
+
+Collector emitter voltage                                                                                                     VCEO     80                             V
+Emitter collector voltage
+                                                                                                                              VECO     7                              V
+Collector current
+                                                                                                                              IC       50                             mA
+Power dissipation
+COUPLER                       tp/T = 0.5, tp < 10 ms                                                                          IC       100                            mA
+
+                                                                                                                              Pdiss    150                            mW
+
+Isolation test voltage                                t = 1 min                                                               VISO     3750                           VRMS
+between emitter and detector
+
+Total power dissipation                                                                                                       Ptot     170                            mW
+Storage temperature range
+Ambient temperature range                                                                                                     Tstg     -55 to +150                    °C
+Junction temperature
+Soldering temperature (1)                                                                                                     Tamb     -55 to +110                    °C
+
+                                                                                                                              Tj       125                            °C
+
+                                                      t = 10 s                                                                Tsld     260                            °C
+
+Notes
+
+· Stresses in excess of the absolute maximum ratings can cause permanent damage to the device. Functional operation of the device is not
+    implied at these or any other conditions in excess of those given in the operational sections of this document. Exposure to absolute
+    maximum ratings for extended periods of the time can adversely affect reliability.
+
+(1) Refer to reflow profile for soldering conditions for surface mounted devices.
+
+Pdiss - Collector Power Dissipation (mW)160                                                                                   60
+                                                                                                   IF - Forward Current (mA)
+       140                                                                                                                    50
+
+       120
+
+       100                                                                                                                    40
+
+       80                                                                                                                     30
+
+       60                                                                                                                     20
+
+       40
+
+       20                                                                                                                     10
+
+       0                   25 50 75 100 125                                                                                   0        25 50 75 100 125
+        - 25 0                                                                                                                 - 25 0
+
+                     Tamb - Ambient Temperature (°C)                                                                                 Tamb - Ambient Temperature (°C)
+
+Fig. 1 - Power Dissipation vs. Ambient Temperature                  Fig. 2 - Forward Current vs. Ambient Temperature
+
+Rev. 1.6, 13-Mar-15                                              2                                                                            Document Number: 83465
+
+                              For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                     www.vishay.com                                                                                            VOS618A
+
+                                                                                                                 Vishay Semiconductors
+
+ELECTRICAL CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+
+PARAMETER                                        TEST CONDITION                  SYMBOL MIN.                         TYP.  MAX.           UNIT
+
+INPUT
+
+Forward voltage                                  IF = 50 mA                      VF                                  1.1       1.5              V
+
+Reverse current                                            VR = 6 V              IR                                  0.01      10               A
+
+Input capacitance                                VF = 0 V, f = 1 MHz             CI                                  8                          pF
+
+OUTPUT
+
+Collector emitter leakage current                VCE = 10 V                      ICEO                                0.7       100              nA
+
+Collector emitter breakdown voltage              IC = 100 A                      BVCEO                     80                                   V
+
+Emitter collector breakdown voltage                        IE = 10 A             BVECO                     7                                    V
+
+Collector emitter capacitance                    VCE = 5 V, f = 1 MHz            CCE                                 6                          pF
+
+COUPLER
+
+Collector emitter saturation voltage               IF = 1 mA, IC = 0.25 mA       VCEsat                              0.12      0.4              V
+Cut-off frequency                           IF = 10 mA, VCC = 5 V, RL = 100        fctr
+                                                                                                                     119                        kHz
+
+Coupling capacitance                                       f = 1 MHz             CC                                  0.3                        pF
+
+Note
+
+· Minimum and maximum values are testing requirements. Typical values are characteristics of the device and are the result of engineering
+    evaluation. Typical values are for information only and are not part of the testing requirements.
+
+CURRENT TRANSFER RATIO (Tamb = 25 °C, unless otherwise specified)
+
+PARAMETER                             TEST CONDITION                  PART       SYMBOL MIN.                         TYP.      MAX.            UNIT
+                                                                                                                                600              %
+                                                                      VOS618A    CTR                       50                   125              %
+                                                                                                                                200              %
+                                                                      VOS618A-2 CTR                        63                   160              %
+                                                                                                                                260              %
+IC/IF                                 IF = 1 mA, VCE = 5 V            VOS618A-3  CTR                       100
+
+                                                                      VOS618A-7 CTR                        80
+
+                                                                      VOS618A-8 CTR                        130
+
+SWITCHING CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+
+PARAMETER                                   TEST CONDITION                       SYMBOL                    MIN.      TYP.  MAX.           UNIT
+
+NON-SATURATED                                                                                                          5                    s
+                                                                                                                       5                    s
+Turn on time                                                                                  ton                      8                    s
+Rise time                             VCC = 5 V, IC = 2 mA, RL = 100  tr                                               7                    s
+Turn off time
+Fall time                                                                                     toff                    10                    s
+SATURATED                                                                                      tf                     11                    s
+                                                                                                                      14                    s
+Rise and fall time                                                                              tr                    12                    s
+Fall time                             IF = 1.6 mA, VCC = 5 V, RL = 1.9 k tf
+Turn on time
+Turn off time                                                                                  ton
+                                                                                               toff
+
+                                      VCC = 5 V                                                                                   Input pulse
+
+                     Input            RL                                                             10 %
+                                                     VOUT
+
+                                                                                                                                  Output pulse
+
+                                                                                                     90 %
+
+                                                                                                                 tr        tf
+
+                                                                                                     t on                  t off
+
+        isfh618a_10                                                              isfh618a_12
+
+                     Fig. 3 - Test Circuit                                                           Fig. 4 - Test Circuit and Waveforms
+
+Rev. 1.6, 13-Mar-15                                                   3                                                    Document Number: 83465
+
+                                      For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com                                                                                                                                VOS618A
+
+                                                                                                                                Vishay Semiconductors
+
+SAFETY AND INSULATION RATINGS                         TEST CONDITION                                                            SYMBOL                           VALUE                  UNIT
+
+PARAMETER
+
+Climatic classification (according to IEC 68 part 1)                                                                                                             55/110/21
+
+Comparative tracking index                                                                                                      CTI                              175
+
+Maximum rated withstanding isolation voltage          40 % to 80 % RH, AC test of t = 1 min                                      VISO                            3750                   VRMS
+Maximum transient isolation voltage                                                                                             VIOTM                            6000                   Vpeak
+Maximum repetitive peak isolation voltage                     Tamb = 25 °C, VDC = 500 V                                         VIORM                             565                   Vpeak
+                                                             Tamb = 100 °C, VDC = 500 V                                                                           1012
+Isolation resistance                                                                                                             RIO                              1011                    
+                                                                                                                                 RIO                              300                     
+Output safety power                                                                                                              PSO                              200                   mW
+Input safety current                                                                                                              ISI                             150                    mA
+Input safety temperature                                                                                                         TSI                                5                    °C
+Creepage distance                                                                                                                                                   5                   mm
+Clearance distance                                                                                                               DTI                              0.4                   mm
+Insulation thickness                                                                                                                                                                    mm
+Environment                                                                                                                                                         2
+(pollution degree in accordance to DIN VDE 0109)
+
+Note
+
+· As per IEC 60747-5-5, § 7.4.3.8.2, this optocoupler is suitable for "safe electrical insulation" only within the safety ratings. Compliance with
+    the safety ratings shall be ensured by means of protective circuits.
+
+TYPICAL CHARACTERISTICS (Tamb = 25 °C, unless otherwise specified)
+
+    100                                                                                                                         50 IF = 25 mA                    IF = 20 mA
+             Tamb = 110 °C                                                                                                      40                                         IF = 15 mA
+             Tamb = 75 °C                                                                                                       30                                          IF = 10 mA
+             Tamb = 25 °C                                                                                                       20
+
+      10 Tamb = 0 °C
+             Tamb = -55 °C
+
+       1
+
+     0.1
+          0.6 0.8 1.0 1.2 1.4 1.6
+
+                    VF - Forward Voltage (V)
+
+Fig. 5 - Forward Voltage vs. Forward Current
+IF - Forward Current (mA)                                                                                                       10                                    IF = 5 mA
+                                                                                                   IC - Collector Current (mA)
+                                                                                                                                                      IF = 1 mA
+
+                                                                                                                                0
+                                                                                                                                   0 1 2 3 4 5 6 7 8 9 10
+
+                                                                                                                                     VCE - Collector Emitter Voltage (V)
+
+                                                         Fig. 6 - Collector Current vs. Collector Emitter Voltage
+
+Rev. 1.6, 13-Mar-15                                   4                                                                                                          Document Number: 83465
+
+                            For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                              www.vishay.com                                                                                                       VOS618A
+
+                                                                                                                                                     Vishay Semiconductors
+
+                           10 000                  IF = 0 mA                                                                          1.4
+                             1000
+ICE0 - Leakage Current (nA)    100                            VCE = 40 V                             NCTR - Normalized CTR (sat)      1.2
+
+                                        10                                                                                            1.0
+
+                                        1                          VCE = 24 V                                                         0.8
+
+                                         0.1                  VCE = 12 V                                                              0.6
+                                        0.01
+                                                                                                                                      0.4
+                                        0.001
+                                                                                                                                      0.2 Normalized to CTR value:
+                                                -60 -40 -20 0 20 40 60 80 100 120                                                             IF = 1 mA, VCE = 5 V, Tamb = 25 °C
+
+                                                    Tamb - Ambient Temperature (°C)                                                      0
+                                                                                                                                           -60 -40 -20 0 20 40 60 80 100 120
+Fig. 7 - Collector Emitter Current vs. Ambient Temperature
+                                                                                                                                               Tamb - Ambient Temperature (°C)
+
+                                                                                                                                Fig. 10 - Normalized Current Transfer Ratio vs.
+                                                                                                                                         Ambient Temperature (saturated)
+
+IC - Collector Current (mA)             35                                                           NCTR - Normalized CTR (non-saturated)      1.4
+                                                                           IF = 25 mA
+                                                                                                                                                1.2
+                                        30
+                                                                                                                                                1.0
+                                        25                                IF = 10 mA
+                                        20 IF = 1 mA                                                                                            0.8
+
+                                        15                                             IF = 5 mA                                                0.6
+                                        10 IF = 0.5 mA
+                                                                                                                                                0.4
+                                        5                          IF = 2 mA
+                                                                                                                                                0.2 Normalized to CTR value:
+                                        0                                                                                                               IF = 1 mA, VCE = 5 V, Tamb = 25 °C
+
+                                              0.0  0.1        0.2         0.3           0.4                                                        0
+                                                                                                                                                     -60 -40 -20 0 20 40 60 80 100 120
+                                                   VCE - Collector Emitter Voltage (V)
+                                                                                                                                                         Tamb - Ambient Temperature (°C)
+Fig. 8 - Collector Current vs. Collector Emitter Voltage
+                                                                                                                                          Fig. 11 - Normalized Current Transfer Ratio vs.
+                                                                                                                                                Ambient Temperature (non-saturated)
+
+VCEsat - Collector Emitter Voltage (V)0.12                                                           NCTR - Normalized CTR (sat)            2.0
+                                                                IF = 1 mA                                                                   1.8 Tamb = 0 °C
+
+              0.10                                                                                                                          1.6
+                                                                                                                                            1.4 Tamb = -55 °C
+              0.08
+                                                                                                                                            1.2
+              0.06
+                                                                                                                                            1.0
+              0.04
+                                                                                                                                            0.8
+              0.02
+                                                                                                                                            0.6                      Tamb = 25 °C
+              0.00                                                                                                                          0.4
+                    -60 -40 -20 0 20 40 60 80 100 120                                                                                       0.2                          Normalized to:
+                                                                                                                                            0.0                          IF = 1 mA, VCE = 5 V,
+                       Tamb - Ambient Temperature (°C)                                                                                               Tamb = 110 °C Tamb = 25 °C
+                                                                                                                                                0.1
+Fig. 9 - Collector Emitter Voltage vs. Ambient Temperature                                                                                           1         10               100
+
+                                                                                                                                                     IF - Forward Current (mA)
+
+                                                                                                     Fig. 12 - Current Transfer Ratio vs. Forward Current (saturated)
+
+Rev. 1.6, 13-Mar-15                                                                               5                                                            Document Number: 83465
+
+                                                              For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                                      www.vishay.com                                                                                               VOS618A
+
+                                                                                                                                     Vishay Semiconductors
+
+                                2.5                                                                                         1000
+                                                       Tamb = 0 °C
+NCTR - Normalized CTR (NS)                                                                  ton, toff - Switching Time (s)           VCE = 5 V
+                                2.0 Tamb = -55 °C                                                                                    IC = 2 mA
+
+                                                                                                                            100                                                  toff (s)
+                                                                                                                                                                                 ton (s)
+                                1.5 Tamb = 25 °C
+
+                                1.0                                 Tamb = 110 °C                                           10
+
+                                0.5                      Normalized to:                                                     1
+                                                         IF = 1 mA, VCE = 5 V,
+                                0.0                      Tamb = 25 °C
+                                    0.1
+                                           1                        10             100                                            0  5              10          15                         20
+
+                                           IF - Forward Current (mA)                                                                 RL - Load Resistance (k)
+
+Fig. 13 - Current Transfer Ratio vs. Forward Current (non-saturated)                                      Fig. 16 - Switching Time vs. Load Resistance
+
+                                1000                                                                                        0
+
+FCTR - Cut-off-Frequency (kHz)             VCE = 5 V,                                                                       -5                  RL = 100 
+                                           Tamb = 25 °C
+
+                                                                                                                            -10
+
+                                100                                                         Voltage Gain                    -15
+
+                                10                                                                                          -20
+                                                                                                                                                                     RL = 1000 
+
+                                                                                                                            -25
+
+                                                                                                                            -30
+
+                                                                                                                            -35
+                                                                                                                                     VCE = 5 V
+
+                                1                                                                                           -40
+
+                                0.1        1                        10             100                                            1             10         100                   1000
+
+                                           IC - Collector Current (mA)                                                               f - Frequency (kHz)
+
+Fig. 14 - Cut-off Frequency (- 3 dB) vs. Collector Current                                                                  Fig. 17 - Voltage Gain vs. Frequency
+
+Phase Angle (deg)                   0                                     VCE = 5 V
+                                 -20                                     RL = 100 
+                                 -40
+                                 -60              RL = 1000 
+                                 -80
+                                -100       10                       100            1000
+                                -120
+                                -140
+                                -160
+
+                                        1
+
+                                           f - Frequency (kHz)
+
+                                Fig. 15 - Phase Angle vs. Frequency
+
+Rev. 1.6, 13-Mar-15                                                                      6                                                                 Document Number: 83465
+
+                                                         For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                   www.vishay.com                                                                                             VOS618A
+
+PACKAGE DIMENSIONS in millimeters                                                                               Vishay Semiconductors
+
+                                                    1.27 ± 0.25
+
+                                                                                                     5.3 ± 0.3  0.2 ± 0.05
+                                                                                                                    0.9
+                                4.4 ± 0.2
+
+                                                                                  0.5                + 0.2
+
+                                                                                                     7.0 - 0.7
+
+                     2.6 ± 0.3
+
+                     0.4 ± 0.10.12 ± 0.1 2.0 ± 0.2                                                   5.0
+                                                                                               1.27
+                                                                                                     7.5
+
+                                                                                                                22629-2
+
+PACKAGE MARKING (example of VOS618A-3X001T)
+
+                                                                 Pin 1 dimple      618A3X
+                                                                               V YWW 25
+
+Notes
+· Option 1 is reflected with letter "X".
+· Tape and reel suffix (T) is not part of the package marking.
+
+Rev. 1.6, 13-Mar-15                                                            7                                         Document Number: 83465
+
+                     For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+                   www.vishay.com                                                                                  VOS618A
+TAPE AND REEL DIMENSIONS in millimeters
+                                                                                                    Vishay Semiconductors
+                                                           330
+                                                           (13")                                  17.1
+
+Temperature (°C)                 Fig. 18 - Reel Dimensions (3000 units per reel)
+                                                                                                                                            100
+                                                                  Ø 1.50 ± 0.1  2 ± 0.1           4 ± 0.1                                        1.75 ± 0.1
+
+                                                                                                                                                 5.5 ± 0.1
+                                                                                                                                                       12 ± 0.3
+
+                                                                                         8 ± 0.1
+
+                                                                                                                                               0.35 ± 0.05
+
+                                                              Fig. 19 - Tape Dimensions
+
+SOLDER PROFILE                                                                  HANDLING AND STORAGE CONDITIONS
+                                                                                ESD level: HBM class 2
+300                                                                             Floor life: unlimited
+                                                                                Conditions: Tamb < 30 °C, RH < 85 %
+250 255 °C                       max. 260 °C                                    Moisture sensitivity level 1, according to J-STD-020
+         240 °C                         245 °C
+
+         217 °C
+200
+
+                                 max. 30 s
+
+150
+
+                     max. 120 s  max. 100 s
+
+100
+                                       max. ramp down 6 °C/s
+
+50 max. ramp up 3 °C/s
+
+       0
+
+          0          50 100 150 200 250 300
+
+19841                Time (s)
+
+Fig. 20 - Lead (Pb)-free Reflow Solder Profile
+             according to J-STD-020
+
+Rev. 1.6, 13-Mar-15                                               8                                                                                         Document Number: 83465
+
+                                 For technical questions, contact: optocoupleranswers@vishay.com
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+www.vishay.com                                              Legal Disclaimer Notice
+
+                                                                                          Vishay
+
+                       Disclaimer
+
+ALL PRODUCT, PRODUCT SPECIFICATIONS AND DATA ARE SUBJECT TO CHANGE WITHOUT NOTICE TO IMPROVE
+RELIABILITY, FUNCTION OR DESIGN OR OTHERWISE.
+
+Vishay Intertechnology, Inc., its affiliates, agents, and employees, and all persons acting on its or their behalf (collectively,
+"Vishay"), disclaim any and all liability for any errors, inaccuracies or incompleteness contained in any datasheet or in any other
+disclosure relating to any product.
+
+Vishay makes no warranty, representation or guarantee regarding the suitability of the products for any particular purpose or
+the continuing production of any product. To the maximum extent permitted by applicable law, Vishay disclaims (i) any and all
+liability arising out of the application or use of any product, (ii) any and all liability, including without limitation special,
+consequential or incidental damages, and (iii) any and all implied warranties, including warranties of fitness for particular
+purpose, non-infringement and merchantability.
+
+Statements regarding the suitability of products for certain types of applications are based on Vishay's knowledge of typical
+requirements that are often placed on Vishay products in generic applications. Such statements are not binding statements
+about the suitability of products for a particular application. It is the customer's responsibility to validate that a particular product
+with the properties described in the product specification is suitable for use in a particular application. Parameters provided in
+datasheets and / or specifications may vary in different applications and performance may vary over time. All operating
+parameters, including typical parameters, must be validated for each customer application by the customer's technical experts.
+Product specifications do not expand or otherwise modify Vishay's terms and conditions of purchase, including but not limited
+to the warranty expressed therein.
+
+Hyperlinks included in this datasheet may direct users to third-party websites. These links are provided as a convenience and
+for informational purposes only. Inclusion of these hyperlinks does not constitute an endorsement or an approval by Vishay of
+any of the products, services or opinions of the corporation, organization or individual associated with the third-party website.
+Vishay disclaims any and all liability and bears no responsibility for the accuracy, legality or content of the third-party website
+or for that of subsequent links.
+
+Vishay products are not designed for use in life-saving or life-sustaining applications or any application in which the failure of
+the Vishay product could result in personal injury or death unless specifically qualified in writing by Vishay. Customers using or
+selling Vishay products not expressly indicated for use in such applications do so at their own risk. Please contact authorized
+Vishay personnel to obtain written terms and conditions regarding products designed for such applications.
+
+No license, express or implied, by estoppel or otherwise, to any intellectual property rights is granted by this document or by
+any conduct of Vishay. Product names and markings noted herein may be trademarks of their respective owners.
+
+© 2026 VISHAY INTERTECHNOLOGY, INC. ALL RIGHTS RESERVED
+
+Revision: 01-Jan-2026                                    1  Document Number: 91000
+
+THIS DOCUMENT IS SUBJECT TO CHANGE WITHOUT NOTICE. THE PRODUCTS DESCRIBED HEREIN AND THIS DOCUMENT
+                          ARE SUBJECT TO SPECIFIC DISCLAIMERS, SET FORTH AT www.vishay.com/doc?91000
+

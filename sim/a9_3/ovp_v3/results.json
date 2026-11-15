@@ -1,0 +1,151 @@
+{
+  "stage": "protection",
+  "script_sha256": "9f9bbfe5b8980b7e82ba450d4afce2f54de46f883ecffd653724f53dab63e162",
+  "model_sha256": "13c1bb256b52945fb26d1556eec4f4b1f6094f98df67c022fb6f6b30de838714",
+  "results": [
+    {
+      "stage": "protection",
+      "case": {
+        "id": "limited_fast_small_comp",
+        "limited": true,
+        "c16": 1e-09,
+        "rbot": 19600,
+        "comp_cap": 1e-07
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "duration_s": 0.43624043464660645,
+      "execution": "PASS",
+      "log_errors": [],
+      "requested_stop_s": 0.04,
+      "deck_sha256": "f5762338829edf638f9cfad89b1d2ecaa34dbf339ca98544e27db7ceaa92cffe",
+      "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "metrics": {
+        "forced_hv_peak_V": 230.0,
+        "q21_peak_A": 0.00109618884,
+        "q22_peak_A": 0.00106113684,
+        "q25_peak_A": 5.63264831e-05,
+        "latch_end_V": 10.985455,
+        "comp_end_V": 0.0226342138,
+        "sense_cross_s": 0.0103665,
+        "forced_hv_at_cross_V": 193.665,
+        "comparator_delay_s": 8.755999999984776e-07,
+        "comp_off_delay_s": 2.6157099999998476e-05,
+        "within_200mA_absolute_limit": true
+      },
+      "native_measurements": {
+        "end_time": 0.04,
+        "q21_min": -0.00109619,
+        "q22_max": 0.00106114,
+        "q25_max": 5.63265e-05,
+        "comp_end": 0.0226342,
+        "latch_end": 10.9855
+      },
+      "engineering": "PROVISIONAL"
+    },
+    {
+      "stage": "protection",
+      "case": {
+        "id": "limited_reset_stuck_recovery",
+        "limited": true,
+        "hv": "PWL(0 0 2m 170 8m 170 12m 230 18m 230 22m 170 40m 170)",
+        "reset": "PWL(0 0 1m 3.3)"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "duration_s": 0.45218968391418457,
+      "execution": "PASS",
+      "log_errors": [],
+      "requested_stop_s": 0.04,
+      "deck_sha256": "fa365956d44e466c654dea305652c4df583039ba9036789d6ca232f8bb10b828",
+      "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "metrics": {
+        "forced_hv_peak_V": 230.0,
+        "q21_peak_A": 0.024169869,
+        "q22_peak_A": 0.000561921098,
+        "q25_peak_A": 0.0239255004,
+        "latch_end_V": 0.00600724727,
+        "comp_end_V": 1.91964524,
+        "sense_cross_s": 0.0115405,
+        "forced_hv_at_cross_V": 223.1075,
+        "comparator_delay_s": 4.1179999999904626e-07,
+        "comp_off_delay_s": 0.009705,
+        "within_200mA_absolute_limit": true,
+        "unauthorized_restart_request": true
+      },
+      "native_measurements": {
+        "end_time": 0.04,
+        "q21_min": -0.0241699,
+        "q22_max": 0.000561921,
+        "q25_max": 0.0239255,
+        "comp_end": 1.91965,
+        "latch_end": 0.00600725
+      },
+      "engineering": "FAIL"
+    },
+    {
+      "stage": "protection",
+      "case": {
+        "id": "limited_power_cycle",
+        "limited": true,
+        "hv": "PWL(0 0 2m 170 8m 170 12m 230 18m 230 22m 170 40m 170)",
+        "supply": "PWL(0 0 100u 12 28m 12 28.01m 0 32m 0 32.01m 12 40m 12)"
+      },
+      "argv": [
+        "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "duration_s": 0.41848182678222656,
+      "execution": "PASS",
+      "log_errors": [],
+      "requested_stop_s": 0.04,
+      "deck_sha256": "726503a7f3836bef42eee77ac13d813beae3c39b0649d521ad687fae09540e9a",
+      "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "metrics": {
+        "forced_hv_peak_V": 230.0,
+        "q21_peak_A": 0.00106719546,
+        "q22_peak_A": 0.0010610963,
+        "q25_peak_A": 5.5014938e-05,
+        "latch_end_V": 11.3174058,
+        "comp_end_V": 0.0222642463,
+        "sense_cross_s": 0.0115405,
+        "forced_hv_at_cross_V": 223.1075,
+        "comparator_delay_s": 4.0619999999887135e-07,
+        "comp_off_delay_s": 0.0036769999999999997,
+        "within_200mA_absolute_limit": true,
+        "power_cycle_clear_failed": true
+      },
+      "native_measurements": {
+        "end_time": 0.04,
+        "q21_min": -0.0010672,
+        "q22_max": 0.0010611,
+        "q25_max": 5.50149e-05,
+        "comp_end": 0.0222642,
+        "latch_end": 11.3174
+      },
+      "engineering": "FAIL"
+    }
+  ]
+}

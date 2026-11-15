@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "baseline": "sprint05.json",
+  "status": "S06_UNIT_QUALIFICATION_CANDIDATES_NOT_APPROVED",
+  "manufacturing": "HOLD",
+  "inductor": {
+    "old_mpn": "MSS1260-154KLD",
+    "candidate_mpn": "MSS1583-154KED",
+    "L_H": 0.00015,
+    "initial_tolerance": 0.1,
+    "screen_extra_L_drop": 0.1,
+    "DCR25_max_ohm": 0.159,
+    "Isat_10pct_25C_A": 3.1,
+    "Irms_20C_rise_A": 1.55,
+    "hot_saturation_qualification": "PENDING_NOT_GUARANTEED_BY_25C_VALUE"
+  },
+  "feedback": {
+    "upper_each_ohm": 100000,
+    "upper_count": 2,
+    "lower_series_ohm": [
+      2940,
+      45.3
+    ],
+    "initial_tolerance": 0.001,
+    "TCR_abs_ppm_K": 25,
+    "max_temperature_delta_K": 75,
+    "VFB_total_V": [
+      2.45,
+      2.55
+    ],
+    "input_bias_screen_A": [
+      -2e-06,
+      2e-06
+    ],
+    "note": "Conservative two-sided bias reserve; TI model has a 50Meg input resistor, does not implement this guaranteed corner. Remaining gain/line and actual bias conditions require review."
+  },
+  "driver": {
+    "candidate_mpn": "UCC27511DBVR",
+    "R_on_ohm": 10,
+    "R_off_ohm": 2.2,
+    "R_GS_ohm": 10000,
+    "Qg_alloc_C": 6.4e-08,
+    "additional_bias_alloc_A": 0.001,
+    "turnoff_screen_budget_s": 3e-07,
+    "qualification": "STANDALONE_PARTIAL_PASS_STEP_CRASH_AND_INTEGRATION_FAIL"
+  },
+  "aux_buck": {
+    "candidate_mpn": "LMR51610XFDBVR",
+    "mode": "FPWM_400kHz",
+    "feedback_upper_series_ohm": [
+      143000,
+      1000
+    ],
+    "feedback_lower_ohm": 10000,
+    "resistor_tolerance": 0.001,
+    "resistor_TCR_ppm_K": 25,
+    "resistor_delta_K_screen": 35,
+    "reference_V": [
+      0.788,
+      0.812
+    ],
+    "controller_path_drop_V_alloc": 0.05,
+    "output_ripple_half_V_alloc": 0.025,
+    "note": "Nominal12.32V candidate within existing AUX11.4-12.6 requirement; verify regulation/drift/PWM ripple before claiming controller VDD>=12V"
+  },
+  "PG": {
+    "monitor_mpn": "TPS3700DDCR",
+    "monitor_supply": "AUX12",
+    "reference_rising_V": [
+      0.396,
+      0.404
+    ],
+    "reference_falling_V": [
+      0.387,
+      0.4
+    ],
+    "resistor_tolerance": 0.001,
+    "resistor_TCR_ppm_K": 25,
+    "resistor_temperature_delta_K": 35,
+    "input_bias_abs_A": 2.5e-08,
+    "divider_lower_ohm": 10000,
+    "windows": [
+      {
+        "rail": "AUX12",
+        "UV_upper_ohm": 284990,
+        "OV_upper_ohm": 312480
+      },
+      {
+        "rail": "DRV12",
+        "UV_upper_ohm": 272490,
+        "OV_upper_ohm": 312480
+      },
+      {
+        "rail": "3V3",
+        "UV_upper_ohm": 66999,
+        "OV_upper_ohm": 78000
+      }
+    ],
+    "startup_valid_s_max": 0.00045,
+    "reset_aux_mpn": "TPS3808G01DBVR",
+    "reset_3v3_mpn": "TPS389001DSET",
+    "aux_reset_upper_ohm": 269000,
+    "aux_reset_lower_ohm": 10000,
+    "reset_CT": "AUX:OPEN12-28ms;3V3:22n17.16-34.69ms",
+    "qualification": "BOUNDED_THRESHOLDS_ONLY_PARTIAL_POWER_AND_DYNAMICS_PENDING",
+    "reset_3v3_rejected_mpn": "TPS3808G33DBVR"
+  },
+  "SHDN_interface": {
+    "series_ohm": 10000,
+    "pulldown_ohm": 8200,
+    "resistor_tolerance": 0.01,
+    "logic_VOH_min_V_alloc": 2.4,
+    "logic_low_V_max_alloc": 0.55,
+    "partial_logic_V_max_screen": 0.8,
+    "SHDN_internal_pullup_A_alloc": 1e-05,
+    "logic_unpowered_leak_A_alloc": 1e-05,
+    "SHDN_guaranteed_low_V": 0.55,
+    "SHDN_enable_V": 1.0,
+    "note": "Direct3V3 hardware permit through divider; no24V pull-up. Partial-power logic voltage and RTN shift assumptions still require verification."
+  },
+  "reset_3V3_revision": {
+    "rejected_mpn": "TPS3808G33DBVR",
+    "rejection": "Full-temp positive release may reach3.194V, above minimum3V3 requirement3.135V",
+    "candidate_mpn": "TPS389001DSET",
+    "sense_upper_ohm": 16500,
+    "sense_lower_ohm": 10000,
+    "reference_falling_V": [
+      1.1385,
+      1.1615
+    ],
+    "hysteresis_fraction_max": 0.00825,
+    "input_bias_abs_A": 1e-07,
+    "CT_F": 2.2e-08,
+    "CT_tolerance": 0.1,
+    "CT_threshold_V": [
+      1.17,
+      1.29
+    ],
+    "CT_current_A": [
+      9e-07,
+      1.35e-06
+    ],
+    "qualification": "BOUNDED_THRESHOLD_AND_DELAY_ANALYSIS_ONLY"
+  },
+  "native_export": {
+    "approved": false,
+    "reason": "07 not qualified, protection/USB/PG and full passive MPN gaps remain"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-15",
+  "candidate": "driver input100ohm/100pF to KelvinGND; 10ns nominal RC for edge/noise control. New physical parts, not a hidden model fix.",
+  "criteria": {
+    "stop_s": 0.0005,
+    "CS_to_gate_3V_delay_s_max": 3e-07,
+    "step_delay_delta_s_max": 1e-08,
+    "inhibit_gate_V_max": 0.4
+  },
+  "solver": "same gear/.001/1n/1u, no loosened tolerance",
+  "scope": "two primary models plus linear64nC load; no true MOS/Miller/power stage; START and nativeGB6 equation-form diagnostic remain separate"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-15",
+  "scope": "TI UCC28C43_START driving exact ST model through resistor; 195V resistor drain bias only, no boost, no170V precharge or closed loop",
+  "ST_source": "https://www.st.com.cn/resource/en/spice_model/stp9nk50z_spice.zip",
+  "ST_sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+  "ST_model_pin_order": "D,G,S (different from physical G,D,S!)",
+  "temperature_C": 25,
+  "temperature_validity": "ST header expressly permits25C only; not hot/cold corners",
+  "criteria": {
+    "stop_s": 6e-05,
+    "CS_to_VGS3V_s_max": 3.7e-07,
+    "peak_controller_output_A_max": 1,
+    "output_cap_energy_J_max": 5e-06,
+    "step_delta_s_max": 1e-08
+  },
+  "stimulus": "CS forced1.2V step; actual0.82ohm source shunt included but not connected to CS in this device-cell stimulus. Does not qualify current-feedback loop.",
+  "cases": "Rgate15/22, VDD11.4/12.6, maxstep2ns/1ns",
+  "timeout_s": 40
+}

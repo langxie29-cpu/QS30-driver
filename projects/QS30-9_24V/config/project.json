@@ -1,0 +1,92 @@
+{
+  "project": "QS30-9_24V",
+  "revision": "S06B-QUALIFICATION-AUDIT",
+  "date": "2026-11-15",
+  "lifecycle": "07_NOT_PASSED_REAL_MODEL_THERMAL_STARTUP_PG_USB_OPEN",
+  "manufacturing": "HOLD",
+  "inherited_architecture": {
+    "tubes": 9,
+    "physical_boards": 3,
+    "native_project_templates": 2,
+    "drivers": "3xHV5622; 96-bit chain; 90 used cathodes; mapping retained pending regression"
+  },
+  "rails": [
+    {
+      "name": "VIN24",
+      "nominal_V": 24,
+      "status": "DESIGN_REQUIREMENT_BASELINED",
+      "continuous_range_V": [
+        21.6,
+        26.4
+      ],
+      "transient_limits_V": {
+        "positive_design_test_V": 40,
+        "duration_ms": 1,
+        "source_ohm": 1,
+        "qualification": "NOT_ADAPTER_GUARANTEE"
+      },
+      "adapter_mpn": "GST40A24-P1J"
+    },
+    {
+      "name": "AUX12",
+      "nominal_V": 12,
+      "status": "DESIGN_TARGET",
+      "purpose": "driver and control bias"
+    },
+    {
+      "name": "DRV_VDD",
+      "nominal_V": 12,
+      "status": "DESIGN_TARGET",
+      "purpose": "gated HV5622/level-shifter rail"
+    },
+    {
+      "name": "3V3",
+      "nominal_V": 3.3,
+      "status": "DESIGN_TARGET",
+      "purpose": "MCU and low-voltage logic"
+    },
+    {
+      "name": "HV_BUS",
+      "nominal_V": 170,
+      "status": "DESIGN_REQUIREMENT_BASELINED_NOT_VALIDATED",
+      "mean_limits_V": [
+        164.9,
+        175.1
+      ]
+    },
+    {
+      "name": "5V_SYS",
+      "nominal_V": 5,
+      "status": "TWO_STAGE_AND_USB_MUX_CANDIDATE"
+    }
+  ],
+  "research_only_input_envelopes_V": [
+    [
+      22.8,
+      25.2
+    ],
+    [
+      21.6,
+      26.4
+    ]
+  ],
+  "research_only_power_W": {
+    "HV_typical": 4.077596073928697,
+    "HV_3mA_per_tube": 5.225096073928697
+  },
+  "unresolved": [
+    "real ST25C transient fails first transition; TI controller/driver coupling fails across engines",
+    "hot L(I)/core losses and loss-aware full-load current reserve unqualified",
+    "hardware demagnetization detection and current-limited startup mode policy unqualified",
+    "RTN-isolated SHDN/FLT/IMON and front-end SOA/default-off not qualified",
+    "fast PG loss, guaranteed reset/inhibit timing and partial power not qualified",
+    "USB pre-enumeration power, bridge candidate and24to5V failure OVP not qualified",
+    "complete protection/latch/bleed/safe reset/native schematic/ERC/PCB remain gated"
+  ],
+  "output_policy": "Every generator writes only under projects/QS30-9_24V; no imports that execute legacy generation",
+  "active_design_baseline": "config/sprint06b.json",
+  "sprint05_report": "docs/SPRINT05_REPORT.md",
+  "sprint06_report": "docs/SPRINT06_REPORT.md",
+  "sprint06b_report": "docs/SPRINT06B_REPORT.md",
+  "latest_breakpoint": "docs/BREAKPOINT_S06B_2026-11-15.md"
+}

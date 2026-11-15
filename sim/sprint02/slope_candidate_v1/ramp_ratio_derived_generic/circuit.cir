@@ -1,0 +1,69 @@
+QS30 A9.3 ISOLATED power fixture - no system protection claim
+* Open-loop PWM / closed-loop candidate only, not current KiCad baseline.
+.model NSW SW(RON=.55 ROFF=1e10 VT=3 VH=.1)
+.model UF D(IS=10n N=1.5 RS=.5 CJO=15p TT=75n BV=1000 IBV=5u)
+.model BODY D(IS=1n N=1.5 RS=.1 CJO=1p TT=100n BV=400)
+VIN vin 0 PWL(0 0 100u 12)
+R_FIX vin vcc .05
+C_VCC vcc 0 10u
+RL vcc lin 0.3
+L20 lin sw 0.00022
+VSWI sw mos 0
+S20 mos src gate 0 NSW
+RSENSE src 0 0.15
+DBODY src mos BODY
+COSS mos src 150p
+D20 sw hv UF
+RESR hv cap 0.5
+COUT cap 0 2.03e-05
+RBLEED hv 0 50k
+RFBTOP hv fb 1500000.0
+RFBBOT fb 0 22.1k
+BTUBES hv 0 I=(9)*max((v(hv)-125)/20000,0)
+.include uc3843_functional.lib
+C_REF ref 0 100n
+RT ref ct 22000
+CT ct 0 1e-09
+XUC comp fb cs ct 0 driver vcc ref UC3843_FUNC
+R37 comp comp_r 10k
+RG driver gate 10
+RGPD gate 0 100k
+CG gate src 1n
+C14 comp_r fb 4.7u
+C15 comp fb 1n
+R36 src cs 1k
+RRAMP rampbuf cs 1500
+C13 cs 0 100p
+.model NBUF NPN(IS=6.7f BF=100 VAF=75 IKF=.1 CJE=4p CJC=3p TF=.3n)
+RBCT ct rbbase 1k
+QBUF vcc rbbase rampbuf NBUF
+REBUF rampbuf 0 100k
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.save all @q21[ic] @q22[ic] @q25[ic]
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 2e-07 0.3 0 2e-07 uic
+meas tran end_time MAX time
+meas tran hv_peak MAX v(hv)
+meas tran il_peak MAX i(l20)
+meas tran sw_peak MAX v(sw)
+meas tran mos_i_peak MAX i(vswi)
+meas tran il_rms RMS i(l20) FROM=0.29
+meas tran mos_i_rms RMS i(vswi) FROM=0.29
+meas tran hv_avg AVG v(hv) FROM=0.29
+meas tran hv_min MIN v(hv) FROM=0.29
+meas tran hv_max MAX v(hv) FROM=0.29
+let pin=v(vin)*(-i(vin))
+let vds=v(mos)-v(src)
+let vr=v(hv)-v(sw)
+let pmos=vds*i(vswi)
+meas tran vds_peak MAX vds
+meas tran diode_reverse MAX vr
+meas tran input_power AVG pin FROM=0.29
+meas tran mos_loss AVG pmos FROM=0.29
+wrdata waves.txt v(hv) v(sw) v(src) v(gate) v(comp) v(fb) v(cs) v(ct) v(ref) i(l20) i(vin) i(vswi)
+quit
+.endc
+.end

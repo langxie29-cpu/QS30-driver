@@ -1,0 +1,1816 @@
+                                                                                                                                LMR51606, LMR51610
+
+                                                                                                                                 SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+LMR516xx SIMPLE SWITCHER® Power Converter, 4-V to 65-V, 0.6-A/1-A Buck
+                           Converter in a SOT-23 Package
+
+1 Features                                              3 Description
+
+· Functional Safety-Capable                             The LMR516xx is a wide-VIN, easy-to-use
+    - Documentation available to aid functional safety  synchronous buck converter capable of driving up to
+        system design                                   0.6-A and 1-A load current. With a wide input range of
+                                                        4 V to 65 V, the device is designed for a wide range of
+· Configured for rugged industrial applications         industrial applications for power conditioning from an
+    - 4-V to 65-V input voltage range                   unregulated source.
+    - Input transient protection up to 70-V
+    - 0.6-A/1-A continuous output current               The LMR516xx operates at 400-kHz and 1.1-MHz
+    - 80-ns minimum switching on time                   switching frequency to support use of relatively
+    - Fixed 400-kHz and 1.1-MHz switching               small inductors for an optimized design size. The
+        frequency                                       LMR516xx has a PFM version to realize high
+    - -40°C to 150°C junction temperature range         efficiency at light load and a FPWM version to achieve
+    - 98% maximum duty cycle                            constant frequency and small output voltage ripple
+    - Monotonic start-up with pre-biased output         over the full load range. Soft-start and compensation
+    - Short-circuit protection with hiccup mode         circuits are implemented internally, which allow the
+    - Precision enable                                  device to be used with minimal external components.
+    - ±1.5% tolerance voltage reference
+                                                        The device has built-in protection features, such as
+· Small design size and ease of use                     cycle-by-cycle current limit, hiccup mode short-circuit
+    - Integrated synchronous rectification              protection, and thermal shutdown in case of excessive
+    - Internal compensation for ease of use             power dissipation.
+    - SOT-23 package
+                                                                             Device Information
+· Various options in pin-to-pin compatible package
+    - PFM and forced PWM (FPWM) options                 PART NUMBER(3)       PACKAGE(1)                                    PACKAGE SIZE(2)
+
+· Pin-to-pin compatible with the LMR16006,              LMR51610             DBV (SOT-23, 6) 2.90 mm × 2.80 mm
+    LV2862, LMR50410, TPS560430, LMR54406, and          LMR51606
+    LMR54410
+                                                        (1) For more information, see Section 11.
+· Create a custom design using the LMR516xx with        (2) The package size (length × width) is a nominal value and
+    the WEBENCH® Power Designer
+                                                                includes pins, where applicable.
+2 Applications                                          (3) See the Device Comparison Table.
+
+· Major appliances                                                      100
+· PLC, DCS, and PAC
+· Smart meters                                                          90
+· Power delivery
+                                                        Efficiency (%)  80
+                      Simplified Schematic
+                                                                        70
+
+                                                                        60                                                       VIN = 12 V
+                                                                                                                                 VIN = 24 V
+                                                                        50                                                       VIN = 36 V
+                                                                                                                                 VIN = 48 V
+                                                                        40                                                       VIN = 65 V
+                                                                        0.001 0.002 0.005 0.01 0.02 0.05 0.1               0.2 0.3 0.5 1
+
+                                                                                                                 IOUT (A)
+
+                                                                        Efficiency Versus Output Current
+
+                                                                             VOUT = 5 V, 400 kHz
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+LMR51606, LMR51610                                                                       www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+                                              Table of Contents
+
+1 Features............................................................................1     7.4 Device Functional Modes..........................................16
+2 Applications..................................................................... 1    8 Application and Implementation.................................. 17
+3 Description.......................................................................1
+4 Device Comparison Table...............................................3                   8.1 Application Information............................................. 17
+5 Pin Configuration and Functions...................................3                       8.2 Typical Application.................................................... 17
+6 Specifications.................................................................. 4        8.3 Power Supply Recommendations.............................23
+                                                                                            8.4 Layout....................................................................... 23
+   6.1 Absolute Maximum Ratings........................................ 4                9 Device and Documentation Support............................26
+   6.2 ESD Ratings............................................................... 4         9.1 Device Support......................................................... 26
+   6.3 Recommended Operating Conditions.........................4                           9.2 Documentation Support............................................ 26
+   6.4 Thermal Information....................................................5             9.3 Receiving Notification of Documentation Updates....26
+   6.5 Electrical Characteristics.............................................5             9.4 Support Resources................................................... 26
+   6.6 System Characteristics............................................... 6              9.5 Trademarks............................................................... 26
+   6.7 Typical Characteristics................................................ 7            9.6 Electrostatic Discharge Caution................................26
+7 Detailed Description......................................................10              9.7 Glossary....................................................................27
+   7.1 Overview................................................................... 10    10 Revision History.......................................................... 27
+   7.2 Functional Block Diagram......................................... 11              11 Mechanical, Packaging, and Orderable
+   7.3 Feature Description...................................................11             Information.................................................................... 27
+
+2  Submit Document Feedback                                                              Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                       LMR51606, LMR51610
+
+                                                                     SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+4 Device Comparison Table
+
+ORDERABLE PART NUMBER    OUTPUT CURRENT                 FREQUENCY                         PFM OR FPWM  OUTPUT
+        LMR51610XDBVR               1 A                    400 kHz                               PFM   Adjustable
+       LMR51610XFDBVR               1 A                    400 kHz                              FPWM   Adjustable
+        LMR51606XDBVR              0.6 A                   400 kHz                               PFM   Adjustable
+       LMR51606XFDBVR              0.6 A                   400 kHz                              FPWM   Adjustable
+        LMR51610YDBVR               1 A                    1100 kHz                              PFM   Adjustable
+       LMR51610YFDBVR               1 A                    1100 kHz                             FPWM   Adjustable
+        LMR51606YDBVR              0.6 A                   1100 kHz                              PFM   Adjustable
+       LMR51606YFDBVR              0.6 A                   1100 kHz                             FPWM   Adjustable
+
+5 Pin Configuration and Functions
+
+                                                  CB 1  6 SW
+                                                 GND 2  5 VIN
+                                                        4 EN
+                                                  FB 3
+
+                         Figure 5-1. 6-Pin SOT-23 DBV Package (Top View)
+
+      PIN       TYPE(1)                          Table 5-1. Pin Functions
+
+NAME        NO                                                                       DESCRIPTION
+
+CB          1   P Bootstrap capacitor connection for high-side FET driver. Connect a high quality 100-nF capacitor from this pin to the SW pin.
+                G Power ground pins. Connected to the source of low-side FET internally. Connect to system ground, ground side of CIN and COUT. The path to CIN must be as short as possible.
+GND         2   A Feedback input to the converter. Connect a resistor divider to set the output voltage. Never short this terminal to ground during operation.
+                A Precision enable input to the converter. Do not float. High = on, low = off. Can be tied to VIN. Precision enable input allows an adjustable UVLO by an external resistor divider.
+FB          3   P Supply input pin to the internal bias LDO and high-side FET. Connect to the input supply and input bypass capacitors CIN. Input bypass capacitors must be directly connected to this pin and GND.
+                P Switching output of the converter. Internally connected to source of the high-side FET and drain of the low-side FET. Connect to the power inductor.
+EN          4
+
+VIN         5
+
+SW          6
+
+(1) A = Analog, P = Power, G = Ground
+
+Copyright © 2023 Texas Instruments Incorporated                                                   Submit Document Feedback                                                                                           3
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                                                                                www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+6 Specifications                                                                                                                   MAX            UNIT
+6.1 Absolute Maximum Ratings                                                                                                           70           V
+                                                                                                                                                    V
+Over junction temperature range of -40°C to 150°C (unless otherwise noted)(1)                                                 VIN + 0.3             V
+                                                                                                                                      5.5           V
+                                                                                                                    MIN                70           V
+                                                                                                                                       70           V
+                   VIN to GND                           -0.3                                                                          5.5          °C
+                                                                                                                                     150           °C
+   Input voltage EN to GND                              -0.3                                                                         150
+
+                   FB to GND                            -0.3
+
+                   SW to GND                            -0.3
+
+   Output voltage SW to GND less than 10-ns transients       -5
+
+                   CBOOT to SW                          -0.3
+
+   Junction Temperature TJ                                   -40
+
+   Storage temperature, Tstg                                 -55
+
+(1) Operation outside the Absolute Maximum Ratings may cause permanent device damage. Absolute Maximum Ratings do not imply
+        functional operation of the device at these or any other conditions beyond those listed under Recommended Operating Conditions.
+        If used outside the Recommended Operating Conditions but within the Absolute Maximum Ratings, the device may not be fully
+        functional, and this may affect device reliability, functionality, performance, and shorten the device lifetime.
+
+6.2 ESD Ratings
+
+   V(ESD)  Electrostatic discharge                      Human-body model (HBM), per ANSI/ESDA/                                             VALUE        UNIT
+                                                        JEDEC JS-001(1)                                                                    ±2500          V
+                                                        Charged-device model (CDM), per ANSI/ESDA/                                          ±750
+                                                        JEDEC JS-002(2)
+
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+
+6.3 Recommended Operating Conditions
+
+Over the recommended operating junction temperature range of -40°C to 150°C (unless otherwise noted)(1)
+
+                                                        MIN                                                              NOM               MAX    UNIT
+                                                                                                                                                    V
+                   VIN to GND                           4                                                                                  65       V
+                                                                                                                                                    V
+   Input voltage EN                                     0                                                                                  VIN      V
+                                                                                                                                                    A
+                   FB                                   0                                                                                  4.5      A
+                                                                                                                                                   °C
+   Output voltage  VOUT (2)                             0.8                                                                                28
+   Output current  Iout(LMR51606)(3)
+   Output current  Iout(LMR51610)(3)                                                                                                       0.6
+   TJ              Operating junction temperature(4)
+                                                                                                                                           1
+
+                                                        -40                                                                                +150
+
+(1) Recommended operating conditions indicate conditions for which the device is intended to be functional, but do not make sure of
+        specific performance limits. For compliant specifications, see Electrical Characteristics table.
+
+(2) Under no conditions can the output voltage be allowed to fall below zero volts.
+(3) Maximum continuous DC current can be derated when operating with high switching frequency or high ambient temperature. See
+
+        Application section for details.
+(4) High junction temperatures degrade operating lifetimes. Operating lifetime is de-rated for junction temperatures greater than 150.
+
+4  Submit Document Feedback                                                                                              Copyright © 2023 Texas Instruments Incorporated
+
+                                    Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                  LMR51606, LMR51610
+
+                                                                                                SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+6.4 Thermal Information
+
+The value of RJA given in this table is only valid for comparison with other packages and cannot be used for design
+purposes. These values were calculated in accordance with JESD 51-7, and simulated on a 4-layer JEDEC board. They do
+not represent the performance obtained in an actual application. For example, with a 2-layer PCB, a RJA = 95/W can be
+achieved. For design information, see Maximum Output Current Versus Ambient Temperature.
+
+                                                                                                                                                                      LMR516xx
+
+                                   THERMAL METRIC(1)                                            DBV(SOT-23-6)       UNIT
+
+                                                                                                       6 PINS
+
+RJA             Junction-to-ambient thermal resistance                                                 147.8        °C/W
+
+RJA(Effective)  Junction-to-ambient thermal resistance with EVM                                        95           °C/W
+
+RJC(top)        Junction-to-case (top) thermal resistance                                              71.1         °C/W
+
+RJB             Junction-to-board thermal resistance                                                   36.6         °C/W
+
+JT              Junction-to-top characterization parameter                                             14.2         °C/W
+
+JB              Junction-to-board characterization parameter                                           36.4         °C/W
+
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+        report.
+
+6.5 Electrical Characteristics
+
+Limits apply over operating junction temperature (TJ) range of -40°C to +150°C, unless otherwise stated. Minimum and
+Maximum limits(1) are specified through test, design or statistical correlation. Typical values represent the most likely
+parametric norm at TJ = 25°C, and are provided for reference purposes only. Unless otherwise stated, the following s apply:
+VIN = 4 V to 65 V.
+
+                     PARAMETER                                   TEST CONDITIONS                MIN          TYP MAX UNIT
+
+SUPPLY
+
+IQ(VIN)         VIN quiescent current                            VEN = 3 V, FPWM Operation                    420   µA
+
+IQ(VIN)         VIN quiescent current (non-switching)            VEN = 3 V, PFM Variant Only                 26.5   40 µA
+                (2)
+
+ISD(VIN)        VIN shutdown supply current                      VEN = 0 V                                     0.8      3 µA
+                                                                 VIN rising
+UVLO                                                             VIN falling                                            4V
+                                                                                                                                V
+VINUVLO(R)      VIN UVLO rising threshold                        EN rising, enable switching                 3.82               V
+                                                                 EN falling, disable switching
+VINUVLO(F)      VIN UVLO falling threshold                       VEN = 3 V                      3.4          3.56   1.36 V
+                                                                                                                    1.15 V
+VINUVLO(H)      VIN UVLO hysteresis                              VFB = 0.8 V                                 0.25
+                                                                 "X" Version                                          50 nA
+ENABLE                                                           "Y" Version
+
+VEN(R)          EN voltage rising threshold                      VIN = 12 V, TJ = 25°C          1.1 1.227
+                                                                 VIN = 12 V, TJ = 25°C
+VEN(F)          EN voltage falling threshold                     VIN = 12 V, IOUT = 0.1A        0.85           1.0
+                                                                 VIN = 12 V, IOUT = 0.5A
+IEN(P2)         EN pin sourcing current post EN rising                                                         10
+                threshold
+
+REFERENCE VOLTAGE
+
+Vfb             Reference voltage                                                               0.788          0.8 0.812 V
+
+IFB(LKG)        FB input leakage current                                                          340          0.2  nA
+                                                                                                0.935
+SWITCHING FREQUENCY
+
+fSW(CCM)        Switching frequency, CCM operation                                                            400   460 KHz
+                Switching frequency, CCM operation
+                                                                                                               1.1 1.265 Mhz
+
+STARTUP
+
+tSS             Internal fixed soft-start time                                                                 2.3  ms
+
+POWER STAGE
+
+RDSON(HS)       High-side MOSFET on-resistance                                                                 0.7        
+
+RDSON(LS)       Low-side MOSFET on-resistance                                                                0.36         
+
+tON(min)        Minimum ON pulse width                                                                         80         ns
+
+tON(max)        Maximum ON pulse width                                                                         5          µs
+
+Copyright © 2023 Texas Instruments Incorporated                                                 Submit Document Feedback                                                        5
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                                                                    www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+6.5 Electrical Characteristics (continued)
+
+Limits apply over operating junction temperature (TJ) range of -40°C to +150°C, unless otherwise stated. Minimum and
+Maximum limits(1) are specified through test, design or statistical correlation. Typical values represent the most likely
+parametric norm at TJ = 25°C, and are provided for reference purposes only. Unless otherwise stated, the following s apply:
+VIN = 4 V to 65 V.
+
+                 PARAMETER                                                        TEST CONDITIONS              MIN         TYP MAX UNIT
+
+   tOFF(min)     Minimum OFF pulse width                           VIN = 5 V                                               200        ns
+
+   BOOT CIRCUIT
+
+   HIGH-SIDE GATE DRIVER
+
+   OVERCURRENT PROTECTION
+
+   IHS_PK(OC)    High-side peak current limit                      LMR51610                                    1.25        1.6 1.95 A
+
+   ILS_V(OC)     Low-side valley current limit                     LMR51610 TJ = -40°C to 105°C                0.9         1.1  1.3 A
+
+   ILS(NOC)      Low-side negative current limit                   LMR51610 FPWM Only                                -0.66               A
+
+   IHS_PK(OC)    High-side peak current limit                      LMR51606                                    0.8         1.1  1.4 A
+
+   ILS_V(OC)     Low-side valley current limit                     LMR51606                                    0.62        0.8 0.98 A
+
+   ILS(NOC)      Low-side negative current limit                   LMR51606 FPWM Only                                -0.36               A
+
+   IZC           Zero-cross detection current threshold                                                                    0             A
+
+   THERMAL SHUTDOWN
+
+   TJ(SD)        Thermal shutdown threshold (3)                    Temperature rising                                      165        °C
+   TJ(HYS)       Thermal shutdown hysteresis (3)
+                                                                                                                           20         °C
+
+(1) MIN and MAX limits are 100% production tested at 25. Limits over the operating temperature range verified through correlation using
+        Statistical Quality Control (SQC) methods. Limits are used to calculate Average Outgoing Quality Level (AOQL).
+
+(2) This is the current used by the device open loop. It does not represent the total input current of the system when in regulation.
+
+(3) Not production tested. Specified by correlation by design.
+
+6.6 System Characteristics
+
+The following specifications apply to a typical application circuit with nominal component values. Specifications in the typical
+(TYP) column apply to TJ = 25°C only. Specifications in the minimum (MIN) and maximum (MAX) columns apply to the
+case of typical components over the temperature range of TJ = -40°C to 150°C. These specifications are not ensured by
+production testing.
+
+                 PARAMETER                                         TEST CONDITIONS                      MIN          TYP        MAX UNIT
+
+   VIN         Operating input voltage range                                                            4                       65    V
+
+   VOUT        Adjustable output voltage                           PFM operation                        -1.5%                   2.5%
+               regulation(1)
+
+   ISUPPLY     Input supply current when in                        VIN = 24 V, VOUT = 5 V, IOUT = 0 A,               38               µA
+   DMAX        regulation                                          RFBT = 22.1k, PFM variant
+
+               Maximum switch duty cycle(2)                                                                          98%
+
+   VHC circuit hiccup mode FB pin voltage required to trip short-                                                    0.32             V
+
+   tD          Switch voltage dead time                                                                              5                ns
+
+(1) Deviation in VOUT from nominal output voltage value at VIN = 24 V, IOUT = 0 A to full load
+(2) In dropout the switching frequency drops to increase the effective duty cycle. The lowest frequency is clamped at approximately: FMIN
+
+        = 1 / (tON-MAX + tOFF-MIN). DMAX = tON-MAX /(tON-MAX + tOFF-MIN).
+
+6        Submit Document Feedback                                                                       Copyright © 2023 Texas Instruments Incorporated
+
+                                              Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                           LMR51606, LMR51610
+
+6.7 Typical Characteristics                                                                              SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+VIN = 24 V, fSW = 400 kHz, TA = 25°C, unless otherwise specified
+
+                100
+
+                90
+
+                80
+
+Efficiency(%)   70
+
+                60
+
+                50                                                       VIN = 12 V
+                                                                         VIN = 24 V
+                40                                                       VIN = 36 V
+                                                                         VIN = 48 V
+                30                                                       VIN = 65 V
+                0.001 0.002 0.005 0.01 0.02 0.05 0.1               0.2 0.3 0.5 1
+
+                                                         IOUT (A)
+
+                fSW = 400 kHz  VOUT = 3.3 V                        LMR51610X                        fSW =400 kHz   VOUT = 3.3 V                       LMR51610XF
+
+Figure 6-1. 3.3-V PFM Efficiency Versus Load Current                                 Figure 6-2. 3.3-V FPWM Efficiency Versus Load Current
+
+                100
+
+                90
+
+Efficiency (%)  80
+
+                70
+
+                60                                                       VIN = 12 V
+                                                                         VIN = 24 V
+                50                                                       VIN = 36 V
+                                                                         VIN = 48 V
+                40                                                       VIN = 65 V
+                0.001 0.002 0.005 0.01 0.02 0.05 0.1               0.2 0.3 0.5 1
+
+                                                         IOUT (A)
+
+                fSW = 400 kHz  VOUT = 5 V                          LMR51610X                        fSW = 400 kHz  VOUT = 5 V                         LMR51610XF
+
+                Figure 6-3. 5-V PFM Efficiency Versus Load Current                   Figure 6-4. 5-V FPWM Efficiency Versus Load Current
+
+                100                                                                                 100
+
+                                                                                                    90
+
+                90                                                                                  80
+
+                                                                                                    70
+
+Efficiency(%)                                                                        Efficiency(%)  60
+
+                80                                                                                  50
+
+                                                                                                    40
+
+                70                                                                                  30
+
+                60                                                       VIN = 24 V                 20                                                      VIN = 24 V
+                0.001 0.002 0.005 0.01 0.02 0.05 0.1                     VIN = 36 V                                                                         VIN = 36 V
+                                                                         VIN = 48 V                 10                                                      VIN = 48 V
+                                                         IOUT (A)        VIN = 65 V                                                                         VIN = 65 V
+                                                                   0.2 0.3 0.5 1                    0                                                 0.2 0.3 0.5 1
+                                                                                                    0.001 0.002 0.005 0.01 0.02 0.05 0.1
+                                                                                                                                                      LMR51610XF
+                                                                                                                                            IOUT (A)
+
+                fSW = 400 kHz  VOUT = 12 V                         LMR51610X                        fSW = 400 kHz  VOUT = 12 V
+
+                Figure 6-5. 12-V PFM Efficiency Versus Load Current                  Figure 6-6. 12-V FPWM Efficiency Versus Load Current
+
+Copyright © 2023 Texas Instruments Incorporated                                                                    Submit Document Feedback                             7
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                                                                                          www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+6.7 Typical Characteristics (continued)
+
+VIN = 24 V, fSW = 400 kHz, TA = 25°C, unless otherwise specified
+
+                   100                                                                                   100
+
+                   90                                                                                    90
+
+                                                                                                         80
+
+                   80                                                                                    70
+
+   Efficiency (%)  70                                                                    Efficiency (%)  60
+
+                                                                                                         50
+
+                   60                                                                                    40
+
+                   50                                                        VIN = 12 V                  30                                                       VIN = 12 V
+                                                                             VIN = 24 V                                                                           VIN = 24 V
+                   40                                                        VIN = 36 V                  20                                                       VIN = 36 V
+                                                                             VIN = 48 V                                                                           VIN = 48 V
+                   30                                                        VIN = 65 V                  10                                                       VIN = 65 V
+                   0.001 0.002 0.005 0.01 0.02 0.05 0.1                0.2 0.3 0.5 1                                                                        0.2 0.3 0.5 1
+                                                                                                         0
+                                                            IOUT (A)                                     0.001 0.002 0.005 0.01 0.02 0.05 0.1               LMR51610YF
+
+                                                                                                                                                 IOUT (A)
+
+                   fSW = 1.1 MHz  VOUT = 3.3 V                         LMR51610Y                         fSW = 1.1 MHz  VOUT = 3.3 V
+
+                   Figure 6-7. 3.3-V PFM Efficiency Versus Load Current                  Figure 6-8. 3.3-V FPWM Efficiency Versus Load Current
+
+                   100                                                                                   100
+
+                   90                                                                                    80
+
+   Efficiency (%)  80                                                                    Efficiency (%)
+
+                                                                                                         60
+
+                   70
+
+                                                                                                         40
+
+                   60                                                        VIN = 12 V                  20                                                       VIN = 12 V
+                                                                             VIN = 24 V                                                                           VIN = 24 V
+                   50                                                        VIN = 36 V                   0                                                       VIN = 36 V
+                                                                             VIN = 48 V                  0.001 0.002 0.005 0.01 0.02 0.05 0.1                     VIN = 48 V
+                   40                                                        VIN = 65 V                                                                           VIN = 65 V
+                   0.001 0.002 0.005 0.01 0.02 0.05 0.1                0.2 0.3 0.5 1                                                              IOUT (A)  0.2 0.3 0.5 1
+
+                                                             IOUT (A)
+
+                   fSW = 1.1 MHz  VOUT = 5 V                           LMR51610Y                         fSW = 1.1 MHz  VOUT = 5 V                          LMR51610YF
+
+                   Figure 6-9. 5-V PFM Efficiency Versus Load Current                    Figure 6-10. 5-V FPWM Efficiency Versus Load Current
+
+                   100                                                                                   100
+
+                   90                                                                                    80
+
+   Efficiency (%)  80                                                                    Efficiency (%)
+
+                                                                                                         60
+
+                   70
+
+                                                                                                         40
+
+                   60
+
+                   50                                                        VIN = 24 V                  20                                                       VIN = 24 V
+                                                                             VIN = 36 V                                                                           VIN = 36 V
+                   40                                                        VIN = 48 V                   0                                                       VIN = 48 V
+                   0.001 0.002 0.005 0.01 0.02 0.05 0.1                      VIN = 65 V                  0.001 0.002 0.005 0.01 0.02 0.05 0.1                     VIN = 65 V
+                                                                       0.2 0.3 0.5 1                                                                        0.2 0.3 0.5 1
+                                                            IOUT (A)                                                                              IOUT (A)
+                                                                        LMR51610Y
+                   fSW = 1.1 MHz  VOUT = 12 V                                                            fSW = 1.1 MHz  VOUT = 12 V                         LMR51610YF
+
+   Figure 6-11. 12-V PFM Efficiency Versus Load Current                                  Figure 6-12. 12-V FPWM Efficiency Versus Load Current
+
+8  Submit Document Feedback                                                                                             Copyright © 2023 Texas Instruments Incorporated
+
+                                                Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                LMR51606, LMR51610
+
+6.7 Typical Characteristics (continued)                                                       SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+VIN = 24 V, fSW = 400 kHz, TA = 25°C, unless otherwise specified
+
+fsw = 400 kHz  VOUT = 5 V                        LMR51610X                           fSW = 400 kHz     VOUT = 3.3 V    LMR51610X
+
+Figure 6-13. 5-V load Regulation                                                          Figure 6-14. 3.3-V Load Regulation
+
+                                                                           4
+                                                                                                                                            UVLO_TURN ON
+                                                                                                                                            UVLO_TURN OFF
+
+                                                                         3.9
+
+                                                            VIN UVLO(V)  3.8
+
+                                                                         3.7
+
+                                                                         3.6
+
+Figure 6-15. VIN quiescent current Versus Temperature                    3.5
+                                                                            -50 -25 0 25 50 75 100 125 150 175
+                                                                                                                Temperature(C)
+
+                                                                                 Figure 6-16. VIN UVLO Versus Temperature
+
+                                                                           1.8
+                                                                                                                                              HS Current Limit
+                                                                                                                                              LS Current Limit
+
+                                                                           1.6
+
+                                                                  Current Limit (A)  1.4
+
+                                                                                     1.2
+
+                                                                                     1
+
+                                                                                     -50 -25        0  25 50 75 100 125 150
+
+                                                                                                       Temperature(C)
+
+Figure 6-17. Reference Voltage Versus Temperature                 Figure 6-18. HS and LS Current Limit Versus Temperature
+
+Copyright © 2023 Texas Instruments Incorporated                                                        Submit Document Feedback                                 9
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                    www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+7 Detailed Description
+7.1 Overview
+
+The LMR516xx converter is an easy-to-use, synchronous, step-down DC/DC converter operating from a 4-V to
+65-V supply voltage. The LMR51610 is capable of delivering up to 1-A DC load current in a very small design
+size while the LMR51606 is capable of delivering up to 0.6-A load current. The family has multiple versions
+applicable to various applications. For detailed information, see the Device Comparison Table.
+
+The LMR516xx employs fixed-frequency peak-current mode control. The PFM version enters PFM mode at light
+load to achieve high efficiency. A FPWM version is provided to achieve low output voltage ripple, tight output
+voltage regulation, and constant switching frequency at light load. The device is internally compensated, which
+reduces design time and requires few external components.
+
+Additional features, such as precision enable and internal soft start, provide a flexible and easy-to-use design for
+a wide range of applications. Protection features include the following:
+
+· Thermal shutdown
+· VIN undervoltage lockout
+· Cycle-by-cycle current limit
+· Hiccup mode short-circuit protection
+
+This family of devices requires very few external components and has a pinout designed for simple, designed for
+PCB layout.
+
+10 Submit Document Feedback                                           Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                                     LMR51606, LMR51610
+
+7.2 Functional Block Diagram                                                                                       SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+                                                                EN                           VCC                        LDO                         VIN
+                                                                                           Enable
+                          Internal                                                       Precision                                                  CB
+                             SS                                                            Enable                              HSI Sense
+                                                     EA
+                                                                         RC                         +         TSD       UVLO
+             REF                                                                                           ±
+                                                                         CC
+FB
+
+                                                                    PFM                             PWM CONTROL LOGIC                                                                SW
+
+                  Detector
+
+Ton_min/Toff_min                                                         Slope
+      Detector                                                           Comp
+
+                                                                                                       Freq   HICCUP    Zero
+                                                                                                    Foldback  Detector  Cross
+
+Oscillator                                                                                                                                                                LSI Sense
+                                                                                                              FB
+
+                                                                                                                                                                                              GND
+
+7.3 Feature Description
+
+7.3.1 Fixed Frequency Peak Current Mode Control
+
+The following operating description of the LMR516xx refers to the Functional Block Diagram and to the
+waveforms in Figure 7-1. The LMR516xx is a step-down synchronous buck converter with integrated high-side
+(HS) and low-side (LS) switches (synchronous rectifier). The LMR516xx supplies a regulated output voltage by
+turning on the high-side and low-side NMOS switches with controlled duty cycle. During high-side switch ON
+time, the SW pin voltage swings up to approximately VIN, and the inductor current, iL, increases with a linear
+slope of (VIN - VOUT) / L. When the high-side switch is turned off by the control logic, the low-side switch is
+turned on after an anti-shoot-through dead time. Inductor current discharges through the low-side switch with a
+slope of -VOUT / L. The control parameter of a buck converter is defined as Duty Cycle D = tON / TSW, where
+tON is the high-side switch ON time and TSW is the switching period. The converter control loop maintains a
+constant output voltage by adjusting the duty cycle D. In an ideal buck converter, where losses are ignored, D is
+proportional to the output voltage and inversely proportional to the input voltage: D = VOUT / VIN.
+
+Copyright © 2023 Texas Instruments Incorporated                                                                                Submit Document Feedback 11
+
+                                                                         Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                              www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023                    D = tON/ TSW
+
+                                          VSW
+
+                                                 VIN
+
+SW Voltage                                            tON       tOFF
+
+                               0                           TSW                               t
+                                                                              ¨LL
+Inductor Current                iL
+
+                             ILPK
+                             IOUT
+
+                                                                                                                                              t
+                                                 0
+
+        Figure 7-1. SW Node and Inductor Current Waveforms in Continuous Conduction Mode (CCM)
+
+The LMR516xx employs fixed-frequency peak-current mode control. A voltage feedback loop is used to get
+accurate DC voltage regulation by adjusting the peak-current command based on voltage offset. The peak
+inductor current is sensed from the high-side switch and compared to the peak current threshold to control the
+ON time of the high-side switch. The voltage feedback loop is internally compensated, which allows for fewer
+external components, making designing easy and providing stable operation when using a variety of output
+capacitors. The converter operates with fixed switching frequency at normal load conditions. During light-load
+condition, the LMR516xx operates in PFM mode to maintain high efficiency (PFM version) or in FPWM mode for
+low output voltage ripple, tight output voltage regulation, and constant switching frequency (FPWM version).
+
+12 Submit Document Feedback                                                   Copyright © 2023 Texas Instruments Incorporated
+
+                                    Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                            LMR51606, LMR51610
+
+                                                                          SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+7.3.2 Adjustable Output Voltage
+
+A precision 0.8-V reference voltage (VREF) is used to maintain a tightly regulated output voltage over the
+entire operating temperature range. The output voltage is set by a resistor divider from VOUT to the FB pin.
+TI recommends to use 1% tolerance resistors with a low temperature coefficient for the FB divider. Select the
+bottom-side resistor, RFBB, for the desired divider current and use Equation 1 to calculate the top-side resistor,
+RFBT. The recommended range for RFBT is 10 k to 100 k. A lower RFBT value can be used if pre-loading is
+desired to reduce the VOUT offset in PFM operation. Lower RFBT values reduce efficiency at very light load. Less
+static current goes through a larger RFBT value and can be more desirable when light-load efficiency is critical.
+However, TI does not recommend RFBT values larger than 1 M make the feedback path more susceptible to
+noise. Larger RFBT values require a more carefully designed feedback path trace from the feedback resistors to
+the feedback pin of the device. The tolerance and temperature variation of the resistor divider network affect the
+output voltage regulation.
+
+                                                                                                                                  VOUT
+
+                                                                    RFBT
+                                                 FB
+
+                                                                   RFBB
+
+                                                 Figure 7-2. Output Voltage Setting
+
+RFBT =        VOUT - VREF  × RFBB                                                         (1)
+              V  REF
+
+7.3.3 Enable
+
+The voltage on the EN pin controls the ON and OFF operation of the LMR516xx. A voltage of less than 1 V
+(typical) shuts down the device, while a voltage of greater than 1.227 V (typical) is required to start the converter.
+The EN pin is an input and cannot be left open or floating. The simplest way to enable the operation of the
+LMR516xx is to connect EN to VIN. This connection allows self-start-up of the LMR516xx when VIN is within the
+operating range.
+
+Many applications benefit from the employment of an enable divider, RENT and RENB (Figure 7-3) to establish
+a precision system UVLO level for the converter. A system UVLO can be used for supplies operating from
+utility power as well as battery power. A system UVLO can be used for sequencing, make sure there is reliable
+operation, or supplying protection, such as a battery discharge level. An external logic signal can also be used to
+drive the EN input for system sequencing and protection.
+
+                                                                 Note
+The EN pin voltage must not to be greater than VIN + 0.3 V. TI does not recommend to apply EN
+voltage when VIN is 0 V.
+
+                                                               VIN
+
+                                                 RENT
+                                                               EN
+
+                                                 RENB
+
+                           Figure 7-3. System UVLO by Enable Divider
+
+Copyright © 2023 Texas Instruments Incorporated                                           Submit Document Feedback 13
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                            www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+7.3.4 Minimum ON Time, Minimum OFF Time, and Frequency Foldback
+The minimum ON time (TON_MIN) is the shortest duration of time that the high-side switch can be turned on.
+TON_MIN is typically 80 ns for the LMR516xx. The minimum OFF time (TOFF_MIN) is the shortest duration of time
+that the high-side switch can be off. TOFF_MIN is typically 200 ns. In CCM operation, TON_MIN and TOFF_MIN limit
+the voltage conversion range without switching frequency foldback.
+The minimum duty cycle without frequency foldback allowed is:
+
+DMIN = TON_MIN × fSW                                                                          (2)
+
+The maximum duty cycle without frequency foldback allowed is:
+
+DMAX = 1 - TOFF_MIN × fSW                                                                     (3)
+
+Given a required output voltage, the maximum VIN without frequency foldback can be found by:
+
+VOUT
+VIN_MAX = f × T                                                                               (4)
+SW ON_MIN
+
+The minimum VIN without frequency foldback can be calculated by:
+
+VOUT
+VIN_MIN = 1 - fSW × TOFF_MIN                                                                  (5)
+
+In the LMR516xx, a frequency foldback scheme is employed after the TON_MIN or TOFF_MIN is triggered, which
+can extend the maximum duty cycle or lower the minimum duty cycle.
+
+The on time decreases while VIN voltage increases. After the on time decreases to TON_MIN, the switching
+frequency starts to decrease while VIN continues to go up, which lowers the duty cycle further to keep VOUT in
+regulation according to Equation 4.
+
+The frequency foldback scheme also works after larger duty cycle is needed under a low VIN condition. The
+frequency decreases after the device hits TOFF_MIN, which extends the maximum duty cycle according to
+Equation 5. In such condition, the frequency can be as low as approximately 200 kHz. A wide range of frequency
+foldback allows for the LMR516xx output voltage to stay in regulation with a much lower supply voltage VIN,
+which leads to a lower effective dropout.
+
+With frequency foldback while maintaining a regulated output voltage, VIN_MAX is raised and VIN_MIN is lowered
+by decreased fSW.
+
+7.3.5 Bootstrap Voltage
+
+The LMR516xx provides an integrated bootstrap voltage converter. A small capacitor between the CB and SW
+pins provides the gate drive voltage for the high-side MOSFET. The bootstrap capacitor is refreshed when the
+high-side MOSFET is off and the low-side switch is on. The recommended value of the bootstrap capacitor is
+0.1 µF. TI recommends a ceramic capacitor with an X7R or X5R grade dielectric with a voltage rating of 16 V or
+higher for stable performance over temperature and voltage.
+
+7.3.6 Overcurrent and Short-Circuit Protection
+
+The LMR516xx incorporates both peak and valley inductor current limit to provide protection to the device from
+overloads and short circuits and limit the maximum output current. Valley current limit prevents inductor current
+runaway during short circuits on the output, while both peak and valley limits work together to limit the maximum
+output current of the converter. Cycle-by-cycle current limit is used for overloads, while hiccup mode is used for
+sustained short circuits.
+
+High-side MOSFET overcurrent protection is implemented by the nature of the peak current mode control. The
+high-side switch current is sensed when the high-side is turned on after a set blanking time. The high-side switch
+current is compared to the output of the Error Amplifier (EA) minus slope compensation every switching cycle.
+
+14 Submit Document Feedback                                            Copyright © 2023 Texas Instruments Incorporated
+
+                              Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                   LMR51606, LMR51610
+
+                                                 SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+See the Functional Block Diagram for more details. The peak current of high-side switch is limited by a clamped
+maximum peak current threshold IHS_PK(OC) (see Electrical Characteristics), which is constant.
+
+The current going through the low-side MOSFET is also sensed and monitored. When the low-side switch turns
+on, the inductor current begins to ramp down. The low-side switch is not turned OFF at the end of a switching
+cycle if its current is above the low-side current limit, ILS_V(OC) (see Electrical Characteristics). The low-side
+switch is kept ON so that inductor current keeps ramping down until the inductor current ramps below ILS_V(OC).
+Then, the low-side switch is turned OFF and the high-side switch is turned on after a dead time. After ILS_V(OC)
+is achieved, peak and valley current limit controls the maximum current delivered and can be calculated using
+Equation 6.
+
+            IOUT_MAX = 2 IHS_PK OC + ILS_V OC (6)
+
+If the feedback voltage is lower than 40% of the VREF, the current of the low-side switch triggers IHS_PK(OC) for
+256 consecutive cycles and hiccup current protection mode is activated. In hiccup mode, the converter shuts
+down and keeps off for a period of hiccup, THICCUP (150 ms typical) before the LMR516xx tries to start again. If
+overcurrent or a short-circuit fault condition still exists, hiccup repeats until the fault condition is removed. Hiccup
+mode reduces power dissipation under severe overcurrent conditions, preventing overheating and potential
+damage to the device.
+
+For the FPWM version, the inductor current is allowed to go negative. When this current exceeds the low-side
+negative current limit, ILS(NOC), the low-side switch is turned off and high-side switch is turned on immediately.
+This event is used to protect the low-side switch from excessive negative current.
+
+7.3.7 Soft Start
+
+The integrated soft-start circuit prevents input inrush current impacting the LMR516xx and the input power
+supply. Soft start is achieved by slowly ramping up the internal reference voltage when the device is first enabled
+or powered up. The typical soft-start time is 2.3 ms.
+
+The LMR516xx also employs overcurrent protection blanking time, TOCP_BLK (33 ms typical), at the beginning of
+power up. Without this feature, in applications with a large amount of output capacitors and high VOUT, the inrush
+current is large enough to trigger the current-limit protection, which can cause a false start as the device enters
+into hiccup mode. This event results in a continuous recycling of soft start without raising up to the programmed
+output voltage. The LMR516xx is able to charge the output capacitor to the programmed VOUT by controlling the
+average inductor current during the start-up sequence in the blanking time, TOCP_BLK.
+
+7.3.8 Thermal Shutdown
+
+The LMR516xx provides an internal thermal shutdown to protect the device when the junction temperature
+exceeds 165 °C. Both high-side and low-side FETs stop switching in thermal shutdown. After the die
+temperature falls below 145 °C, the device reinitiates the power-up sequence controlled by the internal soft-start
+circuitry.
+
+Copyright © 2023 Texas Instruments Incorporated                                           Submit Document Feedback 15
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                    www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+7.4 Device Functional Modes
+
+7.4.1 Shutdown Mode
+
+The EN pin provides electrical ON and OFF control for the LMR516xx. When VEN is below 1 V (typical) , the
+device is in shutdown mode. The LMR516xx also employs VIN undervoltage lockout protection (UVLO). If VIN
+voltage is below the UVLO threshold of 3.56 V (typical), the converter turns off.
+
+7.4.2 Active Mode
+
+The LMR516xx is in active mode when both VEN and VIN are above their respective operating threshold. The
+simplest way to enable the LMR516xx is to connect the EN pin to VIN pin. This action allows self-start-up when
+the input voltage is in the operating range of 4 V to 65 V. See Enable for details on setting these operating levels.
+
+In active mode, depending on the load current, the LMR516xx is in one of four modes:
+
+1. Continuous conduction mode (CCM) with fixed switching frequency when load current is greater than half of
+     the peak-to-peak inductor current ripple (for both PFM and FPWM versions)
+
+2. Discontinuous conduction mode (DCM) with fixed switching frequency when load current is less than half of
+     the peak-to-peak inductor current ripple(only for PFM versions)
+
+3. Pulse frequency modulation mode (PFM) when switching frequency is decreased at very light load (only for
+     PFM version)
+
+4. Forced pulse width modulation mode (FPWM) with fixed switching frequency even at light load (only for
+     FPWM version)
+
+7.4.3 CCM Mode
+
+Continuous conduction mode (CCM) operation is employed in the LMR516xx when the load current is greater
+than half of the peak-to-peak inductor current. In CCM operation, the frequency of operation is fixed, output
+voltage ripple is at a minimum in this mode and the maximum output current of 1 A or 0.6 A can be supplied by
+the LMR51610 or LMR51606, respectively.
+
+7.4.4 Light Load Operation (PFM Version)
+
+For PFM versions, when the load current is lower than half of the peak-to-peak inductor current in CCM, the
+LMR516xx operates in discontinuous conduction mode (DCM), also known as diode emulation mode (DEM).
+In DCM operation, the low-side switch is turned off when the inductor current drops to IZC (0 mA typical) to
+improve efficiency. Both switching losses and conduction losses are reduced in DCM, compared to forced PWM
+operation at light load.
+
+During light load operation, pulse frequency modulation (PFM) mode is activated to maintain high efficiency
+operation. When either the minimum high-side switch ON time tON_MIN or the minimum peak inductor current
+IPEAK_MIN (330 mA typical) is reached, the switching frequency decreases to maintain regulation. In PFM mode,
+switching frequency is decreased by the control loop to maintain output voltage regulation when load current
+reduces. Switching loss is further reduced in PFM operation due to a significant drop in effective switching
+frequency.
+
+7.4.5 Light-Load Operation (FPWM Version)
+
+For FPWM versions, LMR516xx is locked in continuous conduction across the entire load range. This operation
+is maintained, even in no-load condition, by allowing the inductor current to reverse the normal direction. This
+mode trades off reduced light load efficiency for low output voltage ripple, tight output voltage regulation, and
+constant switching frequency.
+
+16 Submit Document Feedback                                           Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                       LMR51606, LMR51610
+
+                                                                                     SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+8 Application and Implementation
+
+                                                                        Note
+
+      Information in the following applications sections is not part of the TI component specification,
+      and TI does not warrant its accuracy or completeness. TI's customers are responsible for
+      determining suitability of components for their purposes, as well as validating and testing their design
+      implementation to confirm system functionality.
+
+8.1 Application Information
+
+The LMR516xx is a step-down DC-to-DC converter. The LMR51610 is typically used to convert a higher input
+voltage to a lower output DC voltage with a maximum output current of 1 A. The LMR51606 is typically used
+to convert a higher input voltage to a lower output DC voltage with a maximum output current of 0.6 A. The
+following design procedure can be used to select components for the LMR516xx.
+
+8.2 Typical Application
+
+The LMR51610 only requires a few external components to convert from a wide voltage range supply to a fixed
+output voltage. Figure 8-1 shows a basic schematic.
+
+            VIN 24 V                                VIN       CB  CBOOT
+
+               CIN                                                0.1 µF
+             2.2 µF
+                                                                          Lout
+
+                                                                         33µH                VOUT 5 V
+
+                                                    EN        SW
+
+                                                    GND       FB                  RFBT       COUT
+                                                                                118 k        22 µF
+
+                                                                                  RFBB
+                                                                                22.1 k
+
+                                                    Figure 8-1. Application Circuit
+
+The external components have to fulfill the needs of the application and the stability criteria of the control loop of
+the device. Table 8-1 can be used to simplify the output filter component selection.
+
+                                                    Table 8-1. L and COUT Typical Values
+
+fSW (kHz)   VOUT (V)  IOUT (A)                           L (µH)   COUT (µF) (1)              RFBT (k)  RFBB (k)
+   400         3.3                                                                              69.8      22.1
+                 5                               1       22       22 µF / 16 V                   118      22.1
+   1100         12                                                                               309      22.1
+               3.3                               1       33       22 µF / 25 V                  69.8      22.1
+                 5                                                                               118      22.1
+                12                               1       68       2 × 22 µF / 25 V               309      22.1
+
+                                                 1       8.2      10 µF / 16V
+
+                                                 1       10       10 µF / 25V
+
+                                                 1       22       22 µF / 25V + 10 µF / 25V
+
+(1) Ceramic capacitor is used in this table.
+
+Copyright © 2023 Texas Instruments Incorporated                                              Submit Document Feedback 17
+
+                                                    Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                            www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+8.2.1 Design Requirements
+
+The detailed design procedure is described based on a design example. For this design example, use the
+parameters listed in Table 8-2 as the input parameters.
+
+                               Table 8-2. Design Example Parameters                             VALUE
+                                                                              5 V typical, range from 6 V to 65 V
+                              PARAMETER
+                            Input voltage, VIN                                                 5 V ±3%
+                          Output voltage, VOUT                                                    1 A
+                 Maximum output current, IOUT_MAX                                                 ±5%
+        Output overshoot, undershoot (0.25 A to 0.75 A)                                          0.5%
+                          Output voltage ripple
+                          Operating frequency                                                  400 kHz
+
+8.2.2 Detailed Design Procedure
+8.2.2.1 Custom Design With WEBENCH® Tools
+
+Click here to create a custom design using the LMR51610 device with the WEBENCH® Power Designer.
+
+1. Start by entering the input voltage (VIN), output voltage (VOUT), and output current (IOUT) requirements.
+2. Optimize the design for key parameters such as efficiency, footprint, and cost using the optimizer dial.
+3. Compare the generated design with other possible solutions from Texas Instruments.
+
+The WEBENCH Power Designer provides a customized schematic along with a list of materials with real-time
+pricing and component availability.
+
+In most cases, these actions are available:
+· Run electrical simulations to see important waveforms and circuit performance
+· Run thermal simulations to understand board thermal performance
+· Export customized schematic and layout into popular CAD formats
+· Print PDF reports for the design, and share the design with colleagues
+
+Get more information about WEBENCH tools at www.ti.com/WEBENCH.
+
+8.2.2.2 Output Voltage Setpoint
+
+The output voltage of the LMR516xx device is externally adjustable using a resistor divider network. The divider
+network is comprised of a top feedback resistor RFBT and bottom feedback resistor RFBB. Equation 7 is used to
+determine the output voltage of the converter:
+
+RFBT =  VOUT - VREF          × RFBB                                           (7)
+        VREF
+
+Choose the value of RFBB to be 22.1 k. With the desired output voltage set to 5 V and the VREF = 0.8 V, the
+RFBT value can then be calculated using Equation 7. The formula yields to a value 116 k, a standard value of
+118 k is selected.
+
+8.2.2.3 Switching Frequency
+
+The higher switching frequency allows for lower value inductors and smaller output capacitors, which results in
+smaller design size and lower component cost. However, higher switching frequency brings more switching loss,
+making the design less efficient and produce more heat. The switching frequency is also limited by the minimum
+on time of the integrated power switch, the input voltage, the output voltage, and the frequency shift limitation as
+mentioned in Minimum ON Time, Minimum OFF Time, and Frequency Foldback. For this example, a switching
+frequency of 400 kHz is selected.
+
+18 Submit Document Feedback                                                   Copyright © 2023 Texas Instruments Incorporated
+
+                                     Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                LMR51606, LMR51610
+
+                                                              SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+8.2.2.4 Inductor Selection
+
+The most critical parameters for the inductor are the inductance, saturation current, and the RMS current. The
+inductance is based on the desired peak-to-peak ripple current iL. Because the ripple current increases with
+the input voltage, the maximum input voltage is always used to calculate the minimum inductance LMIN. Use
+Equation 9 to calculate the minimum value of the output inductor. KIND is a coefficient that represents the amount
+of inductor ripple current relative to the maximum output current of the device. A reasonable value of KIND must
+be 20% to 60% of maximum IOUT supported by converter. During an instantaneous overcurrent operation event,
+the RMS and peak inductor current can be high. The inductor saturation current must be higher than peak
+current limit level.
+
+            VOUT × VIN_MAX - VOUT
+        iL = V          ×L×f                                                              (8)
+                IN_MAX        SW
+
+            VIN_MAX - VOUT                       VOUT
+       LMIN = IOUT × KIND × VIN_MAX × fSW                                                 (9)
+
+In general, choose lower inductance in switching power supplies because it usually corresponds to faster
+transient response, smaller DCR, and reduced size for more compact designs. Too low of an inductance can
+generate too large of an inductor current ripple such that overcurrent protection at the full load can be falsely
+triggered. Too low of an inductance also generates more inductor core loss because the current ripple is larger.
+Larger inductor current ripple also implies larger output voltage ripple with the same output capacitors. With
+peak current mode control, TI recommends to have adequate amount of inductor ripple current. A larger inductor
+ripple current improves the comparator signal-to-noise ratio.
+
+For this design example, choose KIND = 0.3. The minimum inductor value is calculated to be 32.9 µH. Choose
+the nearest standard 33-µH ferrite inductor with a capability of 1.5 A RMS current and 2.5 A saturation current.
+
+8.2.2.5 Output Capacitor Selection
+
+The device is designed to be used with a wide variety of LC filters. Minimize the output capacitance to keep
+cost and size down. The output capacitor or capacitors, COUT, must be chosen with care because it directly
+affects the steady state output voltage ripple, loop stability, and output voltage overshoot and undershoot during
+load current transient. The output voltage ripple is essentially composed of two parts. One part is caused by the
+inductor ripple current flowing through the Equivalent Series Resistance (ESR) of the output capacitors:
+
+        VOUT_ESR =  iL × ESR = KIND × IOUT × ESR                                          (10)
+
+The other part is caused by the inductor current ripple charging and discharging the output capacitors:
+
+The two components of the voltage ripple are not in-phase, therefore, the actual peak-to-peak ripple is less than
+the sum of the two peaks.
+
+                     iL                          KIND × IOUT
+        VOUT_C = 8 × fSW × COUT = 8 × fSW × COUT                                          (11)
+
+The output capacitance value is limited by the load transient specifications of the system. . When a large load
+step occurs, output capacitors provide the required charge before the inductor current can slew to an appropriate
+level. The control loop of the converter usually requires eight or more clock cycles to regulate the inductor
+current equal to the new load level during this time. The output capacitance must be large enough to supply the
+current difference for eight clock cycles to maintain the output voltage within the specified range. Equation 12
+shows the minimum output capacitance needed for a specified VOUT overshoot and undershoot.
+
+            1   6 × IOH - IOL
+       COUT > 2 × f ×  V                                                                  (12)
+                SW       OUT_SHOOT
+
+where
+
+· KIND = Ripple ratio of the inductor current (iL / IOUT)
+
+Copyright © 2023 Texas Instruments Incorporated                                           Submit Document Feedback 19
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                          www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+· IOL = Low level output current during load transient
+· IOH = High level output current during load transient
+· VOUT_SHOOT = Target output voltage overshoot or undershoot
+For this design example, the target output ripple is 25 mV. Assuming VOUT_ESR = VOUT_C = 15 mV, choose
+KIND = 0.3. Equation 10 yields ESR no larger than 50 m and Equation 11yields COUT no smaller than 6.25 µF.
+For the target overshoot and undershoot limitation of this design, VOUT_SHOOT = 5% × VOUT = 250 mV. The
+COUT can be calculated to be no less than 20 µF by Equation 12. In summary, the most stringent criteria for the
+output capacitor is 20 µF. Considering derating, one 22 µF, 25 V, X7R ceramic capacitor with 5 m ESR is used.
+
+8.2.2.6 Input Capacitor Selection
+
+The LMR51610 device requires a high frequency input decoupling capacitor or capacitor. The typical
+recommended value for the high frequency decoupling capacitor is 2.2 µF or higher. TI reommends a high-
+quality ceramic type X5R or X7R with sufficiency voltage rating. The voltage rating must be greater than the
+maximum input voltage. To compensate the derating of ceramic capacitors, TI recommends a voltage rating of
+twice the maximum input voltage. For this design, one 2.2 µF, X7R dielectric capacitor rated for 100 V is used for
+the input decoupling capacitor. The equivalent series resistance (ESR) is approximately 10 m, and the current
+rating is 1 A. Include a capacitor with a value of 0.1 µF for high-frequency filtering and place the capacitor as
+close as possible to the device pins.
+
+8.2.2.7 Bootstrap Capacitor
+
+Every LMR516xx design requires a bootstrap capacitor, CBOOT. The recommended bootstrap capacitor is 0.1
+µF and rated at 16 V or higher. The bootstrap capacitor is located between the SW pin and the CB pin.
+The bootstrap capacitor must be a high-quality ceramic type with X7R or X5R grade dielectric for temperature
+stability.
+
+8.2.2.8 Undervoltage Lockout Setpoint
+
+The system undervoltage lockout (UVLO) is adjusted using the external voltage divider network of RENT and
+RENB. The UVLO has two thresholds, one for power up when the input voltage is rising and one for power down
+or brown outs when the input voltage is falling. Equation 13 can be used to determine the VIN UVLO level.
+
+             REBT + RENB
+VIN_RISING = VENH × R        ENB                                            (13)
+
+The EN rising threshold (VENH) for LMR51610 is set to be 1.227 V (typical). Choose a value of 200 k for RENB
+to minimize input current from the supply. If the desired VIN UVLO level is at 6.0 V, then the value of RENT can be
+calculated using Equation 14:
+
+VIN_RISING   - 1 × RENB
+RENT = VENH                                                                 (14)
+
+The above equation yields a value of 775.6 k, a standard value of 768 k is selected. The resulting falling
+UVLO threshold, equal to 4.84 V, can be calculated by Equation 15 where EN hysteresis voltage, VEN_HYS, is
+0.227 V (typical).
+
+                                              REBT + RENB
+VIN_FALLING = VENH - VENH_HYS × R             ENB                           (15)
+
+8.2.2.9 Replacing Non Sync Converter
+
+The LMR516xx can also be used to replace asynchronous converters, which need a rectifying diode in the
+application circuit. The design works fine with or without a rectifying diode connected to the switch node of the
+LMR516xx as shown in Figure 8-2.
+
+20 Submit Document Feedback                                                 Copyright © 2023 Texas Instruments Incorporated
+
+                                   Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                          LMR51606, LMR51610
+
+                                                                        SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+            VIN 24 V                                              Design works with or
+
+               CIN                               VIN  CB  CBOOT without rectifying diode
+             2.2 µF
+                                                          0.1 µF
+
+                                                                  Lout
+
+                                                          33µH                            VOUT 5 V
+
+                                                 EN   SW
+
+                                                 GND  FB                  RFBT            COUT
+                                                                                          22 µF
+                                                                        118 k¡
+
+                                                                          RFBB
+                                                                        22.1 k
+
+                      Figure 8-2. Replacing Non Sync Converter
+
+Copyright © 2023 Texas Instruments Incorporated                                           Submit Document Feedback 21
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                                                                                                              www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+8.2.3 Application Curves
+Unless otherwise specified the following conditions apply: VIN = 24 V, VOUT = 5 V, fSW = 400 kHz, L = 33 µH,
+COUT = 22 µF, TA = 25°C.
+
+Vsw[10V/div]                                                                                                         Vsw[10V/div]
+
+IL[500mA/div]
+
+                                                                                                                     IL[500mA/div]
+
+Vout(AC)[20mV/div]                                                                                                   Vout(AC)[10mV/div]
+
+                                              Time[8ms/div]                                                                                                                                                             Time[4us/div]
+
+               Figure 8-3. Ripple at No Load                                                                                   Figure 8-4. Ripple at Full Load
+
+Vin[10V/div]                                                                                                         Ven[2V/div]
+                                                                                                                     Vout[2V/div]
+Vout[2V/div]
+                                                                                                                     IL[500mA/div]
+IL[500mA/div]
+                                                                                            Time[800us/div]                                                     Time[800us/div]
+
+            Figure 8-5. Start-Up by VIN                                                                                             Figure 8-6. Start-Up by EN
+
+Vout(AC)[200mV/div]                                                                                                  Vout(AC)[500mV/div]
+
+IL[500mA/div]                                                                                                        IL[500mA/div]
+
+                                                                                                    Time[800us/div]                                                                                                   Time[400us/div]
+
+Figure 8-7. Load Transient (0.25 A - 0.75 A)                                                                             Figure 8-8. Load Transient (0 A - 1 A)
+
+22 Submit Document Feedback                                                                                                               Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                  LMR51606, LMR51610
+
+                                                                SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+                                                 Vout[2V/div]
+
+                                                 IL[500mA/div]
+
+                                                                                                           Time[200ms/div]
+
+            Figure 8-9. Short Protection and Recovery
+
+8.3 Power Supply Recommendations
+
+The LMR516xx is designed to operate from an input voltage supply range between 4 V and 65 V. This input
+supply must be well-regulated and able to withstand maximum input current and maintain a stable voltage. The
+resistance of the input supply rail must be low enough that an input current transient does not cause a high
+enough drop at the LMR516xx supply voltage that can cause a false UVLO fault triggering and system reset.
+If the input supply is located more than a few inches from the LMR516xx additional bulk capacitance can be
+required in addition to the ceramic bypass capacitors. The amount of bulk capacitance is not critical, but a 10-µF
+or 22-µF electrolytic capacitor is a typical choice.
+
+8.4 Layout
+
+8.4.1 Layout Guidelines
+
+Layout is a critical portion of good power supply design. The following guidelines help users design a PCB with
+the best power conversion performance, thermal performance, and minimized generation of unwanted EMI.
+
+· Place the input bypass capacitor CIN as close as possible to the VIN and GND pins. Grounding for both the
+    input and output capacitors must consist of localized top side planes that connect to the GND pin.
+
+· Minimize trace length to the FB pin net. Both feedback resistors, RFBT and RFBB, must be located close to the
+    FB pin. If VOUT accuracy at the load is important, make sure VOUT sense is made at the load. Route VOUT
+    sense path away from noisy nodes and preferably through a layer on the other side of a shielded layer.
+
+· Use ground plane in one of the middle layers as noise shielding and heat dissipation path if possible.
+· Make VIN, VOUT, and ground bus connections as wide as possible. This action reduces any voltage drops on
+
+    the input or output paths of the converter and maximizes efficiency.
+· Provide adequate device heat-sinking. GND, VIN, and SW pins provide the main heat dissipation path, make
+
+    the GND, VIN, and SW plane area as large as possible. Use an array of heat-sinking vias to connect the top
+    side ground plane to the ground plane on the bottom PCB layer. If the PCB has multiple copper layers, these
+    thermal vias can also be connected to inner layer heat-spreading ground planes. Make sure enough copper
+    area is used for heat-sinking to keep the junction temperature below 125°C.
+
+8.4.1.1 Compact Layout for EMI Reduction
+
+Radiated EMI is generated by the high di/dt components in pulsing currents in switching converters. The larger
+area covered by the path of a pulsing current, the more EMI is generated. High frequency ceramic bypass
+capacitors at the input side provide primary path for the high di/dt components of the pulsing current. Placing
+a ceramic bypass capacitor or capacitors as close as possible to the VIN and GND pins is the key to EMI
+reduction.
+
+The SW pin connecting to the inductor must be as short as possible, and just wide enough to carry the load
+current without excessive heating. Short, thick traces or copper pours (shapes) must be used for high current
+conduction path to minimize parasitic resistance. The output capacitors must be placed close to the VOUT end of
+the inductor and closely grounded to GND pin.
+
+Copyright © 2023 Texas Instruments Incorporated                                                                             Submit Document Feedback 23
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                    www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+8.4.1.2 Feedback Resistors
+
+To reduce noise sensitivity of the output voltage feedback path, place the resistor divider close to the FB pin,
+rather than close to the load. The FB pin is the input to the error amplifier, so the pin is a high impedance node
+and very sensitive to noise. Placing the resistor divider closer to the FB pin reduces the trace length of FB signal
+and reduces noise coupling. The output node is a low impedance node, so the trace from VOUT to the resistor
+divider can be long if short path is not available.
+
+If voltage accuracy at the load is important, make sure voltage sense is made at the load. Doing so corrects
+for voltage drops along the traces and provides the best output accuracy. The voltage sense trace from the
+load to the feedback resistor divider must be routed away from the SW node path and the inductor to avoid
+contaminating the feedback signal with switch noise, while also minimizing the trace length. This action is most
+important when high value resistors are used to set the output voltage. TI recommends to route the voltage
+sense trace and place the resistor divider on a different layer than the inductor and SW node path, such that
+there is a ground plane in between the feedback trace and inductor/SW node polygon. This action provides
+further shielding for the voltage feedback path from EMI noises.
+
+24 Submit Document Feedback                                           Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                             LMR51606, LMR51610
+
+8.4.2 Layout Example                                       SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+VOUT                                                                                   Notes:
+
+                      Output Bypass                                                    1. BOOT capacitor must be close to
+                      Capacitor                                                        CB and SW pins.
+
+                                 BOOT                                                  2. SW area must be small.
+                                 Capacitor
+                                                                         Output 3. Output voltage set resistors must
+        GND                                      CB                      Inductor be close to FB pin.
+                                                 GND
+Output Voltage                                   FB                                    4. Input bypass capacitor
+Set Resistors                                                                          must be close to VIN and GND pins.
+
+                                                                                       5. Use ground plane to keep a low
+                                                                                       GND impedance.
+                                                      SW
+
+                                                      VIN                                 VIN
+
+                                                      EN
+
+                                                                                                  Input Bypass
+                                                                                                  Capacitor
+
+                                                                                                   GND
+
+                                                                                             VIA (Connect to GND Plane)
+
+                                                      Figure 8-10. Layout
+
+Copyright © 2023 Texas Instruments Incorporated                                                Submit Document Feedback 25
+
+                                                 Product Folder Links: LMR51606 LMR51610
+LMR51606, LMR51610                                                    www.ti.com
+
+SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+
+9 Device and Documentation Support
+9.1 Device Support
+
+9.1.1 Third-Party Products Disclaimer
+
+TI'S PUBLICATION OF INFORMATION REGARDING THIRD-PARTY PRODUCTS OR SERVICES DOES NOT
+CONSTITUTE AN ENDORSEMENT REGARDING THE SUITABILITY OF SUCH PRODUCTS OR SERVICES
+OR A WARRANTY, REPRESENTATION OR ENDORSEMENT OF SUCH PRODUCTS OR SERVICES, EITHER
+ALONE OR IN COMBINATION WITH ANY TI PRODUCT OR SERVICE.
+
+9.1.2 Development Support
+9.1.2.1 Custom Design With WEBENCH® Tools
+
+Click here to create a custom design using the LMR51610 device with the WEBENCH® Power Designer.
+
+1. Start by entering the input voltage (VIN), output voltage (VOUT), and output current (IOUT) requirements.
+2. Optimize the design for key parameters such as efficiency, footprint, and cost using the optimizer dial.
+3. Compare the generated design with other possible solutions from Texas Instruments.
+
+The WEBENCH Power Designer provides a customized schematic along with a list of materials with real-time
+pricing and component availability.
+
+In most cases, these actions are available:
+· Run electrical simulations to see important waveforms and circuit performance
+· Run thermal simulations to understand board thermal performance
+· Export customized schematic and layout into popular CAD formats
+· Print PDF reports for the design, and share the design with colleagues
+
+Get more information about WEBENCH tools at www.ti.com/WEBENCH.
+
+9.2 Documentation Support
+9.2.1 Related Documentation
+
+For related documentation see the following:
+
+Texas Instruments, AN-1149 Layout Guidelines for Switching Power Supplies application report
+
+9.3 Receiving Notification of Documentation Updates
+
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on
+Notifications to register and receive a weekly digest of any product information that has changed. For change
+details, review the revision history included in any revised document.
+
+9.4 Support Resources
+
+TI E2ETM support forums are an engineer's go-to source for fast, verified answers and design help -- straight
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do
+not necessarily reflect TI's views; see TI's Terms of Use.
+
+9.5 Trademarks
+TI E2ETM is a trademark of Texas Instruments.
+SIMPLE SWITCHER® is a registered trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+9.6 Electrostatic Discharge Caution
+
+                        This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled
+                        with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+
+                        ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may
+                        be more susceptible to damage because very small parametric changes could cause the device not to meet its published
+                        specifications.
+
+26 Submit Document Feedback                                           Copyright © 2023 Texas Instruments Incorporated
+
+                             Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                 LMR51606, LMR51610
+
+9.7 Glossary                                                                                                           SLUSEY1B - JUNE 2023 - REVISED DECEMBER 2023
+ TI Glossary
+              This glossary lists and explains terms, acronyms, and definitions.
+
+10 Revision History
+
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+
+Changes from Revision A (September 2023) to Revision B (December 2023)                          Page
+
+· Deleted preview note from LMR51606............................................................................................................... 1
+· Added FPWM OPNs...........................................................................................................................................3
+
+· Added LMR51606 3.3-V and 5-V load regulation ..............................................................................................7
+
+Changes from Revision * (June 2023) to Revision A (September 2023)                              Page
+
+· Changed document status from Advance Information to Production Data.........................................................1
+
+11 Mechanical, Packaging, and Orderable Information
+
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+Copyright © 2023 Texas Instruments Incorporated                                           Submit Document Feedback 27
+
+                                                 Product Folder Links: LMR51606 LMR51610
+www.ti.com                                                                                                                        PACKAGE OPTION ADDENDUM
+
+                                                                                                                                                                                                 31-Oct-2025
+
+PACKAGING INFORMATION
+
+Orderable part number  Status   Material type  Package | Pins        Package qty | Carrier  RoHS                   Lead finish/         MSL rating/      Op temp (°C)  Part marking
+                                                                                                                   Ball material        Peak reflow
+                           (1)            (2)                                                  (3)                                                         -40 to 150            (6)
+                                                                                                                             (4)                    (5)    -40 to 150
+  LMR51606XDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                                                           -40 to 150       606X
+LMR51606XDBVR.A        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       606X
+ LMR51606XFDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       06XF
+LMR51606XFDBVR.A       Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       06XF
+  LMR51606YDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       606Y
+LMR51606YDBVR.A        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       606Y
+ LMR51606YFDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       06YF
+LMR51606YFDBVR.A       Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       06YF
+  LMR51610XDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       610X
+LMR51610XDBVR.A        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       610X
+ LMR51610XFDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       10XF
+LMR51610XFDBVR.A       Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       10XF
+  LMR51610YDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       610Y
+LMR51610YDBVR.A        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR      -40 to 150       610Y
+ LMR51610YFDBVR        Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR                       10YF
+LMR51610YFDBVR.A       Active   Production     SOT-23 (DBV) | 6      3000 | LARGE T&R        Yes                      NIPDAU      Level-2-260C-1 YEAR                       10YF
+                                                                                                                      NIPDAU      Level-2-260C-1 YEAR
+
+(1) Status: For more details on status, see our product life cycle.
+
+(2) Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3) RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4) Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5) MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+                                                                     Addendum-Page 1
+www.ti.com                   PACKAGE OPTION ADDENDUM
+
+                                                                                            31-Oct-2025
+
+(6) Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+OTHER QUALIFIED VERSIONS OF LMR51606, LMR51610 :
+
+· Automotive : LMR51606-Q1, LMR51610-Q1
+
+NOTE: Qualified Version Definitions:
+
+       · Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+
+            Addendum-Page 2
+                                                                      PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                          4-Feb-2024
+
+TAPE AND REEL INFORMATION                                                TAPE DIMENSIONS
+                                                                      K0 P1
+         REEL DIMENSIONS
+
+                                                                                                                             B0 W
+
+                                Reel
+                             Diameter
+
+                                                                      Cavity  A0
+
+                                                    A0 Dimension designed to accommodate the component width
+                                                    B0 Dimension designed to accommodate the component length
+                                                    K0 Dimension designed to accommodate the component thickness
+                                                    W Overall width of the carrier tape
+                                                    P1 Pitch between successive cavity centers
+
+                                          Reel Width (W1)
+                             QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                             Sprocket Holes
+
+                                       Q1 Q2              Q1 Q2               User Direction of Feed
+                                       Q3 Q4              Q3 Q4
+
+                                                    Pocket Quadrants
+
+*All dimensions are nominal  Package Package  Pins  SPQ      Reel Reel A0           B0                                        K0    P1   W    Pin1
+             Device            Type Drawing               Diameter Width (mm)      (mm)                                      (mm)  (mm)
+                                                    3000
+                                                    3000    (mm) W1 (mm)            3.2                                       1.4   4.0  (mm) Quadrant
+                                                    3000                            3.2                                       1.4   4.0
+LMR51606XDBVR SOT-23 DBV 6                          3000  180.0       8.4     3.2   3.2                                       1.4   4.0  8.0  Q3
+LMR51606XFDBVR SOT-23 DBV 6                         3000                            3.2                                       1.4   4.0
+LMR51606YDBVR SOT-23 DBV 6                          3000  180.0       8.4     3.2   3.2                                       1.4   4.0  8.0  Q3
+LMR51606YFDBVR SOT-23 DBV 6                         3000                            3.2                                       1.4   4.0
+LMR51610XDBVR SOT-23 DBV 6                          3000  180.0       8.4     3.2   3.2                                       1.4   4.0  8.0  Q3
+LMR51610XFDBVR SOT-23 DBV 6                                                         3.2                                       1.4   4.0
+LMR51610YDBVR SOT-23 DBV 6                                180.0       8.4     3.2                                                        8.0  Q3
+LMR51610YFDBVR SOT-23 DBV 6
+                                                          180.0       8.4     3.2                                                        8.0  Q3
+
+                                                          180.0       8.4     3.2                                                        8.0  Q3
+
+                                                          180.0       8.4     3.2                                                        8.0  Q3
+
+                                                          180.0       8.4     3.2                                                        8.0  Q3
+
+                                                    Pack Materials-Page 1
+www.ti.com                                                  PACKAGE MATERIALS INFORMATION
+ TAPE AND REEL BOX DIMENSIONS
+                                                                                                                                                            4-Feb-2024
+
+                                                            Width (mm)
+
+                                                                               H
+
+W                                          L
+
+*All dimensions are nominal  Package Type  Package Drawing  Pins  SPQ             Length (mm)  Width (mm)  Height (mm)
+              Device             SOT-23             DBV       6   3000                 210.0       185.0        35.0
+                                 SOT-23             DBV       6   3000                 210.0       185.0        35.0
+      LMR51606XDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+     LMR51606XFDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+      LMR51606YDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+     LMR51606YFDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+      LMR51610XDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+     LMR51610XFDBVR              SOT-23             DBV       6   3000                 210.0       185.0        35.0
+      LMR51610YDBVR
+     LMR51610YFDBVR
+
+                                           Pack Materials-Page 2
+DBV0006A                                                                PACKAGE OUTLINE
+
+                      PIN 1                                          SOT-23 - 1.45 mm max height
+           INDEX AREA
+                                                 SCALE 4.000
+                                 1
+                    2X 0.95                                                                           SMALL OUTLINE TRANSISTOR
+             1.9
+                                    3.0                                                           C
+                                 2  2.6                                                    0.1 C
+                                    1.45 1.75 B A
+
+                                                                   6
+
+                                                                           3.05
+                                                                           2.75
+                                                                   5
+
+         0.50 3                                       4                          4X 0 -15  (1.1)     0.15 0.00 TYP
+     6X 0.25                                     4X 4 -15
+0.2 C A B                                                                                   1.45
+                                                                                            0.90
+
+            0.25                    0.6 0.3 TYP                             0.22 0.08 TYP
+GAGE PLANE                                       SEATING PLANE
+
+   80 TYP
+
+                                                                                                                                                                   4214840/G 08/2024
+NOTES:
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+
+   per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Body dimensions do not include mold flash or protrusion. Mold flash and protrusion shall not exceed 0.25 per side.
+4. Leads 1,2,3 may be wider than leads 4,5,6 for package orientation.
+5. Refernce JEDEC MO-178.
+
+                                                                                 www.ti.com
+DBV0006A                                                      EXAMPLE BOARD LAYOUT
+
+                                                                   SOT-23 - 1.45 mm max height
+
+                                                                                            SMALL OUTLINE TRANSISTOR
+
+                                                  PKG
+
+                                        6X (1.1)
+
+                             1                                        6
+               6X (0.6)                                                  SYMM
+
+                                     2                                5
+                2X (0.95)
+                                                                      4
+                                     3
+               (R0.05) TYP                        (2.6)
+
+                                        LAND PATTERN EXAMPLE
+
+                                             EXPOSED METAL SHOWN
+                                                        SCALE:15X
+
+SOLDER MASK                             METAL            METAL UNDER                                SOLDER MASK
+OPENING                                                  SOLDER MASK                                OPENING
+
+EXPOSED METAL                                     EXPOSED METAL
+
+                         0.07 MAX                                           0.07 MIN
+                         ARROUND                                            ARROUND
+
+               NON SOLDER MASK                                        SOLDER MASK
+                       DEFINED                                            DEFINED
+
+                   (PREFERRED)
+
+                                        SOLDER MASK DETAILS
+
+                                                                                                    4214840/G 08/2024
+
+NOTES: (continued)
+
+6. Publication IPC-7351 may have alternate designs.
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+
+                                                  www.ti.com
+DBV0006A                                                           EXAMPLE STENCIL DESIGN
+
+                                                                         SOT-23 - 1.45 mm max height
+
+                                                                                                   SMALL OUTLINE TRANSISTOR
+
+                                                       PKG
+
+                                             6X (1.1)
+
+                                 1                                            6
+                    6X (0.6)                                                    SYMM
+
+                                          2                                   5
+                      2X(0.95)
+                                                                              4
+                                          3
+                    (R0.05) TYP                        (2.6)
+
+                                              SOLDER PASTE EXAMPLE
+
+                                             BASED ON 0.125 mm THICK STENCIL
+                                                               SCALE:15X
+
+                                                                                      4214840/G 08/2024
+
+NOTES: (continued)
+
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.
+
+9. Board assembly site may have different recommendations for stencil design.
+
+                                                       www.ti.com
+                                 IMPORTANT NOTICE AND DISCLAIMER
+
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES "AS IS"
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+
+TI's products are provided subject to TI's Terms of Sale, TI's General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI's provision of these resources does not expand or otherwise alter TI's applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+
+TI objects to and rejects any additional or different terms you may propose.
+
+IMPORTANT NOTICE
+
+                                                           Copyright © 2025, Texas Instruments Incorporated
+
+                                                                               Last updated 10/2025
+

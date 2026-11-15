@@ -1,0 +1,34 @@
+[
+  {
+    "name": "controller_nativeGB6",
+    "step_s": 5e-09,
+    "rc": 0,
+    "parsed_error": false,
+    "end_s": 0.0005,
+    "samples": 102373,
+    "finite": true,
+    "VREF_mean_V": 4.9998014138196245,
+    "OUT_max_V": 12.1546217,
+    "execution": "PASS"
+  },
+  {
+    "name": "integrated_nativeGB6_5ns",
+    "step_s": 5e-09,
+    "rc": 0,
+    "parsed_error": true,
+    "end_s": 3.71786361e-05,
+    "samples": 9306,
+    "finite": true,
+    "execution": "FAIL"
+  },
+  {
+    "name": "integrated_nativeGB6_2p5ns",
+    "step_s": 2.5e-09,
+    "rc": 0,
+    "parsed_error": true,
+    "end_s": 3.71422163e-05,
+    "samples": 16660,
+    "finite": true,
+    "execution": "FAIL"
+  }
+]

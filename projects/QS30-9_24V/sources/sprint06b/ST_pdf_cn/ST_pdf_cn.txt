@@ -1,0 +1,540 @@
+                              STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                              Datasheet
+
+Nchannel 500 V, 700 m typ., 7.2 A SuperMESH Power MOSFET in a D²PAK,
+                                                             TO-220 and TO-220FP packages
+
+TAB                                TAB                       Features
+
+                          3            TO-220 1 2 3            Order code               VDS    RDS(on) max.    ID
+                     1                                       STB9NK50ZT4               500 V      850 m      7.2 A
+
+         D2PAK                                                STP9NK50Z
+                                                             STP9NK50ZFP
+
+                                                          3  · 100% avalanche tested
+                                                   12        · Gate charge minimized
+                                                             · Very low intrinsic capacitance
+                             TO-220FP                        · Zener-protected
+
+                                   D(2, TAB)
+
+G(1)                                                         Applications
+
+                                                             · Switching applications
+
+                             S(3)
+
+                                   NG1D2TS3Z                 Description
+
+                                                             These high-voltage devices are Zener-protected N-channel Power MOSFETs
+                                                             developed using the SuperMESH technology by STMicroelectronics, an optimization
+                                                             of the well-established PowerMESH. In addition to a significant reduction in on-
+                                                             resistance, these devices are designed to ensure a high level of dv/dt capability for
+                                                             the most demanding applications.
+
+Product status links
+    STB9NK50ZT4
+     STP9NK50Z
+    STP9NK50ZFP
+
+DS2787 - Rev 3 - October 2025                                                                                www.st.com
+For further information, contact your local STMicroelectronics sales office.
+                                                                   STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                                        Electrical ratings
+
+1               Electrical ratings
+
+                                    Table 1. Absolute maximum ratings
+
+                                                                                                     Value
+
+                Symbol              Parameter                                          D2PAK                      TO-220FP  Unit
+                                                                                       TO-220
+                                                                                                                              V
+                 VDS      Drain-source voltage                                                              500               V
+                VDGR      Drain-gate Voltage (RGS = 20 k)                                                                     V
+                 VGS      Gate-source voltage                                                               500
+                          Drain current (continuous) at TC = 25 °C                                                            A
+                   ID     Drain current (continuous) at TC = 100 °C                                         ±30
+                          Drain current (pulsed)                                                                              A
+                IDM(2)    Total power dissipation at TC = 25 °C                        7.2                        7.2(1)     W
+                 PTOT     Gate-source human body model (C = 100 pF, R = 1.5 k)                                               kV
+                 ESD      Peak diode recovery voltage slope                            4.5                        4.5(1)    V/ns
+                dv/dt(3)  Insulation withstand voltage (RMS) from all three leads to                                         kV
+                 VISO     external heat sink (t = 1 s; TC = 25 °C)                     28.8                       28.8(1)
+                          Operating junction temperature range                                                               °C
+                   TJ     Storage temperature range                                    110                        30
+                  Tstg
+                                                                                                            3.5
+
+                                                                                                            4.5
+
+                                                                                       -                          2.5
+
+                                                                                                     -55 to 150
+
+                1. Limited by maximum junction temperature.
+                2. Pulse width limited by safe operating area.
+                3. ISD  7.2 A, di/dt  200 A/s.
+
+                                                                Table 2. Thermal data
+
+                                                                                                     Value
+
+                Symbol              Parameter                                          D2PAK                      TO-220FP  Unit
+                                                                                       TO-220
+                                                                                                                            °C/W
+                RthJC     Thermal resistance, junction-to-case                         1.14                       4.2       °C/W
+                RthJA     Thermal resistance, junction-to-ambient
+                                                                                                            62.5
+
+                                    Table 3. Avalanche characteristics
+
+                Symbol                                          Parameter                                         Value     Unit
+
+                IAR       Avalanche current, repetitive or not-repetitive (pulse width limited by TJ max.)        7.2       A
+
+                EAS       Single pulse avalanche energy (starting TJ = 25 °C, ID = IAR, VDD = 50 V)               190       mJ
+
+DS2787 - Rev 3                                                                                                              page 2/19
+                                                                   STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                            Electrical characteristics
+
+2               Electrical characteristics
+
+                TC = 25 °C unless otherwise specified.
+
+                                                                   Table 4. On/off states
+
+                Symbol                 Parameter                   Test condition            Min.  Typ.  Max.  Unit
+                V(BR)DSS
+                           Drain-source                  ID = 1 mA, VGS = 0 V                500   -     -     V
+                           Breakdown voltage
+                                                         VGS = 0 V, VDS = 500 V
+                                                         VGS = 0 V, VDS = 500 V,             -     -     1
+                                                         TC = 125 °C(1)
+                IDSS Zero gate voltage drain current     VDS = 0 V, VGS = ±20 V              -     -     50    µA
+                                                         VDS = VGS, ID = 100 µA
+                 IGSS      Gate body leakage current                                         -     -     ±10   µA
+                VGS(th)                                  VGS = 10 V, ID = 3.6 A
+                RDS(on)    Gate threshold voltage                                            3     3.75  4.5   V
+
+                           Static drain-source on-                                           -     700   850   m
+                           resistance
+
+                1. Specified by design, not tested in production.
+
+                                                                   Table 5. Dynamic
+
+                Symbol     Parameter                               Test condition            Min.  Typ.  Max.  Unit
+
+                Ciss       Input capacitance                                                 -     910   -     pF
+                Coss       Output capacitance
+                Crss       Reverse transfer capacitance  VDS = 25 V, f = 1 MHz,              -     125   -     pF
+                                                         VGS = 0 V
+
+                                                                                             -     30    -     pF
+
+                Coss eq. (1) Equivalent output capacitance VDS = 0 to 400 V, VGS = 0 V       -     75    -     pF
+
+                Qg         Total gate charge             VDD = 400 V, ID = 7.2 A,            -     32    -     nC
+
+                Qgs        Gate-source charge            VGS = 0 to 10 V                     -     6     -     nC
+                                                         (see the Figure 16. Test
+                Qgd        Gate-drain charge             circuit for gate charge             -     18    -     nC
+                                                         behavior)
+
+                1. Coss eq. is defined as a constant equivalent capacitance giving the same charging time as Coss when VDS increases from
+                     0 to 80% VDSS.
+
+                                                                   Table 6. Switching times
+
+                Symbol                 Parameter                   Test condition            Min.  Typ.  Max.  Unit
+                  td(on)   Turn-on delay time
+                    tr     Rise time                     VDD = 250 V, ID = 3.6 A,            -     17    -     ns
+                  td(off)  Turn-off delay time
+                                                         RG = 4.7 , VGS = 10 V               -     20    -     ns
+                    tf     Fall time
+                                                         (see the Figure 15. Test            -     45    -     ns
+                 tr(Voff)  Off-voltage rise time         circuit for resistive load
+                    tf     Fall time                     switching times and                 -     22    -     ns
+                                                         Figure 20. Switching time
+                                                         waveform)
+
+                                                         VDD = 400 V, ID = 7.2 A,            -     15    -     ns
+
+                                                         RG = 4.7 , VGS = 10 V               -     13    -     ns
+
+                                                         (see the Figure 17. Test
+
+                tc         Cross-over time               circuit for inductive load          -     30    -     ns
+
+                                                         switching and diode recovery
+
+                                                         times)
+
+DS2787 - Rev 3                                                                                                 page 3/19
+                                                                     STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                              Electrical characteristics
+
+                                                        Table 7. Source drain diode
+
+                Symbol   Parameter                                   Test condition               Min.  Typ.  Max.  Unit
+
+                ISD      Source-drain current                                                     -     -     7.2   A
+
+                ISDM (1) Source-drain current (pulsed)               -                            -     -     28.8  A
+
+                VSD (2)  Forward on voltage             ISD = 7.2 A, VGS = 0 V                    -     -     1.6   V
+
+                trr      Reverse recovery time          ISD = 7.2 A, di/dt = 100 A/s,             -     238   -     ns
+
+                Qrr Reverse recovery charge VDD = 40 V, TJ = 150 °C                               -     1.5   -     C
+                                                                        (see the Figure 17. Test
+
+                IRRM     Reverse recovery current       circuit for inductive load                -     12.6  -     A
+
+                                                        switching and diode recovery
+
+                                                        times)
+
+                1. Pulse width is limited by safe operating area.
+                2. Pulsed: pulse duration = 300 s, duty cycle 1.5%.
+
+DS2787 - Rev 3                                                                                                      page 4/19
+2.1             Electrical characteristics curves                                                    STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+     Figure 1. Safe operating area for D2PAK and TO-220                                                                                                       Electrical characteristics
+
+                                                                                                         Figure 2. Normalized transient thermal impedance
+                                                                                                                             for D2PAK and TO-220
+
+     Figure 3. Safe operating area for TO-220FP                                                      Figure 4. Normalized transient thermal impedance
+                                                                                                                               for TO-220FP
+                                                                                                  5
+
+     Figure 5. Typical output characterisics                                                         Figure 6. Typical transfer characteristics
+
+DS2787 - Rev 3                                                                                                                                   page 5/19
+Figure 7. Typical static drain-source on-resistance  STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+              (m)                                                                                             Electrical characteristics
+
+           800                                               Figure 8. Typical gate charge characteristics
+           750
+           700
+           650
+           600
+
+Figure 9. Typical capacitance variations             Figure 10. Normalized gate threshold vs temperature
+
+                                                     1.1
+                                                     1.0
+                                                     0.9
+                                                     0.8
+                                                     0.7
+                                                     0.6
+
+Figure 11. Normalized on-resistance vs temperature   Figure 12. Typical reverse diode forward characteristics
+
+                                                     1.0
+                                                     0.8
+                                                     0.6
+                                                     0.4
+                                                     0.2
+                                                     0.0
+
+DS2787 - Rev 3                                            page 6/19
+                                                                 STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                                                           Electrical characteristics
+
+Figure 13. Normalized breakdown voltage vs temperature Figure 14. Maximum avalanche energy vs temperature
+
+                1.10
+
+                1.05
+
+                1.00
+
+                0.95
+
+                0.90
+
+                0.85  0
+
+DS2787 - Rev 3           page 7/19
+                                                                                                                STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                                                                                            Test circuits
+
+3                     Test circuits
+
+   Figure 15. Test circuit for resistive load switching times                                                   Figure 16. Test circuit for gate charge behavior
+
+                                       RL                  2200    3.3                                                                                12 V             47 k                          VDD
+                                                                                                                                                                                100 nF            1 k
+                                                           + F     F                       VDD                                                       IG= CONST
+                                                                                                                                                    2.7 k                100                D.U.T.
+                       VD                                                                                       VGS                                                                                  VG
+   VGS                RG                           D.U.T.                                                                               +                 47 k
+                                                                                                                      pulse width
+         pulse width                                                                                                               2200
+                                                                                                                                      F
+
+                                                                                                                                   1 k
+
+                                                                                                     AM01468v1                                                                              AM01469v1
+
+   Figure 17. Test circuit for inductive load switching and                                                     Figure 18. Unclamped inductive load test circuit
+                          diode recovery times
+
+                           A        AA                                                                                                                      L
+                      D                                                                                                                         VD
+
+                G                fast              100 µH
+                      D.U.T. diode
+
+   25  S B                          BB                             3.3 1000                                                                                            2200 3.3
+                                                 D                 µF + µF                                                                                             + µF       µF        VDD
+                                                                                      VDD
+
+                                       G                   D.U.T.                                                                               ID
+
+                              + RG                 S
+
+                              _                                                                                    Vi                                          D.U.T.
+
+                                                                                                                      pulse width
+
+                                                                                        AM01470v1                                                                                           AM01471v1
+
+   Figure 19. Unclamped inductive waveform                                                                         Figure 20. Switching time waveform
+
+                                                                                                                                           ton                                    toff
+
+                                                           V(BR)DSS                                                                td(on)           tr                       td(off)    tf
+                                                                                 VDD
+                                               VD                                                                                       90%                                                 90%
+
+                                           IDM                                                                  0 10% VDS 10%
+                              ID
+
+   VDD                                                                                                                                                  VGS                  90%
+
+                                                                                                                0                  10%
+
+                                                                             AM01472v1                                                                                                      AM01473v1
+
+DS2787 - Rev 3                                                                                                                                                                                   page 8/19
+                                     STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                    Package information
+
+4               Package information
+
+                To meet environmental requirements, ST offers these devices in different grades of ECOPACK packages,
+                depending on their level of environmental compliance. ECOPACK specifications, grade definitions, and product
+                status are available at: www.st.com. ECOPACK is an ST trademark.
+
+4.1             D²PAK (TO-263) type B package information
+
+                Figure 21. D²PAK (TO-263) type B package outline
+
+DS2787 - Rev 3                                                    0079457_27_B
+                                                                             page 9/19
+                             STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                            Package information
+
+                      Table 8. D²PAK (TO-263) type B mechanical data
+
+                Dim.  Min.      mm                                    Max.
+                      4.36      Typ.                                  4.56
+                  A   0.00                                            0.25
+                 A1   0.70   2.54 BSC                                 0.90
+                  b   0.51                                            0.89
+                 b1   1.17                                            1.37
+                 b2   0.38                                            0.694
+                  c   0.38                                            0.534
+                 c1   1.19                                            1.34
+                 c2   8.60                                            9.00
+                  D   6.90                                            7.50
+                 D1   10.15                                           10.55
+                  E   8.10                                            8.70
+                 E1
+                  e   15.00                                           15.60
+                  H   1.90                                            2.50
+                  L                                                   1.65
+                 L1                                             0.25  1.78
+                 L2   4.78
+                 L3                                                   5.28
+                 L4
+
+                      Figure 22. D²PAK (TO-263) recommended footprint (dimensions are in mm)
+
+DS2787 - Rev 3                                                        0079457_Rev27_footprint
+
+                                                                                       page 10/19
+                                                   STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                  Package information
+
+4.2             TO-220 type A package information
+
+                Figure 23. TO-220 type A package outline
+
+DS2787 - Rev 3                                            0015988_typeA_Rev_24
+
+                                                                           page 11/19
+                                      STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                     Package information
+
+                               Table 9. TO-220 type A package mechanical data
+
+                     Dim.      Min.    mm                                      Max.
+                               4.40   Typ.                                     4.60
+                       A       0.61                                            0.88
+                       b       1.14   1.27                                     1.55
+                      b1       0.48                                            0.70
+                       c       15.25  16.40                                    15.75
+                       D              28.90
+                      D1       10.00  0.03                                     10.40
+                       E       2.40                                            2.70
+                       e       4.95                                            5.15
+                      e1       1.23                                            1.32
+                       F       6.20                                            6.60
+                      H1       2.40                                            2.72
+                       J1      13.00                                           14.00
+                       L       3.50                                            3.93
+                      L1
+                      L20      3.75                                            3.85
+                      L30      2.65                                            2.95
+                      øP                                                       0.10
+                       Q
+                Slug flatness
+
+DS2787 - Rev 3                                                                        page 12/19
+                STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                               Package information
+
+4.3             TO-220FP type B package information
+
+                Figure 24. TO-220FP type B package outline
+
+DS2787 - Rev 3                                              7012510_B_rev.14
+                                                                                   page 13/19
+                             STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                            Package information
+
+                      Table 10. TO-220FP type B package mechanical data
+
+                Dim.  Min.    mm                                         Max.
+                      4.40   Typ.                                        4.60
+                  A   2.50                                               2.70
+                  B   2.50   16.00                                       2.75
+                  D   0.45                                               0.70
+                  E   0.75                                               1.00
+                  F   1.15                                               1.70
+                 F1   1.15                                               1.70
+                 F2   4.95                                               5.20
+                  G   2.40                                               2.70
+                 G1   10.00                                              10.40
+                  H
+                 L2   28.60                                              30.60
+                 L3   9.80                                               10.60
+                 L4   2.90                                               3.60
+                 L5   15.90                                              16.40
+                 L6   9.00                                               9.30
+                 L7   3.00                                               3.20
+                 Dia
+
+DS2787 - Rev 3                                                                  page 14/19
+                                           STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                          Package information
+
+4.4             D²PAK packing information
+
+                Figure 25. D²PAK tape drawing (dimensions are in mm)
+
+                                                                      DM01095771_2
+
+DS2787 - Rev 3                                                        page 15/19
+                                                 STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                Ordering information
+
+5               Ordering information
+
+                                      Table 11. Order codes
+
+                 Order codes            Marking  Package        Packing
+                STB9NK50ZT4            B9NK50Z     D²PAK     Tape and reel
+                                       P9NK50Z    TO-220
+                 STP9NK50Z            P9NK50ZFP                   Tube
+                STP9NK50ZFP                      TO-220FP
+
+DS2787 - Rev 3                                               page 16/19
+                                             STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+Revision history                    Version             Table 12. Document revision history
+                                        3
+                            Date                                                                     Changes
+                       27-Oct-2025           Updated Section 4: Package information.
+                                             Removed order code STB9NK50Z-1.
+                                             Minor text changes.
+
+DS2787 - Rev 3                                                                                                page 17/19
+                                                                  STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                                                                                                                                    Contents
+
+Contents
+
+1 Electrical ratings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .2
+2 Electrical characteristics. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+       2.1 Electrical characteristics curves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3 Test circuits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .8
+4 Package information. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+       4.1 D²PAK (TO-263) type B package information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+       4.2 TO-220 type A package information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+       4.3 TO-220FP type B package information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+       4.4 D²PAK packing information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+5 Ordering information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .16
+Revision history . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .17
+
+DS2787 - Rev 3  page 18/19
+                                                                 STB9NK50ZT4, STP9NK50Z, STP9NK50ZFP
+
+                                                                           IMPORTANT NOTICE - READ CAREFULLY
+STMicroelectronics NV and its subsidiaries ("ST") reserve the right to make changes, corrections, enhancements, modifications, and improvements to ST
+products and/or to this document at any time without notice.
+In the event of any conflict between the provisions of this document and the provisions of any contractual arrangement in force between the purchasers and
+ST, the provisions of such contractual arrangement shall prevail.
+The purchasers should obtain the latest relevant information on ST products before placing orders. ST products are sold pursuant to ST's terms and
+conditions of sale in place at the time of order acknowledgment.
+The purchasers are solely responsible for the choice, selection, and use of ST products and ST assumes no liability for application assistance or the design of
+the purchasers' products.
+No license, express or implied, to any intellectual property right is granted by ST herein.
+Resale of ST products with provisions different from the information set forth herein shall void any warranty granted by ST for such product.
+If the purchasers identify an ST product that meets their functional and performance requirements but that is not designated for the purchasers' market
+segment, the purchasers shall contact ST for more information.
+ST and the ST logo are trademarks of ST. For additional information about ST trademarks, refer to www.st.com/trademarks. All other product or service names
+are the property of their respective owners.
+Information in this document supersedes and replaces information previously supplied in any prior versions of this document.
+
+                                                                          © 2025 STMicroelectronics - All rights reserved
+
+DS2787 - Rev 3  page 19/19
+

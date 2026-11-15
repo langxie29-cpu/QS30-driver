@@ -1,0 +1,69 @@
+                                                                                 UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+                                                                                 UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+www.ti.com                                                                                     SLUS223H – APRIL 1997 – REVISED OCTOBER 2024
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                  Figure 7-11. Slope Compensation
+
+7.3.10 Soft Start
+Upon  power  up,  gradually  widen  the  PWM  pulse  width  starting  at  zero  duty  cycle  is  desirable.  The  UCx84x
+devices  do  not  have  internal  soft-start  control,  but  this  can  be  easily  implemented  externally  with  three
+components.  An  R/C  network  is  used  to  provide  the  time  constant  to  control  the  error  amplifier  output.  A
+transistor  is  also  used  to  isolate  the  components  from  the  normal  operation  of  either  node.  A  transistor  also
+minimizes the loading effects on the RT/CT time constant by amplification through the transistors gain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                   Figure 7-12. Soft-Start Circuitry
+
+7.3.11 Voltage Mode
+In duty cycle control (voltage mode), pulse width modulation is attained by comparing the error amplifier output
+to an artificial ramp. The oscillator timing capacitor CCT is used to generate a sawtooth waveform on both current
+or voltage mode ICs. To use the UCx84x in a voltage mode configuration, this sawtooth waveform is input to the
+current sense input, ISENSE, for comparison to the error voltage at the PWM comparator. This sawtooth is used
+to determine pulse width instead of the actual primary current in this method. Loop compensation is similar to
+that of voltage mode controllers with subtle differences due to the low output resistance voltage amplifier in the
+
+
+
+
+Copyright © 2024 Texas Instruments Incorporated                                                              Submit Document Feedback          19
+       Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

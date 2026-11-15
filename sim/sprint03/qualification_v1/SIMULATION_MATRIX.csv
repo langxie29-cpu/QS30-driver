@@ -1,0 +1,17 @@
+id,purpose,kind,execution,engineering,exit_code,duration_s,requested_stop_s
+osc_baseline,Compare CT loading using identical timing and 8.3mA A-series hypothesis,oscillator,PASS,INCONCLUSIVE,0,5.004877700004727,0.001
+osc_direct,Compare CT loading using identical timing and 8.3mA A-series hypothesis,oscillator,PASS,INCONCLUSIVE,0,0.5814424999989569,0.001
+osc_buffered,Compare CT loading using identical timing and 8.3mA A-series hypothesis,oscillator,PASS,INCONCLUSIVE,0,0.628653799998574,0.001
+osc_idis_0.0076,Sensitivity at documented A-series discharge-current endpoints; not complete corner model,oscillator,PASS,INCONCLUSIVE,0,0.5551103999605402,0.001
+osc_idis_0.0088,Sensitivity at documented A-series discharge-current endpoints; not complete corner model,oscillator,PASS,INCONCLUSIVE,0,0.5948022999800742,0.001
+pwm_cs_0.3,Known CS threshold changes pulse width at fixed COMP,oscillator,PASS,INCONCLUSIVE,0,0.5484900999581441,0.001
+pwm_cs_0.6,Known CS threshold changes pulse width at fixed COMP,oscillator,PASS,INCONCLUSIVE,0,0.5867212999728508,0.001
+pwm_cs_0.9,Known CS threshold changes pulse width at fixed COMP,oscillator,PASS,INCONCLUSIVE,0,0.5927387000410818,0.001
+actual_cs_0.2,Known current at fixed SW voltage; verify A-to-V conversion,cs,PASS,INCONCLUSIVE,0,0.10134529997594655,0.0005
+actual_cs_0.8,Known current at fixed SW voltage; verify A-to-V conversion,cs,PASS,INCONCLUSIVE,0,0.030063499987591058,0.0005
+kelvin_0.2,Known current at fixed SW voltage; verify A-to-V conversion,cs,PASS,INCONCLUSIVE,0,0.14424110000254586,0.0005
+kelvin_0.8,Known current at fixed SW voltage; verify A-to-V conversion,cs,PASS,INCONCLUSIVE,0,0.03284729999722913,0.0005
+power_0.92,Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden,power,PASS,INCONCLUSIVE,0,0.4399035000242293,0.003
+power_0.935,Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden,power,PASS,INCONCLUSIVE,0,0.4611079999594949,0.003
+power_0.95,Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden,power,PASS,INCONCLUSIVE,0,0.42729490000056103,0.003
+power_0.935_c10,Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden,power,PASS,INCONCLUSIVE,0,0.42902759998105466,0.003

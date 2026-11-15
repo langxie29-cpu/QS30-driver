@@ -1,0 +1,61 @@
+{
+  "id": "power_step25ns",
+  "purpose": "Halved timestep commutation sensitivity, unchanged tolerances or electrical parameters",
+  "kind": "power",
+  "parameters": {
+    "step_s": 2.5e-08
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.6837025000131689,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "f1631530bb363f1c52a771ffe0b826bd61b5131ebe46936c5b9bfd75a09a20fb",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 172.22065919339823,
+      "min": 121.488263,
+      "max": 177.638646,
+      "pp": 56.15038299999999,
+      "slope_V_per_s": 72.10703402415642
+    },
+    "capacitor": {
+      "mean": 172.22092802032307,
+      "min": 172.205291,
+      "max": 172.237633,
+      "pp": 0.03234199999999987,
+      "slope_V_per_s": -27.685048150618908
+    },
+    "i(l20)": {
+      "min": 0.226751628,
+      "max": 1.07833888,
+      "late_rms": 0.5552711773846849
+    },
+    "v(gate)": {
+      "min": 0.0,
+      "max": 10.0,
+      "late_rms": 9.665584169857436
+    },
+    "v(sw)": {
+      "min": 0.157532139,
+      "max": 173.980208,
+      "late_rms": 43.324309105970386
+    },
+    "i(vdprobe)": {
+      "min": -102.562065,
+      "max": 11.2981978,
+      "late_rms": 0.4193467713480442
+    }
+  }
+}

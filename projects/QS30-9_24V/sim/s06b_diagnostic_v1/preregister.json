@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-15",
+  "scope": "failure reproduction and controlled component-model diagnosis, no boost",
+  "cases": [
+    {
+      "name": "driver1ns_replay1",
+      "source": "sim\\s06_driver_unit_v1\\11.4_switch_1ns",
+      "change": null,
+      "stop_s": 0.0001
+    },
+    {
+      "name": "driver1ns_replay2",
+      "source": "sim\\s06_driver_unit_v1\\11.4_switch_1ns",
+      "change": null,
+      "stop_s": 0.0001
+    },
+    {
+      "name": "driver1ns_replay3",
+      "source": "sim\\s06_driver_unit_v1\\11.4_switch_1ns",
+      "change": null,
+      "stop_s": 0.0001
+    },
+    {
+      "name": "integrated_replay5ns",
+      "source": "sim\\s06_buffered_gate_v1\\cs_gate_buffered_5ns",
+      "change": null,
+      "stop_s": 0.0005
+    },
+    {
+      "name": "integrated_input100ohm",
+      "source": "sim\\s06_buffered_gate_v1\\cs_gate_buffered_5ns",
+      "change": "inputR",
+      "stop_s": 0.0005
+    },
+    {
+      "name": "integrated_STEADY_diagnostic",
+      "source": "sim\\s06_buffered_gate_v1\\cs_gate_buffered_5ns",
+      "change": "steady",
+      "stop_s": 0.0005
+    }
+  ],
+  "criteria": "rc0, no fatal/error/aborted/timestep too small, finite waves, native end. Any premature end is FAIL. Same tolerances as archived fixture; no model electrical retuning.",
+  "simulator": "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "timeout_s_each": 40
+}

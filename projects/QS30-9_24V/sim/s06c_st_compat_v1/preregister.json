@@ -1,0 +1,13 @@
+{
+  "scope": "ST exact25C isolated transistor195V resistor bias, no boost workpoint",
+  "criteria": "rc0, finite40us native endpoint, no abort/error; maxstep2/1ns; no tolerance relaxation",
+  "equivalence": "E3 POLY(2) x,y coefficients0,0,0,0,0.0527 =0.0527*x*y. E1/E2 unity VCVS can be nativeB voltage followers. Same nodes and all original numerical device parameters. Translations require validation; not automatically qualified.",
+  "variants": [
+    "original",
+    "native_POLY",
+    "native_E123",
+    "trap_original",
+    "shared46_original"
+  ],
+  "timeout_s": 30
+}

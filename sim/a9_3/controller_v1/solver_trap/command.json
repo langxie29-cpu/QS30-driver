@@ -1,0 +1,41 @@
+{
+  "stage": "controller",
+  "case": {
+    "id": "solver_trap",
+    "comp_force": 5,
+    "method": "trap"
+  },
+  "argv": [
+    "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 1.590867042541504,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.01,
+  "deck_sha256": "d282dad7c0f0cd9a985ff65e5160ab4c991dca3085d9b258da45caf0d553d1e0",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "ref_end_V": 4.99975177,
+    "comp_end_V": 5.0,
+    "out_max_V": 10.5038656,
+    "late_frequency_Hz": 77984.32359127703,
+    "late_duty": 0.9523512273044082,
+    "ct_min_V": 0.99648576,
+    "ct_max_V": 2.69555142,
+    "first_pulse_s": 0.000709277766
+  },
+  "native_measurements": {
+    "end_time": 0.01,
+    "ref_final": 4.99975,
+    "ct_max": 2.69555,
+    "ct_min": 0.996486
+  },
+  "engineering": "SIMULATED PASS"
+}

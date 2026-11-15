@@ -1,0 +1,72 @@
+{
+  "cases": [
+    {
+      "name": "ST_gate_ideal_OP",
+      "rc": 0,
+      "parsed_error": true,
+      "finite": true,
+      "last_row": [
+        2.000000674963106e-05,
+        0.0008099557275689696,
+        195.0000183812544,
+        -4.165026578904993e-07,
+        9.190627203725654e-08
+      ],
+      "rows": 10045,
+      "execution": "FAIL"
+    },
+    {
+      "name": "ST_gate_ideal_ramp_UIC",
+      "rc": 0,
+      "parsed_error": true,
+      "finite": true,
+      "last_row": [
+        2.000000076444328e-05,
+        9.17331941202408e-05,
+        195.0000384024255,
+        1.111730882397956e-07,
+        1.920121277532161e-07
+      ],
+      "rows": 10069,
+      "execution": "FAIL"
+    },
+    {
+      "name": "ST_DC_VGS10_Id3p6",
+      "rc": 0,
+      "parsed_error": false,
+      "finite": true,
+      "last_row": [
+        10.0,
+        2.618976093004464,
+        10.0
+      ],
+      "rows": 1,
+      "execution": "PASS"
+    },
+    {
+      "name": "Vishay_US1G_DC1A",
+      "rc": 0,
+      "parsed_error": false,
+      "finite": true,
+      "last_row": [
+        0.9334173542499477,
+        0.9334173542499477
+      ],
+      "rows": 1,
+      "execution": "PASS"
+    },
+    {
+      "name": "Vishay_US1G_reverse195",
+      "rc": 0,
+      "parsed_error": false,
+      "finite": true,
+      "last_row": [
+        -195.0,
+        2.711165507207625e-06
+      ],
+      "rows": 1,
+      "execution": "PASS"
+    }
+  ],
+  "qualification": "MODEL_CELLS_ONLY_NOT_07_PASS"
+}

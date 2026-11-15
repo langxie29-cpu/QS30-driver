@@ -1,0 +1,57 @@
+{
+  "source": "sim\\sprint02\\power_v1\\buffered_type2\\waves.txt.gz",
+  "source_sha256": "7183031f6b556195abb96e31fd6b3aee0d0e69101b07b27c4811e04d2f8c8498",
+  "windows": [
+    {
+      "start_s": 0.12,
+      "end_s": 0.125,
+      "mean": 162.8649364111383,
+      "min": 114.353752,
+      "max": 171.644676,
+      "pp": 57.290924000000004,
+      "slope_V_per_s": 124.33823649829071
+    },
+    {
+      "start_s": 0.13,
+      "end_s": 0.135,
+      "mean": 164.25588704292693,
+      "min": 115.587265,
+      "max": 173.189661,
+      "pp": 57.602396,
+      "slope_V_per_s": 102.45337692504854
+    },
+    {
+      "start_s": 0.14,
+      "end_s": 0.14500000000000002,
+      "mean": 165.46061922782212,
+      "min": 116.381006,
+      "max": 174.457579,
+      "pp": 58.07657300000001,
+      "slope_V_per_s": 118.97599189026363
+    },
+    {
+      "start_s": 0.145,
+      "end_s": 0.15,
+      "mean": 165.98559793559312,
+      "min": 116.743573,
+      "max": 175.037644,
+      "pp": 58.294071,
+      "slope_V_per_s": 70.97321054788307
+    }
+  ],
+  "late_cycle_mean_slope_V_per_s": 105.12385994558994,
+  "late_cycle_mean_range_V": [
+    165.18178127934593,
+    166.23397697609366
+  ],
+  "worst_dip": {
+    "v(hv)": 116.381006,
+    "v(sw)": 68.1394055,
+    "v(gate)": 17.3398994,
+    "v(fb)": 2.49982809,
+    "i(l20)": 0.277416226,
+    "i(vswi)": 97.9935255
+  },
+  "worst_dip_time_s": 0.140484728,
+  "interpretation": "Cycle means still drifting; narrow HV dips coincide with commutation currents. Capacitor voltage absent from historical save; cannot infer precise internal-cap ripple or phase margin."
+}

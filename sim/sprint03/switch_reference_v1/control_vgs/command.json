@@ -1,0 +1,61 @@
+{
+  "id": "control_vgs",
+  "purpose": "Instrument identical binary switch; compare gate-to-source against historical gate-to-ground control",
+  "kind": "power",
+  "parameters": {
+    "control_reference": "src"
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 12.018050399958156,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "153eb9d59420bcf0e4a4c6543faf9edfab4f820c63fff6184f8835279e90fc8b",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 171.98465506664417,
+      "min": 167.09843,
+      "max": 172.4467,
+      "pp": 5.348269999999985,
+      "slope_V_per_s": 30.832387589284714
+    },
+    "capacitor": {
+      "mean": 171.98569255833053,
+      "min": 171.952071,
+      "max": 172.020596,
+      "pp": 0.06852500000002237,
+      "slope_V_per_s": -102.18464517119824
+    },
+    "i(l20)": {
+      "min": 0.18780241,
+      "max": 1.07829198,
+      "late_rms": 0.5253987301352684
+    },
+    "v(gate)": {
+      "min": 0.0,
+      "max": 10.0,
+      "late_rms": 9.665583103845321
+    },
+    "v(sw)": {
+      "min": 0.130452659,
+      "max": 173.941763,
+      "late_rms": 43.34183562199468
+    },
+    "i(vdprobe)": {
+      "min": -13.5031202,
+      "max": 1.21379497,
+      "late_rms": 0.1599348786778597
+    }
+  }
+}

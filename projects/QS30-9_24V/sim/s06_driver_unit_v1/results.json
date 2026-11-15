@@ -1,0 +1,76 @@
+{
+  "preregister": {
+    "date": "2026-11-15",
+    "scope": "Standalone UCC27511DBVR, IN logic sources; 5.333nF linear surrogate equals64nC/12V; not real ST MOS/Miller or integrated boost",
+    "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+    "diff": "--- \n+++ \n@@ -54,7 +54,7 @@\n +  VTHRESH=500E-3\n V_U3_V4         U3_N14683887 0 1Vdc\n G_U3_G1         U3_N14683173 U3_N14683247 TABLE { V(U3_N14683221, 0) } \n-+ ( (0,0)(4.5,48m)(5,52m)6,58m)(8,63m)(10,68m)(12,75m)(18,100m) )\n++ ( (0,0)(4.5,48m)(5,52m)(6,58m)(8,63m)(10,68m)(12,75m)(18,100m) )\n X_U3_U48         0 U3_N14683247 d_d1 PARAMS:\n X_U3_U47         U3_N14683247 U3_N14683173 d_d1 PARAMS:\n C_U3_C3         0 U3_N14683221  1n  \n",
+    "criteria": {
+      "endpoint_s": 0.0001,
+      "gate_fall_3V_delay_s_max": 1e-07,
+      "gate_inhibited_V_max": 0.4,
+      "step_difference_s_max": 5e-09
+    },
+    "temperature_C": 27,
+    "reltol": 0.001,
+    "max_runtime_s": 30
+  },
+  "cases": [
+    {
+      "vdd_V": 11.4,
+      "mode": "switch",
+      "step_s": 2e-09,
+      "execution": "PASS",
+      "gate_max_V": 11.396414,
+      "gate_fall_delay_s": [
+        3.7512069744056304e-08,
+        3.751206974404275e-08
+      ],
+      "engineering": "PASS_STANDALONE_SURROGATE",
+      "end_s": 0.0001
+    },
+    {
+      "vdd_V": 11.4,
+      "mode": "switch",
+      "execution": "FAIL",
+      "engineering": "FAIL",
+      "error": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sim\\s06_driver_unit_v1\\11.4_switch_1ns\\waves.txt not found."
+    },
+    {
+      "vdd_V": 12.6,
+      "mode": "switch",
+      "step_s": 2e-09,
+      "execution": "PASS",
+      "gate_max_V": 12.5950611,
+      "gate_fall_delay_s": [
+        3.947559263084365e-08,
+        3.947559263083348e-08
+      ],
+      "engineering": "PASS_STANDALONE_SURROGATE",
+      "end_s": 0.0001
+    },
+    {
+      "vdd_V": 12.6,
+      "mode": "inhibited",
+      "step_s": 2e-09,
+      "execution": "PASS",
+      "gate_max_V": 0.00642598367,
+      "gate_fall_delay_s": [],
+      "engineering": "PASS_STANDALONE_SURROGATE",
+      "end_s": 0.0001
+    },
+    {
+      "vdd_V": 12.6,
+      "mode": "inputs_float",
+      "step_s": 2e-09,
+      "execution": "PASS",
+      "gate_max_V": 0.00642598367,
+      "gate_fall_delay_s": [],
+      "engineering": "PASS_STANDALONE_SURROGATE",
+      "end_s": 0.0001
+    }
+  ],
+  "step_delta_s": null,
+  "passed_standalone_scope": false,
+  "integrated_controller_gate": "FAILED_NUMERICAL_QUALIFICATION_SEE_s06_buffered_gate_v1",
+  "24V_07": "NOT_PASSED"
+}

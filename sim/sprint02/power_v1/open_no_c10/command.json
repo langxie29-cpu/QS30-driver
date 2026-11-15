@@ -1,0 +1,63 @@
+{
+  "case": {
+    "id": "open_no_c10",
+    "closed": false,
+    "c10": 0,
+    "duty": 0.93,
+    "resistive": true,
+    "stop": 0.03,
+    "stage": "power"
+  },
+  "fixture": "isolated; not complete actual protection/enable chain",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 2.941490411758423,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.03,
+  "deck_sha256": "cad572555d4bb0648d8a6318c8f8ec80c0f20cd237a2731ecd23e7e15665a7bd",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "hv_end_V": 176.902584,
+    "hv_peak_V": 184.795959,
+    "hv_late_average_V": 175.61278568411188,
+    "hv_late_pp_V": 68.00637800000001,
+    "inductor_peak_A": 10.4105356,
+    "switch_peak_V": 178.205535,
+    "cs_peak_V": 0.0,
+    "late_gate_duty": 0.9323920800000027,
+    "feedback_end_V": 2.56852185,
+    "comp_end_V": 0.0,
+    "current_window_A": [
+      0.137496898,
+      0.94863453
+    ],
+    "reached_169V_s": 0.0111923263,
+    "load_active": true
+  },
+  "native_measurements": {
+    "end_time": 0.03,
+    "hv_peak": 184.796,
+    "il_peak": 10.4105,
+    "sw_peak": 178.206,
+    "mos_i_peak": 115.001,
+    "il_rms": 0.555421,
+    "mos_i_rms": 0.670318,
+    "hv_avg": 175.613,
+    "hv_min": 116.79,
+    "hv_max": 184.796,
+    "vds_peak": 178.206,
+    "diode_reverse": 176.749,
+    "input_power": 6.26557,
+    "mos_loss": 0.483246
+  },
+  "engineering": "OBSERVATION"
+}

@@ -1,0 +1,72 @@
+                                                                               UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+                                                                               UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+www.ti.com                                                                                   SLUS223H – APRIL 1997 – REVISED OCTOBER 2024
+
+or dead time, the internal clock signal blanks the output to the low state. This limits the maximum duty cycle
+DMAX to:
+
+                                                                                                                                     (7)
+
+Equation 8 applies to UCx842 and UCx843 units because the OUTPUT switches at the same frequency as the
+oscillator and the maximum duty cycle can be as high as 100%.
+
+
+                                                                                                                                     (8)
+
+Equation 8 applies to UCx844 and UCx845 units because the OUTPUT switches at half the frequency as the
+oscillator and the maximum duty cycle can be as high as 50%.
+When  the  power  transistor  turns  off,  a  noise  spike  is  coupled  to  the  oscillator  RT/CT  terminal.  At  high  duty
+cycles, the voltage at RT/CT is approaching the threshold level (approximately 2.7 V, established by the internal
+oscillator  circuit)  when  this  spike  occurs.  A  spike  of  sufficient  amplitude  prematurely  trips  the  oscillator.  To
+minimize the noise spike, choose CCT as large as possible, remembering that dead time increases with CCT. CCT
+is recommended to never be less than approximately 1000 pF. Often the noise which causes this problem is
+caused by the OUTPUT being pulled below ground at turnoff by external parasitics. This is particularly true when
+driving MOSFETs. A Schottky diode clamp from GROUND to OUTPUT prevents such output noise from feeding
+to the oscillator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     For RRT > 5 kΩ:
+                                            Figure 7-8. Oscillator Section Schematic
+
+7.3.7 Synchronization
+The  simplest  method  to  force  synchronization  uses  the  timing  capacitor,  CCT,  in  near  standard  configuration.
+Rather than bring CCT to ground directly, a small resistor is placed in series with CCT to ground. This resistor
+serves  as  the  input  for  the  sync  pulse  which  raises  the  CCT  voltage  above  the  oscillator’s  internal  upper
+threshold.  The  PWM  is  allowed  to  run  at  the  frequency  set  by  RRT  and  CCT  until  the  sync  pulse  appears.
+This scheme offers several advantages including having the local ramp available for slope compensation. The
+UC3842/3/4/5 oscillator must be set to a lower frequency than the sync pulse stream, typically 20% with a 0.5-V
+pulse applied across the resistor.
+
+
+
+
+
+
+
+
+
+
+
+Copyright © 2024 Texas Instruments Incorporated                                                            Submit Document Feedback         17
+       Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

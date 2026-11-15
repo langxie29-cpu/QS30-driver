@@ -1,0 +1,17 @@
+S05 Kelvin filter passive qualification - not a controller model
+BRAMP ideal 0 V=101878.78787878787*time
+VNOISE sensed ideal 0.05
+VSPIKE raw sensed PWL(0 0 1n .5 21n .5 22n 0 10u 0)
+RCSF raw cs 100
+CCSF cs 0 220p IC=0
+.options reltol=1e-5 abstol=1e-10 vntol=1e-7 method=gear
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 2.5e-09 10u 0 2.5e-09 uic
+meas tran native_end MAX time
+wrdata waves.txt v(ideal) v(raw) v(cs)
+quit
+.endc
+.end

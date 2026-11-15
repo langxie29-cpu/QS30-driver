@@ -1,0 +1,24 @@
+UC3843A hypothesis using inherited functional model
+.include uc3843_functional.lib
+VCC vcc 0 12
+VCOMP comp 0 5
+VFB fb 0 0
+RT ref ct 10k
+CT ct 0 2.2n
+CREF ref 0 100n
+XUC comp fb cs ct 0 out vcc ref UC3843_FUNC IDIS=0.0076
+CG out 0 1n
+VCS cs 0 0
+
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 2e-08 0.001 0 2e-08 uic
+meas tran end_time MAX time
+
+wrdata waves.txt v(ct) v(out) v(cs) v(ref)
+quit
+.endc
+.end

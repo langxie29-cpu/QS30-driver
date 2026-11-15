@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-15",
+  "cases": [
+    {
+      "name": "driver1ns_replay1",
+      "change": null,
+      "expected_stop_s": 0.0001,
+      "rc": 0,
+      "parsed_error": false,
+      "end_s": 0.0001,
+      "samples": 101239,
+      "finite": true,
+      "execution": "PASS"
+    },
+    {
+      "name": "driver1ns_replay2",
+      "change": null,
+      "expected_stop_s": 0.0001,
+      "rc": 0,
+      "parsed_error": false,
+      "end_s": 0.0001,
+      "samples": 101239,
+      "finite": true,
+      "execution": "PASS"
+    },
+    {
+      "name": "driver1ns_replay3",
+      "change": null,
+      "expected_stop_s": 0.0001,
+      "rc": 0,
+      "parsed_error": false,
+      "end_s": 0.0001,
+      "samples": 101239,
+      "finite": true,
+      "execution": "PASS"
+    },
+    {
+      "name": "integrated_replay5ns",
+      "change": null,
+      "expected_stop_s": 0.0005,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 2.00361092e-05,
+      "samples": 5016,
+      "finite": true,
+      "execution": "FAIL"
+    },
+    {
+      "name": "integrated_input100ohm",
+      "change": "inputR",
+      "expected_stop_s": 0.0005,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 2.00361092e-05,
+      "samples": 5016,
+      "finite": true,
+      "execution": "FAIL"
+    },
+    {
+      "name": "integrated_STEADY_diagnostic",
+      "change": "steady",
+      "expected_stop_s": 0.0005,
+      "rc": 0,
+      "parsed_error": true,
+      "end_s": 7e-07,
+      "samples": 361,
+      "finite": true,
+      "execution": "FAIL"
+    }
+  ],
+  "qualification": "DIAGNOSTIC_SCOPE_ONLY_07_NOT_PASSED"
+}

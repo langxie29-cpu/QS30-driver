@@ -1,0 +1,32 @@
+{
+  "id": "kelvin_0.8",
+  "purpose": "Known current at fixed SW voltage; verify A-to-V conversion",
+  "kind": "cs",
+  "parameters": {
+    "current_A": 0.8,
+    "repair_hypothesis": true
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.03284729999722913,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "fb1dbff48915b52b7dab814c459e3a73a4ec31cb9f930f9ebecfc7ac28903619",
+  "requested_stop_s": 0.0005,
+  "metrics": {
+    "actual_current_A": 0.8000000000000002,
+    "cs_final_V": 0.12,
+    "shunt_final_V": 0.12,
+    "conversion_V_per_A": 0.15
+  }
+}

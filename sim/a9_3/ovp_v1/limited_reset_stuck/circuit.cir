@@ -1,0 +1,58 @@
+QS30 A9.3 independent OVP latch and COMP sink fixture
+* Forced HV source is stimulus, never a protected converter peak.
+.model NGEN NPN(IS=6.7f BF=100 VAF=75 IKF=.1 ISE=6.7f NE=1.5 BR=4 RB=10 RC=1 RE=.5 CJE=4p CJC=3p TF=.3n TR=100n)
+.model PGEN PNP(IS=14f BF=100 VAF=50 IKF=.1 BR=4 RB=10 RC=1 RE=.5 CJE=5p CJC=4p TF=.5n TR=100n)
+R40 EXT12 VREF_OVP 4.7k
+R41 HV_BUS OVP_SNS 1500000.0
+R42 OVP_SNS 0 19100
+C16 OVP_SNS 0 1e-07
+R43 OVP_SET EXT12 10k
+R44 LATCH_B EXT12 100k
+R45 OVP_SET LATCH_B 10k
+R46 OVP_LATCH 0 100k
+R47 OVP_LATCH Q23_B 47k
+R48 OVP_LATCH Q24_B 47k
+R49 HV_FAULT_OD EXT12 10k
+R50 HV_FAULT_OD HVF_NODE 100k
+R51 HVF_NODE 0 12k
+R52 OVP_RST OVP_RST_G 10k
+R53 OVP_RST_G 0 100k
+Q21 OVP_LATCH LATCH_B P_EMITTER PGEN
+Q22 N_COL N_BASE 0 NGEN
+Q23 COMP_N Q23_B 0 NGEN
+Q24 HV_FAULT_OD Q24_B 0 NGEN
+Q25 OVP_LATCH OVP_RST_G 0 NGEN
+R37 COMP_N COMP_R 10k
+C14 COMP_R 0 100nF
+C15 COMP_N 0 22uF IC=4
+RPE EXT12 P_EMITTER 330
+RNB OVP_LATCH N_BASE 22k
+RNC N_COL LATCH_B 10k
+VIN EXT12 0 PWL(0 0 100u 12)
+VHV HV_BUS 0 PWL(0 0 2m 170 8m 170 14m 230 40m 230)
+VRST OVP_RST 0 PWL(0 0 1m 3.3)
+BREF VREF_OVP 0 I=max((v(VREF_OVP)-2.495)/.2,0)
+CREF VREF_OVP 0 100p
+BDIFF diff 0 V=v(VREF_OVP)-v(OVP_SNS)
+RDELAY diff ctl 1k
+CDELAY ctl 0 1n
+BCOMP OVP_SET 0 I=(v(EXT12)>2 && v(ctl)<0) ? max(v(OVP_SET),0)/50 : 0
+B_EA 0 COMP_N I=v(COMP_N)<6 ? .0008 : 0
+R_COMP COMP_N 0 1meg
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.save all @q21[ic] @q22[ic] @q25[ic]
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1e-06 0.04 0 1e-06 uic
+meas tran end_time MAX time
+meas tran q21_min MIN @q21[ic]
+meas tran q22_max MAX @q22[ic]
+meas tran q25_max MAX @q25[ic]
+meas tran comp_end FIND v(COMP_N) AT=.04
+meas tran latch_end FIND v(OVP_LATCH) AT=.04
+wrdata waves.txt v(HV_BUS) v(OVP_SNS) v(VREF_OVP) v(OVP_SET) v(OVP_LATCH) v(COMP_N) v(HV_FAULT_OD) v(OVP_RST) @q21[ic] @q22[ic] @q25[ic]
+quit
+.endc
+.end

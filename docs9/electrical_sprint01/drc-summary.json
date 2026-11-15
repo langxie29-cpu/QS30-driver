@@ -1,0 +1,77 @@
+{
+  "before": {
+    "types": {
+      "net_conflict": 55,
+      "unconnected_items": 508,
+      "lib_footprint_issues": 190
+    },
+    "categories": {
+      "Clearance": 0,
+      "Short circuit": 0,
+      "Unconnected": 508,
+      "Via / Track": 0,
+      "Pad / Footprint": 190,
+      "Courtyard": 0,
+      "Silkscreen": 0,
+      "Board outline": 0,
+      "Schematic parity": 55,
+      "Other": 0
+    },
+    "severity": {
+      "warning": 245,
+      "error": 508
+    },
+    "hv_tagged_items": {
+      "unconnected_items": 109
+    },
+    "top_five_nonzero": [
+      [
+        "unconnected_items",
+        508
+      ],
+      [
+        "lib_footprint_issues",
+        190
+      ],
+      [
+        "net_conflict",
+        55
+      ]
+    ]
+  },
+  "after": {
+    "types": {
+      "unconnected_items": 508,
+      "lib_footprint_issues": 190
+    },
+    "categories": {
+      "Clearance": 0,
+      "Short circuit": 0,
+      "Unconnected": 508,
+      "Via / Track": 0,
+      "Pad / Footprint": 190,
+      "Courtyard": 0,
+      "Silkscreen": 0,
+      "Board outline": 0,
+      "Schematic parity": 0,
+      "Other": 0
+    },
+    "severity": {
+      "error": 508,
+      "warning": 190
+    },
+    "hv_tagged_items": {
+      "unconnected_items": 109
+    },
+    "top_five_nonzero": [
+      [
+        "unconnected_items",
+        508
+      ],
+      [
+        "lib_footprint_issues",
+        190
+      ]
+    ]
+  }
+}

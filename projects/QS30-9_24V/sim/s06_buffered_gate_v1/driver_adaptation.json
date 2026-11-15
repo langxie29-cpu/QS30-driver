@@ -1,0 +1,7 @@
+{
+  "source": "https://www.ti.com/lit/zip/slum488",
+  "original_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+  "change": "Insert one missing opening parenthesis at TABLE point (6,58m); no numeric changes. CP1252 comments retained.",
+  "diff": "--- vendor_original\n+++ syntax_compat\n@@ -54,7 +54,7 @@\n +  VTHRESH=500E-3\n V_U3_V4         U3_N14683887 0 1Vdc\n G_U3_G1         U3_N14683173 U3_N14683247 TABLE { V(U3_N14683221, 0) } \n-+ ( (0,0)(4.5,48m)(5,52m)6,58m)(8,63m)(10,68m)(12,75m)(18,100m) )\n++ ( (0,0)(4.5,48m)(5,52m)(6,58m)(8,63m)(10,68m)(12,75m)(18,100m) )\n X_U3_U48         0 U3_N14683247 d_d1 PARAMS:\n X_U3_U47         U3_N14683247 U3_N14683173 d_d1 PARAMS:\n C_U3_C3         0 U3_N14683221  1n  \n",
+  "engineering_scope": "new buffer UCC27511DBVR, R_on10/R_off2.2, surrogate Qg64nC/12V; not STP9NK50Z switching qualification"
+}

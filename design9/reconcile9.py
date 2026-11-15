@@ -9,6 +9,8 @@ import collections
 import csv
 import hashlib
 import json
+import os
+import shutil
 from pathlib import Path
 import subprocess
 import xml.etree.ElementTree as ET
@@ -17,7 +19,10 @@ from kiutils.board import Board
 from build9 import build, PIN_DB
 
 ROOT = Path(__file__).resolve().parents[1]
-KC = Path.home() / 'AppData/Local/Programs/KiCad/10.0/bin/kicad-cli.exe'
+KC = Path(os.environ.get('KICAD_CLI') or shutil.which('kicad-cli') or
+          (Path('C:/Program Files/KiCad/10.0/bin/kicad-cli.exe')
+           if Path('C:/Program Files/KiCad/10.0/bin/kicad-cli.exe').exists()
+           else Path.home() / 'AppData/Local/Programs/KiCad/10.0/bin/kicad-cli.exe'))
 BOARDS = {'QS30-9_DISPLAY': ('MOD_L',), 'QS30-9_MAIN': ('MB_', 'MOD_C')}
 
 
@@ -114,16 +119,19 @@ def capture(run, publish=False):
                        for pin in PIN_DB[p.pin_key] if pin not in p.nets}
         actual_nc = {k for k,n in actual.items() if n.startswith('unconnected-')}
         nc_inventory_matches = expected_nc == actual_nc and all(len(nodes)==1 for nodes in nc_groups.values())
+        pcb_nc_inventory_matches = all(pads.get(k) == actual[k] for k in actual_nc)
+        pcb_nc_inventory_matches &= {k for k,n in pads.items() if n.startswith('unconnected-')} == actual_nc
         entry = dict(netlist_rc=rc, xml_rc=rcxml, expected_nodes=len(expected), actual_nodes=len(actual),
                      expected_nets=len(expected_groups), actual_nets=len(groups),
                      explicit_nc_nets=len(nc_groups), connected_actual_nets=len(groups)-len(nc_groups),
                      expected_nc_nodes=len(expected_nc), nc_inventory_matches=nc_inventory_matches,
+                     pcb_nc_inventory_matches=pcb_nc_inventory_matches,
                      matched_nodes=len(expected)-len(mismatches), mismatches=mismatches,
                      merges=merges, splits=splits, unexpected_nodes=unexpected,
                      pcb_pad_mismatches=pad_mismatches,
                      erc=report_counts(folder / f'{board}.erc.json'),
                      drc=report_counts(folder / f'{board}.drc.json'))
-        entry['reconciliation'] = 'PASS' if rc == rcxml == 0 and nc_inventory_matches and not (mismatches or merges or splits or pad_mismatches or unexpected) else 'FAIL'
+        entry['reconciliation'] = 'PASS' if rc == rcxml == 0 and nc_inventory_matches and pcb_nc_inventory_matches and not (mismatches or merges or splits or pad_mismatches or unexpected) else 'FAIL'
         result['boards'][board] = entry
         print(board, json.dumps({k: v for k, v in entry.items() if k not in ('mismatches', 'merges', 'splits', 'pcb_pad_mismatches', 'unexpected_nodes')}, ensure_ascii=False))
     result['input_sha256'] = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()

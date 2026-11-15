@@ -1,0 +1,72 @@
+{
+  "instrumented_startup": {
+    "rc": 0,
+    "execution": "FAIL",
+    "metrics": {
+      "q21_peak": -0.00109324,
+      "q22_peak": 0.00078206,
+      "hv_peak": 16.9379,
+      "end_time": 0.08,
+      "hv_mean": 15.7562,
+      "hv_pp": 0.330727,
+      "id_peak": 1.7675e-08,
+      "il_peak": 2.54771,
+      "cap_peak": 16.9379,
+      "input_power": 0.115271
+    },
+    "source_sha256": "2e64d081280cadd4ee68d0e847c4dd8d01dc93a48167bc22af43038e40fd0565",
+    "model_scope": "A9.2 functional diagnostic; not device stresses qualified by vendor model"
+  },
+  "all_connected": {
+    "rc": 0,
+    "execution": "PASS",
+    "cap_F": 2.03e-05,
+    "bleed_ohm": 50000.0,
+    "initial_V": 172.183,
+    "normal_bleeder_power_W": 0.59293970978,
+    "t50_s": 1.25596,
+    "values": {
+      "0": 172.181304,
+      "1": 64.285630524,
+      "5": 1.2491322551999997,
+      "12": 0.00126320494
+    },
+    "analytic_t50_s": 1.255082882165455
+  },
+  "main_alone": {
+    "rc": 0,
+    "execution": "PASS",
+    "cap_F": 2e-05,
+    "bleed_ohm": 200000.0,
+    "initial_V": 172.183,
+    "normal_bleeder_power_W": 0.148234927445,
+    "t50_s": 4.94696,
+    "values": {
+      "0": 172.18257,
+      "1": 134.0962552,
+      "5": 49.331255144,
+      "12": 8.57248666
+    },
+    "analytic_t50_s": 4.946139437105241
+  },
+  "main_bleeder_open": {
+    "rc": 0,
+    "execution": "PASS",
+    "cap_F": 2e-05,
+    "bleed_ohm": 1000000000000000.0,
+    "initial_V": 172.183,
+    "normal_bleeder_power_W": 2.9646985489e-11,
+    "t50_s": null,
+    "values": {
+      "0": 172.183,
+      "1": 172.183,
+      "5": 172.183,
+      "12": 172.183
+    },
+    "analytic_t50_s": 24730697185.526207
+  },
+  "provenance": {
+    "ngspice_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+    "script_sha256": "f67438327fa9dcfd2a7a4b538921bd59a5092e917135936df5e417c760012288"
+  }
+}

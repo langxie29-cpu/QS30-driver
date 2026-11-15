@@ -1,0 +1,36 @@
+{
+  "pins_compared": 64,
+  "csv_native_match": true,
+  "topology": "Uncoupled single-inductor nonisolated boost",
+  "controller_mpn": "UC3843AN",
+  "series_shunt_present": false,
+  "cs_pickoff": "SW_HV through R36=100k; C13=470p to GND",
+  "ground": "Q20.S=GND; R_HV_STAR connects GND_HV",
+  "native_components": [
+    {
+      "designref": "C10",
+      "value": "HV 缓冲",
+      "footprint": "QS30:PRELIM_2P"
+    },
+    {
+      "designref": "D20",
+      "value": "1000 V 1 A 快恢复",
+      "footprint": "QS30:PRELIM_2P"
+    },
+    {
+      "designref": "L20",
+      "value": "220 µH ≥5 A",
+      "footprint": "QS30:PRELIM_2P"
+    },
+    {
+      "designref": "Q20",
+      "value": "400 V 10 A",
+      "footprint": "QS30:PRELIM_3P"
+    },
+    {
+      "designref": "U20",
+      "value": "电流型 PWM",
+      "footprint": "QS30:PRELIM_8P"
+    }
+  ]
+}

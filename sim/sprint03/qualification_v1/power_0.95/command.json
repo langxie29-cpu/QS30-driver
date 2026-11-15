@@ -1,0 +1,63 @@
+{
+  "id": "power_0.95",
+  "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+  "kind": "power",
+  "parameters": {
+    "vin_V": 11.4,
+    "duty": 0.95,
+    "c10_F": 0
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.42729490000056103,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "194492734fe912f50481116813208136bd5cb804df64f56abe8a849887d21b71",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 182.25580214119964,
+      "min": 127.651012,
+      "max": 191.082387,
+      "pp": 63.43137500000002,
+      "slope_V_per_s": 4109.24733253949
+    },
+    "capacitor": {
+      "mean": 182.21952325124602,
+      "min": 181.327312,
+      "max": 183.14812,
+      "pp": 1.8208079999999995,
+      "slope_V_per_s": 3583.3804368672286
+    },
+    "i(l20)": {
+      "min": 0.499717439,
+      "max": 3.02116688,
+      "late_rms": 2.4890255522431257
+    },
+    "v(gate)": {
+      "min": 0.0,
+      "max": 10.0,
+      "late_rms": 9.742880301064682
+    },
+    "v(sw)": {
+      "min": 0.347149344,
+      "max": 186.438802,
+      "late_rms": 40.90376578745924
+    },
+    "i(vdprobe)": {
+      "min": -108.425003,
+      "max": 19.4903205,
+      "late_rms": 1.4108417115261476
+    }
+  }
+}

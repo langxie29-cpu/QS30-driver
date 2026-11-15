@@ -1,0 +1,573 @@
+{
+  "assumptions": {
+    "target_V": 170.0,
+    "full_load_A": 0.030735859258404098,
+    "inductor_H": 0.00022,
+    "frequency_Hz": 78000,
+    "input_envelope": "22.8/24/25.2V exploratory +/-5%; not adapter guarantee; inductor-terminal voltage",
+    "conditions": "3ms precharged open-loop; no UC3843, no OVP, no startup or closed-loop signoff",
+    "c10": "Absent in baseline research only; actual formal C10 retained. Separate present comparison.",
+    "diode": "Diotec research supplier hypothesis; inherited compatibility copy removes metadata only",
+    "acceptance": "Execution requires rc0, native 3ms endpoint, wave output, no parsed errors. Engineering stays INCONCLUSIVE.",
+    "analytic_reference": "https://www.ti.com/lit/an/slva061/slva061.pdf"
+  },
+  "results": [
+    {
+      "id": "input12",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 12,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "CCM",
+        "duty": 0.9323559124959748,
+        "ideal_CCM_duty": 0.9294117647058824,
+        "ideal_boundary_A": 0.02293899871754542,
+        "ideal_or_screen_peak_A": 0.7680308781211758,
+        "turnoff_window_s": 8.672318910772458e-07,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 4.214769800000795,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "5f6b9cb4a41da481196a3fe44e71f8a0dc50db4307b06d0a5789521debc2de10",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 171.72892089835463,
+          "min": 163.939119,
+          "max": 172.342085,
+          "pp": 8.402965999999992,
+          "slope_V_per_s": 504.82934326049804
+        },
+        "capacitor": {
+          "mean": 171.72399966633256,
+          "min": 171.595401,
+          "max": 171.855181,
+          "pp": 0.2597799999999779,
+          "slope_V_per_s": 480.84660756844687
+        },
+        "i(l20)": {
+          "min": 0.337093408,
+          "max": 1.06514997,
+          "late_rms": 0.6791168488272474
+        },
+        "v(gate)": {
+          "min": -0.0190457674,
+          "max": 10.1596079,
+          "late_rms": 9.747003461054458
+        },
+        "v(sw)": {
+          "min": 0.239738273,
+          "max": 173.81226,
+          "late_rms": 44.30941032100943
+        },
+        "i(vdprobe)": {
+          "min": -15.5760818,
+          "max": 1.17562513,
+          "late_rms": 0.1738184789033953
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.0,
+        "IL_late_min_A": 0.337093408,
+        "IL_late_max_A": 0.96741743,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24_low",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 22.8,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.5465317251668909,
+        "ideal_CCM_duty": 0.8658823529411764,
+        "ideal_boundary_A": 0.07714936966148041,
+        "ideal_or_screen_peak_A": 0.7261610334385263,
+        "turnoff_window_s": 5.813695831193707e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.6344721000004938,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "fd87a415073f033e50591a11e6e331b01f5f503018db6a8c6eefce5dacd15961",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.51584100676678,
+          "min": 168.742623,
+          "max": 169.903213,
+          "pp": 1.160589999999985,
+          "slope_V_per_s": -169.58040793444258
+        },
+        "capacitor": {
+          "mean": 169.51762066922495,
+          "min": 169.46739,
+          "max": 169.567271,
+          "pp": 0.09988100000001054,
+          "slope_V_per_s": -172.4645688579068
+        },
+        "i(l20)": {
+          "min": -0.132566777,
+          "max": 0.716726507,
+          "late_rms": 0.31997722587333344
+        },
+        "v(gate)": {
+          "min": -0.0197338991,
+          "max": 10.1071537,
+          "late_rms": 7.425632206975666
+        },
+        "v(sw)": {
+          "min": -0.743385475,
+          "max": 171.760203,
+          "late_rms": 54.51526980291003
+        },
+        "i(vdprobe)": {
+          "min": -4.30817465,
+          "max": 0.753541452,
+          "late_rms": 0.11187992282911283
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.10310715864294924,
+        "IL_late_min_A": -0.131828708,
+        "IL_late_max_A": 0.698954413,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 24,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.5170844827802,
+        "ideal_CCM_duty": 0.8588235294117648,
+        "ideal_boundary_A": 0.08478718513320586,
+        "ideal_or_screen_peak_A": 0.7231950808114687,
+        "turnoff_window_s": 6.1912245797410255e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.6268087999997078,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "091d36a3bff4ed7212ad01c684b50b631bc184d30e843aefa13d5b77c78e0beb",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.74028770654658,
+          "min": 169.694735,
+          "max": 170.116691,
+          "pp": 0.42195599999999445,
+          "slope_V_per_s": -91.64324265379429
+        },
+        "capacitor": {
+          "mean": 169.74125011974576,
+          "min": 169.710097,
+          "max": 169.77197,
+          "pp": 0.06187300000001983,
+          "slope_V_per_s": -92.39640385011235
+        },
+        "i(l20)": {
+          "min": -0.131837125,
+          "max": 0.716968209,
+          "late_rms": 0.3248254558711293
+        },
+        "v(gate)": {
+          "min": -0.0195635698,
+          "max": 10.1071678,
+          "late_rms": 7.224582996245391
+        },
+        "v(sw)": {
+          "min": -0.742457193,
+          "max": 171.75975,
+          "late_rms": 55.605789709542854
+        },
+        "i(vdprobe)": {
+          "min": -4.30817459,
+          "max": 0.753954631,
+          "late_rms": 0.11662755545115473
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.1026211614441001,
+        "IL_late_min_A": -0.130995391,
+        "IL_late_max_A": 0.716600864,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24_high",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 25.2,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.490433422448917,
+        "ideal_CCM_duty": 0.851764705882353,
+        "ideal_boundary_A": 0.0927095603358579,
+        "ideal_or_screen_peak_A": 0.7202169140858222,
+        "turnoff_window_s": 6.532904840398499e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.6683160000011412,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "961d2bf04f921e6f8b0eb45cbc5696d39d8454a97ce365d3228de968012cf5b1",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.91309963456652,
+          "min": 169.00417,
+          "max": 170.306663,
+          "pp": 1.3024929999999983,
+          "slope_V_per_s": -27.25079895716516
+        },
+        "capacitor": {
+          "mean": 169.91343415873547,
+          "min": 169.897097,
+          "max": 169.929414,
+          "pp": 0.032317000000006146,
+          "slope_V_per_s": -30.117355194252738
+        },
+        "i(l20)": {
+          "min": -0.129977727,
+          "max": 0.72884405,
+          "late_rms": 0.32634297224410536
+        },
+        "v(gate)": {
+          "min": -0.019184332,
+          "max": 10.1089281,
+          "late_rms": 7.037064632793624
+        },
+        "v(sw)": {
+          "min": -0.741175344,
+          "max": 171.804905,
+          "late_rms": 56.53367038377863
+        },
+        "i(vdprobe)": {
+          "min": -4.30817453,
+          "max": 0.820030671,
+          "late_rms": 0.12034247575080947
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.10136407818447478,
+        "IL_late_min_A": -0.129947309,
+        "IL_late_max_A": 0.72884405,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24_c10",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 24,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.5170844827802,
+        "ideal_CCM_duty": 0.8588235294117648,
+        "ideal_boundary_A": 0.08478718513320586,
+        "ideal_or_screen_peak_A": 0.7231950808114687,
+        "turnoff_window_s": 6.1912245797410255e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": true,
+        "max_step_s": 5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5053337000008469,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "1011c2f0bdb97ac61b36ee0ee2cc87f17a447dbe3119fcbe779e5711573f66ef",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 165.7575242998303,
+          "min": 165.177939,
+          "max": 166.328613,
+          "pp": 1.1506739999999809,
+          "slope_V_per_s": -1513.243079079773
+        },
+        "capacitor": {
+          "mean": 165.772838129629,
+          "min": 165.383442,
+          "max": 166.165442,
+          "pp": 0.7820000000000107,
+          "slope_V_per_s": -1507.1054224972384
+        },
+        "i(l20)": {
+          "min": -0.713694164,
+          "max": 0.71974564,
+          "late_rms": 0.2674426492503308
+        },
+        "v(gate)": {
+          "min": -0.104237111,
+          "max": 23.8473113,
+          "late_rms": 7.187590984173756
+        },
+        "v(sw)": {
+          "min": -0.951723289,
+          "max": 168.621635,
+          "late_rms": 39.68412198684355
+        },
+        "i(vdprobe)": {
+          "min": -0.226770784,
+          "max": 0.00477931927,
+          "late_rms": 0.00012866799682628054
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.02340014040084352,
+        "IL_late_min_A": -0.408836638,
+        "IL_late_max_A": 0.412306353,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24_step25ns",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 24,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.5170844827802,
+        "ideal_CCM_duty": 0.8588235294117648,
+        "ideal_boundary_A": 0.08478718513320586,
+        "ideal_or_screen_peak_A": 0.7231950808114687,
+        "turnoff_window_s": 6.1912245797410255e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 2.5e-08,
+        "vendor_diode": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.9687765999988187,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "19d8309599cd6effcdd49797c6b7fdd23730be269d4e61a00a623940d5b69eda",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.78789827757896,
+          "min": 169.744873,
+          "max": 170.1922,
+          "pp": 0.44732700000000136,
+          "slope_V_per_s": -74.495931029362
+        },
+        "capacitor": {
+          "mean": 169.78868545486853,
+          "min": 169.761685,
+          "max": 169.815289,
+          "pp": 0.05360400000000709,
+          "slope_V_per_s": -74.77197435758261
+        },
+        "i(l20)": {
+          "min": -0.132002754,
+          "max": 0.721795214,
+          "late_rms": 0.32775065230888273
+        },
+        "v(gate)": {
+          "min": -0.0196535853,
+          "max": 10.107892,
+          "late_rms": 7.225049864163935
+        },
+        "v(sw)": {
+          "min": -0.741948986,
+          "max": 171.805277,
+          "late_rms": 55.69928913918909
+        },
+        "i(vdprobe)": {
+          "min": -5.15581602,
+          "max": 0.819342907,
+          "late_rms": 0.11766655987891626
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.0997460617663773,
+        "IL_late_min_A": -0.131685809,
+        "IL_late_max_A": 0.720839238,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    },
+    {
+      "id": "input24_generic",
+      "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 24,
+        "io_A": 0.030735859258404098,
+        "mode_screen": "DCM",
+        "duty": 0.5170844827802,
+        "ideal_CCM_duty": 0.8588235294117648,
+        "ideal_boundary_A": 0.08478718513320586,
+        "ideal_or_screen_peak_A": 0.7231950808114687,
+        "turnoff_window_s": 6.1912245797410255e-06,
+        "status": "Research assumptions; not approved worst-case design",
+        "c10_present": false,
+        "max_step_s": 5e-08,
+        "vendor_diode": false
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.6432455000012851,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "6cee26c42397104cad36316925dce546e5495fb33224560e647db27fd6a66fe1",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.8182217031299,
+          "min": 169.775826,
+          "max": 170.225736,
+          "pp": 0.4499100000000169,
+          "slope_V_per_s": -63.67332545011759
+        },
+        "capacitor": {
+          "mean": 169.81889931709043,
+          "min": 169.794454,
+          "max": 169.842887,
+          "pp": 0.048432999999988624,
+          "slope_V_per_s": -63.977854132180404
+        },
+        "i(l20)": {
+          "min": -0.130592592,
+          "max": 0.723334077,
+          "late_rms": 0.32867850255009995
+        },
+        "v(gate)": {
+          "min": -0.0199593369,
+          "max": 10.1081246,
+          "late_rms": 7.225200741188973
+        },
+        "v(sw)": {
+          "min": -0.741790693,
+          "max": 171.398392,
+          "late_rms": 55.69267906472901
+        },
+        "i(vdprobe)": {
+          "min": -1.1932045,
+          "max": 0.834403434,
+          "late_rms": 0.11844713770836501
+        }
+      },
+      "mode_diagnostic": {
+        "late_time_fraction_abs_IL_below_10mA": 0.10299161612042865,
+        "IL_late_min_A": -0.130193309,
+        "IL_late_max_A": 0.722227684,
+        "VGS_min_V": 0.0,
+        "VGS_max_V": 10.00000005
+      }
+    }
+  ],
+  "system": "FAIL/HOLD",
+  "HV_G0": "BLOCKED",
+  "HV_G1": "BLOCKED",
+  "HV_G2": "FAIL"
+}

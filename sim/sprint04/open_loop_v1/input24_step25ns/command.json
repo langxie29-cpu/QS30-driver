@@ -1,0 +1,79 @@
+{
+  "id": "input24_step25ns",
+  "purpose": "Fixed PWM hot-start energy/mode screening; not autonomous regulation",
+  "kind": "power",
+  "parameters": {
+    "vin_V": 24,
+    "io_A": 0.030735859258404098,
+    "mode_screen": "DCM",
+    "duty": 0.5170844827802,
+    "ideal_CCM_duty": 0.8588235294117648,
+    "ideal_boundary_A": 0.08478718513320586,
+    "ideal_or_screen_peak_A": 0.7231950808114687,
+    "turnoff_window_s": 6.1912245797410255e-06,
+    "status": "Research assumptions; not approved worst-case design",
+    "c10_present": false,
+    "max_step_s": 2.5e-08,
+    "vendor_diode": true
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.9687765999988187,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "19d8309599cd6effcdd49797c6b7fdd23730be269d4e61a00a623940d5b69eda",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 169.78789827757896,
+      "min": 169.744873,
+      "max": 170.1922,
+      "pp": 0.44732700000000136,
+      "slope_V_per_s": -74.495931029362
+    },
+    "capacitor": {
+      "mean": 169.78868545486853,
+      "min": 169.761685,
+      "max": 169.815289,
+      "pp": 0.05360400000000709,
+      "slope_V_per_s": -74.77197435758261
+    },
+    "i(l20)": {
+      "min": -0.132002754,
+      "max": 0.721795214,
+      "late_rms": 0.32775065230888273
+    },
+    "v(gate)": {
+      "min": -0.0196535853,
+      "max": 10.107892,
+      "late_rms": 7.225049864163935
+    },
+    "v(sw)": {
+      "min": -0.741948986,
+      "max": 171.805277,
+      "late_rms": 55.69928913918909
+    },
+    "i(vdprobe)": {
+      "min": -5.15581602,
+      "max": 0.819342907,
+      "late_rms": 0.11766655987891626
+    }
+  },
+  "mode_diagnostic": {
+    "late_time_fraction_abs_IL_below_10mA": 0.0997460617663773,
+    "IL_late_min_A": -0.131685809,
+    "IL_late_max_A": 0.720839238,
+    "VGS_min_V": 0.0,
+    "VGS_max_V": 10.00000005
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "all_manifest_hashes_match": true,
+    "run_driver_snapshots_match": true,
+    "vendor_change_metadata_only": true,
+    "all_prior_tracked_and_candidate_inputs_unchanged": true,
+    "diff_check": true,
+    "actual_startup_fail_reproduced": true
+  },
+  "spice_executions": {
+    "total": 18,
+    "completed": 15,
+    "failed_or_timeout": 3,
+    "note": "1 vendor syntax error + 2 120-second timeouts; completed is not electrical PASS"
+  },
+  "status": "PASS",
+  "scope": "Evidence integrity only. System FAIL/HOLD; no native electrical writeback."
+}

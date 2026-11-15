@@ -1,0 +1,28 @@
+{
+  "scope": "Diagnostic candidate tests only; no hardware safety certification or native design writeback",
+  "controller": {
+    "nominal_reference_V": [
+      4.82,
+      5.18
+    ],
+    "nominal_frequency_Hz": [
+      65000,
+      90000
+    ],
+    "cs_delay_limit_s": 3e-07,
+    "same_cycle_retrigger_limit": 0,
+    "dmax": "must be measured, not clamped to 0.92 or assumed 100%; no production guarantee inferred"
+  },
+  "closed_candidate": {
+    "Vout_mean_V": [
+      169,
+      175
+    ],
+    "late_window_pp_limit_V": 2,
+    "peak_HV_limit_V": 220,
+    "inductor_peak_A_limit": 5,
+    "note": "5A is provisional design marker, not verified magnetics rating; startup must be independently assessed"
+  },
+  "gate1": "Production feasibility BLOCKED until exact controller/magnetic/input specifications and worst-case duty margin established; nominal candidate tests may proceed as isolated diagnostics, no native writeback",
+  "six_system_tests": "No PASS inferred from forced HV stimulus, ideal source, model-only logic or inactive tube loads"
+}

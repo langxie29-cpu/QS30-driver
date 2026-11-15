@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-15",
+  "status": "BOUNDED_ANALYSIS_NOT_SYSTEM_PASS",
+  "config_sha256": "1071800f6bc2df7de030d74a07e74aa9d023bca51a9eaa5caca64f4f9b006172",
+  "feedback": {
+    "S05_2Meg": {
+      "min_V": 161.6580219880293,
+      "max_V": 178.3837474278408,
+      "pass_this_error_budget": false
+    },
+    "S06_200k": {
+      "min_V": 165.24767198802925,
+      "max_V": 174.7733974278408,
+      "pass_this_error_budget": true
+    }
+  },
+  "HV_W": 5.71560370189665,
+  "adapter_W": 13.8628169358622,
+  "input_A_at21_6": 0.6417970803639907,
+  "AUX12_A": 0.099096,
+  "normal_peak_max_A": 0.9425703616384908,
+  "normal_rms_max_A": 0.4185673843344535,
+  "min_idle": 0.1981045406939928,
+  "CS": {
+    "min_limit_A": 1.026322144409563,
+    "delay_alloc_s": 3.92e-07,
+    "max_peak_A": 1.501780383783636,
+    "Isat10pct25C_A": 3.1,
+    "25C_headroom_fraction": 0.5155547149085045,
+    "required_hot_Isat_for20pct_headroom_A": 1.8772254797295451,
+    "qualification": "hot L(I), real nonlinear gate current and transients remain pending"
+  },
+  "aux_bias_candidate": {
+    "nominal_V": 12.32,
+    "resistor_reference_range_V": [
+      12.092727635683095,
+      12.548730369442705
+    ],
+    "min_controller_V_after_allocated_ripple_and_path": 12.017727635683094,
+    "scope": "reference/ratio only, additional regulation error, layout and transient not certified"
+  },
+  "SHDN": {
+    "on_min_V": 1.0694477988802285,
+    "partial_power_off_max_V": 0.40990985046193495,
+    "unpowered_highZ_max_V": 0.16564,
+    "pass_allocated_static_bounds": true,
+    "scope": "depends on allocated logic voltage/leakage and RTN shift; not real partial-power validation"
+  },
+  "fixed_full_CCM_slope_screen": {
+    "m_slope_half_down_V_per_us": 0.5216954732510288,
+    "max_on_s_at_1V": 1.916827059603067e-06,
+    "conclusion": "A fixed worst-CCM ramp alone consumes 1V CS range before normal DCM required ontime; reject naive CT injection as complete strategy"
+  },
+  "USB": {
+    "preconfigured_3V3_continuous_A_max": 0.10966810966810969,
+    "cap22u_hold_s_at800mA_3_135to3_0": 4.375446428571428e-06,
+    "cap_for1ms_same_burst_F": 0.005028058361391695,
+    "conclusion": "No ESP32 boot/enum current trace; do not claim host compatibility"
+  },
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "reset_3V3": {
+    "rejected_G33_max_release_V": 3.193951249999999,
+    "new_mpn": "TPS389001DSET",
+    "new_falling_interval_V": [
+      3.0083468086595446,
+      3.0868283755283343
+    ],
+    "new_rising_max_V_conservative": 3.1122947096264433,
+    "new_delay_min_s": 0.017159999999999998,
+    "new_delay_max_s": 0.03468666666666667,
+    "scope": "3V3 target3.135-3.465V, trip before3.0V on static bound; actual delay/droop/current condition and partial-power pending"
+  }
+}

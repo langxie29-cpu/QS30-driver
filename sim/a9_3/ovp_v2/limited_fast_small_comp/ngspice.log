@@ -1,0 +1,30 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: qs30 a9.3 independent ovp latch and comp sink fixture
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by 'uic',
+  now using transient initial conditions.
+doAnalyses: TRAN:  Timestep too small; time = 0.000505761, timestep = 1.25e-18: trouble with B-instance b_ea
+
+
+tran simulation(s) aborted
+
+Error: measure  comp_end  find(AT) : out of interval
+ meas tran comp_end find v(comp_n) at=.04 failed!
+
+
+Error: measure  latch_end  find(AT) : out of interval
+ meas tran latch_end find v(ovp_latch) at=.04 failed!
+
+
+No. of Data Rows : 578
+end_time            =  5.05761e-04 at=  5.05761e-04
+q21_min             =  -5.34582e-07 at=  1.35594e-06
+q22_max             =  8.11042e-07 at=  1.77774e-08
+q25_max             =  5.80647e-06 at=  1.00000e-08
+ngspice-47 done

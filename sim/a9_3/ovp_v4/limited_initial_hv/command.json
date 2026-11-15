@@ -1,0 +1,42 @@
+{
+  "stage": "protection",
+  "case": {
+    "id": "limited_initial_hv",
+    "limited": true,
+    "hv": "170"
+  },
+  "argv": [
+    "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 0.45166778564453125,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.04,
+  "deck_sha256": "fb14bd318a5b7e3fd199132983a772d2f3cd6cc42ea24107f58ba3e5b270f3a1",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "forced_hv_peak_V": 170.0,
+    "q21_peak_A": 6.94329484e-06,
+    "q22_peak_A": 1.23057738e-06,
+    "q25_peak_A": 5.80657903e-06,
+    "latch_end_V": 9.42718737e-06,
+    "comp_end_V": 5.41898781,
+    "within_200mA_absolute_limit": true
+  },
+  "native_measurements": {
+    "end_time": 0.04,
+    "q21_min": -5.35199e-07,
+    "q22_max": 8.1106e-07,
+    "q25_max": 5.80658e-06,
+    "comp_end": 5.41899,
+    "latch_end": 9.42719e-06
+  },
+  "engineering": "PROVISIONAL"
+}

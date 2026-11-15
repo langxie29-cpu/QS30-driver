@@ -1,0 +1,172 @@
+(ExpressProject "TPS26601_TRANS"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\tps26601_trans.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File "tps26601_trans.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (RootChangedForceReNetlist "x")
+    (Netlist_TAB "4")
+    (PSPICE_Output_File "TPS2592AA_TRANS.lib")
+    (PSPICE_View_Output "FALSE")
+    (PSPICE_Subcircuit_Format "TRUE")
+    (PSPICE_Do_DRC_Markers "FALSE")
+    (PSPICE_Hier_Format "FALSE")
+    (PSPICE_Hier_Descend "TRUE")
+    (PSPICE_Hier_DoNot_Descend "FALSE")
+    (PSPICE_Alt_Template "PSpiceTemplate"))
+  (Folder "Outputs")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\tps26601_trans-pspicefiles\tps26601_startup_evm\tran.sim"
+        (DisplayName "TPS26601_STARTUP_EVM-TRAN")
+        (Type "PSpice Profile"))
+      (ActiveProfile
+         ".\tps26601_trans-pspicefiles\tps26601_startup_evm\tran.sim"))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\tps26601_trans.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\tps26601_trans.lib"))))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (TPS26601_TRANS
+      (FullPartName "TPS26601_TRANS.Normal")
+      (LibraryName
+         "D:\X0211415_DATA\PSPICE\HOT_SWAP_OR_E-FUSE\TPS26601\ACTIVE_WORK_KARMIC\PSPICE\TPS26601_PSPICE_TRANS\TPS26601_TRANS.OLB")
+      (DeviceIndex "0"))
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (ABM1
+      (FullPartName "ABM1.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ABM.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (NMOSIDEAL_PS_TPS26600
+      (FullPartName "NMOSIDEAL_PS_TPS26600.Normal")
+      (LibraryName
+         "D:\X0211415_DATA\TINA-TI\HOT_SWAP\TPS26600\ACTIVE_WORK_KARMIC\PSPICE\TPS26600_PSPICE_TRANS\NMOSIDEAL_PS_TPS26600.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VAC
+      (FullPartName "VAC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (EVALUE
+      (FullPartName "EVALUE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ABM.OLB")
+      (DeviceIndex "0"))
+    (D_D_TPS26600
+      (FullPartName "D_D_TPS26600.Normal")
+      (LibraryName
+         "D:\X0211415_DATA\PSPICE\HOT SWAP OR E-FUSE\TPS26600\D_D_TPS26600.OLB")
+      (DeviceIndex "0"))
+    (D_D1_TPS26600
+      (FullPartName "D_D1_TPS26600.Normal")
+      (LibraryName
+         "D:\X0211415_DATA\PSPICE\HOT SWAP OR E-FUSE\TPS26600\ACTIVE_WORK_KARMIC\PSPICE\TPS26600_PSPICE_TRANS\D_D1_TPS26600.OLB")
+      (DeviceIndex "0"))
+    (IPWL
+      (FullPartName "IPWL.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (S
+      (FullPartName "S.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.0\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (COMPHYS_BASIC_GEN
+      (FullPartName "COMPHYS_BASIC_GEN.Normal")
+      (LibraryName
+         "C:\PSPICE_SUBBLK_LIB_DS\PSPICE_SUBBLK_LIB\PSPICE_SUBBLK_LIB\SB02_SUBBLOCKBASIC\SB0102_COMPARATORS\COMPARATOR_GEN.OLB")
+      (DeviceIndex "0"))
+    (ABM1/I
+      (FullPartName "ABM1/I.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ABM.OLB")
+      (DeviceIndex "0"))
+    (OR2_BASIC_GEN
+      (FullPartName "OR2_BASIC_GEN.Normal")
+      (LibraryName "C:\USERS\JANAYYA\DOCUMENTS\TPS25940\GATES_GEN.OLB")
+      (DeviceIndex "0"))
+    (PORTLEFT-R
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (PORTLEFT-L
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (SUBPARAM
+      (FullPartName "SUBPARAM.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\SPECIAL.OLB")
+      (DeviceIndex "0"))
+    (PARAM
+      (FullPartName "PARAM.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\SPECIAL.OLB")
+      (DeviceIndex "0"))
+    (PORTBOTH-L
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (TPS26600_TRANS
+      (FullPartName "TPS26600_TRANS.Normal")
+      (LibraryName
+         "D:\X0211415_DATA\PSPICE\HOT SWAP OR E-FUSE\TPS26600\ACTIVE_WORK_KARMIC\PSPICE\TPS26600_PSPICE_TRANS\TPS26600_TRANS.OLB")
+      (DeviceIndex "0"))
+    (GAIN
+      (FullPartName "GAIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ABM.OLB")
+      (DeviceIndex "0"))
+    (ABM2/I
+      (FullPartName "ABM2/I.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DEMO\ABM.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "D:\X0211415_DATA\PSPICE\HOT_SWAP_OR_E-FUSE\TPS26601\Active_Work_KarMic\PSPICE\TPS26601_PSPICE_TRANS")
+  (MPSSessionName "x0211415")
+  (ISPCBBASICLICENSE "false")
+  (GlobalState
+    (FileView
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -23 0 200 0 380"))
+      (Tab 0))))

@@ -1,0 +1,67 @@
+UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+SLUS223H – APRIL 1997 – REVISED OCTOBER 2024                                                                                    www.ti.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                Figure 7-6. UVLO ON and OFF Profile
+                 Figure 7-5. UVLO Threshold
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            Figure 7-7. Providing Power to UCx84x
+
+7.3.6 Oscillator
+The oscillator allows for up to 500-kHz switching frequency. The OUTPUT gate drive is the same frequency as
+the oscillator in the UCx842 and UCx843 devices and can operate near 100% duty cycle. In the UCx844 and
+UCx845  devices,  the  frequency  of  OUTPUT  is  one-half  that  of  the  oscillator  due  to  an  internal  T  flipflop  that
+blanks the output off every other clock cycle, resulting in a maximum duty cycle for these devices of < 50% of
+the  switching  frequency.  An  external  resistor,  RRT,  connected  from  VREF  to  RT/CT  sets  the  charging  current
+for the timing capacitor, CCT, which is connected from RT/CT to GROUND. An RRT value greater than 5 kΩ is
+recommended on RT/CT to set the positive ramp time of the internal oscillator. Using a value of 5 kΩ or greater
+for RRT maintains a favorable ratio between the internal impedance and the external oscillator set resistor and
+results  in  minimal  change  in  frequency  over  temperature.  Using  a  value  of  less  the  recommended  minimum
+value can result in frequency drift over temperature, part tolerances, or process variations.
+The peak-to-peak amplitude of the oscillator waveform is 1.7 V in UCx84x devices. The UCx842 and UCx843
+have a maximum duty cycle of approximately 100%, whereas the UCx844 and UCx845 are clamped to 50%
+maximum  by  an  internal  toggle  flip  flop.  This  duty  cycle  clamp  is  advantageous  in  most  flyback  and  forward
+converters. For optimum IC performance the dead-time can not exceed 15% of the oscillator clock period. The
+discharge current, typically 6 mA at room temperature, sets the dead time, see Figure 6-9. During the discharge,
+
+
+
+
+16     Submit Document Feedback                                                                  Copyright © 2024 Texas Instruments Incorporated
+      Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

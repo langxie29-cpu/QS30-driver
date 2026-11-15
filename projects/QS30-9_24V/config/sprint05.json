@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "authority": "User requested selection in this sprint; numerical limits below are engineering requirements, not measured performance",
+  "status": "S05_REVIEW_BASELINE",
+  "manufacturing": "HOLD",
+  "adapter": {"mpn": "GST40A24-P1J", "manufacturer": "MEAN WELL", "output_V": 24, "rated_A": 1.67, "voltage_tolerance_fraction": 0.025, "ripple_Vpp": 0.15, "qualification": "DC_SPEC_REVIEWED_HOTPLUG_PENDING"},
+  "input": {"connector_continuous_V": [21.6, 26.4], "inductor_min_V": 20.5, "path_drop_max_V": 1.1, "reverse_test_V": -26.4, "reverse_test_s": 60, "positive_transient_test_V": 40, "positive_transient_test_s": 0.001, "transient_source_ohm": 1, "hotplug_cable_uH": [0.1, 1, 3], "hotplug_source_ohm": [0.1, 1], "status": "DESIGN_TEST_ENVELOPE_NOT_ADAPTER_GUARANTEE"},
+  "acceptance": {"HV_mean_V": [164.9, 175.1], "HV_target_V": 170, "HV_ripple_Vpp_max": 1, "HV_normal_overshoot_V_max": 180, "OVP_trip_V": [183, 190], "HV_fault_peak_V_max": 195, "startup_s_max": 1, "load_step_recovery_s_max": 0.1, "load_step_envelope_V": [160, 180], "ambient_C": [0, 50], "junction_C_max": 110, "inductor_surface_C_max": 100, "AUX12_V": [11.4, 12.6], "DRV12_V": [10.8, 13.2], "3V3_V": [3.135, 3.465], "bleed_design_only_V": 60, "bleed_design_only_s": 5, "touch_safety_standard": "UNRESOLVED_60V_IS_NOT_CERTIFIED_TOUCH_CRITERION"},
+  "loads": {"tube_count": 9, "tube_mA": [0, 1.5, 2.25, 3], "tube_anode_ohm": 20000, "bleed_count": 4, "bleed_each_ohm": 200000, "bleed_resistor_tolerance": 0.01, "HV_extra_leakage_A": 0.001, "3V3_typ_A": 0.25, "3V3_alloc_A": 0.8, "DRV_HV5622_alloc_A": 0.045, "DRV_level_shift_alloc_A": 0.01, "controller_bias_alloc_A": 0.005, "controller_gate_charge_alloc_C": 6.4e-8, "protection_PG_bias_alloc_A": 0.02, "other_AUX_alloc_A": 0.01},
+  "efficiency_allocations": {"HV_power_stage_min": 0.75, "AUX_buck_min": 0.8, "5V_buck_min": 0.8, "3V3_buck_min": 0.8, "front_end_loss_W": 0.35, "scope": "HV efficiency includes MOS/shunt/inductor/diode/snubber losses; controller bias and gate energy counted only in AUX12"},
+  "HV_candidate": {"L_H": 0.00015, "L_tolerance": 0.1, "L_extra_drop": 0.1, "DCR25_max_ohm": 0.216, "frequency_Hz": 110000, "frequency_screen_fraction": 0.15, "RCS_ohm": 0.82, "RCS_tolerance": 0.01, "CS_threshold_V": [0.9, 1.1], "CS_filter_R_ohm": 100, "CS_filter_C_F": 2.2e-10, "CS_comparator_delay_max_s": 7e-8, "gate_turnoff_budget_s": 1e-7, "noise_budget_V": 0.05, "COUT_F": 0.00002, "module_C_F": 3e-7, "COUT_tolerance": 0.05, "C10_legacy_F": 1e-8, "snubber_candidate_C_F": 1e-10, "snubber_candidate_R_ohm": 330, "RT_ohm": 15400, "CT_F": 1e-9, "CT_status": "TI_application_110kHz_example_not_guaranteed_frequency_at_this_RT_CT"},
+  "USB": {"retain_offline_programming": true, "external_mode_3V3_alloc_A": 0.8, "USB_configured_limit_A": 0.5, "USB_preconfigured_limit_A": 0.1, "USB_program_mode_3V3_alloc_A": 0.45, "wifi_in_USB_mode": false, "qualification": "BOOT_AND_ENUMERATION_POWER_UNPROVEN_GENERIC_HOST_NOT_YET_SUPPORTED"}
+}

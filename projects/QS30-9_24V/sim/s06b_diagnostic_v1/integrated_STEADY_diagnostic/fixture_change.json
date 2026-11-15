@@ -1,0 +1,5 @@
+{
+  "hypothesis": "steady",
+  "diff": "--- \n+++ \n@@ -3,7 +3,7 @@\n VDD vdd 0 PWL(0 0 1u 12 500u 12)\n VFB fb 0 0\n VCS cs 0 PULSE(0 1.2 300u 1n 1n 50u 100u)\n-XU comp fb cs ct 0 out vdd vref UCC28C43_START\n+XU comp fb cs ct 0 out vdd vref UCC28C43_STEADY\n RT vref ct 15.4k\n CT ct 0 1n\n CVREF vref 0 100n\n",
+  "scope": "Diagnostic only. Physical resistor or STEADY model changes are not proof of START performance."
+}

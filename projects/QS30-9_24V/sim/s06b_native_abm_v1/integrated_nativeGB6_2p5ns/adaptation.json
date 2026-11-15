@@ -1,0 +1,5 @@
+{
+  "original_sha256": "b1dc89cf8cfe58c74c1035100a1bb7c53364078e70e8232c86279bebfe28bf6f",
+  "diff": "--- \n+++ \n@@ -55,8 +55,8 @@\n RREG 10 VREF 0.158\n CREF VREF GND 1N\n V3 13 10 \n-**GB6 19 GND Value = { IF ( V(19,GND) > 4 , (I(V3)) , 0 ) }\n-GB6 19 GND Value = { IF (V(19,GND) > 4 , IF((I(V3)-I(EMY19))>2,\n+**BGB6 19 GND I = { IF ( V(19,GND) > 4 , (I(V3)) , 0 ) }\n+BGB6 19 GND I = { IF (V(19,GND) > 4 , IF((I(V3)-I(EMY19))>2,\n + 2, IF((I(V3)-I(EMY19))<0, 0,(I(V3)-I(EMY19)))), 0 ) }\n ****CURRENT COMPARATOR*******\n EB3 21 GND Value = { IF ( V(CS,GND) > V(16,GND), 5, 0 ) }\n@@ -140,8 +140,8 @@\n RREG 10 VREF 0.158\n CREF VREF GND 1N\n V3 13 10 \n-***GB6 19 GND Value = { IF ( V(19,GND) > 7 , I(V3) , 0 ) }\n-GB6 19 GND Value = { IF (V(19,GND) > 4 , IF((I(V3)-I(EMY19))>10e-3,\n+***BGB6 19 GND I = { IF ( V(19,GND) > 7 , I(V3) , 0 ) }\n+BGB6 19 GND I = { IF (V(19,GND) > 4 , IF((I(V3)-I(EMY19))>10e-3,\n + 10e-3, IF((I(V3)-I(EMY19))<0, 0,(I(V3)-I(EMY19)))), 0 ) }\n ****CURRENT COMPARATOR*******\n EB3 21 GND Value = { IF ( V(CS,GND) > V(16,GND), 5, 0 ) }\n",
+  "electrical_parameter_edits": false
+}

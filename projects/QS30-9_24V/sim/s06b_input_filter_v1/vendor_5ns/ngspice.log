@@ -1,0 +1,22 @@
+Note: v.xu.v3: has no value, DC 0 assumed
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps
+
+
+Circuit: s06 ti ucc28c43 standalone cs_gate_buffered
+
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+Operating point simulation skipped by 'uic',
+  now using transient initial conditions.
+doAnalyses: TRAN:  Timestep too small; time = 2.84966e-05, timestep = 6.25e-21: trouble with node "xd.u2_n224941"
+
+
+tran simulation(s) aborted
+
+No. of Data Rows : 7129
+native_end          =  2.84966e-05 at=  2.84966e-05
+ngspice-47 done

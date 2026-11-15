@@ -1,0 +1,18 @@
+Exact device isolated cell 25C
+.include st.lib
+.include diode.lib
+VG g 0 10
+ID 0 d 3.6
+XQ d g 0 STP9NK50Z
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+set numdgt=15
+op
+wrdata waves.txt v(d) v(g)
+quit
+.endc
+.end

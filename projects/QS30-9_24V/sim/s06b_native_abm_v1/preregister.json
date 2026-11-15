@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-15",
+  "scope": "PSpice compatibility structural diagnosis, no electrical value change",
+  "adaptation": "GB6 n+ n- VALUE = {expr} becomes BGB6 n+ n- I = {same expr} in both START and STEADY subcircuits",
+  "criteria": "rc0, finite data to500us, no aborted/error/timestep failure. Oscillator115k-class and nominal VREF must remain; source change does not establish full silicon model qualification.",
+  "timeout_s_each": 40
+}

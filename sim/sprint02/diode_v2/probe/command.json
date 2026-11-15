@@ -1,0 +1,29 @@
+{
+  "model_url": "https://diotec.com/request/spice/uf4007.zip",
+  "source_sha256": "9d0dc00709b89b73829dac03c98f178ba28d3c147d9c8f8efd9a428229f26fd0",
+  "compatibility_change": "remove LTspice mfg/type metadata only",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 0.12758421897888184,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.001,
+  "deck_sha256": "3461a646905a8e9fa8f0e1bcea049eae92df9c7075e662cad72638815f4cee12",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "vf_3mA_V": 0.893149077
+  },
+  "native_measurements": {
+    "end_time": 0.001,
+    "diode_v": 0.893149
+  },
+  "engineering": "OBSERVATION"
+}

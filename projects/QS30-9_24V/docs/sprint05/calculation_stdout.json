@@ -1,0 +1,152 @@
+{
+  "rails": [
+    {
+      "rail": "HV_BUS",
+      "voltage_V": 175.1,
+      "current_A": 0.031857736370340124,
+      "power_W": 5.578289638446556,
+      "scope": "all HV loads; driver drain conduction included",
+      "evidence": "calculated load envelope; tubes unmeasured"
+    },
+    {
+      "rail": "DRV12",
+      "voltage_V": 12.6,
+      "current_A": 0.055,
+      "power_W": 0.693,
+      "scope": "subset of AUX12; do not add twice",
+      "evidence": "HV5622 45mA datasheet test bound plus level shifts 10mA allocation"
+    },
+    {
+      "rail": "AUX12",
+      "voltage_V": 12.6,
+      "current_A": 0.09809599999999999,
+      "power_W": 1.2360095999999998,
+      "scope": "includes DRV12/controller/gate/protection/other",
+      "evidence": "allocation at upper voltage, not measured current"
+    },
+    {
+      "rail": "3V3",
+      "voltage_V": 3.465,
+      "current_A": 0.8,
+      "power_W": 2.7720000000000002,
+      "scope": "MCU/logic/peripherals, external power mode",
+      "evidence": "800mA inherited allocation at upper voltage; measurement pending"
+    },
+    {
+      "rail": "5V_SYS",
+      "voltage_V": 5,
+      "current_A": 0.6930000000000001,
+      "power_W": 3.4650000000000003,
+      "scope": "upstream of 3V3, no duplicate addition",
+      "evidence": "eta3V3=0.80 allocation"
+    },
+    {
+      "rail": "VIN24",
+      "voltage_V": 21.6,
+      "current_A": 0.6325917369411453,
+      "power_W": 13.663981517928741,
+      "scope": "total at connector, includes all conversion budgets",
+      "evidence": "efficiency floors are requirements, not verified"
+    },
+    {
+      "rail": "USB_VBUS_configured",
+      "voltage_V": 4.75,
+      "current_A": 0.41664473684210523,
+      "power_W": 1.9790625,
+      "scope": "USB-only scenario, excludes AUX/HV",
+      "evidence": "500mA configured USB; pre-enumeration unresolved"
+    }
+  ],
+  "key_calculations": {
+    "status": "ANALYTIC_SCREEN_NOT_COMPONENT_OR_SYSTEM_PASS",
+    "config_sha256": "bce00036315e8119a4ecb27bcf94ba0a7882aa4e91bb2fd495b1b21c2c9fb86e",
+    "HV_nom_typ_W_with_1mA_reserve": 4.242846632163342,
+    "HV_max_W": 5.578289638446556,
+    "AUX12_A_alloc": 0.09809599999999999,
+    "adapter_W_alloc": 13.663981517928741,
+    "input_max_A_at21_6": 0.6325917369411453,
+    "adapter_W_at_nominal_LV_rails": 13.384159517928738,
+    "DCM_screen": {
+      "points": 648,
+      "max_D": 0.6994562794588345,
+      "min_idle": 0.20779563691305358,
+      "max_Ipk_A": 0.9311791759647636,
+      "max_ILrms_A": 0.4110026268909561,
+      "max_IDrms_A": 0.14063015490151462,
+      "max_energy_error_W": 2.6645352591003757e-15,
+      "startup_scope": "Excluded: near-Vin startup and output-short are not covered by steady 165-175V DCM equations"
+    },
+    "CS": {
+      "ideal_limit_min_A": 1.026322144409563,
+      "ideal_limit_max_with_50mV_error_A": 1.4166050751416608,
+      "filter_tau_s": 2.2e-08,
+      "total_delay_alloc_s": 1.92e-07,
+      "delay_current_increment_A": 0.041718518518518516,
+      "screen_peak_max_A": 1.4583235936601793,
+      "legacy_0_15ohm_1_1V_A": 7.333333333333334,
+      "Isat10pct25C_A": 1.58,
+      "qualification": "FAIL_PENDING_TEMPERATURE_SATURATION_NOISE_GATE_MODEL_AND_CCM_RAMP"
+    },
+    "C10": {
+      "legacy_halfCV2_J_at170": 0.00014450000000000002,
+      "legacy_halfCV2f_W_at110k": 15.895000000000001,
+      "legacy_CV2f_W_at110k": 31.790000000000003,
+      "note": "Energy scale, not measured resistor dissipation; waveform/topology determines recovery and loss",
+      "snubber_CV2f_W_at180": 0.40986000000000006
+    },
+    "storage": {
+      "Ctotal_nom_F": 2.0300000000000002e-05,
+      "Ctotal_max_screen_F": 2.133e-05,
+      "E170_J": 0.293335,
+      "E195_J_max_C": 0.40553662500000004,
+      "charge0to170_J": 0.293335,
+      "charge_Vin_to170_J": 0.28626085600000006,
+      "bleed_all_to60_s": 1.0570756829505839,
+      "bleed_one_open_to60_s": 1.6928078788457992,
+      "bleed_main_only_one200k_to60_s": 4.999854494481263,
+      "module_100n_one200k_to60_s": 0.02618971401871138,
+      "note": "Cmain +5%, module C +10%, remaining bleed R +1%; no temperature drift credit. Divider leakage not credited; a disconnected module with its only bleed open has no guaranteed decay"
+    },
+    "feedback": {
+      "upper_ohm": 2000000,
+      "lower_ohm": 29853,
+      "nominal_V": 169.9873547047198,
+      "worst_V": [
+        167.95618748902592,
+        172.02589137139012
+      ],
+      "note": "0.1% feedback resistors; includes reference initial error only, bias/drift pending"
+    },
+    "eFuse": {
+      "main_RILIM_ohm": 12000,
+      "main_ILIM_typ_A": 1,
+      "HV_RILIM_ohm": 20000,
+      "HV_ILIM_typ_A": 0.6,
+      "UVLO_nom_V": 20.23,
+      "UVLO_interval_V": [
+        19.60272277227723,
+        21.220959595959595
+      ],
+      "OVLO_nom_V": 29.75,
+      "OVLO_interval_V": [
+        28.693960396039603,
+        31.218939393939397
+      ],
+      "C_dVdt_F": 4.7e-08,
+      "ramp26_4_s_typ": 0.010731707317073168,
+      "note": "Independent dividers, both to RTN. No vendor dynamic simulation; IO-limit precision at .6A must be qualified",
+      "HV_UVLO_nom_V": 19.04,
+      "HV_UVLO_max_V": 19.971212121212126,
+      "input_fuse_path_drop_alloc_V": 0.15
+    },
+    "buck_ripple_screen": {
+      "AUX12_L_H": 0.0001,
+      "5V_L_H": 3.3e-05,
+      "AUX12_deltaI_A_at26_4": 0.16363636363636364,
+      "5V_deltaI_A_at26_4": 0.3070477502295684,
+      "note": "CCM triangular approximation, not PFM light-load ripple or loop qualification"
+    },
+    "qualification_gate_24V_07": "NOT_PASSED_NO_ENTRY_TO_24V_08"
+  },
+  "migration_refs": 211
+}

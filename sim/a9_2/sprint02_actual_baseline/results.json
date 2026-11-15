@@ -1,0 +1,43 @@
+{
+  "native": "kicad\\logs\\sprint02_before\\QS30-9_MAIN.xml",
+  "csv": "netlist9\\QS30-9_REV.A_netlist.csv",
+  "sha256": {
+    "kicad\\logs\\sprint02_before\\QS30-9_MAIN.xml": "486c7d5c437186cb5116e6823ab69869a8048dba28f627927843542b04068868",
+    "netlist9\\QS30-9_REV.A_netlist.csv": "03a512ca3e74af8f129bad7f63cd79e1e90475dccea2fa55caab21c4bd65ff66",
+    "tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+    "design9\\safety_sim9.py": "d7d3b69cb5d5374aec9007fc724674e70c96fe7a89f197ecba8c3c1ae79b93ff"
+  },
+  "results": [
+    {
+      "scenario": {
+        "id": "startup_9",
+        "mode": "boost"
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "metrics": {
+        "t_end_s": 0.08,
+        "hv_peak_V": 16.9354695,
+        "hv_end_V": 15.5915294,
+        "hv_in_peak_V": 12.0086715,
+        "q21_ic_abs_peak_A": 3.60566588e-07,
+        "q22_ic_abs_peak_A": 2.70425314e-07,
+        "q25_ic_abs_peak_A": 7.45526681e-08,
+        "comp_min_after_15ms_V": 0.316914282,
+        "vref_uc_peak_V": 4.999995,
+        "cs_peak_V": 15.6901525,
+        "il_peak_A": 2.54090354
+      },
+      "protection_signoff": "FAIL"
+    }
+  ]
+}

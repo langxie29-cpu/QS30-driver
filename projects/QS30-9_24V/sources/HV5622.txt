@@ -1,0 +1,739 @@
+                                       HV5622
+
+32-Channel Serial-to-Parallel Converter With Open Drain Outputs
+
+Features                                                                    General Description
+
+· 100 mA Minimum Sink Current                                               The HV5622 is a low-voltage serial-to-high-voltage
+· 8 MHz Shift Register Speed                                                parallel converter with open drain outputs. This device
+· Polarity and Blanking Inputs                                              has been designed as a driver for
+· CMOS-compatible Inputs                                                    AC-electroluminescent displays. It can also be used in
+· Forward and Reverse Shifting Options                                      any application requiring multiple-output high-voltage
+· Diode to VPP allows Efficient Power Recovery                              current-sinking capabilities such as driving inkjet and
+                                                                            electrostatic print heads, plasma panels, vacuum
+Applications                                                                fluorescent and large matrix LCD displays.
+
+· Inkjet and Electrostatic Print Heads                                      The device consists of a 32-bit Shift register, 32 latches
+· AC-electroluminescent Displays                                            and control logic to perform the polarity select and
+· Microelectromechanical Systems Applications                               blanking of the outputs. Data is shifted through the Shift
+                                                                            register on the high-to-low transition of the clock. The
+                                                                            HV5622 shifts in a clockwise direction when viewed
+                                                                            from the top of the package. A data output buffer is
+                                                                            provided for cascading devices. This output reflects the
+                                                                            current status of the last bit of the Shift register. The
+                                                                            operation of the Shift register is not affected by the latch
+                                                                            enable (LE), blanking (BL) and polarity (POL) inputs.
+                                                                            Transfer of data from the Shift register to the latch
+                                                                            occurs when the LE input is high. The data in the latch
+                                                                            is stored when LE is low.
+
+Package Types
+
+               44-lead PQFP                                                    44-lead PLCC
+                 (Top view)                                                      (Top view)
+
+                                                                            6  1 44          40
+
+                                                                 44                              DS20005854A-page 1
+                                                                         1
+
+    See Table 2-1 and Table 2-2 for pin information.
+
+ 2017 Microchip Technology Inc.
+HV5622                                    Latch                              HVOUT1
+                                          Latch                              HVOUT2
+Functional Block Diagram
+                                          Latch  (Outputs 3 to 30 not shown)
+                       POL                Latch                              HVOUT31
+                         BL                                                  HVOUT32
+                         LE
+
+                    DATA
+                          IN
+
+                      CLK
+
+                                  32-Bit
+                                   Shift
+                                Register
+
+                     DATA
+                       OUT
+
+                                                  2017 Microchip Technology Inc.
+
+DS20005854A-page 2
+                                 HV5622
+
+Typical Application Circuit
+
+ 2017 Microchip Technology Inc.  DS20005854A-page 3
+HV5622
+
+1.0 ELECTRICAL CHARACTERISTICS
+
+Absolute Maximum Ratings
+
+Supply Voltage, VDD (Note 1) .................................................................................................................. -0.5V to +15V
+Output Voltage, VPP (Note 1) ................................................................................................................ -0.5V to +230V
+Logic Input Levels (Note 1) .............................................................................................................. -0.5V to VDD+0.5V
+Ground Current (Note 2) ......................................................................................................................................... 1.5A
+Operating Ambient Temperature, TA .................................................................................................... -40°C to +85°C
+Storage Temperature, TS .................................................................................................................... -65°C to +150°C
+Continuous Total Power Dissipation:
+
+      44-lead PQFP (Note 3) ............................................................................................................................ 1200 mW
+      44-lead PLCC (Note 3) ............................................................................................................................ 1200 mW
+
+ Notice: Stresses above those listed under "Absolute Maximum Ratings" may cause permanent damage to the
+device. This is a stress rating only, and functional operation of the device at those or any other conditions above those
+indicated in the operational sections of this specification is not intended. Exposure to maximum rating conditions for
+extended periods may affect device reliability.
+
+Note 1: All voltages are referenced to VSS.
+        2: Duty cycle is limited by the total power dissipated in the package.
+        3: For operations above 25°C ambient, derate linearly to the maximum operating temperature at 20 mW/°C.
+
+RECOMMENDED OPERATING CONDITIONS
+
+Parameter                      Sym.   Min.   Typ.  Max. Unit  Conditions
+
+Logic Supply Voltage            VDD    10.8  --    13.2  V
+High-voltage Output Voltage    HVOUT   -0.3
+High-level Input Voltage              VDD-2  --    +220  V
+Low-level Input Voltage          VIH
+Clock Frequency                  VIL     0   --    VDD   V
+Operating Ambient Temperature   fCLK    --
+                                  TA   -40   --    2     V
+
+                                             --    8     MHz
+
+                                             --    +85   °C
+
+DS20005854A-page 4                                        2017 Microchip Technology Inc.
+                                                                                          HV5622
+
+DC ELECTRICAL CHARACTERISTICS
+
+Electrical Specifications: Over recommended operating conditions unless otherwise stated
+
+                 Parameter                  Sym. Min. Typ. Max. Unit                      Conditions
+
+VDD Supply Current                          IDD        --  --      15   mA fCLK = 8 MHz, fDATA = 4 MHz
+Quiescent VDD Supply Current                IDDQ                  100   µA VIN = 0V
+Off State Output Current                               --  --           µA All outputs high, all SWS parallel
+High-level Logic Input Current                                     10
+Low-level Logic Input Current               IO(OFF)    --  --           µA VIH = VDD
+High-level Output Data Out                                          1   µA VIL = 0V
+                                                  IIH  --  --      -1    V IDOUT = -100 µA
+Low-level Output Voltage                          IIL              --    V IHVOUT = 100 mA
+                                                 VOH   --  --      15    V IDOUT = 100 µA
+HVOUT Clamp Voltage                                                 1    V IOL = -100 mA
+                                                 VOL   VDD-1V --  -1.5
+
+                                 HVOUT           VOC   --  --
+                                 Data Out
+                                                       --  --
+
+                                                       --  --
+
+AC ELECTRICAL CHARACTERISTICS
+
+Electrical Specifications: VDD = 12V, TA = 25°C
+
+                 Parameter                       Sym. Min. Typ. Max. Unit                 Conditions
+
+Clock Frequency                                  fCLK  --  -- 8 MHz
+                                                           -- -- ns
+Clock Width, High or Low                    tWL, tWH 62    -- -- ns
+                                                           -- -- ns
+Data Set-up Time before CLK Falls                tSU   25  -- 500 ns RL = 2 k to VPP maximum
+                                                           -- 100 ns CL = 15 pF
+Data Hold Time after CLK Falls                   tH    10  -- 100 ns CL = 15 pF
+                                                           -- -- ns
+Turn-on Time, HVOUT from Enable                  tON   --  -- -- ns
+                                                           -- -- ns
+Delay Time Clock to Data High to Low             tDHL  --
+
+Delay Time Clock to Data Low to High             tDLH  --
+
+Delay Time Clock to Latch Enable Low to High tDLE      50
+
+Latch Enable Pulse Width                         tWLE  50
+
+Latch Enable Setup Time before Clock Falls       tSLE  50
+
+TEMPERATURE SPECIFICATIONS
+
+                 Parameter                       Sym.  Min. Typ. Max. Unit                Conditions
+
+TEMPERATURE RANGE                                      -40 -- +85 °C
+                                                       -65 -- +150 °C
+Operating Ambient Temperature                    TA
+                                                        -- 51 -- °C/W
+Storage Temperature                              TS     -- 37 -- °C/W
+
+PACKAGE THERMAL RESISTANCE
+
+44-lead PQFP                                     JA
+
+44-lead PLCC                                     JA
+
+ 2017 Microchip Technology Inc.                                                           DS20005854A-page 5
+HV5622
+
+Timing Waveforms
+
+        DATA                     50%         tSU  Data Valid                          50%      50%                        VIH
+              IN    50%               tWH                            tH                                                   VIL
+                                                                                          50%      50%                    VIH
+           CLK                                            50%                             50%               tSLE  50%
+                                                                                 tWL  tWLE                                VIL
+        DATA
+           OUT                                                          tDLH                                              VOH
+                                                                                                                          VOL
+             LE                                                         tDHL
+         HVOUT                                                                  50%                                       VOH
+w/ S/R HIGH                                                                                                               VOL
+                                                                 tDLE                                                     VIH
+                                                                                                                          VIL
+                                                                                                       10%
+                                                                                      tON                                 VOH
+                                                                                                                          VOL
+
+DS20005854A-page 6                                                                              2017 Microchip Technology Inc.
+                                                                    HV5622
+
+2.0 PIN DESCRIPTION
+
+The details on the pins of HV5622 44-lead PQFP and
+44-lead PLCC are in Table 2-1 and Table 2-2,
+respectively. Refer to Package Types for the location
+of pins.
+
+TABLE 2-1:   44-LEAD PQFP PIN FUNCTION TABLE
+ Pin Number
+         1   Pin Name                                  Description
+         2
+         3   HVOUT22             High-voltage output
+         4   HVOUT21             High-voltage output
+         5   HVOUT20             High-voltage output
+         6   HVOUT19             High-voltage output
+         7   HVOUT18             High-voltage output
+         8   HVOUT17             High-voltage output
+         9   HVOUT16             High-voltage output
+        10   HVOUT15             High-voltage output
+        11   HVOUT14             High-voltage output
+        12   HVOUT13             High-voltage output
+        13   HVOUT12             High-voltage output
+        14   HVOUT11             High-voltage output
+        15   HVOUT10             High-voltage output
+        16    HVOUT9             High-voltage output
+        17    HVOUT8             High-voltage output
+        18    HVOUT7             High-voltage output
+        19    HVOUT6             High-voltage output
+        20    HVOUT5             High-voltage output
+        21    HVOUT4             High-voltage output
+        22    HVOUT3             High-voltage output
+        23    HVOUT2             High-voltage output
+        24    HVOUT1             High-voltage output
+        25   DATA OUT            Data output pin
+        26                       No connection
+        27        NC             No connection
+        28        NC             No connection
+        29        NC             Inverts the polarity of the HVOUT pins
+        30       POL             Clock pin. Shift registers shift data on the falling edge of the input clock.
+                 CLK             Reference voltage (usually ground)
+        31       VSS             Logic supply voltage
+                 VDD             Latch enable pin. Data is shifted from the Shift register to the latches on logic
+        32                       input high.
+                  LE             Data input pin
+        33                       This blanking pin sets all HVOUT pins low or high depending upon the state of
+              DATA IN            polarity. See Table 3-2.
+        34                       No connection
+                  BL
+
+                  NC
+
+ 2017 Microchip Technology Inc.                                     DS20005854A-page 7
+HV5622
+
+TABLE 2-1:   44-LEAD PQFP PIN FUNCTION TABLE (CONTINUED)
+
+ Pin Number         Pin Name                       Description
+
+        35          HVOUT32   High-voltage output
+        36          HVOUT31   High-voltage output
+        37          HVOUT30   High-voltage output
+        38          HVOUT29   High-voltage output
+        39          HVOUT28   High-voltage output
+        40          HVOUT27   High-voltage output
+        41          HVOUT26   High-voltage output
+        42          HVOUT25   High-voltage output
+        43          HVOUT24   High-voltage output
+        44          HVOUT23   High-voltage output
+
+TABLE 2-2:   44-LEAD PLCC PIN FUNCTION TABLE
+
+ Pin Number         Pin Name                       Description
+
+         1   HVOUT17          High-voltage output
+         2   HVOUT16          High-voltage output
+         3   HVOUT15          High-voltage output
+         4   HVOUT14          High-voltage output
+         5   HVOUT13          High-voltage output
+         6   HVOUT12          High-voltage output
+         7   HVOUT11          High-voltage output
+         8   HVOUT10          High-voltage output
+         9    HVOUT9          High-voltage output
+        10    HVOUT8          High-voltage output
+        11    HVOUT7          High-voltage output
+        12    HVOUT6          High-voltage output
+        13    HVOUT5          High-voltage output
+        14    HVOUT4          High-voltage output
+        15    HVOUT3          High-voltage output
+        16    HVOUT2          High-voltage output
+        17    HVOUT1          High-voltage output
+        18   DATA OUT         Data output pin
+        19                    No connection
+        20        NC          No connection
+        21        NC          No connection
+        22        NC          Inverts the polarity of the HVOUT pins
+        23       POL          Clock pin. Shift registers shift data on the falling edge of the input clock.
+        24       CLK          Reference voltage (usually ground)
+        25       VSS          Logic supply voltage
+                 VDD          Latch enable pin. Data is shifted from the Shift register to the latches on logic
+        26                    input high.
+                  LE
+
+DS20005854A-page 8                                               2017 Microchip Technology Inc.
+                                                          HV5622
+
+TABLE 2-2:   44-LEAD PLCC PIN FUNCTION TABLE (CONTINUED)
+ Pin Number
+        27   Pin Name            Description
+
+        28    DATA IN            Data input pin
+                                 This blanking pin sets all HVOUT pins low or high depending upon the state of
+        29        BL             polarity. See Table 3-2.
+        30                       No internal connection
+        31       NC              High-voltage output
+        32   HVOUT32             High-voltage output
+        33   HVOUT31             High-voltage output
+        34   HVOUT30             High-voltage output
+        35   HVOUT29             High-voltage output
+        36   HVOUT28             High-voltage output
+        37   HVOUT27             High-voltage output
+        38   HVOUT26             High-voltage output
+        39   HVOUT25             High-voltage output
+        40   HVOUT24             High-voltage output
+        41   HVOUT23             High-voltage output
+        42   HVOUT22             High-voltage output
+        43   HVOUT21             High-voltage output
+        44   HVOUT20             High-voltage output
+             HVOUT19             High-voltage output
+             HVOUT18
+
+ 2017 Microchip Technology Inc.                           DS20005854A-page 9
+HV5622
+
+3.0 FUNCTIONAL DESCRIPTION
+
+Follow the steps in Table 3-1 to power up and power
+down the HV5622.
+
+TABLE 3-1:      POWER-UP AND POWER-DOWN SEQUENCE
+                             Power-up
+                                                                                                 Power-down
+Step                                 Description            Step
+                                                                                                       Description
+  1    Connect ground.                                        1
+  2    Apply VDD.                                             2                     Remove all inputs.
+  3    Set all inputs to a known state.                       3                     Remove VDD.
+                                                                                    Disconnect ground.
+
+TABLE 3-2: TRUTH FUNCTION TABLE
+
+Function                      Inputs                      Shift Register                  Outputs                   Data Out
+                                                                                          High-voltage Output
+                                                                                                                         d
+                Data CLK LE BL POL 1                        2 ... 32 1 2 ... 32                                          d
+                                                                                                                         d
+All On          X    X        X       L                L  p1 p2 ... p32 On On ... On                                   p32
+                                                                                                                         d
+All Off         X    X        X       L                H  p1 p2 ... p32 Off Off ... Off                                  d
+                                                                                                                       p32
+Invert Mode X        X        LH                       L  p1 p2 ... p32 p1 p2 ... p32                                  p32
+
+Load S/R H or L               L       H                H H or L p1 ... p31 p1 p2 ... p32
+
+Load Latches X H or L                 H                H  p1 p2 ... p32 p1 p2 ... p32
+
+                X H or L              H                L  p1 p2 ... p32 p1 p2 ... p32
+
+Transparent L                 HH                       H  L p1 ... p31 Off p1 ... p31
+
+Latch Mode H                  H       H                H  H p1 ... p31 On p1 ... p31
+
+Note:      H = High-logic level
+           L = Low-logic level
+           X = Irrelevant
+            = High-to-low transition
+            = Low-to-high transition
+           d = Current state of the data output
+           pn = "p" represents the current state of the Shift register output, and
+           "n" represents the channel order.
+
+      VDD                                         VDD
+
+                                                                                                                    HVOUT
+
+DATA                                                                                DATA  HVIN
+     IN                                                                             OUT
+
+                                                                                                                    VSS
+
+           VSS  Logic Inputs                      VSS                                     High Voltage Outputs
+                                                                 Logic Data Output
+FIGURE 3-1:
+                     Input and Output Equivalent Circuits.
+
+DS20005854A-page 10                                                                        2017 Microchip Technology Inc.
+                                                                                              HV5622
+
+4.0 PACKAGE MARKING INFORMATION
+
+4.1 Packaging Information
+
+                                 44-lead PQFP  Example
+
+         XXXXXXXXX                             HV5622PG
+         e3 YYWWNNN                            e3 1724198
+
+               44-lead PLCC                         Example
+
+         XXXXXXXXXXX                           HV5622PJ
+         e3 YYWWNNN                            e3 1722741
+
+Legend:  XX...X                  Product Code or Customer-specific information
+         Y                       Year code (last digit of calendar year)
+         YY                      Year code (last 2 digits of calendar year)
+         WW                      Week code (week of January 1 is week `01')
+         NNN                     Alphanumeric traceability code
+         e3                      Pb-free JEDEC® designator for Matte Tin (Sn)
+                                 This package is Pb-free. The Pb-free JEDEC designator (e3 )
+         *                       can be found on the outer packaging for this package.
+
+Note:  In the event the full Microchip part number cannot be marked on one line, it will
+       be carried over to the next line, thus limiting the number of available
+       characters for product code or customer-specific information. Package may or
+       not include the corporate logo.
+
+ 2017 Microchip Technology Inc.                              DS20005854A-page 11
+HV5622
+
+      44-Lead PQFP Package Outline (PG)
+
+        10.00x10.00mm body, 2.35mm height (max), 0.80mm pitch
+
+                                                                       D
+                                                                      D1
+
+                                                                                       E
+
+                                                                                   E1
+
+                        Note 1
+                        (Index Area
+                        D1/4 x E1/4)
+
+            44                              e
+                  1
+                       b  Top View
+
+   A A2                                                                                    View B                    L2 Gauge
+        A1                                                                                                                       Plane
+                                                                                          Seating
+                                                                                            Plane
+
+                                                                                                                     L            Seating
+                                                                                                                                    Plane
+
+                          Side View                                                                              L1
+
+                                                                                                               View B
+
+Note: For the most current package drawings, see the Microchip Packaging Specification at www.microchip.com/packaging.
+
+Note:
+   1. $3LQLGHQWL¿HUPXVWEHORFDWHGLQWKHLQGH[DUHDLQGLFDWHG7KH3LQLGHQWL¿HUFDQEHDPROGHGPDUNLGHQWL¿HUDQHPEHGGHGPHWDOPDUNHURU
+          a printed indicator.
+
+   Symbol               A A1 A2 b                              D                         D1       E      E1      e     L           L1 L2      
+                                                                                       9.80*   13.65*  9.80*         0.73                     0O
+            MIN 1.95* 0.00 1.95 0.30 13.65*                                            10.00   13.90   10.00   0.80  0.88         1.95 0.25  3.5O
+                                                                                       10.20*  14.15*  10.20*  BSC   1.03         REF BSC     7O
+Dimension NOM -           - 2.00 - 13.90
+   (mm)
+
+            MAX 2.35 0.25 2.10 0.45 14.15*
+
+JEDEC Registration MO-112, Variation AA-2, Issue B, Sep.1995.
+
+7KLVGLPHQVLRQLVQRWVSHFL¿HGLQWKH-('(&GUDZLQJ
+
+Drawings not to scale.
+
+S  D # DSPD 44PQFPPG V i C041309
+
+DS20005854A-page 12                                                                                                   2017 Microchip Technology Inc.
+                                                                                                                   HV5622
+
+44-Lead PLCC Package Outline (PJ)
+
+.653x.653in body, .180in height (max), .050in pitch
+
+.048/.042 x 45O                            D
+                                6
+                                           D1                                     .056/.042 x 45O
+
+                                           1 44                   40
+
+.150 MAX                                         Note 1
+                                                 (Index Area)
+                                 .075 MAX
+                                                                           E1 E
+
+        .020max                  Note 2                                                         Vertical Side View
+        (3 Places)
+                                           Top View
+
+        A                        e                                          View B                     b1
+                 A2
+                                 Horizontal Side View                            Base .020 MIN                 bR
+            A1                                                                  Plane
+                                                                                                      View B
+                                                                              Seating
+                                                                                Plane
+
+Note: For the most current package drawings, see the Microchip Packaging Specification at www.microchip.com/packaging.
+
+Notes:
+   1. $3LQLGHQWL¿HUPXVWEHORFDWHGLQWKHLQGH[DUHDLQGLFDWHG7KH3LQLGHQWL¿HUFDQEHDPROGHGPDUNLGHQWL¿HUDQHPEHGGHGPHWDOPDUNHURU
+          a printed indicator.
+   2. $FWXDOVKDSHRIWKLVIHDWXUHPD\YDU\
+
+Symbol              A              A1      A2                  b       b1    D     D1            E     E1     e      R
+                                                                      .026  .685  .650          .685  .650          .025
+                   MIN .165 .090 .062 .013                                  .690  .653          .690  .653  .050    .035
+Dimension NOM .172 .105 - -                                             -   .695  .656          .695  .656  BSC     .045
+                                                                      .036
+ (inches)
+                  MAX .180 .120 .083 .021
+
+JEDEC Registration MS-018, Variation AC, Issue A, June, 1993.
+ This dimension differs from the JEDEC drawing.
+Drawings not to scale.
+
+ 2017 Microchip Technology Inc.                                                                             DS20005854A-page 13
+HV5622
+
+NOTES:
+
+DS20005854A-page 14   2017 Microchip Technology Inc.
+                                              HV5622
+
+APPENDIX A: REVISION HISTORY
+
+Revision A (October 2017)
+
+· Converted Supertex Doc # DSFP-HV5622 to
+   Microchip DS20005854A
+
+· Removed "Processed with HVCMOS®
+   Technology" in the Features section
+
+· Changed the package marking format
+· Removed the 44-lead PQFP PG M919 and
+
+   44-lead PLCC PJ M903 media types
+· Made minor changes throughout the document
+
+ 2017 Microchip Technology Inc.               DS20005854A-page 15
+HV5622
+
+PRODUCT IDENTIFICATION SYSTEM
+
+To order or obtain information, e.g., on pricing or delivery, contact your local Microchip representative or sales office.
+
+PART NO.          XX       -  X          -              X              Examples:
+  Device
+                Package       Environmental Media Type                                  32-Channel Serial-to-Parallel
+                Options                                                                 Converter with Open Drain
+                                                                        a) HV5622PG-G:  Outputs, 44-lead PQFP,
+                                                                                        96/Tray
+
+Device:         HV5622 =      32-Channel Serial-to-Parallel Converter
+Packages:                     with Open Drain Outputs
+                                                                       b) HV5622PJ-G:   32-Channel Serial-to-Parallel
+                                                                                        Converter with Open Drain
+                PG       = 44-lead PQFP                                                 Outputs, 44-lead PLCC,
+                                                                                        27/Tube
+
+                PJ       = 44-lead PLCC
+
+Environmental:  G        = Lead (Pb)-free/RoHS-compliant Package
+
+Media Types:    (blank) =     96/Tray for a PG Package
+                (blank) =     27/Tube for a PJ Package
+
+DS20005854A-page 16                                                                      2017 Microchip Technology Inc.
+Note the following details of the code protection feature on Microchip devices:
+· Microchip products meet the specification contained in their particular Microchip Data Sheet.
+
+· Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+      intended manner and under normal conditions.
+
+· There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+      knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip's Data
+      Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+
+· Microchip is willing to work with the customer who is concerned about the integrity of their code.
+
+· Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+      mean that we are guaranteeing the product as "unbreakable."
+
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip's code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+
+Information contained in this publication regarding device               Trademarks
+applications and the like is provided only for your convenience
+and may be superseded by updates. It is your responsibility to           The Microchip name and logo, the Microchip logo, AnyRate, AVR,
+ensure that your application meets with your specifications.             AVR logo, AVR Freaks, BeaconThings, BitCloud, CryptoMemory,
+MICROCHIP MAKES NO REPRESENTATIONS OR                                    CryptoRF, dsPIC, FlashFlex, flexPWR, Heldo, JukeBlox, KEELOQ,
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR                                KEELOQ logo, Kleer, LANCheck, LINK MD, maXStylus,
+IMPLIED, WRITTEN OR ORAL, STATUTORY OR                                   maXTouch, MediaLB, megaAVR, MOST, MOST logo, MPLAB,
+OTHERWISE, RELATED TO THE INFORMATION,                                   OptoLyzer, PIC, picoPower, PICSTART, PIC32 logo, Prochip
+INCLUDING BUT NOT LIMITED TO ITS CONDITION,                              Designer, QTouch, RightTouch, SAM-BA, SpyNIC, SST, SST
+QUALITY, PERFORMANCE, MERCHANTABILITY OR                                 Logo, SuperFlash, tinyAVR, UNI/O, and XMEGA are registered
+FITNESS FOR PURPOSE. Microchip disclaims all liability                   trademarks of Microchip Technology Incorporated in the U.S.A.
+arising from this information and its use. Use of Microchip              and other countries.
+devices in life support and/or safety applications is entirely at
+the buyer's risk, and the buyer agrees to defend, indemnify and          ClockWorks, The Embedded Control Solutions Company,
+hold harmless Microchip from any and all damages, claims,                EtherSynch, Hyper Speed Control, HyperLight Load, IntelliMOS,
+suits, or expenses resulting from such use. No licenses are              mTouch, Precision Edge, and Quiet-Wire are registered
+conveyed, implicitly or otherwise, under any Microchip                   trademarks of Microchip Technology Incorporated in the U.S.A.
+intellectual property rights unless otherwise stated.
+                                                                         Adjacent Key Suppression, AKS, Analog-for-the-Digital Age, Any
+Microchip received ISO/TS-16949:2009 certification for its worldwide     Capacitor, AnyIn, AnyOut, BodyCom, chipKIT, chipKIT logo,
+headquarters, design and wafer fabrication facilities in Chandler and    CodeGuard, CryptoAuthentication, CryptoCompanion,
+Tempe, Arizona; Gresham, Oregon and design centers in California         CryptoController, dsPICDEM, dsPICDEM.net, Dynamic Average
+and India. The Company's quality system processes and procedures         Matching, DAM, ECAN, EtherGREEN, In-Circuit Serial
+are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping              Programming, ICSP, Inter-Chip Connectivity, JitterBlocker,
+devices, Serial EEPROMs, microperipherals, nonvolatile memory and        KleerNet, KleerNet logo, Mindi, MiWi, motorBench, MPASM, MPF,
+analog products. In addition, Microchip's quality system for the design  MPLAB Certified logo, MPLIB, MPLINK, MultiTRAK, NetDetach,
+and manufacture of development systems is ISO 9001:2000 certified.       Omniscient Code Generation, PICDEM, PICDEM.net, PICkit,
+                                                                         PICtail, PureSilicon, QMatrix, RightTouch logo, REAL ICE, Ripple
+QUALITY MANAGEMENT SYSTEM                                                Blocker, SAM-ICE, Serial Quad I/O, SMART-I.S., SQI,
+          CERTIFIED BY DNV                                               SuperSwitcher, SuperSwitcher II, Total Endurance, TSHARC,
+                                                                         USBCheck, VariSense, ViewSpan, WiperLock, Wireless DNA, and
+     == ISO/TS 16949 ==                                                  ZENA are trademarks of Microchip Technology Incorporated in the
+                                                                         U.S.A. and other countries.
+
+                                                                         SQTP is a service mark of Microchip Technology Incorporated in
+                                                                         the U.S.A.
+
+                                                                         Silicon Storage Technology is a registered trademark of Microchip
+                                                                         Technology Inc. in other countries.
+
+                                                                         GestIC is a registered trademark of Microchip Technology
+                                                                         Germany II GmbH & Co. KG, a subsidiary of Microchip Technology
+                                                                         Inc., in other countries.
+
+                                                                         All other trademarks mentioned herein are property of their
+                                                                         respective companies.
+
+                                                                         © 2017, Microchip Technology Incorporated, All Rights Reserved.
+
+                                                                         ISBN: 978-1-5224-2257-0
+
+ 2017 Microchip Technology Inc.                                          DS20005854A-page 17
+                           Worldwide Sales and Service
+
+AMERICAS                   ASIA/PACIFIC                ASIA/PACIFIC             EUROPE
+
+Corporate Office           Asia Pacific Office         China - Xiamen           Austria - Wels
+2355 West Chandler Blvd.   Suites 3707-14, 37th Floor  Tel: 86-592-2388138      Tel: 43-7242-2244-39
+Chandler, AZ 85224-6199    Tower 6, The Gateway        Fax: 86-592-2388130      Fax: 43-7242-2244-393
+Tel: 480-792-7200          Harbour City, Kowloon
+Fax: 480-792-7277                                      China - Zhuhai           Denmark - Copenhagen
+Technical Support:         Hong Kong                   Tel: 86-756-3210040      Tel: 45-4450-2828
+http://www.microchip.com/  Tel: 852-2943-5100          Fax: 86-756-3210049      Fax: 45-4485-2829
+support                    Fax: 852-2401-3431
+Web Address:                                           India - Bangalore        Finland - Espoo
+www.microchip.com          Australia - Sydney          Tel: 91-80-3090-4444     Tel: 358-9-4520-820
+                           Tel: 61-2-9868-6733         Fax: 91-80-3090-4123
+Atlanta                    Fax: 61-2-9868-6755                                  France - Paris
+Duluth, GA                                             India - New Delhi        Tel: 33-1-69-53-63-20
+Tel: 678-957-9614          China - Beijing             Tel: 91-11-4160-8631     Fax: 33-1-69-30-90-79
+Fax: 678-957-1455          Tel: 86-10-8569-7000        Fax: 91-11-4160-8632
+                           Fax: 86-10-8528-2104                                 Germany - Garching
+Austin, TX                                             India - Pune             Tel: 49-8931-9700
+Tel: 512-257-3370          China - Chengdu             Tel: 91-20-3019-1500     Germany - Haan
+                           Tel: 86-28-8665-5511                                 Tel: 49-2129-3766400
+Boston                     Fax: 86-28-8665-7889        Japan - Osaka
+Westborough, MA                                        Tel: 81-6-6152-7160      Germany - Heilbronn
+Tel: 774-760-0087          China - Chongqing           Fax: 81-6-6152-9310      Tel: 49-7131-67-3636
+Fax: 774-760-0088          Tel: 86-23-8980-9588
+                           Fax: 86-23-8980-9500        Japan - Tokyo            Germany - Karlsruhe
+Chicago                                                Tel: 81-3-6880- 3770     Tel: 49-721-625370
+Itasca, IL                 China - Dongguan            Fax: 81-3-6880-3771
+Tel: 630-285-0071          Tel: 86-769-8702-9880                                Germany - Munich
+Fax: 630-285-0075                                      Korea - Daegu            Tel: 49-89-627-144-0
+                           China - Guangzhou           Tel: 82-53-744-4301      Fax: 49-89-627-144-44
+Dallas                     Tel: 86-20-8755-8029        Fax: 82-53-744-4302
+Addison, TX                                                                     Germany - Rosenheim
+Tel: 972-818-7423          China - Hangzhou            Korea - Seoul            Tel: 49-8031-354-560
+Fax: 972-818-2924          Tel: 86-571-8792-8115       Tel: 82-2-554-7200
+                           Fax: 86-571-8792-8116       Fax: 82-2-558-5932 or    Israel - Ra'anana
+Detroit                                                82-2-558-5934            Tel: 972-9-744-7705
+Novi, MI                   China - Hong Kong SAR
+Tel: 248-848-4000          Tel: 852-2943-5100          Malaysia - Kuala Lumpur  Italy - Milan
+                           Fax: 852-2401-3431          Tel: 60-3-6201-9857      Tel: 39-0331-742611
+Houston, TX                                            Fax: 60-3-6201-9859      Fax: 39-0331-466781
+Tel: 281-894-5983          China - Nanjing
+                           Tel: 86-25-8473-2460        Malaysia - Penang        Italy - Padova
+Indianapolis               Fax: 86-25-8473-2470        Tel: 60-4-227-8870       Tel: 39-049-7625286
+Noblesville, IN                                        Fax: 60-4-227-4068
+Tel: 317-773-8323          China - Qingdao                                      Netherlands - Drunen
+Fax: 317-773-5453          Tel: 86-532-8502-7355       Philippines - Manila     Tel: 31-416-690399
+Tel: 317-536-2380          Fax: 86-532-8502-7205       Tel: 63-2-634-9065       Fax: 31-416-690340
+                                                       Fax: 63-2-634-9069
+Los Angeles                China - Shanghai                                     Norway - Trondheim
+Mission Viejo, CA          Tel: 86-21-3326-8000        Singapore                Tel: 47-7289-7561
+Tel: 949-462-9523          Fax: 86-21-3326-8021        Tel: 65-6334-8870
+Fax: 949-462-9608                                      Fax: 65-6334-8850        Poland - Warsaw
+Tel: 951-273-7800          China - Shenyang                                     Tel: 48-22-3325737
+                           Tel: 86-24-2334-2829        Taiwan - Hsin Chu
+Raleigh, NC                Fax: 86-24-2334-2393        Tel: 886-3-5778-366      Romania - Bucharest
+Tel: 919-844-7510                                      Fax: 886-3-5770-955      Tel: 40-21-407-87-50
+                           China - Shenzhen
+New York, NY               Tel: 86-755-8864-2200       Taiwan - Kaohsiung       Spain - Madrid
+Tel: 631-435-6000          Fax: 86-755-8203-1760       Tel: 886-7-213-7830      Tel: 34-91-708-08-90
+                                                                                Fax: 34-91-708-08-91
+San Jose, CA               China - Wuhan               Taiwan - Taipei
+Tel: 408-735-9110          Tel: 86-27-5980-5300        Tel: 886-2-2508-8600     Sweden - Gothenberg
+Tel: 408-436-4270          Fax: 86-27-5980-5118        Fax: 886-2-2508-0102     Tel: 46-31-704-60-40
+
+Canada - Toronto           China - Xian                Thailand - Bangkok       Sweden - Stockholm
+Tel: 905-695-1980          Tel: 86-29-8833-7252        Tel: 66-2-694-1351       Tel: 46-8-5090-4654
+Fax: 905-695-2078          Fax: 86-29-8833-7256        Fax: 66-2-694-1350
+                                                                                UK - Wokingham
+                                                                                Tel: 44-118-921-5800
+                                                                                Fax: 44-118-921-5820
+
+DS20005854A-page 18                                                              2017 Microchip Technology Inc.
+
+                                                                                                                        10/10/17
+

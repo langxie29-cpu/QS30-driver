@@ -1,0 +1,13 @@
+{
+  "scope": "Actual 100ohm/220pF passive filter only; ideal current ramp, ideal voltage threshold. No controller silicon, PWM latch, gate, eFuse, boost, tube or protection model.",
+  "acceptance_before_run": "rc0; no error; native endpoint10us; >=100 samples; ramp RC error <=1mV; step-halving threshold time difference <=5ns; peak-leading-edge case must remain below0.9V in first200ns.",
+  "simulator": "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "temperature_C": 27,
+  "stop_s": 1e-05,
+  "reltol": 1e-05,
+  "abstol_A": 1e-10,
+  "vntol_V": 1e-07,
+  "max_runtime_s_each": 30,
+  "engineering_status": "24V-07 NOT QUALIFIED regardless of passive test result"
+}

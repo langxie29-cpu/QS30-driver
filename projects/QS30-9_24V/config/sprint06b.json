@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "baseline": "sprint06.json",
+  "date": "2026-11-15",
+  "status": "S06B_QUALIFICATION_AUDIT_NOT_APPROVED",
+  "manufacturing": "HOLD",
+  "parameter_change_policy": "S06 retained unchanged; no production electrical values approved by this audit",
+  "source_additions": [
+    "ST exact25C MOS model and PDF",
+    "Vishay exact US1G model",
+    "Espressif module supply capability0.5A",
+    "TPS2660 reverse polarity interface application report",
+    "VOS618A primary25C candidate data"
+  ],
+  "interpretation_changes": [
+    "normal ideal0.943A is not a loss-aware capability proof",
+    "0.82ohm/110kHz normal-load reserve unqualified",
+    "ST transient model fails first transition in isolation",
+    "direct logic-GND to eFuse RTN interface and direct FLT-to3V3 pullup rejected for reverse sequence"
+  ],
+  "candidates": {
+    "SHDN_signal_barrier": {
+      "candidate": "VOS618A-7T",
+      "pins": {
+        "1": "LED_A via820ohm from qualified permit",
+        "2": "LED_K to logic GND",
+        "4": "collector via100k from same eFuse IN",
+        "3": "emitter to same eFuse SHDN"
+      },
+      "SHDN_pulldown_ohm_to_own_RTN": 8200,
+      "R_feed_ohm": 100000,
+      "resistor_tolerance": 0.01,
+      "SHDN_on_min_V_if_VCEsat_le0p4": 1.4953701497461462,
+      "SHDN_on_max_V_at40V": 3.087936466508827,
+      "required_off_leak_A_max_for0p55V": 5.640907993238349e-05,
+      "LED_min_A_if_VF_le1p5_at_VOH2p4": 0.0010866940352571841,
+      "collector_demand_A_max_at26p4V": 0.00024645717806531114,
+      "qualification": "candidate topology only; VCEsat and CTR quoted25C, leakage at40V/hot and max turnoff delay unbounded. Do not use opto as cycle-by-cycle shutdown. U100 normal bootstrap must remain allowed, U101 default-off."
+    },
+    "startup_policy": "passive front-end charge with PWM off, current-limited pulse with verified demagnetization before another pulse; fixed110kHz and CCM allowed only after explicit mode qualification. No hardware candidate released."
+  },
+  "USB_offline_required": true,
+  "native_export": {
+    "approved": false
+  },
+  "evidence": "docs/SPRINT06B_REPORT.md",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED"
+}

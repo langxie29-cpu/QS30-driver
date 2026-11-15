@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-08",
+  "local_head": "9682439fe35636ed2c2928bc50d30858133e4c8a",
+  "remote_main": "9c2e2dbbf1e6ed0e219a6b9f0329a6e2d4812af6",
+  "safety_verifier_exit": 0,
+  "safety_verifier": {
+    "status": "PASS",
+    "checks": [
+      {
+        "id": "V01",
+        "status": "PASS",
+        "evidence": "Completed endpoint accepted"
+      },
+      {
+        "id": "V02",
+        "status": "PASS",
+        "evidence": "rc=0 and linearized endpoint cannot conceal aborted analysis"
+      },
+      {
+        "id": "V03",
+        "status": "PASS",
+        "evidence": "rc=0 timestep failure rejected"
+      },
+      {
+        "id": "V04",
+        "status": "PASS",
+        "evidence": "rc=0 vector export failure rejected"
+      },
+      {
+        "id": "V05",
+        "status": "PASS",
+        "evidence": "Incomplete genuine endpoint rejected"
+      },
+      {
+        "id": "V06",
+        "status": "PASS",
+        "evidence": "nonzero return/missing wave rejected"
+      },
+      {
+        "id": "V-SIM-baseline_final_model",
+        "status": "PASS",
+        "evidence": "17 genuine completed runs; protection signoff remains FAIL"
+      },
+      {
+        "id": "V-SIM-final_actual_model",
+        "status": "PASS",
+        "evidence": "17 genuine completed runs; protection signoff remains FAIL"
+      },
+      {
+        "id": "V-SIM-comp_precharged",
+        "status": "PASS",
+        "evidence": "7 genuine completed runs; protection signoff remains FAIL"
+      },
+      {
+        "id": "V-SIM-full_ref_corners",
+        "status": "PASS",
+        "evidence": "2 genuine completed runs; protection signoff remains FAIL"
+      },
+      {
+        "id": "V07",
+        "status": "PASS",
+        "evidence": "All 17 aborted intermediate analyses are explicitly invalidated, prior JSON retained"
+      },
+      {
+        "id": "V-NET-QS30-9_DISPLAY",
+        "status": "PASS",
+        "evidence": "Exact native connected members / PCB attributes / explicit NC inventory"
+      },
+      {
+        "id": "V-NET-QS30-9_MAIN",
+        "status": "PASS",
+        "evidence": "Exact native connected members / PCB attributes / explicit NC inventory"
+      },
+      {
+        "id": "V08",
+        "status": "PASS",
+        "evidence": "ERC 7 original errors removed, 364 warnings remain"
+      },
+      {
+        "id": "V09",
+        "status": "PASS",
+        "evidence": "488 placeholder geometry findings removed, DRC still FAIL 753"
+      },
+      {
+        "id": "V10",
+        "status": "PASS",
+        "evidence": "Final native capture hashes still match current design inputs"
+      },
+      {
+        "id": "V11",
+        "status": "PASS",
+        "evidence": "Original 1587 means ERC+DRC; final 1117, delta470"
+      },
+      {
+        "id": "V12",
+        "status": "PASS",
+        "evidence": "Every before/final native item uniquely indexed; Chinese shorting descriptions mapped to real refs"
+      },
+      {
+        "id": "V13",
+        "status": "PASS",
+        "evidence": "12 architecture/90 cathode/9 anode/interface/return/serial checks still PASS"
+      }
+    ]
+  },
+  "reruns": [
+    {
+      "source": "sim/a9_2/final_actual_model/startup_9",
+      "deck_sha256": "2e64d081280cadd4ee68d0e847c4dd8d01dc93a48167bc22af43038e40fd0565",
+      "rc": 0,
+      "errors": [],
+      "measurements": {
+        "q21_peak": "-1.09452e-03",
+        "q22_peak": "7.82918e-04",
+        "hv_peak": "1.69378e+01",
+        "end_time": "8.00000e-02"
+      },
+      "log_path": "tools\\review_20261108\\startup_9\\ngspice.log",
+      "archived_log": "docs9/review_20261108/startup_9_ngspice.txt",
+      "archived_log_sha256": "bd6506e13796cd87fb70bb2a6dfa0ad8ab6d986121c4299b6e80076d10b7c936"
+    },
+    {
+      "source": "sim/a9_3/ovp_v3/limited_reset_stuck_recovery",
+      "deck_sha256": "fa365956d44e466c654dea305652c4df583039ba9036789d6ca232f8bb10b828",
+      "rc": 0,
+      "errors": [],
+      "measurements": {
+        "end_time": "4.00000e-02",
+        "q21_min": "-2.41699e-02",
+        "q22_max": "5.61921e-04",
+        "q25_max": "2.39255e-02",
+        "comp_end": "1.91965e+00",
+        "latch_end": "6.00725e-03"
+      },
+      "log_path": "tools\\review_20261108\\limited_reset_stuck_recovery\\ngspice.log",
+      "archived_log": "docs9/review_20261108/limited_reset_stuck_recovery_ngspice.txt",
+      "archived_log_sha256": "144d220161ada16205d3f352e210db6440fc18fbd2dacf80697c3a21e9af2b39"
+    }
+  ],
+  "native_erc_drc_rerun": false,
+  "engineering_status": "FAIL/HOLD",
+  "python": "3.14.10 (tags/v3.14.10:b703b2c, Oct 25 2026, 17:36:52) [MSC v.1944 64 bit (AMD64)]"
+}

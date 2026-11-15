@@ -1,0 +1,16 @@
+﻿id,priority,task,status,dependencies,acceptance,s05_evidence,s06_evidence,s06b_evidence
+24V-00,P0,初始化独立24V项目与迁移清单,DONE,,项目配置、旧输入哈希和受影响器件表已建立,,,
+24V-01,P0,冻结输入与系统验收要求,DONE_BASELINE,24V-00,输入连续/瞬态、170V容差、启动/纹波/温度、USB模式均记录来源和状态,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-02,P0,重建整机功率及各轨电流预算,DONE_BUDGET,24V-00,包含九管/四支泄放/三路分压、3V3、DRV12、控制器、损耗与启动储能；避免重复计费,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-03,P0,重构24V输入保护与输入关断,CANDIDATE_REVIEW,24V-01;24V-02,精确MPN、额定/瞬态、反接/浪涌/热插拔、栅压、SOA及短路切断均有计算与验证,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-04,P0,新增12V辅助及受控驱动轨,CANDIDATE_REVIEW,24V-01;24V-02,HV5622/转换器/控制门驱负载、PG、时序、默认关闭及异常掉电验证,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-05,P0,重构3V3与USB电源路径,CANDIDATE_REVIEW,24V-01;24V-02,比较24→3V3与24→5V→3V3；USB独立供电、反灌、瞬态和完整料号/封装检查,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-06,P0,重选170V功率级并审查C10,CANDIDATE_REVIEW,24V-01;24V-02;24V-04,DCM/跨模式策略、电感饱和/DCR、MOS/二极管/电容、门驱、吸收与C10能量有据设计,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-07,P0,重构Kelvin采样、限流和控制模型,QUALIFICATION_NOT_PASSED,24V-06,弃用SW电压作电流采样；真实阈值/延迟/噪声、CT负载与斜坡、模型来源和步长敏感性通过分层检查,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-08,P0,建立自主启动与闭环正常工作点,NOT_ENTERED,24V-07,无170V预充；正常启动、消隐/单管/九管、输入角点与负载阶跃满足事先登记判据,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-09,P0,重构独立OVP、锁存与安全复位,TODO,24V-03;24V-04;24V-08,反馈开路、MCU死机/复位、失电、硬件复位许可、限流锁存及输入切断动态得到验证,,,
+24V-10,P0,验证泄放及模块单故障,TODO,24V-06;24V-09,全连接/主板/拆模块、泄放单开路、容差/地线断开/反灌覆盖；触碰要求有来源,,,
+24V-11,P1,建立24V设计数据源和原生原理图,PREPARED_ISOLATED_DATA_ONLY,24V-03;24V-04;24V-05;24V-06;24V-07,生成器仅写独立项目；逐引脚追踪BOM/网表/原生图；全部旧缺陷显式处置；原生ERC记录完整,docs/SPRINT05_REPORT.md,docs/SPRINT06_REPORT.md,docs/SPRINT06B_REPORT.md
+24V-12,P1,重做MAIN布局与DISPLAY兼容性审核,TODO,24V-08;24V-09;24V-10;24V-11,真实封装、开关/Kelvin回路、热、HV间距/返回地与接口规则冻结；原生DRC和未布线真实报告,,,
+24V-13,P1,重建固件供电状态机与测试接口,TODO,24V-04;24V-05;24V-09;24V-11,HV请求/PG/BL/故障/复位/掉电状态和96位映射约束一致；MCU不能越过硬件保护,,,
+24V-14,P1,完成分阶段台架计划及重构交付评审,TODO,24V-10;24V-12;24V-13,低压→独立HV→九管集成的仪器/限流/记录/故障注入清单齐备；未经实测保持HOLD,,,

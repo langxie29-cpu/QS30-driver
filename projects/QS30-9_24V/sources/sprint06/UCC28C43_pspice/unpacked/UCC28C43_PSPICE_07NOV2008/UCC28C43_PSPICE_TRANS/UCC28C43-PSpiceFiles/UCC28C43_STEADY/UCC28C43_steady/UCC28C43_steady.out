@@ -1,0 +1,139 @@
+
+**** 11/20/08 13:10:42 ******* PSpice 16.0.0 (July 2006) ****** ID# 1672448 **
+
+ ** Profile: "UCC28C43_STEADY-UCC28C43_steady"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrevie
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "UCC28C43_steady.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../ucc28c43.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.0\tools\PSpice\PSpice.ini file:
+.lib "C:\Cadence\SPB_16.0\tools\pspice\library\nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 9m 5m {SCHEDULE(0,1000ns,6m,20ns)} SKIPBP 
+.OPTIONS STEPGMIN
+.OPTIONS ABSTOL= 1u
+.OPTIONS CHGTOL= 0.1p
+.OPTIONS GMIN= 1.0E-10
+.OPTIONS ITL4= 5000
+.OPTIONS RELTOL= 0.01
+.OPTIONS VNTOL= 1m
+.PROBE V(*) I(*) D(*) 
+.INC "..\UCC28C43_STEADY.net" 
+
+
+
+**** INCLUDING UCC28C43_STEADY.net ****
+* source UCC28C43
+R_R13         0 N16765917  10k  
+R_R1         RTCT VREF  13.7k  
+R_R7         N167661471 VIN  37.4k  
+X_U7         N16765447 N16765917 N16765417 FQB6N80
+C_C10         0 VIN  0.15uF  
+C_C1         RTCT N16764805  470pF  
+D_D6         N16765857 +VOUT1 ES3B 
+R_R2         N16764805 0  24  
+C_C17         VDD 0  0.1u IC=17 
+R_R16         N16764549 0  39k  
+R_R25         0 +VOUT2  480  
+R_R19         0 N16764579  40m  
+D_D8         +VOUT2 VDD D1N4148 
+D_D4         N16765561 N167645131 ES3B 
+C_C16         VDD 0  1uF IC=17 
+R_R17         N167645131 +VOUT2  10  
+R_R8         VDD N167661471  37.4k  
+C_C8         VREF 0  0.1uF  
+R_R15         N16765857 N167657290  78.7  
+C_C18         +VOUT1 N16764579  47uF IC=12 
+X_U2         N16765599 N16765447 0 N16766251 XFMR PARAMS: RATIO=0.16667
+V_V1         VIN 0  
++PULSE 0 100 10u 200u 200u 1 2
+R_R21         N16766251 N16765857  0.5  
+C_C9         N16765701 N16765561  150pF  
+C_C12         N167657290 +VOUT1  150pF  
+R_R9         0 +VOUT2  4.42k  
+C_C5         CS 0  330pF  
+R_R18         0 +VOUT1  8.2k  
+X_U3         N16765599 N16765447 0 N16766297 XFMR PARAMS: RATIO=0.16667
+R_R20         0 N16765327  40m  
+R_R4         FB +VOUT2  15k  
+R_R22         N16766297 N16765561  0.5  
+C_C14         +VOUT1 0  0.1uF IC=12 
+C_C19         +VOUT2 N16765327  47uF IC=12 
+C_C2         VIN 0  10uF  
+R_R10         CS N16765417  1k  
+R_R5         0 FB  3.9k  
+R_R11         N16765701 +VOUT2  78.7  
+L_L1         N16765599 N16765447  300uH  
+R_R23         VIN N16765599  1.2  
+C_C4         N16764823 COMP  56000pF  
+C_C15         COMP FB  56pF  
+C_C11         N16765447 N16764549  220pF  
+R_R26         0 +VOUT1  48  
+R_R6         FB N16764823  57.6k  
+X_U5         0 VDD DI_SMAZ16
+X_U8         COMP FB CS RTCT 0 OUT VDD VREF UCC28C43_STEADY
+R_R14         0 N16765417  1.6  
+R_R12         OUT N16765917  10  
+D_D5         N16764549 0 DI_S1K 
+.IC         V(FB )=2.5
+
+**** RESUMING UCC28C43_steady.cir ****
+.END
+
+**** 11/20/08 13:10:42 ******* PSpice 16.0.0 (July 2006) ****** ID# 1672448 **
+
+ ** Profile: "UCC28C43_STEADY-UCC28C43_steady"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrevie
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               ES3B            D1N4148         DI_S1K          
+          IS    7.270000E-12    2.682000E-09    7.310000E-18 
+           N     .7             1.836            .775        
+         ISR                    1.565000E-09                 
+         IKF                     .04417                      
+          BV  100             100             800            
+         IBV   10.000000E-06  100.000000E-06    5.000000E-06 
+          RS     .0224           .5664           .042        
+          TT   36.000000E-09   11.540000E-09    4.320000E-06 
+         CJO   83.200000E-12    4.000000E-12   42.400000E-12 
+          VJ                     .5                          
+           M     .333            .3333           .333        
+
+
+          JOB ABORTED
+
+**** 11/20/08 13:10:42 ******* PSpice 16.0.0 (July 2006) ****** ID# 1672448 **
+
+ ** Profile: "UCC28C43_STEADY-UCC28C43_steady"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrevie
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =       53.59
+

@@ -17,3 +17,24 @@ desktop.ini
 # A9.2 wrdata originals remain on disk; exact bytes are committed as waves.txt.gz,
 # alongside portable CSV.gz, plots, decks and all command/native failure logs.
 /sim/a9_2/*/*/waves.txt
+
+# Local attachments, document tooling and unrelated note exports
+/.codex-attachments/
+/.docx-work/
+/notes_rotated.png
+/notes_upright.png
+/output/*
+!/output/nxt_book/
+
+# Exact raw simulation data is preserved in the adjacent gzip archive.
+/sim/**/waves.txt
+
+# GitHub-sized parts preserve these original archives byte-for-byte.
+/sim/a9_3/buffered_v1/closed_buffer/waves.txt.gz
+/sim/sprint02/power_v1/buffered_no_c10/waves.txt.gz
+/sim/sprint02/power_v1/buffered_type2/waves.txt.gz
+
+# Simulation and native EDA logs are project evidence.
+!/sim/**/*.log
+!/projects/QS30-9_24V/**/*.log
+!/kicad/logs/**/*.log

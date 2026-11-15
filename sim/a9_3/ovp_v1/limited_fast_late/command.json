@@ -1,0 +1,50 @@
+{
+  "stage": "protection",
+  "case": {
+    "id": "limited_fast_late",
+    "limited": true,
+    "c16": 1.2e-09,
+    "rbot": 19404,
+    "rtop": 1515000,
+    "ref": 2.55,
+    "beta": 40
+  },
+  "argv": [
+    "D:\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "duration_s": 0.39592790603637695,
+  "execution": "PASS",
+  "log_errors": [],
+  "requested_stop_s": 0.04,
+  "deck_sha256": "0d8515dc3ec6987a54d081cbeebfb429b0a0725b8c2eaffa0c548db63861641a",
+  "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "metrics": {
+    "forced_hv_peak_V": 230.0,
+    "q21_peak_A": 0.00106780484,
+    "q22_peak_A": 0.00102505898,
+    "q25_peak_A": 5.5011257e-05,
+    "latch_end_V": 10.9851496,
+    "comp_end_V": 0.0241699774,
+    "sense_cross_s": 0.0111915,
+    "forced_hv_at_cross_V": 201.915,
+    "comparator_delay_s": 4.062000000006061e-07,
+    "comp_off_delay_s": 0.008811,
+    "within_200mA_absolute_limit": true
+  },
+  "native_measurements": {
+    "end_time": 0.04,
+    "q21_min": -0.0010678,
+    "q22_max": 0.00102506,
+    "q25_max": 5.50113e-05,
+    "comp_end": 0.02417,
+    "latch_end": 10.9851
+  },
+  "engineering": "PROVISIONAL"
+}

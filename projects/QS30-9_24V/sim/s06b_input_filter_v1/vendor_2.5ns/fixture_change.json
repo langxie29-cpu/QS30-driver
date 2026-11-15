@@ -1,0 +1,4 @@
+{
+  "diff": "--- \n+++ \n@@ -11,7 +11,9 @@\n COUT out 0 1p\n .include driver_compat.lib\n VINHIBIT inhibit 0 PULSE(0 3.3 375u 1n 1n 20u 1m)\n-XD out inhibit 0 vdd dh dl UCC27511_TRANS\n+RINPUT out din 100\n+CINPUT din 0 100p\n+XD din inhibit 0 vdd dh dl UCC27511_TRANS\n RGON dh gate 10\n RGOFF dl gate 2.2\n CG gate 0 5.333333n\n@@ -22,7 +24,7 @@\n set noaskquit\n set wr_singlescale\n set wr_vecnames\n-tran 5e-09 500u 0 5e-09 uic\n+tran 2.5e-09 500u 0 2.5e-09 uic\n meas tran native_end MAX time\n wrdata waves.txt v(vdd) v(vref) v(ct) v(out) v(cs) v(comp) v(gate)\n quit\n",
+  "nativeGB6": false
+}

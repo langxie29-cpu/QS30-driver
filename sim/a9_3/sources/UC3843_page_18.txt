@@ -1,0 +1,72 @@
+UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+SLUS223H – APRIL 1997 – REVISED OCTOBER 2024                                                                                   www.ti.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                           Figure 7-9. Synchronizing the Oscillator
+
+7.3.8 Shutdown Technique
+The PWM controller (see Figure 7-10) can be shut down by two methods: either raise the voltage at ISENSE
+above 1 V or pull the COMP terminal below a voltage two diode drops above ground. Either method causes the
+output of the PWM comparator to be high (see Figure 7-10). The PWM latch is reset dominant so that the output
+remains low until the next clock cycle after the shutdown condition at the COMP or ISENSE terminal is removed.
+In one example, an externally latched shutdown can be accomplished by adding an SCR that resets by cycling
+VCC below the lower UVLO threshold. At this point, the reference turns off, allowing the SCR to reset.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               Figure 7-10. Shutdown Techniques
+
+7.3.9 Slope Compensation
+A  fraction  of  the  oscillator  ramp  can  be  summed  resistively  with  the  current-sense  signal  to  provide  slope
+compensation for converters requiring duty cycles over 50% (see Figure 7-11). Note that capacitor CCSF forms a
+filter with RCSF to suppress the leading-edge switch spikes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18     Submit Document Feedback                                                                  Copyright © 2024 Texas Instruments Incorporated
+      Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

@@ -1,0 +1,61 @@
+{
+  "id": "power_vendor_diode",
+  "purpose": "Official Diotec electrical parameters, metadata compatibility only; supplier remains unconfirmed",
+  "kind": "power",
+  "parameters": {
+    "supplier_hypothesis": "Diotec UF4007"
+  },
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 45,
+  "duration_s": 0.42528730002231896,
+  "exit_code": 0,
+  "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+  "stderr": "",
+  "log_errors": [],
+  "execution": "PASS",
+  "engineering": "INCONCLUSIVE",
+  "deck_sha256": "61ea90f7dd4ad27ec6af53f28726fd6216c5e5cdeb6cc7ba0e1751271d73c964",
+  "requested_stop_s": 0.003,
+  "metrics": {
+    "output": {
+      "mean": 172.24043766119345,
+      "min": 164.488619,
+      "max": 172.677151,
+      "pp": 8.18853200000001,
+      "slope_V_per_s": -6.5051198125104355
+    },
+    "capacitor": {
+      "mean": 172.24068590909508,
+      "min": 172.225355,
+      "max": 172.256537,
+      "pp": 0.031182000000001153,
+      "slope_V_per_s": -26.8117133511057
+    },
+    "i(l20)": {
+      "min": 0.211093194,
+      "max": 1.07810042,
+      "late_rms": 0.5408200844739302
+    },
+    "v(gate)": {
+      "min": 0.0,
+      "max": 10.0,
+      "late_rms": 9.665641640074117
+    },
+    "v(sw)": {
+      "min": 0.152190927,
+      "max": 174.241856,
+      "late_rms": 43.40386023557575
+    },
+    "i(vdprobe)": {
+      "min": -15.6952302,
+      "max": 1.17594236,
+      "late_rms": 0.13569469194631564
+    }
+  }
+}

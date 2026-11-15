@@ -1,0 +1,185 @@
+{
+  "status": "RESEARCH_ONLY_NOT_SYSTEM_PASS",
+  "rows": [
+    {
+      "bus_V": 170.0,
+      "per_tube_A": 0.0015,
+      "branch_power_W": 2.295,
+      "anode_resistors_W": 0.405,
+      "tube_plus_driver_W": 1.89,
+      "tube_plus_driver_voltage_V": 140.0,
+      "bleeders_W": 0.578,
+      "dividers_W": {
+        "feedback": 0.018986925957558635,
+        "OVP": 0.019024422355341977,
+        "ADC": 0.019084725615796078
+      },
+      "total_known_HV_W": 2.9300960739286963,
+      "HV_input_current_A": {
+        "12": [
+          0.27130519203043485,
+          0.32556623043652183
+        ],
+        "24": [
+          0.13565259601521742,
+          0.16278311521826092
+        ]
+      }
+    },
+    {
+      "bus_V": 170.0,
+      "per_tube_A": 0.00225,
+      "branch_power_W": 3.4425,
+      "anode_resistors_W": 0.9112499999999998,
+      "tube_plus_driver_W": 2.53125,
+      "tube_plus_driver_voltage_V": 125.0,
+      "bleeders_W": 0.578,
+      "dividers_W": {
+        "feedback": 0.018986925957558635,
+        "OVP": 0.019024422355341977,
+        "ADC": 0.019084725615796078
+      },
+      "total_known_HV_W": 4.077596073928697,
+      "HV_input_current_A": {
+        "12": [
+          0.37755519203043486,
+          0.45306623043652183
+        ],
+        "24": [
+          0.18877759601521743,
+          0.22653311521826092
+        ]
+      }
+    },
+    {
+      "bus_V": 170.0,
+      "per_tube_A": 0.003,
+      "branch_power_W": 4.59,
+      "anode_resistors_W": 1.62,
+      "tube_plus_driver_W": 2.9699999999999998,
+      "tube_plus_driver_voltage_V": 110.0,
+      "bleeders_W": 0.578,
+      "dividers_W": {
+        "feedback": 0.018986925957558635,
+        "OVP": 0.019024422355341977,
+        "ADC": 0.019084725615796078
+      },
+      "total_known_HV_W": 5.225096073928697,
+      "HV_input_current_A": {
+        "12": [
+          0.48380519203043487,
+          0.5805662304365219
+        ],
+        "24": [
+          0.24190259601521744,
+          0.29028311521826095
+        ]
+      }
+    },
+    {
+      "bus_V": 172.18325791855204,
+      "per_tube_A": 0.0015,
+      "branch_power_W": 2.3244739819004527,
+      "anode_resistors_W": 0.405,
+      "tube_plus_driver_W": 1.9194739819004527,
+      "tube_plus_driver_voltage_V": 142.18325791855204,
+      "bleeders_W": 0.5929414861489323,
+      "dividers_W": {
+        "feedback": 0.01947774410843349,
+        "OVP": 0.01951620980017551,
+        "ADC": 0.01957807191933343
+      },
+      "total_known_HV_W": 2.9759874938773274,
+      "HV_input_current_A": {
+        "12": [
+          0.275554397581234,
+          0.33066527709748084
+        ],
+        "24": [
+          0.137777198790617,
+          0.16533263854874042
+        ]
+      }
+    },
+    {
+      "bus_V": 172.18325791855204,
+      "per_tube_A": 0.00225,
+      "branch_power_W": 3.4867109728506787,
+      "anode_resistors_W": 0.9112499999999998,
+      "tube_plus_driver_W": 2.5754609728506788,
+      "tube_plus_driver_voltage_V": 127.18325791855204,
+      "bleeders_W": 0.5929414861489323,
+      "dividers_W": {
+        "feedback": 0.01947774410843349,
+        "OVP": 0.01951620980017551,
+        "ADC": 0.01957807191933343
+      },
+      "total_known_HV_W": 4.138224484827553,
+      "HV_input_current_A": {
+        "12": [
+          0.383168933780329,
+          0.4598027205363948
+        ],
+        "24": [
+          0.1915844668901645,
+          0.2299013602681974
+        ]
+      }
+    },
+    {
+      "bus_V": 172.18325791855204,
+      "per_tube_A": 0.003,
+      "branch_power_W": 4.6489479638009055,
+      "anode_resistors_W": 1.62,
+      "tube_plus_driver_W": 3.0289479638009054,
+      "tube_plus_driver_voltage_V": 112.18325791855204,
+      "bleeders_W": 0.5929414861489323,
+      "dividers_W": {
+        "feedback": 0.01947774410843349,
+        "OVP": 0.01951620980017551,
+        "ADC": 0.01957807191933343
+      },
+      "total_known_HV_W": 5.30046147577778,
+      "HV_input_current_A": {
+        "12": [
+          0.49078346997942407,
+          0.5889401639753089
+        ],
+        "24": [
+          0.24539173498971203,
+          0.29447008198765445
+        ]
+      }
+    }
+  ],
+  "low_voltage_example": {
+    "rail3V3_A": 0.8,
+    "rail3V3_W": 2.64,
+    "HV5622_12V_A_3chips_datasheet_high_clock": 0.045,
+    "HV5622_12V_W": 0.54,
+    "LV_example_total_W": 3.18,
+    "system_power_W_before_other_aux": [
+      9.338995637698552,
+      10.941794765238262
+    ],
+    "system_current_A_before_other_aux": {
+      "12": [
+        0.7782496364748793,
+        0.9118162304365218
+      ],
+      "24": [
+        0.38912481823743966,
+        0.4559081152182609
+      ]
+    }
+  },
+  "assumptions": [
+    "HV efficiency .75-.90 is sensitivity only, not measured",
+    "LV combined efficiency .80-.90 is sensitivity only, not measured",
+    ".8A on 3V3 inherited allocation, not measured demand",
+    "15mA/chip HV5622 at 8MHz CLK/4MHz DATA; not actual clock consumption",
+    "known HV total omits off-state leakage, abnormal states, tolerances and transients",
+    "normal operation: one cathode per tube, nine branches; not 90 simultaneous independent loads",
+    "no tube sustaining voltage or driver low-current drop assumed"
+  ]
+}

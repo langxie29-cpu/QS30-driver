@@ -244,11 +244,20 @@ def pad_for_package(pkg):
 
 def gen_pcb(board_name, parts, w, h):
     ref_map = reference_map(parts)
+    # Match KiCad's explicit no-connect singleton names. Each isolated pad
+    # keeps its own net; this adds no copper or functional connections.
+    pad_nets = {(ref, pin): p['pins'].get(pin,
+                f'unconnected-({ref_map[ref]}-{p["pin_names"][pin]}-Pad{pin})')
+                for ref, p in parts.items() for pin in p['pin_names']}
     nets = {}
     for ref in sorted(parts):
         for pin, net in parts[ref]["pins"].items():
             if net not in nets:
                 nets[net] = len(nets) + 1
+    for key in sorted(pad_nets):
+        net = pad_nets[key]
+        if net not in nets:
+            nets[net] = len(nets) + 1
     out = ['(kicad_pcb (version 20221018) (generator pcbnew)',
            f'  (general (thickness 1.6))',
            f'  (paper "A4")',
@@ -301,7 +310,7 @@ def gen_pcb(board_name, parts, w, h):
         out.append(f'    (property "Value" "{esc(p["value"][:28])}" (at 0 3 0) (layer "F.Fab") (effects (font (size 1 1)) hide))')
         cols = 2 if n > 1 else 1
         for k, pin in enumerate(sorted(p['pin_names'], key=lambda s: (len(s), s))):
-            net = p['pins'].get(pin)
+            net = pad_nets[(ref, pin)]
             px = (k % cols - 0.5) * 2.5
             py = (k // cols - max(0, (n // cols) - 1) / 2) * 2.0
             net_expr = f' (net {nets[net]} "{esc(net)}")' if net else ''

@@ -1,0 +1,71 @@
+(ExpressProject "UCC28C43"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\ucc28c43.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\ucc28c43.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\ucc28c43-pspicefiles\ucc28c43_startup\ucc28c43_startup.net"
+      (Type "Report"))
+    (File ".\ucc28c43-pspicefiles\ucc28c43_steady\ucc28c43_steady.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ucc28c43-pspicefiles\ucc28c43_startup\ucc28c43_startup.sim"
+        (DisplayName "UCC28C43_STARTUP-UCC28C43_startup")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ucc28c43-pspicefiles\ucc28c43_steady\ucc28c43_steady.sim"
+        (DisplayName "UCC28C43_STEADY-UCC28C43_steady")
+        (Type "PSpice Profile"))
+      (ActiveProfile
+         ".\ucc28c43-pspicefiles\ucc28c43_startup\ucc28c43_startup.sim"))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\ucc28c43.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName ".\ucc28c43.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (UCC28C43_STEADY
+      (FullPartName "UCC28C43_STEADY.Normal")
+      (LibraryName
+         "C:\WORK\01_UCC28C42\PRE-RELEASE\01_UCC28C42\02_PSPICE\UCC28C43_PSPICE_07NOV2008\UCC28C43_PSPICE_TRANS\UCC28C43.OLB")
+      (DeviceIndex "0"))
+    (UCC28C43_STARTUP
+      (FullPartName "UCC28C43_STARTUP.Normal")
+      (LibraryName
+         "C:\WORK\01_UCC28C42\PRE-RELEASE\01_UCC28C42\02_PSPICE\UCC28C43_PSPICE_07NOV2008\UCC28C43_PSPICE_TRANS\UCC28C43.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\ucc28c43.dsn")
+      (Path "Design Resources" ".\ucc28c43.dsn" "UCC28C43_STARTUP")
+      (Path "Design Resources" ".\ucc28c43.dsn" "UCC28C43_STEADY")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 160 1004 -4 -30 206 1456 122 681"))
+      (Tab 0)))
+  (MPSSessionName "a0132694")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Work\01_UCC28C42\Pre-release\01_UCC28C42\02_PSPICE\UCC28C43_PSPICE_07NOV2008\UCC28C43_PSPICE_TRANS"))

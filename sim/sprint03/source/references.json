@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://www.ti.com/lit/ds/symlink/uc3843.pdf",
+    "role": "Current manufacturer table checked online: 92/97/100 percent DMAX with stated test conditions; Rev.H change from old minimum95 to92",
+    "local_reference": "docs9/sources/A9_1/TI_UC3843.pdf",
+    "local_sha256": "303b8772b04547aa7c4ea670e88ec10a41ef7cf537941a069d9a754ddf178b07"
+  },
+  {
+    "url": "https://www.ti.com/lit/an/slua173/slua173.pdf",
+    "role": "DN40 explains oscillator discharge-current variation; example values are not UC3843 production bounds",
+    "local_reference": "sim/a9_3/sources/TI_DN40.pdf",
+    "local_sha256": "8710b323e60c50f0fbdb9f941e62bde180e0a8d7c2df6d4c09568276704c71a9"
+  },
+  {
+    "url": "https://www.ti.com/product/UC3843",
+    "role": "SLUM521 points to UCC28C43 family, not the frozen UC3843 device model"
+  },
+  {
+    "url": "https://www.vishay.com/en/product/91054/",
+    "role": "Checked IRF740 product page; no electrical SPICE model link found in inspected design resources; ECAD geometry link is not SPICE"
+  },
+  {
+    "url": "https://diotec.com/en/product/UF4007.html",
+    "role": "Official UF4007 model link; repaired relative URL used, see model_search.json"
+  }
+]

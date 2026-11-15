@@ -1,0 +1,142 @@
+{
+  "preregister": {
+    "scope": "Actual 100ohm/220pF passive filter only; ideal current ramp, ideal voltage threshold. No controller silicon, PWM latch, gate, eFuse, boost, tube or protection model.",
+    "acceptance_before_run": "rc0; no error; native endpoint10us; >=100 samples; ramp RC error <=1mV; step-halving threshold time difference <=5ns; peak-leading-edge case must remain below0.9V in first200ns.",
+    "simulator": "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+    "temperature_C": 27,
+    "stop_s": 1e-05,
+    "reltol": 1e-05,
+    "abstol_A": 1e-10,
+    "vntol_V": 1e-07,
+    "max_runtime_s_each": 30,
+    "engineering_status": "24V-07 NOT QUALIFIED regardless of passive test result"
+  },
+  "cases": [
+    {
+      "case": "v26.4_l121.5_th1.1_n-0.05_dt5.0",
+      "Vin_V": 26.4,
+      "L_H": 0.0001215,
+      "threshold_V": 1.1,
+      "noise_V": -0.05,
+      "step_s": 5e-09,
+      "samples": 2069,
+      "end_s": 1e-05,
+      "threshold_time_s": 6.476406880502437e-06,
+      "current_at_threshold_A": 1.4072192728005295,
+      "CS_peak_first200ns_V": 0.27526579,
+      "RC_error_V": 5.76197578538995e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    },
+    {
+      "case": "v26.4_l121.5_th1.1_n-0.05_dt2.5",
+      "Vin_V": 26.4,
+      "L_H": 0.0001215,
+      "threshold_V": 1.1,
+      "noise_V": -0.05,
+      "step_s": 2.5e-09,
+      "samples": 4051,
+      "end_s": 1e-05,
+      "threshold_time_s": 6.476406853989853e-06,
+      "current_at_threshold_A": 1.4072192670397703,
+      "CS_peak_first200ns_V": 0.275247168,
+      "RC_error_V": 5.426173510514332e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    },
+    {
+      "case": "v20.5_l165.0_th0.9_n0.05_dt5.0",
+      "Vin_V": 20.5,
+      "L_H": 0.000165,
+      "threshold_V": 0.9,
+      "noise_V": 0.05,
+      "step_s": 5e-09,
+      "samples": 2051,
+      "end_s": 1e-05,
+      "threshold_time_s": 8.365248060074442e-06,
+      "current_at_threshold_A": 1.0393186983728853,
+      "CS_peak_first200ns_V": 0.336771041,
+      "RC_error_V": 5.033939487475436e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    },
+    {
+      "case": "v20.5_l165.0_th0.9_n0.05_dt2.5",
+      "Vin_V": 20.5,
+      "L_H": 0.000165,
+      "threshold_V": 0.9,
+      "noise_V": 0.05,
+      "step_s": 2.5e-09,
+      "samples": 4040,
+      "end_s": 1e-05,
+      "threshold_time_s": 8.365248059853278e-06,
+      "current_at_threshold_A": 1.0393186983454072,
+      "CS_peak_first200ns_V": 0.33676863,
+      "RC_error_V": 5.28181831604968e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    },
+    {
+      "case": "v24_l150.0_th1_n0_dt5.0",
+      "Vin_V": 24,
+      "L_H": 0.00015,
+      "threshold_V": 1,
+      "noise_V": 0,
+      "step_s": 5e-09,
+      "samples": 2058,
+      "end_s": 1e-05,
+      "threshold_time_s": 7.643951230183644e-06,
+      "current_at_threshold_A": 1.223032196829383,
+      "CS_peak_first200ns_V": 0.305934924,
+      "RC_error_V": 4.1440002540582555e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    },
+    {
+      "case": "v24_l150.0_th1_n0_dt2.5",
+      "Vin_V": 24,
+      "L_H": 0.00015,
+      "threshold_V": 1,
+      "noise_V": 0,
+      "step_s": 2.5e-09,
+      "samples": 4041,
+      "end_s": 1e-05,
+      "threshold_time_s": 7.643951230820611e-06,
+      "current_at_threshold_A": 1.2230321969312978,
+      "CS_peak_first200ns_V": 0.305940613,
+      "RC_error_V": 4.864000091586718e-09,
+      "result": "PASS_PASSIVE_SCOPE_ONLY",
+      "parsed_error": false
+    }
+  ],
+  "step_halving": [
+    {
+      "case": "v26.4_l121.5_th1.1_n-0.05_dt5.0",
+      "threshold_time_difference_s": 2.6512584411686382e-14,
+      "result": "PASS"
+    },
+    {
+      "case": "v20.5_l165.0_th0.9_n0.05_dt5.0",
+      "threshold_time_difference_s": 2.2116369065988684e-16,
+      "result": "PASS"
+    },
+    {
+      "case": "v24_l150.0_th1_n0_dt5.0",
+      "threshold_time_difference_s": 6.369670822693393e-16,
+      "result": "PASS"
+    }
+  ],
+  "passive_filter_pass": true,
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "missing": [
+    "qualified UCC28C43 oscillator/PWM/UVLO model",
+    "nonlinear inductance versus current and temperature",
+    "vendor MOS/diode and real gate delay",
+    "startup/CCM slope compensation with CT-loading test",
+    "fault latch and independent shutdown",
+    "eFuse hotplug/SOA and rail sequencing",
+    "USB boot/inrush/power loss bench qualification"
+  ]
+}

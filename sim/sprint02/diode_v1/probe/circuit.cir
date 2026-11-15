@@ -1,0 +1,15 @@
+Diotec UF4007 unmodified vendor model IV probe
+.include "D:/PROJECTS/dsharness/QS30-1/sim/sprint02/source/diotec_uf4007_spice.lib"
+ITEST 0 a PWL(0 0 1u .003 1m .003)
+XTEST a 0 UF4007
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1u 1m
+meas tran end_time MAX time
+meas tran diode_v FIND v(a) AT=.001
+wrdata waves.txt v(a)
+quit
+.endc
+.end

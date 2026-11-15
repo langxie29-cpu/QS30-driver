@@ -1,0 +1,33 @@
+Warm-start open-loop boost hypothesis, fixed physical assumptions
+.model NSW SW(RON=.55 ROFF=1e10 VT=3 VH=.1)
+.model UF D(IS=10n N=1.5 RS=.5 CJO=15p TT=75n BV=1000 IBV=5u)
+.model BODY D(IS=1n N=1.5 RS=.1 CJO=1p TT=100n BV=400)
+VIN vin 0 11.4
+RL vin lin .3
+L20 lin sw 220u IC=.5
+S20 sw src gate 0 NSW
+RSENSE src 0 .15
+DBODY src sw BODY
+COSS sw src 150p
+D20 sw da UF
+VDPROBE da hv 0
+RESR hv cap .5
+COUT cap 0 20.3u IC=172.1832579
+RBLEED hv 0 50k
+RFB hv 0 1.5221meg
+ROVP hv 0 1.5191meg
+BTUBE hv 0 I=27m*min(max(v(hv)/150,0),1)
+VPWM gate 0 PULSE(0 10 0 30n 30n 1.1764871794871795e-05 1.282051282051282e-05)
+
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 5e-08 0.003 0 5e-08 uic
+meas tran end_time MAX time
+
+wrdata waves.txt v(hv) v(cap) v(sw) v(src) v(gate) i(l20) i(vdprobe)
+quit
+.endc
+.end

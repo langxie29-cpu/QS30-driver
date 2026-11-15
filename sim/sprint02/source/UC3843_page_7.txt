@@ -1,0 +1,65 @@
+                                                                                      UC1842, UC2842, UC3842, UC1843, UC2843, UC3843
+                                                                                      UC1844, UC2844, UC3844, UC1845, UC2845, UC3845
+www.ti.com                                                                                           SLUS223H – APRIL 1997 – REVISED OCTOBER 2024
+6.4 Thermal Information (continued)
+                                                                                                         UCx84x
+                           THERMAL METRIC(1)                                     D (SOIC)        D (SOIC)       P (PDIP)      FK (LCCC)         UNIT
+                                                                                  8 PINS         14 PINS         8 PINS         20 PINS
+ RθJC(bottom)     Junction-to-case (bottom) thermal resistance                       —              —               —              4.1          °C/W
+
+(1)    For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+       note.
+6.5 Electrical Characteristics
+over operating free-air temperature range (unless otherwise noted) –55°C ≤ TA ≤ 125°C for the UC184x; –40°C ≤ TA ≤ 85°C
+for the UC284x, 0°C ≤ TA ≤ 70°C for the UC384x, VVCC = 15 V(2); 0.1 µF capacitor from VCC to GROUND, 0.1 µF capacitor
+from VREF to GROUND, RRT = 10 kΩ; CCT = 3.3 nF, TJ = TA.
+                  PARAMETER                                       TEST CONDITIONS                             MIN         TYP         MAX       UNIT
+ REFERENCE SECTION
+                                                                                        UC184x
+ V             Reference voltage                    I     = 1 mA, T    = 25°C           and                   4.95            5        5.05       V
+   VREF                                             VREF             J                  UC284x
+                                                                                        UC384x                 4.9            5         5.1
+               Line regulation                      12 ≤ VCC ≤ 25 V                                                           6          20      mV
+               Load regulation                      1 ≤ IVREF ≤ 20 mA                                                         6          25      mV
+               Temperature stability                See (1) (3)                                                             0.2         0.4    mV/°C
+
+                                                                                        UC184x
+                                                                              (1)       and                    4.9                      5.1
+               Total output variation               Line, load, temperature             UC284x                                                    V
+
+                                                                                        UC384x                4.82                     5.18
+               Output noise voltage                 10 Hz ≤ fOSC ≤ 10 kHz, (1) TJ = 25°C                                    50                    μV
+               Long term stability                  TA = 125°C, 1000 Hrs (1)                                                  5          25      mV
+
+               Output short circuit                                                                           –30         –100        –180       mA
+ OSCILLATOR SECTION
+ fOSC          Initial accuracy                     TJ = 25°C(5)                                                47          52           57      kHz
+
+               Voltage stability                    12 ≤ VCC ≤ 25 V                                                       0.2%          1%
+               Temperature stability                TMIN ≤ TA ≤ TMAX (1)                                                    5%
+ VRT/CT        Amplitude                            Peak-to-peak (1)                                                        1.7                   V
+
+ ERROR AMPLIFIER SECTION
+                                                                                        UC184x
+ V             Input voltage                        V       = 2.5 V                     and                   2.45          2.5        2.55       V
+   VFB                                               COMP                               UC284x
+                                                                                        UC384x                2.42          2.5        2.58
+                                                                                        UC184x
+ I             Input bias current                                                       and                                              –1       µA
+  VFB                                                                                   UC284x
+                                                                                        UC384x                                           –2
+ AVOL                                               2 ≤ VCOMP ≤ 4 V                                             65          90                    dB
+               Unity gain bandwidth                 TJ = 25°C (1)                                              0.7            1                  MHz
+
+ PSRR          Power supply rejection ratio         12 ≤ VCC ≤ 25 V                                             60          70                    dB
+ I(snk)        COMP sink current                    VVFB = 2.7 V, VCOMP = 1.1 V                                  2            6                  mA
+ I(src)        COMP source current                  VVFB = 2.3 V, VCOMP = 5 V                                 –0.5        –0.8
+ VCOMP         High-level output voltage            V     = 2.3 V, R  = 15-kΩ COMP to GROUND                     5            6
+ High                                                VFB            L                                                                             V
+
+ VCOMP Low     Low-level output voltage             VVFB = 2.7 V, RL = 15-kΩ COMP to VREF                                   0.7         1.1
+ CURRENT SENSE SECTION
+
+
+Copyright © 2024 Texas Instruments Incorporated                                                                     Submit Document Feedback             7
+       Product Folder Links: UC1842 UC2842 UC3842 UC1843 UC2843 UC3843 UC1844 UC2844 UC3844 UC1845 UC2845 UC3845

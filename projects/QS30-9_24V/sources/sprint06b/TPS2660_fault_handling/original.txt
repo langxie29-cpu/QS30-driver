@@ -1,0 +1,343 @@
+                                                                                    Application Report
+
+                                                                                                       SLVA934A - November 2017 - Revised May 2020
+
+                               Fault Handling Using TPS2660 eFuse
+
+Karikalan Selvara, Lokesh Ghulyani
+
+                                                                        ABSTRACT
+         The TPS2660 eFuse provides integrated protection to various system faults such as overcurrent,
+         overvoltage, undervoltage, short-circuit, and reverse input polarity protection. Integrated reverse input
+         polarity protection helps to protect electronic systems from reverse input supply due to miswiring. This
+         application note describes methods to handle the fault of the TPS2660 by downstream circuits under a
+         reverse input polarity condition.
+
+                                                                                   Contents
+
+       1 Introduction ................................................................................................................... 1
+       2 Fault Status Monitoring Using TPS2660 eFuse ......................................................................... 2
+       3 Fault Status Monitoring During Reverse Input Supply Connection ................................................... 3
+       4 Suggested Fault Handling Methods ....................................................................................... 4
+       5 Conclusion .................................................................................................................... 5
+
+                                                                               List of Figures
+
+       1 TPS2660 Power Good Indication Using FLTb ........................................................................... 2
+       2 TPS2660 Fault Status Monitoring Using MCU........................................................................... 2
+       3 Fault Status During Reverse Input Supply Connection................................................................. 3
+       4 Power Supply Sequence Where FLTb Sinks More Current ........................................................... 4
+       5 Proposed System Fix With Series Current Limiting Resistor .......................................................... 4
+       6 Proposed System Fix With Blocking Diode .............................................................................. 5
+
+                                                                                List of Tables
+
+       1 Maximum DC Current versus Reverse Supply Voltage ................................................................ 3
+Trademarks
+
+         All trademarks are the property of their respective owners.
+
+1 Introduction
+         A PLC system is usually powered by an external 24-V DC power supply to provide power to the controller
+         unit, backplane, and I/O modules within the PLC system. Input protection circuits are required to protect
+         the PLC system from system faults such as overcurrent, overvoltage, and overload. Because the input
+         supply connectors are screw type, there can always be a possibility of reverse connections at the input
+         supply.
+         The TPS2660 eFuse protects downstream circuits from various systems faults including integrated
+         protection to reverse input supply conditions (see the TPS2660 reference design). This device provides
+         status monitor functions like fault indication and load current monitor, which is used by a downstream
+         microcontroller unit (MCU) to take control decisions or a DC/DC converter to do power sequencing.
+
+SLVA934A - November 2017 - Revised May 2020  Fault Handling Using TPS2660 eFuse       1
+
+Submit Documentation Feedback
+
+                               Copyright © 2017-2020, Texas Instruments Incorporated
+Fault Status Monitoring Using TPS2660 eFuse                                                                  www.ti.com
+
+2 Fault Status Monitoring Using TPS2660 eFuse
+
+         The FLTb signal of the TPS2660 combines power good indication along with system faults such as
+         overload, overvoltage, undervoltage, and shutdown. This combination enables downstream loads like
+         DC/DC converters to turn on heavy loads after power good indication. An application example where FLTb
+         is directly connected to enable pin of a DC/DC converter is shown in Figure 1. During startup, FLTb is
+         pulled low by the TPS2660 eFuse initially and is released after eFuse output is fully ON. Pullup resistor R4
+         and pulldown resistor R5 are used to scale down the pullup voltage and are chosen based on DC/DC
+         converters' enable threshold voltage and its operating maximum rating.
+
+                                                             IN                OUT             OUT                VIN
+                                                                                                R4
+                                                      CIN *  UVLO  150 m                              COUT                    DC/DC
+                                        R1                   OVP                                                  EN Converter
+                        +  Supply wire                             TPS2660x       FLT                        R5
+                           GND wire     R2                   dVdT     GND      SHDN                               GND
+    Power Supply                                             RTN               IMON
+                        -               R3
+                                                CdVdT                            ILIM
+   18-V to 36-V DC
+
+                                                                                               RILIM
+
+                                                                  *Optional and only for noise suppression
+
+                                                                                                                                                    Copyright © 2017, Texas Instruments Incorporated
+
+                               Figure 1. TPS2660 Power Good Indication Using FLTb
+
+   Alternatively, the FLTb signal can be used by an external MCU to take control decisions under various
+   systems fault conditions. An application example where FLTb is directly connected to the IO pin of the
+   MCU and pulled up to the 5-V IO supply is shown in Figure 2.
+
+                                                             IN                        OUT           OUT     To Downstream Load
+
+                           Supply wire                CIN *  UVLO  150 m                       COUT                         5 V
+                           GND wire     R1                   OVP   TPS2660x                                                       VIO
+                       +                                                               FLT
+                                        R2                                                                                 R4
+    Power Supply                                                                                                                  IO MCU
+                        -               R3
+                                                CdVdT
+   18-V to 36-V DC
+
+                                                                                                             GND
+
+                                                             dVdT                      ILIM
+                                                             RTN
+
+                                                                          GND                         RILIM
+
+                                                                 *Optional and only for noise suppression
+                                                                                                                                       Copyright © 2017, Texas Instruments Incorporated
+
+                                        Figure 2. TPS2660 Fault Status Monitoring Using MCU
+
+2  Fault Handling Using TPS2660 eFuse                                                  SLVA934A - November 2017 - Revised May 2020
+
+                                                                                                          Submit Documentation Feedback
+
+                                        Copyright © 2017-2020, Texas Instruments Incorporated
+www.ti.com                                          Fault Status Monitoring During Reverse Input Supply Connection
+
+3 Fault Status Monitoring During Reverse Input Supply Connection
+
+         During a faulty reverse input supply connection, the FLTb pin of the TPS2660 can sink current more than
+         its absolute maximum rating under certain power supply sequence. In particular, after a normal power-up
+         and power-down sequence, FLTb pin remains pulled to RTN to indicate brownout faults. Now, if a reverse
+         input supply is applied immediately, the FLTb pin sinks current back into the supply through an external
+         DC/DC converter enable pin or MCU IO pin as it remains pulled to RTN. The current flow path during a
+         reverse input supply connection is indicated in Figure 3.
+
+                                                    IN                                 OUT         OUT  To Downstream Load
+                                                                                            COUT
+                        Supply wire  R1 CIN*        UVLO  150 m                                                        5 V
+                    +   GND wire     R2             OVP   TPS2660x                     FLT                                   VIO
+                                     R3
+ Power Supply                                                                                                         R4
+                     -                       CdVdT                                                                           IO MCU
+
+18-V to 36-V DC
+
+                                                                                                        GND
+
+                                                    dVdT                               ILIM
+                                                    RTN                                        RILIM
+
+                                                          GND
+
+                                             *Optional and only for noise suppression
+
+                                                                                                                                Copyright © 2017, Texas Instruments Incorporated
+
+                        Figure 3. Fault Status During Reverse Input Supply Connection
+
+A specific power supply sequence where FLTb sinks more current is shown in Figure 4 and described
+below.
+
+· A normal power up is followed by a normal power down.
+
+· The FLTb switch is pulled low to RTN due to a reverse current blocking fault or undervoltage fault.
+
+· A reverse input supply is applied with a slew rate of -50 V/s > dVIN/dt > -500 mV/s within 15
+    minutes.
+
+· The FLTb switch remains pulled low to RTN and results in a current conduction path shown in
+    Figure 3.
+
+During this reverse input supply sequence, a 60-mA ±20% DC current can flow through the ESD structure
+of the IO pin of the MCU or the enable pin of the DC/DC converter for a 24-V reverse supply. Table 1
+shows the maximum DC current that can flow through the FLTb pin for various power supply voltages.
+Also note that this DC current does not flow for subsequent reverse supply connections because the FLTb
+switch is opened after the first reverse supply is removed.
+
+                                     Table 1. Maximum DC Current versus Reverse Supply Voltage
+
+                Parameter                        -18 V    Reverse Supply Voltage                            -36 V
+Maximum DC current through FLTb              45 mA ±20%               -24 V                             90 mA ±20%
+
+                                                                 60 mA ±20%
+
+SLVA934A - November 2017 - Revised May 2020                                            Fault Handling Using TPS2660 eFuse            3
+
+Submit Documentation Feedback
+
+                                     Copyright © 2017-2020, Texas Instruments Incorporated
+Suggested Fault Handling Methods                                                                                                                      www.ti.com
+
+                                                       24-V DC
+
+   VIN    Unpowered State                  Normal Power Up            Power Supply OFF
+   VOUT           0 V
+
+                                                                                     < 15 minutes  Reverse Power Supply
+                                                       -50 V/ S > dVIN/dt > -500 mV/ s                    Connection
+
+                                                                                                            ±24-V DC
+
+   VFLTb                           FLTb switch is OFF                 FLTb switch is ON due
+                               0 V                                    to RCB event or UVLO
+
+                                                                                                               FLTb switch remains ON
+
+   IFLTb                                                              VIO/R4                  60 mA (± 20%) through MCU or DC/DC
+                                                                              (10 mA Max)
+
+                               0 mA
+
+                                                                              Copyright © 2017, Texas Instruments Incorporated
+
+          Figure 4. Power Supply Sequence Where FLTb Sinks More Current
+
+4 Suggested Fault Handling Methods
+
+         Generally, ESD structures of MCUs or DC/DC converters can take 60 mA of current for a short period
+         during their operating life without degradation in performance. However, if the ESD structures are not able
+         to handle 60 mA of current during a faulty reverse input supply, the current through FLTb needs to be
+         limited by external means.
+
+         Adding a current limit resistance of R5 > VINMAX/2 mA between FLTb and IO of MCU as shown in Figure 5
+         limits current through ESD structure to be less than 2 mA. R5 can be chosen so that current through the
+         ESD structure is less than the absolute maximum ratings of the IO pin of the MCU or the enable pin of the
+         DC/DC converter, and current through the FLTb pin of the TPS2660 is always less than its absolute
+         maximum rating of 10 mA.
+
+   VIN                                IN                        OUT         OUT To Downstream Load
+                        CIN *                                   FLT
+                                     UVLO  150 m                      COUT                          5 V
+       R1                            OVP   TPS2660x                                                        VIO
+   GND
+                                                                                                   R4
+       R2                                                                                                   IO
+
+       R3 CdVdT                                                                      R5                         MCU
+                                                                              > VINMAX/2 mA
+
+                                                                                                    GND
+
+                                     dVdT                       ILIM
+                                     RTN
+
+                                           GND                                RILIM
+
+          *Optional and only for noise suppression
+                                                                                                    Copyright © 2017, Texas Instruments Incorporated
+
+            Figure 5. Proposed System Fix With Series Current Limiting Resistor
+
+4  Fault Handling Using TPS2660 eFuse                                                              SLVA934A - November 2017 - Revised May 2020
+
+                                                                                                                Submit Documentation Feedback
+
+                                           Copyright © 2017-2020, Texas Instruments Incorporated
+www.ti.com                                                                                                     Conclusion
+
+Sometimes it is not feasible to place a resistor in series to FLTb. Consider the system shown in Figure 1
+where FLTb signal provides power good indication to the DC/DC converter. Pullup and pulldown resistors
+R4 and R5 must be scaled up if a 40-k resistor is added in series to FLTb. For example, on a 24-V
+power supply application with a range of 18 V to 36 V, R4 and R5 are 70 k and 5 k, respectively, for
+1.23 V of an enable threshold and 0.5 V of a shutdown threshold. Now with a 40-k series in place to limit
+current through FLTb, R4 and R5 must be scaled to 2.8 M and 200 k, respectively, to meet both the
+enable and shutdown thresholds. This scaling is not always possible because the current through R4 and
+R5 are 12 µA at maximum and can become comparable to a leakage current > 1 µA of the enable pin of
+DC/DC converter. Furthermore, a shift in the threshold across temperature can be very wide due to the
+variation of leakage current over temperature.
+
+In this case, it is recommended to place D1, a 60-V rated blocking diode like 1N4148WS as shown in
+Figure 6, to block the current through FLTb and modify R4 and R5 to accommodate for the forward drop
+of D1.
+
+VIN                            IN        150 m       OUT                         OUT  VIN
+                      CIN *              TPS2660x                          COUT       EN DC/DC Converter
+                               UVLO                   FLT  R4                         GND
+     R1                        OVP          GND    SHDN
+GND                            MMOODDEE            IMON    D1
+                               dVdT
+     R2                        RTN                   ILIM  1N4148WS  R5
+
+     R3                                                    RILIM
+               CdVdT
+
+            *Optional and only for noise suppression
+
+                                                                                                                   Copyright © 2017, Texas Instruments Incorporated
+
+                             Figure 6. Proposed System Fix With Blocking Diode
+
+5 Conclusion
+
+         In a PLC system, possible system issues with the TPS2660 fault handling during a specific reverse power
+         supply sequence are highlighted, and two methods to overcome--using a current limiting resistor or a
+         blocking diode--are discussed in this application note.
+
+NOTE:       The proposed fix either with a blocking diode or with a current limiting resistor is not required
+            for devices with date code value  2013. It is only required for devices with date code value
+            < 2013.
+
+            Date code of the device can be found on packaging label of the device.
+
+SLVA934A - November 2017 - Revised May 2020                                           Fault Handling Using TPS2660 eFuse                                             5
+
+Submit Documentation Feedback
+
+                                         Copyright © 2017-2020, Texas Instruments Incorporated
+Revision History                                                            www.ti.com
+
+                                                         Revision History
+
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+
+Changes from Original (November 2017) to A Revision ................................................................................................ Page
+
+· Added Note ................................................................................................................................ 5
+
+6  Revision History  SLVA934A - November 2017 - Revised May 2020
+
+                                                                            Submit Documentation Feedback
+
+                     Copyright © 2017-2020, Texas Instruments Incorporated
+                                 IMPORTANT NOTICE AND DISCLAIMER
+
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATA SHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES "AS IS"
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you
+will fully indemnify TI and its representatives against, any claims, damages, costs, losses, and liabilities arising out of your use of these
+resources.
+
+TI's products are provided subject to TI's Terms of Sale or other applicable terms available either on ti.com or provided in conjunction with
+such TI products. TI's provision of these resources does not expand or otherwise alter TI's applicable warranties or warranty disclaimers for
+TI products.
+
+TI objects to and rejects any additional or different terms you may have proposed. IMPORTANT NOTICE
+
+                                      Mailing Address: Texas Instruments, Post Office Box 655303, Dallas, Texas 75265
+                                                           Copyright © 2022, Texas Instruments Incorporated
+

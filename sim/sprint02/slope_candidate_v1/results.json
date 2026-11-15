@@ -1,0 +1,75 @@
+{
+  "stage": "candidate",
+  "source_sha256": {
+    "design9\\sprint02_hv.py": "527fb5ada37fe5466d516f6b9f810593b652e86795e6cbb011ae1fd5f087aecf",
+    "sim\\sprint02\\source\\hv_convergence9.py": "e2d6a32027756aff2002636f40bb095b0f0ff68afd72611004275ec18df77326",
+    "sim\\sprint02\\source\\uc3843_functional.lib": "13c1bb256b52945fb26d1556eec4f4b1f6094f98df67c022fb6f6b30de838714",
+    "tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab"
+  },
+  "results": [
+    {
+      "case": {
+        "id": "ramp_ratio_derived_generic",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "compensation": "type2",
+        "rt": 22000,
+        "ct": 1e-09,
+        "rramp": 1500,
+        "stop": 0.3,
+        "stage": "candidate"
+      },
+      "fixture": "isolated; not complete actual protection/enable chain",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": "TIMEOUT",
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "duration_s": 120.04413342475891,
+      "execution": "FAIL",
+      "log_errors": [],
+      "requested_stop_s": 0.3,
+      "deck_sha256": "7bf462c5f05a5a4f65dc25d2a8cf45de1fe46af151e9b2e437dc177c94a04bd6",
+      "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab"
+    },
+    {
+      "case": {
+        "id": "ramp_ratio_derived_vendor_diode",
+        "closed": true,
+        "c10": 0,
+        "buffer": true,
+        "compensation": "type2",
+        "rt": 22000,
+        "ct": 1e-09,
+        "rramp": 1500,
+        "vendor_diode": true,
+        "stop": 0.3,
+        "stage": "candidate"
+      },
+      "fixture": "isolated; not complete actual protection/enable chain",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": "TIMEOUT",
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "duration_s": 120.03801012039185,
+      "execution": "FAIL",
+      "log_errors": [],
+      "requested_stop_s": 0.3,
+      "deck_sha256": "0f536d95f873a124a1f749f6230b20388f8b5c4e10257dfd388308bf6ca27367",
+      "simulator_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab"
+    }
+  ],
+  "signoff": "HOLD"
+}

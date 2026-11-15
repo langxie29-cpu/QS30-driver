@@ -1,0 +1,16 @@
+Sprint01 isolated passive discharge main_alone
+COUT HV_BUS 0 2e-05 IC=172.183
+RBLEED HV_BUS 0 200000.0
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1m 12 uic
+meas tran end_time MAX time
+meas tran v_1s FIND v(HV_BUS) AT=1
+meas tran v_5s FIND v(HV_BUS) AT=5
+meas tran v_end FIND v(HV_BUS) AT=12
+wrdata waves.txt v(HV_BUS)
+quit
+.endc
+.end

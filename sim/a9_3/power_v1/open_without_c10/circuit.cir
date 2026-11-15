@@ -1,0 +1,54 @@
+QS30 A9.3 ISOLATED power fixture - no system protection claim
+* Open-loop PWM / closed-loop candidate only, not current KiCad baseline.
+.model NSW SW(RON=.55 ROFF=1e10 VT=3 VH=.1)
+.model UF D(IS=10n N=1.5 RS=.5 CJO=15p TT=75n BV=1000 IBV=5u)
+.model BODY D(IS=1n N=1.5 RS=.1 CJO=1p TT=100n BV=400)
+VIN vin 0 PWL(0 0 100u 12)
+R_FIX vin vcc .05
+C_VCC vcc 0 10u
+RL vcc lin 0.3
+L20 lin sw 0.00022
+VSWI sw mos 0
+S20 mos src gate 0 NSW
+RSENSE src 0 0.001
+DBODY src mos BODY
+COSS mos src 150p
+D20 sw hv UF
+RESR hv cap 0.5
+COUT cap 0 2.03e-05
+RBLEED hv 0 50k
+RFBTOP hv fb 1500000.0
+RFBBOT fb 0 22.1k
+RLOAD hv 0 8.5k
+VPWM driver 0 PULSE(0 10 1m 30n 30n 1.2051282051282051e-05 1.282051282051282e-05)
+RG driver gate 10
+CG gate src 1n
+RCP comp 0 1meg
+RFCT ct 0 1meg
+RREF ref 0 1meg
+RCS cs 0 1meg
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.save all @q21[ic] @q22[ic] @q25[ic]
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 2e-07 0.03 0 2e-07 uic
+meas tran end_time MAX time
+meas tran hv_peak MAX v(hv)
+meas tran il_peak MAX i(l20)
+meas tran sw_peak MAX v(sw)
+meas tran mos_i_peak MAX i(vswi)
+meas tran il_rms RMS i(l20) FROM=0.019999999999999997
+meas tran mos_i_rms RMS i(vswi) FROM=0.019999999999999997
+meas tran hv_avg AVG v(hv) FROM=0.019999999999999997
+meas tran hv_min MIN v(hv) FROM=0.019999999999999997
+meas tran hv_max MAX v(hv) FROM=0.019999999999999997
+let pin=v(vin)*(-i(vin))
+let pmos=v(mos,src)*i(vswi)
+meas tran input_power AVG pin FROM=0.019999999999999997
+meas tran mos_loss AVG pmos FROM=0.019999999999999997
+wrdata waves.txt v(hv) v(sw) v(src) v(gate) v(comp) v(fb) v(cs) v(ct) v(ref) i(l20) i(vin) i(vswi)
+quit
+.endc
+.end

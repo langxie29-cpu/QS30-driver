@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-15",
+  "scope": "parameter and analytic boundary audit, not 24V07 qualification",
+  "inherited_config_hashes": {
+    "sprint05.json": "bce00036315e8119a4ecb27bcf94ba0a7882aa4e91bb2fd495b1b21c2c9fb86e",
+    "sprint06.json": "1071800f6bc2df7de030d74a07e74aa9d023bca51a9eaa5caca64f4f9b006172"
+  },
+  "loss_screen_method": "multiply ideal equivalent transferred power by1/eta. Conservative allocation sensitivity, not an extracted nonlinear loss model; cannot infer actual measured efficiency or actual failure solely from this screen.",
+  "DCM_summary": [
+    {
+      "eta": 1,
+      "max_Ipk_A": 0.9425703616384907,
+      "max_Irms_A": 0.41856738433445345,
+      "min_idle": 0.1981045406939928,
+      "earliest_CS_limit_A": 1.026322144409563,
+      "current_reserve_A": 0.0837517827710722
+    },
+    {
+      "eta": 0.85,
+      "max_Ipk_A": 1.0223611003826707,
+      "max_Irms_A": 0.47282582595901423,
+      "min_idle": 0.1302222544502315,
+      "earliest_CS_limit_A": 1.026322144409563,
+      "current_reserve_A": 0.003961044026892235
+    },
+    {
+      "eta": 0.8,
+      "max_Ipk_A": 1.0538257011001126,
+      "max_Irms_A": 0.49482073942089577,
+      "min_idle": 0.10345362107167586,
+      "earliest_CS_limit_A": 1.026322144409563,
+      "current_reserve_A": -0.027503556690549713
+    },
+    {
+      "eta": 0.75,
+      "max_Ipk_A": 1.0883865040442908,
+      "max_Irms_A": 0.519361122297731,
+      "min_idle": 0.07405088141547629,
+      "earliest_CS_limit_A": 1.026322144409563,
+      "current_reserve_A": -0.062064359634727895
+    }
+  ],
+  "minimum_eta_for_earliest_limit_in_ideal_shape_screen": 0.8434515877571471,
+  "current_candidate_decision": "0.82ohm and110kHz are NOT qualified for full-load capability. Do not lower shunt or raise frequency before real loss/hot-magnetic/delay qualification.",
+  "thermal": {
+    "L_mpn": "MSS1583-154KED",
+    "new_web_DCR25_max_ohm": 0.16,
+    "local_PDF_DCR25_max_ohm": 0.159,
+    "review_DCR100_ohm_copper_alpha0p00393": 0.20716,
+    "copper_loss_W_at_loss_screen_max_Irms": 0.05587850465440895,
+    "required_hot_10pct_Isat_A": 1.8772254797295451,
+    "hot_L_min_required_H": 0.0001215,
+    "qualification": "NO_HOT_LI_OR_CORELOSS_DATA; DCR copper-only estimate cannot qualify winding/core temperature. Current vendor webpage Isat is explicitly25C."
+  },
+  "PG": {
+    "lowest_falling_threshold_V": 3.0083468086595446,
+    "margin_to_MCU3V0_V": 0.008346808659544624,
+    "allowed_droop_V_per_s_at_typ18us_no_ESR": 463.71159219692356,
+    "minimum_C_F_at0p8A_typ18us_no_ESR": 0.0017252102674635433,
+    "delay_limit": "18us typical atCTopen/5percent overdrive, no max; CT22n candidate differs. Not a qualification bound.",
+    "decision": "reject static-threshold-only PG/reset qualification; need earlier input-power-fail + bounded MCU reset/DRV/HV inhibit path and hold-up, or supervisor with guaranteed falling delay"
+  },
+  "USB": [
+    {
+      "USB_input_limit_A": 0.1,
+      "upper_bound_3V3_A": 0.10966810966810969,
+      "ESP_recommended_supply_capability_A": 0.5,
+      "reserve_before_other_3V3_loads_A": -0.3903318903318903,
+      "limit_scope": "USB2 design baseline; no cable/mux/IQ allowance, pre-enumeration and configured cases differ"
+    },
+    {
+      "USB_input_limit_A": 0.5,
+      "upper_bound_3V3_A": 0.5483405483405484,
+      "ESP_recommended_supply_capability_A": 0.5,
+      "reserve_before_other_3V3_loads_A": 0.04834054834054835,
+      "limit_scope": "USB2 design baseline; no cable/mux/IQ allowance, pre-enumeration and configured cases differ"
+    }
+  ],
+  "USB_decision": "ordinary unconfigured100mA host cannot be qualified from a0.5A recommended source-capability requirement. Configured500mA has only48mA ideal upper reserve at3V3max; startup/current traces, mux loss, enumeration, inrush and 5V fault protection remain open. Retain offline-programming requirement.",
+  "isolated_SHDN_candidate": {
+    "candidate": "VOS618A-7T",
+    "pins": {
+      "1": "LED_A via820ohm from qualified permit",
+      "2": "LED_K to logic GND",
+      "4": "collector via100k from same eFuse IN",
+      "3": "emitter to same eFuse SHDN"
+    },
+    "SHDN_pulldown_ohm_to_own_RTN": 8200,
+    "R_feed_ohm": 100000,
+    "resistor_tolerance": 0.01,
+    "SHDN_on_min_V_if_VCEsat_le0p4": 1.4953701497461462,
+    "SHDN_on_max_V_at40V": 3.087936466508827,
+    "required_off_leak_A_max_for0p55V": 5.640907993238349e-05,
+    "LED_min_A_if_VF_le1p5_at_VOH2p4": 0.0010866940352571841,
+    "collector_demand_A_max_at26p4V": 0.00024645717806531114,
+    "qualification": "candidate topology only; VCEsat and CTR quoted25C, leakage at40V/hot and max turnoff delay unbounded. Do not use opto as cycle-by-cycle shutdown. U100 normal bootstrap must remain allowed, U101 default-off."
+  },
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD"
+}

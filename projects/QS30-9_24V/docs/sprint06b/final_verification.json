@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-15",
+  "status": "PRESERVATION_AND_AUDIT_ONLY_NOT_ELECTRICAL_RELEASE",
+  "process_attempts": 40,
+  "native_model_attempts": 34,
+  "tool_setup_failures": 6,
+  "execution_pass": 11,
+  "execution_fail_including_setup": 29,
+  "new_runs": 11,
+  "driver_replay_wave_sha256": {
+    "driver1ns_replay1": "b244c2f72998a77bd1530097744c6ddbf9a852e2244540a4f536c4e2761ea471",
+    "driver1ns_replay2": "b244c2f72998a77bd1530097744c6ddbf9a852e2244540a4f536c4e2761ea471",
+    "driver1ns_replay3": "b244c2f72998a77bd1530097744c6ddbf9a852e2244540a4f536c4e2761ea471"
+  },
+  "driver_replay_identical": true,
+  "input_project_files_checked": 359,
+  "changed_index_files": [
+    "README.md",
+    "config/project.json",
+    "docs/TASKS.csv"
+  ],
+  "unexpected_changed_files": [],
+  "missing_files": [],
+  "preexisting_S06_manifest_differences_at_turn_start": [
+    "docs/BREAKPOINT_S06_2026-11-15.md"
+  ],
+  "legacy_files_checked": 1838,
+  "legacy_hash_mismatches": [],
+  "python_AST_checked": [
+    "design\\s06b_boundary_analysis.py",
+    "design\\s06b_closeout.py",
+    "design\\s06b_device_cells.py",
+    "design\\s06b_diagnose.py",
+    "design\\s06b_engine_compare.py",
+    "design\\s06b_input_filter.py",
+    "design\\s06b_interface_sources.py",
+    "design\\s06b_native_abm.py",
+    "design\\s06b_port_equivalent.py",
+    "design\\s06b_port_load.py",
+    "design\\s06b_real_gate.py",
+    "design\\s06b_shared_worker.py",
+    "design\\s06b_sources.py"
+  ],
+  "native_generated": false,
+  "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD"
+}

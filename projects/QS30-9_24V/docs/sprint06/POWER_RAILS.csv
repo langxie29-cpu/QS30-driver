@@ -1,0 +1,7 @@
+﻿rail,V_V,I_A,P_W,scope
+HV_BUS,175.1,0.03264194004509795,5.71560370189665,31mA-class load; changed feedback consumption included
+DRV12,12.6,0.055,0.693,subset of AUX12
+AUX12,12.6,0.099096,1.2486096,includes gate energy once and new driver bias1mA
+3V3,3.465,0.8,2.7720000000000002,external24V allocation
+5V_SYS,5,0.6930000000000001,3.4650000000000003,upstream of3V3; do not add twice
+VIN24,21.6,0.6417970803639907,13.8628169358622,total with efficiency allocations; not measured

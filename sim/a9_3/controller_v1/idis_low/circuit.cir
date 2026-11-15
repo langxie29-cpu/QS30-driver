@@ -1,0 +1,32 @@
+UC3843 isolated physical-pin functional test
+.include uc3843_functional.lib
+VCC vcc 0 PWL(0 0 1m 12)
+VFB fb 0 0
+C_VCC vcc 0 1u
+C_REF ref 0 100n
+R_REF_LOAD ref 0 5k
+RT ref ct 10000
+CT ct 0 2.2e-09
+C15 comp 0 2.2e-05
+R37 comp comp_r 10k
+C14 comp_r 0 100n
+XUC comp fb cs ct 0 out vcc ref UC3843_FUNC IDIS=0.0028
+C_GATE out 0 1n
+R_GATE out 0 100k
+VCOMP comp 0 5
+VCS cs 0 0
+.options reltol=.001 abstol=1n vntol=1u method=gear itl4=200
+.save all @q21[ic] @q22[ic] @q25[ic]
+.control
+set noaskquit
+set wr_singlescale
+set wr_vecnames
+tran 1e-07 0.01 0 1e-07 uic
+meas tran end_time MAX time
+meas tran ref_final FIND v(ref) AT=0.01
+meas tran ct_max MAX v(ct) FROM=0.008
+meas tran ct_min MIN v(ct) FROM=0.008
+wrdata waves.txt v(vcc) v(ref) v(ct) v(comp) v(fb) v(cs) v(out) v(xuc.dis) v(xuc.mem)
+quit
+.endc
+.end

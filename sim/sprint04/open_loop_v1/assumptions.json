@@ -1,0 +1,12 @@
+{
+  "target_V": 170.0,
+  "full_load_A": 0.030735859258404098,
+  "inductor_H": 0.00022,
+  "frequency_Hz": 78000,
+  "input_envelope": "22.8/24/25.2V exploratory +/-5%; not adapter guarantee; inductor-terminal voltage",
+  "conditions": "3ms precharged open-loop; no UC3843, no OVP, no startup or closed-loop signoff",
+  "c10": "Absent in baseline research only; actual formal C10 retained. Separate present comparison.",
+  "diode": "Diotec research supplier hypothesis; inherited compatibility copy removes metadata only",
+  "acceptance": "Execution requires rc0, native 3ms endpoint, wave output, no parsed errors. Engineering stays INCONCLUSIVE.",
+  "analytic_reference": "https://www.ti.com/lit/an/slva061/slva061.pdf"
+}

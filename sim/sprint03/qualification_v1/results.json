@@ -1,0 +1,647 @@
+{
+  "results": [
+    {
+      "id": "osc_baseline",
+      "purpose": "Compare CT loading using identical timing and 8.3mA A-series hypothesis",
+      "kind": "oscillator",
+      "parameters": {
+        "idis_A": 0.0083,
+        "mode": "baseline"
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 5.004877700004727,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "ac148bf1fbacb8a281792994a1c4493ce464f2a1baa37e8ab29e4fd5928d71d6",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 0.997943124,
+        "ct_max_V": 2.69905004,
+        "frequency_Hz": 78947.81509948052,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9637830164561991
+      }
+    },
+    {
+      "id": "osc_direct",
+      "purpose": "Compare CT loading using identical timing and 8.3mA A-series hypothesis",
+      "kind": "oscillator",
+      "parameters": {
+        "idis_A": 0.0083,
+        "mode": "direct"
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5814424999989569,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "884fa066b864227b19111338d78ae9dc4c4cc96d05fc24490f8ac7de29acea16",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 1.37679134,
+        "ct_max_V": 1.37679134,
+        "frequency_Hz": null,
+        "period_pp_s": null,
+        "duty": 1.0
+      }
+    },
+    {
+      "id": "osc_buffered",
+      "purpose": "Compare CT loading using identical timing and 8.3mA A-series hypothesis",
+      "kind": "oscillator",
+      "parameters": {
+        "idis_A": 0.0083,
+        "mode": "buffered"
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.628653799998574,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "930e0d7263ade61bb654f04a4e774266e295ba01858b85b041f855b7ca5bd754",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 0.997908892,
+        "ct_max_V": 2.69864783,
+        "frequency_Hz": 78083.9815084638,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9637723984065484
+      }
+    },
+    {
+      "id": "osc_idis_0.0076",
+      "purpose": "Sensitivity at documented A-series discharge-current endpoints; not complete corner model",
+      "kind": "oscillator",
+      "parameters": {
+        "idis_A": 0.0076
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5551103999605402,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "fc485d23f89a4f04ab7f0fc91c0ebc0f3b0ae32c287b6b4e7e348c844432368c",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 1.01748707,
+        "ct_max_V": 2.69892895,
+        "frequency_Hz": 79310.12248576003,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9604022602688761
+      }
+    },
+    {
+      "id": "osc_idis_0.0088",
+      "purpose": "Sensitivity at documented A-series discharge-current endpoints; not complete corner model",
+      "kind": "oscillator",
+      "parameters": {
+        "idis_A": 0.0088
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5948022999800742,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "997062ab528b4e9f23602392ec4fd02ad9134777e8dd591816903ac29c9acc2c",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 1.00903526,
+        "ct_max_V": 2.69869792,
+        "frequency_Hz": 79512.65738139077,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9662223310857845
+      }
+    },
+    {
+      "id": "pwm_cs_0.3",
+      "purpose": "Known CS threshold changes pulse width at fixed COMP",
+      "kind": "oscillator",
+      "parameters": {
+        "cs_V": 0.3
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5484900999581441,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "af485495d076a8909f96f1c98ad1403b669e87285db6c39b2b838f2a0562fc20",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 0.997943124,
+        "ct_max_V": 2.69905004,
+        "frequency_Hz": 78947.81509948052,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9637830164561991
+      }
+    },
+    {
+      "id": "pwm_cs_0.6",
+      "purpose": "Known CS threshold changes pulse width at fixed COMP",
+      "kind": "oscillator",
+      "parameters": {
+        "cs_V": 0.6
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5867212999728508,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "7616534bc712dd4f9f03df9d9fa74bdaa31d9d4676462cdd3f9d14603438d63d",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 0.997943124,
+        "ct_max_V": 2.69905004,
+        "frequency_Hz": 78947.81509948052,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9637830164561991
+      }
+    },
+    {
+      "id": "pwm_cs_0.9",
+      "purpose": "Known CS threshold changes pulse width at fixed COMP",
+      "kind": "oscillator",
+      "parameters": {
+        "cs_V": 0.9
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.5927387000410818,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "2c128af9521ffe1f7109eedb3ef0926c3e61618c046f2bdac3c2f66fe6703cf4",
+      "requested_stop_s": 0.001,
+      "metrics": {
+        "ct_min_V": 0.997943124,
+        "ct_max_V": 2.69905004,
+        "frequency_Hz": 78947.81509948052,
+        "period_pp_s": 1.0000001044244144e-12,
+        "duty": 0.9637830164561991
+      }
+    },
+    {
+      "id": "actual_cs_0.2",
+      "purpose": "Known current at fixed SW voltage; verify A-to-V conversion",
+      "kind": "cs",
+      "parameters": {
+        "current_A": 0.2,
+        "repair_hypothesis": false
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.10134529997594655,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "9c6616543fd594801a50c943654230ecf9e72b388bdfd82764c6898d05959cc4",
+      "requested_stop_s": 0.0005,
+      "metrics": {
+        "actual_current_A": 0.20000000000000004,
+        "cs_final_V": 11.9997122,
+        "shunt_final_V": 0.0,
+        "conversion_V_per_A": 59.998560999999995
+      }
+    },
+    {
+      "id": "actual_cs_0.8",
+      "purpose": "Known current at fixed SW voltage; verify A-to-V conversion",
+      "kind": "cs",
+      "parameters": {
+        "current_A": 0.8,
+        "repair_hypothesis": false
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.030063499987591058,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "68965d37211d378e01314762cb7df2cc69c1ea447dbb4771b155866c0aef09ae",
+      "requested_stop_s": 0.0005,
+      "metrics": {
+        "actual_current_A": 0.8000000000000002,
+        "cs_final_V": 11.9997122,
+        "shunt_final_V": 0.0,
+        "conversion_V_per_A": 14.999640249999999
+      }
+    },
+    {
+      "id": "kelvin_0.2",
+      "purpose": "Known current at fixed SW voltage; verify A-to-V conversion",
+      "kind": "cs",
+      "parameters": {
+        "current_A": 0.2,
+        "repair_hypothesis": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.14424110000254586,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "7e30ac5bd2bb8b6ace38743ea21075c4100f491859232db58c6afee69d1cec4c",
+      "requested_stop_s": 0.0005,
+      "metrics": {
+        "actual_current_A": 0.20000000000000004,
+        "cs_final_V": 0.03,
+        "shunt_final_V": 0.03,
+        "conversion_V_per_A": 0.15
+      }
+    },
+    {
+      "id": "kelvin_0.8",
+      "purpose": "Known current at fixed SW voltage; verify A-to-V conversion",
+      "kind": "cs",
+      "parameters": {
+        "current_A": 0.8,
+        "repair_hypothesis": true
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.03284729999722913,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "fb1dbff48915b52b7dab814c459e3a73a4ec31cb9f930f9ebecfc7ac28903619",
+      "requested_stop_s": 0.0005,
+      "metrics": {
+        "actual_current_A": 0.8000000000000002,
+        "cs_final_V": 0.12,
+        "shunt_final_V": 0.12,
+        "conversion_V_per_A": 0.15
+      }
+    },
+    {
+      "id": "power_0.92",
+      "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 11.4,
+        "duty": 0.92,
+        "c10_F": 0
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.4399035000242293,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "2ce7e401a77875bfb56cddda7dfa87c51c4e5bff6fac4c97a9bb2aaab116558f",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 169.47578483282766,
+          "min": 169.200903,
+          "max": 169.954774,
+          "pp": 0.7538709999999753,
+          "slope_V_per_s": -992.4426717319915
+        },
+        "capacitor": {
+          "mean": 169.48589468868005,
+          "min": 169.23528,
+          "max": 169.737434,
+          "pp": 0.5021540000000186,
+          "slope_V_per_s": -994.3471665981926
+        },
+        "i(l20)": {
+          "min": -0.145316227,
+          "max": 1.06931343,
+          "late_rms": 0.2386134437641698
+        },
+        "v(gate)": {
+          "min": 0.0,
+          "max": 10.0,
+          "late_rms": 9.587655088738934
+        },
+        "v(sw)": {
+          "min": -0.728597001,
+          "max": 173.96114,
+          "late_rms": 42.64069048216282
+        },
+        "i(vdprobe)": {
+          "min": -102.650625,
+          "max": 12.5797232,
+          "late_rms": 0.05611635614804272
+        }
+      }
+    },
+    {
+      "id": "power_0.935",
+      "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 11.4,
+        "duty": 0.935,
+        "c10_F": 0
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.4611079999594949,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "6a8d91033e89d8949c86f545bdd665f75f46940dc30300cd1a6cb1e4322de99d",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 172.16775204806618,
+          "min": 120.854946,
+          "max": 176.332419,
+          "pp": 55.47747299999999,
+          "slope_V_per_s": 225.62551106163463
+        },
+        "capacitor": {
+          "mean": 172.16822191173637,
+          "min": 172.148774,
+          "max": 172.189313,
+          "pp": 0.04053899999999544,
+          "slope_V_per_s": -44.46877300570672
+        },
+        "i(l20)": {
+          "min": 0.227550008,
+          "max": 1.07833952,
+          "late_rms": 0.5575567091140841
+        },
+        "v(gate)": {
+          "min": 0.0,
+          "max": 10.0,
+          "late_rms": 9.665622318330625
+        },
+        "v(sw)": {
+          "min": 0.15809774,
+          "max": 173.97793,
+          "late_rms": 43.31560650457702
+        },
+        "i(vdprobe)": {
+          "min": -102.698267,
+          "max": 10.730205,
+          "late_rms": 0.48541562339332267
+        }
+      }
+    },
+    {
+      "id": "power_0.95",
+      "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 11.4,
+        "duty": 0.95,
+        "c10_F": 0
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.42729490000056103,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "194492734fe912f50481116813208136bd5cb804df64f56abe8a849887d21b71",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 182.25580214119964,
+          "min": 127.651012,
+          "max": 191.082387,
+          "pp": 63.43137500000002,
+          "slope_V_per_s": 4109.24733253949
+        },
+        "capacitor": {
+          "mean": 182.21952325124602,
+          "min": 181.327312,
+          "max": 183.14812,
+          "pp": 1.8208079999999995,
+          "slope_V_per_s": 3583.3804368672286
+        },
+        "i(l20)": {
+          "min": 0.499717439,
+          "max": 3.02116688,
+          "late_rms": 2.4890255522431257
+        },
+        "v(gate)": {
+          "min": 0.0,
+          "max": 10.0,
+          "late_rms": 9.742880301064682
+        },
+        "v(sw)": {
+          "min": 0.347149344,
+          "max": 186.438802,
+          "late_rms": 40.90376578745924
+        },
+        "i(vdprobe)": {
+          "min": -108.425003,
+          "max": 19.4903205,
+          "late_rms": 1.4108417115261476
+        }
+      }
+    },
+    {
+      "id": "power_0.935_c10",
+      "purpose": "Warm-start 11.4V/27mA plus bleeders; sign of energy drift vs duty and C10 burden",
+      "kind": "power",
+      "parameters": {
+        "vin_V": 11.4,
+        "duty": 0.935,
+        "c10_F": 1e-08
+      },
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 45,
+      "duration_s": 0.42902759998105466,
+      "exit_code": 0,
+      "stdout": "******\r\n** ngspice-47 : Circuit level simulation program\r\n** Compiled with KLU Direct Linear Solver\r\n** The U. C. Berkeley CAD Group\r\n** Copyright 1985-1994, Regents of the University of California.\r\n** Copyright 2001-2026, The ngspice team.\r\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\r\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\r\n** Creation Date: Aug 11 2026   13:55:25\r\n******\r\n\r\nBatch mode\r\n\r\nComments and warnings go to log-file: ngspice.log\r\n\r\n",
+      "stderr": "",
+      "log_errors": [],
+      "execution": "PASS",
+      "engineering": "INCONCLUSIVE",
+      "deck_sha256": "ee92cacfab87841a8e390309f371b2623683d54b89ff3319d0b3af25d4dd6a1d",
+      "requested_stop_s": 0.003,
+      "metrics": {
+        "output": {
+          "mean": 175.67667298604258,
+          "min": 102.827641,
+          "max": 177.756184,
+          "pp": 74.92854299999999,
+          "slope_V_per_s": 2470.5751253337853
+        },
+        "capacitor": {
+          "mean": 175.66189080543268,
+          "min": 175.320853,
+          "max": 176.107594,
+          "pp": 0.7867410000000064,
+          "slope_V_per_s": 1335.7371815659326
+        },
+        "i(l20)": {
+          "min": 0.489906242,
+          "max": 3.61596074,
+          "late_rms": 3.369297243989065
+        },
+        "v(gate)": {
+          "min": 0.0,
+          "max": 10.0,
+          "late_rms": 9.665577190325694
+        },
+        "v(sw)": {
+          "min": 0.341889298,
+          "max": 180.197688,
+          "late_rms": 35.336840759857395
+        },
+        "i(vdprobe)": {
+          "min": -77.3938633,
+          "max": 14.7620041,
+          "late_rms": 1.3049219050114091
+        }
+      }
+    }
+  ],
+  "system": "FAIL/HOLD",
+  "HV_G0": "BLOCKED",
+  "HV_G1": "BLOCKED",
+  "HV_G2": "FAIL"
+}

@@ -1,0 +1,56 @@
+{
+  "dll": "C:\\Program Files\\KiCad\\10.0\\bin\\ngspice.dll",
+  "dll_sha256": "44fc701b514080a3f9bf37afe3dd333ddb0b5f2e5e508ec8a2896a802e90ca91",
+  "codemodules": {
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\analog.cm": "20bed97042e5d62d8a170f0588bf0aa04510586bce1b155ec2772152e18590a8",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\digital.cm": "afd0c625ae4560cc438e78d131029bd05b3a29e0fded82d691502043df3c5e77",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\spice2poly.cm": "f2fd983634622be7a260a56d68f89f401ece695ec2a9600aa41fe271d983198e",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\table.cm": "e87cc140345c58ee43c145f3b89d42348d606660f2df08248df4c1fcd7e00610",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\tlines.cm": "cf5ec206c500ba6ba4f086ae8e73663e38256361cc8ea8b440bbfde82f2b2431",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\xtradev.cm": "2994f530dd53d7c67d5bcd04e68a0aafae2ac3ea23b4818ce534c9d00edc7863",
+    "C:\\Program Files\\KiCad\\10.0\\lib\\ngspice\\xtraevt.cm": "656a7f0d733867d52f3061ea0728b8b98804518daa8fba417e7076d99016083b"
+  },
+  "init_rc": 0,
+  "commands": [
+    {
+      "command": "version",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/analog.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/digital.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/spice2poly.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/table.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/tlines.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/xtradev.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "codemodel \"C:/Program Files/KiCad/10.0/lib/ngspice/xtraevt.cm\"",
+      "rc": 0
+    },
+    {
+      "command": "set ngbehavior=ps",
+      "rc": 0
+    },
+    {
+      "command": "source circuit.cir",
+      "rc": 0
+    }
+  ]
+}
