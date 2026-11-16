@@ -1,0 +1,38 @@
+{
+  "scope": "STATIC_ASSUMPTION_SCREEN_NOT_SPICE_NOT_HARDWARE_PASS",
+  "resistor_initial_fraction": 0.001,
+  "resistor_TCR_ppm_per_K": 25,
+  "resistor_temperature_excursion_K": 75,
+  "resistor_exact_MPN": "HOLD",
+  "ovp_rising_V": [
+    183.07956082017077,
+    188.9479598269738
+  ],
+  "residual_rising_V": [
+    54.01992453385186,
+    55.7481537250729
+  ],
+  "residual_falling_V": [
+    52.79215267793761,
+    55.19621209288035
+  ],
+  "criteria": {
+    "OVP_interval_V": [
+      183,
+      190
+    ],
+    "residual_upper_engineering_only_V": 60
+  },
+  "OVP_static_screen": "PASS",
+  "residual_static_screen": "PASS",
+  "excluded": [
+    "dynamic overshoot",
+    "maximum delay",
+    "unpowered behavior",
+    "single divider fault",
+    "touch safety standard",
+    "PCB leakage",
+    "input clamp damage",
+    "actual precision resistor MPN"
+  ]
+}

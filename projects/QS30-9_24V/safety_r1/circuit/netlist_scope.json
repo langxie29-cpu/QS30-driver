@@ -1,0 +1,20 @@
+{
+  "status": "PARTIAL_PIN_NETLIST_NOT_NATIVE_EDA",
+  "rows": 393,
+  "unimplemented_blocks": [
+    "BASE_GOOD: independent power valid plus level shifters",
+    "HARD_FAULT_CLEAR_N: set-dominant fault aggregation including powered-present proof",
+    "RUN_CLEAR_N: fault,stop,request drop and reset",
+    "RESET_QUALIFIED_EDGE: debounce,release-before-new-edge, residual dual-channel plausibility and qualification",
+    "START_QUALIFIED_EDGE: debounce,request previously low, physical fresh user event",
+    "REQUEST_VALID: edge/time-limited request and independent watchdog startup witness",
+    "FLT100/101 isolated readback and persistent branch OC",
+    "PRECHARGE_OK: HV_IN24 readback/current-time-voltage envelope",
+    "DEMAG_OK: genuine inductor zero-current detector",
+    "LIMITED_START_OK: pulse energy/time limiter",
+    "BLANK: powered default and module off isolation",
+    "COMP clamp: unpowered default and discharge/softstart",
+    "sensor exact MPN and thermal coupling"
+  ],
+  "warning": "These open named nets are HOLD interfaces; no continuous hardware safety claim and no native ERC"
+}

@@ -1,0 +1,20 @@
+name: QS30 safety specification and evidence
+on:
+  push:
+    branches: ['nxt/qs30-hv-safety-r1']
+    paths: ['projects/QS30-9_24V/safety_r1/**', '.github/workflows/qs30-safety.yml']
+  pull_request:
+    paths: ['projects/QS30-9_24V/safety_r1/**', '.github/workflows/qs30-safety.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  specification-and-data:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Python specification regressions (not hardware validation)
+        run: python3 -m unittest discover -s projects/QS30-9_24V/safety_r1/verification -p 'test_*.py' -v
+      - name: Candidate data and HOLD integrity (not native ERC)
+        run: python3 -m unittest discover -s projects/QS30-9_24V/safety_r1/governance -p 'test_*.py' -v

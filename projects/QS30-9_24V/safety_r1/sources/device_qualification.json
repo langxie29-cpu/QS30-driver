@@ -1,0 +1,122 @@
+[
+  {
+    "mpn": "TPS26601RHFR",
+    "manufacturer": "Texas Instruments",
+    "package": "RHF VQFN24+EP",
+    "url": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+    "revision": "SLVSDG2G Dec2019",
+    "range": "4.2..60V;-40..125C",
+    "source_sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/TPS26601RHFR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "MODE open selects latch; SHDN default pulled up; external default-off mandatory; FLT/IMON referenced RTN; encrypted model not qualified"
+  },
+  {
+    "mpn": "TPS3700DDCR",
+    "manufacturer": "Texas Instruments",
+    "package": "DDC SOT6",
+    "url": "https://www.ti.com/lit/ds/symlink/tps3700.pdf",
+    "revision": "SBVS187G Feb2019",
+    "range": "1.8..18V;-40..125C",
+    "source_sha256": "3bb7daed20b154bf22ded78e23269c6437eb587400b89bce0f543813df94ebf0",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/TPS3700DDCR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "OUTA UV low OUTB OV low; initial validity <=450us; OUTB high-Z below UVLO; below POR indeterminate; propagation has no guaranteed maximum"
+  },
+  {
+    "mpn": "TPS389001DSET",
+    "manufacturer": "Texas Instruments",
+    "package": "DSE WSON6+EP",
+    "url": "https://www.ti.com/lit/ds/symlink/tps3890.pdf",
+    "revision": "SLVSD65A May2016",
+    "range": "1.5..6.5V;-40..125C",
+    "source_sha256": "ee79599730e7606ba9718d9820b411020e3dcd9ff7d44572f8ee63fead15b9d0",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/TPS389001DSET.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "RESET active-low open-drain; partial-power analog chain and fast collapse not qualified; typical propagation cannot be maximum"
+  },
+  {
+    "mpn": "UCC28C43DR",
+    "manufacturer": "Texas Instruments",
+    "package": "D SOIC8",
+    "url": "https://www.ti.com/lit/ds/symlink/ucc28c43.pdf",
+    "revision": "SLUS458I Jun2024",
+    "range": "VDD recommended up to18V;-40..125C",
+    "source_sha256": "737b5e05fe02b31b6cef88a0e57a6d2ee08818cff8f7d683f468d83737cbdf43",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/UCC28C43DR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "CS cycle trip 0.9..1.1V;70ns max specified comparator delay; full gate path and startup unqualified"
+  },
+  {
+    "mpn": "UCC27511DBVR",
+    "manufacturer": "Texas Instruments",
+    "package": "DBV SOT23-6",
+    "url": "https://www.ti.com/lit/ds/symlink/ucc27511.pdf",
+    "revision": "SLUSAW9F Nov2014",
+    "range": "4.5..18V;-40..140C",
+    "source_sha256": "781cc451dbb371a4137337a4bdecbe11a9f1ff8979a11e238e97d8a80a287b31",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/UCC27511DBVR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "IN+ high AND IN- low enables; outputs low for floating inputs and UVLO; actual VGS reference and Miller remain unqualified"
+  },
+  {
+    "mpn": "TPS22810DBVR",
+    "manufacturer": "Texas Instruments",
+    "package": "DBV SOT23-6",
+    "url": "https://www.ti.com/lit/ds/symlink/tps22810.pdf",
+    "revision": "SLVSDH0C Jan2018",
+    "range": "2.7..18V;-40..105C ambient",
+    "source_sha256": "d181c08a2af0e23ea7a47c69eac1ba5fafa38950f384a024e3daae64bc009b8c",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/TPS22810DBVR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "EN default external pulldown; QOD external resistor; not reverse-blocking protection"
+  },
+  {
+    "mpn": "SN74LVC1G11DBVR",
+    "manufacturer": "Texas Instruments",
+    "package": "DBV SOT23-6",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g11.pdf",
+    "revision": "SCES487I Nov2024",
+    "range": "1.65..5.5V;-40..125C DBV",
+    "source_sha256": "ffd953703273b43844eae23cfbf31cfc801a3b9443f2c863d49dde62f5a9232b",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/SN74LVC1G11DBVR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "Ioff applies specified power-off conditions; undefined brownout is not guaranteed-low output"
+  },
+  {
+    "mpn": "VOS618A-7T",
+    "manufacturer": "Vishay",
+    "package": "SSOP4 mini-flat",
+    "url": "https://www.vishay.com/docs/83465/vos618a.pdf",
+    "revision": "83465 Rev1.6 Mar2015",
+    "range": "VCEO80V;ambient -55..110C",
+    "source_sha256": "61d948c9edadff66dad1bfc49f8ae17f2258b25ee15af8509d0361e218a9971a",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/VOS618A-7T.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "CTR/saturation qualification 25C; hot leakage/turnoff maximum not bounded; slow SHDN path only"
+  },
+  {
+    "mpn": "SN74LVC1G74DCUR",
+    "manufacturer": "Texas Instruments",
+    "package": "DCU VSSOP8",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+    "revision": "SCES794G Sep2021",
+    "range": "1.65..5.5V;-40..125C DCU",
+    "source_sha256": "e46a5a867fec742290000dca5ed3b291535f3c4418ef2ae267acc4ab51b26d8a",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/SN74LVC1G74DCUR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "Async CLR dominates when PRE held high; no guaranteed power-on Q; external reset needed; recovery/removal timing required"
+  },
+  {
+    "mpn": "TPS3431SDRBR",
+    "manufacturer": "Texas Instruments",
+    "package": "DRB VSON8+EP",
+    "url": "https://www.ti.com/lit/ds/symlink/tps3431.pdf",
+    "revision": "SNVSB66A Oct2021",
+    "range": "1.8..6.5V;-40..125C",
+    "source_sha256": "99bf5dbfffe06e8f85d9a86cfb777a0151e85b4a103033bc025f4897a0bdc6f3",
+    "source_file": "projects/QS30-9_24V/safety_r1/sources/TPS3431SDRBR.pdf",
+    "qualification": "PRIMARY_PDF_ARCHIVED_AND_WEB_CHECKED_NOT_CIRCUIT_QUALIFIED",
+    "limits": "SET1 high EN high; CWD via10k toVDD fixed170..230ms timeout; WDO pulses low170..230ms; requires external fault memory"
+  }
+]
