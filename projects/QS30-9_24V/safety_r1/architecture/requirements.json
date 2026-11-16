@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "authority": "engineering_behavior_contract_not_qualified_hardware",
+  "manufacturing": "HOLD",
+  "states": [
+    "POWER_OFF",
+    "LV_INIT",
+    "DISARMED",
+    "DRV_START",
+    "PRECHARGE",
+    "LIMITED_START",
+    "HV_VERIFY",
+    "RUN",
+    "STOP_DISCHARGE",
+    "FAULT_LATCHED",
+    "RESET_QUALIFY"
+  ],
+  "outputs": [
+    "DRV_PERMIT",
+    "BRANCH_PERMIT",
+    "PWM_PERMIT",
+    "DISPLAY_PERMIT"
+  ],
+  "unknown_policy": "no_permission",
+  "fault_priority": "set_dominates_reset",
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "requirement": "POR, RESET, STOP and any fault revoke run token; outputs default disabled.",
+      "verification_scope": "logic_and_partial_power",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-02",
+      "requirement": "Static high MCU request cannot start; low must be observed after reset and a fresh rising edge required.",
+      "verification_scope": "logic_and_hardware_edge",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-03",
+      "requirement": "Independent manual START must be released and freshly pressed for each run; sustained START cannot restart.",
+      "verification_scope": "logic_and_hardware_edge",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-04",
+      "requirement": "Fault set dominates reset, startup and all enables.",
+      "verification_scope": "logic_and_latch_timing",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-05",
+      "requirement": "DRV enable does not depend on DRV_OK; branch and PWM do.",
+      "verification_scope": "logic_and_rail_dynamics",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-06",
+      "requirement": "DRV establishment has bounded timeout; after establishment DRV loss latches fault.",
+      "verification_scope": "logic_and_rail_dynamics",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-07",
+      "requirement": "Precharge has bounded timeout; passive L/D output charge is included and PWM remains inhibited.",
+      "verification_scope": "logic_and_power_transient",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-08",
+      "requirement": "Limited boost cannot proceed without qualified current limit and demagnetization or CCM mode strategy.",
+      "verification_scope": "24V-07_08_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-09",
+      "requirement": "Run display requires HV steady window and initialized blanked chain.",
+      "verification_scope": "logic_and_module_power",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "OVP, continuous OC, temperature or sensor invalidity, interlock, watchdog or supply loss revoke two actuators independently of MCU.",
+      "verification_scope": "device_timing_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Reset requires request low, START released, STOP released, supplies/temperature/interlock valid, residual valid and low, branch-off confirmed.",
+      "verification_scope": "logic_and_sensor_diagnostic",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Reset returns disarmed and cannot start or sustain any enable.",
+      "verification_scope": "logic_and_latch_timing",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Loss or uncertainty of a protection monitor is no permission; open drain high without valid supply is not healthy.",
+      "verification_scope": "partial_power_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-14",
+      "requirement": "USB-only logic operation is permitted but AUX and 24V absence unconditionally block HV.",
+      "verification_scope": "logic_and_backfeed_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "Branch stuck-on, MOS short, output short and residual storage are modeled as physical faults, not solved by enable equations.",
+      "verification_scope": "physical_fault_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-16",
+      "requirement": "Independent residual divider upper-open cannot be silently interpreted as low voltage.",
+      "verification_scope": "sensor_diagnostic_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-17",
+      "requirement": "eFuse RTN100 and RTN101 are not shorted to USB/logic GND through SHDN, FLT, IMON or instrumentation.",
+      "verification_scope": "net_and_reverse_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-18",
+      "requirement": "Window watchdog detects static levels, missing, slow and fast pulses; surviving timer pulses are not proof of software health.",
+      "verification_scope": "watchdog_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-19",
+      "requirement": "Shutdown or elapsed discharge time never constitutes evidence of safe residual voltage.",
+      "verification_scope": "logic_and_discharge_hold",
+      "electrical_qualification": "HOLD"
+    },
+    {
+      "id": "REQ-20",
+      "requirement": "Manufacturing HOLD and 24V-07/08/09/10 status cannot be upgraded by logic-model passes.",
+      "verification_scope": "evidence_gate",
+      "electrical_qualification": "HOLD"
+    }
+  ],
+  "thresholds_inherited": {
+    "HV_mean_V": [
+      164.9,
+      175.1
+    ],
+    "OVP_trip_V": [
+      183,
+      190
+    ],
+    "fault_peak_V_max": 195,
+    "startup_s_max": 1,
+    "bleed_design_only_V": 60,
+    "bleed_design_only_s": 5,
+    "touch_safety_standard": "UNRESOLVED"
+  },
+  "actuator_limitations": {
+    "mos_ds_short": "gate_inhibit_ineffective_requires_input_cut",
+    "branch_stuck_on": "gate_inhibit_does_not_stop_passive_L_D_path",
+    "branch_stuck_on_and_mos_short": "two_command_paths_not_redundant_coverage",
+    "residual": "output_capacitor_requires_separate_discharge_and_valid_measurement"
+  },
+  "task_status": {
+    "24V-07": "NOT_PASSED",
+    "24V-08": "NOT_ENTERED",
+    "24V-09": "NOT_PASSED",
+    "24V-10": "NOT_PASSED"
+  }
+}
