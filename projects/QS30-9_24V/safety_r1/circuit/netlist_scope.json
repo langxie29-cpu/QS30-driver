@@ -14,7 +14,9 @@
     "LIMITED_START_OK: pulse energy/time limiter",
     "BLANK: powered default and module off isolation",
     "COMP clamp: unpowered default and discharge/softstart",
-    "sensor exact MPN and thermal coupling"
+    "sensor exact MPN and thermal coupling",
+    "WATCHDOG_WINDOW: TPS3431 late-only monitor lacks hardware too-fast/lower-window detector",
+    "ASYNC_ARBITRATION: actual clear aggregation plus clock recovery/removal, power-up and partial-power qualification"
   ],
   "warning": "These open named nets are HOLD interfaces; no continuous hardware safety claim and no native ERC"
 }

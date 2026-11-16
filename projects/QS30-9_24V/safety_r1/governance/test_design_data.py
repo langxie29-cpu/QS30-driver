@@ -24,6 +24,11 @@ class DesignDataTests(unittest.TestCase):
     def test_primary_source_hashes(self):
         for r in self.sources:
             self.assertEqual(hashlib.sha256((ROOT/r['source_file']).read_bytes()).hexdigest(),r['source_sha256'])
+    def test_saved_simulation_evidence_hashes(self):
+        records=json.loads((BASE/'verification/artifact_hashes.json').read_text(encoding='utf8'))
+        self.assertGreater(len(records),100)
+        for name,value in records.items():
+            self.assertEqual(hashlib.sha256((BASE/'verification'/name).read_bytes()).hexdigest(),value,name)
     def test_efuse_domain_and_defaults(self):
         lookup={(r['ref'],r['pin']):r['net'] for r in self.pins}
         for ref,domain in [('U100','RTN100'),('U101','RTN101')]:

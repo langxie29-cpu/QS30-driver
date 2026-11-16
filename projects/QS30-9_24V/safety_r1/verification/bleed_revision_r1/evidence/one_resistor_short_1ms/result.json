@@ -1,0 +1,21 @@
+{
+  "kind": "one_resistor_short",
+  "step_s": 0.001,
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "execution": "PASS",
+  "end_s": 6.0,
+  "analytic_t60_s": 1.53768025050524,
+  "scaled_interpolated_t60_s": 1.5376802541794221,
+  "max_normalized_wave_error": 1.7530421040727145e-08,
+  "limited_electrical": "PASS",
+  "deck_sha256": "425cdeccc81dc1195f5c5838ea73437f226d5182e236989a6d5ba343fe23a6b0"
+}

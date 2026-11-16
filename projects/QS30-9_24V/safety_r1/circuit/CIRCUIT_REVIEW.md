@@ -30,6 +30,8 @@ U460/U461采用SN74LVC1G74DCUR。真实脚序是1CLK/2D/3Q反/4GND/5Q/6CLR低/7P
 
 U470 TPS3431SDRBR 是硬件失活检测候选：EN/SET1硬接3V3，CWD经10k到3V3，WDI来自动态心跳且10k下拉；WDO低必须异步清除U460/U461。固定超时170..230ms，仅属该候选预算，是否足以保证当前功率级能量必须另定；WDO会自行释放，因此不能直接代替锁存。初次有效心跳见证、请求先低后新边沿、MCU异常重启、程序跑飞但外设继续发心跳的限制均未解决，不能称其为完整程序执行监控。不能把EN/SET1接MCU允许禁用。
 
+C轮独立审查修正：TPS3431在这里仅检测迟到/停止，不能实现架构要求的心跳过快拒绝；**硬件下窗口及过快检测缺失HOLD**，不得把软件模型`heartbeat=True`解释为U470已完成窗口资格。U460/U461的异步清零只是触发器规定电源条件下的局部属性，聚合器、时钟资格和部分供电尚未实现；异步故障与复位同时变化的竞争、恢复/移除时间和掉电均HOLD。所有电阻/电容仅列值，精确MPN/公差/耐压/功率/温漂未通过，不能称完整BOM审核。
+
 U480..484 AND树仅给出可审查接法：BASE_PERMIT=BASE_GOOD·FAULT_MEMORY_OK·INTERLOCK_OK；DRV_PERMIT=BASE_PERMIT·START_MEMORY·REQUEST_VALID；HV_INPUT_PERMIT=DRV_PERMIT·DRV_OK·BASE_PERMIT；PWM_STAGE_ALLOW=HV_INPUT_PERMIT·DEMAG_OK·PRECHARGE_OK；PWM_PERMIT=PWM_STAGE_ALLOW·LIMITED_START_OK·BASE_PERMIT。HV输入许可不能等待PRECHARGE_OK，否则24V开关关闭时预充永远无法完成；该死锁已在B轮自审修正。PRECHARGE_OK只约束PWM。**若DEMAG_OK只在每个脉冲后短暂成立，不得用AND直接截断任意PWM，此处需要经资格的脉冲仲裁器**。既有单脉冲/真实退磁检测缺失仍阻塞功率运行。
 
 BASE_GOOD、故障聚合、有效正逻辑转换、消抖/重新武装、持久支路OC、关断回读、预充电压电流时间窗口、退磁、受限启动、COMP默认钳位、BL默认及模块隔离仍待完整器件电路。这些不是已完成设计的省略线，而是禁止投板的明确HOLD。当前可设计物理无Boost链的低压验证夹具，但释放验证板前仍须关闭其实际使用电路的封装、供电和限制能量问题。
@@ -47,3 +49,5 @@ UCC逐周期限流的70ns上界仅适用于原厂规定比较器条件，不包�
 ## 迁移/制造阻塞
 
 精确可购料与立创编号全为`HOLD_UNVERIFIED`，未编造C编号；元件包名不是已核对嘉立创封装。需按本轮原厂机械图逐针核对符号/焊盘1/EP/方向、建立本地受控库和测试点，再做真实ERC。当前未创建原生工程、未运行ERC/DRC。HV间距必须先确定标准、污染等级、材料组、海拔、瞬态和防触碰结构，不从170V直接猜一个毫米值。网表中的分压电阻值不代表其工作电压、脉冲、功率和温漂订货码已经资格化。
+
+Q201的onsemi原厂在线资料本轮核对为MMBT3904LT1/D Rev15（2026-09），B1/E2/C3，SOT23 CASE318 STYLE6；但Python归档返回HTTP403，缺失原厂全文哈希，记录于`../sources/additional_source_hold.json`。当前BOM为关键IC候选表，未覆盖该晶体管及全部无源实体，不能称完整BOM一致性通过。[onsemi来源](https://www.onsemi.com/pdf/datasheet/mmbt3904lt1-d.pdf)。

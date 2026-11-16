@@ -1,0 +1,21 @@
+Safety R1 low-voltage topology input_switch_off
+VIN src 0 24
+RSW src li 1000000000000.0
+L1 li sw 1m
+D1 sw bus DTOP
+.model DTOP D(Is=1e-12 N=1 Rs=.01)
+C1 bus 0 1u
+RB bus 0 50k
+VGATE gate 0 0
+
+.options reltol=.0001 abstol=1n vntol=1u
+.control
+set noaskquit
+set numdgt=15
+set wr_singlescale
+set wr_vecnames
+tran 1e-06 0.02 
+wrdata waves.txt v(bus)
+quit
+.endc
+.end

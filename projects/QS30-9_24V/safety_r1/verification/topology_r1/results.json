@@ -1,0 +1,119 @@
+{
+  "attempts": 6,
+  "execution_pass": 6,
+  "cases": [
+    {
+      "case": "all_bleeders",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 6.0,
+      "bus_final_V": 0.09107756808748442,
+      "deck_sha256": "d826f0410fcc495b1bee4e61a9825ea0481ff52232ce7d658fd9adfdae57153f",
+      "analytic_t60_s": 1.2687130779746205,
+      "scaled_measured_t60_s": 1.268959999999971,
+      "max_normalized_wave_error": 2.574424917689555e-08,
+      "topology_consistency": "PASS",
+      "discharge_design_requirement": "PASS"
+    },
+    {
+      "case": "one_bleeder_open",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 6.0,
+      "bus_final_V": 0.36695383996259,
+      "deck_sha256": "729585ca1a9e5289a4b3a79e22c74dbea73842b0fc9e80ebffd4a92e36623450",
+      "analytic_t60_s": 1.6916174372994939,
+      "scaled_measured_t60_s": 1.691959999999925,
+      "max_normalized_wave_error": 1.4486983908786518e-08,
+      "topology_consistency": "PASS",
+      "discharge_design_requirement": "PASS"
+    },
+    {
+      "case": "main_only",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 6.0,
+      "bus_final_V": 5.833555439729016,
+      "deck_sha256": "b49212fb6c8cd66b0e9ef0a21c5d93ba6ca57f2f63aecbf02b8fa5c6932ebe7d",
+      "analytic_t60_s": 4.999854494481263,
+      "scaled_measured_t60_s": 4.999960000000004,
+      "max_normalized_wave_error": 1.6595982366141016e-09,
+      "topology_consistency": "PASS",
+      "discharge_design_requirement": "PASS"
+    },
+    {
+      "case": "main_bleeder_open",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 6.0,
+      "bus_final_V": 23.99999999315745,
+      "deck_sha256": "e31d0ec759f018fbf6be29a8c53bba9db3944f210c95b16d467b980c8c96917d",
+      "analytic_t60_s": 24751754923.17457,
+      "scaled_measured_t60_s": null,
+      "max_normalized_wave_error": 6.079581282847357e-13,
+      "topology_consistency": "PASS",
+      "discharge_design_requirement": "FAIL"
+    },
+    {
+      "case": "input_switch_off",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 0.02,
+      "bus_final_V": 1.195845120911018e-06,
+      "deck_sha256": "7e63c050485a195fe5909c89bb32bdc44278b49e5db3c3290ed4a4d194d7ca32",
+      "topology_consistency": "PASS"
+    },
+    {
+      "case": "input_switch_stuck_on",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "rc": 0,
+      "execution": "PASS",
+      "end_s": 0.02,
+      "bus_final_V": 23.48306733090662,
+      "deck_sha256": "dcf461df3a299517bdc67b704ab8ee880176501fafe573bd6f5f29ff161f5fe2",
+      "topology_consistency": "PASS"
+    }
+  ],
+  "manufacturing": "HOLD"
+}

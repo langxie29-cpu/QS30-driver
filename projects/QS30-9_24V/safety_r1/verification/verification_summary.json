@@ -1,0 +1,77 @@
+{
+  "software_requirements_tests": {
+    "count": 245,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "simulation_process_attempts": 45,
+  "native_process_completed": 45,
+  "saved_execution_validation_pass": 41,
+  "saved_execution_validation_fail": 4,
+  "driver_runs": [
+    {
+      "path": "spice_r1",
+      "attempts": 8,
+      "native_process_completed": 8,
+      "saved_execution_validation_pass": 4,
+      "saved_execution_validation_fail": 4,
+      "electrical_pass": 4,
+      "electrical_fail": 0,
+      "electrical_inconclusive": 4
+    },
+    {
+      "path": "spice_r2",
+      "attempts": 8,
+      "native_process_completed": 8,
+      "saved_execution_validation_pass": 8,
+      "saved_execution_validation_fail": 0,
+      "electrical_pass": 8,
+      "electrical_fail": 0,
+      "electrical_inconclusive": 0
+    },
+    {
+      "path": "spice_r3_aux11p4",
+      "attempts": 8,
+      "native_process_completed": 8,
+      "saved_execution_validation_pass": 8,
+      "saved_execution_validation_fail": 0,
+      "electrical_pass": 8,
+      "electrical_fail": 0,
+      "electrical_inconclusive": 0
+    },
+    {
+      "path": "spice_r4_aux12p6",
+      "attempts": 8,
+      "native_process_completed": 8,
+      "saved_execution_validation_pass": 8,
+      "saved_execution_validation_fail": 0,
+      "electrical_pass": 8,
+      "electrical_fail": 0,
+      "electrical_inconclusive": 0
+    }
+  ],
+  "bleeder_revision": {
+    "path": "bleed_revision_r1/evidence/results.json",
+    "attempts": 6,
+    "execution_pass": 6,
+    "limited_electrical_pass": 6,
+    "half_step_pass": 3,
+    "hardware_qualification": "HOLD"
+  },
+  "topology": {
+    "attempts": 7,
+    "consistency_pass": 7,
+    "discharge_design_pass": 3,
+    "discharge_design_fail": 2
+  },
+  "corrections": {
+    "spice_r1": "Four cases have rc0 and endpoint but rounded ASCII creates repeated timestamps; original strict-order validation FAIL retained. Missing electrical classification is INCONCLUSIVE, not PASS.",
+    "source_url": "spice_r1/r2 prereg erroneously says slum030; actual immutable source manifest is sources/sprint06/manifest_driver_permit.json SLUM488. Model hashes match original. r3/r4 and runner corrected."
+  },
+  "manufacturing": "HOLD",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "24V_09": "NOT_PASSED",
+  "24V_10": "NOT_PASSED"
+}

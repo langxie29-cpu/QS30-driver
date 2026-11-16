@@ -1,0 +1,52 @@
+{
+  "registered_at": "2026-11-16T16:11:27.462687+00:00",
+  "scope": "Original TI UCC27511 macro-model + linear gate capacitor at AUX12=12V only; no MOSFET/Miller, comparator, eFuse, physical watchdog, latch or high-voltage validation",
+  "cases": [
+    [
+      "inhibited",
+      2
+    ],
+    [
+      "inhibited",
+      1
+    ],
+    [
+      "fault_trip",
+      2
+    ],
+    [
+      "fault_trip",
+      1
+    ],
+    [
+      "floating_inhibit",
+      2
+    ],
+    [
+      "floating_inhibit",
+      1
+    ],
+    [
+      "aux_loss",
+      2
+    ],
+    [
+      "aux_loss",
+      1
+    ]
+  ],
+  "source_url": "https://www.ti.com/lit/zip/slum030",
+  "source_file": "projects\\QS30-9_24V\\sources\\sprint06\\UCC27511_unencrypted\\unpacked\\UCC27511_TRANS.LIB",
+  "source_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+  "exe_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "python": "3.11.15 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+  "criteria": {
+    "end_s": 2e-05,
+    "inhibited_gate_max_V": 0.55,
+    "active_gate_min_V": 10,
+    "post_trip_gate_max_V": 0.55,
+    "trip_deadline_s_after_command": 3e-07,
+    "half_step_trip_time_difference_s": 2e-08
+  },
+  "model_limits": "Macro-model is not a guaranteed propagation/temperature/partial-power bound. UIC used for driver unit only; not an HV startup."
+}

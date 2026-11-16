@@ -14,7 +14,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: |
+            projects/QS30-9_24V/safety_r1
+            .github/workflows
       - name: Python specification regressions (not hardware validation)
         run: python3 -m unittest discover -s projects/QS30-9_24V/safety_r1/verification -p 'test_*.py' -v
       - name: Candidate data and HOLD integrity (not native ERC)
         run: python3 -m unittest discover -s projects/QS30-9_24V/safety_r1/governance -p 'test_*.py' -v
+      - name: Independent adversarial specification regressions
+        run: python3 -m unittest discover -s projects/QS30-9_24V/safety_r1/review -p 'test_*.py' -v

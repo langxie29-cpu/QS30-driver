@@ -1,0 +1,25 @@
+test_fault_dominates_reset (__main__.Independent.test_fault_dominates_reset) ... ok
+test_held_reset_blocks_new_arm (__main__.Independent.test_held_reset_blocks_new_arm) ... FAIL
+test_invalid_residual_blocks_reset (__main__.Independent.test_invalid_residual_blocks_reset) ... ok
+test_manual_reset_revokes_running_token (__main__.Independent.test_manual_reset_revokes_running_token) ... FAIL
+
+======================================================================
+FAIL: test_held_reset_blocks_new_arm (__main__.Independent.test_held_reset_blocks_new_arm)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\PROJECTS\dsharness\QS30-1\projects\QS30-9_24V\safety_r1\review\test_adversarial.py", line 16, in test_held_reset_blocks_new_arm
+    self.assertFalse(any(s.tick(x).values()),'reset asserted must inhibit new arm')
+AssertionError: True is not false : reset asserted must inhibit new arm
+
+======================================================================
+FAIL: test_manual_reset_revokes_running_token (__main__.Independent.test_manual_reset_revokes_running_token)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\PROJECTS\dsharness\QS30-1\projects\QS30-9_24V\safety_r1\review\test_adversarial.py", line 13, in test_manual_reset_revokes_running_token
+    self.assertFalse(any(s.tick(x).values()),'REQ01 reset must revoke token even without fault')
+AssertionError: True is not false : REQ01 reset must revoke token even without fault
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=2)

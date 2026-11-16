@@ -1,0 +1,217 @@
+{
+  "attempts": 8,
+  "execution_pass": 8,
+  "electrical_pass": 8,
+  "electrical_fail": 0,
+  "electrical_inconclusive": 0,
+  "cases": [
+    {
+      "name": "inhibited_2ns",
+      "kind": "inhibited",
+      "step_ns": 2,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "63848016b9c6589fdf7dc9677fff16c5e2efce411ae7a0d3144db33065d93727",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 10120,
+      "end_s": 2e-05,
+      "inhibited_gate_max_V": 0.0006281809405339719,
+      "electrical": "PASS"
+    },
+    {
+      "name": "inhibited_1ns",
+      "kind": "inhibited",
+      "step_ns": 1,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "a85c8839be34a232d9d0f1ac2debcc0494863cb0c74ef6bc93a15e57f6eb9cfe",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 20110,
+      "end_s": 2e-05,
+      "inhibited_gate_max_V": 0.0006281818509328365,
+      "electrical": "PASS"
+    },
+    {
+      "name": "fault_trip_2ns",
+      "kind": "fault_trip",
+      "step_ns": 2,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "9e0aafcd0c79ac1d095d9fc298abde3ea6d4e0885bee5c449d03e872e07ccd3e",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 10608,
+      "end_s": 2e-05,
+      "active_gate_min_V": 11.9862597235679,
+      "post_trip_gate_max_V": 2.134269540346147e-06,
+      "trip_delay_s": 6.9634532648959e-08,
+      "electrical": "PASS"
+    },
+    {
+      "name": "fault_trip_1ns",
+      "kind": "fault_trip",
+      "step_ns": 1,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "5815c0ed87fedc5f8a19759013df0852fedab9df975b54c074a32ebe9aebfd0b",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 20572,
+      "end_s": 2e-05,
+      "active_gate_min_V": 11.98625972356776,
+      "post_trip_gate_max_V": 2.342614314441451e-06,
+      "trip_delay_s": 6.975670568323003e-08,
+      "electrical": "PASS"
+    },
+    {
+      "name": "floating_inhibit_2ns",
+      "kind": "floating_inhibit",
+      "step_ns": 2,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "be746556d9120bb69dd105cc77dcc63415a1605c1eeef0c7a9d2709a9fd3b124",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 10164,
+      "end_s": 2e-05,
+      "inhibited_gate_max_V": 0.0006281809976252194,
+      "electrical": "PASS"
+    },
+    {
+      "name": "floating_inhibit_1ns",
+      "kind": "floating_inhibit",
+      "step_ns": 1,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "8d1abf68d3ea8d14862bbdf057d0919d9c384c4852e52827b98ff087ffd6ed90",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 20146,
+      "end_s": 2e-05,
+      "inhibited_gate_max_V": 0.0006281818579108203,
+      "electrical": "PASS"
+    },
+    {
+      "name": "aux_loss_2ns",
+      "kind": "aux_loss",
+      "step_ns": 2,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "c0c8abffde2b4206f676be7bf13150cac378ce6abbbf16bbd8aa645fd326c04c",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 10501,
+      "end_s": 2e-05,
+      "active_gate_min_V": 11.9862597235679,
+      "post_trip_gate_max_V": 0.2230008241874123,
+      "trip_delay_s": 2.3298505531793957e-07,
+      "electrical": "PASS"
+    },
+    {
+      "name": "aux_loss_1ns",
+      "kind": "aux_loss",
+      "step_ns": 1,
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "circuit.cir"
+      ],
+      "timeout_s": 30,
+      "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "deck_sha256": "815645cf7b32c0fad6a384b6052a6bd422ae056708dfc7d444c16b31fbcd5e68",
+      "rc": 0,
+      "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+      "stderr": "",
+      "execution": "PASS",
+      "samples": 20473,
+      "end_s": 2e-05,
+      "active_gate_min_V": 11.98625972356776,
+      "post_trip_gate_max_V": 0.2243974614668502,
+      "trip_delay_s": 2.3356241687343985e-07,
+      "electrical": "PASS"
+    }
+  ],
+  "half_step_comparisons": [
+    {
+      "kind": "fault_trip",
+      "trip_time_delta_s": 1.2217303427103073e-10,
+      "result": "PASS"
+    },
+    {
+      "kind": "aux_loss",
+      "trip_time_delta_s": 5.77361555500279e-10,
+      "result": "PASS"
+    }
+  ],
+  "manufacturing": "HOLD",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "24V_09": "NOT_PASSED"
+}

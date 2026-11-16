@@ -1,0 +1,42 @@
+{
+  "registered_at": "2026-11-16T16:17:28.296988+00:00",
+  "scope": "Passive 24V scaled linear RC only. Real resistor MPN/package/thermal/voltage qualification HOLD.",
+  "Cmax_F": 2.1315e-05,
+  "each_resistor_max_ohm": 91809.0,
+  "cases": [
+    [
+      "both_strings",
+      0.002
+    ],
+    [
+      "both_strings",
+      0.001
+    ],
+    [
+      "one_string_open",
+      0.002
+    ],
+    [
+      "one_string_open",
+      0.001
+    ],
+    [
+      "one_resistor_short",
+      0.002
+    ],
+    [
+      "one_resistor_short",
+      0.001
+    ]
+  ],
+  "criteria": {
+    "scaled_threshold_V": 7.384615384615385,
+    "time_max_s": 5,
+    "analytic_wave_relative_error_max": 0.002,
+    "half_step_time_delta_s_max": 0.002
+  },
+  "physical_requirement": "Each resistor must withstand195V and >=0.42W hot-rated under its series partner short; exact MPN still HOLD.",
+  "exe_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "version": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n",
+  "python": "3.11.15 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]"
+}

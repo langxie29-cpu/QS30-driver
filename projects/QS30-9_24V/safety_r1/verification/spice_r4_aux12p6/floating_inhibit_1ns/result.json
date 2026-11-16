@@ -1,0 +1,23 @@
+{
+  "name": "floating_inhibit_1ns",
+  "kind": "floating_inhibit",
+  "step_ns": 1,
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "timeout_s": 30,
+  "model_sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+  "deck_sha256": "971bae659276a8e9161dba18bea6f6e980f34ea65153af527058de3652ab1bca",
+  "rc": 0,
+  "stdout": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html\n** Creation Date: Aug 11 2026   13:55:25\n******\n\nBatch mode\n\nComments and warnings go to log-file: ngspice.log\n\n",
+  "stderr": "",
+  "execution": "PASS",
+  "electrical": "PASS",
+  "samples": 20145,
+  "end_s": 2e-05,
+  "inhibited_gate_max_V": 0.0006650223921286459
+}

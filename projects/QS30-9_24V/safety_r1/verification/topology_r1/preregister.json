@@ -1,0 +1,47 @@
+{
+  "registered_at": "2026-11-16T16:12:27.161513+00:00",
+  "scope": "Linear passive topology with 24V maximum; discharge scaled from195V by factor24/195. No true HV or physical component model.",
+  "criteria": {
+    "discharge_scaled_threshold_V": 7.384615384615385,
+    "discharge_s_max": 5,
+    "analytic_wave_relative_error_max": 0.002,
+    "off_bus_max_V": 0.01,
+    "stuck_bus_min_V": 20
+  },
+  "capacitance_assumption": "20uF +5% main,3x100n +5% modules; actual full MPN/DC rating/temperature pending",
+  "resistance_assumption": "each200k+1%; disconnected modules remove own capacitors AND bleeders",
+  "cases": [
+    [
+      "all_bleeders",
+      2.1315e-05,
+      50500.0
+    ],
+    [
+      "one_bleeder_open",
+      2.1315e-05,
+      67333.33333333333
+    ],
+    [
+      "main_only",
+      2.1e-05,
+      202000.0
+    ],
+    [
+      "main_bleeder_open",
+      2.1e-05,
+      1000000000000000.0
+    ],
+    [
+      "input_switch_off",
+      0,
+      1000000000000.0
+    ],
+    [
+      "input_switch_stuck_on",
+      0,
+      1
+    ]
+  ],
+  "exe_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "touch_criterion": "60V/5s is design-only, uncertified; does not establish touch safety"
+}

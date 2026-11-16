@@ -1,0 +1,18 @@
+Safety R1 revised bleeder both_strings; low voltage scaled only
+C1 bus 0 2.1315e-05 IC=24
+R1 bus a 91809.0
+R2 a 0 91809.0
+R3 bus b 91809.0
+R4 b 0 91809.0
+
+.options reltol=.0001 abstol=1n vntol=1u
+.control
+set noaskquit
+set numdgt=15
+set wr_singlescale
+set wr_vecnames
+tran 0.002 6 0 0.002 uic
+wrdata waves.txt v(bus)
+quit
+.endc
+.end

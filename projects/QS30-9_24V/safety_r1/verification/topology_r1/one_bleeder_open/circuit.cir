@@ -1,0 +1,15 @@
+Safety R1 low-voltage topology one_bleeder_open
+C1 bus 0 2.1315e-05 IC=24
+R1 bus 0 67333.33333333333
+
+.options reltol=.0001 abstol=1n vntol=1u
+.control
+set noaskquit
+set numdgt=15
+set wr_singlescale
+set wr_vecnames
+tran 0.001 6 uic
+wrdata waves.txt v(bus)
+quit
+.endc
+.end

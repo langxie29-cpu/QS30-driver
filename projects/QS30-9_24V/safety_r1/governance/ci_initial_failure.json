@@ -1,0 +1,64 @@
+{
+  "run_id": 43905265707,
+  "head_sha": "5375c7a48f7ed359d0a26e0bad30765bf6b29390",
+  "status": "completed",
+  "conclusion": "failure",
+  "url": "https://github.com/langxie29-cpu/QS30-driver/actions/runs/43905265707",
+  "jobs": [
+    {
+      "id": 133432288041,
+      "conclusion": "failure",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-16T16:14:27Z",
+          "completed_at": "2026-11-16T16:14:31Z"
+        },
+        {
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-16T16:14:31Z",
+          "completed_at": "2026-11-16T16:15:11Z"
+        },
+        {
+          "name": "Python specification regressions (not hardware validation)",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 3,
+          "started_at": "2026-11-16T16:15:11Z",
+          "completed_at": "2026-11-16T16:15:12Z"
+        },
+        {
+          "name": "Candidate data and HOLD integrity (not native ERC)",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 4,
+          "started_at": "2026-11-16T16:15:12Z",
+          "completed_at": "2026-11-16T16:15:12Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-16T16:15:12Z",
+          "completed_at": "2026-11-16T16:15:13Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-16T16:15:13Z",
+          "completed_at": "2026-11-16T16:15:13Z"
+        }
+      ]
+    }
+  ],
+  "cause": "Workflow was pushed before verification directory was committed; Python discovery failed with Start directory is not importable. Corrective action: commit tests and evidence then verify new remote run. Original failure retained."
+}

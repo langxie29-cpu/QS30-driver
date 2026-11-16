@@ -1,0 +1,20 @@
+{
+  "case": "main_bleeder_only_modules_cap_connected",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "ngspice.log",
+    "circuit.cir"
+  ],
+  "rc": 0,
+  "execution": "PASS",
+  "end_s": 6.0,
+  "bus_final_V": 5.956776812932226,
+  "deck_sha256": "fb30821296c2d5c76d36ffe7bc50cbcde68b361cbe9e2443bbbe2a7b199a5b7c",
+  "analytic_t60_s": 5.074852311898482,
+  "scaled_measured_t60_s": 5.074960000000029,
+  "max_normalized_wave_error": 1.6106943926767296e-09,
+  "topology_consistency": "PASS",
+  "discharge_design_requirement": "FAIL"
+}
