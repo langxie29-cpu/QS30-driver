@@ -1,0 +1,72 @@
+{
+  "run_id": 43906102107,
+  "sha": "3e6712373c20eaf2516c04ab9d5a08abfb10be66",
+  "url": "https://github.com/langxie29-cpu/QS30-driver/actions/runs/43906102107",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 133435228815,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-16T16:18:55Z",
+          "completed_at": "2026-11-16T16:18:57Z"
+        },
+        {
+          "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-16T16:18:57Z",
+          "completed_at": "2026-11-16T16:19:02Z"
+        },
+        {
+          "name": "Python specification regressions (not hardware validation)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-16T16:19:02Z",
+          "completed_at": "2026-11-16T16:19:02Z"
+        },
+        {
+          "name": "Candidate data and HOLD integrity (not native ERC)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-16T16:19:02Z",
+          "completed_at": "2026-11-16T16:19:02Z"
+        },
+        {
+          "name": "Independent adversarial specification regressions",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-16T16:19:02Z",
+          "completed_at": "2026-11-16T16:19:02Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-16T16:19:02Z",
+          "completed_at": "2026-11-16T16:19:03Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-16T16:19:03Z",
+          "completed_at": "2026-11-16T16:19:03Z"
+        }
+      ]
+    }
+  ],
+  "scope": "245 specification tests + 4 independent regressions + 10 candidate/evidence integrity tests. No SPICE rerun in CI."
+}
