@@ -86,11 +86,11 @@
     "kind": "analysis",
     "role": "power_architect",
     "depends": [
-      "acceptance_budget",
-      "lt3757a_reference",
-      "device_cells"
+      "baseline_audit",
+      "vendor_models",
+      "acceptance_budget"
     ],
-    "description": "Compare controllers and choose one documented primary candidate, reject mixed UCC/LT mappings. Compute duty, inductance, Isat hot, CS, snubber, feedback, losses and limits. Decision remains with Codex.",
+    "description": "Codex-led comparative analysis of LT3757A versus UCC28C43 using both successful and failed native model evidence. DeepSeek prepares reasoned comparison only; do not mix controller nets. If neither candidate qualified, hold rather than pretend one works.",
     "expected": [
       "inventory.md"
     ]
