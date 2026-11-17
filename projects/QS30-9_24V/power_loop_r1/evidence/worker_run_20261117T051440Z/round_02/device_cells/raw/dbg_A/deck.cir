@@ -1,0 +1,13 @@
+* A: R load only
+.include stp9nk50z.lib
+.temp 27
+Vbus b 0 170
+XQ d g s STP9NK50Z
+Rs s 0 1m
+Vp p 0 PULSE(0 6.5 1u 100n 100n 25u 100u)
+Rg p g 10
+Rgs g 0 10k
+Rld d 0 20
+VV 0 s 0
+.options reltol=1e-3
+.tran 100n 20u 10u uic

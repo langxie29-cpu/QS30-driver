@@ -1,0 +1,621 @@
+{
+ "rows": [
+  {
+   "ref": "BASELINE_S06C_LT3757A_CS_GATE_CELL",
+   "variant": "LT3757AIMSE#PBF native model + original-byte ST STP9NK50Z",
+   "evidence": "docs/sprint06c/NOMINAL_GATE_QUALIFICATION.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY",
+   "scope": "forced CS gate cell, 25C, AUX12/12.6V, resistor-load unit",
+   "caveat": "forced gate / resistor unit; NOT closed loop, NOT startup, NOT power stage"
+  },
+  {
+   "ref": "RAIL_HV_BUS",
+   "variant": "HV_BUS",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 175.1,
+    "A": 0.032646621258009476,
+    "W": 5.716423382277459
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "RAIL_DRV12",
+   "variant": "DRV12",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 12.6,
+    "A": 0.055,
+    "W": 0.693
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "RAIL_AUX12",
+   "variant": "AUX12",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 12.6,
+    "A": 0.09536,
+    "W": 1.201536
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "RAIL_3V3",
+   "variant": "3V3",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 3.465,
+    "A": 0.8,
+    "W": 2.772
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "RAIL_5V_SYS",
+   "variant": "5V_SYS",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 5,
+    "A": 0.693,
+    "W": 3.465
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "RAIL_VIN24",
+   "variant": "VIN24",
+   "evidence": "docs/sprint06c/POWER_RAILS.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "ALLOCATION_NOT_MEASURED",
+   "value": {
+    "V": 21.6,
+    "A": 0.639123511251695,
+    "W": 13.805067843036612
+   },
+   "scope": "allocations not measured"
+  },
+  {
+   "ref": "S06D_original_gear_0.5ns",
+   "variant": "original topology, 0.5 ns maxstep, rc=0",
+   "evidence": "docs/sprint06d/observer_control.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "PASS",
+   "scope": "execution only; electrical NOT_PASSED",
+   "value": {
+    "VGS_min_V": -5.470979686584261,
+    "VGS_max_V": 11.972689163729802,
+    "SENSE_peak_V": 0.1156988582594899,
+    "gate_peak_A": 1.498705122814506,
+    "IL_peak_A": 1.662425611699689,
+    "snubber_mean_W": 0.24320978477679198
+   }
+  },
+  {
+   "ref": "S06D_original_gear_0.25ns",
+   "variant": "original topology, 0.25 ns maxstep, rc=0",
+   "evidence": "docs/sprint06d/observer_control.json",
+   "provenance": "UNCOMMITTED",
+   "qualification": "PASS",
+   "scope": "execution only; electrical NOT_PASSED",
+   "value": {
+    "VGS_min_V": -8.158714673918228,
+    "VGS_max_V": 11.975163845810041,
+    "SENSE_peak_V": 0.1924558048850227,
+    "gate_peak_A": 2.217401990142097,
+    "IL_peak_A": 1.662468577597272,
+    "snubber_mean_W": 0.2455905607441276
+   }
+  }
+ ],
+ "sources": {
+  "POWER_RAILS.json": "4f12bde1d1127a314860396c7623e03dfa2e6138a06afc85485d274fd250420d",
+  "NEW_CONTROLLER_CORNERS.json": "0b5b8bda21076c8dfbe7bc91b0feb1813b8fad532749d603db014abe7b64e085",
+  "NOMINAL_GATE_QUALIFICATION.json": "b534836de860d5b84e3b3acc06ee1dc6d990fd2d1d8bb979a408f26c3039de18",
+  "observer_control.json": "17ef6b4b71414d08b32a2517cd0b87fc117d9efd9190815ff56218d91dd9f8d4",
+  "s06f/analysis.json": "b44ef4953795220820e4d0b4083a9956162a83d54193fcd4bb29363847906c9d",
+  "s06f/prestate_trajectory.json": null,
+  "s06f/baseline_0p25_preliminary.json": "3d36fcb29d5f5add99cd7e3b54048a86b39e9b04c407380107798b8dff4b4694"
+ },
+ "hv_bus_rail": {
+  "rail": "HV_BUS",
+  "V": 175.1,
+  "A": 0.032646621258009476,
+  "W": 5.716423382277459,
+  "provenance": "UNCOMMITTED docs/sprint06c/POWER_RAILS.json",
+  "note": "evaluated at 175.1 V (upper acceptance bound), not 170 V"
+ },
+ "new_controller_corners": [
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.0001215,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.1415912452320163,
+   "idle_fraction": 0.3486286859063826,
+   "Irms_A": 0.5319420424956266
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.0001215,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 1.052495123747292,
+   "idle_fraction": 0.2934886131186594,
+   "Irms_A": 0.5107625516604882
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.0001215,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.9814567635438339,
+   "idle_fraction": 0.24235094485510994,
+   "Irms_A": 0.49322443939106697
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.00015,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.0274321207088148,
+   "idle_fraction": 0.2762540954515361,
+   "Irms_A": 0.5046445312464778
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.00015,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.9472456113725629,
+   "idle_fraction": 0.2149873479096216,
+   "Irms_A": 0.4845519020299679
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.00015,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8833110871894504,
+   "idle_fraction": 0.1581677165056778,
+   "Irms_A": 0.4679137878406331
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.000165,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 0.9796180900851161,
+   "idle_fraction": 0.24092889148266133,
+   "Irms_A": 0.4927622163684076
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.000165,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.9031632532708078,
+   "idle_fraction": 0.17667178456209431,
+   "Irms_A": 0.4731426863975971
+  },
+  {
+   "Vin_V": 20.5,
+   "L_H": 0.000165,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8422040763009927,
+   "idle_fraction": 0.11707885239587128,
+   "Irms_A": 0.4568963317529198
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.0001215,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.1285949871120544,
+   "idle_fraction": 0.437213384039848,
+   "Irms_A": 0.4888204538004186
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.0001215,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 1.0405131657957478,
+   "idle_fraction": 0.3895722087277601,
+   "Irms_A": 0.46935786672472374
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.0001215,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.9702835301418856,
+   "idle_fraction": 0.34538912198838995,
+   "Irms_A": 0.45324147186689157
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.00015,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.015735488400849,
+   "idle_fraction": 0.3746815378220536,
+   "Irms_A": 0.4637358002659299
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.00015,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.936461849216173,
+   "idle_fraction": 0.32174689858640015,
+   "Irms_A": 0.44527196897036436
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.00015,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8732551771276971,
+   "idle_fraction": 0.27265457998709997,
+   "Irms_A": 0.4299826143439519
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.000165,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 0.9684657887593098,
+   "idle_fraction": 0.3441604639436173,
+   "Irms_A": 0.4528167186989841
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.000165,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.8928813394833679,
+   "idle_fraction": 0.2886421459385693,
+   "Irms_A": 0.43478763511933566
+  },
+  {
+   "Vin_V": 24,
+   "L_H": 0.000165,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8326161422562924,
+   "idle_fraction": 0.2371536878144351,
+   "Irms_A": 0.4198582822658637
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.0001215,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.1195960794930055,
+   "idle_fraction": 0.48426355376143776,
+   "Irms_A": 0.4642101726893569
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.0001215,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 1.0322165829096586,
+   "idle_fraction": 0.44060528301850965,
+   "Irms_A": 0.4457274540609772
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.0001215,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.9625469267086432,
+   "idle_fraction": 0.4001159972171104,
+   "Irms_A": 0.4304224593908101
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.00015,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 1.007636471543705,
+   "idle_fraction": 0.42695950417937534,
+   "Irms_A": 0.4403884376155376
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.00015,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.9289949246186927,
+   "idle_fraction": 0.3784503144650109,
+   "Irms_A": 0.4228541911502267
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.00015,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8662922340377787,
+   "idle_fraction": 0.33346221913012275,
+   "Irms_A": 0.40833459832988694
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.000165,
+   "f_Hz": 85000,
+   "Ipk_loss_screen_A": 0.9607436791763534,
+   "idle_fraction": 0.39899005762351814,
+   "Irms_A": 0.4300190909558524
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.000165,
+   "f_Hz": 100000,
+   "Ipk_loss_screen_A": 0.8857619062229526,
+   "idle_fraction": 0.34811319023352805,
+   "Irms_A": 0.4128977042854073
+  },
+  {
+   "Vin_V": 26.4,
+   "L_H": 0.000165,
+   "f_Hz": 115000,
+   "Ipk_loss_screen_A": 0.8259772365090091,
+   "idle_fraction": 0.30092927778397505,
+   "Irms_A": 0.39871998849555174
+  }
+ ],
+ "nominal_gate_qualification": {
+  "pairs": [
+   {
+    "case": "ST_AUX12",
+    "delay_max_s": 2.308791590310735e-07,
+    "half_step_delay_delta_s": 3.1978432956400547e-10,
+    "half_step_current_relative_delta": 0.0006349362553420557,
+    "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+   },
+   {
+    "case": "ST_AUX12p6",
+    "delay_max_s": 2.3346447516867683e-07,
+    "half_step_delay_delta_s": 1.8052298677716412e-10,
+    "half_step_current_relative_delta": 0.0009063151842755302,
+    "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+   }
+  ],
+  "scope": "Only original ADI+ST25C forced-CS transistor resistor-load cell. Does not qualify real current feedback, hot magnetics, source-loss, startup, short circuit or voltage loop."
+ },
+ "s06f_prestate": null,
+ "s06f_preliminary": {
+  "name": "original_gear_0.25ns",
+  "global": {
+   "VGS_min_V": -8.158714673918228,
+   "VGS_max_V": 11.975163845810041,
+   "SENSE_peak_V": 0.1924558048850227,
+   "gate_peak_A": 2.217401990142097,
+   "IL_global_peak_A": 1.662468577597272,
+   "snubber_mean_W": 0.2455905607441276,
+   "drain_min_V": -204.8482655145235,
+   "drain_max_V": 195.9512790196299,
+   "die_VGS_min_V": -0.7673348910228984,
+   "die_VGS_max_V": 11.97369364890301,
+   "shutdown_pin_VGS_max_after111us_V": 0.4989296032626591
+  },
+  "edges_s": [
+   1.5209964955770817e-05,
+   2.513682007590093e-05,
+   3.506369667436815e-05,
+   4.499063380180739e-05,
+   5.4917743643247075e-05,
+   6.484458859850042e-05,
+   7.477145545103163e-05,
+   8.469873516942289e-05,
+   9.462588661857882e-05,
+   0.00010455285783883294
+  ],
+  "events": {
+   "5": {
+    "status": "OBSERVED",
+    "ordinal": 5,
+    "edge_s": 5.4917743643247075e-05,
+    "window_s": [
+     5.489774364324707e-05,
+     5.5037743643247074e-05
+    ],
+    "VGS_min_V": -5.31216996718609,
+    "VGS_max_V": 9.5993292588562,
+    "SENSE_peak_V": 0.1119438204012045,
+    "gate_peak_A": 1.459008252699924,
+    "IL_local_peak_A": 0.06945552799095618,
+    "diode_reverse_peak_A": 4.151501825713992,
+    "Qreverse_C": 2.4380901875030043e-08,
+    "drain_min_V": -67.27918902072848,
+    "die_VGS_min_V": -0.0007073926945512059,
+    "die_VGS_max_V": 8.698244531089529,
+    "prestate": {
+     "time_s": 5.489774364324707e-05,
+     "IL_A": 0.06946085996361956,
+     "diode_A": 0.0691298857170868,
+     "snubber_voltage_V": 0.8303614091139764,
+     "snubber_energy_J": 3.4475003487287424e-11,
+     "package_current_A": {
+      "LS": 0.00021932211955165404,
+      "LG": -0.0001491628621034866,
+      "LD": -0.0003684849669052188
+     },
+     "package_energy_J": {
+      "LS": 1.8038322046736259e-16,
+      "LG": 8.343584786588908e-17,
+      "LD": 3.055076343790654e-16
+     },
+     "gate_internal_V": 0.0018526348796830292,
+     "source_internal_V": 0.0023084092187688437
+    },
+    "at_SENSE_peak": {
+     "time_s": 5.494634707075513e-05,
+     "IL_A": 0.001999914119171288,
+     "diode_A": 0.4186645680060777,
+     "snubber_A": -0.788746171445164,
+     "drain_port_A": 0.3720823338912225,
+     "gate_port_A": 1.936802598986914,
+     "source_port_A": -2.308884932697167,
+     "shunt_A": 1.759806154731929
+    },
+    "KCL": {
+     "drain": {
+      "residual_A": 9.488769075980156e-05,
+      "allowed_A": 0.041591457374499596,
+      "result": "PASS"
+     },
+     "gate": {
+      "residual_A": 3.334835041446382e-08,
+      "allowed_A": 0.029268443567660292,
+      "result": "PASS"
+     },
+     "source": {
+      "residual_A": 3.334800592554076e-08,
+      "allowed_A": 0.04242661858292286,
+      "result": "PASS"
+     }
+    },
+    "event_energy": {
+     "clamp_signed_absorbed_J": -7.656263069100198e-06,
+     "snubber_resistor_dissipated_J": 1.5809576439493278e-06,
+     "snubber_capacitor_delta_J": 1.6180151955580238e-06,
+     "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+    }
+   },
+   "9": {
+    "status": "OBSERVED",
+    "ordinal": 9,
+    "edge_s": 9.462588661857882e-05,
+    "window_s": [
+     9.460588661857881e-05,
+     9.474588661857882e-05
+    ],
+    "VGS_min_V": -0.2923440379011976,
+    "VGS_max_V": 10.295988876489677,
+    "SENSE_peak_V": 0.01245004909557249,
+    "gate_peak_A": 0.395001073229329,
+    "IL_local_peak_A": -0.2014945965390203,
+    "diode_reverse_peak_A": 0.002496236980416627,
+    "Qreverse_C": 6.062556052376073e-11,
+    "drain_min_V": -0.1788057919010806,
+    "die_VGS_min_V": -0.6050529905241585,
+    "die_VGS_max_V": 9.972140842232761,
+    "prestate": {
+     "time_s": 9.460588661857881e-05,
+     "IL_A": -0.2267658644065981,
+     "diode_A": -0.0024988127858099896,
+     "snubber_voltage_V": -102.76947927711008,
+     "snubber_energy_J": 5.280782935444179e-07,
+     "package_current_A": {
+      "LS": -0.0061973555588557,
+      "LG": 0.060143801357152624,
+      "LD": 0.06634115699527826
+     },
+     "package_energy_J": {
+      "LS": 1.4402705971079866e-13,
+      "LG": 1.3564788156332376e-11,
+      "LD": 9.902585500812355e-12
+     },
+     "gate_internal_V": -0.5978681459614787,
+     "source_internal_V": -0.004754885878731117
+    },
+    "at_SENSE_peak": {
+     "time_s": 9.464169945627093e-05,
+     "IL_A": -0.2236848357854841,
+     "diode_A": 0.0001503322788473748,
+     "snubber_A": -0.1108797610674605,
+     "drain_port_A": -0.1129554070352772,
+     "gate_port_A": 0.2822363233967523,
+     "source_port_A": -0.1692809163630176,
+     "shunt_A": 0.1893012462190273
+    },
+    "KCL": {
+     "drain": {
+      "residual_A": 1.5871364861252957e-08,
+      "allowed_A": 0.002272667666628025,
+      "result": "PASS"
+     },
+     "gate": {
+      "residual_A": 2.774586727039008e-09,
+      "allowed_A": 0.004287517375464727,
+      "result": "PASS"
+     },
+     "source": {
+      "residual_A": 2.7745866564303414e-09,
+      "allowed_A": 0.003510113957730198,
+      "result": "PASS"
+     }
+    },
+    "event_energy": {
+     "clamp_signed_absorbed_J": -1.7777119955883045e-06,
+     "snubber_resistor_dissipated_J": 3.320374607904447e-07,
+     "snubber_capacitor_delta_J": 1.3411085841511439e-06,
+     "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+    }
+   },
+   "10": {
+    "status": "OBSERVED",
+    "ordinal": 10,
+    "edge_s": 0.00010455285783883294,
+    "window_s": [
+     0.00010453285783883294,
+     0.00010467285783883294
+    ],
+    "VGS_min_V": -8.158714673918228,
+    "VGS_max_V": 9.98799983062625,
+    "SENSE_peak_V": 0.1924558048850227,
+    "gate_peak_A": 2.217401990142097,
+    "IL_local_peak_A": 0.2582686938910576,
+    "diode_reverse_peak_A": 5.86217559259606,
+    "Qreverse_C": 4.5427524445341074e-08,
+    "drain_min_V": -204.8482655145235,
+    "die_VGS_min_V": -0.00043294204040953375,
+    "die_VGS_max_V": 8.766301409303267,
+    "prestate": {
+     "time_s": 0.00010453285783883294,
+     "IL_A": 0.258456703278174,
+     "diode_A": 0.25839048852464724,
+     "snubber_voltage_V": 0.8697570192438775,
+     "snubber_energy_J": 3.7823863626199737e-11,
+     "package_current_A": {
+      "LS": 4.1871921906011186e-05,
+      "LG": -4.7455968816713044e-05,
+      "LD": -8.932768752684513e-05
+     },
+     "package_energy_J": {
+      "LS": 6.5747169153866225e-18,
+      "LG": 8.445258661248152e-18,
+      "LD": 1.7953730457510785e-17
+     },
+     "gate_internal_V": -0.00036848541349389347,
+     "source_internal_V": 3.6951127178798545e-06
+    },
+    "at_SENSE_peak": {
+     "time_s": 0.0001045860395867421,
+     "IL_A": 0.1846963669455045,
+     "diode_A": 0.5459807245745754,
+     "snubber_A": -1.209675043288591,
+     "drain_port_A": 0.8483906491059073,
+     "gate_port_A": 2.614726667645818,
+     "source_port_A": -3.463117316887966,
+     "shunt_A": 2.891959249495445
+    },
+    "KCL": {
+     "drain": {
+      "residual_A": 0.00012939096569591912,
+      "allowed_A": 0.060516266224137374,
+      "result": "PASS"
+     },
+     "gate": {
+      "residual_A": 7.844293037351235e-08,
+      "allowed_A": 0.04065673594284925,
+      "result": "PASS"
+     },
+     "source": {
+      "residual_A": 7.844293995531168e-08,
+      "allowed_A": 0.06121314215527573,
+      "result": "PASS"
+     }
+    },
+    "event_energy": {
+     "clamp_signed_absorbed_J": -1.0316924892534629e-05,
+     "snubber_resistor_dissipated_J": 1.7759692734164288e-06,
+     "snubber_capacitor_delta_J": 1.6068053940384478e-06,
+     "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+    }
+   }
+  }
+ }
+}

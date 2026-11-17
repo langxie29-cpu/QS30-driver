@@ -1,0 +1,32 @@
+== ucc28c43_reference :: original TI fixture replay ==
+task_dir   = D:\PROJECTS\dsharness\QS30-power-loop-r1\projects\QS30-9_24V\power_loop_r1\runs\20261117T051440Z\round_02\ucc28c43_reference
+history    = D:\PROJECTS\dsharness\QS30-1\projects\QS30-9_24V (read-only)
+engine     = D:\PROJECTS\dsharness\QS30-1\tools\ngspice47\Spice64\bin\ngspice_con.exe
+python     = 3.11.15
+** ngspice-47 : Circuit level simulation program
+native PSpice dirs found: NONE
+native TINA dirs found:   NONE  -> vendor-native replay of the TI PSpice fixture is NOT possible here
+copied vendor_ucc28c43_trans_unencrypted.lib        identical=True
+copied vendor_ucc28c43_pspice_encrypted.lib         identical=True
+copied vendor_UCC28C43_steady.net                   identical=True
+copied vendor_UCC28C43_startup.net                  identical=True
+copied vendor_UCC28C43_steady.cir                   identical=True
+copied vendor_UCC28C43_startup.cir                  identical=True
+copied vendor_UCC28C43_steady.sim                   identical=True
+copied vendor_UCC28C43_startup.sim                  identical=True
+copied vendor_UCC28C43_startup_pspice.out           identical=True
+copied vendor_UCC28C43_steady_pspice.out            identical=True
+copied vendor_UCC28C43_START_tina.LIB               identical=True
+model UCC28C43_START/STEADY semantic_sha256=9d80974bb9d72de41b8c85ceaa3b5760328480109ea6623813f2983be16d9364
+[steady] rc=0 timed_out=False elapsed=16.78s log_bytes=15816 errors=0
+[steady] raw: 200255 points / 149 vectors, 200255 rows streamed, 10013 kept
+[startup] rc=0 timed_out=False elapsed=16.73s log_bytes=15818 errors=0
+[startup] raw: 200255 points / 149 vectors, 200255 rows streamed, 10013 kept
+model after run identical: True; all vendor copies identical: True
+
+== summary ==
+steady   rc=0 end=0.008999728149215257 f_out=0.0 vref=[5.726691116101057, 8.399757199532065] vout2=None
+startup  rc=0 end=0.008999728149215257 f_out=None vref=[5.726691116101057, 8.399757199532065] vout2=None
+assertions: 7/8 pass
+model immutable: True; vendor copies verbatim: True
+classification: TOOL=PASS_WITH_CAVEAT MODEL=INCONCLUSIVE ELECTRICAL=FAIL_AS_WAVEFORMS (not as a power stage: none is present) POWER_STAGE=NOT_EVALUATED

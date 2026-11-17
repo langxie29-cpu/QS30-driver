@@ -1,0 +1,17 @@
+* diode turn-off
+.include us1g_vishay1999.models
+.model US1GD D
+.temp 27
+Vf VFP 0 10
+Rf VFP NVFP 1
+Lf NVFP NVAP 100u IC=1
+D1 NVAP NVKP US1GD
+Vr NVKP 0 PWL(0 0 2u 0 2.195u 195 20u 195 20.195u 0 40u 0)
+.options reltol=1e-4
+.tran 5n 40u 0 uic
+
+.control
+run
+wrdata out.dat i(Vf) v(NVKP) v(NVAP,NVKP)
+.endc
+.end

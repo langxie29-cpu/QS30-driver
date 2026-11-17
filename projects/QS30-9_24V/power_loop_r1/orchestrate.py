@@ -246,7 +246,9 @@ def codex_decision(round_dir: Path, cfg: dict, tasks: dict, completed: dict,
     output_path = round_dir / "codex_decision.json"
     # Explicit OpenAI provider override prevents a DeepSeek configured default provider
     # from silently billing or running the decision on the wrong backend.
-    argv = ["codex", "exec", "--profile", cfg["decision_profile"], "--model",
+    # A named gpt profile does not exist on this machine. Explicit model/provider
+    # overrides suffice; never require or overwrite an unrelated global profile.
+    argv = ["codex", "exec", "--model",
             cfg["decision_model"], "--config", 'model_provider="openai"',
             "--sandbox", "read-only", "--output-schema",
             str(HERE / "decision.schema.json"), "--output-last-message",
@@ -269,8 +271,8 @@ def dry_run(cfg: dict, tasks: dict):
     print("DRY RUN / no model calls / no SPICE / no hardware")
     print("DeepSeek:", cfg["worker_binary"], cfg["worker_profile"],
           "(expected:", cfg["expected_worker_model"] + ")")
-    print("Codex:", "codex exec --profile", cfg["decision_profile"],
-          "--model", cfg["decision_model"], "--sandbox read-only")
+    print("Codex:", "current-session external review preferred; standalone codex exec --model",
+          cfg["decision_model"], 'with explicit OpenAI provider and read-only sandbox')
     print("Initial tasks:", ", ".join(cfg["entry_task_ids"]))
     print("Budget:", cfg["max_rounds"], "rounds and", cfg["max_worker_calls"],
           "worker calls. Neither is a monetary ceiling.")
@@ -382,6 +384,10 @@ def main():
         return
     if not args.accept_model_costs:
         ap.error("Live model calls require --accept-model-costs")
+    if os.environ.get('CODEX_THREAD_ID') and not args.external_decisions:
+        ap.error('Inside a Codex session use --external-decisions to prevent nested Codex execution')
+    if args.resume and not args.external_decisions:
+        ap.error('--resume requires --external-decisions')
     run_live(cfg, tasks, args.rounds, args.external_decisions, args.resume)
 
 

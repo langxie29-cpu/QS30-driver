@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "-ascii",
+    "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\native_reference_netlist_retry\\LT3757A.net",
+    "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\.local\\native_reference_profile\\LTspice\\lib\\sub"
+  ],
+  "scope": "Unmodified vendor ASC, native-generated NET, native solver;12V->24V reference only",
+  "timeout_s": 60,
+  "rc": 0,
+  "elapsed_s": 0.5150000000139698,
+  "endpoint_s": 0.0015,
+  "initial_V": 1.745641287586435e-40,
+  "peak_V": 8.845813213925565e-05,
+  "steady_V": {
+    "mean": 7.957548738684513e-05,
+    "minimum": 7.069068438538814e-05,
+    "maximum": 8.845813213925565e-05,
+    "pp": 1.7767447753867506e-05
+  },
+  "classification": "ELECTRICAL_FAIL"
+}

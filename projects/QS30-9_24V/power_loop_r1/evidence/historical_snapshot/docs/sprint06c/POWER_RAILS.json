@@ -1,0 +1,44 @@
+{
+  "mode": "external24V candidate, allocations not measured",
+  "rails": [
+    {
+      "rail": "HV_BUS",
+      "V": 175.1,
+      "A": 0.032646621258009476,
+      "W": 5.716423382277459
+    },
+    {
+      "rail": "DRV12",
+      "V": 12.6,
+      "A": 0.055,
+      "W": 0.693,
+      "scope": "subset of AUX, do not add twice"
+    },
+    {
+      "rail": "AUX12",
+      "V": 12.6,
+      "A": 0.09536,
+      "W": 1.201536
+    },
+    {
+      "rail": "3V3",
+      "V": 3.465,
+      "A": 0.8,
+      "W": 2.772
+    },
+    {
+      "rail": "5V_SYS",
+      "V": 5,
+      "A": 0.693,
+      "W": 3.465,
+      "scope": "upstream of3V3, do not add twice"
+    },
+    {
+      "rail": "VIN24",
+      "V": 21.6,
+      "A": 0.639123511251695,
+      "W": 13.805067843036612
+    }
+  ],
+  "USB_mode": "HV/AUX/DRV prohibited; programming3V3 allocation0.45A plus30mA bridge/logic input, input budget cases in candidate_analysis.json. Actual boot and enumeration not qualified."
+}

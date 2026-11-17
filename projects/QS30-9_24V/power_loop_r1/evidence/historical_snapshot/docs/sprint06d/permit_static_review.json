@@ -1,0 +1,37 @@
+{
+  "scope": "Boolean counterexample only; no real PG/rail transient qualification. Other FAULT/INTERLOCK/CHAIN/REQUEST terms assumed true.",
+  "cases": [
+    {
+      "case": "normal",
+      "LOGIC_READY_assumed": true,
+      "AUX_OK_assumed": true,
+      "VIN24_OK_assumed": true,
+      "old_documented_DRV_PERMIT_all_other_terms_true": true,
+      "proposed_DRV_PERMIT_including_VIN24_OK": true
+    },
+    {
+      "case": "AUX_lost_USB_logic",
+      "LOGIC_READY_assumed": true,
+      "AUX_OK_assumed": false,
+      "VIN24_OK_assumed": true,
+      "old_documented_DRV_PERMIT_all_other_terms_true": false,
+      "proposed_DRV_PERMIT_including_VIN24_OK": false
+    },
+    {
+      "case": "24V_lost_USB_AUX_residual",
+      "LOGIC_READY_assumed": true,
+      "AUX_OK_assumed": true,
+      "VIN24_OK_assumed": false,
+      "old_documented_DRV_PERMIT_all_other_terms_true": true,
+      "proposed_DRV_PERMIT_including_VIN24_OK": false
+    },
+    {
+      "case": "USB_only",
+      "LOGIC_READY_assumed": true,
+      "AUX_OK_assumed": false,
+      "VIN24_OK_assumed": false,
+      "old_documented_DRV_PERMIT_all_other_terms_true": false,
+      "proposed_DRV_PERMIT_including_VIN24_OK": false
+    }
+  ]
+}

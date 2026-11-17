@@ -1,0 +1,21 @@
+{
+  "task_id": "vendor_models",
+  "grade": "CLAIMED_PASS_AUDITED_FILES",
+  "worker_claim": "PASS",
+  "notes": "FAITHFUL INVENTORY PASS ONLY - not a model qualification. No simulator was invoked by this worker; no waveform, log, metric or model execution is claimed. What was actually measured: (1) LT3757A native model extracted BYTE-IDENTICAL with Python zipfile from the ADI signed distribution in the historical toolchain - vendor_bytes/LT3757A.sub 2572 B sha256 c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634 (lib.zip member lib/sub/LT3757A.sub, CRC 1d44a014), LT3757A.asy 948 B sha256 4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76, LT3757A.asc 2890 B sha256 867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6 (examples.zip examples/Applications/LT3757A.asc); round-trip re-read proven identical and historical sources/sprint06c/LT3757A_bundled copies hash to the same two values. LT3757A.sub is NOT text: it begins CRLF+'<Binary File>' with 15 NUL and 938 non-ASCII bytes, i.e. an encoded LTspice-only model whose internals are unauditable and which only LTspice 24.0.12.0 (sha256 17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d) can consume. Its vendor reference LT3757A.asc is a 12V->low-voltage boost demo (V1=12V, L1=10u, Q1=FDS6680A, D1=MBR735, Rload=12, .tran 1.5m startup) whose nominal output is NOT 170V and whose 50V-class FET is not the QS30 switch - an unchanged replay of this reference can never be read as 170V success. (2) UCC28C43: three TI forms are retained in BOTH workspaces with identical hashes - PSpice slum033 zip 103944 B sha256 5eda3f5a976ed60ba206d264669d57b70ca1d443e4ede2ea80eb999c44e3b878, ucc28c43.lib 43796 B sha256 546fab4c7b9208394122f7f4e886496d15e2811af37b4e32cb9edff2eddeaadd with **$ENCRYPTED_LIB and 23 $CDNENCSTART blocks; TINA slum178 zip 10985 B sha256 05979bf1f5bb7e99ae56b04686e440e459a4e9ff2b4eff422420def9c2b7e183, UCC28C43_START.LIB 4846 B sha256 7b00c5326308d7203d75fa0e77870ed0dd2482305199f88eff67682827d9526a starting '<Encrypted Library>'; and unencrypted zip 5008 B sha256 e246d10eb469cfc46d2fe5ffe19e4f304cfca19bf0ccab92934a0a8d2a456379 with ucc28c43_trans_unencrypted.lib 13956 B sha256 ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8. All three carry the same AEi Systems identity: Part UCC28C43, Date 11/05/2008, Model Type Transient Steady State, Simulator PSpice, EVM UCC38C44 / slua274a, Datasheet slus458d Rev Jan 2007 - i.e. validated against datasheet revisi",
+  "evidence_sha256": {
+    "inventory.md": "8be895c770a7d467818250c4d925c2abae22df97ab3ad4e1c5bffbc1cb449d6e",
+    "hash_manifest_raw.json": "9c6f5fcc21f7732866279d073ee59b66f026dc9e66eced6272aaa8314881d178",
+    "model_index.json": "5fe62c122285595421a4bb09e3151152bd169e943d024bb910f7f4afdea2e450",
+    "sim_copy_audit.json": "f0350a18a91df82d382b918791f1966546cebdb8af99d019803f22bd6f2afd61",
+    "sim_model_mutations.md": "782d9cc0aa6e16edf9586dcb1140c78d489d6c5d819d8bd4b5427b17bb179a8b",
+    "vendor_bytes/LT3757A.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "vendor_bytes/LT3757A.asy": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+    "vendor_bytes/LT3757A.asc": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+    "extract_and_hash.py": "25ce0db4a5a85751771fdbc128c0709b8a97db8978c027853412202943d1b0fd",
+    "parse_models.py": "cb8b36d94ed3084adca114af5ede109def683c4fb92c855f275dcebc19a67552",
+    "audit_sim_copies.py": "2c26d8f8a3ec348516f21c68aa8b4061a7b1b4abfb765f87239eb624c279ec78"
+  },
+  "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+  "process_rc": 0
+}

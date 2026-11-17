@@ -1,0 +1,63 @@
+acceptance_budget - reconcile_stdout.txt
+worker=deepseek-flash task=acceptance_budget kind=analysis solver=none
+
+[1] intended driver: python reconcile_acceptance.py
+    -> ResourceUnavailable: Program 'python.exe' failed to run: 拒绝访问 (access denied)
+    -> D:\Espressif\tools\python\python.exe : Process.Start -> Exception: 拒绝访问
+    -> D:\PROJECTS\dsharness\QS30-1\tools\review_venv\Scripts\python.exe : Process.Start -> Exception: 拒绝访问
+    -> script NOT executed; kept for independent Codex re-run
+
+[2] source hashing (Get-FileHash SHA256), missing=[]
+    bce00036315e8119a4ecb27bcf94ba0a7882aa4e91bb2fd495b1b21c2c9fb86e  projects\QS30-9_24V\config\sprint05.json  3044 bytes
+    b3566452f8e25c9bbe338f22feef5fb7cf2a7d30710a711732091a18269b49a9  projects\QS30-9_24V\docs\S05_REQUIREMENTS.md  3439 bytes
+    c354c0d926e16505f8ce896db9a034f3f209cc33cd33c675cc3827fbbf5a39df  projects\QS30-9_24V\safety_r1\architecture\requirements.json  6462 bytes
+    4f12bde1d1127a314860396c7623e03dfa2e6138a06afc85485d274fd250420d  HISTORICAL_Q\projects\QS30-9_24V\docs\sprint06c\POWER_RAILS.json  998 bytes
+    8d898d91d824427e69904c0b58a9ac1dcd5a8b8b6ee4004aacc67fa7796d45d6  projects\QS30-9_24V\docs\sprint06\POWER_RAILS.csv  487 bytes
+    6f495d591bb37ab9da193d1080dcc59e90fd001aa7de587ee80e0209fe3a4165  projects\QS30-9_24V\docs\sprint05\calculations.json  3580 bytes
+    867dc5015f29f88bb826935af4531dcbc079b36a0d396607b4203ea201102fb9  projects\QS30-9_24V\power_loop_r1\evidence\independent\calculations.json  1884 bytes
+    ffd4f115a101de461c3121f49955f7d12ece080fb1f13e5a7b38483025a7a31d  projects\QS30-9_24V\power_loop_r1\engineering_context.md  4637 bytes
+    d9e5e931a23fb3ac92ef816fda19dfae1e347459541fed3e666fa891eb65ea01  projects\QS30-9_24V\power_loop_r1\runs\20261117T051440Z\round_01\baseline_audit\result.json  11487 bytes
+    c0be5f392b2aa447bf71182df557cb6992f487f4d46a2c0bdaba0384e3cb94b8  projects\QS30-9_24V\power_loop_r1\runs\20261117T051440Z\round_01\baseline_audit\baseline_math.json  1045 bytes
+    023ba40c72d890fb496a8020092851ec42078f55c04ae42b2fbeafaa18617b54  projects\QS30-9_24V\power_loop_r1\runs\20261117T051440Z\round_01\baseline_audit\hv_budget_reconciliation.json  1286 bytes
+    93a8eb434ad81029ab2c3577b3750777b6d0f4326708de06ef2f746e1c125e65  projects\QS30-9_24V\safety_r1\governance\holds.json  1727 bytes
+
+[3] assertion run (PowerShell [double])
+    A01_vin_matches_sources                    ok=True  measured=21.6,26.4
+    A02_mean_matches_sources                   ok=True  measured=164.9,175.1 / 164.9,175.1
+    A03_fault_peak_matches_sources             ok=True  measured=195 / 195
+    A04_startup_matches_sources                ok=True  measured=1 / 1
+    A05_ripple_1Vpp                            ok=True  measured=1
+    A06_recovery_100ms                         ok=True  measured=0.1
+    A07_ovp_gap_180_to_183                     ok=True  measured=3
+    A08_target_inside_window                   ok=True  measured=170
+    B01_r_total_90900                          ok=True  measured=90900
+    B02_bleed_power_170V                       ok=True  measured=0.3179317931793179
+    B03_per_resistor_170V_CORRECTED            ok=True  measured=0.07948294829482948
+    B04_worker_per_resistor_error_reproduced   ok=True  measured=0.0794829482948295 vs 0.01987073707370737
+    B05_delta_170V                             ok=True  measured=0.17343179317931792
+    B06_delta_175p1V                           ok=True  measured=0.18399378938393837
+    B07_budget_175p1V                          ok=True  measured=5.900417171661398
+    B08_mixed_voltage_floor_reproduced         ok=True  measured=5.889851793179318
+    B09_budget_exceeds_mixed_floor             ok=True  measured=5.900417171661398
+    B10_s06c_is_allocation                     ok=True  measured=external24V candidate, allocations not measured
+    B11_s06c_VxI_consistency                   ok=True  measured=5.716423382277459
+    B12_survivor_resistor_195V                 ok=True  measured=0.4225422542254225
+    C01_cold_energy_nominal                    ok=True  measured=0.27599890150000006
+    C02_storage_screen_matches_s03             ok=True  measured=2.133E-05
+    C03_cold_energy_screen                     ok=True  measured=0.29000278665
+    C04_min_net_charge_power_1s                ok=True  measured=0.27599890150000006
+    C05_charge_plus_min_load                   ok=True  measured=0.5891448108524202
+    C06_zero_volt_IC_required                  ok=True  measured=IC=0V
+    assertions=1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 failed=0 all_assertions_ok=True
+
+[4] key values
+    revised_hv_budget_175.1V_W = 5.900417171661398
+    mixed_floor_context_only_W  = 5.88985179317932 (quoted 5.88985)
+    bleeder_delta_175.1V_W      = 0.183993789383938
+    per_resistor_170V_W_correct = 0.07948294829482948 (worker wrote 0.01987073707370737)
+    cold_E_nominal_J            = 0.2759989015
+    cold_E_screen_J             = 0.29000278665
+    cold_min_source_power_W     = 0.58914481085242 (screen, before conversion loss)
+
+[5] simulators invoked: NONE. waveforms produced: NONE. measurements: NONE.
+    manufacturing: HOLD unchanged; safety_r1 HOLDs unchanged

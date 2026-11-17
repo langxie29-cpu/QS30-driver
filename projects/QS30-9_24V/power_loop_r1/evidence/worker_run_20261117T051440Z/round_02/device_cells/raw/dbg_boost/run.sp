@@ -1,0 +1,21 @@
+* boost
+.temp 27
+Vbus NVBP 0 24
+Vsw NVSW 0 PWL(0 0 0.04u 0 0.06u 1 1.32u 1 1.34u 0 3.32u 0 3.34u 1 4.62u 1 4.64u 0 6.62u 0 6.64u 1 7.92u 1 10u 1)
+Ssw NVDP 0 NVSW 0 SWM
+.model SWM SW(VT=0.5 RON=1m ROFF=100meg)
+Rl NVBP NVL 0.038
+L1 NVL NVDP 150u IC=0
+D1 NVDP NVOP DUF
+.model DUF D(IS=1e-9 N=1.7 RS=0.05 BV=1000 CJO=20p TT=100n)
+Co NVOP 0 47u
+Rld NVOP 0 3k
+IV 0 NVDP 0
+.options reltol=1e-4
+.tran 5n 10u 0 uic
+
+.control
+run
+wrdata out.dat i(L1) v(NVDP) v(NVOP) v(NVSW) v(NVBP)
+.endc
+.end

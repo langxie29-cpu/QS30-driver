@@ -1,0 +1,168 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: * tc probe: vf at 1 a vs temp (model self-consistency)
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+v(nvap) = 8.376772e-01
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+	Node                                  Voltage
+	----                                  -------
+	----	-------
+	nvap                             8.376772e-01
+	vfp                              2.000000e+00
+
+	Source	Current
+	------	-------
+
+	vf#branch                        -1.16232e+00
+
+ Diode models (Junction Diode model)
+      model                 us1gd
+
+      level                     1
+         is                 1e-14
+        jsw                     0
+         rs                     0
+        rsw                     0
+        trs                     0
+       trs2                     0
+          n                     1
+         ns                     1
+         tt                     0
+       ttt1                     0
+       ttt2                     0
+        cjo                     0
+         vj                     1
+          m                   0.5
+        tm1                     0
+        tm2                     0
+        cjp                     0
+        php                     1
+       mjsw                  0.33
+        ikf                     0
+        ikr                     0
+        ikp                     0
+        nbv                     1
+       area                     1
+         pj                     0
+       tlev                     0
+      tlevc                     0
+         eg                  1.11
+       gap1              0.000702
+       gap2                  1108
+        xti                     3
+        cta                     0
+        ctp                     0
+        tpb                     0
+       tphp                     0
+       jtun                     0
+     jtunsw                     0
+       ntun                    30
+     xtitun                     3
+        keg                     1
+         kf                     0
+         af                     1
+         fc                   0.5
+        fcs                   0.5
+         bv                     0
+        ibv                 0.001
+        tcv                     0
+        isr                 1e-14
+         nr                     2
+         vp                     0
+     fv_max                 1e+99
+     bv_max                 1e+99
+     id_max                 1e+99
+     te_max                 1e+99
+     pd_max                 1e+99
+       rth0                     0
+       cth0                 1e-05
+         lm                     0
+         lp                     0
+         wm                     0
+         wp                     0
+        xom                 10000
+        xoi                 10000
+         xm                     0
+         xp                     0
+         xw                     0
+
+ Resistor models (Simple linear resistor)
+      model                     R
+
+        rsh                     0
+     narrow                     0
+      short                     0
+        tc1                     0
+        tc2                     0
+        tce                     0
+       defw                 1e-05
+          l                 1e-05
+         kf                     0
+         af                     0
+          r                     0
+     bv_max                 1e+99
+         lf                     1
+         wf                     1
+         ef                     1
+
+ Diode: Junction Diode model
+     device                    d1
+      model                 us1gd
+    thermal                     0
+         vd              0.837677
+         id               1.16233
+         gd               44.9385
+         cd                     0
+
+ Resistor: Simple linear resistor
+     device                    rf
+      model                     R
+ resistance                     1
+         ac                     1
+      dtemp                     0
+     bv_max                 1e+99
+      noisy                     1
+          i               1.16232
+          p               1.35099
+
+ Vsource: Independent voltage source
+     device                    vf
+         dc                     2
+      acmag                     0
+      pulse                     -
+        sin                     -
+        exp                     -
+        pwl                     -
+       sffm                     -
+         am                     -
+    trnoise                     -
+   trrandom                     -
+    portnum                     0
+         z0                     0
+        pwr                     0
+       freq                     0
+      phase                     0
+          i              -1.16232
+          p              -2.32465
+
+
+Total analysis time (seconds) = 0.0001088
+
+Total elapsed time (seconds) = 0.005 
+
+Total DRAM available = 23853.332 MB.
+DRAM currently available = 5522.727 MB.
+Maximum ngspice program size =   10.348 MB.
+Current ngspice program size =   10.348 MB.
+

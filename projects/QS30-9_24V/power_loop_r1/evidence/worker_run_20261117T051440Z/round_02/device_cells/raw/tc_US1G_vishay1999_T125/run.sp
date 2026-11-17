@@ -1,0 +1,14 @@
+* TC probe: Vf at 1 A vs TEMP (model self-consistency)
+.include us1g_vishay1999.models
+.model US1GD D
+.temp 125
+Vf VFP 0 2
+Rf VFP NVAP 1
+D1 NVAP 0 US1GD
+.op
+
+.control
+run
+print v(NVAP)
+.endc
+.end

@@ -1,0 +1,18 @@
+{
+  "LT_25C": [
+    {
+      "step_ns": 5,
+      "Qg_C": 1.1500268930870022e-08,
+      "nominal15nC_fit_error_fraction": -0.23331540460866518,
+      "preregister_20percent_fit_pass": false
+    },
+    {
+      "step_ns": 2.5,
+      "Qg_C": 1.1500352831299739e-08,
+      "nominal15nC_fit_error_fraction": -0.23330981124668404,
+      "preregister_20percent_fit_pass": false
+    }
+  ],
+  "NG_25C": "gate failed to reach10V by40us, after supplying roughly39nC minus resistor leakage; not portable",
+  "decision": "DO_NOT_ADOPT_SiHP8N50D_IN_NG_OR_LTSYSTEM. LT charge11.5nC also misses preregistered15nC+/-20percent nominal fit. Model characterization requirements are not component guaranteed limits."
+}

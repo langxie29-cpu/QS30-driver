@@ -1,0 +1,8 @@
+{
+  "classification": "EXECUTION_FAIL",
+  "scope": "binary decoder/tool fixture, not circuit",
+  "observed_error": "ValueError: Nonmonotonic binary time",
+  "cause": "LTspice second-order compressed binary time encodes some points with negative signs; strict reader rejects it. First fixture omitted plotwinsize=0.",
+  "action": "Preserve original compressed raw; execute separate uncompressed fixture and compare with actual ASCII trace.",
+  "source": "https://spicelib.readthedocs.io/en/stable/classes/raw_read.html"
+}

@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "input_files_checked": 2580,
+  "changed_files": [
+    "projects/QS30-9_24V/README.md",
+    "projects/QS30-9_24V/docs/learning/README.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-ELEC-02.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-NUM-01.md",
+    "projects/QS30-9_24V/docs/learning/Vol_II/E-NXT-24V-07.md"
+  ],
+  "expected_changed": [
+    "projects/QS30-9_24V/README.md",
+    "projects/QS30-9_24V/docs/learning/README.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-ELEC-02.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-NUM-01.md",
+    "projects/QS30-9_24V/docs/learning/Vol_II/E-NXT-24V-07.md"
+  ],
+  "unexpected_changed": [],
+  "missing_files": [],
+  "root_concurrent_metadata_preserved": true,
+  "old_learning_snapshots": [
+    {
+      "file": "README.md",
+      "matches_input": true
+    },
+    {
+      "file": "Vol_I/T-ELEC-02.md",
+      "matches_input": true
+    },
+    {
+      "file": "Vol_I/T-NUM-01.md",
+      "matches_input": true
+    },
+    {
+      "file": "Vol_II/E-NXT-24V-07.md",
+      "matches_input": true
+    }
+  ],
+  "model_copies_checked": 26,
+  "unexpected_model_changes": [],
+  "intentional_TT_diagnostic_copies": [
+    {
+      "file": "sim\\s06f_late_events_v1\\TT0_DIAGNOSTIC_gear_0.125ns\\diode.lib",
+      "only_TT_changed": true
+    },
+    {
+      "file": "sim\\s06f_late_events_v1\\TT0_DIAGNOSTIC_gear_0.25ns\\diode.lib",
+      "only_TT_changed": true
+    },
+    {
+      "file": "sim\\s06f_diode_units_v1\\TT0_DIAGNOSTIC\\diode.lib",
+      "only_TT_changed": true
+    }
+  ],
+  "original_topology_netlists_checked": 6,
+  "unexpected_topology_changes": [],
+  "markdown_sources_checked": 12,
+  "broken_links": [],
+  "AST_checked": [
+    "s06f_analyze.py",
+    "s06f_diode_units.py",
+    "s06f_run.py",
+    "s06f_sources.py",
+    "s06f_state_audit.py",
+    "s06f_verify.py"
+  ],
+  "process_attempts": 9,
+  "RL_tool_attempts": 1,
+  "coupled_power_attempts": 6,
+  "independent_diode_attempts": 2,
+  "execution_PASS": 5,
+  "execution_FAIL": 4,
+  "independent_diode_fixture_conditions": [
+    {
+      "name": "original",
+      "result": "PASS"
+    },
+    {
+      "name": "TT0_DIAGNOSTIC",
+      "result": "FAIL"
+    }
+  ],
+  "observability": [
+    {
+      "name": "original_gear_0.5ns",
+      "result": "PASS"
+    },
+    {
+      "name": "original_gear_0.25ns",
+      "result": "PASS"
+    },
+    {
+      "name": "original_gear_0.125ns",
+      "result": "NOT_EVALUATED_EXECUTION_FAILURE"
+    },
+    {
+      "name": "original_trap_0.125ns",
+      "result": "NOT_EVALUATED_EXECUTION_FAILURE"
+    },
+    {
+      "name": "TT0_DIAGNOSTIC_gear_0.25ns",
+      "result": "NOT_EVALUATED_EXECUTION_FAILURE"
+    },
+    {
+      "name": "TT0_DIAGNOSTIC_gear_0.125ns",
+      "result": "NOT_EVALUATED_EXECUTION_FAILURE"
+    }
+  ],
+  "parser_check": {
+    "names_identical": true,
+    "values_identical": true,
+    "source": "sim\\s06e_events_v1\\tool_divider\\circuit.raw",
+    "new_simulations": 0
+  },
+  "analytical_integral_checks": "PASS_TWO_ANALYTIC_SIGN_CASES",
+  "scalar_checks": {
+    "charge_exercise_C": 2e-09,
+    "capacitor_100V_charge_C": 1e-08,
+    "capacitor_100V_energy_J": 5e-07,
+    "capacitor_195V_energy_J": 1.90125e-06,
+    "IL_5mA_at62mohm_V": 0.00031
+  },
+  "research_comparisons": {
+    "original_gear_0.5ns__original_gear_0.25ns": "FAIL",
+    "original_gear_0.25ns__original_gear_0.125ns": "INCONCLUSIVE",
+    "original_gear_0.125ns__original_trap_0.125ns": "INCONCLUSIVE",
+    "TT0_DIAGNOSTIC_gear_0.25ns__TT0_DIAGNOSTIC_gear_0.125ns": "INCONCLUSIVE"
+  },
+  "model_intervention_scope": "TT0 copies are NOT actual components or selected models",
+  "HEAD_before": "ee53f81c3f93539906445482bd17e564829338ef",
+  "HEAD_after": "ee53f81c3f93539906445482bd17e564829338ef",
+  "branch_before": "nxt/reva9-electrical-sprint03",
+  "branch_after": "nxt/reva9-electrical-sprint03",
+  "native_generated": false,
+  "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD",
+  "verification_PASS": true
+}

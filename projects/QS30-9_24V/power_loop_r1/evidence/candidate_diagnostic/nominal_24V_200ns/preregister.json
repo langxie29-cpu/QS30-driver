@@ -1,0 +1,35 @@
+{
+  "scope": "Exploratory 25C linear-magnetics cold-start diagnostic, NOT 24V-07/08 release or M2 signoff",
+  "vin_V": 24,
+  "source_ramp_s": 0.001,
+  "source_series_ohm": 0.1,
+  "maxstep_s": 2e-07,
+  "stop_s": 0.06,
+  "timeout_s": 120,
+  "model_hashes": {
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634"
+  },
+  "supply": "AUX12 is an external explicit fixture rail, not a qualified AUX converter model",
+  "load": "5200ohm + actual two bleeder strings + LT feedback; about6.02W at170V covers revised5.90042W budget as a resistive capacity screen, not actual 9-tube negative resistance/load steps",
+  "startup": "UIC with all capacitors zero, no ideal HV source, no forced PWM, no forced SS/VC; 1ms input/AUX ramp",
+  "limitations": [
+    "150uH/DCR.16 is a linear25C candidate; hot L(I,T), saturation, core losses missing",
+    "2ohm SS14 clamp branch is an explicitly isolated damping hypothesis; not inherited gate qualification",
+    "Gate high-frequency convergence and current-limit delay remain unqualified",
+    "Feedback/compensation values are research hypotheses, not design release"
+  ],
+  "fixed_acceptance": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "startup_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195
+  }
+}

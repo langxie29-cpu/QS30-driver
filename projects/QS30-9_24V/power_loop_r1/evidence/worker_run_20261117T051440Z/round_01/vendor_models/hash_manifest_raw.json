@@ -1,0 +1,968 @@
+{
+  "task_id": "vendor_models",
+  "generated_by": "extract_and_hash.py",
+  "extraction_note": "vendor_bytes/* contain byte-identical payloads read out of the signed ADI distribution archives with Python zipfile; no model text was edited, re-encoded or reformatted.",
+  "lt3757a_extracted": [
+    {
+      "archive": "lib.zip",
+      "archive_sha256": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+      "member": "lib/sub/LT3757A.sub",
+      "out_file": "vendor_bytes/LT3757A.sub",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "bytes": 2572,
+      "zip_crc32": "1d44a014",
+      "zip_date_time": "2022-05-03T14:36:04",
+      "rewritten": false,
+      "roundtrip_identical": true
+    },
+    {
+      "archive": "lib.zip",
+      "archive_sha256": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+      "member": "lib/sym/PowerProducts/LT3757A.asy",
+      "out_file": "vendor_bytes/LT3757A.asy",
+      "sha256": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+      "bytes": 948,
+      "zip_crc32": "fbdb5582",
+      "zip_date_time": "2022-05-03T14:36:18",
+      "rewritten": false,
+      "roundtrip_identical": true
+    },
+    {
+      "archive": "examples.zip",
+      "archive_sha256": "319ac0e9adcce7e156aa47050a659919dbd901f1e82ab42fdb156bcefcd54ad6",
+      "member": "examples/Applications/LT3757A.asc",
+      "out_file": "vendor_bytes/LT3757A.asc",
+      "sha256": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+      "bytes": 2890,
+      "zip_crc32": "3ae68b0d",
+      "zip_date_time": "2022-05-03T14:35:42",
+      "rewritten": false,
+      "roundtrip_identical": true
+    }
+  ],
+  "records": [
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice64.msi (ADI signed distribution installer)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/LTspice64.msi",
+      "sha256": "62a9f20b630738e6ade20a37551baa91b20760bfb718807d8a2be4caa3421a36",
+      "bytes": 82139136
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "toolchain/ltspice26/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/source.json",
+      "sha256": "470d4958374b00a2b42aaea4f23d70c36b92138dd86f6ae092599af382a3792e",
+      "bytes": 379
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice lib.zip (ADI signed distribution)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/lib.zip",
+      "sha256": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+      "bytes": 39443916
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice examples.zip (ADI signed distribution)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/examples.zip",
+      "sha256": "319ac0e9adcce7e156aa47050a659919dbd901f1e82ab42fdb156bcefcd54ad6",
+      "bytes": 3549504
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice License.txt",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/License.txt",
+      "sha256": "a3c9a713f97ee80f5731b7f13b00ad87f69a17fe505a8ad837dc6ff66c391c4e",
+      "bytes": 35447
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice License.pdf",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/License.pdf",
+      "sha256": "58707e8d922bc3af15aa8c31569920ff1f938f8fcb9c95ff409e0d09c2c0e37c",
+      "bytes": 100985
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice.exe v24.0.12.0",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/LTspice.exe",
+      "sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+      "bytes": 45461040
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspiceChangeLog.txt",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/LTspiceChangeLog.txt",
+      "sha256": "cbebaa679515acba0bda22d69feb31c5df9b87dda480e4f71411023c264b64e5",
+      "bytes": 5525
+    },
+    {
+      "kind": "ltspice_distribution",
+      "name": "LTspice.json (updater metadata)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/LTspice.json",
+      "sha256": "b04c5e890ef101b5a40f5c39a9f58a759355d915d10f9448bba74cd94c6ad368",
+      "bytes": 535
+    },
+    {
+      "kind": "lt3757a_native",
+      "name": "LT3757A lib/sub/LT3757A.sub",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/lib.zip",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "bytes": 2572,
+      "archive_member": "lib/sub/LT3757A.sub"
+    },
+    {
+      "kind": "lt3757a_native",
+      "name": "LT3757A lib/sym/PowerProducts/LT3757A.asy",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/lib.zip",
+      "sha256": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+      "bytes": 948,
+      "archive_member": "lib/sym/PowerProducts/LT3757A.asy"
+    },
+    {
+      "kind": "lt3757a_native",
+      "name": "LT3757A examples/Applications/LT3757A.asc",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/toolchain/ltspice26/extracted/examples.zip",
+      "sha256": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+      "bytes": 2890,
+      "archive_member": "examples/Applications/LT3757A.asc"
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "LT3757A.sub (historical bundled copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/LT3757A_bundled/LT3757A.sub",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "bytes": 2572
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "LT3757A.asy (historical bundled copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/LT3757A_bundled/LT3757A.asy",
+      "sha256": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+      "bytes": 948
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "LT3757A_bundled/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/LT3757A_bundled/source.json",
+      "sha256": "25bca497c8cf954053bd98603276567f9055642a5178d014f58549a8ba90a714",
+      "bytes": 374
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "LT3757-3757A datasheet PDF (ADI)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/LT3757A_datasheet_retry/original.pdf",
+      "sha256": "a50e40555a5ca7a014a95502d48ac22008f38fa96e4ff81de1f023c109fd3c5f",
+      "bytes": 1721344
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "LT3757A_datasheet_retry/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/LT3757A_datasheet_retry/source.json",
+      "sha256": "44d6dc086e5790fb9be71571592af8b3d8deb1a73f6851a962d0899ca596a72f",
+      "bytes": 473
+    },
+    {
+      "kind": "lt3757a_historical",
+      "name": "manifest_controller_additions.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/manifest_controller_additions.json",
+      "sha256": "6c3b3354ceaea30297b2bdf7aab9929e7d7034df73303a76fa9acd86318d3908",
+      "bytes": 930
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 PSpice zip (slum033)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC28C43_pspice/UCC28C43_pspice.zip",
+      "sha256": "5eda3f5a976ed60ba206d264669d57b70ca1d443e4ede2ea80eb999c44e3b878",
+      "bytes": 103944
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "ucc28c43.lib",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC28C43_pspice/unpacked/UCC28C43_PSPICE_07NOV2008/UCC28C43_PSPICE_TRANS/ucc28c43.lib",
+      "sha256": "546fab4c7b9208394122f7f4e886496d15e2811af37b4e32cb9edff2eddeaadd",
+      "bytes": 43796
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 TINA zip (slum178)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC28C43_startup/UCC28C43_startup.zip",
+      "sha256": "05979bf1f5bb7e99ae56b04686e440e459a4e9ff2b4eff422420def9c2b7e183",
+      "bytes": 10985
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43_START.LIB (TINA)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC28C43_startup/unpacked/UCC28C43_TINA_TRANS/UCC28C43_START.LIB",
+      "sha256": "7b00c5326308d7203d75fa0e77870ed0dd2482305199f88eff67682827d9526a",
+      "bytes": 4846
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCCx8C43 unencrypted PSpice zip",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCCx8C43_unencrypted/UCCx8C43_unencrypted.zip",
+      "sha256": "e246d10eb469cfc46d2fe5ffe19e4f304cfca19bf0ccab92934a0a8d2a456379",
+      "bytes": 5008
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "ucc28c43_trans_unencrypted.lib",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCCx8C43_unencrypted/unpacked/UCC28C43_PSPICE_TRANS_UNENCR_18FEB2016/ucc28c43_trans_unencrypted.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+      "bytes": 13956
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "sources/sprint06/manifest.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/manifest.json",
+      "sha256": "ceca24e60b4eba626ceda363127a32051d41d6527e1da230e7fe7ea302dd55c8",
+      "bytes": 7490
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC27511 unencrypted zip (TI)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC27511_unencrypted/UCC27511_unencrypted.zip",
+      "sha256": "c8d98ceb27b482e9c280a1e48d521521e8804f01220f4ebc1e8cefe65b129c30",
+      "bytes": 2931
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC27511_TRANS.LIB (TI, line 57 syntactically broken)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/UCC27511_unencrypted/unpacked/UCC27511_TRANS.LIB",
+      "sha256": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6",
+      "bytes": 7481
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC27511 datasheet PDF (safety_r1)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/safety_r1/sources/UCC27511DBVR.pdf",
+      "sha256": "781cc451dbb371a4137337a4bdecbe11a9f1ff8979a11e238e97d8a80a287b31",
+      "bytes": 1183094
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 datasheet PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/UCC28C43.pdf",
+      "sha256": "737b5e05fe02b31b6cef88a0e57a6d2ee08818cff8f7d683f468d83737cbdf43",
+      "bytes": 3682266
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 datasheet text",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/UCC28C43.txt",
+      "sha256": "d571e2d4e40d970f27970d649a123be4079355721b4415fa95cddc8126ae51e0",
+      "bytes": 244680
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43DR datasheet PDF (safety_r1)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/safety_r1/sources/UCC28C43DR.pdf",
+      "sha256": "737b5e05fe02b31b6cef88a0e57a6d2ee08818cff8f7d683f468d83737cbdf43",
+      "bytes": 3682266
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 PSpice zip (historical copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06/UCC28C43_pspice/UCC28C43_pspice.zip",
+      "sha256": "5eda3f5a976ed60ba206d264669d57b70ca1d443e4ede2ea80eb999c44e3b878",
+      "bytes": 103944
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCCx8C43 unencrypted zip (historical copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06/UCCx8C43_unencrypted/UCCx8C43_unencrypted.zip",
+      "sha256": "e246d10eb469cfc46d2fe5ffe19e4f304cfca19bf0ccab92934a0a8d2a456379",
+      "bytes": 5008
+    },
+    {
+      "kind": "ucc28c43",
+      "name": "UCC28C43 TINA zip (historical copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06/UCC28C43_startup/UCC28C43_startup.zip",
+      "sha256": "05979bf1f5bb7e99ae56b04686e440e459a4e9ff2b4eff422420def9c2b7e183",
+      "bytes": 10985
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D vendor model zip",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_model/original.zip",
+      "sha256": "92375b97b278a5cfc2b2ea5aafc041d72e336c8bf82c6c6fc40f5bb5da957d79",
+      "bytes": 65110
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_PS_Rev_B.LIB",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_model/unpacked/SiHP8N50D_PS_Rev_B.LIB",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd",
+      "bytes": 1717
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_PS_RC_Rev_B.lib (Coss/thermal)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_model/unpacked/SiHP8N50D_PS_RC_Rev_B.lib",
+      "sha256": "1980c0ed2aef9bc5740acc9a9548a4e7e15422fb8e0daa9769c2c96f0fb3a40f",
+      "bytes": 5312
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_HS_Rev_B.TXT (switching loss)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_model/unpacked/SiHP8N50D_HS_Rev_B.TXT",
+      "sha256": "523fb2ac430f4eb216e562dd179e4a03614a6b81074576a40fef3af6881e2527",
+      "bytes": 1687
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D model guide PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_modelguide/original.pdf",
+      "sha256": "f7849a9fba509deec48ede3f9acc8ab49b93467a7d59434522a708139160414a",
+      "bytes": 78417
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D datasheet PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_datasheet/original.pdf",
+      "sha256": "c123070adfec5cfc8f49dfe9cc720604f44e198c147d4938947aec922fc206e9",
+      "bytes": 148351
+    },
+    {
+      "kind": "device",
+      "name": "manifest_vishay.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/manifest_vishay.json",
+      "sha256": "63f53e248427d575b169365f968618fe4dab47901d5680a503828a23d1e85926",
+      "bytes": 1493
+    },
+    {
+      "kind": "device",
+      "name": "STP9NK50Z model zip (ST model_cn)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/ST_model_cn/ST_model_cn.zip",
+      "sha256": "cfadc150d156c8ad47446116a44a705db12298c2ffa309a0007db892400b4494",
+      "bytes": 950
+    },
+    {
+      "kind": "device",
+      "name": "stp9nk50z.lib",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/ST_model_cn/unpacked/stp9nk50z.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+      "bytes": 2657
+    },
+    {
+      "kind": "device",
+      "name": "sources/sprint06b/manifest.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/manifest.json",
+      "sha256": "31020c96b48b4de4e30a1bd9f9f21285c667aa4884f55a087539186f5e76dc4f",
+      "bytes": 2104
+    },
+    {
+      "kind": "device",
+      "name": "STP7N65M2 datasheet PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/STP7N65M2_datasheet/original.pdf",
+      "sha256": "9d02d61edfa4b28bbb9d133bec38953bb5f43629890174c4e30f2a3e50936a72",
+      "bytes": 897037
+    },
+    {
+      "kind": "device",
+      "name": "STP7N65M2 model source.json (url1)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/STP7N65M2_model_url1/source.json",
+      "sha256": "773e0c3d797023d3ee5dd356870b2673c4622bc006c9fcf5ccd4862b86a8de05",
+      "bytes": 267
+    },
+    {
+      "kind": "device",
+      "name": "STP7N65M2 model source.json (url2)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/STP7N65M2_model_url2/source.json",
+      "sha256": "bc223ec6aec91d5651cfd8213fb10d70ee9976f7b3d966f7fabcb6ef0673baa5",
+      "bytes": 273
+    },
+    {
+      "kind": "device",
+      "name": "sources/sprint06c/manifest.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/manifest.json",
+      "sha256": "4ca6c8ec9bb1dbe90979e88ff4ca1157958ebf759c9e62285938ba653d9bc9da",
+      "bytes": 1576
+    },
+    {
+      "kind": "device",
+      "name": "IPP60R360P7 datasheet PDF (Infineon)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/IPP60R360P7_datasheet/original.pdf",
+      "sha256": "a2aa2f496e280ad85470120a8e77516a6f9ff5b631da3d497d178a0b02be28cc",
+      "bytes": 1730429
+    },
+    {
+      "kind": "device",
+      "name": "Infineon_product.html (0 bytes)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/Infineon_product.html",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_datasheet/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_datasheet/source.json",
+      "sha256": "7f25079abc88593e8e20d4d794b03480fb4336b30f90b8a51a8c9abb85e45596",
+      "bytes": 325
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_model/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_model/source.json",
+      "sha256": "1c821bf7489752d1230ff10e8b4962e8f33326d2054c28b44a9712a9dc52f1e5",
+      "bytes": 340
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D thermal RC PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_thermal/original.pdf",
+      "sha256": "f943fb2af5bd1efcb3bd01dc2bffa78942e9c0ca679dba184ddeec20250503d5",
+      "bytes": 47136
+    },
+    {
+      "kind": "device",
+      "name": "SiHP8N50D_thermal/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/SiHP8N50D_thermal/source.json",
+      "sha256": "72fc7660589de1336714fed6b58f2e0e5994efeb1ba54d9557619989d6487c5c",
+      "bytes": 330
+    },
+    {
+      "kind": "device",
+      "name": "SS14 vendor lib (historical)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/SS14/original.lib",
+      "sha256": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "bytes": 510
+    },
+    {
+      "kind": "device",
+      "name": "SS14 source.json (historical)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V/sources/sprint06c/SS14/source.json",
+      "sha256": "a614c670b24372cf37e5a4fb87138382a37f9f29490d8ffdf567678dda56f2c1",
+      "bytes": 246
+    },
+    {
+      "kind": "device",
+      "name": "Vishay US1G source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/Vishay_US1G/source.json",
+      "sha256": "cb892ceeffe30308d0eb4ca348c5b4df4f70fc0d0529c3e438413ca8f4a46a9b",
+      "bytes": 214
+    },
+    {
+      "kind": "device",
+      "name": "us1g.txt (Vishay US1 design page text)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/Vishay_US1G/us1g.txt",
+      "sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "bytes": 510
+    },
+    {
+      "kind": "device",
+      "name": "Diodes_US1G.txt",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/Diodes_US1G/Diodes_US1G.txt",
+      "sha256": "18a58e53f53348a8c5a106d6441a658860700617c23583f0567a5e01a50b8d33",
+      "bytes": 1410
+    },
+    {
+      "kind": "device",
+      "name": "sources/sprint06b/manifest.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/manifest.json",
+      "sha256": "31020c96b48b4de4e30a1bd9f9f21285c667aa4884f55a087539186f5e76dc4f",
+      "bytes": 2104
+    },
+    {
+      "kind": "device",
+      "name": "sources/sprint06b/interface_sources.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/interface_sources.json",
+      "sha256": "cb2de5a84c12f9e46b9cdb75ebc7fc058dc77776781dce5a8ebf5798318646ad",
+      "bytes": 1107
+    },
+    {
+      "kind": "device",
+      "name": "US1 datasheet PDF (Vishay)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/US1.pdf",
+      "sha256": "b515f5339da631a3fc59493afa1bb3cc4fb6ec77d0b12b1a5fb613074be22dc5",
+      "bytes": 114769
+    },
+    {
+      "kind": "device",
+      "name": "sprint06c controller additions (historical only)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06c/manifest_controller_additions.json",
+      "sha256": null,
+      "bytes": null,
+      "missing": true
+    },
+    {
+      "kind": "inductor",
+      "name": "Coilcraft MSS1260 series PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/MSS1260.pdf",
+      "sha256": "78be0158e52b6834be22069ec39c756967553e80eb89e5fa268b2c05352d13bf",
+      "bytes": 303467
+    },
+    {
+      "kind": "inductor",
+      "name": "Coilcraft MSS1260 text",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/MSS1260.txt",
+      "sha256": "285fe8b9bd5d9b55169f13fea1b4dc91ee54469653d8e63ad09db3328e719964",
+      "bytes": 12819
+    },
+    {
+      "kind": "inductor",
+      "name": "Coilcraft MSS1583 series PDF",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/MSS1583.pdf",
+      "sha256": null,
+      "bytes": null,
+      "missing": true
+    },
+    {
+      "kind": "inductor",
+      "name": "Coilcraft MSS1583 text",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/MSS1583.txt",
+      "sha256": null,
+      "bytes": null,
+      "missing": true
+    },
+    {
+      "kind": "inductor",
+      "name": "MSS1583 PDF (sprint06 copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06/MSS1583/MSS1583.pdf",
+      "sha256": "dba193babcbf95881cc8995479ca6e99bb7ad9a431f2d6e8ce8a893cf2802d3f",
+      "bytes": 187777
+    },
+    {
+      "kind": "inductor",
+      "name": "MSS1583 PDF (sprint06b current copy)",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/MSS1583_current/original.pdf",
+      "sha256": "dba193babcbf95881cc8995479ca6e99bb7ad9a431f2d6e8ce8a893cf2802d3f",
+      "bytes": 187777
+    },
+    {
+      "kind": "inductor",
+      "name": "MSS1583_current/source.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/MSS1583_current/source.json",
+      "sha256": "a651725795bff79d087202849878bd9503dd1f39f8433cabd183e2d5a3d36a25",
+      "bytes": 334
+    },
+    {
+      "kind": "inductor",
+      "name": "sources/manifest.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/manifest.json",
+      "sha256": "da5a1f470ec1687fe889322ea24d7db1c4b77a4051a753ae08bcccad591ec5a7",
+      "bytes": 4345
+    },
+    {
+      "kind": "inductor",
+      "name": "sources/sprint06b/interface_sources.json",
+      "source_path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sources/sprint06b/interface_sources.json",
+      "sha256": "cb2de5a84c12f9e46b9cdb75ebc7fc058dc77776781dce5a8ebf5798318646ad",
+      "bytes": 1107
+    },
+    {
+      "kind": "simulator",
+      "name": "ngspice_con.exe",
+      "source_path": "D:/PROJECTS/dsharness/QS30-1/tools/ngspice47/Spice64/bin/ngspice_con.exe",
+      "sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "bytes": 7641600
+    }
+  ],
+  "historical_sim_vendor_lib_copies": [
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_buffered_gate_v1/cs_gate_buffered_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_buffered_gate_v1/cs_gate_buffered_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/cs_step_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/cs_step_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/osc_buffer1meg_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/osc_load10k_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/osc_nominal_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/osc_nominal_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v1/uvlo_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/cs_gate64nc_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/cs_gate64nc_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/cs_step_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/cs_step_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/osc_buffer1meg_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/osc_load10k_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/osc_nominal_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/osc_nominal_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_controller_v2/uvlo_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_gate_v3/cs_gate64nc_10ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06_gate_v3/cs_gate64nc_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_device_cells_v1/ST_DC_VGS10_Id3p6/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_device_cells_v1/ST_gate_ideal_OP/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_device_cells_v1/ST_gate_ideal_ramp_UIC/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_device_cells_v1/Vishay_US1G_DC1A/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_device_cells_v1/Vishay_US1G_reverse195/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_diagnostic_v1/integrated_input100ohm/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_diagnostic_v1/integrated_replay5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_diagnostic_v1/integrated_STEADY_diagnostic/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_engine_compare_v1/klu_integrated/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_engine_compare_v1/shared_integrated/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_engine_compare_v2/shared_integrated/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_engine_compare_v3/shared_integrated/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_engine_compare_v4/shared_integrated/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_input_filter_v1/nativeGB6_2.5ns/vendor.lib",
+      "sha256": "ace0948d814c42209c08263f456b15a4107c0823e549f66329916cb77a444342"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_input_filter_v1/nativeGB6_5ns/vendor.lib",
+      "sha256": "ace0948d814c42209c08263f456b15a4107c0823e549f66329916cb77a444342"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_input_filter_v1/vendor_2.5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_input_filter_v1/vendor_5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_native_abm_v1/controller_nativeGB6/vendor.lib",
+      "sha256": "ace0948d814c42209c08263f456b15a4107c0823e549f66329916cb77a444342"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_native_abm_v1/integrated_nativeGB6_2p5ns/vendor.lib",
+      "sha256": "ace0948d814c42209c08263f456b15a4107c0823e549f66329916cb77a444342"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_native_abm_v1/integrated_nativeGB6_5ns/vendor.lib",
+      "sha256": "ace0948d814c42209c08263f456b15a4107c0823e549f66329916cb77a444342"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_port_equivalent_v1/2.5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_port_equivalent_v1/5ns/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_port_load_v1/100p/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_port_load_v1/1n/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_port_load_v1/1p/vendor.lib",
+      "sha256": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R15_V11.4_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R15_V11.4_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R15_V12.6_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R15_V12.6_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R22_V11.4_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R22_V11.4_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R22_V12.6_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06b_real_gate_v1/R22_V12.6_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v1/100C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v1/100C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v1/25C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v1/25C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v2/100C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v2/100C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v2/25C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v2/25C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v3/100C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v3/100C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v3/25C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_gate_charge_v3/25C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/ST_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/ST_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/Vishay_Qg_100C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/Vishay_Qg_100C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/Vishay_Qg_25C_2.5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_lt_compare_v1/Vishay_Qg_25C_5ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/native_E123_1ns/st.lib",
+      "sha256": "90907f750855043c66c01b26b28b1a4bdd6983d4632f5fffdc4525adc2b250b5"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/native_E123_2ns/st.lib",
+      "sha256": "90907f750855043c66c01b26b28b1a4bdd6983d4632f5fffdc4525adc2b250b5"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/native_POLY_1ns/st.lib",
+      "sha256": "166bff3bf7cd6bd1496144e8c112ddc50cd1b6393ace5b10086bb0d42c3d5337"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/native_POLY_2ns/st.lib",
+      "sha256": "166bff3bf7cd6bd1496144e8c112ddc50cd1b6393ace5b10086bb0d42c3d5337"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/original_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/original_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/shared46_original_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/shared46_original_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/trap_original_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_compat_v1/trap_original_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/native_E123_0.5ns/st.lib",
+      "sha256": "90907f750855043c66c01b26b28b1a4bdd6983d4632f5fffdc4525adc2b250b5"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/native_E123_1ns/st.lib",
+      "sha256": "90907f750855043c66c01b26b28b1a4bdd6983d4632f5fffdc4525adc2b250b5"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/native_E123_2ns/st.lib",
+      "sha256": "90907f750855043c66c01b26b28b1a4bdd6983d4632f5fffdc4525adc2b250b5"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/original_0.5ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/original_1ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_st_precision_v1/original_2ns/st.lib",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/gate_100C_1ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/gate_100C_2ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/gate_25C_1ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/gate_25C_2ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/static_100C_0ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_cells_v1/static_25C_0ns/vendor.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/100C_V12.6_1ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/100C_V12.6_2ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/100C_V12_1ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/100C_V12_2ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/25C_V12.6_1ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/25C_V12.6_2ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/25C_V12_1ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    },
+    {
+      "path": "D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/sim/s06c_vishay_direct_v1/25C_V12_2ns/st.lib",
+      "sha256": "70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd"
+    }
+  ]
+}

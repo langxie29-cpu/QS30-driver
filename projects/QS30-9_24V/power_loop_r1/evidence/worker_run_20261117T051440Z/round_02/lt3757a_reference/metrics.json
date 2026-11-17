@@ -1,0 +1,365 @@
+{
+  "task_id": "lt3757a_reference",
+  "scope": "UNMODIFIED ADI LT3757A reference replay (vendor 12V -> low-voltage boost demo). This is NOT the QS30 170V design and cannot be read as 164.9-175.1V acceptance.",
+  "solver": "LTspice 24.0.12.0 (native, solver = Normal, method = modified trap), -b -ascii",
+  "cases": {
+    "R0_vendor_unmodified_tran": {
+      "case": "R0_vendor_unmodified_tran",
+      "raw": "R0_original_tran.raw",
+      "samples": 1117,
+      "endpoint_s": 0.0015,
+      "t_first_s": 0.0,
+      "dt_min": 9.10222146910176e-12,
+      "dt_max": 1.4648437500009229e-06,
+      "compressed_solver_points": true,
+      "Vout_initial": 1.745641287586435e-40,
+      "Vout_peak": 8.845813213925565e-05,
+      "Vout_end": 8.845813213925565e-05,
+      "Vout_final_window": {
+        "mean": 7.957548738684513e-05,
+        "minimum": 7.069068438538815e-05,
+        "maximum": 8.845813213925565e-05,
+        "pp": 1.7767447753867492e-05,
+        "window": [
+          0.0012000000000000001,
+          0.0015
+        ],
+        "samples_in_window": 206
+      },
+      "IL_initial": -2.862971005126796e-26,
+      "IL_peak": 0.001776297249325574,
+      "IL_min": -2.862971005126796e-26,
+      "IL_peak_A": 0.001776297249325574,
+      "IL_min_A": -2.862971005126796e-26,
+      "t_at_Vout_peak_s": 0.0015,
+      "t_at_IL_peak_s": 0.0015,
+      "V_SW_peak": 3.335147726088953e-05,
+      "V_SW_min": 1.134557410306704e-09,
+      "V_Lnode_peak": 0.113887807113258,
+      "t_first_Vout_above_1V_s": null,
+      "t_first_Vout_above_20V_s": null
+    },
+    "A_original_plus_plotwinsize0": {
+      "case": "A_original_plus_plotwinsize0",
+      "raw": "A_tran_nocompress.raw",
+      "samples": 1117,
+      "endpoint_s": 0.0015,
+      "t_first_s": 0.0,
+      "dt_min": 9.10222146910176e-12,
+      "dt_max": 1.4648437500009229e-06,
+      "compressed_solver_points": true,
+      "Vout_initial": 1.745641287586435e-40,
+      "Vout_peak": 8.845813213925565e-05,
+      "Vout_end": 8.845813213925565e-05,
+      "Vout_final_window": {
+        "mean": 7.957548738684513e-05,
+        "minimum": 7.069068438538815e-05,
+        "maximum": 8.845813213925565e-05,
+        "pp": 1.7767447753867492e-05,
+        "window": [
+          0.0012000000000000001,
+          0.0015
+        ],
+        "samples_in_window": 206
+      },
+      "IL_initial": -2.862971005126796e-26,
+      "IL_peak": 0.001776297249325574,
+      "IL_min": -2.862971005126796e-26,
+      "IL_peak_A": 0.001776297249325574,
+      "IL_min_A": -2.862971005126796e-26,
+      "t_at_Vout_peak_s": 0.0015,
+      "t_at_IL_peak_s": 0.0015,
+      "V_SW_peak": 3.335147726088953e-05,
+      "V_SW_min": 1.134557410306704e-09,
+      "V_Lnode_peak": 0.113887807113258,
+      "t_first_Vout_above_1V_s": null,
+      "t_first_Vout_above_20V_s": null
+    },
+    "B_original_plus_op": {
+      "case": "B_original_plus_op",
+      "raw": "B_op.raw",
+      "samples": 1117,
+      "endpoint_s": 0.0015,
+      "t_first_s": 0.0,
+      "dt_min": 9.10222146910176e-12,
+      "dt_max": 1.4648437500009229e-06,
+      "compressed_solver_points": true,
+      "Vout_initial": 1.745641287586435e-40,
+      "Vout_peak": 8.845813213925565e-05,
+      "Vout_end": 8.845813213925565e-05,
+      "Vout_final_window": {
+        "mean": 7.957548738684513e-05,
+        "minimum": 7.069068438538815e-05,
+        "maximum": 8.845813213925565e-05,
+        "pp": 1.7767447753867492e-05,
+        "window": [
+          0.0012000000000000001,
+          0.0015
+        ],
+        "samples_in_window": 206
+      },
+      "IL_initial": -2.862971005126796e-26,
+      "IL_peak": 0.001776297249325574,
+      "IL_min": -2.862971005126796e-26,
+      "IL_peak_A": 0.001776297249325574,
+      "IL_min_A": -2.862971005126796e-26,
+      "t_at_Vout_peak_s": 0.0015,
+      "t_at_IL_peak_s": 0.0015,
+      "V_SW_peak": 3.335147726088953e-05,
+      "V_SW_min": 1.134557410306704e-09,
+      "V_Lnode_peak": 0.113887807113258,
+      "t_first_Vout_above_1V_s": null,
+      "t_first_Vout_above_20V_s": null
+    }
+  },
+  "solver_crosscheck": {
+    "R0_samples": 1117,
+    "A_samples": 1117,
+    "R0_Vout_peak": 8.845813213925565e-05,
+    "A_Vout_peak": 8.845813213925565e-05,
+    "abs_diff_Vout_peak": 0.0,
+    "R0_Vout_end": 8.845813213925565e-05,
+    "A_Vout_end": 8.845813213925565e-05,
+    "abs_diff_Vout_end": 0.0,
+    "R0_IL_peak": 0.001776297249325574,
+    "A_IL_peak": 0.001776297249325574,
+    "abs_diff_IL_peak": 0.0,
+    "value_block_bit_identical": true,
+    "raw_md5_R0": "0ff6d19d1450cb55e7614e28c225ab0d",
+    "raw_md5_A": "2065c695820c9c4842cc921731b49278",
+    "interpretation": "R0 is the vendor control (vendor cards untouched; LTspice point compression settings are the vendor defaults); A differs only by .options plotwinsize=0, which sets the raw header flag 'nocompression' and the file date. All 1117 sample values in both files are bit-identical, i.e. the replay is numerically insensitive to output compression and reproducible."
+  },
+  "operating_point": {
+    "B_op.op.raw": {
+      "variables": {
+        "V(n001)": 2.862971005126796e-29,
+        "V(n005)": 2.269137057925129e-16,
+        "V(n006)": 2.269114366901131e-16,
+        "V(n007)": 0.3125168026727149,
+        "V(n010)": 1.166502739864914e-41,
+        "V(out)": 1.745641287586435e-40,
+        "V(in)": 0.0,
+        "V(n009)": 0.0,
+        "V(n008)": 0.0,
+        "V(n003)": 1.134557410306705e-09,
+        "V(n004)": 0.0,
+        "V(n002)": 0.0,
+        "Id(M": -2.840279861457803e-26,
+        "Ig(M": 0.0,
+        "Is(M": 2.840279861457803e-26,
+        "I(C1)": 1.640902810331249e-50,
+        "I(C2)": 0.0,
+        "I(C3)": 5.332419828441515e-21,
+        "I(C4)": 0.0,
+        "I(D1)": 1.45735040289781e-41,
+        "I(L1)": -2.862971005126796e-26,
+        "I(R1)": 7.585359288172691e-06,
+        "I(R2)": 7.200634196696998e-46,
+        "I(R3)": 7.207924838937803e-46,
+        "I(R4)": 0.0,
+        "I(R5)": 0.0,
+        "I(R6)": 0.0,
+        "I(Rload)": 1.454701072988696e-41,
+        "I(R7)": 2.26911436690113e-14,
+        "I(V1)": -2.308153668195414e-13,
+        "Ix(u1:1)": 0.0,
+        "Ix(u1:2)": 7.290642240805985e-49,
+        "Ix(u1:3)": 0.0,
+        "Ix(u1:4)": -7.585359288172626e-06,
+        "Ix(u1:6)": -2.269114366903994e-14,
+        "Ix(u1:7)": 2.465190328815662e-32,
+        "Ix(u1:8)": 1.104999935322919e-13,
+        "Ix(u1:9)": 0.0,
+        "Ix(u1:10)": 2.3081536681957e-13,
+        "Ix(u1:11)": 0.004707585359193723
+      },
+      "header_lines": [
+        "Title: * D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\vendor_original\\LT3757A.asc",
+        "Date: Tue Nov 17 13:34:58 2026",
+        "Plotname: Operating Point",
+        "Flags: real",
+        "No. Variables: 40",
+        "No. Points:            1"
+      ]
+    }
+  },
+  "controller_diagnostics": {
+    "subckt_pin_currents": {
+      "ix(u1:1)": {
+        "initial": 0.0,
+        "final": 0.0,
+        "max": 0.0,
+        "min": 0.0
+      },
+      "ix(u1:10)": {
+        "initial": 2.3081536681957e-13,
+        "final": 0.1053434000937815,
+        "max": 0.636827939505579,
+        "min": 2.3081536681957e-13
+      },
+      "ix(u1:11)": {
+        "initial": 0.004707585359193723,
+        "final": 0.00470740915984099,
+        "max": 0.004707585359193723,
+        "min": 0.004645376587770205
+      },
+      "ix(u1:2)": {
+        "initial": 7.290642240805985e-49,
+        "final": 3.733957683876698e-13,
+        "max": 3.733957683876698e-13,
+        "min": -3.566528519530774e-23
+      },
+      "ix(u1:3)": {
+        "initial": 0.0,
+        "final": -9.851189587542354e-06,
+        "max": 0.0,
+        "min": -9.999765213879734e-06
+      },
+      "ix(u1:4)": {
+        "initial": -7.585359288172626e-06,
+        "final": -7.585359288172618e-06,
+        "max": -7.585359288123927e-06,
+        "min": -7.585359288194705e-06
+      },
+      "ix(u1:6)": {
+        "initial": -2.269114366903994e-14,
+        "final": -6.670240033687767e-10,
+        "max": 1.809369852857191e-16,
+        "min": -6.670240033687767e-10
+      },
+      "ix(u1:7)": {
+        "initial": 2.465190328815662e-32,
+        "final": 1.688495067151803e-08,
+        "max": 1.949531789424111e-07,
+        "min": 2.465190328815662e-32
+      },
+      "ix(u1:8)": {
+        "initial": 1.104999935322919e-13,
+        "final": -0.1053333931880499,
+        "max": 1.796181678525821e-07,
+        "min": -0.6367579394286847
+      },
+      "ix(u1:9)": {
+        "initial": 0.0,
+        "final": 4.264988414945167e-09,
+        "max": 2.090010727436565e-06,
+        "min": -8.414918397487581e-09
+      }
+    },
+    "pin5_missing_from_raw": true,
+    "log_warning": "Ignoring empty pin current: Ix(u1:5) (present in vendor run.log)",
+    "IL_direction": {
+      "initial": -2.862971005126796e-26,
+      "final": 0.001776297249325574,
+      "max": 0.001776297249325574
+    },
+    "IL_direction_note": "IL is monotonically POSITIVE: every sampled point of the 12 ohm shunt R7->MOSFET source path carries current from the switch node toward the IC's current-sense pin, i.e. the vendor 7-pin schematic symbol maps switch-node (drain) to the netlist position the native model treats as source.",
+    "V_sw_deviation_from_IN": {
+      "max": 11.999999817319765
+    },
+    "V_VC_over_SS_max": 3.335147726088953e-05,
+    "V_Vc_max": 1.488104234695469e-06,
+    "V_FB_n010_max": 5.911043204247954e-06
+  },
+  "probe_series": {
+    "P1_series100m_1.5ms": {
+      "raw": "probe_series/P1_series100m.raw",
+      "modification": "adds a 0.1 ohm series source resistance before V1 (nets SRC/IN); with 'startup' this lets V(IN) ramp instead of starting at 12 V",
+      "V_in_initial": 0.0,
+      "V_in_final": 12.0,
+      "Vout_peak": 8.845813213925565e-05,
+      "Vout_end": 8.845813213925565e-05,
+      "Vout_final_window": {
+        "mean": 7.957548738684513e-05,
+        "minimum": 7.069068438538815e-05,
+        "maximum": 8.845813213925565e-05,
+        "pp": 1.7767447753867492e-05,
+        "window": [
+          0.0012000000000000001,
+          0.0015
+        ],
+        "samples_in_window": 206
+      },
+      "IL_peak": 0.001776297249325574,
+      "V_VC_over_SS_max": 3.335147726088953e-05,
+      "pin6_current_max": 1.809369852857191e-16,
+      "pin6_current_min": -6.670240033687767e-10,
+      "conclusion": "Even with a ramped input the vendor circuit transfers < 0.2 mW: the IC's gate-driver pin current stays at the 1e-10 A leakage floor and gate-drive node stays < 35 uV, so the output never rises above ~1e-4 V. Input ramping alone does not make the vendor reference regulate."
+    },
+    "P2_series100m_2ms": {
+      "raw": "probe_series/P2_series100m_2ms.raw",
+      "modification": "adds a 0.1 ohm series source resistance before V1 (nets SRC/IN); with 'startup' this lets V(IN) ramp instead of starting at 12 V",
+      "V_in_initial": 0.0,
+      "V_in_final": 12.0,
+      "Vout_peak": 0.000118045656505464,
+      "Vout_end": 0.000118045656505464,
+      "Vout_final_window": {
+        "mean": 0.00010621320434093441,
+        "minimum": 9.437790814817044e-05,
+        "maximum": 0.000118045656505464,
+        "pp": 2.3667748357293563e-05,
+        "window": [
+          0.0016,
+          0.002
+        ],
+        "samples_in_window": 206
+      },
+      "IL_peak": 0.002370283489838547,
+      "V_VC_over_SS_max": 4.455574359769981e-05,
+      "pin6_current_max": 1.915550985752051e-16,
+      "pin6_current_min": -8.911105908228119e-10,
+      "conclusion": "Even with a ramped input the vendor circuit transfers < 0.2 mW: the IC's gate-driver pin current stays at the 1e-10 A leakage floor and gate-drive node stays < 35 uV, so the output never rises above ~1e-4 V. Input ramping alone does not make the vendor reference regulate."
+    }
+  },
+  "tests": {
+    "A_replay_completed_1.5ms": true,
+    "A_Vout_final_mean_between_0_and_12V": true,
+    "A_Vout_never_regulates_to_design_target_23.4_24.6V": true,
+    "A_IL_nonzero_energy_transfer": false,
+    "R0_completed_1.5ms": true,
+    "solver_crosscheck_RL_values_bit_identical": true,
+    "solver_crosscheck_peak_diff_lt_1mV": true,
+    "solver_crosscheck_IL_peak_diff_lt_1mA": true,
+    "op_point_available": true,
+    "op_Vout_is_degenerate_lt_1mV": true,
+    "IL_strictly_positive_all_samples": true,
+    "vendor_reference_Vout_peak_lt_1V": true,
+    "vendor_reference_is_NOT_QS30_170V_TARGET": true
+  },
+  "qs30_acceptance_verdict": {
+    "Vin_21.6_26.4V": "NOT_EVALUATED (vendor source is fixed 12 V)",
+    "Vout_mean_164.9_175.1V": "FAIL/NOT_APPLICABLE (vendor target ~23.9 V, simulated 7.96e-05 V mean)",
+    "ripple_le_1Vpp": "NOT_APPLICABLE (no regulated output exists in the vendor reference run)",
+    "peak_le_180V": "NOT_APPLICABLE (max V(out) = 8.85e-05 V)",
+    "cold_startup_le_1s": "NOT_PROVEN (no regulation at any time in 1.5 ms)",
+    "recovery_le_100ms": "NOT_EVALUATED (no load/line disturbance in vendor deck)",
+    "fault_peak_le_195V": "NOT_EVALUATED (no fault scenario in vendor deck)"
+  },
+  "qc_acceptance_not_evaluated": {
+    "note": "vendor reference topology/target differs (Vout target ~24V at V1=12V, 12 ohm load, 1.5 ms run, no 170V net); QS30 thresholds are listed unchanged for transparency only",
+    "Vin_V": [
+      21.6,
+      26.4
+    ],
+    "Vout_mean_V": [
+      164.9,
+      175.1
+    ],
+    "ripple_Vpp_max": 1.0,
+    "normal_peak_V_max": 180.0,
+    "cold_startup_s_max": 1.0,
+    "recovery_ms_max": 100.0,
+    "fault_peak_V_max": 195.0,
+    "evaluated": false
+  },
+  "tolerances": {
+    "vendor_reference_nominal_Vout": "set by R3/R2 divider: Vout = 1.6V*(1+226k/16.2k) ~ 23.9V (datasheet-implied, not a simulated acceptance limit)",
+    "solver_tolerance_check": "R0 vs A raw value blocks must be bit-identical (0.0 absolute difference observed on V(out) peak/end and I(L1) peak)",
+    "sim_value_agreement_vs_prior_wave": "this round's 7.957548738684513e-05 V mean vs round_01 native_reference_netlist_retry metrics (same value) - independent re-execution",
+    "rc_tolerance": "not applicable: no RC timing acceptance is asserted by this replay",
+    "timestep": {
+      "dt_max_s": 1.4648437500009229e-06,
+      "note": "adaptive solver step; not a fixed-Tstep sampling claim"
+    }
+  }
+}

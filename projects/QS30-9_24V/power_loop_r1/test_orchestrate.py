@@ -43,6 +43,14 @@ class TestWorkflow(unittest.TestCase):
         self.assertEqual(r['stdout'],'partial raw')
         self.assertIn('last timestep',r['stderr'])
 
+    def test_standalone_decision_does_not_require_missing_gpt_profile(self):
+        with tempfile.TemporaryDirectory() as d, patch.object(orch,'subprocess_record',return_value=dict(rc=1,stdout='',stderr='mock')) as call:
+            orch.codex_decision(Path(d),self.cfg,self.tasks,{},set(),0)
+            argv=call.call_args.args[0]
+            self.assertNotIn('--profile',argv)
+            self.assertIn('model_provider="openai"',argv)
+            self.assertIn('gpt-6.1-sol',argv)
+
     def test_startup_requires_reference_and_cell(self):
         base={'power_candidate_review':{'grade':'CLAIMED_PASS_AUDITED_FILES'}}
         self.assertFalse(eligible('zero_volt_startup',self.tasks,base,2,{'lt3757a_reference'}))

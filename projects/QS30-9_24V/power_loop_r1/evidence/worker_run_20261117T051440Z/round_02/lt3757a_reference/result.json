@@ -1,0 +1,61 @@
+{
+  "task_id": "lt3757a_reference",
+  "status": "FAIL",
+  "notes": "Native replay of the UNMODIFIED official ADI LT3757A reference was completed and is reproducible; it fails as a reference: the vendor deck (examples/Applications/LT3757A.asc, 12V->~23.9V demo, FDS6680A/MBR735/10uH/47uF/12ohm, .tran 1.5m startup) never regulates in LTspice 24.0.12.0 (sha256 17f5efb9...fe96d). Byte-exact vendor bytes extracted with Python zipfile and round-trip verified: LT3757A.sub 2572 B sha256 c0328424...18b634 (encoded binary model, native-LTspice-only, never modified), LT3757A.asy 948 B 4ed5078e..., LT3757A.asc 2890 B 867ea5d1...40cb6, standard.mos adfdcda8..., standard.dio 696d34df...; all re-hashed after every run and unchanged. Native netlist via -netlist (rc 0, 1.16 s) then R0 = 'LTspice.exe -b -ascii LT3757A.net' (rc 0): 1117 samples, endpoints 1.5 ms, V(out) peak 8.845813213925565e-05 V, V(out) mean 1.2-1.5 ms 7.957548738684513e-05 V (pp 1.7767e-05 V), I(L1) peak 1.776297e-03 A, V(SS/VC) max 3.335e-05 V; log shows 'Direct Newton iteration failed to find .op point', Gmin stepping, and 'Ignoring empty pin current: Ix(u1:5)'. Case A (identical netlist + only .options plotwinsize=0) gives a raw whose VALUE BLOCK is BIT-IDENTICAL to R0 (only Date/Flags header lines differ): solver/compression tolerance 0.0 V, 0.0 A. Case B (.op) confirms a degenerate operating point V(out)=1.7456e-40 V, V(in)=0, I(L1)=-2.86e-26 A. Observed mechanism (recorded as evidence, vendor design not altered): I(L1) is positive at EVERY sample, i.e. the switch node is on the model terminal seen as source, and the gate-driver pin current stays at the 1e-10 A leakage floor. Labelled sensitivity probes (probe_series/, excluded from the replay) with a 0.1 ohm series source so startup ramps V(in): V(out) peak 8.85e-05 V at 1.5 ms and 1.18e-04 V at 2 ms, pin-6 current <=1.92e-16 A - input ramping alone does not fix it. Measured values independently reproduce the earlier evidence/native_reference_netlist_retry metrics (7.957548738684513e-05 V) from a separate execution. The reference is 12V/24V, NOT the QS30 170V design: Vin 21.6-26.4 V, Vout 164.9-175.1 V mean, ripple <=1 Vpp, peak <=180 V, cold startup <=1 s, recovery <=100 ms, fault peak <=195 V are ALL NOT EVALUATED here (no 170V net, no disturbance, no fault, no zero-Cout case) and no threshold was changed. Consequence for the run: the LT3757A reference provides no positive functional evidence for the candidate controller, so the reference_replayer evidence is FAIL and every QS30/170V item stays HOLD pending deterministic audit and Codex review. Worker output is not an independent design approval. No network, install, commit, push or physical operation was performed.",
+  "evidence_files": [
+    "circuit.cir",
+    "run.log",
+    "waves.txt",
+    "metrics.json",
+    "inventory.md",
+    "run_manifest.json",
+    "reference_checks.json",
+    "LT3757A.original.net",
+    "LT3757A.net",
+    "LT3757A.log",
+    "R0_original_tran.log",
+    "R0_original_tran.raw",
+    "A_tran_nocompress.log",
+    "A_tran_nocompress.raw",
+    "A_tran_nocompress.op.raw",
+    "caseA_no_compression.cir",
+    "B_op.log",
+    "B_op.raw",
+    "B_op.op.raw",
+    "caseB_op.cir",
+    "vendor_original/LT3757A.asc",
+    "vendor_original/LT3757A.sub",
+    "vendor_original/LT3757A.asy",
+    "vendor_original/LT3757A.net",
+    "probe_series/probe_manifest.json",
+    "probe_series/P1_series100m.cir",
+    "probe_series/P1_series100m.raw",
+    "probe_series/P2_series100m_2ms.cir",
+    "probe_series/P2_series100m_2ms.raw",
+    "replay.py",
+    "analyze.py",
+    "probe.py"
+  ],
+  "source_urls": [
+    "https://www.analog.com/en/products/lt3757a.html",
+    "https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html"
+  ],
+  "solver": "LTspice 24.0.12.0 (native, Analog Devices Inc.), -b -ascii, solver=Normal, method=modified trap",
+  "model_hashes": {
+    "LT3757A.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "LT3757A.asy": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+    "LT3757A.asc": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+    "standard.mos": "adfdcda82e1b6186f907df2dc3905659a2ea2be2a0887a016d1fd9f1b3b1b40e",
+    "standard.dio": "696d34dfe538966c80cfe1da259c1043f408777be79f59e4f1c47d82f3af320a",
+    "lib.zip": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+    "examples.zip": "319ac0e9adcce7e156aa47050a659919dbd901f1e82ab42fdb156bcefcd54ad6",
+    "LTspice.exe": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d"
+  },
+  "blocking_issues": [
+    "The unmodified vendor LT3757A reference produces no regulated output in native LTspice 24.0.12.0 (V(out) peak 8.85e-05 V at 1.5 ms; degenerate .op with V(out)=1.75e-40 V), so it gives no positive functional evidence for the LT3757A candidate controller.",
+    "Root cause of the zero-output replay is not proven: evidence (I(L1) positive at every sample, gate-driver current at leakage floor, 'Ignoring empty pin current: Ix(u1:5)') suggests a switch-node/source mapping or bias issue in this engine, but the vendor design was deliberately NOT modified to test it.",
+    "LT3757A.sub is an encoded binary model; its internal behaviour cannot be audited, so replay results cannot be separated from model-encoding effects.",
+    "No QS30 condition is covered by this deck: Vin 21.6-26.4 V, mean Vout 164.9-175.1 V, ripple <=1 Vpp, peak <=180 V, genuine Cout=0 V cold startup <=1 s, recovery <=100 ms and fault peak <=195 V are all NOT EVALUATED; those HOLDs remain.",
+    "All findings are DeepSeek worker evidence pending deterministic audit and Codex review; not an independent design approval."
+  ]
+}

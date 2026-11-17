@@ -1,0 +1,14 @@
+* F2 pins: STP9NK50Z pin map 1=D 2=G 3=S; VGS=10 V, VDS 0..5 V
+.temp 27
+VG NG 0 10
+VD ND 0 0
+MN ND NG NS NS STNCHN
+.model STNCHN NMOS (LEVEL=3 VTO=4.862 PHI=0.839 IS=0.1E-12 JS=0
++ THETA=0.236 KP=7.026)
+.dc VD 0 5 0.01
+
+.control
+run
+wrdata out.dat v(ND) i(VD)
+.endc
+.end

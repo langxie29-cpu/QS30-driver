@@ -1,0 +1,45 @@
+{
+  "scope": "Cycle extraction only; not demagnetization safety/zero-current detector qualification",
+  "detection": "Actual VGS upward6V cycle edges; examine IL only where actual VGS<1V. Positive off-min>20mA excludes zero crossing; a crossing alone does not prove a stable demagnetized idle interval.",
+  "windows": [
+    {
+      "window_s": [
+        0.002,
+        0.01
+      ],
+      "cycles": 590,
+      "no_zero_cross_off_cycles": 272,
+      "zero_cross_seen_cycles": 313,
+      "median_frequency_Hz": 76363.4647987896
+    },
+    {
+      "window_s": [
+        0.01,
+        0.04
+      ],
+      "cycles": 4530,
+      "no_zero_cross_off_cycles": 3020,
+      "zero_cross_seen_cycles": 1510,
+      "median_frequency_Hz": 101175.00414199088
+    },
+    {
+      "window_s": [
+        0.05,
+        0.06
+      ],
+      "cycles": 1134,
+      "no_zero_cross_off_cycles": 250,
+      "zero_cross_seen_cycles": 882,
+      "median_frequency_Hz": 100847.49903724014
+    }
+  ],
+  "worst_sense_event": {
+    "time_s": 0.010040718423769968,
+    "SENSE_V": 0.5243575292413777,
+    "source_V": 0.5601796185195652,
+    "source_shunt_current_Vsrc_over62mohm_A": 9.035155137412342,
+    "IL_A": 1.4004740850316062,
+    "rectifier_current_A": -6.204600838120115
+  },
+  "conclusion": "Positive off-current startup cycles require CCM/cross-mode review. IL peak alone does not bound shunt/CS stress; diode/capacitive/gate currents must be separated with additional current observations. No hard current-limit delay or guaranteed demagnetization claimed."
+}

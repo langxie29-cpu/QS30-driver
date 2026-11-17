@@ -1,0 +1,29 @@
+Task complete. All 100 deterministic self-checks pass.
+
+## Summary — `vendor_models` → **PASS** (faithful inventory only; model qualification remains **INCONCLUSIVE**)
+
+**Status `PASS` is scoped strictly to inventory fidelity.** No simulator was invoked, so no waveform, log, metric or model execution is claimed anywhere.
+
+### What was actually measured
+
+**LT3757A (ADI, vendor-native):** extracted byte-identical via Python `zipfile` from the signed distribution, with round-trip re-read proven identical:
+- `LT3757A.sub` `c0328424…` (2572 B) — **not text**: begins `<Binary File>` with 15 NULs; encoded, LTspice-24.0.12.0-only, internals unauditable
+- `LT3757A.asy` `4ed5078e…`, `LT3757A.asc` `867ea5d1…`
+- Historical `LT3757A_bundled` copies hash to the same values, confirming the historical bundle is the same vendor bytes
+- **The reference is a 12 V→low-voltage demo** (`V1=12V`, `FDS6680A`, `.tran 1.5m startup`) — it can never be reinterpreted as 170 V QS30 success
+
+**UCC28C43 (TI):** three forms retained in both workspaces, all the same AEi Systems 2008 model. **Neither PSpice nor TINA-TI is installed**, both encrypted forms are unreadable by LTspice/ngspice, and the "unencrypted" library still needs **29 PSpice-only `E/G VALUE` transliterations** — 15 inside the controller core. No unmodified native replay has ever occurred.
+
+**Key comparative finding:** LT3757A is vendor-native; UCC28C43 can only be a conversion. They are **not comparable at equal fidelity**, so no side-by-side numeric verdict is possible from these artifacts.
+
+### Findings that changed the picture
+
+- **Three roles have no vendor model at all:** STP7N65M2 (both ST URLs 404), IPP60R360P7 (0-byte product HTML proves nothing), MSS1260-154KLD (datasheet only, no core-loss model)
+- **Model-integrity audit of 188 sim libraries: 146 identical, 42 not.** The 42 reveal that 30 UCC27511 copies needed a bracket repair (proving TI's shipped library is syntactically broken), 5 UCC28C43 copies were transliterated yet sit in waves named `nativeGB6`/`native_abm`, and 7 `s06c` copies are actually an ST MOSFET model, not the controller. **Hashes, not filenames, decide identity.**
+- Licence text was corrected after measurement: TI's header is *silent* on redistribution (0 occurrences of `licen*`/`redistribut*`), unlike ADI's explicit prohibition — I had initially overstated TI's terms and fixed it.
+
+### Scope discipline
+
+No threshold, HOLD or budget was touched; all writes are inside `OUTPUT_DIR` (verified — the other recent files under `projects/` come from a concurrent sibling worker, and every write target in my scripts is `OUT/...`). No fabricated `circuit.cir`/`run.log`/`waves.txt`/`metrics.json` — the validator asserts their absence.
+
+**Caveat on `source_urls`:** the TI product page could not be re-fetched, so PSpice/TINA availability rests on the retained zip bytes plus document numbers `slum033`/`slum178`, not a live page check (BI-09). Likewise the "lib.zip matches a fresh ADI download" claim is unproven — it only reconciles with the earlier `baseline_audit` record (BI-10).

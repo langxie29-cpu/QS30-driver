@@ -1,0 +1,7 @@
+{
+  "decision": "HOLD",
+  "rationale": "Two-wave initial integration completed at six worker sessions. Native LT3757A encoding-corrected reference independently works. Real controller/zero-COUT startup reached target vicinity in a completed60ms nominal run, but raw late-window ripple2.430864Vpp and SENSE0.524358V preclude candidate approval. M1 full power-model trust, M2 stress/demagnetization qualification and M3 corners remain incomplete. No third scheduler wave or more model calls.",
+  "next_task_ids": [],
+  "issues": ["Native reference worker false electrical root cause rejected: four micro-unit encoding failures explain88uV; independent corrected reference yields23.96086V", "ST model25C only; hot L(I,T)/loss/actual eFuse/AUX not qualified", "UCC worker timed out900s: solver9ms log exists but export/protocol incomplete, no native PSpice", "Device worker stopped by principal after131 debug/fixture directories and no qualified result; directory count is not executed-case or PASS count", "Completed nominal source ramp1ms does not cover fast passive path7.614A", "Output target observation is not M2/M3 PASS", "Manufacturing and safety H01-H10 unchanged"],
+  "controlling_assumptions": ["All original voltage/ripple/time/fault thresholds unchanged", "All raw failures remain local and archived by exact-byte SHA", "Current principal is OpenAI gpt-6.1-sol; child Codex calls0", "No hardware operations performed or authorized"]
+}

@@ -1,0 +1,6 @@
+{
+  "classification": "EXECUTION_FAIL",
+  "action": "First exact-copy freeze aborted while reaching worker simulator library directory (Windows long path). No original evidence changed.",
+  "observed_exception": "FileNotFoundError while copying sim_profile/LTspice/lib/sym/Contrib/Wurth/PowerMagnetics/Transformer/DC-DC/WE-FLEX/UG001_Flexible_Transformer_Instructions.pdf",
+  "fix": "Exclude simulator profiles and original library/examples/PDF distribution from evidence freeze, consistent with original no-software-redistribution policy. Move the partial freeze into ignored .local after checking both absolute paths. Rerun into a fresh target; raw source files remain untouched."
+}

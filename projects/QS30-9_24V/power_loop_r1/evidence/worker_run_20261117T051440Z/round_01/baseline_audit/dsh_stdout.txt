@@ -1,0 +1,32 @@
+The `baseline_audit` task is complete. Status sentinel: **COMPLETED**. `result.json` and `inventory.md` are written and validated at the required paths.
+
+## Summary
+
+**Result: PASS** — scoped strictly to *faithful, provenance-labelled inventory*. No electrical, thermal, model, or manufacturing approval is claimed, and no HOLD was closed.
+
+**Method note:** `git.exe` could not be launched in this sandbox, so I established provenance without it — by parsing the git index binary format directly in Python and recomputing each file's git blob SHA. This is recorded as a limitation, not hidden.
+
+### The decisive finding
+**There is no committed S06C electrical result.** Only `S06C_PLAN.md` (a pre-registration) and `sprint06c/input_snapshot.json` (inputs) are tracked. Every S06C–F report, evidence file, design script and config is `UNTRACKED` — *in both repos*. The committed 24V baseline is S06/S06B.
+
+### A provenance defect I found by recomputing
+The run-context figure "S06C updated HV budget 5.71642 W" **traces to the uncommitted file, not the committed baseline**:
+
+| Base | + delta 0.17343 W | vs floor 5.88985 W |
+|---|---|---|
+| Committed 5.71560 W | **5.88904 W** | **fails** by 0.00081 W |
+| Uncommitted 5.71642 W | 5.88986 W | passes by only 1×10⁻⁵ W |
+
+Both sources also evaluate at **175.1 V, not 170 V**, and both self-label as allocations, not measurements. I did **not** touch any threshold — I flagged the base designation as blocking issue BI-02 for the owner to resolve.
+
+### Verified rather than assumed
+- Bleeder arithmetic independently reproduced (181.8 kΩ/string, 0.31793 W, delta 0.17343 W) — matches exactly.
+- `LTspice.exe` and `LTspice64.msi` hashes **independently reproduce** S06C's own recorded values, corroborating the archive.
+- The US1G model hash matches the hash recorded *inside* S06F's own results.
+
+### Discipline on uncommitted claims
+All four sprints self-report `24V-07 NOT_PASSED`, `24V-08 NOT_ENTERED`, `HOLD` — committed **and** uncommitted agree, so the uncommitted material can only *explain* the failure, never elevate the baseline. I recorded S06D–F as `UNCOMMITTED_PROVENANCE` without promotion. Notably, 0.5→0.25 ns refinement moves `SENSE_peak` **+66%** while `IL_peak` stays flat — I reported that as *non-convergence*, not as a better result, and treated the TT0 diode `FAIL` (0.672 A vs required 1.0 A) as a failure rather than the adjacent `PASS`.
+
+One caveat worth your attention: S06F measured the ideal 195 V source **supplying** ~10.317 µJ, which is direct evidence that the existing fixture is not an absorbing clamp and cannot stand in for autonomous startup. Separately, I noted the TI UCC28C43 archives exist as bytes but whether any native TI solver can run them is **not** established here — that belongs to `vendor_models`.
+
+All 10 P0 blockers (H01–H10) and H9-01–H9-12 remain OPEN and verbatim. The historical workspace verified byte-identical (1474/3/1557) after my run.

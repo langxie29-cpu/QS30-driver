@@ -1,0 +1,48 @@
+{
+ "inputs": {
+  "V_hv_nominal_V": 170.0,
+  "R_unit_ohm": 90900.0,
+  "series_per_string": 2,
+  "parallel_strings": 2,
+  "R_old_ohm": 200000.0,
+  "s06c_hv_budget_W": 5.71642
+ },
+ "derived": {
+  "R_per_string_ohm": 181800.0,
+  "R_total_ohm": 90900.0,
+  "P_new_total_W": 0.3179317931793179,
+  "P_per_string_W": 0.15896589658965896,
+  "P_per_unit_W": 0.01987073707370737,
+  "P_old_single_200k_W": 0.1445,
+  "delta_W": 0.17343179317931792,
+  "s06c_hv_plus_delta_W": 5.889851793179318
+ },
+ "assertions": {
+  "R_per_string_eq_181.8k": {
+   "expected": 181800.0,
+   "measured": 181800.0,
+   "ok": true
+  },
+  "P_new_eq_0.31793W": {
+   "expected": 0.31793,
+   "measured": 0.31793,
+   "ok": true
+  },
+  "P_old_eq_0.1445W": {
+   "expected": 0.1445,
+   "measured": 0.1445,
+   "ok": true
+  },
+  "delta_eq_0.17343W": {
+   "expected": 0.17343,
+   "measured": 0.17343,
+   "ok": true
+  },
+  "s06c_updated_ge_5.88985W": {
+   "expected_floor": 5.88985,
+   "measured": 5.88985,
+   "ok": true
+  },
+  "all_ok": true
+ }
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Gate-derived observations only, not controller-output edge proof or demagnetization qualification",
+  "original_gate_upcrossings": 7788,
+  "deglitched_2us": 5498,
+  "deglitched_4us": 5498,
+  "two_filters_agree": true,
+  "thresholds": "VGS rise6V; actual VGS<1V off-window; explicit2us/4us refractory hypotheses, below expected8.7us minimum nominal period.",
+  "groups": [
+    {
+      "window_s": [
+        0.002,
+        0.01
+      ],
+      "putative_cycles": 455,
+      "positive_off_min_above20mA": 137,
+      "zero_cross_seen": 313,
+      "median_frequency_Hz": 65785.21039571303
+    },
+    {
+      "window_s": [
+        0.01,
+        0.04
+      ],
+      "putative_cycles": 3020,
+      "positive_off_min_above20mA": 1510,
+      "zero_cross_seen": 1510,
+      "median_frequency_Hz": 100769.07344783189
+    },
+    {
+      "window_s": [
+        0.05,
+        0.06
+      ],
+      "putative_cycles": 1008,
+      "positive_off_min_above20mA": 125,
+      "zero_cross_seen": 882,
+      "median_frequency_Hz": 100846.07467711178
+    }
+  ],
+  "correction": "First cycle_review.json over-counted ringing crossings and its cycle/frequency interpretation is rejected. Original measurements remain unchanged. Save actual controller OUT next time before claiming switching/idle coverage.",
+  "conclusion": "Some complete putative off-intervals keep IL positive; startup cannot be declared all-DCM. Seeing IL crosszero is insufficient to qualify demagnetization. Hard current-limit and stability remain open."
+}

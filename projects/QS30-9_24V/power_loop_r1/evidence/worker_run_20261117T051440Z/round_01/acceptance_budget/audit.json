@@ -1,0 +1,16 @@
+{
+  "task_id": "acceptance_budget",
+  "grade": "INCONCLUSIVE",
+  "worker_claim": "INCONCLUSIVE",
+  "notes": "Requirements reconciliation only: ANALYTIC_BUDGET_ONLY_NO_SIMULATION_NO_MEASUREMENT. No simulator was invoked and no waveform/log/measurement exists, so no electrical criterion can be certified; INCONCLUSIVE rather than PASS. 26/26 arithmetic+documentary assertions pass (assertions_raw.json), all acceptance literals reproduced UNCHANGED from hashed sources: Vin connector 21.6-26.4 V (sprint05.json, sha256 bce00036...), HV mean 164.9-175.1 V (sprint05.json acceptance.HV_mean_V AND safety_r1/architecture/requirements.json thresholds_inherited.HV_mean_V, both agree), ripple <=1 Vpp (20 MHz-band, short ground spring), normal peak <=180 V, OVP trip 183-190 V (gap 3.0 V below the 180 V ceiling, no OVP circuit exists), fault peak <=195 V target, cold startup <=1 s, recovery <=0.1 s, envelope 160-180 V, ambient 0-50 C. BLEEDER DELTA reconciled without mixing voltages: R_total=90900 ohm (2 parallel strings of 2x90.9k); P_total@170V=0.3179317932 W; CORRECTED per-resistor @170V=(170/2)^2/90900=0.0794829483 W (wave-1 baseline_math.json's 0.0198707371 W is a 4x understatement; file left byte-identical, sha256 c0be5f39...); delta@170V=0.1734317932 W; P_total@175.1V=0.3373426734 W, P_old@175.1V=0.1533000500 W, delta@175.1V=0.1839937894 W; CONTROLLING revised HV budget = 5.7164233823 W (UNCOMMITTED S06C POWER_RAILS.json HV_BUS, self-labelled 'allocations not measured') + 0.1839937894 W = 5.9004171717 W at 175.1 V. The 5.8898517932 W (quoted 5.88985) mixed figure (175.1 V base + 170 V delta) is recorded as a lower-bound CONTEXT value only and is explicitly NOT an acceptance criterion. Survivor-resistor power under a partner short at 195 V (R-1%) = 0.4225422542 W. COLD 0 V STARTUP budget vs the 1 s limit: C nominal 20.3 uF / screen 21.33 uF (sprint05 storage.Ctotal_max_screen_F); energy to reach the 164.9 V window floor = 0.2759989015 J nominal / 0.2900027867 J screen, i.e. >=0.276-0.290 W NET into COUT for a full second, PLUS >=0.2991420242 W of unavoidable bleeder load at 164.9 V, i.e. >=0.5891448109 W delivered before any conversion loss (HV efficiency is only ALLOCATED >=0.75). This is a necessary-condition screen, NOT a startup simulation; excluded as evidence: ideal HV precharge, forced gate PWM, forced VC/SS, and any 195 V absorbing/sourcing fixture (S06F's 195 V unit supplied ~10.317 uJ). CORNER GAPS: 21.6 V is absent from EVERY existing corner axis (sprint06b LOSS_AW",
+  "evidence_sha256": {
+    "inventory.md": "06fe13b33a18f303fa4c1452dab83640943274c985b206676a4cb88ee8b45dea",
+    "acceptance_budget.json": "c28100c75cbedc6961685f2251736d37c5e943f9c91775caa62c3b39bb8244b2",
+    "assertions_raw.json": "ffe93ed1faa2445e601560c6b2866c9de1ea6a13d852f4ccafea64288004c39e",
+    "source_hashes.json": "d36d487bc281c52bb4378ae2765aef0a837570107ad63742cf19449ccacb107a",
+    "reconcile_acceptance.py": "c9d0f9d7024027613270d07ade3c4ec5d030d5602343dc869c36e8fe1cd6aa18",
+    "reconcile_stdout.txt": "a4c169ea1f0406bc376d49eb97f12cd2ef4f571f2b75221ee11ed780434a687f"
+  },
+  "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+  "process_rc": 0
+}

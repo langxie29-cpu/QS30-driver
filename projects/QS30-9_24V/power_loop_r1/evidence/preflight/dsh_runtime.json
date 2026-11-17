@@ -10,14 +10,108 @@
           "reasoningEffort": "off"
         }
       ],
-      "request_count": 1,
-      "tool_calls": 55,
+      "request_header_records": 1,
+      "inference_usage_records": 116,
+      "request_context_records": 1,
+      "tool_calls": 128,
       "usage": {
-        "inputTokens": 101185,
-        "outputTokens": 13088,
-        "cacheReadTokens": 3694848
+        "inputTokens": 153287,
+        "outputTokens": 57307,
+        "cacheReadTokens": 15147264
       },
-      "last_event": "step/start",
+      "last_event": "turn/end",
+      "endpoint": "https://api.deepseek.com (explicit dedicated overlay; no packet capture)",
+      "all_requests_expected": true
+    },
+    {
+      "session": "session-1f1a89cb-2677-4e22-a982-04bb9929e772",
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000,
+          "reasoningEffort": "off"
+        }
+      ],
+      "request_header_records": 1,
+      "inference_usage_records": 123,
+      "request_context_records": 1,
+      "tool_calls": 132,
+      "usage": {
+        "inputTokens": 123797,
+        "outputTokens": 76404,
+        "cacheReadTokens": 16560256
+      },
+      "last_event": "tool-call-chunks",
+      "endpoint": "https://api.deepseek.com (explicit dedicated overlay; no packet capture)",
+      "all_requests_expected": true
+    },
+    {
+      "session": "session-1f7b9b2b-e7ae-444a-b517-d03e5c933f28",
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000,
+          "reasoningEffort": "off"
+        }
+      ],
+      "request_header_records": 1,
+      "inference_usage_records": 35,
+      "request_context_records": 1,
+      "tool_calls": 44,
+      "usage": {
+        "inputTokens": 47597,
+        "outputTokens": 30969,
+        "cacheReadTokens": 1748736
+      },
+      "last_event": "turn/end",
+      "endpoint": "https://api.deepseek.com (explicit dedicated overlay; no packet capture)",
+      "all_requests_expected": true
+    },
+    {
+      "session": "session-32639ecd-d089-4f66-935c-983cbe9fbeb2",
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000,
+          "reasoningEffort": "off"
+        }
+      ],
+      "request_header_records": 1,
+      "inference_usage_records": 106,
+      "request_context_records": 1,
+      "tool_calls": 115,
+      "usage": {
+        "inputTokens": 97505,
+        "outputTokens": 41789,
+        "cacheReadTokens": 9431040
+      },
+      "last_event": "tool/call",
+      "endpoint": "https://api.deepseek.com (explicit dedicated overlay; no packet capture)",
+      "all_requests_expected": true
+    },
+    {
+      "session": "session-42958317-9812-45b1-93e9-6d688d66dd92",
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000,
+          "reasoningEffort": "off"
+        }
+      ],
+      "request_header_records": 1,
+      "inference_usage_records": 84,
+      "request_context_records": 1,
+      "tool_calls": 95,
+      "usage": {
+        "inputTokens": 92268,
+        "outputTokens": 37947,
+        "cacheReadTokens": 7026688
+      },
+      "last_event": "turn/end",
       "endpoint": "https://api.deepseek.com (explicit dedicated overlay; no packet capture)",
       "all_requests_expected": true
     },
@@ -31,7 +125,9 @@
           "reasoningEffort": "off"
         }
       ],
-      "request_count": 1,
+      "request_header_records": 1,
+      "inference_usage_records": 69,
+      "request_context_records": 1,
       "tool_calls": 84,
       "usage": {
         "inputTokens": 122440,

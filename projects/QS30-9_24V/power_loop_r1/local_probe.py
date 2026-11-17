@@ -22,7 +22,9 @@ def setup():
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
     # Private copied configuration is deliberately ignored, never archived.
-    env = dict(os.environ, DSH_HOME=str(home), DSH_TELEMETRY_DISABLED='1')
+    # Match this user's declared software execution environment in a PRIVATE launch.
+    # No global permission/preset change, no physical operations authorized.
+    env = dict(os.environ, DSH_HOME=str(home), DSH_TELEMETRY_DISABLED='1', DSH_PERMISSION_MODE='danger-full-access')
     overlay = LOCAL / 'flash.patch.yml'
     overlay.write_text('''- id: agent-default-model
   config:

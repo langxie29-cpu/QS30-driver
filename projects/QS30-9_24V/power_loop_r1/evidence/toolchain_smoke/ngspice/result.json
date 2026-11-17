@@ -1,0 +1,18 @@
+{
+  "solver": "ngspice",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+    "-b",
+    "-o",
+    "run.log",
+    "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\toolchain_smoke\\ngspice\\circuit.cir"
+  ],
+  "rc": 0,
+  "exe_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+  "endpoint_s": 1e-06,
+  "endpoint_V": 0.632120566,
+  "analytic_V": 0.6321205588285577,
+  "error_V": 7.171442328868238e-09,
+  "status": "LIMITED_PASS",
+  "scope": "RC toolchain only; no controller/HV/power-stage qualification"
+}

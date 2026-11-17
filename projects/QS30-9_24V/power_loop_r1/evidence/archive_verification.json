@@ -1,0 +1,3338 @@
+{
+  "status": "PASS",
+  "scope": "Artifact byte integrity ONLY; not electrical PASS",
+  "exact_copy_checks": 630,
+  "unique_reconstructed_raws": 30,
+  "checks": [
+    {
+      "path": "checkpoint.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "manifest.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/acceptance_budget.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/assertions_raw.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/inventory.md",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/reconcile_acceptance.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/reconcile_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/source_hashes.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/acceptance_budget/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/baseline_math.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/build_claim_register.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/cited_artifact_hashes.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/cited_artifact_hashes.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/claim_register.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/control_variants_raw.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/extract_controls.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/hash_cited.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/hv_budget_reconciliation.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/index_entries.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/index_entries_historical.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/index_parse.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/index_parse_historical.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/inventory.md",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/provenance_scan.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/provenance_scan.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/provenance_scan_historical.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/provenance_scan_historical.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/read_git_index.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/read_git_index_historical.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/recompute_baseline.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/reconcile_hv_budget.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/scan_provenance.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/scan_provenance_historical.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/validate_result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/baseline_audit/validate_result.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/decision_input.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/external_decision.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/validated_decision.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/audit_sim_copies.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/extract_and_hash.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/hash_manifest_raw.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/inventory.md",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/model_index.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/parse_models.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/sim_copy_audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/sim_model_mutations.md",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/validate_result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_01/vendor_models/validate_result.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/decision_input.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_check.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_patch.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_patch2.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_patch3.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_patch4.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/_run_console.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/analysis.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/device_cells.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/fixtures.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/principal_stop.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_diode_L2/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_diode_L2/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_diode_L2/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_diode_L2/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_L2only/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_L2only/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_L2only/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_L2only/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_Rload/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_Rload/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/B_L1u_Rload/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_SS14_vishay_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_diodesinc_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/brk_US1G_vishay1999_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_A/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_A/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_A/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_A/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_mos/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_mos/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_mos/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_mos/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sat/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sat/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sat/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sat/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sw/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sw/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sw/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b6_sw/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b_no_out/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b_no_out/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_b_no_out/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_boost/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_boost/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_boost/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_boost/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst3/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst3/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst3/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst3/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst4_lin/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst4_lin/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst4_lin/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_lin/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_lin/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_lin/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_lin/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_sat/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_sat/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_sat/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_bst5_sat/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d10_nok/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d10_nok/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d10_nok/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=1/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=1/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=1/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=1/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=10/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=10/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=10/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_i=10/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_pwl/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_pwl/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_pwl/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d11_pwl/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d12/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d12/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d12/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d13/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d13/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d13/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d14/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d14/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d14/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d14/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d15/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d15/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d15/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d15/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d2/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d2/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d2/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d2/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d3/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d3/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d3/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d4/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d4/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d4/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d4/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d5/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d5/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d5/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d5/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d6/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d6/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d6/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d6/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d7/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d7/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d7/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d7/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d8/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d8/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d8/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d8/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d9/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d9/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d9/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_d9/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v3/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v3/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v3/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v3/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v4/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v4/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v4/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v4/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v5/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v5/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v5/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_f1v5/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_d/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_d/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_d/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_st/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_st/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_st/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_final_st/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g2/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g2/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g2/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_g2/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad2/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad2/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad2/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad3/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad3/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_lad3/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_names/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_names/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_names/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_pin/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_pin/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_pin/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_pin/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14b/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14b/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14b/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_ss14b/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw2/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw2/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw2/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_sw2/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_d/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_d/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_d/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_g/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_g/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_g/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_s/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_s/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_bad_s/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_good/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_good/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_topo_good/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v10/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v10/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v10/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v10/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v11/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v11/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v11/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v12/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v12/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v12/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v13/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v13/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v13/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v14/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v14/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v14/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_dc6p5/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_dc6p5/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_dc6p5/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_orig/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_orig/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_orig/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pulse/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pulse/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pulse/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pwl_one_line/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pwl_one_line/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v15_pwl_one_line/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6a_stop26/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6a_stop26/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6a_stop26/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6a_stop26/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6b_both/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6b_both/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6b_both/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6b_both/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6c_pulse/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6c_pulse/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6c_pulse/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v6c_pulse/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/dbg.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/dbg2.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/script.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v7/v.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v8/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v8/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v8/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v8/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9x/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9x/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_v9x/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_full_op/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_full_op/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_full_op/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_option/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_option/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_option/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_PWL/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_PWL/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_PWL/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_VV/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_VV/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_no_VV/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_rstrip/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_rstrip/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/dbg_var_rstrip/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts10ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts20ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts2ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_SS14_vishay_ts5ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27_gear/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27_gear/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27_gear/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts100ns_T27_gear/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts200ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_st_ts50ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts10ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts20ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts2ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_diodesinc_ts5ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts10ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts20ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts2ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T125/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T27/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f1_US1G_vishay1999_ts5ns_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_SS14_vishay/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_SS14_vishay/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_SS14_vishay/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_SS14_vishay/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins_wrong/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins_wrong/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_st_pins_wrong/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_diodesinc/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_diodesinc/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_diodesinc/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_diodesinc/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_vishay1999/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_vishay1999/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_vishay1999/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f2_US1G_vishay1999/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_linear/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_linear/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_linear/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_linear/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_pulse/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_pulse/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_pulse/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_saturating_family/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_saturating_family/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_saturating_family/out.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_boost_saturating_family/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_L_ladder/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_L_ladder/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/f3_L_ladder/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_f1_st/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_f1_st/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_f1_st/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/deck2.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/log2.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/log3.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini2.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini2.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini3.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini3.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini4.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/mini4.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/op.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/out4.dat",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/smoke_st_f1_100n/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T150/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T150/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T150/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_SS14_vishay_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T150/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T150/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T150/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_st_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T150/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T150/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T150/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_diodesinc_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T125/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T125/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T125/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T150/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T150/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T150/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T27/deck.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T27/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/raw/tc_US1G_vishay1999_T27/run.sp",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/run_fixtures.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/device_cells/waves.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/external_decision.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/A_tran_nocompress.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "3272e3b5a58d65c4ce48dacfd253cfb126e0dc43f47b21f47c4a71fea6669098",
+      "kind": "reconstructed_raw",
+      "bytes": 2407,
+      "passed": true
+    },
+    {
+      "path": "1ca4e540488d28d40b710271df5ec6fce581b319e8c5d76b622b4b4f3fd7a7cc",
+      "kind": "reconstructed_raw",
+      "bytes": 1112841,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/analyze.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/B_op.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "24995ff26d8ed0d3ebdf9c68c62b4f0cb86de8db257e2a45c965d67817756ffb",
+      "kind": "reconstructed_raw",
+      "bytes": 2393,
+      "passed": true
+    },
+    {
+      "path": "6f2ef0563907d141cc924446c6943261f2fd2e6c61b506b364b6d7fee60c3142",
+      "kind": "reconstructed_raw",
+      "bytes": 1112827,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/caseA_no_compression.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/caseA_no_compression.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/caseB_op.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/caseB_op.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/circuit.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/env/netlist_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/env/netlist_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/inventory.md",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/LT3757A.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/LT3757A.net",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "fb28c85948817c2a6498feeb7cd52714f045d7617505127f0e9ba8ff7feb5630",
+      "kind": "reconstructed_raw",
+      "bytes": 2393,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/LT3757A.original.net",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "7deff77fcaa2e80f79dfd6895dd60bf35736ef82c582b4d5f3f1c239c267218f",
+      "kind": "reconstructed_raw",
+      "bytes": 1112827,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/metrics.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe_series/P1_series100m.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe_series/P1_series100m.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "59b94a13c48c2795e6b41359541843a3481b80bddaf58b3d0007e8dcee2cbd9a",
+      "kind": "reconstructed_raw",
+      "bytes": 2504,
+      "passed": true
+    },
+    {
+      "path": "06a3193c057f2076961612cafdc517d24a7d7806199df9eb4208d5ca5ff54022",
+      "kind": "reconstructed_raw",
+      "bytes": 1167622,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe_series/P2_series100m_2ms.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe_series/P2_series100m_2ms.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "6d813fc034254e90c8bd4a9afd261b18bb60adb1c359f21b6097cc127987f077",
+      "kind": "reconstructed_raw",
+      "bytes": 2504,
+      "passed": true
+    },
+    {
+      "path": "f8d02232ab5e834b777b5a2e2bb70fc1b55107474e8b2c30b148d8e43b5e7525",
+      "kind": "reconstructed_raw",
+      "bytes": 1185393,
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/probe_series/probe_manifest.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/R0_original_tran.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/reference_checks.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/replay.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/result.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/run.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/run_manifest.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/lt3757a_reference/waves.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/audit.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_startup/.spiceinit",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_startup/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "e5795d5d7370759e50af908b4c4037ed27cd54a79e37c40b6369611d57a4b990",
+      "kind": "reconstructed_raw",
+      "bytes": 727357365,
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_startup/replay.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_startup/subprocess.stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_startup/subprocess.stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "d1a45fe54994b16c3bee112361d2238a5568473e3e7292e2bb501135ddf54158",
+      "kind": "reconstructed_raw",
+      "bytes": 32441472,
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/.spiceinit",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/ascii_run/.spiceinit",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/ascii_run/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "b5a11ba0858757d4b95a3ca74211f48a2e53a5502e94f35728f179250f73c7dc",
+      "kind": "reconstructed_raw",
+      "bytes": 727357364,
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/ascii_run/replay.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/ngspice.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/ngspice_raw.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "e87a0ee93b6aa476c470d9a07c708a87abdae55f3c42a3408bc022b2ab0852e1",
+      "kind": "reconstructed_raw",
+      "bytes": 727357364,
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/replay.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/replay0.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/subprocess.stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/case_steady/subprocess.stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/dsh_stderr.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/dsh_stdout.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/metrics.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/replay_ucc28c43.py",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/run.log",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/task_prompt.txt",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_startup.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_startup.net",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_startup.sim",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_startup_pspice.out",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_steady.cir",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_steady.net",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_steady.sim",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "round_02/ucc28c43_reference/vendor/vendor_UCC28C43_steady_pspice.out",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "896b709c286484d7a5154682b1485222b2b71fe7a74101478aa4ea8238761c59",
+      "kind": "reconstructed_raw",
+      "bytes": 2703961,
+      "passed": true
+    },
+    {
+      "path": "round_02/validated_decision.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "run_summary.json",
+      "kind": "copy",
+      "passed": true
+    },
+    {
+      "path": "052dbc47af86af7884044a3a03043fd6cf3c05c454c37a3f3e792c2ab418f2f3",
+      "kind": "reconstructed_raw",
+      "bytes": 171301528,
+      "passed": true
+    },
+    {
+      "path": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba",
+      "kind": "reconstructed_raw",
+      "bytes": 658521960,
+      "passed": true
+    },
+    {
+      "path": "76da2b8e60120c9da207d160b2ae47dad631b7a62a2f156ed7153607c4100573",
+      "kind": "reconstructed_raw",
+      "bytes": 193975632,
+      "passed": true
+    },
+    {
+      "path": "c62a20a919e53646525fae7838245e74ac2e1bce4f979781869cb2fc7577915e",
+      "kind": "reconstructed_raw",
+      "bytes": 2368,
+      "passed": true
+    },
+    {
+      "path": "535f0a48fdb844858332c4af486d4a7c2d4100f4a48023e5233cf7b490fab34b",
+      "kind": "reconstructed_raw",
+      "bytes": 119144159,
+      "passed": true
+    },
+    {
+      "path": "9d65fc1a260655c4c0c7e705c0749144cfd84c75f3ec62b3630d5a4b4f7963a0",
+      "kind": "reconstructed_raw",
+      "bytes": 2368,
+      "passed": true
+    },
+    {
+      "path": "53d038f696a4f67ea0bb721d4d0db72f60dd8423624550cec8fb5453d308fc0e",
+      "kind": "reconstructed_raw",
+      "bytes": 1112802,
+      "passed": true
+    },
+    {
+      "path": "5a6ba27cd4aa4b3460f859da02197e804db25c52a93a9ef7953b3ebd82831d91",
+      "kind": "reconstructed_raw",
+      "bytes": 12858750,
+      "passed": true
+    },
+    {
+      "path": "155b7e7ed1b24e6775722a115ec452a51751b6f86873b9e2624b923b7f8dd8d8",
+      "kind": "reconstructed_raw",
+      "bytes": 25615777,
+      "passed": true
+    },
+    {
+      "path": "499a15532c72b98949b9833ecf05c726bc4328140b5f177a7894732c2e5cb3ea",
+      "kind": "reconstructed_raw",
+      "bytes": 12780427,
+      "passed": true
+    },
+    {
+      "path": "fe902ad39ab031056b3eb83bb2ec283af9ab3a95a01fae55a6934e25c242d0c1",
+      "kind": "reconstructed_raw",
+      "bytes": 25521230,
+      "passed": true
+    },
+    {
+      "path": "48def1d65dad1fffea70ea2ce54f5650d457375af3b94051f707c7d64a511d61",
+      "kind": "reconstructed_raw",
+      "bytes": 784,
+      "passed": true
+    },
+    {
+      "path": "1f7e9578ad1968df1ed1cad2ae7e1c17158547452df0a09db8f05da1c8995669",
+      "kind": "reconstructed_raw",
+      "bytes": 106182,
+      "passed": true
+    },
+    {
+      "path": "5e7c560d645ec18ab4f4edb0b267239bdc4a5a4b21e2157ebad4517093ee8a80",
+      "kind": "reconstructed_raw",
+      "bytes": 32940,
+      "passed": true
+    },
+    {
+      "path": "d7a5564ae632233e3304396293fb4ec0e8f666d32ab8710c58d778c43ee4bf13",
+      "kind": "reconstructed_raw",
+      "bytes": 106161,
+      "passed": true
+    }
+  ]
+}

@@ -4,7 +4,36 @@ No generation of waveforms. Bounds, integration and sustained recovery use time,
 not an unweighted average of adaptive SPICE sample points.
 """
 from pathlib import Path
-import math, re, bisect, json, argparse
+import math, re, bisect, json, argparse, struct
+
+def read_native(path):
+    """Read uncompressed normal-order real LT raw (ASCII or binary)."""
+    b=Path(path).read_bytes()
+    utf16=b.startswith(b'T\0') or b.startswith(b'\xff\xfe')
+    enc='utf-16-le' if utf16 else 'utf-8-sig'
+    marker='Binary:\n'.encode(enc) if utf16 else b'Binary:\n'
+    marker_cr='Binary:\r\n'.encode(enc) if utf16 else b'Binary:\r\n'
+    pos=b.find(marker_cr);m=marker_cr
+    if pos<0:pos=b.find(marker);m=marker
+    if pos<0:return read_ascii(path)
+    head=b[:pos].decode(enc)
+    flags=re.search(r'Flags:\s*([^\r\n]+)',head)[1].lower().split()
+    if 'complex' in flags or 'fastaccess' in flags:raise ValueError('Unsupported raw layout')
+    n=int(re.search(r'No\. Variables:\s*(\d+)',head)[1]);count=int(re.search(r'No\. Points:\s*(\d+)',head)[1])
+    names=[l.split()[1].lower() for l in head.rsplit('Variables:',1)[1].splitlines() if l.strip()]
+    if len(names)!=n or count<2:raise ValueError('Invalid binary header')
+    data=memoryview(b)[pos+len(m):]
+    # Some LT versions omit a double flag. Accept only an EXACT byte-size match.
+    double_size=count*n*8; mixed_size=count*(8+(n-1)*4)
+    if len(data)==double_size:fmt='<'+('d'*n)
+    elif len(data)==mixed_size and 'double' not in flags:fmt='<d'+('f'*(n-1))
+    else:raise ValueError('Incomplete/unknown binary data length')
+    columns=[[] for _ in range(n)]
+    for row in struct.iter_unpack(fmt,data):
+        if not all(math.isfinite(v) for v in row):raise ValueError('Nonfinite binary value')
+        if columns[0] and row[0]<=columns[0][-1]:raise ValueError('Nonmonotonic binary time')
+        for col,value in zip(columns,row):col.append(value)
+    return dict(zip(names,columns))
 
 def read_ascii(path):
     b=Path(path).read_bytes()
@@ -60,7 +89,7 @@ def sustained_entry(t,y,lower,upper,after=0):
     return t[i] if i<len(t) else None
 
 def review(path, output='v(hv)', current='i(lpower)', steady_start=None):
-    c=read_ascii(path); t=c['time']; v=c[output.lower()]
+    c=read_native(path); t=c['time']; v=c[output.lower()]
     start=steady_start if steady_start is not None else .8*t[-1]
     steady=stats(t,v,start,t[-1]); entry=sustained_entry(t,v,164.9,175.1)
     initial=v[0]; end=t[-1]

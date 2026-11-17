@@ -1,0 +1,65 @@
+{
+  "cases": [
+    {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "-ascii",
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sim\\s06f_diode_units_v1\\original\\circuit.cir"
+      ],
+      "timeout_s": 15,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "end_s": 2e-06,
+      "samples": 20027,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "name": "original",
+      "model_sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "forward_actual_A": 0.4999999999941254,
+      "reverse_actual_peak_A": 1.000000000005861,
+      "current_at1p5us_A": -2.710975062618024e-06,
+      "actual_zero_s": 1.0003333333333294e-06,
+      "return_minus0p25_s": 1.0506867443626029e-06,
+      "fixture_recovery_s": 5.035341102927352e-08,
+      "Qreverse_1p0_to1p3us_C": 5.000836946921667e-08,
+      "diode_voltage_min_V": -5.012829334061133,
+      "fixture_conditions": "PASS"
+    },
+    {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "-ascii",
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sim\\s06f_diode_units_v1\\TT0_DIAGNOSTIC\\circuit.cir"
+      ],
+      "timeout_s": 15,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "end_s": 2e-06,
+      "samples": 20030,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "name": "TT0_DIAGNOSTIC",
+      "model_sha256": "66bfbb11d5a97bb1b6344f155f639277fe2b63eb923e198257039eff52c2aa12",
+      "forward_actual_A": 0.4999999999941201,
+      "reverse_actual_peak_A": 0.6717754084296021,
+      "current_at1p5us_A": -2.710975001433964e-06,
+      "actual_zero_s": 1.0003333333333296e-06,
+      "return_minus0p25_s": 1.0007925296949462e-06,
+      "fixture_recovery_s": 4.591963616166167e-10,
+      "Qreverse_1p0_to1p3us_C": 1.573975171711708e-10,
+      "diode_voltage_min_V": -5.010000042545983,
+      "fixture_conditions": "FAIL"
+    }
+  ],
+  "scope": "Known commutation fixture near datasheet currents; no replication/qualification claim,TT0 not a physical part",
+  "theoretical_storage_time_s": 4.9999929806358284e-08,
+  "24V_07": "NOT_PASSED"
+}

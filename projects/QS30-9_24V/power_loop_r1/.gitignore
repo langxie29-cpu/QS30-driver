@@ -2,3 +2,12 @@
 runs/
 __pycache__/
 *.pyc
+# Original waveforms remain on disk; exact bytes are delivered as hashed gzip parts.
+evidence/**/*.raw
+# Locally preserved original manufacturer software/models, not redistributed.
+evidence/**/*.lib
+evidence/**/*.sub
+evidence/**/*.asc
+evidence/**/*.asy
+evidence/**/appdata/
+evidence/**/localappdata/

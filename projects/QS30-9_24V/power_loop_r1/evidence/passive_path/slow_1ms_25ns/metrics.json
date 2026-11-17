@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "-ascii",
+    "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\passive_path\\slow_1ms_25ns\\circuit.cir"
+  ],
+  "reference_evidence": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\toolchain_smoke\\ltspice\\result.json",
+  "reference_sha256": "c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346",
+  "simulator_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "rc": 0,
+  "elapsed_s": 11.812000000005355,
+  "name": "slow_1ms_25ns",
+  "endpoint_s": 0.002,
+  "IL_peak_A": 0.820530763172126,
+  "VOUT_initial_V": 0.0,
+  "VOUT_peak_V": 24.34077737744386,
+  "VGS_max_V": 0.00425028652914792,
+  "linear_3p1A_screen_exceeded": false,
+  "classification": "LIMITED_PASS",
+  "limitation": "Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval",
+  "halfstep_comparison": {
+    "IL_peak_delta_A": 1.4201808840041963e-08,
+    "VOUT_peak_delta_V": 7.640698207467267e-07,
+    "criterion": "Passive path peak reproducibility: IL difference<=0.01A and VOUT difference<=0.1V; separate from HV acceptance",
+    "passed": true
+  }
+}

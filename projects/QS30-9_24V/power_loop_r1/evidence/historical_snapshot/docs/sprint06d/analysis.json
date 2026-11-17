@@ -1,0 +1,1012 @@
+{
+  "cases": {
+    "gear_2ns_Rneg0": {
+      "name": "gear_2ns_Rneg0",
+      "method": "gear",
+      "maxstep_ns": 2,
+      "Rneg_ohm": 0,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 75911,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -8.19087761355818,
+      "VGS_max_V": 11.97520165148257,
+      "SENSE_peak_V": 0.194276960089466,
+      "gate_peak_A": 2.211618031668152,
+      "IL_peak_A": 1.662478551564558,
+      "snubber_mean_W": 0.2415630303156771,
+      "VC_at50us_V": 1.78071915390086,
+      "shutdown_VGS_max_V": 0.4992214953078032,
+      "VGS_min_time_s": 9.46676469845451e-05,
+      "SENSE_peak_time_s": 9.466644570449418e-05,
+      "gate_peak_time_s": 9.466647410424342e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986810365237035e-05,
+          "VGS_min_V": 0.3067753692510858,
+          "SENSE_peak_V": 0.1025118748183998,
+          "gate_peak_A": 0.3925511459306604,
+          "out6_to_VGS3_s": 1.2046721702412173e-07
+        },
+        {
+          "edge_s": 3.328316521222459e-05,
+          "VGS_min_V": 0.31401328164628955,
+          "SENSE_peak_V": 0.1024970740895228,
+          "gate_peak_A": 0.3925511296222263,
+          "out6_to_VGS3_s": 1.2047068996129666e-07
+        },
+        {
+          "edge_s": 4.3588028403352326e-05,
+          "VGS_min_V": 0.29934460452274747,
+          "SENSE_peak_V": 0.1024947071315166,
+          "gate_peak_A": 0.3925511290948679,
+          "out6_to_VGS3_s": 1.2047115765839896e-07
+        },
+        {
+          "edge_s": 5.3681279118498784e-05,
+          "VGS_min_V": 0.3003999984055875,
+          "SENSE_peak_V": 0.1025028015091461,
+          "gate_peak_A": 0.392551132844739,
+          "out6_to_VGS3_s": 1.2046703328798453e-07
+        },
+        {
+          "edge_s": 6.259503550272814e-05,
+          "VGS_min_V": 0.30647216545559364,
+          "SENSE_peak_V": 0.1024924109025752,
+          "gate_peak_A": 0.3925511275159971,
+          "out6_to_VGS3_s": 1.204642094472546e-07
+        },
+        {
+          "edge_s": 7.28895973795705e-05,
+          "VGS_min_V": 0.31176014485919634,
+          "SENSE_peak_V": 0.1025065346352933,
+          "gate_peak_A": 0.3925511401102838,
+          "out6_to_VGS3_s": 1.2046496854980647e-07
+        },
+        {
+          "edge_s": 8.31924751743208e-05,
+          "VGS_min_V": 0.29758989003019315,
+          "SENSE_peak_V": 0.1024997485516605,
+          "gate_peak_A": 0.3925511360095233,
+          "out6_to_VGS3_s": 1.2046371633043606e-07
+        },
+        {
+          "edge_s": 9.35078755627235e-05,
+          "VGS_min_V": 0.3020322118224237,
+          "SENSE_peak_V": 0.1024977223759911,
+          "gate_peak_A": 0.3925511295113081,
+          "out6_to_VGS3_s": 1.2047078866078763e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 4.741908529303385e-09,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "gear_1ns_Rneg0": {
+      "name": "gear_1ns_Rneg0",
+      "method": "gear",
+      "maxstep_ns": 1,
+      "Rneg_ohm": 0,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 132432,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -8.392260785591809,
+      "VGS_max_V": 11.975229168041306,
+      "SENSE_peak_V": 0.1973254222658415,
+      "gate_peak_A": 2.234455667460848,
+      "IL_peak_A": 1.662474439501382,
+      "snubber_mean_W": 0.24156102295198695,
+      "VC_at50us_V": 1.78071915390086,
+      "shutdown_VGS_max_V": 0.4990193129677248,
+      "VGS_min_time_s": 9.466604740998472e-05,
+      "SENSE_peak_time_s": 9.466484638423867e-05,
+      "gate_peak_time_s": 9.46648896513771e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986403102936145e-05,
+          "VGS_min_V": 0.3029038420523407,
+          "SENSE_peak_V": 0.1025049780762463,
+          "gate_peak_A": 0.3925322155057144,
+          "out6_to_VGS3_s": 1.2047318973164588e-07
+        },
+        {
+          "edge_s": 3.328343302843159e-05,
+          "VGS_min_V": 0.3032877789902203,
+          "SENSE_peak_V": 0.1025049845633966,
+          "gate_peak_A": 0.3925322157754689,
+          "out6_to_VGS3_s": 1.204709799027345e-07
+        },
+        {
+          "edge_s": 4.3589134975343076e-05,
+          "VGS_min_V": 0.30181549211192915,
+          "SENSE_peak_V": 0.1025049344942454,
+          "gate_peak_A": 0.3925322154460452,
+          "out6_to_VGS3_s": 1.2047711695718826e-07
+        },
+        {
+          "edge_s": 5.3676434485844044e-05,
+          "VGS_min_V": 0.3027317880726406,
+          "SENSE_peak_V": 0.1025085472902116,
+          "gate_peak_A": 0.3925322173586535,
+          "out6_to_VGS3_s": 1.2047077464510285e-07
+        },
+        {
+          "edge_s": 6.259696654185878e-05,
+          "VGS_min_V": 0.29975824212860896,
+          "SENSE_peak_V": 0.1025039531369654,
+          "gate_peak_A": 0.3925322152313931,
+          "out6_to_VGS3_s": 1.2048226034197724e-07
+        },
+        {
+          "edge_s": 7.289126509144179e-05,
+          "VGS_min_V": 0.2990195646029938,
+          "SENSE_peak_V": 0.1025021440762345,
+          "gate_peak_A": 0.3925322145379373,
+          "out6_to_VGS3_s": 1.204711208598996e-07
+        },
+        {
+          "edge_s": 8.31950195756375e-05,
+          "VGS_min_V": 0.30196277568044155,
+          "SENSE_peak_V": 0.1025126997618042,
+          "gate_peak_A": 0.3925322193481773,
+          "out6_to_VGS3_s": 1.2047158705496175e-07
+        },
+        {
+          "edge_s": 9.351101488314048e-05,
+          "VGS_min_V": 0.29683123773502873,
+          "SENSE_peak_V": 0.1025029188735146,
+          "gate_peak_A": 0.3925322147059239,
+          "out6_to_VGS3_s": 1.2047102150536078e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 4.81853082441423e-09,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "gear_0.5ns_Rneg0": {
+      "name": "gear_0.5ns_Rneg0",
+      "method": "gear",
+      "maxstep_ns": 0.5,
+      "Rneg_ohm": 0,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 273834,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -7.784973684004941,
+      "VGS_max_V": 11.974267996646766,
+      "SENSE_peak_V": 0.1816009858650179,
+      "gate_peak_A": 2.145863897310377,
+      "IL_peak_A": 1.662433289376511,
+      "snubber_mean_W": 0.24306958693623254,
+      "VC_at50us_V": 1.780719153900859,
+      "shutdown_VGS_max_V": 0.498918815635043,
+      "VGS_min_time_s": 9.466389638026774e-05,
+      "SENSE_peak_time_s": 9.466270241551278e-05,
+      "gate_peak_time_s": 9.466273500790873e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986549442670533e-05,
+          "VGS_min_V": 0.2979188297424389,
+          "SENSE_peak_V": 0.102505067752019,
+          "gate_peak_A": 0.3925461329507401,
+          "out6_to_VGS3_s": 1.2048188642942674e-07
+        },
+        {
+          "edge_s": 3.3283824675787504e-05,
+          "VGS_min_V": 0.29764397583953806,
+          "SENSE_peak_V": 0.1025078983758332,
+          "gate_peak_A": 0.3925461353411211,
+          "out6_to_VGS3_s": 1.204839213823824e-07
+        },
+        {
+          "edge_s": 4.3589640147133685e-05,
+          "VGS_min_V": 0.299115020903675,
+          "SENSE_peak_V": 0.1025059231519118,
+          "gate_peak_A": 0.3925461337175652,
+          "out6_to_VGS3_s": 1.2048621389844003e-07
+        },
+        {
+          "edge_s": 5.366633389836208e-05,
+          "VGS_min_V": 0.29881903875297555,
+          "SENSE_peak_V": 0.1025073197066849,
+          "gate_peak_A": 0.3925461348631789,
+          "out6_to_VGS3_s": 1.20486305086104e-07
+        },
+        {
+          "edge_s": 6.266796246989363e-05,
+          "VGS_min_V": 0.29954032841984846,
+          "SENSE_peak_V": 0.1025047884115054,
+          "gate_peak_A": 0.3925461327220806,
+          "out6_to_VGS3_s": 1.2048422655050461e-07
+        },
+        {
+          "edge_s": 7.296472607595018e-05,
+          "VGS_min_V": 0.29646629282347436,
+          "SENSE_peak_V": 0.1025100130210551,
+          "gate_peak_A": 0.3925461371437048,
+          "out6_to_VGS3_s": 1.204862205976846e-07
+        },
+        {
+          "edge_s": 8.326995225008249e-05,
+          "VGS_min_V": 0.2987892039411579,
+          "SENSE_peak_V": 0.102506508265407,
+          "gate_peak_A": 0.3925461342001905,
+          "out6_to_VGS3_s": 1.204838112453581e-07
+        },
+        {
+          "edge_s": 9.348181914500875e-05,
+          "VGS_min_V": 0.29699724650947423,
+          "SENSE_peak_V": 0.1025074903985011,
+          "gate_peak_A": 0.3925461350159051,
+          "out6_to_VGS3_s": 1.2048599594515332e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 4.1339441899090066e-09,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "gear_0.25ns_Rneg0": {
+      "name": "gear_0.25ns_Rneg0",
+      "method": "gear",
+      "maxstep_ns": 0.25,
+      "Rneg_ohm": 0,
+      "execution": "FAIL",
+      "error": "TimeoutExpired(['D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe', '-b', '-ascii', 'D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\sim\\\\s06d_transient_v1\\\\gear_0.25ns_Rneg0\\\\circuit.cir'], 60)"
+    },
+    "trap_0.5ns_Rneg0": {
+      "name": "trap_0.5ns_Rneg0",
+      "method": "trap",
+      "maxstep_ns": 0.5,
+      "Rneg_ohm": 0,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 244645,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -5.028361287117269,
+      "VGS_max_V": 11.979159360465665,
+      "SENSE_peak_V": 0.105226472382244,
+      "gate_peak_A": 1.377734530127634,
+      "IL_peak_A": 1.662437492776655,
+      "snubber_mean_W": 0.23662924501202146,
+      "VC_at50us_V": 1.780719153900859,
+      "shutdown_VGS_max_V": 0.49880413490607306,
+      "VGS_min_time_s": 5.494682629881457e-05,
+      "SENSE_peak_time_s": 5.494557422223534e-05,
+      "gate_peak_time_s": 5.494564463757725e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986913775507355e-05,
+          "VGS_min_V": 0.2977073408121013,
+          "SENSE_peak_V": 0.1025081416845045,
+          "gate_peak_A": 0.3927703183465747,
+          "out6_to_VGS3_s": 1.2049410400104667e-07
+        },
+        {
+          "edge_s": 3.3285878262624665e-05,
+          "VGS_min_V": 0.2975348158605939,
+          "SENSE_peak_V": 0.1025097155745129,
+          "gate_peak_A": 0.3927448799872888,
+          "out6_to_VGS3_s": 1.2046573954768925e-07
+        },
+        {
+          "edge_s": 4.359246240486663e-05,
+          "VGS_min_V": 0.298986109846498,
+          "SENSE_peak_V": 0.1025042659771322,
+          "gate_peak_A": 0.392751962563918,
+          "out6_to_VGS3_s": 1.2047447491255126e-07
+        },
+        {
+          "edge_s": 5.364251426738742e-05,
+          "VGS_min_V": 0.29549977902477914,
+          "SENSE_peak_V": 0.1025047103853928,
+          "gate_peak_A": 0.3927703153565714,
+          "out6_to_VGS3_s": 1.2047796095279056e-07
+        },
+        {
+          "edge_s": 6.280114617966543e-05,
+          "VGS_min_V": 0.2963174015692733,
+          "SENSE_peak_V": 0.1025103991421579,
+          "gate_peak_A": 0.392770320454749,
+          "out6_to_VGS3_s": 1.2047833173192224e-07
+        },
+        {
+          "edge_s": 7.310114812283351e-05,
+          "VGS_min_V": 0.2955477454702897,
+          "SENSE_peak_V": 0.1025069602618909,
+          "gate_peak_A": 0.392783629666633,
+          "out6_to_VGS3_s": 1.2050352726616627e-07
+        },
+        {
+          "edge_s": 8.341067625210815e-05,
+          "VGS_min_V": 0.29759581521766404,
+          "SENSE_peak_V": 0.1025097441407812,
+          "gate_peak_A": 0.3927523633282751,
+          "out6_to_VGS3_s": 1.2048951449002447e-07
+        },
+        {
+          "edge_s": 9.265634728862367e-05,
+          "VGS_min_V": 0.2964274327358657,
+          "SENSE_peak_V": 0.1025047360214494,
+          "gate_peak_A": 0.3927703153671317,
+          "out6_to_VGS3_s": 1.2050063822230373e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 0,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "trap_0.25ns_Rneg0": {
+      "name": "trap_0.25ns_Rneg0",
+      "method": "trap",
+      "maxstep_ns": 0.25,
+      "Rneg_ohm": 0,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 482910,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -5.0744802725934495,
+      "VGS_max_V": 11.977401584659425,
+      "SENSE_peak_V": 0.1052002174612444,
+      "gate_peak_A": 1.380609029167427,
+      "IL_peak_A": 1.662466331772719,
+      "snubber_mean_W": 0.2367884599168753,
+      "VC_at50us_V": 1.780719153900859,
+      "shutdown_VGS_max_V": 0.49881619385605186,
+      "VGS_min_time_s": 8.472702548947132e-05,
+      "SENSE_peak_time_s": 8.47257844886053e-05,
+      "gate_peak_time_s": 8.472581194213173e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.298696028247433e-05,
+          "VGS_min_V": 0.2959733965387628,
+          "SENSE_peak_V": 0.1025105554789082,
+          "gate_peak_A": 0.3927054408178153,
+          "out6_to_VGS3_s": 1.2047958219430237e-07
+        },
+        {
+          "edge_s": 3.3285630223173673e-05,
+          "VGS_min_V": 0.2951427944898507,
+          "SENSE_peak_V": 0.1025104352509892,
+          "gate_peak_A": 0.392729800807576,
+          "out6_to_VGS3_s": 1.2045486623349767e-07
+        },
+        {
+          "edge_s": 4.359254932011618e-05,
+          "VGS_min_V": 0.2951429356572588,
+          "SENSE_peak_V": 0.1025111714735449,
+          "gate_peak_A": 0.392723980384718,
+          "out6_to_VGS3_s": 1.2046572291314123e-07
+        },
+        {
+          "edge_s": 5.364061007370431e-05,
+          "VGS_min_V": 0.29515394849106047,
+          "SENSE_peak_V": 0.1025110677101468,
+          "gate_peak_A": 0.3927054412963128,
+          "out6_to_VGS3_s": 1.2048106143454883e-07
+        },
+        {
+          "edge_s": 6.281181456511355e-05,
+          "VGS_min_V": 0.2967877526011415,
+          "SENSE_peak_V": 0.1025121772682248,
+          "gate_peak_A": 0.392705442288055,
+          "out6_to_VGS3_s": 1.2047927960097057e-07
+        },
+        {
+          "edge_s": 7.311319403323698e-05,
+          "VGS_min_V": 0.2959109202042829,
+          "SENSE_peak_V": 0.102510699336602,
+          "gate_peak_A": 0.3927285511643307,
+          "out6_to_VGS3_s": 1.204459318807961e-07
+        },
+        {
+          "edge_s": 8.342266902333862e-05,
+          "VGS_min_V": 0.2970693092790247,
+          "SENSE_peak_V": 0.1025129051791752,
+          "gate_peak_A": 0.3927175642307067,
+          "out6_to_VGS3_s": 1.2046441555582231e-07
+        },
+        {
+          "edge_s": 9.25812078533653e-05,
+          "VGS_min_V": 0.29582877788629536,
+          "SENSE_peak_V": 0.1025122621434214,
+          "gate_peak_A": 0.3927054423642611,
+          "out6_to_VGS3_s": 1.204792878485236e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 0,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "gear_0.5ns_Rneg2": {
+      "name": "gear_0.5ns_Rneg2",
+      "method": "gear",
+      "maxstep_ns": 0.5,
+      "Rneg_ohm": 2,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 276281,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -6.423909549939879,
+      "VGS_max_V": 11.973138115567453,
+      "SENSE_peak_V": 0.136252233696896,
+      "gate_peak_A": 1.741774496111491,
+      "IL_peak_A": 1.662431756993029,
+      "snubber_mean_W": 0.24321057923382045,
+      "VC_at50us_V": 1.780719153900859,
+      "shutdown_VGS_max_V": 0.49832321168003446,
+      "VGS_min_time_s": 9.466149491723249e-05,
+      "SENSE_peak_time_s": 9.466024912268263e-05,
+      "gate_peak_time_s": 9.466028639373982e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986923551973507e-05,
+          "VGS_min_V": 0.29554922066202527,
+          "SENSE_peak_V": 0.1025100019809566,
+          "gate_peak_A": 0.389182330805994,
+          "out6_to_VGS3_s": 1.2045820541857981e-07
+        },
+        {
+          "edge_s": 3.328431047831878e-05,
+          "VGS_min_V": 0.2971503038204075,
+          "SENSE_peak_V": 0.1025099641702251,
+          "gate_peak_A": 0.3891823305744897,
+          "out6_to_VGS3_s": 1.204579689163151e-07
+        },
+        {
+          "edge_s": 4.3590040647642534e-05,
+          "VGS_min_V": 0.29692147284959414,
+          "SENSE_peak_V": 0.1025059242809718,
+          "gate_peak_A": 0.3891823281149642,
+          "out6_to_VGS3_s": 1.2045855677736699e-07
+        },
+        {
+          "edge_s": 5.366337064628944e-05,
+          "VGS_min_V": 0.2967718185048682,
+          "SENSE_peak_V": 0.1025054242527549,
+          "gate_peak_A": 0.3891823278738593,
+          "out6_to_VGS3_s": 1.2045691557892546e-07
+        },
+        {
+          "edge_s": 6.269210975740076e-05,
+          "VGS_min_V": 0.29955593528795743,
+          "SENSE_peak_V": 0.1025056039566123,
+          "gate_peak_A": 0.3891823278689298,
+          "out6_to_VGS3_s": 1.2045869943899277e-07
+        },
+        {
+          "edge_s": 7.298918675193002e-05,
+          "VGS_min_V": 0.29965846874991275,
+          "SENSE_peak_V": 0.1025084847088438,
+          "gate_peak_A": 0.3891823298742764,
+          "out6_to_VGS3_s": 1.204611652260752e-07
+        },
+        {
+          "edge_s": 8.329489454197158e-05,
+          "VGS_min_V": 0.29964375918909575,
+          "SENSE_peak_V": 0.1025071022532296,
+          "gate_peak_A": 0.3891823288366443,
+          "out6_to_VGS3_s": 1.2044949476419642e-07
+        },
+        {
+          "edge_s": 9.340484870590643e-05,
+          "VGS_min_V": 0.2979400125214149,
+          "SENSE_peak_V": 0.1025045890892327,
+          "gate_peak_A": 0.3891823272612901,
+          "out6_to_VGS3_s": 1.2045392511584403e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 1.4916338343803296e-09,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "gear_0.25ns_Rneg2": {
+      "name": "gear_0.25ns_Rneg2",
+      "method": "gear",
+      "maxstep_ns": 0.25,
+      "Rneg_ohm": 2,
+      "rc": 0,
+      "end_s": 0.00012,
+      "samples": 591658,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false,
+      "execution": "PASS",
+      "VGS_min_V": -5.710023749637211,
+      "VGS_max_V": 11.973788501128695,
+      "SENSE_peak_V": 0.1213577004279308,
+      "gate_peak_A": 1.5885170266491,
+      "IL_peak_A": 1.662468250709549,
+      "snubber_mean_W": 0.24375370416204242,
+      "VC_at50us_V": 1.780719153900859,
+      "shutdown_VGS_max_V": 0.4983132906325778,
+      "VGS_min_time_s": 0.0001045821662569587,
+      "SENSE_peak_time_s": 0.0001045809244327047,
+      "gate_peak_time_s": 0.0001045809632104177,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2987094237917405e-05,
+          "VGS_min_V": 0.29782822303392015,
+          "SENSE_peak_V": 0.1025126645355258,
+          "gate_peak_A": 0.3894233023234587,
+          "out6_to_VGS3_s": 1.2046557448151685e-07
+        },
+        {
+          "edge_s": 3.328466565427979e-05,
+          "VGS_min_V": 0.29723950687784684,
+          "SENSE_peak_V": 0.1025126653471706,
+          "gate_peak_A": 0.3894233023346302,
+          "out6_to_VGS3_s": 1.204669867654995e-07
+        },
+        {
+          "edge_s": 4.3590823747096476e-05,
+          "VGS_min_V": 0.296407441918895,
+          "SENSE_peak_V": 0.1025113508600087,
+          "gate_peak_A": 0.3894233013557951,
+          "out6_to_VGS3_s": 1.2046591326725527e-07
+        },
+        {
+          "edge_s": 5.3650794858434283e-05,
+          "VGS_min_V": 0.2966997524068382,
+          "SENSE_peak_V": 0.102512751890457,
+          "gate_peak_A": 0.389423302402755,
+          "out6_to_VGS3_s": 1.2046569538978817e-07
+        },
+        {
+          "edge_s": 6.275167899534021e-05,
+          "VGS_min_V": 0.2961601407518496,
+          "SENSE_peak_V": 0.1025107973782338,
+          "gate_peak_A": 0.3894233009235042,
+          "out6_to_VGS3_s": 1.2046365563906172e-07
+        },
+        {
+          "edge_s": 7.305041679446313e-05,
+          "VGS_min_V": 0.2981204562352145,
+          "SENSE_peak_V": 0.1025105454878946,
+          "gate_peak_A": 0.3894233007492865,
+          "out6_to_VGS3_s": 1.2046462974317344e-07
+        },
+        {
+          "edge_s": 8.335778391120591e-05,
+          "VGS_min_V": 0.29787512006204014,
+          "SENSE_peak_V": 0.1025097275934114,
+          "gate_peak_A": 0.3894233001406666,
+          "out6_to_VGS3_s": 1.2047101606583717e-07
+        },
+        {
+          "edge_s": 9.299262698887597e-05,
+          "VGS_min_V": 0.2960367183132697,
+          "SENSE_peak_V": 0.102511828482127,
+          "gate_peak_A": 0.389423301708465,
+          "out6_to_VGS3_s": 1.204673690613858e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 5.3551089730403e-10,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    }
+  },
+  "comparisons": {
+    "gear_2ns_Rneg0__gear_1ns_Rneg0": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 0.2013831720336281,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "VGS_max_V": {
+          "delta": 2.7516558736451202e-05,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 0.0030484621763754993,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": true
+        },
+        "gate_peak_A": {
+          "delta": 0.01022067079927688,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "IL_peak_A": {
+          "delta": 2.473459488013741e-06,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 8.309965182415306e-06,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "PASS"
+    },
+    "gear_1ns_Rneg0__gear_0.5ns_Rneg0": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 0.6072871015868682,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": false
+        },
+        "VGS_max_V": {
+          "delta": 0.0009611713945396616,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 0.015724436400823577,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": false
+        },
+        "gate_peak_A": {
+          "delta": 0.04128489708108322,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "IL_peak_A": {
+          "delta": 2.4752948063479837e-05,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 0.006206304965011326,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "FAIL"
+    },
+    "gear_0.5ns_Rneg0__gear_0.25ns_Rneg0": {
+      "research_convergence": "INCONCLUSIVE"
+    },
+    "trap_0.5ns_Rneg0__trap_0.25ns_Rneg0": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 0.04611898547618054,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "VGS_max_V": {
+          "delta": 0.0017577758062401472,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 2.6254920999599363e-05,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": true
+        },
+        "gate_peak_A": {
+          "delta": 0.002082051456324551,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "IL_peak_A": {
+          "delta": 1.734711585608113e-05,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 0.000672393008129458,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "PASS"
+    },
+    "gear_0.5ns_Rneg2__gear_0.25ns_Rneg2": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 0.713885800302668,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": false
+        },
+        "VGS_max_V": {
+          "delta": 0.0006503855612418619,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 0.014894533268965213,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": false
+        },
+        "gate_peak_A": {
+          "delta": 0.09647832971968842,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": false
+        },
+        "IL_peak_A": {
+          "delta": 2.195152689650501e-05,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 0.002228170973192347,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "FAIL"
+    },
+    "method_agreement_0.25ns": {
+      "research_convergence": "INCONCLUSIVE"
+    },
+    "instrumentation_old_2ns": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 0.5176484359034692,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": false
+        },
+        "VGS_max_V": {
+          "delta": 8.562021482738658e-05,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 0.01182255843611632,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": false
+        },
+        "gate_peak_A": {
+          "delta": 0.02680955657841794,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "IL_peak_A": {
+          "delta": 3.54357625201681e-05,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 0.0007815313812418003,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "FAIL"
+    },
+    "instrumentation_old_1ns": {
+      "criteria": {
+        "VGS_min_V": {
+          "delta": 2.95270743388358,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": false
+        },
+        "VGS_max_V": {
+          "delta": 0.0025415910085389015,
+          "allowed": 0.25,
+          "unit": "V",
+          "pass": true
+        },
+        "SENSE_peak_V": {
+          "delta": 0.08218893545945388,
+          "allowed": 0.005,
+          "unit": "V",
+          "pass": false
+        },
+        "gate_peak_A": {
+          "delta": 0.3322690642013725,
+          "allowed": 0.05,
+          "unit": "fraction_of_finer",
+          "pass": false
+        },
+        "IL_peak_A": {
+          "delta": 6.705795703737648e-06,
+          "allowed": 0.01,
+          "unit": "fraction_of_finer",
+          "pass": true
+        },
+        "snubber_mean_W": {
+          "delta": 0.005513993089157829,
+          "allowed": 0.02,
+          "unit": "fraction_of_finer",
+          "pass": true
+        }
+      },
+      "research_convergence": "FAIL"
+    }
+  },
+  "historical_reanalysis_no_new_runs": {
+    "2": {
+      "raw_sha256": "1f73ff86d10977688d6c9e1ffe38dbd1b4698a0d878d1831581477f289a8786c",
+      "VGS_min_V": -8.70852604946165,
+      "VGS_max_V": 11.975287271697397,
+      "SENSE_peak_V": 0.2060995185255823,
+      "gate_peak_A": 2.270910530418009,
+      "IL_peak_A": 1.662537462759706,
+      "snubber_mean_W": 0.24137424122693754,
+      "VC_at50us_V": 1.78071915390086,
+      "shutdown_VGS_max_V": 0.4992235310443045,
+      "VGS_min_time_s": 9.466550925904225e-05,
+      "SENSE_peak_time_s": 9.466431207881535e-05,
+      "gate_peak_time_s": 9.466436189271542e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2985528256503523e-05,
+          "VGS_min_V": 0.3142503950398615,
+          "SENSE_peak_V": 0.102495391241946,
+          "gate_peak_A": 0.392551128694511,
+          "out6_to_VGS3_s": 1.2047269711785988e-07
+        },
+        {
+          "edge_s": 3.3283224633655745e-05,
+          "VGS_min_V": 0.31504222119864095,
+          "SENSE_peak_V": 0.1025167399667407,
+          "gate_peak_A": 0.3925511486711725,
+          "out6_to_VGS3_s": 1.2046550407849302e-07
+        },
+        {
+          "edge_s": 4.358806331141953e-05,
+          "VGS_min_V": 0.31167064473597583,
+          "SENSE_peak_V": 0.1024933569248272,
+          "gate_peak_A": 0.3925511257990159,
+          "out6_to_VGS3_s": 1.2046816874897924e-07
+        },
+        {
+          "edge_s": 5.367731868048472e-05,
+          "VGS_min_V": 0.31362869554505535,
+          "SENSE_peak_V": 0.1024947677985472,
+          "gate_peak_A": 0.3925511274962805,
+          "out6_to_VGS3_s": 1.2046962908380268e-07
+        },
+        {
+          "edge_s": 6.261853061579669e-05,
+          "VGS_min_V": 0.3038398562433087,
+          "SENSE_peak_V": 0.102515896234612,
+          "gate_peak_A": 0.3925511470370047,
+          "out6_to_VGS3_s": 1.2047346505064552e-07
+        },
+        {
+          "edge_s": 7.291320327959224e-05,
+          "VGS_min_V": 0.30617868522579256,
+          "SENSE_peak_V": 0.1024970504951192,
+          "gate_peak_A": 0.3925511286408536,
+          "out6_to_VGS3_s": 1.204687113667488e-07
+        },
+        {
+          "edge_s": 8.321688636557341e-05,
+          "VGS_min_V": 0.3034720788447904,
+          "SENSE_peak_V": 0.1025043171151377,
+          "gate_peak_A": 0.3925511370590478,
+          "out6_to_VGS3_s": 1.20467817544203e-07
+        },
+        {
+          "edge_s": 9.352639297939151e-05,
+          "VGS_min_V": 0.2953803500266346,
+          "SENSE_peak_V": 0.1025008155219748,
+          "gate_peak_A": 0.3925511348637626,
+          "out6_to_VGS3_s": 1.2046546174472822e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 5.344703305162923e-09,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    },
+    "1": {
+      "raw_sha256": "a58f335b71e82f685f3900ccc0ed5fc4df620fdfc667ed54075446788c7f7a95",
+      "VGS_min_V": -5.439553351708229,
+      "VGS_max_V": 11.972687577032767,
+      "SENSE_peak_V": 0.1151364868063876,
+      "gate_peak_A": 1.492015173834179,
+      "IL_peak_A": 1.662485587715336,
+      "snubber_mean_W": 0.2428929887631541,
+      "VC_at50us_V": 1.78071915390086,
+      "shutdown_VGS_max_V": 0.49896810396920627,
+      "VGS_min_time_s": 5.495238048150755e-05,
+      "SENSE_peak_time_s": 5.495115662761906e-05,
+      "gate_peak_time_s": 5.495119205115603e-05,
+      "per_off_edge": [
+        {
+          "edge_s": 2.2986987265776177e-05,
+          "VGS_min_V": 0.295595147888365,
+          "SENSE_peak_V": 0.1025124848250427,
+          "gate_peak_A": 0.3925322188128936,
+          "out6_to_VGS3_s": 1.2047597331515632e-07
+        },
+        {
+          "edge_s": 3.328465107828293e-05,
+          "VGS_min_V": 0.3032178086513862,
+          "SENSE_peak_V": 0.1025118728280573,
+          "gate_peak_A": 0.3925322188164366,
+          "out6_to_VGS3_s": 1.204686014516878e-07
+        },
+        {
+          "edge_s": 4.359109115117126e-05,
+          "VGS_min_V": 0.29871081662172067,
+          "SENSE_peak_V": 0.1025130680243156,
+          "gate_peak_A": 0.3925322193855884,
+          "out6_to_VGS3_s": 1.2046995853560056e-07
+        },
+        {
+          "edge_s": 5.366305592311292e-05,
+          "VGS_min_V": 0.2975830504028112,
+          "SENSE_peak_V": 0.1025133916828412,
+          "gate_peak_A": 0.3925322194899606,
+          "out6_to_VGS3_s": 1.2047515911835607e-07
+        },
+        {
+          "edge_s": 6.270650664055139e-05,
+          "VGS_min_V": 0.2974015529041233,
+          "SENSE_peak_V": 0.1025104759422066,
+          "gate_peak_A": 0.3925322182687681,
+          "out6_to_VGS3_s": 1.2047059189743278e-07
+        },
+        {
+          "edge_s": 7.300403751308225e-05,
+          "VGS_min_V": 0.29822634539365966,
+          "SENSE_peak_V": 0.1025083597639626,
+          "gate_peak_A": 0.3925322173955802,
+          "out6_to_VGS3_s": 1.2047813769164957e-07
+        },
+        {
+          "edge_s": 8.331000955936536e-05,
+          "VGS_min_V": 0.29613710928938797,
+          "SENSE_peak_V": 0.1025055572045737,
+          "gate_peak_A": 0.3925322159687611,
+          "out6_to_VGS3_s": 1.2047827297769192e-07
+        },
+        {
+          "edge_s": 9.334054626543229e-05,
+          "VGS_min_V": 0.30082541030851323,
+          "SENSE_peak_V": 0.102502243712412,
+          "gate_peak_A": 0.3925322144148197,
+          "out6_to_VGS3_s": 1.2047355120399289e-07
+        }
+      ],
+      "sense110_gate_high_max_native_duration_s": 2.862884664441489e-10,
+      "hard_limit": "INCONCLUSIVE_A6_NOT_OBSERVABLE; threshold crossing alone is not causal proof"
+    }
+  },
+  "notes": [
+    "Global extrema and per-event extrema differ; neither is a waveform convergence norm.",
+    "Hard limit, internal A6 causal state and real PG remain unqualified.",
+    "All means use exact20us..120us interval, unlike historical strictly-greater20us interval."
+  ],
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD"
+}

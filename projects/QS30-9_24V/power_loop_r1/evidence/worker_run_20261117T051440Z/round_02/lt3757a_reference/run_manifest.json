@@ -1,0 +1,192 @@
+{
+  "task_id": "lt3757a_reference",
+  "vendor_sources": [
+    {
+      "archive": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\lib.zip",
+      "archive_sha256": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+      "archive_comment": null,
+      "member": "lib/sub/LT3757A.sub",
+      "crc32": "1d44a014",
+      "size": 2572,
+      "date_time": [
+        2022,
+        5,
+        3,
+        14,
+        36,
+        4
+      ],
+      "extracted_to": "vendor_original/LT3757A.sub",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "roundtrip_identical": true,
+      "license": "Analog Devices / Linear Technology LTspice distribution; redistributed under the LTspice license shipped with the installer (extracted/License.txt). Replay-for-verification only.",
+      "origin": "vendor signed installer payload (reduced archive): lib.zip/examples.zip"
+    },
+    {
+      "archive": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\lib.zip",
+      "archive_sha256": "dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094",
+      "archive_comment": null,
+      "member": "lib/sym/PowerProducts/LT3757A.asy",
+      "crc32": "fbdb5582",
+      "size": 948,
+      "date_time": [
+        2022,
+        5,
+        3,
+        14,
+        36,
+        18
+      ],
+      "extracted_to": "vendor_original/LT3757A.asy",
+      "sha256": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+      "roundtrip_identical": true,
+      "license": "Analog Devices / Linear Technology LTspice distribution; redistributed under the LTspice license shipped with the installer (extracted/License.txt). Replay-for-verification only.",
+      "origin": "vendor signed installer payload (reduced archive): lib.zip/examples.zip"
+    },
+    {
+      "archive": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\examples.zip",
+      "archive_sha256": "319ac0e9adcce7e156aa47050a659919dbd901f1e82ab42fdb156bcefcd54ad6",
+      "archive_comment": null,
+      "member": "examples/Applications/LT3757A.asc",
+      "crc32": "3ae68b0d",
+      "size": 2890,
+      "date_time": [
+        2022,
+        5,
+        3,
+        14,
+        35,
+        42
+      ],
+      "extracted_to": "vendor_original/LT3757A.asc",
+      "sha256": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+      "roundtrip_identical": true,
+      "license": "Analog Devices / Linear Technology LTspice distribution; redistributed under the LTspice license shipped with the installer (extracted/License.txt). Replay-for-verification only.",
+      "origin": "vendor signed installer payload (reduced archive): lib.zip/examples.zip"
+    }
+  ],
+  "simulator": {
+    "name": "LTspice",
+    "vendor": "Analog Devices Incorporated",
+    "file_version": "24.0.12.0",
+    "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+    "native_solver": "LTspice 24.0.12 built-in SPICE engine (solver = Normal, method = modified trap)",
+    "permission": "local, documented, already installed; no download, no install executed",
+    "authenticode": "preflight/ltspice_signature.json (Status 0, Analog Devices International UC)"
+  },
+  "referencedGlobalLibs": [
+    {
+      "member": "lib/cmp/standard.mos",
+      "sha256": "adfdcda82e1b6186f907df2dc3905659a2ea2be2a0887a016d1fd9f1b3b1b40e"
+    },
+    {
+      "member": "lib/cmp/standard.dio",
+      "sha256": "696d34dfe538966c80cfe1da259c1043f408777be79f59e4f1c47d82f3af320a"
+    },
+    {
+      "member": "lib/sub/LT3757A.sub",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634"
+    },
+    {
+      "member": "lib/sym/PowerProducts/LT3757A.asy",
+      "sha256": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76"
+    }
+  ],
+  "steps": {
+    "netlist": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-netlist",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\vendor_original\\LT3757A.asc",
+        "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\sim_profile\\LTspice\\lib\\sym"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference",
+      "timeout_s": 120,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_s": 1.625
+    },
+    "R0_vendor_tran": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "-ascii",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\LT3757A.net",
+        "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\sim_profile\\LTspice\\lib\\sub"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference",
+      "timeout_s": 120,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_s": 1.6410000000032596
+    },
+    "caseA_diff_vs_original": [
+      {
+        "after_line": 23,
+        "added": ".options plotwinsize=0"
+      }
+    ],
+    "A_tran_nocompress": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "-ascii",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\caseA_no_compression.cir",
+        "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\sim_profile\\LTspice\\lib\\sub"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference",
+      "timeout_s": 120,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_s": 1.5939999999827705
+    },
+    "caseB_diff_vs_original": [
+      {
+        "after_line": 23,
+        "added": ".op"
+      },
+      {
+        "after_line": 24,
+        "added": ".save all"
+      }
+    ],
+    "B_op": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "-ascii",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\caseB_op.cir",
+        "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference\\sim_profile\\LTspice\\lib\\sub"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\lt3757a_reference",
+      "timeout_s": 120,
+      "rc": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_s": 1.5929999999934807
+    }
+  },
+  "netlist_created": true,
+  "netlist_location": "vendor_original/LT3757A.net written by native LTspice next to the .asc; copied unmodified to ./LT3757A.net for replay",
+  "original_net": {
+    "file": "LT3757A.original.net",
+    "sha256": "7b5e38a86a2f2bb6131d3301fb3c02cec3153ab6fe2b5439741d63e817a27ade"
+  },
+  "circuit_cir": {
+    "file": "circuit.cir",
+    "sha256": "28e58826398b9a2a0b2b3a3b0b828bf344840c74428fd1199c92f4d0a3f7e52b",
+    "note": "byte-identical circuit content to LT3757A.original.net except the leading comment line (internal absolute path replaced by a provenance comment) and the .lib symbol path rewritten to %LIBSYM%; the ORIGINAL absolute-path netlist is preserved untouched as LT3757A.original.net"
+  },
+  "raw_R0_present": true,
+  "vendor_schematic_unchanged_by_replay": {
+    "vendor_original/LT3757A.asc": "867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6",
+    "expected": true,
+    "vendor_original/LT3757A.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "vendor_original/LT3757A.asy": "4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76",
+    "note": "re-hashed after all simulator invocations: no run may rewrite vendor bytes"
+  }
+}

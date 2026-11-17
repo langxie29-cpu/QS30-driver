@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-15",
+  "status": "PRESERVATION_AND_SCOPED_UNIT_REVIEW_NOT_RELEASE",
+  "process_attempts": 88,
+  "new_run_groups": 18,
+  "execution_pass_including_limited_and_tool_scopes": 48,
+  "execution_fail": 40,
+  "scope_counts": {
+    "FIXTURE_INVALID_RETAINED": 8,
+    "MODEL_DIAGNOSTIC": 72,
+    "TOOL_SETUP_FAILURE": 7,
+    "TOOL_SMOKE_ONLY": 1
+  },
+  "LT_raw_reparse": "same6 original invocations, not counted twice",
+  "LT_version": {
+    "actual": "24.0.12.0",
+    "official_source": "https://ltspice.analog.com/download/latest/LTspice64.msi",
+    "MSI_sha256": "62a9f20b630738e6ade20a37551baa91b20760bfb718807d8a2be4caa3421a36",
+    "exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+    "signature_checked": "Valid Analog Devices International UC; workspace-only administrative extraction, no system install",
+    "folder_name_is_not_version": true
+  },
+  "nominal_forced_CS_gate_pairs": [
+    {
+      "case": "ST_AUX12",
+      "delay_max_s": 2.308791590310735e-07,
+      "half_step_delay_delta_s": 3.1978432956400547e-10,
+      "half_step_current_relative_delta": 0.0006349362553420557,
+      "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+    },
+    {
+      "case": "ST_AUX12p6",
+      "delay_max_s": 2.3346447516867683e-07,
+      "half_step_delay_delta_s": 1.8052298677716412e-10,
+      "half_step_current_relative_delta": 0.0009063151842755302,
+      "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+    }
+  ],
+  "input_project_files_checked": 733,
+  "changed_index_files": [
+    "README.md",
+    "config/project.json",
+    "docs/TASKS.csv"
+  ],
+  "unexpected_changed_files": [],
+  "missing_files": [],
+  "legacy_files_checked": 1838,
+  "legacy_hash_mismatches": [
+    ".gitattributes",
+    ".gitignore",
+    "README.md"
+  ],
+  "selected_unit_original_model_copies_checked": 8,
+  "selected_model_hash_mismatches": [],
+  "AST_checked": [
+    "s06c_closeout.py",
+    "s06c_current_cell.py",
+    "s06c_current_cell_v2.py",
+    "s06c_current_cell_v3.py",
+    "s06c_gate_charge.py",
+    "s06c_gate_charge_v2.py",
+    "s06c_gate_charge_v3.py",
+    "s06c_lt3757_units.py",
+    "s06c_lt3757_units_v2.py",
+    "s06c_lt3757_units_v3.py",
+    "s06c_lt_compare.py",
+    "s06c_lt_compare_v2.py",
+    "s06c_lt_gate_units.py",
+    "s06c_lt_initial.py",
+    "s06c_lt_reparse.py",
+    "s06c_review.py",
+    "s06c_sources.py",
+    "s06c_st_compat.py",
+    "s06c_st_precision.py",
+    "s06c_vishay_cells.py",
+    "s06c_vishay_direct.py"
+  ],
+  "native_generated": false,
+  "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD",
+  "observed_HEAD": "ee53f81c3f93539906445482bd17e564829338ef",
+  "legacy_baseline_mismatch_scope": "three committed root metadata files separately reconciled; no old electrical file mismatch",
+  "concurrent_root_metadata": {
+    ".gitattributes": {
+      "current_sha256": "332f3703a39c6846cd74019ce55fc55b44ef7bca600e9aa29a39cb4871f9669c",
+      "HEAD_blob_sha256": "332f3703a39c6846cd74019ce55fc55b44ef7bca600e9aa29a39cb4871f9669c",
+      "normalized_bytes_match_HEAD": true,
+      "latest_commit": "ff4ce1a4 2026-11-15T14:54:09+08:00 REV.A9: archive electrical sprints 01-04 and 24V S06 qualification progress",
+      "action": "preserved, not reverted; this electrical turn did not execute commits or modify root metadata"
+    },
+    ".gitignore": {
+      "current_sha256": "327be77a989a98b904d5de572fdaaebbc286d6a4cad1856b02c48902b76c85d3",
+      "HEAD_blob_sha256": "468b8fa3e1a3357276ba8a0f7793f2494337a54e7a81d07a79e76f1572732053",
+      "normalized_bytes_match_HEAD": true,
+      "latest_commit": "05219d4b 2026-11-15T15:08:46+08:00 chore: retain LTspice provenance and exclude local installation files",
+      "action": "preserved, not reverted; this electrical turn did not execute commits or modify root metadata"
+    },
+    "README.md": {
+      "current_sha256": "e4d2ed6786aaabe175a4a1f85ee8b008c29d607b5efa5f8553023475d53b72f1",
+      "HEAD_blob_sha256": "8f13c93083cefefb4dc6649130498bf6922372c1be3bb5c90422894a9432727e",
+      "normalized_bytes_match_HEAD": true,
+      "latest_commit": "ff4ce1a4 2026-11-15T14:54:09+08:00 REV.A9: archive electrical sprints 01-04 and 24V S06 qualification progress",
+      "action": "preserved, not reverted; this electrical turn did not execute commits or modify root metadata"
+    }
+  },
+  "unexplained_legacy_changes": [],
+  "legacy_files_matching_old_hash": 1835
+}

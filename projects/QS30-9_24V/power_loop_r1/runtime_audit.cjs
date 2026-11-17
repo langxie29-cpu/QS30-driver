@@ -9,7 +9,7 @@ for(const p of walk(path.join(root,'.local/dsh_home/sessions')).filter(p=>p.ends
  const headers=rows.filter(r=>r.type==='request/header').map(r=>r.data.header.config);
  const use=rows.filter(r=>r.type==='assistant/message').map(r=>r.data.usage||{});
  sessions.push({session:path.basename(path.dirname(p)),headers:headers.map(c=>({provider:c.provider,model:c.model,maxTokens:c.maxTokens,reasoningEffort:c.reasoningEffort})),
-   request_count:headers.length,tool_calls:rows.filter(r=>r.type==='tool/call').length,
+   request_header_records:headers.length,inference_usage_records:use.length,request_context_records:rows.filter(r=>r.type==='request/context').length,tool_calls:rows.filter(r=>r.type==='tool/call').length,
    usage:use.reduce((a,b)=>{for(const [k,v] of Object.entries(b))if(typeof v==='number')a[k]=(a[k]||0)+v;return a;},{}),
    last_event:rows.at(-1).type,endpoint:'https://api.deepseek.com (explicit dedicated overlay; no packet capture)',
    all_requests_expected:headers.length>0&&headers.every(c=>c.provider==='deepseek-official'&&c.model==='deepseek-flash')});
@@ -17,4 +17,4 @@ for(const p of walk(path.join(root,'.local/dsh_home/sessions')).filter(p=>p.ends
 }
 fs.mkdirSync(path.join(root,'evidence/preflight'),{recursive:true});
 fs.writeFileSync(path.join(root,'evidence/preflight/dsh_runtime.json'),JSON.stringify({sessions},null,2)+'\n');
-console.log(JSON.stringify(sessions.map(s=>({session:s.session,requests:s.request_count,tools:s.tool_calls,expected:s.all_requests_expected,last:s.last_event}))));
+console.log(JSON.stringify(sessions.map(s=>({session:s.session,usage_records:s.inference_usage_records,tools:s.tool_calls,expected:s.all_requests_expected,last:s.last_event}))));

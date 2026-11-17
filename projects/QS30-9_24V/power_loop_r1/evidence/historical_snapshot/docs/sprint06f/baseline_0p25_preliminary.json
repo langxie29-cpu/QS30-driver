@@ -1,0 +1,243 @@
+{
+  "name": "original_gear_0.25ns",
+  "global": {
+    "VGS_min_V": -8.158714673918228,
+    "VGS_max_V": 11.975163845810041,
+    "SENSE_peak_V": 0.1924558048850227,
+    "gate_peak_A": 2.217401990142097,
+    "IL_global_peak_A": 1.662468577597272,
+    "snubber_mean_W": 0.2455905607441276,
+    "drain_min_V": -204.8482655145235,
+    "drain_max_V": 195.9512790196299,
+    "die_VGS_min_V": -0.7673348910228984,
+    "die_VGS_max_V": 11.97369364890301,
+    "shutdown_pin_VGS_max_after111us_V": 0.4989296032626591
+  },
+  "edges_s": [
+    1.5209964955770817e-05,
+    2.513682007590093e-05,
+    3.506369667436815e-05,
+    4.499063380180739e-05,
+    5.4917743643247075e-05,
+    6.484458859850042e-05,
+    7.477145545103163e-05,
+    8.469873516942289e-05,
+    9.462588661857882e-05,
+    0.00010455285783883294
+  ],
+  "events": {
+    "5": {
+      "status": "OBSERVED",
+      "ordinal": 5,
+      "edge_s": 5.4917743643247075e-05,
+      "window_s": [
+        5.489774364324707e-05,
+        5.5037743643247074e-05
+      ],
+      "VGS_min_V": -5.31216996718609,
+      "VGS_max_V": 9.5993292588562,
+      "SENSE_peak_V": 0.1119438204012045,
+      "gate_peak_A": 1.459008252699924,
+      "IL_local_peak_A": 0.06945552799095618,
+      "diode_reverse_peak_A": 4.151501825713992,
+      "Qreverse_C": 2.4380901875030043e-08,
+      "drain_min_V": -67.27918902072848,
+      "die_VGS_min_V": -0.0007073926945512059,
+      "die_VGS_max_V": 8.698244531089529,
+      "prestate": {
+        "time_s": 5.489774364324707e-05,
+        "IL_A": 0.06946085996361956,
+        "diode_A": 0.0691298857170868,
+        "snubber_voltage_V": 0.8303614091139764,
+        "snubber_energy_J": 3.4475003487287424e-11,
+        "package_current_A": {
+          "LS": 0.00021932211955165404,
+          "LG": -0.0001491628621034866,
+          "LD": -0.0003684849669052188
+        },
+        "package_energy_J": {
+          "LS": 1.8038322046736259e-16,
+          "LG": 8.343584786588908e-17,
+          "LD": 3.055076343790654e-16
+        },
+        "gate_internal_V": 0.0018526348796830292,
+        "source_internal_V": 0.0023084092187688437
+      },
+      "at_SENSE_peak": {
+        "time_s": 5.494634707075513e-05,
+        "IL_A": 0.001999914119171288,
+        "diode_A": 0.4186645680060777,
+        "snubber_A": -0.788746171445164,
+        "drain_port_A": 0.3720823338912225,
+        "gate_port_A": 1.936802598986914,
+        "source_port_A": -2.308884932697167,
+        "shunt_A": 1.759806154731929
+      },
+      "KCL": {
+        "drain": {
+          "residual_A": 9.488769075980156e-05,
+          "allowed_A": 0.041591457374499596,
+          "result": "PASS"
+        },
+        "gate": {
+          "residual_A": 3.334835041446382e-08,
+          "allowed_A": 0.029268443567660292,
+          "result": "PASS"
+        },
+        "source": {
+          "residual_A": 3.334800592554076e-08,
+          "allowed_A": 0.04242661858292286,
+          "result": "PASS"
+        }
+      },
+      "event_energy": {
+        "clamp_signed_absorbed_J": -7.656263069100198e-06,
+        "snubber_resistor_dissipated_J": 1.5809576439493278e-06,
+        "snubber_capacitor_delta_J": 1.6180151955580238e-06,
+        "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+      }
+    },
+    "9": {
+      "status": "OBSERVED",
+      "ordinal": 9,
+      "edge_s": 9.462588661857882e-05,
+      "window_s": [
+        9.460588661857881e-05,
+        9.474588661857882e-05
+      ],
+      "VGS_min_V": -0.2923440379011976,
+      "VGS_max_V": 10.295988876489677,
+      "SENSE_peak_V": 0.01245004909557249,
+      "gate_peak_A": 0.395001073229329,
+      "IL_local_peak_A": -0.2014945965390203,
+      "diode_reverse_peak_A": 0.002496236980416627,
+      "Qreverse_C": 6.062556052376073e-11,
+      "drain_min_V": -0.1788057919010806,
+      "die_VGS_min_V": -0.6050529905241585,
+      "die_VGS_max_V": 9.972140842232761,
+      "prestate": {
+        "time_s": 9.460588661857881e-05,
+        "IL_A": -0.2267658644065981,
+        "diode_A": -0.0024988127858099896,
+        "snubber_voltage_V": -102.76947927711008,
+        "snubber_energy_J": 5.280782935444179e-07,
+        "package_current_A": {
+          "LS": -0.0061973555588557,
+          "LG": 0.060143801357152624,
+          "LD": 0.06634115699527826
+        },
+        "package_energy_J": {
+          "LS": 1.4402705971079866e-13,
+          "LG": 1.3564788156332376e-11,
+          "LD": 9.902585500812355e-12
+        },
+        "gate_internal_V": -0.5978681459614787,
+        "source_internal_V": -0.004754885878731117
+      },
+      "at_SENSE_peak": {
+        "time_s": 9.464169945627093e-05,
+        "IL_A": -0.2236848357854841,
+        "diode_A": 0.0001503322788473748,
+        "snubber_A": -0.1108797610674605,
+        "drain_port_A": -0.1129554070352772,
+        "gate_port_A": 0.2822363233967523,
+        "source_port_A": -0.1692809163630176,
+        "shunt_A": 0.1893012462190273
+      },
+      "KCL": {
+        "drain": {
+          "residual_A": 1.5871364861252957e-08,
+          "allowed_A": 0.002272667666628025,
+          "result": "PASS"
+        },
+        "gate": {
+          "residual_A": 2.774586727039008e-09,
+          "allowed_A": 0.004287517375464727,
+          "result": "PASS"
+        },
+        "source": {
+          "residual_A": 2.7745866564303414e-09,
+          "allowed_A": 0.003510113957730198,
+          "result": "PASS"
+        }
+      },
+      "event_energy": {
+        "clamp_signed_absorbed_J": -1.7777119955883045e-06,
+        "snubber_resistor_dissipated_J": 3.320374607904447e-07,
+        "snubber_capacitor_delta_J": 1.3411085841511439e-06,
+        "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+      }
+    },
+    "10": {
+      "status": "OBSERVED",
+      "ordinal": 10,
+      "edge_s": 0.00010455285783883294,
+      "window_s": [
+        0.00010453285783883294,
+        0.00010467285783883294
+      ],
+      "VGS_min_V": -8.158714673918228,
+      "VGS_max_V": 9.98799983062625,
+      "SENSE_peak_V": 0.1924558048850227,
+      "gate_peak_A": 2.217401990142097,
+      "IL_local_peak_A": 0.2582686938910576,
+      "diode_reverse_peak_A": 5.86217559259606,
+      "Qreverse_C": 4.5427524445341074e-08,
+      "drain_min_V": -204.8482655145235,
+      "die_VGS_min_V": -0.00043294204040953375,
+      "die_VGS_max_V": 8.766301409303267,
+      "prestate": {
+        "time_s": 0.00010453285783883294,
+        "IL_A": 0.258456703278174,
+        "diode_A": 0.25839048852464724,
+        "snubber_voltage_V": 0.8697570192438775,
+        "snubber_energy_J": 3.7823863626199737e-11,
+        "package_current_A": {
+          "LS": 4.1871921906011186e-05,
+          "LG": -4.7455968816713044e-05,
+          "LD": -8.932768752684513e-05
+        },
+        "package_energy_J": {
+          "LS": 6.5747169153866225e-18,
+          "LG": 8.445258661248152e-18,
+          "LD": 1.7953730457510785e-17
+        },
+        "gate_internal_V": -0.00036848541349389347,
+        "source_internal_V": 3.6951127178798545e-06
+      },
+      "at_SENSE_peak": {
+        "time_s": 0.0001045860395867421,
+        "IL_A": 0.1846963669455045,
+        "diode_A": 0.5459807245745754,
+        "snubber_A": -1.209675043288591,
+        "drain_port_A": 0.8483906491059073,
+        "gate_port_A": 2.614726667645818,
+        "source_port_A": -3.463117316887966,
+        "shunt_A": 2.891959249495445
+      },
+      "KCL": {
+        "drain": {
+          "residual_A": 0.00012939096569591912,
+          "allowed_A": 0.060516266224137374,
+          "result": "PASS"
+        },
+        "gate": {
+          "residual_A": 7.844293037351235e-08,
+          "allowed_A": 0.04065673594284925,
+          "result": "PASS"
+        },
+        "source": {
+          "residual_A": 7.844293995531168e-08,
+          "allowed_A": 0.06121314215527573,
+          "result": "PASS"
+        }
+      },
+      "event_energy": {
+        "clamp_signed_absorbed_J": -1.0316924892534629e-05,
+        "snubber_resistor_dissipated_J": 1.7759692734164288e-06,
+        "snubber_capacitor_delta_J": 1.6068053940384478e-06,
+        "scope": "Signed ideal-source terminal energy can be negative (source delivers); capacitor energy change is not resistor dissipation; not whole-unit efficiency."
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+
+**** 11/20/08 13:06:10 ******* PSpice 16.0.0 (July 2006) ****** ID# 1657440 **
+
+ ** Profile: "UCC28C43_STARTUP-UCC28C43_startup"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrev
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "UCC28C43_startup.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../ucc28c43.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_16.0\tools\PSpice\PSpice.ini file:
+.lib "C:\Cadence\SPB_16.0\tools\pspice\library\nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 30m 0 {SCHEDULE(0,1000ns,2.5m,25ns)} 
+.OPTIONS STEPGMIN
+.OPTIONS ABSTOL= 1.0u
+.OPTIONS GMIN= 1.0E-11
+.OPTIONS ITL4= 10000
+.OPTIONS VNTOL= 100.0u
+.PROBE V(*) I(*) D(*) 
+.INC "..\UCC28C43_STARTUP.net" 
+
+
+
+**** INCLUDING UCC28C43_STARTUP.net ****
+* source UCC28C43
+C_C14         +VOUT1 0  0.1uF  
+D_D16         N16776504 N167771821 ES3B 
+R_R9         0 +VOUT2  4.42k  
+X_U11         N16777096 N16777322 N16776340 FQB6N80
+C_C16         VDD 0  1.0uF IC=0 
+R_R7         N167769981 VIN  37.4k  
+X_U9         N16776558 N16777096 0 N16777114 XFMR PARAMS: RATIO=0.16666
+C_C9         N16776636 N16776504  150pF  
+R_R12         OUT N16777322  10  
+C_C5         CS 0  330pF  
+R_R21         0 +VOUT2  480  
+R_R16         N16777078 0  39k  
+R_R10         CS N16776340  1k  
+R_R4         FB +VOUT2  15k  
+C_C2         VIN 0  10uF  
+L_L1         N16776558 N16777096  300u  
+R_R5         0 FB  3.9k  
+R_R8         VDD N167769981  37.4k  
+R_R13         0 N16777322  10k  
+X_U10         N16776558 N16777096 0 N16777304 XFMR PARAMS: RATIO=0.16666
+R_R14         0 N16776340  1.6  
+R_R6         FB N16777555  57.6k  
+C_C4         N16777555 COMP  56000pF  
+R_R26         N16777096 N16776558  5k  
+C_C15         COMP FB  56pF  
+D_D8         +VOUT2 VDD D1N4148 
+R_R23         VIN N16776558  0.5  
+R_R1         RTCT VREF  13.7k  
+R_R19         0 +VOUT1  48  
+R_R24         N16777304 N16776504  0.5  
+C_C1         RTCT N16777711  470pF  
+R_R2         N16777711 0  24  
+R_R25         N16777114 N16776742  0.5  
+X_U12         COMP FB CS RTCT 0 OUT VDD VREF UCC28C43_START
+C_C17         VDD 0  0.1uF IC=0 
+R_R15         N16776742 N167766580  78.7  
+C_C10         0 VIN  0.15uF  
+C_C3         +VOUT1 N167773981  47u  
+R_R11         N16776636 +VOUT2  78.7  
+R_R3         N167773981 0  0.04  
+C_C11         N16777096 N16777078  220pF  
+C_C12         N167766580 +VOUT1  150pF  
+D_D15         N16776742 +VOUT1 ES3B 
+V_V1         VIN 0  
++PULSE 0 100 10u 200u 200u 1 2
+R_R17         N167771821 +VOUT2  10  
+C_C8         VREF 0  0.1uF  
+C_C6         +VOUT2 N167774271  47u  
+D_D5         N16777078 0 DI_S1K 
+R_R18         0 +VOUT1  8.2k  
+R_R20         N167774271 0  0.04  
+X_U5         0 VDD DI_SMAZ16
+
+**** RESUMING UCC28C43_startup.cir ****
+.END
+
+Unable to find index file ucc28c43.ind for library file ucc28c43.lib
+Making new index file ucc28c43.ind for library file ucc28c43.lib
+Index has 23 entries from 1 file(s).
+
+**** 11/20/08 13:06:10 ******* PSpice 16.0.0 (July 2006) ****** ID# 1657440 **
+
+ ** Profile: "UCC28C43_STARTUP-UCC28C43_startup"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrev
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               ES3B            D1N4148         DI_S1K          
+          IS    7.270000E-12    2.682000E-09    7.310000E-18 
+           N     .7             1.836            .775        
+         ISR                    1.565000E-09                 
+         IKF                     .04417                      
+          BV  100             100             800            
+         IBV   10.000000E-06  100.000000E-06    5.000000E-06 
+          RS     .0224           .5664           .042        
+          TT   36.000000E-09   11.540000E-09    4.320000E-06 
+         CJO   83.200000E-12    4.000000E-12   42.400000E-12 
+          VJ                     .5                          
+           M     .333            .3333           .333        
+
+
+**** 11/20/08 13:06:10 ******* PSpice 16.0.0 (July 2006) ****** ID# 1657440 **
+
+ ** Profile: "UCC28C43_STARTUP-UCC28C43_startup"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrev
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   CS) 431.7E-21  (   FB) 7.367E-18  (  OUT) 2.998E-06  (  VDD) 149.0E-15      
+
+(  VIN)    0.0000  ( COMP)     .0729  ( RTCT)-158.0E-06  ( VREF)-158.0E-06      
+
+(+VOUT1)-149.8E-24 (+VOUT2) 35.71E-18 (X_U5.3)  -14.9000 (X_U9.5) 3.196E-30     
+
+(X_U9.6) 3.138E-30 (X_U10.5) 918.6E-30                   (X_U10.6) 922.5E-30    
+
+(X_U11.1) 73.65E-18                   (X_U11.2) 2.995E-06                       
+
+(X_U11.3) 442.5E-21                   (X_U12.5)    0.0000                       
+
+(X_U12.6)    3.5000                   (X_U12.7) 100.0E-06                       
+
+(X_U12.8)-143.6E-06                   (X_U12.9)    -.9271                       
+
+(X_U11.12) 2.995E-06                  (X_U11.13) 11.43E-09                      
+
+(X_U11.14)    0.0000                  (X_U11.15) 2.984E-06                      
+
+(X_U11.40) 432.1E-21                  (X_U12.10)    0.0000                      
+
+(X_U12.11)-9.281E-06                  (X_U12.12)-27.84E-06                      
+
+(X_U12.13)    0.0000                  (X_U12.16)-9.281E-06                      
+
+(X_U12.19) 24.83E-15                  (X_U12.21)    5.0000                      
+
+(X_U12.22)    5.0000                  (N16776340) 432.1E-21                     
+
+(N16776504) 461.2E-24                 (N16776558) 30.33E-18                     
+
+(N16776636) 35.71E-18                 (N16776742) 1.569E-24                     
+
+(N16777078) 6.138E-27                 (N16777096) 30.33E-18                     
+
+(N16777114) 7.889E-30                 (N16777304) 1.190E-27                     
+
+(N16777322) 2.995E-06                 (N16777555) 7.367E-18                     
+
+(N16777711)    0.0000                 (X_U12.191) 24.83E-15                     
+
+(N167766580) 1.569E-24                (N167769981) 74.50E-15                    
+
+(N167771821) 35.70E-18                (N167773981)    0.0000                    
+
+(N167774271)    0.0000                (X_U12.XAMP.2)    -.3416                  
+
+(X_U12.XAMP.3)    -.3416              (X_U12.XAMP.5)    -.3473                  
+
+(X_U12.XAMP.6)    -.3473              (X_U12.XAMP.10)-79.00E-06                 
+
+(X_U12.XAMP.13)    -.7028             (X_U12.XDRIVE.2)   -5.0000                
+
+(X_U12.XDRIVE.3)   -5.0000            (X_U12.XLATCH.3)    3.5000                
+
+(X_U12.XLATCH.4)    3.4999            (X_U12.XLATCH.7)    3.5000                
+
+(X_U12.XLATCH.8) 100.0E-06            (X_U12.XLATCH.9) 100.0E-06                
+
+(X_U12.XLATCH.10) 100.0E-06           (X_U12.XLATCH.X1.5)    5.0000             
+
+(X_U12.XLATCH.X2.5)    5.0000         (X_U12.XLATCH.X3.5)    5.0000             
+
+(X_U12.XLATCH.X4.5)    5.0000         (X_U12.XLATCH.X5.5)    5.0000             
+
+(X_U12.XLATCH.X6.5)    5.0000         (X_U12.XLATCH.X7.3)    0.0000             
+
+(X_U12.XLATCH.X8.3)    5.0000         
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         6.265E-17
+    X_U11.VFB    3.098E-17
+    X_U9.VMa     3.138E-24
+    X_U10.VMa    9.225E-22
+    X_U12.V3     1.000E-03
+    X_U12.V4    -9.281E-12
+    X_U5.VZ     -1.490E-10
+
+    TOTAL POWER DISSIPATION   2.23E-09  WATTS
+
+
+          JOB ABORTED
+
+**** 11/20/08 13:06:10 ******* PSpice 16.0.0 (July 2006) ****** ID# 1657440 **
+
+ ** Profile: "UCC28C43_STARTUP-UCC28C43_startup"  [ c:\work\01_ucc28c42\pre-release\01_ucc28c42\02_pspice\modifications after peerrev
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =      260.77
+

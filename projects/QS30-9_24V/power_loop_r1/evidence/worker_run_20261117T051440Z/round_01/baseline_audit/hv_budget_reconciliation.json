@@ -1,0 +1,40 @@
+{
+ "quantities_evaluated_at_V": 175.1,
+ "note": "Neither figure is at 170 V; both use the 175.1 V upper acceptance bound.",
+ "hv_bus_committed": {
+  "value_W": 5.71560370189665,
+  "formatted_W": 5.7156,
+  "source": "COMMITTED projects/QS30-9_24V/docs/sprint06/POWER_RAILS.csv",
+  "V": 175.1,
+  "A": 0.03264194004509795
+ },
+ "hv_bus_uncommitted_s06c": {
+  "value_W": 5.716423382277459,
+  "formatted_W": 5.71642,
+  "source": "UNCOMMITTED QS30-1 docs/sprint06c/POWER_RAILS.json",
+  "V": 175.1,
+  "A": 0.032646621258009476
+ },
+ "s06c_minus_committed_W": 0.0008196803808093733,
+ "bleeder_delta_W": 0.17343179317931792,
+ "context_claim_5p71642_is": "UNCOMMITTED S06C value rounded to 5 dp",
+ "context_claim_matches_uncommitted": true,
+ "context_claim_matches_committed": false,
+ "updated_budget_if_committed_base": 5.88904,
+ "updated_budget_if_uncommitted_base": 5.88986,
+ "context_states_floor_5p88985": 5.88985,
+ "assertions": {
+  "committed_base_plus_delta_ge_floor": {
+   "measured": 5.88904,
+   "floor": 5.88985,
+   "ok": false
+  },
+  "uncommitted_base_plus_delta_ge_floor": {
+   "measured": 5.88986,
+   "floor": 5.88985,
+   "ok": true
+  },
+  "context_5p71642_traces_to_uncommitted": true,
+  "context_5p71642_does_NOT_trace_to_committed": true
+ }
+}

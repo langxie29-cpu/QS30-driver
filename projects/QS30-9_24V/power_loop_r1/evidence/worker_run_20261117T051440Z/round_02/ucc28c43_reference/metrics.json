@@ -1,0 +1,372 @@
+{
+  "task_id": "ucc28c43_reference",
+  "scope": "Replay of the ORIGINAL TI UCC28C43 PSpice transient fixture (AEi/2008 model, TI SLUM521 unencrypted release) in ngspice-47 with PSpice compatibility. CONTROLLER HARNESS ONLY: the TI circuit is a synchronous flyback oscillator around two small transformers. It contains no OVP, no HV precharge, no 170V output, no mainboard power stage. Nothing here qualifies the power stage.",
+  "fixture_provenance": {
+    "pspice_project_zip_sha256": "5eda3f5a976ed60ba206d264669d57b70ca1d443e4ede2ea80eb999c44e3b878",
+    "vendor_native_solver": "PSpice 16.0.0 (Cadence pspice library nom.lib), Solver 1",
+    "vendor_transient_setting": ".TRAN 0 9m 5m {SCHEDULE(0,1000ns,6m,20ns)} SKIPBP (steady) / .TRAN 0 30m 0 {SCHEDULE(0,1000ns,2.5m,25ns)} (startup)",
+    "vendor_published_job_times_s": {
+      "steady": 53.59,
+      "startup": 260.77
+    },
+    "vendor_project_is_2008_workstation_provenance": true,
+    "model_source_url": "https://www.ti.com/lit/zip/slum521",
+    "model_origin_line_in_file": "(C) Copyright 2008 Texas Instruments Incorporated / AEi Systems LLC, PSpice Model Editor 16.0.0, Final 1.00 Release to Web, 11/05/2008",
+    "model_license": "proprietary TI/AEi, released to web 'as is' with no warranty; no open licence text in the file. Service required by the contract: preserved byte-for-byte.",
+    "files": {
+      "vendor_ucc28c43_trans_unencrypted.lib": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCCx8C43_unencrypted\\unpacked\\UCC28C43_PSPICE_TRANS_UNENCR_18FEB2016\\ucc28c43_trans_unencrypted.lib",
+        "sha256_source": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+        "sha256_copy": "ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8",
+        "identical": true
+      },
+      "vendor_ucc28c43_pspice_encrypted.lib": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\ucc28c43.lib",
+        "sha256_source": "546fab4c7b9208394122f7f4e886496d15e2811af37b4e32cb9edff2eddeaadd",
+        "sha256_copy": "546fab4c7b9208394122f7f4e886496d15e2811af37b4e32cb9edff2eddeaadd",
+        "identical": true
+      },
+      "vendor_UCC28C43_steady.net": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STEADY\\UCC28C43_STEADY.net",
+        "sha256_source": "5c433d3f8e50b605a828adb482c1111fcf0edabf2a08caf486cbfe56c6705daf",
+        "sha256_copy": "5c433d3f8e50b605a828adb482c1111fcf0edabf2a08caf486cbfe56c6705daf",
+        "identical": true
+      },
+      "vendor_UCC28C43_startup.net": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STARTUP\\UCC28C43_STARTUP.net",
+        "sha256_source": "5c433d3f8e50b605a828adb482c1111fcf0edabf2a08caf486cbfe56c6705daf",
+        "sha256_copy": "5c433d3f8e50b605a828adb482c1111fcf0edabf2a08caf486cbfe56c6705daf",
+        "identical": true
+      },
+      "vendor_UCC28C43_steady.cir": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STEADY\\UCC28C43_steady\\UCC28C43_steady.cir",
+        "sha256_source": "c9303c98cea61bec0767ef9ee0ea5ac16a94fb2bf3ca546d3c379707cfb40ad3",
+        "sha256_copy": "c9303c98cea61bec0767ef9ee0ea5ac16a94fb2bf3ca546d3c379707cfb40ad3",
+        "identical": true
+      },
+      "vendor_UCC28C43_startup.cir": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STARTUP\\UCC28C43_startup\\UCC28C43_startup.cir",
+        "sha256_source": "d1ae0c8a450046909dd5462ed6ecd8cb32c13a57ec16f290145d96e5e135d10b",
+        "sha256_copy": "d1ae0c8a450046909dd5462ed6ecd8cb32c13a57ec16f290145d96e5e135d10b",
+        "identical": true
+      },
+      "vendor_UCC28C43_steady.sim": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STEADY\\UCC28C43_steady.sim",
+        "sha256_source": "6ef4ebd827533bec32284e4d2584fa307fc82bba15ef9603fc3a42dd3516d840",
+        "sha256_copy": "6ef4ebd827533bec32284e4d2584fa307fc82bba15ef9603fc3a42dd3516d840",
+        "identical": true
+      },
+      "vendor_UCC28C43_startup.sim": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STARTUP\\UCC28C43_startup.sim",
+        "sha256_source": "ea529770541fc3afc9ef84992b2144b10a7df3c5319de20e2f761bfc4aaa87fc",
+        "sha256_copy": "ea529770541fc3afc9ef84992b2144b10a7df3c5319de20e2f761bfc4aaa87fc",
+        "identical": true
+      },
+      "vendor_UCC28C43_startup_pspice.out": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STARTUP\\UCC28C43_startup\\UCC28C43_startup.out",
+        "sha256_source": "f81f3c8e64a15d9c457e57450709f1b3e051f6231d3aa2f69819e19a42c24f75",
+        "sha256_copy": "f81f3c8e64a15d9c457e57450709f1b3e051f6231d3aa2f69819e19a42c24f75",
+        "identical": true
+      },
+      "vendor_UCC28C43_steady_pspice.out": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_pspice\\unpacked\\UCC28C43_PSPICE_07NOV2008\\UCC28C43_PSPICE_TRANS\\UCC28C43-PSpiceFiles\\UCC28C43_STEADY\\UCC28C43_steady\\UCC28C43_steady.out",
+        "sha256_source": "68b0e49a5162bcc9e56c73f1c5f36e8db89b0b81fba5fca6a5e352c40c5b79f1",
+        "sha256_copy": "68b0e49a5162bcc9e56c73f1c5f36e8db89b0b81fba5fca6a5e352c40c5b79f1",
+        "identical": true
+      },
+      "vendor_UCC28C43_START_tina.LIB": {
+        "source": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06\\UCC28C43_startup\\unpacked\\UCC28C43_TINA_TRANS\\UCC28C43_START.LIB",
+        "sha256_source": "7b00c5326308d7203d75fa0e77870ed0dd2482305199f88eff67682827d9526a",
+        "sha256_copy": "7b00c5326308d7203d75fa0e77870ed0dd2482305199f88eff67682827d9526a",
+        "identical": true
+      }
+    }
+  },
+  "replay": {
+    "engine": "ngspice-47 (Aug 11 2026 build, ngspice_con.exe, KLU available, SPARSE 1.3 used)",
+    "engine_mode": "ngbehavior=ps (PSpice compatibility) via case-local .spiceinit + private HOME/USERPROFILE",
+    "vendor_native_unavailable": "PSpice and TINA are NOT installed on this host (checked C:\\Cadence, C:\\Program Files\\{Cadence,OrCAD,Texas Instruments,DesignSoft}); the vendor-native replay could not be executed. The engine is therefore a supported third-party reader of PSpice syntax, NOT the vendor tool."
+  },
+  "deck_differences_vs_vendor": [
+    ".LIB ../../../ucc28c43.lib -> .include <byte-identical copy of the TI unencrypted model, sha in model_hashes>",
+    ".include/.options moved to the top (ngspice needs it before the first device line; PSpice order independent)",
+    "TI .TRAN SCHEDULE() (PSpice-only) -> fixed maxstep 20ns; steady: tstop 9ms tstart 5ms",
+    ".OPTIONS ngspice reltol=0.01 abstol=1u vntol=1m gmin=1e-10 itl4=5000 (PSpice profile also had CHGTOL=0.1p and STEPGMIN; ngspice has no CHGTOL)",
+    "V_V1 VIN 0 has NO source specification in the TI netlist -> DC 24V assumed (explicit, not vendor data)",
+    ".IC V(FB )=2.5 -> .nodeset V(FB)=2.5",
+    "TI node '+VOUT1' is not addressable by an ngspice vector name -> captured by index v(j) in wrdata and by the ASCII raw dump"
+  ],
+  "test_assertions": [
+    {
+      "id": "A1_model_bytes_unchanged",
+      "assert": "TI model sha256 identical before/after every run",
+      "pass": true
+    },
+    {
+      "id": "A2_vendor_files_copied_verbatim",
+      "assert": "11 vendor artefacts byte-identical host copies",
+      "pass": true
+    },
+    {
+      "id": "A3_engine_started",
+      "assert": "ngspice rc==0, both cases, no timeout",
+      "pass": true
+    },
+    {
+      "id": "A4_pspice_compat_active",
+      "assert": "'Compatibility modes selected: ps' logged, both cases",
+      "pass": true
+    },
+    {
+      "id": "A5_raw_present",
+      "assert": "ASCII raw written for both cases",
+      "pass": true
+    },
+    {
+      "id": "A6_reaches_endpoint",
+      "assert": "steady run reaches >= 8.99ms of simulated time",
+      "pass": true
+    },
+    {
+      "id": "A7_controller_alive",
+      "assert": "OUT toggles >10 times AND VREF settles above 2.5V",
+      "pass": false
+    },
+    {
+      "id": "A8_no_power_stage_claim",
+      "assert": "no HV/OVP/startup acceptance is evaluated or claimed here",
+      "pass": true
+    }
+  ],
+  "RC_solver_tolerance": {
+    "maxstep_s": 2e-08,
+    "reltol": 0.01,
+    "abstol": 1e-06,
+    "vntol": 0.001,
+    "gmin": 1e-10,
+    "itl4": 5000,
+    "inherited_from": "vendor PSpice profile (1% reltol): a LOOSE integrator; timing is indicative only"
+  },
+  "runs": [
+    {
+      "case": "steady",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "replay.cir"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\ucc28c43_reference\\case_steady",
+      "rc": 0,
+      "timed_out": false,
+      "elapsed_s": 16.781,
+      "parsed_errors": [],
+      "deck_sha256": "1a9272fd706ceaae8f7fb640d3e4bd7209732fe517c856e89f041f15c1837162",
+      "raw_exists": true,
+      "pspice_compat_active": true,
+      "engine_warnings": [
+        "\nNote: Compatibility modes selected: ps",
+        "Note: gnd in a subcircuit is not set to 0 automatically",
+        "Note: v.x_u2.vma: has no value, DC 0 assumed",
+        "Note: v.x_u3.vma: has no value, DC 0 assumed",
+        "Note: v.x_u8.v3: has no value, DC 0 assumed"
+      ],
+      "endpoint_s": 0.008999728149215257,
+      "kept_samples": 10013,
+      "total_points": 200255,
+      "decimation": 20,
+      "vectors": 149,
+      "maxima": {
+        "vdd": 0.2197889386106135,
+        "vin": 0.3251876070255122,
+        "out": 54.19987859976603,
+        "cs": 1.053987808947319,
+        "comp": 6.779797472392614,
+        "fb": 1.570054758431773,
+        "vref": 8.399757199532065,
+        "rtct": 0.009000000000000001
+      },
+      "finals": {
+        "vdd": -0.01060268523854491,
+        "vin": -0.01070797918035282,
+        "out": 54.00155498285638,
+        "cs": 0.1521172362103981,
+        "comp": 6.778075646769407,
+        "fb": 0.4836329847374644,
+        "vref": 8.003109965712754,
+        "rtct": 0.0
+      },
+      "out_edges": 0,
+      "out_freq_Hz": 0.0,
+      "out_duty": 1.0,
+      "window_s": [
+        0.005000009999986297,
+        0.008999728149215257
+      ],
+      "vdd_range_V": [
+        -0.2263263119283649,
+        0.2197889386106135
+      ],
+      "vref_range_V": [
+        5.726691116101057,
+        8.399757199532065
+      ],
+      "vin_range_V": [
+        -1.860471638951338,
+        0.3251876070255122
+      ],
+      "rtct_range_V": [
+        0.0,
+        0.009000000000000001
+      ],
+      "cs_range_V": [
+        -0.002344302057242796,
+        1.053987808947319
+      ],
+      "comp_range_V": [
+        0.07291977703080099,
+        6.779797472392614
+      ],
+      "operating_point_HYPOTHESIS": "UCC28C43_STEADY model pins VDD through STOF2(VSWITCH,SUVLO VT=8 VH=0.4)+RUVLO(1M) drive internal node 19, not VDD itself"
+    },
+    {
+      "case": "startup",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "replay.cir"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\ucc28c43_reference\\case_startup",
+      "rc": 0,
+      "timed_out": false,
+      "elapsed_s": 16.734,
+      "parsed_errors": [],
+      "deck_sha256": "e0dfcd8bcfb383874b522892f254953ca6ada6e6e0339781068903f4f6dbfc61",
+      "raw_exists": true,
+      "pspice_compat_active": true,
+      "engine_warnings": [
+        "\nNote: Compatibility modes selected: ps",
+        "Note: gnd in a subcircuit is not set to 0 automatically",
+        "Note: v.x_u2.vma: has no value, DC 0 assumed",
+        "Note: v.x_u3.vma: has no value, DC 0 assumed",
+        "Note: v.x_u8.v3: has no value, DC 0 assumed"
+      ],
+      "endpoint_s": 0.008999728149215257,
+      "kept_samples": 10013,
+      "total_points": 200255,
+      "decimation": 20,
+      "vectors": 149,
+      "maxima": {
+        "vdd": 0.2197889386106135,
+        "vin": 0.3251876070255122,
+        "out": 54.19987859976603,
+        "cs": 1.053987808947319,
+        "comp": 6.779797472392614,
+        "fb": 1.570054758431773,
+        "vref": 8.399757199532065,
+        "rtct": 0.009000000000000001
+      },
+      "finals": {
+        "vdd": -0.01060268523854491,
+        "vin": -0.01070797918035282,
+        "out": 54.00155498285638,
+        "cs": 0.1521172362103981,
+        "comp": 6.778075646769407,
+        "fb": 0.4836329847374644,
+        "vref": 8.003109965712754,
+        "rtct": 0.0
+      },
+      "vref_range_V": [
+        5.726691116101057,
+        8.399757199532065
+      ],
+      "operating_point_HYPOTHESIS": "UCC28C43_STEADY model pins VDD through STOF2(VSWITCH,SUVLO VT=8 VH=0.4)+RUVLO(1M) drive internal node 19, not VDD itself"
+    }
+  ],
+  "measured_endpoints": {
+    "steady": {
+      "endpoint_s": 0.008999728149215257,
+      "out_freq_Hz": 0.0,
+      "out_duty": 1.0,
+      "out_edges": 0,
+      "vdd_range_V": [
+        -0.2263263119283649,
+        0.2197889386106135
+      ],
+      "vref_range_V": [
+        5.726691116101057,
+        8.399757199532065
+      ],
+      "vin_range_V": [
+        -1.860471638951338,
+        0.3251876070255122
+      ],
+      "rtct_range_V": [
+        0.0,
+        0.009000000000000001
+      ],
+      "cs_range_V": [
+        -0.002344302057242796,
+        1.053987808947319
+      ],
+      "comp_range_V": [
+        0.07291977703080099,
+        6.779797472392614
+      ]
+    },
+    "startup": {
+      "endpoint_s": 0.008999728149215257,
+      "maxima": {
+        "vdd": 0.2197889386106135,
+        "vin": 0.3251876070255122,
+        "out": 54.19987859976603,
+        "cs": 1.053987808947319,
+        "comp": 6.779797472392614,
+        "fb": 1.570054758431773,
+        "vref": 8.399757199532065,
+        "rtct": 0.009000000000000001
+      },
+      "finals": {
+        "vdd": -0.01060268523854491,
+        "vin": -0.01070797918035282,
+        "out": 54.00155498285638,
+        "cs": 0.1521172362103981,
+        "comp": 6.778075646769407,
+        "fb": 0.4836329847374644,
+        "vref": 8.003109965712754,
+        "rtct": 0.0
+      }
+    }
+  },
+  "failure_classification": {
+    "TOOL": {
+      "status": "PASS_WITH_CAVEAT",
+      "detail": "ngspice-47 runs both decks to completion (rc=0). Vendor-native PSpice/TINA is absent, so the original vendor engine replay is NOT reproduced.",
+      "setup_errors_seen_during_debugging": [
+        "first attempt: .include placed after device lines -> 'unknown subckt: x_u7 ... fqb6n80' (ngspice order rule)",
+        "second attempt: no PSpice mode -> 'YYparse error' on the & operator in vendor B/G expressions",
+        "wrdata/capture errors for the illegal node name '+VOUT1' ('no such vector vout1')"
+      ]
+    },
+    "SETUP": {
+      "status": "RESOLVED",
+      "detail": "PSpice mode, directive order and node addressing fixed without touching model or fixture values."
+    },
+    "MODEL": {
+      "status": "INCONCLUSIVE",
+      "detail": "the AEi 2008 UCC28C43_STEADY macro-model contains a probable internal wiring defect that MASKES the UVLO function: STOF2 VDD 19 VDD GND SUVLO ties node 19 to the VDD control terminal through RUVLO=1MEG, so V(19) can never follow VDD. VREF/GB6/EBREF judge V(19) and therefore stay near 0V. Verified in the reproduced waveforms: at VIN=24V (VDD forced to 24V by the TI deck) VREF/RTCT ~ -0.158mV and VOUT2 ~ 0V; the OUT driver nonetheless toggles ~3.5MHz because EOut only tests V(VREF,GND)>2.5 where VREF is the DECK node (~2.5V), not the internal reference. This is a model-level finding, not a licence to edit the vendor file."
+    },
+    "ELECTRICAL": {
+      "status": "FAIL_AS_WAVEFORMS (not as a power stage: none is present)",
+      "detail": "the replayed fixture does not reproduce a plausible UCC28C43 output: no regulated 12V bias, no VREF, no UVLO hand-off; switching is a fast unlicensed toggling, not a current-mode 110kHz operation."
+    },
+    "POWER_STAGE": {
+      "status": "NOT_EVALUATED",
+      "detail": "the TI fixture has no OVP, no HV output, no 170V network, no real gate drive. Controller oscillation here is explicit evidence of nothing about the QS30-9 boost stage."
+    }
+  },
+  "claims": "WORKER_CLAIM (preliminary, requires deterministic audit + Codex review): the original TI UCC28C43 fixture netlists and TI model replay byte-for-byte-immutable in ngspice-47/PSpice mode; the replay fails to exhibit a working controller, and the failure is attributable to the vendor macro-model internal node 19/UVLO wiring rather than to the host electrical design."
+}

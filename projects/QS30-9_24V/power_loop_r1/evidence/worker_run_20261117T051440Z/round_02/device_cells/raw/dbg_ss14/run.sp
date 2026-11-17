@@ -1,0 +1,13 @@
+* F2 pins: 2-terminal device (A K); forward sweep 0..1.2 V
+.include ss14_vishay.models
+.temp 27
+VA NVAP 0 0
+X1 NVAP NVKP SS14
+VK NVKP 0 0
+.dc VA 0 1.2 0.005
+
+.control
+run
+wrdata out.dat v(NVAP) i(VA)
+.endc
+.end

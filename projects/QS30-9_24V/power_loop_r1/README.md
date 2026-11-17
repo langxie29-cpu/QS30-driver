@@ -1,6 +1,15 @@
 # QS30-9: DeepSeek Flash + Codex 6.1 Sol power-loop orchestrator R1
 
-**State: orchestration infrastructure only. No real model/HV SPICE runs performed by this new tool yet. 24V-07/08 and manufacturing remain HOLD.**
+**2026-11-17 state: two real DeepSeek Flash waves/six worker sessions executed, current OpenAI gpt-6.1-sol review, zero child Codex calls. Actual LT3757A/zero-COUT nominal simulation completed60ms and reached170V vicinity. Candidate ELECTRICAL_FAIL: SENSE0.524V vs0.3V absolute rating; late-window2.431Vpp. 24V-07/08 qualification and manufacturing remain HOLD.**
+
+Read the [engineering report](ENGINEERING_REPORT.md), [model matrix](MODEL_MATRIX.md) and [controller decision](CONTROLLER_REVIEW.md) first. New exact raw archives and the original failed experiments are indexed under `evidence/`. The earlier implementation notes below describe the starting infrastructure; claims of no local access/no real runs are historical and superseded by this report.
+
+Current local entry points (private Harness configuration and credentials stay in ignored `.local/`):
+
+    python projects/QS30-9_24V/power_loop_r1/local_live.py --doctor
+    python -m unittest discover -s projects/QS30-9_24V/power_loop_r1 -p test_*.py -v
+
+The completed run is `runs/20261117T051440Z`; its last decision is HOLD and it cannot schedule a third wave. Do not restart it as a new billable run just to reproduce measurements. Use the archived netlists/commands/raw hashes and analysis scripts. See [reproduction instructions](REPRODUCE.md). Native model/executable acquisition remains separate from evidence delivery.
 
 Purpose: coordinate cheap bulk DeepSeek Harness sessions and expensive Codex engineering decisions to qualify vendor models and establish a real-controller 24V -> 170V Boost simulation from 0V COUT.
 
@@ -17,7 +26,7 @@ The original vendor models and failing waveforms are never modified by the orche
 
 1. Verify the commands: dsh --help, dsh --profile headless --dump-config, codex --version, codex login status.
 2. In the local DSH headless profile ensure the effective backend model is named deepseek-flash; the orchestrator rejects an undetectable model setting. A profile string is a weak preflight, NOT a guarantee about actual billing. Keep API keys in the provider configuration, never in the repo.
-3. Keep the user's existing Codex+DeepSeek default. The DECISION calls explicitly choose OpenAI provider, --profile gpt and --model gpt-6.1-sol; verify this profile has legitimate Codex access before live execution.
+3. Keep the user's existing defaults. Current-session external review prevents recursion. Optional standalone DECISION calls explicitly choose OpenAI provider and --model gpt-6.1-sol; they no longer require the nonexistent gpt profile. The legacy decision_profile config field is not used.
 4. Install/verify the intended Windows LTspice and NGspice, and ensure vendor SPICE model redistribution/licensing rules are followed. Do not run unreviewed download scripts.
 
 From repository root:
@@ -34,7 +43,7 @@ After local sandbox and model/profile inspection:
 
     python projects/QS30-9_24V/power_loop_r1/orchestrate.py --live --accept-model-costs --rounds 2
 
-Only this command performs model requests. It permits up to 12 Flash tasks and 4 round decisions (each with timeouts) but **does not limit actual API token billing**. Test first with --rounds 1 if desired. The final Codex result selects only task IDs already defined in tasks.json, not arbitrary shell instructions. If proof is absent, the system reports INCONCLUSIVE or HOLD.
+Live execution performs model requests. Current config permits up to7 Flash task sessions and2 waves (each with timeouts), but **does not limit actual API token billing**. Inside Codex, `--external-decisions` is mandatory and uses the current principal rather than launching Codex again. The final decision selects only fixed catalog IDs. Missing proof results in INCONCLUSIVE/HOLD. This initial integration already used its two-wave limit.
 
 Each run writes ignored LOCAL output into power_loop_r1/runs/<UTC>/ with prompts, worker output, result files, hashes, stderr, Codex decision input/output and a summary. Review/redact before any deliberate Git commit. No automatic commits/pushes or purchases.
 
@@ -58,7 +67,7 @@ Task manifest uses a list of authorized IDs. A model decision cannot override de
 - **orchestrate.py:** local bounded execution engine and evidence auditor.
 - **test_orchestrate.py:** deterministic provider-free contract tests.
 
-## Known limitations to close next
+## Historical infrastructure limitations (superseded where noted above)
 
 1. The current conversation cannot access the user's live Windows desktop/installed Harness, local simulator or model credentials; there have been **no real DSH or Codex paid calls from this ChatGPT session**. This implementation is committed and CI-tested, not locally integrated with your machine.
 2. A file-existence audit is not a numerical SPICE/electrical truth oracle. It can detect missing files but cannot certify waveforms. Independent deterministic waveform analyzers for startup/170V/overshoot/current are the next code milestone.

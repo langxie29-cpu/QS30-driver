@@ -1,0 +1,247 @@
+{
+ "claims": [
+  {
+   "id": "C01",
+   "sprint": "S06C",
+   "claim": "HV_BUS rail allocation 5.71642 W at 175.1 V",
+   "source_path": "QS30-1/docs/sprint06c/POWER_RAILS.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "4f12bde1d1127a314860396c7623e03dfa2e6138a06afc85485d274fd250420d",
+   "value": null
+  },
+  {
+   "id": "C02",
+   "sprint": "S06C",
+   "claim": "Bleeder/rail budget basis is an allocation, not a measurement",
+   "source_path": "QS30-1/docs/sprint06c/POWER_RAILS.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "4f12bde1d1127a314860396c7623e03dfa2e6138a06afc85485d274fd250420d",
+   "value": "external24V candidate, allocations not measured"
+  },
+  {
+   "id": "C03",
+   "sprint": "S06C",
+   "claim": "LT3757A+ST forced-CS gate cell nominal PASS",
+   "source_path": "QS30-1/docs/sprint06c/NOMINAL_GATE_QUALIFICATION.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "b534836de860d5b84e3b3acc06ee1dc6d990fd2d1d8bb979a408f26c3039de18",
+   "value": [
+    {
+     "case": "ST_AUX12",
+     "delay_max_s": 2.308791590310735e-07,
+     "half_step_delay_delta_s": 3.1978432956400547e-10,
+     "half_step_current_relative_delta": 0.0006349362553420557,
+     "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+    },
+    {
+     "case": "ST_AUX12p6",
+     "delay_max_s": 2.3346447516867683e-07,
+     "half_step_delay_delta_s": 1.8052298677716412e-10,
+     "half_step_current_relative_delta": 0.0009063151842755302,
+     "qualification": "PASS_NOMINAL_FORCED_CS_GATE_CELL_ONLY"
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "sprint": "S06C",
+   "claim": "S06C overall status is preservation + scoped unit review, NOT release",
+   "source_path": "QS30-1/docs/sprint06c/final_verification.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "7cd9ad68e926cf2ccce67326a67dbb06b1ce2c3b9e8124684c11a69c27991517",
+   "value": "PRESERVATION_AND_SCOPED_UNIT_REVIEW_NOT_RELEASE"
+  },
+  {
+   "id": "C05",
+   "sprint": "S06D",
+   "claim": "Real sampling cell still NOT qualified; 0.5->0.25 ns refinement failed",
+   "source_path": "QS30-1/docs/sprint06d/final_verification.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "cd3bcee751083fa01dbeb09d9cbd2da4499d953311ebc45d46cf8e08f79ae45c",
+   "value": "NOT_PASSED_FAST_EXTREMA_CONVERGENCE; hard_limit/PG/hot_magnetics NOT_QUALIFIED"
+  },
+  {
+   "id": "C06",
+   "sprint": "S06D",
+   "claim": "Original gear 0.5ns VGS_min / SENSE_peak",
+   "source_path": "QS30-1/docs/sprint06d/observer_control.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "17ef6b4b71414d08b32a2517cd0b87fc117d9efd9190815ff56218d91dd9f8d4",
+   "value": null
+  },
+  {
+   "id": "C07",
+   "sprint": "S06D",
+   "claim": "Original gear 0.25ns VGS_min / SENSE_peak (refinement divergence)",
+   "source_path": "QS30-1/docs/sprint06d/observer_control.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "17ef6b4b71414d08b32a2517cd0b87fc117d9efd9190815ff56218d91dd9f8d4",
+   "value": null
+  },
+  {
+   "id": "C08",
+   "sprint": "S06E",
+   "claim": "Complete comparisons FAIL convergence; SENSE cross-method delta 5.476 mV > 5 mV",
+   "source_path": "QS30-1/docs/sprint06e/final_verification.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "0996eae530a705c84f566747e0a00c5182270345d9a95e132883bc3f443767b6",
+   "value": "FAIL_CONVERGENCE; one observation-control PASS"
+  },
+  {
+   "id": "C09",
+   "sprint": "S06F",
+   "claim": "Diode commutation fixture: original vs TT0 both fail/not comparable",
+   "source_path": "QS30-1/docs/sprint06f/diode_unit_results.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "3caa9973207526ef362a025980e8d705004d184cfad0f22c39653d0afb9f4129",
+   "value": [
+    {
+     "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "-ascii",
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sim\\s06f_diode_units_v1\\original\\circuit.cir"
+     ],
+     "timeout_s": 15,
+     "rc": 0,
+     "stdout": "",
+     "stderr": "",
+     "end_s": 2e-06,
+     "samples": 20027,
+     "finite": true,
+     "monotonic": true,
+     "log_error": false,
+     "execution": "PASS",
+     "name": "original",
+     "model_sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+     "forward_actual_A": 0.4999999999941254,
+     "reverse_actual_peak_A": 1.000000000005861,
+     "current_at1p5us_A": -2.710975062618024e-06,
+     "actual_zero_s": 1.0003333333333294e-06,
+     "return_minus0p25_s": 1.0506867443626029e-06,
+     "fixture_recovery_s": 5.035341102927352e-08,
+     "Qreverse_1p0_to1p3us_C": 5.000836946921667e-08,
+     "diode_voltage_min_V": -5.012829334061133,
+     "fixture_conditions": "PASS"
+    },
+    {
+     "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "-ascii",
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sim\\s06f_diode_units_v1\\TT0_DIAGNOSTIC\\circuit.cir"
+     ],
+     "timeout_s": 15,
+     "rc": 0,
+     "stdout": "",
+     "stderr": "",
+     "end_s": 2e-06,
+     "samples": 20030,
+     "finite": true,
+     "monotonic": true,
+     "log_error": false,
+     "execution": "PASS",
+     "name": "TT0_DIAGNOSTIC",
+     "model_sha256": "66bfbb11d5a97bb1b6344f155f639277fe2b63eb923e198257039eff52c2aa12",
+     "forward_actual_A": 0.4999999999941201,
+     "reverse_actual_peak_A": 0.6717754084296021,
+     "current_at1p5us_A": -2.710975001433964e-06,
+     "actual_zero_s": 1.0003333333333296e-06,
+     "return_minus0p25_s": 1.0007925296949462e-06,
+     "fixture_recovery_s": 4.591963616166167e-10,
+     "Qreverse_1p0_to1p3us_C": 1.573975171711708e-10,
+     "diode_voltage_min_V": -5.010000042545983,
+     "fixture_conditions": "FAIL"
+    }
+   ]
+  },
+  {
+   "id": "C10",
+   "sprint": "S06F",
+   "claim": "TT intervention inconclusive; late-event history divergence",
+   "source_path": "QS30-1/docs/sprint06f/final_verification.json",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "d2bead84e2f9a695755d6244cc2ff92467240339bae430b64ed862d18d007df5",
+   "value": {
+    "original_gear_0.5ns__original_gear_0.25ns": "FAIL",
+    "original_gear_0.25ns__original_gear_0.125ns": "INCONCLUSIVE",
+    "original_gear_0.125ns__original_trap_0.125ns": "INCONCLUSIVE",
+    "TT0_DIAGNOSTIC_gear_0.25ns__TT0_DIAGNOSTIC_gear_0.125ns": "INCONCLUSIVE"
+   }
+  },
+  {
+   "id": "C11",
+   "sprint": "S06F",
+   "claim": "195V ideal source served ~10.317 uJ in one window (not an absorber only)",
+   "source_path": "QS30-1/docs/SPRINT06F_REPORT.md",
+   "source_exists": true,
+   "provenance": "UNCOMMITTED",
+   "sha256": "edee66f2dd65b0d21e27f9aa6824db1b91ca07aa16df17271568eb5acbe86d78",
+   "value": "see source text"
+  }
+ ],
+ "uncommitted_sprint_status": {
+  "sprint06c": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN"
+  },
+  "sprint06d": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN"
+  },
+  "sprint06e": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN"
+  },
+  "sprint06f": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN"
+  }
+ },
+ "committed_sprint_status": {
+  "sprint06": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_NATIVE24V_DESIGN"
+  },
+  "sprint06b": {
+   "24V_07": "NOT_PASSED",
+   "24V_08": "NOT_ENTERED",
+   "manufacturing": "HOLD",
+   "native_generated": false,
+   "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN"
+  }
+ },
+ "safety_r1_status": {
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "24V_09": "NOT_PASSED",
+  "24V_10": "NOT_PASSED",
+  "manufacturing": "HOLD"
+ },
+ "interpretation": "All four S06C-F sprints are UNCOMMITTED in the historical workspace and uniformly self-report 24V-07 NOT_PASSED, 24V-08 NOT_ENTERED, manufacturing HOLD. safety_r1 (committed) additionally reports 24V-09 and 24V-10 NOT_PASSED with the same HOLD."
+}

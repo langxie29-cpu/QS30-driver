@@ -1,0 +1,44 @@
+F1 f1_st_ts50ns_T27: rc=1 rows=1548 VDSmax=4.88163074 ISmin=-0.0553973346
+F1 f1_st_ts100ns_T27: rc=0 rows=4280 VDSmax=4.88164087 ISmin=-0.0553978565
+F1 f1_st_ts200ns_T27: rc=0 rows=4232 VDSmax=4.8812966 ISmin=-0.0553976778
+F1 f1_st_ts50ns_T125: rc=0 rows=4725 VDSmax=4.84892345 ISmin=-0.0554121997
+F1 f1_st_ts100ns_T125: rc=1 rows=494 VDSmax=4.84892255 ISmin=-0.0554137625
+F1 f1_st_ts200ns_T125: rc=0 rows=4370 VDSmax=4.84904072 ISmin=-0.0554109766
+TEST F1 timestep independence (rows present at 50/100/200 ns): PASS - usable 7/7 cases; failing: []
+TEST F1 VDS peak < 195 V fault-peak limit: PASS - VDSmax=4.88164087
+TEST F2 ST pin map conducts in the declared order: FAIL - ID(1.5 V)=-3.55271368e-15, ID(5 V)=8.8817842e-16 (linear region, KP=7.026)
+F1 f1_US1G_vishay1999_ts2ns_T27: rows=4029 Irev=-1.16197711 VRmax=0.837669331
+F1 f1_US1G_vishay1999_ts5ns_T27: rows=1629 Irev=-1.16197981 VRmax=0.837669391
+F1 f1_US1G_vishay1999_ts20ns_T27: rows=421 Irev=-1.1619423 VRmax=0.837668556
+F1 f1_US1G_vishay1999_ts2ns_T125: rows=4027 Irev=-1.16433551 VRmax=0.719739579
+F1 f1_US1G_vishay1999_ts5ns_T125: rows=1627 Irev=-1.16433647 VRmax=0.719739608
+F1 f1_US1G_vishay1999_ts20ns_T125: rows=426 Irev=-1.16429723 VRmax=0.719738452
+US1G_vishay1999: Vf(1A)=0.835 reverse-window peak I=2.5001e-10 Irr(T27@5ns)=-1.16197981
+F1 f1_US1G_diodesinc_ts2ns_T27: rows=4331 Irev=-1.15744109 VRmax=1.07879682
+F1 f1_US1G_diodesinc_ts5ns_T27: rows=1925 Irev=-1.15744271 VRmax=1.07879368
+F1 f1_US1G_diodesinc_ts20ns_T27: rows=969 Irev=-1.15740909 VRmax=1.07878572
+F1 f1_US1G_diodesinc_ts2ns_T125: rows=4254 Irev=-1.1591266 VRmax=0.995969315
+F1 f1_US1G_diodesinc_ts5ns_T125: rows=1807 Irev=-1.15912865 VRmax=0.995967648
+F1 f1_US1G_diodesinc_ts20ns_T125: rows=862 Irev=-1.15909399 VRmax=0.995961124
+US1G_diodesinc: Vf(1A)=1.055 reverse-window peak I=7.89896148e-10 Irr(T27@5ns)=-1.15744271
+F1 f1_SS14_vishay_ts2ns_T27: rows=4029 Irev=-1.16197711 VRmax=0.837669331
+F1 f1_SS14_vishay_ts5ns_T27: rows=1629 Irev=-1.16197981 VRmax=0.837669391
+F1 f1_SS14_vishay_ts20ns_T27: rows=421 Irev=-1.1619423 VRmax=0.837668556
+F1 f1_SS14_vishay_ts2ns_T125: rows=4027 Irev=-1.16433551 VRmax=0.719739579
+F1 f1_SS14_vishay_ts5ns_T125: rows=1627 Irev=-1.16433647 VRmax=0.719739608
+F1 f1_SS14_vishay_ts20ns_T125: rows=426 Irev=-1.16429723 VRmax=0.719738452
+SS14_vishay: Vf(1A)=0.835 reverse-window peak I=2.5001e-10 Irr(T27@5ns)=-1.16197981
+TEST US1G_vishay1999: holds off through the -250..0 V reverse window at model T=27 C: PASS - peak |I| in window = 2.5001e-10 A
+TEST US1G_vishay1999: reverse recovery reproduced at the undriven (T=27 C) model temp: PASS - Irev(peak) across 3 timesteps = [-1.16197711, -1.16197981, -1.1619423]
+TEST US1G_vishay1999: forward drop at 1 A is finite at T=27/125/150 C: PASS - Vf(1 A) = {'27': 0.8376772, '125': 0.7229111, '150': 0.6927938}
+TEST US1G_diodesinc: holds off through the -250..0 V reverse window at model T=27 C: PASS - peak |I| in window = 7.89896148e-10 A
+TEST US1G_diodesinc: reverse recovery reproduced at the undriven (T=27 C) model temp: PASS - Irev(peak) across 3 timesteps = [-1.15744109, -1.15744271, -1.15740909]
+TEST US1G_diodesinc: forward drop at 1 A is finite at T=27/125/150 C: PASS - Vf(1 A) = {'27': 1.046772, '125': 0.9737227, '150': 0.9544227}
+TEST SS14_vishay: holds off through the -250..0 V reverse window at model T=27 C: PASS - peak |I| in window = 2.5001e-10 A
+TEST SS14_vishay: reverse recovery reproduced at the undriven (T=27 C) model temp: PASS - Irev(peak) across 3 timesteps = [-1.16197711, -1.16197981, -1.1619423]
+TEST SS14_vishay: forward drop at 1 A is finite at T=27/125/150 C: PASS - Vf(1 A) = {'27': 0.8376772, '125': 0.7229111, '150': 0.6927938}
+TEST F3 L(I) ladder identity: 150 uH reproduced within 0.5 % at every forced current 0..8 A: FAIL - max relative error = None, N=0
+F3 boost linear: ILpk=2.44724641 Vsw_pk=0.0 Vout=0.0
+F3 boost saturating_family: ILpk=0.367777713 Vsw_pk=0.0 Vout=0.0
+TEST F3 steady-state ILpk at D=65 %/500 kHz stays below the 3.9 A Isat(10 %) datacard minimum: PASS - ILpk(linear)=2.44724641 A
+TEST F3 saturating-core family reproduces the same peak current: FAIL - ILpk(sat)=0.367777713 vs ILpk(linear)=2.44724641

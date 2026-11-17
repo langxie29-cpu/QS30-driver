@@ -1,0 +1,1720 @@
+{
+  "runs": {
+    "f1_st_ts50ns_T27": {
+      "case": "f1_st_ts50ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts50ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "ec88b9400e0a61461e4884280482acde6a983cdc08b1be6f815f448f8cc76882",
+      "script_sha256": "8c0a4ee9c3c46d7561ad4edd9f8bacf407434506b8ac0b249c24b21dbac0ebd4",
+      "rc": 1,
+      "elapsed_s": 0.063,
+      "log_present": true,
+      "errors": [
+        "doAnalyses: TRAN:  Timestep too small; time = 2.95497e-05, timestep = 6.25e-20: trouble with node \"xq.4\"",
+        "Error: incomplete or empty netlist"
+      ],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1548
+    },
+    "f1_st_ts100ns_T27": {
+      "case": "f1_st_ts100ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts100ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "78d8bbcad168f99318483576c8eab2cdd00d8cd58c72e77795c4e07d6763865b",
+      "script_sha256": "6d7f718a6657d1be10f2b0095ac3d579ac9eaef5583f5241b578f006436590c7",
+      "rc": 0,
+      "elapsed_s": 0.078,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4280
+    },
+    "f1_st_ts200ns_T27": {
+      "case": "f1_st_ts200ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts200ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "e0f7d839d0185705024d3bbedcecdfa01dd4c3af450e0f12c713f8b7eb250736",
+      "script_sha256": "fb802f78c605d91f75d675734ff9f475164fac8ae4bd948aba8d45a36596ab11",
+      "rc": 0,
+      "elapsed_s": 0.078,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4232
+    },
+    "f1_st_ts50ns_T125": {
+      "case": "f1_st_ts50ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts50ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "59dd15c44d8269e4ec5a37caf31471e81d2ea85e830130247be8b967b420faba",
+      "script_sha256": "6f29b673dbf3c20b009e45ec874f50e509e017e01ff23fa31aa4b9e18983f492",
+      "rc": 0,
+      "elapsed_s": 0.079,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4725
+    },
+    "f1_st_ts100ns_T125": {
+      "case": "f1_st_ts100ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts100ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "9c40f01e0753e16a5eb6349ef995a93ff492a18cb2d14477dc5394469eb19b80",
+      "script_sha256": "dfdf9cbc197e09b68d9496596af9594ce3b48dbd644ff3e499afe7ce25d9abbd",
+      "rc": 1,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [
+        "doAnalyses: TRAN:  Timestep too small; time = 2.5e-05, timestep = 1.25e-19: trouble with node \"xq.4\"",
+        "Error: incomplete or empty netlist"
+      ],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 494
+    },
+    "f1_st_ts200ns_T125": {
+      "case": "f1_st_ts200ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts200ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "d6abc6642c6f416bbcbb4b28f461ef52dbcaaa742a2acd916a8bbe096db075e7",
+      "script_sha256": "5105edab1e32c0de355c81b3bd61c8f6ae52807b671eaa0fa9e1743ac3983807",
+      "rc": 0,
+      "elapsed_s": 0.172,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4370
+    },
+    "f1_st_ts100ns_T27_gear": {
+      "case": "f1_st_ts100ns_T27_gear",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_st_ts100ns_T27_gear",
+      "timeout_s": 240,
+      "deck_sha256": "0dfc74a56c5a8031c0dbf3a9a4d462b0862654ed27cd626b519c06426d0fb85c",
+      "script_sha256": "e0bd0675d704140400730c3d59b3c8fb8a22b5e7974c2aa2aef8156040ee1327",
+      "rc": 1,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [
+        "doAnalyses: TRAN:  Timestep too small; time = 2.60981e-05, timestep = 1.25e-19: trouble with node \"xq.4\"",
+        "Error: incomplete or empty netlist"
+      ],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 962
+    },
+    "f2_st_pins": {
+      "case": "f2_st_pins",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f2_st_pins",
+      "timeout_s": 240,
+      "deck_sha256": "f55965c2d45d49ff79a9d3b39e9c1e0a2a7c7698ed6a9faf2665009406df3c4f",
+      "script_sha256": "ea89471891c92c815f51e069804e7a5edd1cba10515923a534c65366386c66b3",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "tc_st_T27": {
+      "case": "tc_st_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_st_T27",
+      "timeout_s": 240,
+      "deck_sha256": "2884f4d6bce0924299ba517cf851ef61b443179a1757ee405823d80279ce8c73",
+      "script_sha256": "3997ac27229515599d6ae91fc255782897c03620ddf21cc0ce53b31cc23c5769",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_st_T125": {
+      "case": "tc_st_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_st_T125",
+      "timeout_s": 240,
+      "deck_sha256": "2d11741dc9cac68fc9f1814ca139b09e08c5848eb158b06a27d626b2b6e9f739",
+      "script_sha256": "c43a54dd4dc63bdc111f9a693b93bb554a397efe7210e3bc9fb795f76cf61c6b",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_st_T150": {
+      "case": "tc_st_T150",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_st_T150",
+      "timeout_s": 240,
+      "deck_sha256": "da4f6eeac3f6bd9ed7b981d7d521346a6b8955d86131e9d8fc98fc883eb2f96a",
+      "script_sha256": "2e86ba2680ae4674d48622af4e0ea0616b65bfa8d14c66619530a071ff085b7e",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "f1_US1G_vishay1999_ts2ns_T27": {
+      "case": "f1_US1G_vishay1999_ts2ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts2ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "810a2a8dde28d8ead55c1096bf57618f69da17633a4efb3f3296f60dbc8c5aef",
+      "script_sha256": "ca88a7660884b3240dda6820fcffe80aa9faa2f02fe91caa1900a6bd08aabe0f",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4029
+    },
+    "f1_US1G_vishay1999_ts5ns_T27": {
+      "case": "f1_US1G_vishay1999_ts5ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts5ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "4cfaf445481e3a785abcac5fe4de4bddcecd3c1098d3275fbed197483795bf15",
+      "script_sha256": "352a6aa3793103bba57bdeebbf7a953c16b711f5bb52ecef38ae33753c1895e7",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1629
+    },
+    "f1_US1G_vishay1999_ts20ns_T27": {
+      "case": "f1_US1G_vishay1999_ts20ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts20ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "cc7e1b6a3da8f37a6f038b8675a6f2a323a3d5e1adb2180e98c431155111519c",
+      "script_sha256": "445b074c2e6a0b5676f2bcfcd78218708698b5a4943de35b2173833ba07cf64b",
+      "rc": 0,
+      "elapsed_s": 0.015,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 421
+    },
+    "f1_US1G_vishay1999_ts2ns_T125": {
+      "case": "f1_US1G_vishay1999_ts2ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts2ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "1c18f9f19230c452f04566c8892f2778cdc91551378579275e4a7ad6f81ae33d",
+      "script_sha256": "83babc38260dd8e7cf9133ef39ee75791b7efb1973a6452fad8ab86710db1bd8",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4027
+    },
+    "f1_US1G_vishay1999_ts5ns_T125": {
+      "case": "f1_US1G_vishay1999_ts5ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts5ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "e5702f1ffb629830fbbcf1cd3dc0b26898498bc61929fbfce9d48ca79ca79d87",
+      "script_sha256": "27cc7ba46790f1fd29cf6ae3085ac82b327d124564e6181a63ddfe6a6fa1ad7e",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1627
+    },
+    "f1_US1G_vishay1999_ts20ns_T125": {
+      "case": "f1_US1G_vishay1999_ts20ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_vishay1999_ts20ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "a2add67c9a7692a8ee8957fbde02a07818eddb6c73e908faebb99111524cbf5f",
+      "script_sha256": "3f1100e5fe5904de061c82f00b136e348802db09c8d74c29eff8f3c4fd480d66",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 426
+    },
+    "f2_US1G_vishay1999": {
+      "case": "f2_US1G_vishay1999",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f2_US1G_vishay1999",
+      "timeout_s": 240,
+      "deck_sha256": "448e7dbd6d18823431e40cc8f6161ffd9efd383cc298e7c52115843298e1c98c",
+      "script_sha256": "c4ae4a5ecb482059998a4bab31fc79dcefeb410546852912311872862e51666a",
+      "rc": 0,
+      "elapsed_s": 0.016,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 241
+    },
+    "brk_US1G_vishay1999_T27": {
+      "case": "brk_US1G_vishay1999_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_US1G_vishay1999_T27",
+      "timeout_s": 240,
+      "deck_sha256": "2280398f3206e339eff9a8f16d5755b7d183be48218c1d1a661d656f927bde5e",
+      "script_sha256": "c5e04f2cbb3e9b6ec064a95a2cd713f66f295f8ceb36984814df4e9624e02305",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "brk_US1G_vishay1999_T125": {
+      "case": "brk_US1G_vishay1999_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_US1G_vishay1999_T125",
+      "timeout_s": 240,
+      "deck_sha256": "5ac0ab2b796fb292249e08a327f35eac7df1fd3afafd454eacebb3cba2c58aaf",
+      "script_sha256": "823ac96a98731cc2c7a7360c3fd7c6803e4d2efa7aeb20739dff3d6a101f7647",
+      "rc": 0,
+      "elapsed_s": 0.015,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "tc_US1G_vishay1999_T27": {
+      "case": "tc_US1G_vishay1999_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_vishay1999_T27",
+      "timeout_s": 240,
+      "deck_sha256": "f0da864d29b1e6b7b1a5cf99ac0fd023a0f0e6fec1015fd3d0220b69f127ac01",
+      "script_sha256": "da0465d3abf2cce5d1a86373a003f4c7406e1ee540fcf0ee45b5d650765a05a9",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_US1G_vishay1999_T125": {
+      "case": "tc_US1G_vishay1999_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_vishay1999_T125",
+      "timeout_s": 240,
+      "deck_sha256": "6af55418cfb7317fb8092f1f8732b9dfd08b4a8fe7a98f6bf4a9854d17c9a8b7",
+      "script_sha256": "64880de623212c360b3e44ba6b34dcf85701ca820b12366ac444043b383d26a2",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_US1G_vishay1999_T150": {
+      "case": "tc_US1G_vishay1999_T150",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_vishay1999_T150",
+      "timeout_s": 240,
+      "deck_sha256": "48f62a6ad1e03f33adf7cad9f6498a22ee8628ace19514263f40875a093c8818",
+      "script_sha256": "ec252face751f3ab1d0c10eb10f8d06a3b4e79f649e8c3ba77a462e98076ed9f",
+      "rc": 0,
+      "elapsed_s": 0.141,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "f1_US1G_diodesinc_ts2ns_T27": {
+      "case": "f1_US1G_diodesinc_ts2ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts2ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "4bd1bb0f7058e4ea8cf2560e123b1fac24764ebd64b3a848bf76ed4ca8b16875",
+      "script_sha256": "eaf2b01a9a0b5ae7033ea7e55d965a15a7715e4399808cd11ebfde9d08832ece",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4331
+    },
+    "f1_US1G_diodesinc_ts5ns_T27": {
+      "case": "f1_US1G_diodesinc_ts5ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts5ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "97986d0468a8f4fcbdf6825f1d95a08aa603e37a8c77b990c1126c846981d47e",
+      "script_sha256": "e2650dbb403b4a6628a5a1d00399abe8d7e4966cc7a0e1f402a648421ba0f6f0",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1925
+    },
+    "f1_US1G_diodesinc_ts20ns_T27": {
+      "case": "f1_US1G_diodesinc_ts20ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts20ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "fcfb2b48dd11259f89ba0d584f52c9f6bb93c621165353db23613c6689ab9e89",
+      "script_sha256": "0b16ba688d3d6b08d58d3902d9cc790210b574116109e77ae5d031cd8234cff4",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 969
+    },
+    "f1_US1G_diodesinc_ts2ns_T125": {
+      "case": "f1_US1G_diodesinc_ts2ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts2ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "3da048b59732a50d5a787ba4ce324c783d5345742480a00394a9814d2f5934cc",
+      "script_sha256": "d214aed94a1adcf93bcf4457c4227a1190e6478c2a2623ee587ae2a9ff133580",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4254
+    },
+    "f1_US1G_diodesinc_ts5ns_T125": {
+      "case": "f1_US1G_diodesinc_ts5ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts5ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "4fc4c05a7914bc4c25a0a73c561afb2258cfbd17fae4d8f5a00f3716e60d2267",
+      "script_sha256": "84d72dd058859f14980a7c6c542028b5ed52dda752562117f466befdd3d4bb4a",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1807
+    },
+    "f1_US1G_diodesinc_ts20ns_T125": {
+      "case": "f1_US1G_diodesinc_ts20ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_US1G_diodesinc_ts20ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "782e1b6c5357438ac13c7c72ed0a752b35903087e04fb5230215d939af8f124c",
+      "script_sha256": "74610045c50679b84f9383d6daacfba2b55668cd716c56e08066ddd5d6c36345",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 862
+    },
+    "f2_US1G_diodesinc": {
+      "case": "f2_US1G_diodesinc",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f2_US1G_diodesinc",
+      "timeout_s": 240,
+      "deck_sha256": "22d3f1ef788f902a5432e597395c08f49ed2a2976ef1476af2a587fdda0b2534",
+      "script_sha256": "71eb9bb7505301384af3258c0bc2e8eef5a21693e501104627762b572e0da925",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 241
+    },
+    "brk_US1G_diodesinc_T27": {
+      "case": "brk_US1G_diodesinc_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_US1G_diodesinc_T27",
+      "timeout_s": 240,
+      "deck_sha256": "c9b76ecc875062995ca908e7dfb3b31ad7228a844bec8a27026246c5108b15f9",
+      "script_sha256": "461df1c1d10b645cdc91f6bb662300ef9d4552f8096a08c51da0b71d0aa20811",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "brk_US1G_diodesinc_T125": {
+      "case": "brk_US1G_diodesinc_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_US1G_diodesinc_T125",
+      "timeout_s": 240,
+      "deck_sha256": "d537d8499fcda5b15c75f608582f7a88d9500df2f20e3b33ffb3c9dd69718f22",
+      "script_sha256": "d9c10cd98a084c262822bf982359fa57fe150e84629b42fc4de5ef8b77bcdaae",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "tc_US1G_diodesinc_T27": {
+      "case": "tc_US1G_diodesinc_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_diodesinc_T27",
+      "timeout_s": 240,
+      "deck_sha256": "67c4ed95adbe0ff31b32f87946c9d3d01c052ca33f03201a23920890728a8bff",
+      "script_sha256": "5918313e1ec6343a6da48eae1271a54a70c47dbe4e9d938f86710d9d8076371e",
+      "rc": 0,
+      "elapsed_s": 0.016,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_US1G_diodesinc_T125": {
+      "case": "tc_US1G_diodesinc_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_diodesinc_T125",
+      "timeout_s": 240,
+      "deck_sha256": "7ffebdbeacbfaeb73ece4171604971276065705d848f63d654944f1a6c42319e",
+      "script_sha256": "d49cd9179015e751893b3bf524605da7bde1bb9782e28abe890bf2a016408972",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_US1G_diodesinc_T150": {
+      "case": "tc_US1G_diodesinc_T150",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_US1G_diodesinc_T150",
+      "timeout_s": 240,
+      "deck_sha256": "4f94d316b52f919e1d07d3179b4b786171a4e0be701ed466ce8a36cba823fd8e",
+      "script_sha256": "3d782b27accf8f1181c8fd0c8d0c510f0247a0a389f08005d4b0986b040d7030",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "f1_SS14_vishay_ts2ns_T27": {
+      "case": "f1_SS14_vishay_ts2ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts2ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "14309a1ecd92914a0e9c36c86ecd59ce03d936c702a29b53fcb1e9011272819f",
+      "script_sha256": "1b849cd7b0917ff2156a4a805bcd8a91f34840a461edf34a6beeaa6a97d6a2b4",
+      "rc": 0,
+      "elapsed_s": 0.046,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4029
+    },
+    "f1_SS14_vishay_ts5ns_T27": {
+      "case": "f1_SS14_vishay_ts5ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts5ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "4e55933d4781a16dc67a2cd1b5bc73a4352bb7bb33de69124564cb3e2b56e8c4",
+      "script_sha256": "1c185faa6ce74e95fd04132900461b2afc3118ed7357d2efaca6140a4b6a2def",
+      "rc": 0,
+      "elapsed_s": 0.047,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1629
+    },
+    "f1_SS14_vishay_ts20ns_T27": {
+      "case": "f1_SS14_vishay_ts20ns_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts20ns_T27",
+      "timeout_s": 240,
+      "deck_sha256": "552b5d8fcebd47b7f93001ef9d2faa4fe97f4e115096f094f021435eb760272f",
+      "script_sha256": "0b72672be60a44baf9efe3ef356101ff4c4933ee2dd9a43a1c549e4a35127b61",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 421
+    },
+    "f1_SS14_vishay_ts2ns_T125": {
+      "case": "f1_SS14_vishay_ts2ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts2ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "de90301aca8e224cc26f826ac315ba7d0fbe65b0ef8aabab14ea5c200ab4cfb3",
+      "script_sha256": "13e0ea9b6f228a8e9117dd9bc8f99889089a15ac0c4ed20a2d205fd0a175b478",
+      "rc": 0,
+      "elapsed_s": 0.046,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 4027
+    },
+    "f1_SS14_vishay_ts5ns_T125": {
+      "case": "f1_SS14_vishay_ts5ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts5ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "93c3f5aa1b0c93e00e869ad521cf69e545d1c75f2305e8f4addd51d689e3f7f9",
+      "script_sha256": "70f0a9040cd663f41932eab763966637ce9c86a5da8b56a4e01c21524b5b1b1d",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1627
+    },
+    "f1_SS14_vishay_ts20ns_T125": {
+      "case": "f1_SS14_vishay_ts20ns_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f1_SS14_vishay_ts20ns_T125",
+      "timeout_s": 240,
+      "deck_sha256": "e99cde5e6fafcae99b7408f17e755f0c1a255fba66a5474e58f3a0f39c6dfd6c",
+      "script_sha256": "6935cff3d81157338c5a18c24c527dfa9b4adeebc7e461c3023842f2ce129199",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 426
+    },
+    "f2_SS14_vishay": {
+      "case": "f2_SS14_vishay",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f2_SS14_vishay",
+      "timeout_s": 240,
+      "deck_sha256": "497bdd2d10c5e08f9d83b39096f3580235e69bebe0b24c2a6446ea065f6252f9",
+      "script_sha256": "0e4f4eeaaa0238a12aa4ad349dd92e6cf5c2f71d4d864f1cf585cf682737afbf",
+      "rc": 0,
+      "elapsed_s": 0.015,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 241
+    },
+    "brk_SS14_vishay_T27": {
+      "case": "brk_SS14_vishay_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_SS14_vishay_T27",
+      "timeout_s": 240,
+      "deck_sha256": "38e053e743cd81eb8cb169d9c6038ce3f4b1b651ab3bb10580effdcebb73939f",
+      "script_sha256": "50336c9dad12d2c1da2763451d08e03f65c77f819547adc4a66f87fa1f9640b3",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "brk_SS14_vishay_T125": {
+      "case": "brk_SS14_vishay_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\brk_SS14_vishay_T125",
+      "timeout_s": 240,
+      "deck_sha256": "0a543d87c9b1d24cad49e168ef075c3f70c1e1a56a5dcd9361ed29649ac251ee",
+      "script_sha256": "f1a17e2a8b5febfe11c5cd960fe4b0bfda3f2c29bb5940c0798856b0ca66cfe2",
+      "rc": 0,
+      "elapsed_s": 0.032,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 501
+    },
+    "tc_SS14_vishay_T27": {
+      "case": "tc_SS14_vishay_T27",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_SS14_vishay_T27",
+      "timeout_s": 240,
+      "deck_sha256": "cb4df213a41dbb286099defc07d67f1e85308f8eaeb0a61f9584b95f846e61fb",
+      "script_sha256": "c643a535014f14e948558abe23627b0b05b8c5940944a862fac2e29f58340f22",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_SS14_vishay_T125": {
+      "case": "tc_SS14_vishay_T125",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_SS14_vishay_T125",
+      "timeout_s": 240,
+      "deck_sha256": "bd429272d1fe73bfd6b6c78d53295ee09ca3e40cced4cfdd9fa93074b04168a1",
+      "script_sha256": "e5c85e394e2ebfb97b6a56a7820ba7eba8d585adfab0ad0f107d9cc732052050",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "tc_SS14_vishay_T150": {
+      "case": "tc_SS14_vishay_T150",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\tc_SS14_vishay_T150",
+      "timeout_s": 240,
+      "deck_sha256": "8d35762f1afb2e7fe78ed33279e7da637f59e4c5b0474b679a8508b598e14f28",
+      "script_sha256": "80b4d609f326e7c1f4ad70c49ae1bb1a12b2b2a3d380d3137349f7c1044148f7",
+      "rc": 0,
+      "elapsed_s": 0.016,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1
+    },
+    "f3_L_ladder": {
+      "case": "f3_L_ladder",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f3_L_ladder",
+      "timeout_s": 240,
+      "deck_sha256": "db51ffe78e4976882c4b3e52b7a1a5ce1191fc82a482d287eea9ac2af97f4a24",
+      "script_sha256": "3d805626d5ea6612a5d5280b8e1a25c8c3ab3d7567b4a6d9c1c1d931e2dd0f1a",
+      "rc": 0,
+      "elapsed_s": 0.016,
+      "log_present": true,
+      "errors": [
+        "Error: no such function as i,"
+      ],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 829
+    },
+    "f3_boost_linear": {
+      "case": "f3_boost_linear",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f3_boost_linear",
+      "timeout_s": 240,
+      "deck_sha256": "2cbfb526a8a3263e403cca842825c830ce69f6c8f14c03188f23522a9de40371",
+      "script_sha256": "258fc61323dc3d1f809c98f94e3585aef354a38fee787640a6fd42b0854c18f5",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1584
+    },
+    "f3_boost_saturating_family": {
+      "case": "f3_boost_saturating_family",
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\tools\\ngspice47\\Spice64\\bin\\ngspice_con.exe",
+        "-b",
+        "-o",
+        "ngspice.log",
+        "run.sp"
+      ],
+      "cwd": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_02\\device_cells\\raw\\f3_boost_saturating_family",
+      "timeout_s": 240,
+      "deck_sha256": "38e9980d52a2718d1018cb4026e19584ca003f59f393786a4d135d45463640b1",
+      "script_sha256": "83d3912dc29875e1288a4b1635d2ff05d8ed32876bf64cec58eccf0d6a567e11",
+      "rc": 0,
+      "elapsed_s": 0.031,
+      "log_present": true,
+      "errors": [],
+      "timestep_substitution": false,
+      "integration": "trap (default)",
+      "warnings": [],
+      "solver": "Using SPARSE 1.3 as Direct Linear Solver",
+      "data_rows": 1584
+    }
+  },
+  "models": {
+    "STP9NK50Z_MOSFET": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06b\\ST_model_cn\\unpacked\\stp9nk50z.lib",
+      "bytes": 2657,
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "US1G_Vishay_1999": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06b\\Vishay_US1G\\us1g.txt",
+      "bytes": 510,
+      "sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3"
+    },
+    "US1G_Diodes_Inc": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06b\\Diodes_US1G\\Diodes_US1G.txt",
+      "bytes": 1410,
+      "sha256": "18a58e53f53348a8c5a106d6441a658860700617c23583f0567a5e01a50b8d33"
+    },
+    "SS14_Vishay": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06c\\SS14\\original.lib",
+      "bytes": 510,
+      "sha256": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+    },
+    "MSS1583_datasheet_pdf": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06b\\MSS1583_current\\original.pdf",
+      "bytes": 187777,
+      "sha256": "dba193babcbf95881cc8995479ca6e99bb7ad9a431f2d6e8ce8a893cf2802d3f"
+    },
+    "STP7N65M2_datasheet_pdf": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06c\\STP7N65M2_datasheet\\original.pdf",
+      "bytes": 897037,
+      "sha256": "9d02d61edfa4b28bbb9d133bec38953bb5f43629890174c4e30f2a3e50936a72"
+    },
+    "LT3757A_datasheet_txt": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\sources\\sprint06c\\LT3757A_datasheet_retry\\original.txt",
+      "bytes": 206336,
+      "sha256": "527ae47549b49758c846f4c981bd71df842b7950133971c9cef40ebf165bc6b3"
+    },
+    "vendor_models_model_index": {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\model_index.json",
+      "bytes": 16472,
+      "sha256": "5fe62c122285595421a4bb09e3151152bd169e943d024bb910f7f4afdea2e450"
+    },
+    "curated": {
+      "stp9nk50z.lib": {
+        "source_key": "STP9NK50Z_MOSFET",
+        "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+        "bytes": 2657,
+        "roundtrip_identical": true,
+        "non_ascii_bytes": 1
+      },
+      "us1g_vishay1999.models": {
+        "source_key": "US1G_Vishay_1999",
+        "sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+        "bytes": 510,
+        "roundtrip_identical": true,
+        "non_ascii_bytes": 0
+      },
+      "us1g_diodesinc.models": {
+        "source_key": "US1G_Diodes_Inc",
+        "sha256": "18a58e53f53348a8c5a106d6441a658860700617c23583f0567a5e01a50b8d33",
+        "bytes": 1410,
+        "roundtrip_identical": true,
+        "non_ascii_bytes": 0
+      },
+      "ss14_vishay.models": {
+        "source_key": "SS14_Vishay",
+        "sha256": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+        "bytes": 510,
+        "roundtrip_identical": true,
+        "non_ascii_bytes": 0
+      }
+    }
+  },
+  "substitution_points": {
+    "mosfet_model": "No vendor SPICE model for STP7N65M2 exists locally. The only ST MOSFET model present is stp9nk50z.lib (STP9NK50Z, level-3, 2006, 'CAN BE USED AT TEMPERATURE: 25 C'). All switching numbers below belong to STP9NK50Z and are NOT a STP7N65M2 simulation. STP7N65M2 is screened on ratings only.",
+    "f1_clamp_diode": "generic D(IS=1e-9 N=1.7 RS=0.05 BV=1000 CJO=20p TT=100n) stands in for UF4007 inside the FET fixture."
+  },
+  "f1_st": {
+    "T27_ts50ns": {
+      "rows": 1548,
+      "rc": 1,
+      "vds_max": 4.88163074,
+      "is_min": -0.0553973346,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 0.02813917471542034,
+      "sim_errors": [
+        "doAnalyses: TRAN:  Timestep too small; time = 2.95497e-05, timestep = 6.25e-20: trouble with node \"xq.4\"",
+        "Error: incomplete or empty netlist"
+      ]
+    },
+    "T27_ts100ns": {
+      "rows": 4280,
+      "rc": 0,
+      "vds_max": 4.88164087,
+      "is_min": -0.0553978565,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 3.181123402447478e-05,
+      "sim_errors": []
+    },
+    "T27_ts200ns": {
+      "rows": 4232,
+      "rc": 0,
+      "vds_max": 4.8812966,
+      "is_min": -0.0553976778,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 3.0838831527021655e-05,
+      "sim_errors": []
+    },
+    "T125_ts50ns": {
+      "rows": 4725,
+      "rc": 0,
+      "vds_max": 4.84892345,
+      "is_min": -0.0554121997,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 1.7019193938269806e-05,
+      "sim_errors": []
+    },
+    "T125_ts100ns": {
+      "rows": 494,
+      "rc": 1,
+      "vds_max": 4.84892255,
+      "is_min": -0.0554137625,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 0.0007789870792555712,
+      "sim_errors": [
+        "doAnalyses: TRAN:  Timestep too small; time = 2.5e-05, timestep = 1.25e-19: trouble with node \"xq.4\"",
+        "Error: incomplete or empty netlist"
+      ]
+    },
+    "T125_ts200ns": {
+      "rows": 4370,
+      "rc": 0,
+      "vds_max": 4.84904072,
+      "is_min": -0.0554109766,
+      "vg_max": 6.49350651,
+      "is_rms_effective": 1.697640658691495e-05,
+      "sim_errors": []
+    },
+    "gear_ts100ns_T27": {
+      "rows": 962,
+      "rc": 1,
+      "vds_max": 4.88144445,
+      "is_min": -0.0554340148,
+      "vg_max": 6.49350651,
+      "integration_requested": "gear",
+      "integration_logged": "trap (default)"
+    }
+  },
+  "f1_sensitivity": {
+    "usable_cases": 7,
+    "requested_cases": 7,
+    "failing_cases": [],
+    "timestep_rows": {
+      "T27_ts50ns": 1548,
+      "T27_ts100ns": 4280,
+      "T27_ts200ns": 4232,
+      "T125_ts50ns": 4725,
+      "T125_ts100ns": 494,
+      "T125_ts200ns": 4370,
+      "gear_ts100ns_T27": 962
+    },
+    "rel_spread_vds_max": 0.006702320156541925,
+    "rel_spread_ig_max": 0.0
+  },
+  "f2_st_pins": {
+    "ID_at_VDS_1p5V": -3.55271368e-15,
+    "ID_at_VDS_5V": 8.8817842e-16,
+    "pin_declaration": "stp9nk50z.lib: PIN 1->Drain 2->Gate 3->Source; netlist instantiates XQ <drain> <gate> <source>",
+    "note": "level-3 core instantiated with the model's own MOS parameters (single documented extraction)"
+  },
+  "tc_st": {
+    "ID_at_VGS10_VDS1_by_T": {
+      "27": -1.47748,
+      "125": -1.40974,
+      "150": -1.3921
+    },
+    "caveat": "model header states 25 C only; self-consistency probe"
+  },
+  "diodes": {
+    "US1G_vishay1999": {
+      "f1": {
+        "T27_ts2ns": {
+          "rows": 4029,
+          "rc": 0,
+          "i_rev_peak": -1.16197711,
+          "vr_max": 0.837669331,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts5ns": {
+          "rows": 1629,
+          "rc": 0,
+          "i_rev_peak": -1.16197981,
+          "vr_max": 0.837669391,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts20ns": {
+          "rows": 421,
+          "rc": 0,
+          "i_rev_peak": -1.1619423,
+          "vr_max": 0.837668556,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts2ns": {
+          "rows": 4027,
+          "rc": 0,
+          "i_rev_peak": -1.16433551,
+          "vr_max": 0.719739579,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts5ns": {
+          "rows": 1627,
+          "rc": 0,
+          "i_rev_peak": -1.16433647,
+          "vr_max": 0.719739608,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts20ns": {
+          "rows": 426,
+          "rc": 0,
+          "i_rev_peak": -1.16429723,
+          "vr_max": 0.719738452,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        }
+      },
+      "f2_forward": {
+        "Vf_at_1A": 0.835,
+        "I_at_0p5V": 2.48562454e-06
+      },
+      "reverse_window": {
+        "27": {
+          "i_rev_abs_peak_in_-250..0V_window": 2.5001e-10
+        },
+        "125": {
+          "i_rev_abs_peak_in_-250..0V_window": 1.15285834e-09
+        }
+      },
+      "tc_Vf_at_1A": {
+        "27": 0.8376772,
+        "125": 0.7229111,
+        "150": 0.6927938
+      }
+    },
+    "US1G_diodesinc": {
+      "f1": {
+        "T27_ts2ns": {
+          "rows": 4331,
+          "rc": 0,
+          "i_rev_peak": -1.15744109,
+          "vr_max": 1.07879682,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts5ns": {
+          "rows": 1925,
+          "rc": 0,
+          "i_rev_peak": -1.15744271,
+          "vr_max": 1.07879368,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts20ns": {
+          "rows": 969,
+          "rc": 0,
+          "i_rev_peak": -1.15740909,
+          "vr_max": 1.07878572,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts2ns": {
+          "rows": 4254,
+          "rc": 0,
+          "i_rev_peak": -1.1591266,
+          "vr_max": 0.995969315,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts5ns": {
+          "rows": 1807,
+          "rc": 0,
+          "i_rev_peak": -1.15912865,
+          "vr_max": 0.995967648,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts20ns": {
+          "rows": 862,
+          "rc": 0,
+          "i_rev_peak": -1.15909399,
+          "vr_max": 0.995961124,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        }
+      },
+      "f2_forward": {
+        "Vf_at_1A": 1.055,
+        "I_at_0p5V": 4.68626134e-05
+      },
+      "reverse_window": {
+        "27": {
+          "i_rev_abs_peak_in_-250..0V_window": 7.89896148e-10
+        },
+        "125": {
+          "i_rev_abs_peak_in_-250..0V_window": 4.44333182e-07
+        }
+      },
+      "tc_Vf_at_1A": {
+        "27": 1.046772,
+        "125": 0.9737227,
+        "150": 0.9544227
+      }
+    },
+    "SS14_vishay": {
+      "f1": {
+        "T27_ts2ns": {
+          "rows": 4029,
+          "rc": 0,
+          "i_rev_peak": -1.16197711,
+          "vr_max": 0.837669331,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts5ns": {
+          "rows": 1629,
+          "rc": 0,
+          "i_rev_peak": -1.16197981,
+          "vr_max": 0.837669391,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T27_ts20ns": {
+          "rows": 421,
+          "rc": 0,
+          "i_rev_peak": -1.1619423,
+          "vr_max": 0.837668556,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts2ns": {
+          "rows": 4027,
+          "rc": 0,
+          "i_rev_peak": -1.16433551,
+          "vr_max": 0.719739579,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts5ns": {
+          "rows": 1627,
+          "rc": 0,
+          "i_rev_peak": -1.16433647,
+          "vr_max": 0.719739608,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        },
+        "T125_ts20ns": {
+          "rows": 426,
+          "rc": 0,
+          "i_rev_peak": -1.16429723,
+          "vr_max": 0.719738452,
+          "t_turnoff_sample": 2e-06,
+          "sim_errors": []
+        }
+      },
+      "f2_forward": {
+        "Vf_at_1A": 0.835,
+        "I_at_0p5V": 2.48562454e-06
+      },
+      "reverse_window": {
+        "27": {
+          "i_rev_abs_peak_in_-250..0V_window": 2.5001e-10
+        },
+        "125": {
+          "i_rev_abs_peak_in_-250..0V_window": 1.15285834e-09
+        }
+      },
+      "tc_Vf_at_1A": {
+        "27": 0.8376772,
+        "125": 0.7229111,
+        "150": 0.6927938
+      }
+    }
+  },
+  "f3_ladder": {
+    "branches": {},
+    "note": "linear core by construction: validates the fixture and the 150 uH / 0.038 ohm constant, NOT saturation"
+  },
+  "f3_boost": {
+    "linear": {
+      "IL_peak": 2.44724641,
+      "IL_min": 1.59999996e-05,
+      "Vswitch_peak": 0.0,
+      "Vout_final": 0.0,
+      "rows": 1584,
+      "rc": 0
+    },
+    "saturating_family": {
+      "IL_peak": 0.367777713,
+      "IL_min": 2.3998545e-06,
+      "Vswitch_peak": 0.0,
+      "Vout_final": 0.0,
+      "rows": 1584,
+      "rc": 0
+    }
+  },
+  "f3_dcr_screen": {
+    "basis": "P = I^2 * DCR at the 9-tube load; I_rms taken as D*larger of the two",
+    "design_Irms_A": 2.5,
+    "P_typ_033_ohm_W": 0.20625000000000002,
+    "P_max_038_ohm_W": 0.2375,
+    "caveat": "DCR is a datasheet constant; its temperature coefficient is NOT modelled. Hot DCR (and therefore hot conduction loss) is UNSUPPORTED and remains a HOLD item."
+  },
+  "f3_datacard": {
+    "part": "MSS1583-154KED",
+    "L_uH": 150,
+    "tol": "10%",
+    "DCR_typ": 0.033,
+    "DCR_max": 0.038,
+    "Isat_10pct_A": 3.9,
+    "Isat_20pct_A": 4.4,
+    "Isat_30pct_A": 3.9,
+    "Irms_20Crise_A": 3.4,
+    "Irms_40Crise_A": 4.8,
+    "datasheet_sha256": "dba193babcbf95881cc8995479ca6e99bb7ad9a431f2d6e8ce8a893cf2802d3f",
+    "no_vendor_L_of_I_model": true
+  },
+  "ratings_screen": {
+    "STP7N65M2": {
+      "VDS": 650,
+      "ID_continuous_25C": 5.0,
+      "RDS_on_max_at_10V_2p5A": 1.15,
+      "VGS_abs_max": 25,
+      "datasheet_sha256": "9d02d61edfa4b28bbb9d133bec38953bb5f43629890174c4e30f2a3e50936a72",
+      "note": "ratings only; no STP7N65M2 SPICE model exists locally, so its dynamic behaviour is INCONCLUSIVE"
+    },
+    "gate_drive": {
+      "LT3757A_INTVCC_typ": 7.2,
+      "LT3757A_datasheet_sha256": "527ae47549b49758c846f4c981bd71df842b7950133971c9cef40ebf165bc6b3",
+      "consequence": "a 6.5 V gate drive sits at the low end of the 10 V RDS(on) test condition -> RDS(on) larger than the 1.15 V datasheet value; NOT quantified"
+    }
+  },
+  "have_matplotlib": false,
+  "tests": [
+    {
+      "test": "F1 timestep independence (rows present at 50/100/200 ns)",
+      "pass": true,
+      "detail": "usable 7/7 cases; failing: []"
+    },
+    {
+      "test": "F1 VDS peak < 195 V fault-peak limit",
+      "pass": true,
+      "detail": "VDSmax=4.88164087"
+    },
+    {
+      "test": "F2 ST pin map conducts in the declared order",
+      "pass": false,
+      "detail": "ID(1.5 V)=-3.55271368e-15, ID(5 V)=8.8817842e-16 (linear region, KP=7.026)"
+    },
+    {
+      "test": "US1G_vishay1999: holds off through the -250..0 V reverse window at model T=27 C",
+      "pass": true,
+      "detail": "peak |I| in window = 2.5001e-10 A"
+    },
+    {
+      "test": "US1G_vishay1999: reverse recovery reproduced at the undriven (T=27 C) model temp",
+      "pass": true,
+      "detail": "Irev(peak) across 3 timesteps = [-1.16197711, -1.16197981, -1.1619423]"
+    },
+    {
+      "test": "US1G_vishay1999: forward drop at 1 A is finite at T=27/125/150 C",
+      "pass": true,
+      "detail": "Vf(1 A) = {'27': 0.8376772, '125': 0.7229111, '150': 0.6927938}"
+    },
+    {
+      "test": "US1G_diodesinc: holds off through the -250..0 V reverse window at model T=27 C",
+      "pass": true,
+      "detail": "peak |I| in window = 7.89896148e-10 A"
+    },
+    {
+      "test": "US1G_diodesinc: reverse recovery reproduced at the undriven (T=27 C) model temp",
+      "pass": true,
+      "detail": "Irev(peak) across 3 timesteps = [-1.15744109, -1.15744271, -1.15740909]"
+    },
+    {
+      "test": "US1G_diodesinc: forward drop at 1 A is finite at T=27/125/150 C",
+      "pass": true,
+      "detail": "Vf(1 A) = {'27': 1.046772, '125': 0.9737227, '150': 0.9544227}"
+    },
+    {
+      "test": "SS14_vishay: holds off through the -250..0 V reverse window at model T=27 C",
+      "pass": true,
+      "detail": "peak |I| in window = 2.5001e-10 A"
+    },
+    {
+      "test": "SS14_vishay: reverse recovery reproduced at the undriven (T=27 C) model temp",
+      "pass": true,
+      "detail": "Irev(peak) across 3 timesteps = [-1.16197711, -1.16197981, -1.1619423]"
+    },
+    {
+      "test": "SS14_vishay: forward drop at 1 A is finite at T=27/125/150 C",
+      "pass": true,
+      "detail": "Vf(1 A) = {'27': 0.8376772, '125': 0.7229111, '150': 0.6927938}"
+    },
+    {
+      "test": "F3 L(I) ladder identity: 150 uH reproduced within 0.5 % at every forced current 0..8 A",
+      "pass": false,
+      "detail": "max relative error = None, N=0"
+    },
+    {
+      "test": "F3 steady-state ILpk at D=65 %/500 kHz stays below the 3.9 A Isat(10 %) datacard minimum",
+      "pass": true,
+      "detail": "ILpk(linear)=2.44724641 A"
+    },
+    {
+      "test": "F3 saturating-core family reproduces the same peak current",
+      "pass": false,
+      "detail": "ILpk(sat)=0.367777713 vs ILpk(linear)=2.44724641"
+    }
+  ],
+  "png": {
+    "f1_st_ts50ns_T27": false,
+    "f1_st_ts100ns_T27": false,
+    "f1_st_ts200ns_T27": false,
+    "f1_st_ts50ns_T125": false,
+    "f1_st_ts100ns_T125": false,
+    "f1_st_ts200ns_T125": false,
+    "f1_st_ts100ns_T27_gear": false,
+    "f2_st_pins": false,
+    "f1_US1G_vishay1999_ts2ns_T27": false,
+    "f1_US1G_vishay1999_ts5ns_T27": false,
+    "f1_US1G_vishay1999_ts20ns_T27": false,
+    "f1_US1G_vishay1999_ts2ns_T125": false,
+    "f1_US1G_vishay1999_ts5ns_T125": false,
+    "f1_US1G_vishay1999_ts20ns_T125": false,
+    "f2_US1G_vishay1999": false,
+    "f1_US1G_diodesinc_ts2ns_T27": false,
+    "f1_US1G_diodesinc_ts5ns_T27": false,
+    "f1_US1G_diodesinc_ts20ns_T27": false,
+    "f1_US1G_diodesinc_ts2ns_T125": false,
+    "f1_US1G_diodesinc_ts5ns_T125": false,
+    "f1_US1G_diodesinc_ts20ns_T125": false,
+    "f2_US1G_diodesinc": false,
+    "f1_SS14_vishay_ts2ns_T27": false,
+    "f1_SS14_vishay_ts5ns_T27": false,
+    "f1_SS14_vishay_ts20ns_T27": false,
+    "f1_SS14_vishay_ts2ns_T125": false,
+    "f1_SS14_vishay_ts5ns_T125": false,
+    "f1_SS14_vishay_ts20ns_T125": false,
+    "f2_SS14_vishay": false,
+    "f3_boost_linear": false,
+    "f3_boost_saturating_family": false
+  }
+}

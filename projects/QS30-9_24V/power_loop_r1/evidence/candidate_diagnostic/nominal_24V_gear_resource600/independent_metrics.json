@@ -1,0 +1,41 @@
+{
+  "source": "circuit.raw",
+  "scope": "Nominal25C real-controller/resistive-load/linear-L fixture ONLY; no hardware, hot magnetics, corners or fault signoff",
+  "endpoint_s": 0.06,
+  "process_rc": 0,
+  "endpoint_reached": true,
+  "initial_V": 0.0,
+  "peak_V": 172.07871158570413,
+  "last_V": 169.3863141613909,
+  "IL_peak_A": 1.652049132510826,
+  "IL_min_A": -0.17267896405279543,
+  "VGS_min_V": -14.311788950940725,
+  "VGS_max_V": 11.974054695120053,
+  "SENSE_max_V": 0.5243575292413777,
+  "total_samples": 6331931,
+  "binary_decoder_note": "Uncompressed double records; RC format equivalence at1e-14 failed by6.24e-8V, numerical cause not fully isolated. No assertion of bit-identical ASCII and binary waves.",
+  "steady_window_s": [
+    0.04000005916512351,
+    0.06
+  ],
+  "mean_V": 167.34376387511455,
+  "raw_ripple_Vpp": 13.462925181758862,
+  "sustained_entry_in_observed_trace_s": 0.04620189286062775,
+  "gate_note": "GATE measured relative to actual source; no derivative current-limit timing claim",
+  "assertions": {
+    "Cout_initial_zero": true,
+    "mean_164p9_to175p1": true,
+    "ripple_le1V": false,
+    "normal_peak_le180V": true,
+    "startup_le1s": true,
+    "VGS_within20V_screen": true,
+    "IL_below_3p1A_cold_linear_screen": true
+  },
+  "evaluation_status": "ELECTRICAL_FAIL",
+  "remaining": [
+    "Native-reference numerical convergence and high-frequency/peak current checks remain limited",
+    "Input21.6/26.4V, load-step recovery, thermal/tolerance sweeps not covered",
+    "Actual eFuse/AUX/source rise and hot nonlinear magnetics not modeled",
+    "195V specified faults and independent OVP not tested; safety/manufacturing HOLD unchanged"
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "task_id": "vendor_models",
+  "checks_total": 100,
+  "checks_failed": 0,
+  "ok": true,
+  "failed": [],
+  "checks": [
+    {
+      "check": "result.json is valid UTF-8 JSON",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: task_id",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: status",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: notes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: evidence_files",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: source_urls",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: solver",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: model_hashes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "key present: blocking_issues",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "task_id is exactly vendor_models",
+      "ok": true,
+      "detail": "'vendor_models'"
+    },
+    {
+      "check": "status in PASS/FAIL/INCONCLUSIVE",
+      "ok": true,
+      "detail": "'PASS'"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: inventory.md",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\inventory.md"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: hash_manifest_raw.json",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\hash_manifest_raw.json"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: model_index.json",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\model_index.json"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: sim_copy_audit.json",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\sim_copy_audit.json"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: sim_model_mutations.md",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\sim_model_mutations.md"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: vendor_bytes/LT3757A.sub",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\vendor_bytes\\LT3757A.sub"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: vendor_bytes/LT3757A.asy",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\vendor_bytes\\LT3757A.asy"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: vendor_bytes/LT3757A.asc",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\vendor_bytes\\LT3757A.asc"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: extract_and_hash.py",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\extract_and_hash.py"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: parse_models.py",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\parse_models.py"
+    },
+    {
+      "check": "evidence inside OUTPUT_DIR: audit_sim_copies.py",
+      "ok": true,
+      "detail": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\runs\\20261117T051440Z\\round_01\\vendor_models\\audit_sim_copies.py"
+    },
+    {
+      "check": "REQUIRED_EVIDENCE inventory.md exists",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LT3757A.sub (ADI LTspice lib/sub, binary/encoded)",
+      "ok": true,
+      "detail": "'c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634'"
+    },
+    {
+      "check": "re-hashed from OUTPUT_DIR: LT3757A.sub",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LT3757A.asy (ADI LTspice lib/sym/PowerProducts)",
+      "ok": true,
+      "detail": "'4ed5078ebd77e5e697bc61b9124d34b350cdccc7be9a0d32e7def830660c9d76'"
+    },
+    {
+      "check": "re-hashed from OUTPUT_DIR: LT3757A.asy",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LT3757A.asc (ADI LTspice examples/Applications reference)",
+      "ok": true,
+      "detail": "'867ea5d1f8f90aa56f4dacfadfa4108bfddf0e619c06941bb711d890dba40cb6'"
+    },
+    {
+      "check": "re-hashed from OUTPUT_DIR: LT3757A.asc",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LTspice64.msi (ADI signed distribution installer)",
+      "ok": true,
+      "detail": "'62a9f20b630738e6ade20a37551baa91b20760bfb718807d8a2be4caa3421a36'"
+    },
+    {
+      "check": "matches registered source_path: LTspice64.msi (ADI signed distribution installer)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LTspice lib.zip (ADI signed distribution)",
+      "ok": true,
+      "detail": "'dd0028bb12e3f432ef022570cb7cf64d3c87288c35d1e8159658a4ff986ce094'"
+    },
+    {
+      "check": "matches registered source_path: LTspice lib.zip (ADI signed distribution)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LTspice examples.zip (ADI signed distribution)",
+      "ok": true,
+      "detail": "'319ac0e9adcce7e156aa47050a659919dbd901f1e82ab42fdb156bcefcd54ad6'"
+    },
+    {
+      "check": "matches registered source_path: LTspice examples.zip (ADI signed distribution)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LTspice.exe v24.0.12.0",
+      "ok": true,
+      "detail": "'17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d'"
+    },
+    {
+      "check": "matches registered source_path: LTspice.exe v24.0.12.0",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: LTspice License.txt (agreement 20230822-LTS-CTSLA)",
+      "ok": true,
+      "detail": "'a3c9a713f97ee80f5731b7f13b00ad87f69a17fe505a8ad837dc6ff66c391c4e'"
+    },
+    {
+      "check": "matches registered source_path: LTspice License.txt (agreement 20230822-LTS-CTSLA)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: ngspice_con.exe (ngspice-47)",
+      "ok": true,
+      "detail": "'22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab'"
+    },
+    {
+      "check": "matches registered source_path: ngspice_con.exe (ngspice-47)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: UCC28C43 PSpice zip (TI slum033)",
+      "ok": true,
+      "detail": "'5eda3f5a976ed60ba206d264669d57b70ca1d443e4ede2ea80eb999c44e3b878'"
+    },
+    {
+      "check": "matches registered source_path: UCC28C43 PSpice zip (TI slum033)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: ucc28c43.lib (TI 2008 PSpice, CDN-encrypted)",
+      "ok": true,
+      "detail": "'546fab4c7b9208394122f7f4e886496d15e2811af37b4e32cb9edff2eddeaadd'"
+    },
+    {
+      "check": "matches registered source_path: ucc28c43.lib (TI 2008 PSpice, CDN-encrypted)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: UCC28C43 TINA zip (TI slum178)",
+      "ok": true,
+      "detail": "'05979bf1f5bb7e99ae56b04686e440e459a4e9ff2b4eff422420def9c2b7e183'"
+    },
+    {
+      "check": "matches registered source_path: UCC28C43 TINA zip (TI slum178)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: UCC28C43_START.LIB (TI TINA, encrypted)",
+      "ok": true,
+      "detail": "'7b00c5326308d7203d75fa0e77870ed0dd2482305199f88eff67682827d9526a'"
+    },
+    {
+      "check": "matches registered source_path: UCC28C43_START.LIB (TI TINA, encrypted)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: UCCx8C43_unencrypted zip (TI)",
+      "ok": true,
+      "detail": "'e246d10eb469cfc46d2fe5ffe19e4f304cfca19bf0ccab92934a0a8d2a456379'"
+    },
+    {
+      "check": "matches registered source_path: UCCx8C43_unencrypted zip (TI)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: ucc28c43_trans_unencrypted.lib (TI)",
+      "ok": true,
+      "detail": "'ab3cd5bb484570e3e719d7f1d1a5dcf9e0ef48161a9d00eaa84d34dcf5ec26b8'"
+    },
+    {
+      "check": "matches registered source_path: ucc28c43_trans_unencrypted.lib (TI)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: SiHP8N50D_PS_Rev_B.LIB (Vishay)",
+      "ok": true,
+      "detail": "'70965ff71abeddd7ee57957baddd3f9d6a74738465632470e21a9d41e36959bd'"
+    },
+    {
+      "check": "matches registered source_path: SiHP8N50D_PS_Rev_B.LIB (Vishay)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: SiHP8N50D_PS_RC_Rev_B.lib (Vishay)",
+      "ok": true,
+      "detail": "'1980c0ed2aef9bc5740acc9a9548a4e7e15422fb8e0daa9769c2c96f0fb3a40f'"
+    },
+    {
+      "check": "matches registered source_path: SiHP8N50D_PS_RC_Rev_B.lib (Vishay)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: SiHP8N50D_model original.zip (Vishay 91533)",
+      "ok": true,
+      "detail": "'92375b97b278a5cfc2b2ea5aafc041d72e336c8bf82c6c6fc40f5bb5da957d79'"
+    },
+    {
+      "check": "matches registered source_path: SiHP8N50D_model original.zip (Vishay 91533)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: stp9nk50z.lib (ST STP9NK50Z)",
+      "ok": true,
+      "detail": "'6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4'"
+    },
+    {
+      "check": "matches registered source_path: stp9nk50z.lib (ST STP9NK50Z)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: us1g.txt (Vishay US1G SPICE model)",
+      "ok": true,
+      "detail": "'f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3'"
+    },
+    {
+      "check": "matches registered source_path: us1g.txt (Vishay US1G SPICE model)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: Diodes_US1G.txt (Diodes Inc., DIFFERENT vendor)",
+      "ok": true,
+      "detail": "'18a58e53f53348a8c5a106d6441a658860700617c23583f0567a5e01a50b8d33'"
+    },
+    {
+      "check": "matches registered source_path: Diodes_US1G.txt (Diodes Inc., DIFFERENT vendor)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: SS14 original.lib (Thomatronik-derived, historical)",
+      "ok": true,
+      "detail": "'3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2'"
+    },
+    {
+      "check": "matches registered source_path: SS14 original.lib (Thomatronik-derived, historical)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: UCC27511_TRANS.LIB (TI unencrypted, syntactically broken line 57)",
+      "ok": true,
+      "detail": "'8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6'"
+    },
+    {
+      "check": "matches registered source_path: UCC27511_TRANS.LIB (TI unencrypted, syntactically broken line 57)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: Coilcraft MSS1260 datasheet PDF (no SPICE model exists)",
+      "ok": true,
+      "detail": "'78be0158e52b6834be22069ec39c756967553e80eb89e5fa268b2c05352d13bf'"
+    },
+    {
+      "check": "matches registered source_path: Coilcraft MSS1260 datasheet PDF (no SPICE model exists)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: Vishay US1 datasheet PDF (doc 88768)",
+      "ok": true,
+      "detail": "'b515f5339da631a3fc59493afa1bb3cc4fb6ec77d0b12b1a5fb613074be22dc5'"
+    },
+    {
+      "check": "matches registered source_path: Vishay US1 datasheet PDF (doc 88768)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: SiHP8N50D datasheet PDF (doc 91488)",
+      "ok": true,
+      "detail": "'c123070adfec5cfc8f49dfe9cc720604f44e198c147d4938947aec922fc206e9'"
+    },
+    {
+      "check": "matches registered source_path: SiHP8N50D datasheet PDF (doc 91488)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: STP7N65M2 datasheet PDF (no model obtained)",
+      "ok": true,
+      "detail": "'9d02d61edfa4b28bbb9d133bec38953bb5f43629890174c4e30f2a3e50936a72'"
+    },
+    {
+      "check": "matches registered source_path: STP7N65M2 datasheet PDF (no model obtained)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sha256 well formed: IPP60R360P7 datasheet PDF (no model obtained)",
+      "ok": true,
+      "detail": "'a2aa2f496e280ad85470120a8e77516a6f9ff5b631da3d497d178a0b02be28cc'"
+    },
+    {
+      "check": "matches registered source_path: IPP60R360P7 datasheet PDF (no model obtained)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "model_hashes non-empty",
+      "ok": true,
+      "detail": "28"
+    },
+    {
+      "check": "vendor_bytes/LT3757A.sub re-hashes to expected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vendor_bytes/LT3757A.asy re-hashes to expected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vendor_bytes/LT3757A.asc re-hashes to expected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "LT3757A.sub is encoded/binary (starts with '<Binary File>')",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "LT3757A.sub contains NUL bytes",
+      "ok": true,
+      "detail": "15"
+    },
+    {
+      "check": "LT3757A.asc is the 12V reference (.tran 1.5m startup)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "LT3757A.asc is NOT a 170V reference (no 170 rail value)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "parses: model_index.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "parses: sim_copy_audit.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "parses: hash_manifest_raw.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "absent (no fabrication): circuit.cir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "absent (no fabrication): run.log",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "absent (no fabrication): waves.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "absent (no fabrication): metrics.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sim copies total == 188",
+      "ok": true,
+      "detail": "188"
+    },
+    {
+      "check": "sim copies matching == 146",
+      "ok": true,
+      "detail": "146"
+    },
+    {
+      "check": "unmatched == 42",
+      "ok": true,
+      "detail": "42"
+    },
+    {
+      "check": "matching + unmatched == total",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "inventory.md states 146 / 42",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "inventory.md is UTF-8 decodable",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

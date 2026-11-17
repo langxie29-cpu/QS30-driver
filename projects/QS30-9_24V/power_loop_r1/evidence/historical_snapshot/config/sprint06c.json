@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "baseline": "sprint06b.json",
+  "status": "S06C_ALTERNATE_CONTROLLER_CANDIDATE_NOT_APPROVED",
+  "manufacturing": "HOLD",
+  "candidate_variant": "LT3757A_DIRECT_ST_RESEARCH",
+  "controller": {
+    "mpn": "LT3757AIMSE#PBF",
+    "supply": "VIN and INTVCC tiedAUX12",
+    "physical_pins": {
+      "1": "VC",
+      "2": "FBX",
+      "3": "SS",
+      "4": "RT",
+      "5": "SYNC_GND",
+      "6": "SENSE",
+      "7": "GATE",
+      "8": "INTVCC_AUX12",
+      "9": "SHDN_UVLO_HARDWARE_PERMIT_PENDING",
+      "10": "VIN_AUX12",
+      "11": "EP_GND_KELVIN_NEGATIVE"
+    },
+    "RT_ohm": 140000,
+    "frequency_Hz_research": 100000,
+    "frequency_envelope_Hz_alloc": [
+      85000,
+      115000
+    ],
+    "Rgate_ohm": 22,
+    "SS_C_F_candidate": 1e-07,
+    "SS_qualification": "unit used external command, real soft start not qualified",
+    "model": "original ADI bundled LTspice24.0.12 binary, no adaptation"
+  },
+  "CS": {
+    "RCS_ohm": 0.062,
+    "RCS_total_tolerance_fraction": 0.015625,
+    "CS_noise_alloc_V": 0.005,
+    "CS_bias_filter_alloc_V": 0.002,
+    "filter_R_ohm": 10,
+    "filter_C_F": 1e-09,
+    "earliest_limit_A_screen": 1.4769230769230768,
+    "late_fault_peak_A_screen": 2.1960616715025316,
+    "required_hot_Isat_A_20percent_margin": 2.745077089378164,
+    "normal_sense_including_noise_bias_V": 0.07888457372320352,
+    "normal_80mV_budget_screen_pass": true,
+    "qualification": "allocations only; max source bias/delay/real current-loop thresholds and ringing unqualified",
+    "total_latency_alloc_s": 5.3e-07,
+    "CS_input_to_gateoff_alloc_s": 3.7e-07,
+    "filter_tau_alloc_s": 1e-08,
+    "possible_leading_edge_blanking_reserve_s": 1.5e-07,
+    "blanking_scope": "Research reserve, not a guaranteed maximum. Confirm which comparator path is blanked before any release."
+  },
+  "CS_shunt_mpn_candidate": "WSL2512R0620FEA",
+  "CS_gate_cell_note": "forced-CS tests used0.075ohm source resistor; actual-current cells used0.062ohm/10ohm/1nF. Neither is approved current-loop implementation.",
+  "feedback": {
+    "upper_each_ohm": 100000,
+    "lower_series_ohm": [
+      1820,
+      80.6
+    ],
+    "mpn_candidates": [
+      "TNPW1206100KBYEA",
+      "TNPW06031K82BYEA",
+      "TNPW060380R6BYEA"
+    ],
+    "initial_tolerance": 0.001,
+    "TCR_ppm_K": 10,
+    "qualification": "codes/ranges and full passive qualification pending; static budget only"
+  },
+  "magnetics": {
+    "mpn": "MSS1583-154KED",
+    "L_H": 0.00015,
+    "hot_LI_coreloss": "UNRESOLVED",
+    "required_hot_Isat_A": 2.745077089378164
+  },
+  "gate_snubber": {
+    "negative_clamp_mpn_candidate": "SS14-E3/61T",
+    "connection": "anodeMOS_SOURCE,cathodeMOS_GATE;1n/5nH lead studies",
+    "Rsnub_ohm": 330,
+    "Csnub_F": 1e-10,
+    "connection_snub": "seriesRC across boost rectifier",
+    "qualification": "GS/current spikes and half-step convergence stillFAIL; no positive clamp approved"
+  },
+  "USB_bridge_research": {
+    "bridge": "FT231XS-R",
+    "power_switch": "TPS22918DBVR",
+    "invert": "SN74LVC1G04DBVR",
+    "UART_domain_buffers": [
+      "SN74LVC1G125DBVR",
+      "SN74LVC1G125DBVR"
+    ],
+    "status": "specific candidate only; FTDI local403, current/inrush/suspend/5V fault qualification pending"
+  },
+  "native_export": {
+    "approved": false
+  },
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "report": "docs/SPRINT06C_REPORT.md"
+}

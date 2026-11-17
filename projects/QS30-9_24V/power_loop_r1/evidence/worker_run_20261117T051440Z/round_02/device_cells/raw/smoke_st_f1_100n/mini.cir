@@ -1,0 +1,11 @@
+* mini
+X1 d g s STP9NK50Z
+VD d 0 1
+VG g 0 10
+VS s 0 0
+.include stp9nk50z.lib
+.control
+op
+print v(d) i(VD)
+.endc
+.end

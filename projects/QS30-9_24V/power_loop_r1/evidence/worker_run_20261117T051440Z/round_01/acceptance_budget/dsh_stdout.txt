@@ -1,0 +1,24 @@
+All outputs are UTF-8 without BOM. Task complete.
+
+## Result: `acceptance_budget` → **INCONCLUSIVE**
+
+Written to `...\round_01\acceptance_budget\`: `result.json`, `inventory.md` (required evidence), plus `acceptance_budget.json`, `assertions_raw.json`, `source_hashes.json`, `reconcile_acceptance.py`, `reconcile_stdout.txt`. Nothing outside the output directory was modified — `baseline_math.json` and all HOLDs are byte-identical.
+
+**Status rationale:** this is an analysis task with no simulation and no bench data, so no electrical criterion can be certified. INCONCLUSIVE is the honest status, not a withheld PASS.
+
+**Thresholds — all UNCHANGED, 26/26 assertions pass, all sourced from hashed committed files:**
+- Vin 21.6–26.4 V; HV mean 164.9–175.1 V (config + `safety_r1` agree); ripple ≤1 Vpp (20 MHz-band, short ground spring); normal peak ≤180 V; OVP 183–190 V (3.0 V gap below 180); fault peak ≤195 V target; cold startup ≤1 s; recovery ≤0.1 s; 0–50 °C.
+
+**Bleeder delta — the voltages are not mixed:**
+- Per-resistor @170 V **corrected to 0.0794829483 W**; wave-1's 0.0198707371 W is a 4× understatement, preserved unmodified and flagged.
+- ΔP@170 V = 0.1734317932 W **(context only)**; ΔP@175.1 V = **0.1839937894 W**.
+- **Controlling revised budget = 5.7164233823 + 0.1839937894 = 5.9004171717 W @175.1 V.** The 5.88985 W figure is recorded strictly as a lower-bound context value, never as an acceptance criterion.
+
+**0 V cold start:** ≥0.276 J nominal / 0.290 J screen to reach the window floor ⇒ ≥0.276–0.290 W net into COUT for a full second, plus ≥0.299 W unavoidable bleeder load ⇒ ≥0.589 W delivered before any conversion loss. A necessary-condition screen only, not a startup claim.
+
+**Three findings worth Codex attention:**
+1. **21.6 V is absent from every existing corner axis** (both S06B and S06C sets use 20.5/24/26.4 V), so even the corner *plan* for Vin coverage is incomplete — as is 0/50 °C.
+2. **`python.exe` launch is denied by the sandbox** (`拒绝访问`, reproduced for both the Espressif and review_venv interpreters). I kept `reconcile_acceptance.py` unexecuted for your re-run and did the identical arithmetic in PowerShell `[double]`; that fallback is disclosed in `inventory.md` §1.
+3. **H05/fault peak 195 V remains unbacked**: no OVP circuit, no actuation budget, and the S06F 195 V fixture sources rather than absorbs energy.
+
+Manufacturing HOLD and H01–H10 are untouched; all PASS-like statements are preliminary WORKER_CLAIMS pending deterministic audit and Codex review.

@@ -1,0 +1,51 @@
+{
+  "scope": "Supplemental independently selected observed late windows; no new SPICE run, no rewrite of original40-60ms ELECTRICAL_FAIL",
+  "explanation": "40-60ms spans the measured46.2019ms startup band entry, so its13.46V span is not a pure steady ripple metric. Show BOTH that window and two later windows; do not delete the failed initial analysis.",
+  "windows": [
+    {
+      "start_s": 0.04,
+      "end_s": 0.06,
+      "mean_V": 167.34374073575302,
+      "min_V": 158.61578640394526,
+      "max_V": 172.07871158570413,
+      "pp_V": 13.462925181758862
+    },
+    {
+      "start_s": 0.05,
+      "end_s": 0.055,
+      "mean_V": 170.4420427428407,
+      "min_V": 168.1722237459017,
+      "max_V": 172.07871158570413,
+      "pp_V": 3.9064878398024234
+    },
+    {
+      "start_s": 0.055,
+      "end_s": 0.06,
+      "mean_V": 169.81247658617414,
+      "min_V": 168.57342548935023,
+      "max_V": 171.00428970521972,
+      "pp_V": 2.430864215869491
+    }
+  ],
+  "late_window_mean_change_V": 0.6295661566665558,
+  "SENSE_absolute_rating_V": [
+    -0.3,
+    0.3
+  ],
+  "SENSE_min_V": -0.014266960768291113,
+  "SENSE_max_V": 0.5243575292413777,
+  "SENSE_outside_rating_samples": 507248,
+  "peak_event": {
+    "time_s": 0.010040718423769968,
+    "VOUT_V": 89.17656660427701,
+    "IL_A": 1.4004740850316062,
+    "source_V": 0.5601796185195652,
+    "VGS_V": 6.306686025978198,
+    "SS_V": 0.9176332018788271,
+    "VC_V": 1.6176461876014248
+  },
+  "evaluation_status": "ELECTRICAL_FAIL",
+  "reason": "SENSE exceeds LT3757A +/-0.3V absolute rating in this model. Fast extrema not yet timestep-qualified; physical magnitude INCONCLUSIVE. Output success cannot approve the candidate.",
+  "milestone": "Real controller/0V-to-target behavior observed under nominal fixture. M2 complete qualification and M3 NOT achieved.",
+  "manufacturer_source": "https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf page2 absolute maximum ratings"
+}

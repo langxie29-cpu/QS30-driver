@@ -1,0 +1,28 @@
+{
+  "scope": "Vendor original ASC values, native-generated netlist with four micro-unit encoding substitutions; model bytes unchanged. NOT byte-unmodified reference netlist.",
+  "changes": {
+    "byte_A6CC_to_ASCII_u": 4
+  },
+  "original_net_sha256": "9b6f8788eb773f6f801e2a337f46afe1f9bf5db404bffcd52a3fd78f0237c5b6",
+  "fixed_net_sha256": "b03bec2916567d11d22f7937e8d49ff0c7cfca651ddc43b0de8d69f1b068dd54",
+  "argv": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "-ascii",
+    "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\native_reference_encoding_fix\\circuit.cir",
+    "-ID:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\.local\\native_reference_profile\\LTspice\\lib\\sub"
+  ],
+  "timeout_s": 60,
+  "rc": 0,
+  "elapsed_s": 8.702999999979511,
+  "endpoint_s": 0.0015,
+  "initial_V": 1.745646542455676e-40,
+  "peak_V": 24.39036738080306,
+  "steady_V": {
+    "mean": 23.96086039206313,
+    "minimum": 23.72771475951011,
+    "maximum": 24.12202545923054,
+    "pp": 0.3943106997204282
+  },
+  "classification": "LIMITED_PASS"
+}

@@ -1,0 +1,15 @@
+* topo
+.include stp9nk50z.lib
+VG an_g 0 10
+VDD d 0 5
+VV 0 an_s 0
+XQ d an_g an_s STP9NK50Z
+.op
+
+.control
+run
+op
+showmod
+print i(VDD)
+.endc
+.end

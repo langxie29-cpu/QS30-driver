@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "input_files_checked": 2478,
+  "changed_files": [
+    "projects/QS30-9_24V/README.md",
+    "projects/QS30-9_24V/docs/learning/README.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-NUM-01.md",
+    "projects/QS30-9_24V/docs/learning/Vol_II/E-NXT-24V-07.md"
+  ],
+  "expected_changed": [
+    "projects/QS30-9_24V/README.md",
+    "projects/QS30-9_24V/docs/learning/README.md",
+    "projects/QS30-9_24V/docs/learning/Vol_I/T-NUM-01.md",
+    "projects/QS30-9_24V/docs/learning/Vol_II/E-NXT-24V-07.md"
+  ],
+  "unexpected_changed": [],
+  "missing_inputs": [],
+  "root_metadata_preserved": true,
+  "learning_history_snapshots": [
+    {
+      "file": "README.md",
+      "old_source_snapshot_matches_input": true
+    },
+    {
+      "file": "Vol_I/T-NUM-01.md",
+      "old_source_snapshot_matches_input": true
+    },
+    {
+      "file": "Vol_II/E-NXT-24V-07.md",
+      "old_source_snapshot_matches_input": true
+    }
+  ],
+  "model_copies_checked": 24,
+  "model_hash_mismatches": [],
+  "power_netlists_checked": 6,
+  "unexpected_topology_parameter_changes": [],
+  "markdown_sources_checked": 9,
+  "broken_links": [],
+  "AST_checked": [
+    "s06e_analyze.py",
+    "s06e_run.py",
+    "s06e_verify.py"
+  ],
+  "process_attempts": 8,
+  "tool_attempts": 2,
+  "power_attempts": 6,
+  "execution_PASS": 8,
+  "attempts": [
+    {
+      "name": "tool_divider",
+      "execution": "PASS",
+      "end_s": 1e-06,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "tool_divider_v2",
+      "execution": "PASS",
+      "end_s": 1e-06,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_gear_0.125ns",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_gear_0.25ns",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_gear_0.25ns_port_control",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_gear_0.5ns",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_trap_0.125ns",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    },
+    {
+      "name": "original_trap_0.25ns",
+      "execution": "PASS",
+      "end_s": 5.999999999999999e-05,
+      "finite": true,
+      "monotonic": true,
+      "log_error": false
+    }
+  ],
+  "primary_explicit_port_save": "5 requested port-current observations absent; retained as observation FAIL, existing node data not discarded",
+  "wildcard_observer_common_columns_exactly_identical": true,
+  "research_complete_comparisons": "FAIL_CONVERGENCE; one observation-control PASS",
+  "scalar_checks": {
+    "terminal_voltage_example_V": 8,
+    "CGS_example_current_A": 0.861,
+    "CGS_example_charge_C": 8.61e-09,
+    "drain_exercise_A": 0.6000000000000001,
+    "inductor_exercise_voltage_V": 2.9999999999999996,
+    "SENSE_cross_method_delta_mV": 5.475706155008503,
+    "same_time_drain_sum_A": 0.0020007304521362235
+  },
+  "native_generated": false,
+  "ERC_DRC": "NOT_RUN_NO_QUALIFIED_NATIVE_DESIGN",
+  "branch_before": "nxt/reva9-electrical-sprint03",
+  "branch_after": "nxt/reva9-electrical-sprint03",
+  "HEAD_before": "ee53f81c3f93539906445482bd17e564829338ef",
+  "HEAD_after": "ee53f81c3f93539906445482bd17e564829338ef",
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD",
+  "verification_PASS": true
+}

@@ -1,0 +1,58 @@
+{
+  "status": "CANDIDATE_REVIEW_NOT_RELEASE",
+  "controller_mpn": "LT3757AIMSE#PBF",
+  "VIN_INTVCC_supply": "both AUX12, not24P; boost inductor input still24V",
+  "feedback_static_V_interval": [
+    164.939699352279,
+    175.02895582662094
+  ],
+  "feedback_static_within164p9_to175p1": true,
+  "feedback_scope": "full-temp ref, resistor0.1%+10ppm*75K,100nA bias, symmetric worst12V line delta from24V at0.056percent/V. Does not cover loop/ripple/transients/age.",
+  "HV_W": 5.716423382277459,
+  "AUX_A": 0.09536,
+  "adapter_W": 13.805067843036612,
+  "adapter_A_at21p6V": 0.639123511251695,
+  "efficiency_scope": "75percentHV/80percentLV allocations; snubber belongs inside HV loss allocation, not added twice",
+  "normal_loss_screen_peak_A": 1.1415912452320163,
+  "normal_loss_screen_min_idle": 0.11707885239587128,
+  "CS_proposal": {
+    "RCS_ohm": 0.062,
+    "RCS_total_tolerance_fraction": 0.015625,
+    "CS_noise_alloc_V": 0.005,
+    "CS_bias_filter_alloc_V": 0.002,
+    "filter_R_ohm": 10,
+    "filter_C_F": 1e-09,
+    "earliest_limit_A_screen": 1.4769230769230768,
+    "late_fault_peak_A_screen": 2.1960616715025316,
+    "required_hot_Isat_A_20percent_margin": 2.745077089378164,
+    "normal_sense_including_noise_bias_V": 0.07888457372320352,
+    "normal_80mV_budget_screen_pass": true,
+    "qualification": "allocations only; max source bias/delay/real current-loop thresholds and ringing unqualified",
+    "total_latency_alloc_s": 5.3e-07,
+    "CS_input_to_gateoff_alloc_s": 3.7e-07,
+    "filter_tau_alloc_s": 1e-08,
+    "possible_leading_edge_blanking_reserve_s": 1.5e-07,
+    "blanking_scope": "Research reserve, not a guaranteed maximum. Confirm which comparator path is blanked before any release."
+  },
+  "USB_bridge_budget": [
+    {
+      "Vin_research_V": 4.75,
+      "port_A": 0.5,
+      "bridge_logic_alloc_A": 0.03,
+      "3V3_available_A_at_eta80_after_bridge": 0.5154401154401155,
+      "USB_0p45A_mode_input_A": 0.440328947368421,
+      "minimum_efficiency_for0p5A_3V3": 0.7760358342665173
+    },
+    {
+      "Vin_research_V": 4.35,
+      "port_A": 0.5,
+      "bridge_logic_alloc_A": 0.03,
+      "3V3_available_A_at_eta80_after_bridge": 0.47203463203463203,
+      "USB_0p45A_mode_input_A": 0.4780603448275862,
+      "minimum_efficiency_for0p5A_3V3": 0.847395451210565
+    }
+  ],
+  "24V_07": "NOT_PASSED",
+  "24V_08": "NOT_ENTERED",
+  "manufacturing": "HOLD"
+}
