@@ -1,0 +1,59 @@
+{
+  "status": "COMPLETE_SOFTWARE_AND_EVIDENCE_DELIVERY",
+  "overall_electrical_qualification": "INCONCLUSIVE_HOLD",
+  "baseline": "96a1afef5e55f84d002f754510b97d8cbd49334f",
+  "source_result_commit": "22f2ce84",
+  "branch": "nxt/qs30-power-loop-engineering-r2",
+  "flash_rounds": 4,
+  "flash_sessions": 12,
+  "child_codex_sessions": 0,
+  "native_LTspice_invocations": 36,
+  "NGspice_invocations": 0,
+  "software_tests": 29,
+  "raws_archived": 33,
+  "raws_deleted_by_Round1_worker": 2,
+  "option_syntax_failure_without_raw": 1,
+  "remote_parts": 76,
+  "remote_sha256_verified": 76,
+  "release": {
+    "id": 448872857,
+    "html_url": "https://github.com/langxie29-cpu/QS30-driver/releases/tag/untagged-914bbf985dd4b5b85553",
+    "draft": true,
+    "published_at": null
+  },
+  "checks": [
+    {
+      "path": "evidence/preflight/final_baseline_verification.json",
+      "sha256": "a41bc7d6197550984f348f355cdd4da088e00178c4e98fcc940e1f70d5ed47ef"
+    },
+    {
+      "path": "evidence/preflight/final_full_historical_verification.json",
+      "sha256": "4f848da22904a50b006c08f46a67efbfad8378c40d727defdf53a4882778ace2"
+    },
+    {
+      "path": "evidence/preflight/final_model_immutability.json",
+      "sha256": "4999e1c18c8a2942e8126b22ec2566100a6504ea7e4d93c4872b0f618ac13389"
+    },
+    {
+      "path": "evidence/preflight/archive_coverage_verification.json",
+      "sha256": "347fa7ab53764ef9dee2b9afc5dd6418dddcb812a11f90e33c44bd711f64eb63"
+    },
+    {
+      "path": "evidence/preflight/remote_download_roundtrip.json",
+      "sha256": "0044d9e889de7d23d1177e8df43eb0b60c8fb3a595e5f50910488aa691611314"
+    },
+    {
+      "path": "evidence/raw_archive_manifest.json",
+      "sha256": "859e7898dc598d9fb6e5849a8d5c0bbc7bd6873fb084bb97bd796168c16afe8e"
+    },
+    {
+      "path": "evidence/github_artifacts.json",
+      "sha256": "57989c705fff5a78b2997083c77f2dda085cc28615663136c420171f8c65f6d2"
+    },
+    {
+      "path": "evidence/execution_ledger.json",
+      "sha256": "dd2f1b705c31365563f4eece5b78afee59b38397b4728db7717ff443c3fed069"
+    }
+  ],
+  "scope": "Archive/software closure only. All safety/manufacturing HOLD unchanged; physical startup/hot/9tube/fault qualification remains absent."
+}

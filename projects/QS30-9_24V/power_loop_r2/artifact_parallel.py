@@ -25,7 +25,7 @@ def main(workers,reconcile=False):
   for name,p in wanted.items():
    x=existing.get(name)
    if not x or x['state']!='uploaded' or x['size']!=p['bytes']:pending.append(name);continue
-   if x.get('digest') and x['digest']!='sha256:'+p['sha256']:raise ValueError('Remote digest mismatch')
+   if x.get('digest')!='sha256:'+p['sha256']:raise ValueError('Remote SHA256 missing or mismatched; audit cannot pass')
    checked[name]=dict(id=x['id'],bytes=x['size'],local_sha256=p['sha256'],remote_digest=x.get('digest'),browser_download_url=x['browser_download_url'],api_url=x['url'],state=x['state'])
   state['assets']=checked;state['pending_assets']=pending;state['expected_assets']=len(wanted);state['status']='COMPLETE_REMOTE_DIGEST_AUDIT' if not pending else 'INCOMPLETE_TRANSFER';lab.dump(api.STATE,state)
   print(json.dumps(dict(expected=len(wanted),uploaded_verified=len(checked),pending=len(pending))));return
@@ -38,7 +38,7 @@ def main(workers,reconcile=False):
    url=state['upload_url']+'?'+urllib.parse.urlencode({'name':name})
    with file.open('rb') as f:x=api.request(url,tok,BoundedFile(f),'POST',{'Content-Type':'application/octet-stream','Content-Length':str(p['bytes'])},600)
    if x['state']!='uploaded' or x['size']!=p['bytes']:raise ValueError('Remote state/size mismatch')
-   if x.get('digest') and x['digest']!='sha256:'+p['sha256']:raise ValueError('Remote digest mismatch')
+   if x.get('digest')!='sha256:'+p['sha256']:raise ValueError('Remote SHA256 missing or mismatched; audit cannot pass')
    r=dict(name=name,status='UPLOADED',bytes=x['size'],remote_digest=x.get('digest'),id=x['id'],elapsed_s=time.monotonic()-start)
   except Exception as e:r=dict(name=name,status='EXECUTION_FAIL',error=repr(e),elapsed_s=time.monotonic()-start)
   with lock:
