@@ -1,0 +1,49 @@
+{
+  "method": "Direct circuit equations, independent of Flash scripts; not SPICE qualification",
+  "bleeders": {
+    "R_each_ohm": 90900.0,
+    "series_count": 2,
+    "parallel_branches": 2,
+    "P_total_170V_W": 0.3179317931793179,
+    "P_each_resistor_170V_W": 0.07948294829482948,
+    "check_sum_W": 0.3179317931793179,
+    "delta_from_single_200k_W": 0.17343179317931792,
+    "HV_budget_after_delta_W": 5.889851793179318,
+    "mixed_voltage_budget_warning": "The preceding legacy5.88985W floor mixes175.1V source budget and170V delta; use corrected upper-voltage budget below.",
+    "delta_at175p1V_W": 0.18399378938393837,
+    "HV_budget175p1V_corrected_W": 5.900417171661398,
+    "P_survivor_one_short_195V_Rminus1pct_W": 0.4225422542254225,
+    "one_string_open_discharge_195to60_s": 4.61304075151572
+  },
+  "control": {
+    "CCM_ideal_duty_21p6V": 0.8729411764705882,
+    "CCM_ideal_duty_26p4V": 0.8447058823529412,
+    "warning": "CCM duty is NOT DCM duty. Startup can traverse CCM; UCC28C43 requires slope compensation review.",
+    "LT_feedback_nominal_V": 169.96788382616018,
+    "LT_nominal_current_limit_110mV_over62mohm_A": 1.7741935483870968,
+    "stored_C_energy_170V_J": 0.30800174999999996,
+    "minimum_net_charge_power_for_1s_W": 0.30800174999999996,
+    "warning2": "Nominal current threshold is not worst-case peak; blanking/delay, hot L, tolerance and model uncertainty remain open."
+  },
+  "acceptance": {
+    "vin_V": [
+      21.6,
+      26.4
+    ],
+    "vout_mean_V": [
+      164.9,
+      175.1
+    ],
+    "ripple_Vpp_max": 1,
+    "normal_peak_V_max": 180,
+    "cold_start_s_max": 1,
+    "recovery_s_max": 0.1,
+    "specified_fault_peak_V_max": 195
+  },
+  "milestones": {
+    "M1": "PENDING_NATIVE_REFERENCE_AND_DEVICE_REVIEW",
+    "M2": "NOT_PROVEN",
+    "M3": "NOT_PROVEN"
+  },
+  "manufacturing": "HOLD"
+}

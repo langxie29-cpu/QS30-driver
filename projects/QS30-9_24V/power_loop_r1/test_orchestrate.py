@@ -3,6 +3,8 @@ import json
 import tempfile
 import unittest
 import shutil
+import os
+import subprocess
 from unittest.mock import patch
 import orchestrate as orch
 from pathlib import Path
@@ -24,6 +26,47 @@ class TestWorkflow(unittest.TestCase):
     def test_stage_zero(self):
         self.assertTrue(eligible("baseline_audit", self.tasks, {}, 0, set()))
         self.assertFalse(eligible("zero_volt_startup", self.tasks, {}, 0, set()))
+
+    def test_worker_uses_documented_profile_syntax(self):
+        with patch.dict(os.environ, {'QS30_DSH_NODE':'node.exe','QS30_DSH_CLI':'bin.js','QS30_DSH_PATCH':'flash.yml','QS30_DSH_HOME':'private'}):
+            self.assertEqual(orch.worker_argv(self.cfg), ['node.exe','bin.js','--profile','headless','--patch','flash.yml'])
+
+    def test_profile_must_be_effective_model_not_catalog_string(self):
+        text = '- id: agent-default-model\n  config:\n    provider: deepseek-official\n    model: other\n- id: catalog\n  model: deepseek-flash\n'
+        with patch.object(orch.shutil,'which',return_value='binary'), patch.object(orch,'subprocess_record',return_value=dict(rc=0,stdout=text,stderr='')):
+            with self.assertRaises(RuntimeError): orch.preflight(self.cfg)
+
+    def test_timeout_retains_partial_evidence(self):
+        err = subprocess.TimeoutExpired(['solver'],1,output=b'partial raw',stderr=b'last timestep')
+        with patch.object(orch.subprocess,'run',side_effect=err):
+            r=orch.subprocess_record(['solver'],None,1,HERE)
+        self.assertEqual(r['stdout'],'partial raw')
+        self.assertIn('last timestep',r['stderr'])
+
+    def test_startup_requires_reference_and_cell(self):
+        base={'power_candidate_review':{'grade':'CLAIMED_PASS_AUDITED_FILES'}}
+        self.assertFalse(eligible('zero_volt_startup',self.tasks,base,2,{'lt3757a_reference'}))
+
+    def test_external_review_resumes_with_same_budget_and_no_child_codex(self):
+        with tempfile.TemporaryDirectory() as d:
+            fake=Path(d)
+            for name in ('config.json','tasks.json','decision.schema.json'):
+                shutil.copy2(HERE/name,fake/name)
+            def worker(task,rd,cfg):
+                return dict(task_id=task['id'],grade='CLAIMED_PASS_AUDITED_FILES')
+            with patch.object(orch,'HERE',fake), patch.object(orch,'preflight'), patch.object(orch,'do_worker',side_effect=worker) as w, patch.object(orch,'codex_decision') as child:
+                folder=orch.run_live(self.cfg,self.tasks,2,True)
+                dec=dict(decision='CONTINUE',rationale='independent inventory check',next_task_ids=['lt3757a_reference'],issues=[],controlling_assumptions=[])
+                orch.write_json(folder/'round_01/external_decision.json',dec)
+                orch.run_live(self.cfg,self.tasks,2,True,str(folder))
+                self.assertEqual(w.call_count,4)
+                child.assert_not_called()
+                dec.update(decision='HOLD',next_task_ids=[],rationale='Budget exhausted; electrical evidence incomplete')
+                orch.write_json(folder/'round_02/external_decision.json',dec)
+                orch.run_live(self.cfg,self.tasks,2,True,str(folder))
+                self.assertEqual(w.call_count,4)
+                with self.assertRaises(ValueError):
+                    orch.run_live(self.cfg,self.tasks,3,True,str(folder))
 
     def test_requires_dependencies(self):
         done = {}

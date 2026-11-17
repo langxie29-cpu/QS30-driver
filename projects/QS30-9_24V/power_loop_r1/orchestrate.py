@@ -13,6 +13,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import re
 from datetime import datetime, timezone
 
 HERE = Path(__file__).resolve().parent
@@ -113,7 +114,7 @@ def eligible(task_id: str, tasks: dict, completed: dict, max_stage: int, history
         return False
     if t["stage"] >= 2 and not any(tasks[k]["stage"] == 1 for k in history):
         return False
-    if t["stage"] >= 3:
+    if t['id'] == 'zero_volt_startup' or t["stage"] >= 3:
         # A documented controller reference AND a documented nonlinear device cell
         # are prerequisites for startup/loop exercises; textual model selection is not enough.
         references = ("lt3757a_reference", "ucc28c43_reference")
@@ -151,24 +152,43 @@ def subprocess_record(argv: list[str], input_text: str | None, timeout_s: int, c
                            encoding="utf-8", errors="replace", cwd=str(cwd), timeout=timeout_s,
                            shell=False, check=False)
         return {"rc": p.returncode, "stdout": p.stdout, "stderr": p.stderr}
-    except subprocess.TimeoutExpired:
-        return {"rc": None, "stdout": "", "stderr": "PROCESS_TIMEOUT"}
+    except subprocess.TimeoutExpired as exc:
+        def decode(v):
+            return v.decode('utf-8', errors='replace') if isinstance(v, bytes) else (v or '')
+        return {"rc": None, "stdout": decode(exc.stdout), "stderr": decode(exc.stderr) + "\nPROCESS_TIMEOUT"}
     except OSError as e:
         return {"rc": None, "stdout": "", "stderr": "EXEC_FAILED: " + str(e)}
 
 
+def worker_argv(cfg: dict):
+    """Invoke Node directly on Windows; avoid stale .cmd launchers and shell quoting."""
+    node, cli = os.environ.get('QS30_DSH_NODE'), os.environ.get('QS30_DSH_CLI')
+    if bool(node) != bool(cli):
+        raise RuntimeError('Both QS30_DSH_NODE and QS30_DSH_CLI required')
+    argv = [node, cli] if node else [cfg['worker_binary']]
+    argv += ['--profile', cfg['worker_profile']]
+    if os.environ.get('QS30_DSH_PATCH'):
+        argv += ['--patch', os.environ['QS30_DSH_PATCH']]
+    if os.environ.get('QS30_DSH_HOME'):
+        os.environ['DSH_HOME'] = os.environ['QS30_DSH_HOME']
+    return argv
+
+
 def preflight(cfg: dict):
-    if not shutil.which(cfg["worker_binary"]):
+    if not os.environ.get('QS30_DSH_NODE') and not shutil.which(cfg["worker_binary"]):
         raise RuntimeError("dsh not found in PATH; verify DeepSeek Harness installation")
     if not shutil.which("codex"):
         raise RuntimeError("codex not found in PATH; verify Codex CLI")
     result = subprocess_record(
-        [cfg["worker_binary"], "--profile", cfg["worker_profile"], "--dump-config"],
+        worker_argv(cfg) + ["--dump-config"],
         None, 90, ROOT)
     # Never print/dump profile text: it can contain provider configuration.
     if result["rc"] != 0:
         raise RuntimeError("DeepSeek Harness profile dump failed; inspect locally")
-    if cfg["expected_worker_model"].lower() not in result["stdout"].lower():
+    section = re.search(r'(?m)^- id: agent-default-model\s*\n(?:(?!^- id:).|\n)*', result['stdout'])
+    model = re.search(r'(?m)^\s+model:\s*[\"\x27]?([^\s\"\x27]+)', section[0]) if section else None
+    provider = re.search(r'(?m)^\s+provider:\s*([^\s]+)', section[0]) if section else None
+    if not model or model[1] != cfg['expected_worker_model'] or not provider or provider[1] != 'deepseek-official':
         raise RuntimeError("Harness headless profile is not verifiably deepseek-flash; "
                            "do not overwrite the user's global profile. Configure a dedicated headless profile.")
     return "Harness model string verified from profile; Codex GPT access still checked at invocation"
@@ -192,12 +212,15 @@ def do_worker(task: dict, round_dir: Path, cfg: dict):
         + "\nREQUIRED_EVIDENCE: " + ", ".join(task["expected"])
         + "\nRead the repo from REPO_ROOT; write ONLY within OUTPUT_DIR."
     )
+    context = HERE/'engineering_context.md'
+    if context.exists():
+        prompt += '\n\nCURRENT VERIFIED LOCAL CONTEXT:\n' + context.read_text(encoding='utf-8')
     (task_dir / "task_prompt.txt").write_text(prompt, encoding="utf-8")
-    out = subprocess_record([cfg["worker_binary"], cfg["worker_profile"], prompt],
+    out = subprocess_record(worker_argv(cfg) + [prompt],
                             None, cfg["worker_timeout_s"], ROOT)
     (task_dir / "dsh_stdout.txt").write_text(out["stdout"][:cfg["max_output_bytes"]], encoding="utf-8")
     (task_dir / "dsh_stderr.txt").write_text(out["stderr"][:cfg["max_output_bytes"]], encoding="utf-8")
-    audit = audit_worker_result(task, task_dir, cfg["max_output_bytes"])
+    audit = audit_worker_result(task, task_dir, cfg.get('max_evidence_bytes', cfg["max_output_bytes"]))
     audit["process_rc"] = out["rc"]
     if out["rc"] != 0:
         audit["grade"] = "INCONCLUSIVE"
@@ -254,25 +277,47 @@ def dry_run(cfg: dict, tasks: dict):
     print("No automatic vendor-model downloads, git pushes, PCB or hardware operations.")
 
 
-def run_live(cfg: dict, tasks: dict, rounds: int):
+def run_live(cfg: dict, tasks: dict, rounds: int, external_decisions=False, resume=None):
     preflight(cfg)
+    if resume:
+        folder = Path(resume).resolve()
+        if not folder.is_relative_to((HERE/'runs').resolve()):
+            raise ValueError('Resume must be inside runs')
+        checkpoint = json.loads((folder/'checkpoint.json').read_text(encoding='utf-8'))
+        if checkpoint['rounds'] != rounds or rounds > cfg['max_rounds'] or checkpoint['calls'] > cfg['max_worker_calls']:
+            raise ValueError('Cannot change round budget on resume')
+        manifest = json.loads((folder/'manifest.json').read_text(encoding='utf-8'))
+        for name, digest in manifest['config_sha256'].items():
+            if sha256(HERE/name) != digest:
+                raise ValueError('Configuration changed since initial wave: '+name)
+        complete = checkpoint['complete']
+        history = set(checkpoint['history'])
+        max_stage, calls, start_idx = checkpoint['max_stage'], checkpoint['calls'], checkpoint['next_idx']
+        dec = json.loads((folder/('round_%02d' % start_idx)/'external_decision.json').read_text(encoding='utf-8'))
+        validate_decision(dec,tasks,complete,max_stage,history)
+        pending = dec['next_task_ids']
+        write_json(folder/('round_%02d' % start_idx)/'validated_decision.json', dec)
+        if dec['decision'] != 'CONTINUE' or start_idx >= rounds:
+            write_json(folder/'run_summary.json', dict(tasks=complete,worker_calls=calls,rounds_used=start_idx,status='REVIEWED_STOPPED',decision=dec,manufacturing='HOLD',child_codex_calls=0))
+            return folder
+    else:
+        start_idx = 0
     run_name = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    folder = HERE / "runs" / run_name
-    folder.mkdir(parents=True, exist_ok=False)
+    if not resume:
+        folder = HERE / "runs" / run_name
+        folder.mkdir(parents=True, exist_ok=False)
     snapshot = {x.name: sha256(x) for x in
                 (HERE / "config.json", HERE / "tasks.json",
                  HERE / "decision.schema.json")}
-    write_json(folder / "manifest.json", {
+    if not resume: write_json(folder / "manifest.json", {
         "utc": run_name, "config_sha256": snapshot, "manufacturing": "HOLD",
         "physical_HV": "NOT_PERFORMED", "decision_model": cfg["decision_model"],
         "worker_expected_model": cfg["expected_worker_model"]
     })
-    pending = list(cfg["entry_task_ids"])
-    complete = {}
-    history = set()
-    max_stage = 0
-    calls = 0
-    for idx in range(rounds):
+    if not resume:
+        pending = list(cfg["entry_task_ids"])
+        complete, history, max_stage, calls = {}, set(), 0, 0
+    for idx in range(start_idx, rounds):
         remaining = cfg["max_worker_calls"] - calls
         if remaining <= 0 or not pending:
             break
@@ -289,6 +334,12 @@ def run_live(cfg: dict, tasks: dict, rounds: int):
             max_stage = max(max_stage, task["stage"])
             calls += 1
             print(t_id, result["grade"])
+        if external_decisions:
+            write_json(folder/'checkpoint.json', dict(complete=complete,history=sorted(history),max_stage=max_stage,calls=calls,next_idx=idx+1,rounds=rounds))
+            write_json(round_dir/'decision_input.json', dict(round_results=complete,used_task_ids=sorted(history),remaining_rounds=rounds-idx-1))
+            write_json(folder/'run_summary.json', dict(tasks=complete,worker_calls=calls,rounds_used=idx+1,status='AWAITING_CURRENT_CODEX_REVIEW',manufacturing='HOLD',child_codex_calls=0))
+            print('External Codex review required:', folder, flush=True)
+            return folder
         dec = codex_decision(round_dir, cfg, tasks, complete, history,
                              rounds - idx - 1)
         try:
@@ -307,6 +358,7 @@ def run_live(cfg: dict, tasks: dict, rounds: int):
         "note": "Worker claims + file audits + Codex task routing, NOT electrical signoff."
     })
     print("Evidence:", folder)
+    return folder
 
 
 def main():
@@ -316,6 +368,8 @@ def main():
     ap.add_argument("--accept-model-costs", action="store_true",
                     help="Explicit local consent for DeepSeek/Codex requests")
     ap.add_argument("--rounds", type=int, default=2)
+    ap.add_argument('--external-decisions', action='store_true', help='Checkpoint for current Codex review; never launches child Codex')
+    ap.add_argument('--resume', help='Resume checkpoint after external_decision.json is supplied')
     args = ap.parse_args()
     cfg, tasks = load_catalog()
     if args.rounds < 1 or args.rounds > cfg["max_rounds"]:
@@ -328,7 +382,7 @@ def main():
         return
     if not args.accept_model_costs:
         ap.error("Live model calls require --accept-model-costs")
-    run_live(cfg, tasks, args.rounds)
+    run_live(cfg, tasks, args.rounds, args.external_decisions, args.resume)
 
 
 if __name__ == "__main__":
