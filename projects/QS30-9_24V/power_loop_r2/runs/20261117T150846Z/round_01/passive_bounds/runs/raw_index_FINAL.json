@@ -1,0 +1,338 @@
+[
+  {
+    "name": "p1_fast_24V",
+    "artifact_dir": "p1_fast_24V_FINAL",
+    "variable": "SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)",
+    "hypothesis": "Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "VINPUT vin 0 PWL(0 0 1m 24)",
+        "VINPUT vin 0 PWL(0 0 50n 24)"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.91696249996312,
+    "timeout_s": 30,
+    "netlist_sha256": "46eb57f181b1f899a52b0fbb495cacc9c661b540e32b9421f673da9b222dd404",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.734 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60245,
+    "vin_final": 24.000000266586657,
+    "t_peak_vout": 0.0001718015037108126,
+    "vout_peak": 41.43220175674334,
+    "t_peak_il": 8.295150371081046e-05,
+    "il_peak": 7.613982216244885,
+    "il_rms": 1.2922747892695094,
+    "il_energy_J": 0.004347954389197002,
+    "vout_at_1ms": 41.06917073211037,
+    "vout_at_2ms": 40.64986593232054,
+    "vout_final": 40.23484076445718,
+    "il_final": -2.6658689944820784e-06,
+    "il_at_vout_peak": 0.2569026437906052,
+    "dvdt_1090_V_per_s": 323373.2820038427,
+    "dvdt_max_V_per_s": 375112.62048980594,
+    "divider_share_nominal": 0.1295336787564767,
+    "ideal_peak_A": 8.829042983245692,
+    "raw_sha256": "6b223d097a922974c5215aac5875514c81dc7a24b3f4108bf854058adfdda0aa"
+  },
+  {
+    "name": "p2_slow_1ms",
+    "artifact_dir": "p2_slow_1ms_FINAL",
+    "variable": "SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)",
+    "hypothesis": "A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "VINPUT vin 0 PWL(0 0 1m 24)",
+        "VINPUT vin 0 PWL(0 0 1m 24)"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.97555299999658,
+    "timeout_s": 30,
+    "netlist_sha256": "d5043930c719fa462763e84035559cf81c419ba8186d5aefd9f5392e5a22fbc9",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.604 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60110,
+    "vin_final": 23.9999985138751,
+    "t_peak_vout": 0.0010826749999998677,
+    "vout_peak": 24.340778141784686,
+    "t_peak_il": 0.00020760156579058714,
+    "il_peak": 0.8205307773739349,
+    "il_rms": 0.2992995456149595,
+    "il_energy_J": 5.049530674634053e-05,
+    "vout_at_1ms": 23.221362764664306,
+    "vout_at_2ms": 24.112158220712914,
+    "vout_final": 23.86617079535495,
+    "il_final": 1.4861248815038059e-05,
+    "il_at_vout_peak": 0.018443539095994214,
+    "dvdt_1090_V_per_s": 25067.944371880363,
+    "dvdt_max_V_per_s": 40391.719729952514,
+    "divider_share_nominal": 0.1295336787564767,
+    "ideal_peak_A": 8.829042983245692,
+    "raw_sha256": "ee381a38b5a29c3478ccd37f7bb5c07aef254e6b5ac21de1718d231970311c9a"
+  },
+  {
+    "name": "p3_fast_vin_26p4",
+    "artifact_dir": "p3_fast_vin_26p4_FINAL",
+    "variable": "SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)",
+    "hypothesis": "Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "VINPUT vin 0 PWL(0 0 1m 24)",
+        "VINPUT vin 0 PWL(0 0 1m 26.4)"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.433295499999076,
+    "timeout_s": 30,
+    "netlist_sha256": "1f1550047d4b7fec50fc1c42387877c0cb1aad578bb1fb560c406612297b3ff2",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.296 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60112,
+    "vin_final": 26.39999940475496,
+    "t_peak_vout": 0.0010819249999998689,
+    "vout_peak": 26.84075386108195,
+    "t_peak_il": 0.00020474714710500488,
+    "il_peak": 0.9078628237369464,
+    "il_rms": 0.3302548334144085,
+    "il_energy_J": 6.181611800427163e-05,
+    "vout_at_1ms": 25.63422682379242,
+    "vout_at_2ms": 26.588445953404776,
+    "vout_final": 26.31704945353254,
+    "il_final": 5.9524503362906725e-06,
+    "il_at_vout_peak": 0.020499267488392803,
+    "dvdt_1090_V_per_s": 27597.973252184085,
+    "dvdt_max_V_per_s": 44691.051360309124,
+    "divider_share_nominal": 0.5980861244019139,
+    "ideal_peak_A": 9.71194728157026,
+    "raw_sha256": "0a579c4d9088b5a3ff43c5515c7a3538e17d593f62011a7abec2457b5902993d"
+  },
+  {
+    "name": "p4_fast_rinput_1ohm",
+    "artifact_dir": "p4_fast_rinput_1ohm_FINAL",
+    "variable": "SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)",
+    "hypothesis": "Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "RINPUT vin in .1",
+        "RINPUT vin in 1"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.38735390000511,
+    "timeout_s": 30,
+    "netlist_sha256": "da702c9304c7e2915b87e1e6621de3cef0d577fd3ce4eda4f91c378322bed8d0",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.261 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60092,
+    "vin_final": 23.998977822267527,
+    "t_peak_vout": 0.0011054249999998312,
+    "vout_peak": 24.018809386341403,
+    "t_peak_il": 0.00021455160964751829,
+    "il_peak": 0.6769116902762756,
+    "il_rms": 0.28475497699536617,
+    "il_energy_J": 3.436570773245134e-05,
+    "vout_at_1ms": 22.561741462531018,
+    "vout_at_2ms": 23.799663171819777,
+    "vout_final": 23.57295652397446,
+    "il_final": 0.0010221777324593679,
+    "il_at_vout_peak": 0.013819987297149672,
+    "dvdt_1090_V_per_s": 24674.218310201733,
+    "dvdt_max_V_per_s": 33316.16666767746,
+    "divider_share_nominal": 0.5980861244019139,
+    "ideal_peak_A": 8.829042983245692,
+    "raw_sha256": "ce117a9b50cfa70cdeaaf9e529da0aae97e7c59355835192012517ccf0284abe"
+  },
+  {
+    "name": "p5_fast_cout_24p36",
+    "artifact_dir": "p5_fast_cout_24p36_FINAL",
+    "variable": "SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)",
+    "hypothesis": "+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "COUT hv 0 20.3u",
+        "COUT hv 0 24.36u"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.616041600005701,
+    "timeout_s": 30,
+    "netlist_sha256": "13c6a4116beac36c3e34c93cd58896dff982bf85c4400c7f07cbc8e494ef1bb3",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.646 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60119,
+    "vin_final": 24.00000025998706,
+    "t_peak_vout": 0.0010984749999998424,
+    "vout_peak": 24.64869411860144,
+    "t_peak_il": 0.00022485156574304516,
+    "il_peak": 0.9815060366607622,
+    "il_rms": 0.36139198781125137,
+    "il_energy_J": 7.22515575001138e-05,
+    "vout_at_1ms": 22.96726402120599,
+    "vout_at_2ms": 24.45838744840792,
+    "vout_final": 24.25007163896429,
+    "il_final": -2.5998706822606655e-06,
+    "il_at_vout_peak": 0.026387368801580217,
+    "dvdt_1090_V_per_s": 24885.298874300104,
+    "dvdt_max_V_per_s": 40268.88278558105,
+    "divider_share_nominal": 0.1295336787564767,
+    "ideal_peak_A": 9.71194728157026,
+    "raw_sha256": "8b8a178eb1705b40ba1259bc40f8b58c7fc6ee5b7cd9061c3c2bec19cb65d3ef"
+  },
+  {
+    "name": "p6_fast_lpower_135u",
+    "artifact_dir": "p6_fast_lpower_135u_FINAL",
+    "variable": "SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)",
+    "hypothesis": "-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus",
+    "edits": [
+      [
+        "REN1 in en 200k\nREN2 en 0 12.8k",
+        "VEN en 0 0"
+      ],
+      [
+        "LPOWER in drain 150u",
+        "LPOWER in drain 135u"
+      ]
+    ],
+    "rc": 0,
+    "status": "COMPLETED_UNREVIEWED",
+    "elapsed_s": 5.400397600024007,
+    "timeout_s": 30,
+    "netlist_sha256": "c5cdcde8b9d91d8460eb9335b6bfd4010b01ed99bd0a9d7b4263f36355f35b1b",
+    "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+    "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+    "model_hashes": {
+      "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+      "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+      "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+      "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    "solver": "LTspice 24.0.12.0 Windows Normal",
+    "log_tail": [
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Total elapsed time: 4.263 seconds."
+    ],
+    "solver_steps_raised_defcon": 0,
+    "t_end": 0.003,
+    "n_points": 60112,
+    "vin_final": 23.999977498891173,
+    "t_peak_vout": 0.0010844561163369367,
+    "vout_peak": 24.149469202278716,
+    "t_peak_il": 0.00019879812945531724,
+    "il_peak": 0.8136714458032872,
+    "il_rms": 0.2957383870061457,
+    "il_energy_J": 4.965459162867088e-05,
+    "vout_at_1ms": 23.101401274230614,
+    "vout_at_2ms": 23.92326938673715,
+    "vout_final": 23.682244541162312,
+    "il_final": 0.00022501108825099942,
+    "il_at_vout_peak": 0.016706176995737797,
+    "dvdt_1090_V_per_s": 25031.84161935695,
+    "dvdt_max_V_per_s": 40056.950394928455,
+    "divider_share_nominal": 0.1295336787564767,
+    "ideal_peak_A": 8.829042983245692,
+    "raw_sha256": "c9b80e97ffa7fe62e5403a759ee7429f4c8bd92f9e57e6d6c0d5473c9d90719c"
+  }
+]

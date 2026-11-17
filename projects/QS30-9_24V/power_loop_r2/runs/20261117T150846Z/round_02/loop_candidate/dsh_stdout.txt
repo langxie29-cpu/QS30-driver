@@ -1,0 +1,23 @@
+## Result: INCONCLUSIVE — evidence delivered, code only, nothing executed
+
+I drafted the three required artefacts without running a single command, script, or simulator.
+
+**`analyze_independent.py`** — corrects the four items Codex flagged:
+- **R_eff**: two 181.8 kΩ bleed strings in parallel are 90.9 kΩ, not 45.45 kΩ, so 4560.74 Ω is rejected. But the review's own **4801.65043 Ω is not reproducible** from its stated inputs — exact ideal resistors give **4475.91 Ω**. Rather than copy the review's figure at false precision, I carry a **4475.9–4801.7 Ω band** and report every load-dependent quantity across it. I flagged this to the principal instead of silently "fixing" it.
+- **Statistics**: trapezoid time-weighted mean, density-weighted cross-check, and a cluster-robust SE (the adaptive solver clusters samples at near-equal dt, so `s/√N` understates error), plus a true-ppt bound including the excursion the solver may have stepped over.
+- **200 Hz claim withdrawn mechanically**: a 5 ms window sees exactly 1 cycle at 200 Hz, so the minimum resolvable oscillation is 400 Hz; "single bin at 1/T is evidence" is hard-coded `False`, and a moving-block bootstrap drift test replaces the spectral claim.
+- **RHP formula**: `rhp_zero_evaluated = False`, the formula appears nowhere, and measured per-cycle zero-crossing/valley-sign classification replaces it.
+
+The script gates execution on **both** `--run` and a principal-authored approval file, so a Flash worker can never open it.
+
+**`matrix.json`** — 6 P2 cells, **all BLOCKED, 0 allowed, 0 simulations requested**. Records that a resistor presents **+R** while a constant-power sink presents **−R**, so resistor-fixture stability conclusions do not transfer. `P2-PULSE` and `P2-ILIM` equivalent R are left **null** rather than invented.
+
+**`inventory.md`** — evidence, corrections, and explicit open items.
+
+Three things worth your attention:
+
+1. **INCONCLUSIVE is deliberate, not a hedge.** The contract maps absent simulation to INCONCLUSIVE; PASS would assert this task settled something it did not.
+2. **The review's R_eff number has a defect.** Its quoted precision can't survive exact arithmetic. I did not override the decision — 4560.74 Ω is correctly rejected — but that specific figure shouldn't propagate as a point value.
+3. **The script has never run**, not even a syntax pass, because shell was disabled. Two spots carry mild risk the principal should check first: the `TRAPZ` numpy-2.x guard (would raise on numpy 1.x rather than fail silently) and the sparse-block path in `trend_bootstrap`.
+
+All HOLD remain; no component, model, tolerance, or acceptance threshold was touched.

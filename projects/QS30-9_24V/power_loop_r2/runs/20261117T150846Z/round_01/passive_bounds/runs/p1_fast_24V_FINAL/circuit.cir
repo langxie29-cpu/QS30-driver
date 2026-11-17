@@ -1,0 +1,43 @@
+QS30 exploratory cold start, genuine controller, initial COUT=0
+.include controller.sub
+.include st.lib
+.include diode.lib
+.include ss14.lib
+VINPUT vin 0 PWL(0 0 50n 24)
+RINPUT vin in .1
+LPOWER in drain 150u Rser=.16
+XQ drain gate src STP9NK50Z
+RSRC src 0 .062
+RF src sense 10
+CF sense 0 1n
+RG out gate 22
+RGS gate src 10k
+XNEG src neg ss14
+RNEG neg gate 2
+DREC drain hv US1G
+RSNUB drain sn 330
+CSNUB sn hv 100p
+COUT hv 0 20.3u Rser=.1 IC=0
+RLOAD hv 0 5200
+RB1A hv b1 90.9k
+RB1B b1 0 90.9k
+RB2A hv b2 90.9k
+RB2B b2 0 90.9k
+RFB1 hv fbmid 100k
+RFB2 fbmid fb 100k
+RFB3 fb 0 1900.6
+VAUX aux 0 PWL(0 0 1m 12)
+RAUX aux intvcc .1
+CINT intvcc 0 4.7u IC=0
+VEN en 0 0
+CSS ss 0 100n IC=0
+RCOMP vc comp 22k
+CCOMP comp 0 6.8n IC=0
+CHF vc 0 100p IC=0
+RRT rt 0 140k
+XU vc fb ss rt 0 sense out intvcc en intvcc 0 LT3757A
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15
+.tran 5e-08 0.003 0 5e-08 uic
+.save V(out) I(XQ:LD) I(XQ:LS) I(XQ:LG) I(XNEG:ddio) I(XNEG:dgr) I(RSRC) I(RF) I(RGS) I(RNEG) I(RSNUB) I(CSNUB) V(hv) V(gate) V(src) V(sense) V(vc) V(ss) V(drain) I(LPOWER) V(in) V(en) V(intvcc) I(DREC)
+.end

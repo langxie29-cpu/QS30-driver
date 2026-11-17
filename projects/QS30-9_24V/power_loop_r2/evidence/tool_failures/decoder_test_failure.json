@@ -1,0 +1,6 @@
+{
+  "status": "EXECUTION_FAIL",
+  "tests_run": 5,
+  "errors": 1,
+  "reason": "UTF8-sig.encode inserted BOM into binary delimiter search; real LT cases are UTF16 and were unaffected. Windows test cleanup additionally held memmap open during failed assertion. Fix header marker encoding and release test memmaps. First failure retained, not counted as electrical failure."
+}

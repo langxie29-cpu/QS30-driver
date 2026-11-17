@@ -1,0 +1,25 @@
+{
+  "task_id": "startup_followup",
+  "status": "PASS",
+  "notes": "Code-only evidence delivery; zero shell/jobs/simulator/network/model calls and startup_calc_v2.py was deliberately NOT executed. Delivered the corrected startup calculator (110 lines, numpy) that fixes the ROUND3_REVIEW L4 defect where P=6 W had been used as the 26.4 V input: Pmax is now the array [21.6,24,26.4]**2/(4*R) (V^2/(4R)) instead of 6^2/(4*33), rise is V/dvdt with dvdt = Iprog*G/Cmin = 5.5e-6*25.5/42.3e-9 instead of 6/rate, and the assumed 0.5 ohm series element and all USB references are removed (grep-verified: no PIN, PMAX, USB or 0.5 in the script). Inputs are exactly V=26.4, P=6, R=33, Iprog=5.5e-6, G=25.5 (TPS2660.txt L453 GAIN(dVdT) max), Cmin=42.3e-9; no invented value. The script emits only executable numpy arithmetic plus boolean assertions, so the principal obtains the numeric results by running it; this worker transcribes none. Explicit statements carried: permanent series R cannot deliver 6 W (assertions all/max Pmax < 6 W on the array), and precharge bypass has hardware_missing=True with actual_device_MPN=None, bypass_model=None and max_delay=None, because MODE=open TPS26601 is circuit-breaker+latch (TPS2660.txt L170/L1717-L1719) and every protection delay is TYP-only (L615/L635/L642/L644). Copied literals from evidence/principal/startup_bounds uncontrolled, precharge and slew_corrected_7p962ms metrics.json are carried unchanged with src paths and sha256 recorded; the precharge pulse-rating/duration/bypass caveat is preserved. New UNRESOLVED item recorded rather than resolved: the factory dVdT rate 23.9 V/1.6 ms with Iprog 5.5 uA and Gmax 25.5 needs a ramp capacitor of Iprog*G/rate, so the prompt Cmin 42.3 nF is not consistent with the factory rate unless it is a factory trim; consequently no native-slew claim is made and Iprog is labelled as a prompt constant, not a datasheet current spec. No threshold, manufacturing HOLD or branch was changed; no approval requirement was created. arithmetic-only evidence pending principal execution and deterministic audit.",
+  "evidence_files": [
+    "inventory.md",
+    "startup_calc_v2.py"
+  ],
+  "source_urls": [
+    "https://www.ti.com/lit/ds/symlink/tps2660.pdf"
+  ],
+  "solver": "none (arithmetic only; startup_calc_v2.py written but not executed -- task forbids shell/jobs/simulator/network/model calls)",
+  "model_hashes": {
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "blocking_issues": [
+    "startup_calc_v2.py was not executed by this worker (code-only constraint): dvdt, rise, PmaxVs, load_A and the assertions must be produced by the principal run before any number is quotable.",
+    "No native TPS26601 dynamic model is executable; both TI libraries remain encrypted and substitution is forbidden, so the source ramp V/dvdt remains an abstract assumption and not device behaviour.",
+    "No bypass hardware, actual device MPN, bypass model or vendor maximum delay exists for the independent precharge+bypass route; that route stays unqualified.",
+    "The prompt Iprog=5.5 uA with Gmax 25.5 and factory 23.9 V/1.6 ms implies a ramp capacitor that contradicts Cmin=42.3 nF; unresolved, so no native slew/rise guarantee is claimed.",
+    "The 33 ohm precharge resistor has no selected MPN, no proven pulse/energy rating and no thermal or mechanical qualification; energy and peak power in the copied metrics are not a part qualification.",
+    "Copied startup_bounds evidence is a 25 C linear-inductor passive fixture without eFuse dynamics, hot magnetics or 170 V qualification; it cannot be read as a startup pass.",
+    "Full 200 ms sense-filter qualification was never achieved (attempts timed out), so downstream startup timing behaviour is not observable."
+  ]
+}

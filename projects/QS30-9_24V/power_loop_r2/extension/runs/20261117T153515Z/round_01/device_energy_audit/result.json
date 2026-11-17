@@ -1,0 +1,24 @@
+{
+  "task_id": "device_energy_audit",
+  "status": "INCONCLUSIVE",
+  "notes": "Code-only delivery: analyze_energy.py (178 lines, single script) reads evidence/principal/minimum_native_probes/circuit.raw through lab.native plus numpy only, and evaluates the contract identities on the two fixed windows [1.02us,1.10us] and [0,10us]: integral (V(q:12)-V(src))*I(VQS)dt vs .5*7.5n*(Iend^2-Istart^2) and integral (V(q:6)-V(drain))*(-I(VQD))dt vs .5*4.5n*(Iend^2-Istart^2), using the exact raw probe names v(q:12), v(q:6), v(src), v(drain), i(vqs), i(vqd). It also computes intrinsic VGS=V(q:5)-V(q:9) and VDS=V(q:13)-V(q:9) (windowed and full trace), V(src)/V(drain) package extrema, and a cross-check of v(q:5),v(q:9),v(q:13) ranges against internal_analysis.json. Package inductances 7.5n (LS 12-3) and 4.5n (LD 6-1) were read from the committed st.lib STP9NK50Z subckt (LG 2-4 7.5n, LS 12 3 7.5n, LD 6 1 4.5n, MOS nodes 13/5/9), not from memory. INCONCLUSIVE and not PASS because the script was NOT executed in this session: tools/shell/jobs/simulator/dispatch are disabled by the current contract, so metrics.json and waves.txt do not exist yet, and no numerical energy, current or voltage is reported, hand-computed or invented here. The script emits both the contract's sign orientation and the opposite orientation of each pair, because a closed inductor satisfies v*i=d/dt(.5*L*i^2) either way and probe-label vs pin direction cannot be settled from probe text; disagreement is attributed to a non-L branch, coarse trapezoid integration at a narrow event, or an orientation/name mismatch, never to device physics. Caveat recorded in output: a gross trace containing the extremely narrow reverse-drive event near 1.052us can defeat a trapezoid sum over saved points, so identity failure may reflect coarse integration rather than physics, and identity success would not certify the model. No model edited (st.lib left byte-identical and unreadable-as-UTF-8; hashed at run time), no simulation added, no acceptance threshold changed, no HOLD altered, nothing written outside OUTPUT_DIR. WorkerPASS is evidence delivery only; any device statement remains a preliminary WORKER_CLAIM pending deterministic audit and Codex review.",
+  "evidence_files": [
+    "analyze_energy.py",
+    "inventory.md"
+  ],
+  "source_urls": [],
+  "solver": "none (no simulator invoked by this worker; target trace provenance recorded as LTspice 24.0.12 Windows, Gear, reltol=1e-3 abstol=1n vntol=1u per process.json and circuit.log)",
+  "model_hashes": {
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "circuit.cir": "530fc4cb8a6fc5d1dcd9e2613cded049b8f2f5512ecfa552f1ae89e0e9d903de",
+    "circuit.raw": "6ddc12e96b0ac3983dab7cbf3267ada3b38560b15d62e17baa19240b17f53887"
+  },
+  "model_hashes_provenance": "NOT recomputed by this worker (no shell). Transcribed from the committed principal records: st.lib and circuit.cir from minimum_native_probes/preregister.json model_hashes and netlist_sha256; circuit.raw from minimum_native_probes/internal_analysis.json raw_sha256. analyze_energy.py re-hashes circuit.cir, st.lib, circuit.raw, internal_analysis.json and itself with lab.sha at run time and writes them to metrics.model_hashes, which will confirm or contradict these transcriptions when the principal runs it.",
+  "blocking_issues": [
+    "analyze_energy.py was not executed in this session (shell/jobs/simulator disabled by contract), so metrics.json and waves.txt are absent and no energy-balance numbers are measured.",
+    "No numerical assertion result exists for either identity on either window: byte-exact agreement, disagreement, and the coarse-integration hypothesis near 1.052us remain untested.",
+    "Sign convention of I(VQS)/I(VQD) relative to the LS and LD pin directions is unresolved from probe text; both orientations are emitted for reviewer adjudication.",
+    "Intrinsic VGS/VDS values and package-voltage extrema are computed by code but unrun, so they are not yet verified against internal_analysis.json.",
+    "No model, physics, thermal or electrical qualification is established; all HOLDs and prior failures (60ms and 200ms qualification timeouts, pin-filter 22R/4.7n timeout) stand unchanged."
+  ]
+}

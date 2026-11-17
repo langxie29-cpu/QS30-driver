@@ -1,0 +1,30 @@
+Done. All four outputs are in the task directory, the result JSON validates, model hashes still match R1 byte-for-byte, and nothing outside `OUTPUT_DIR` was written.
+
+## Result: PASS (evidence delivered only — not electrical acceptance)
+
+**Zero simulations** were run, as required. Everything below comes from the original R1 `circuit.raw` (6,331,931 points) read via `lab.native`.
+
+**Successive 5 ms windows** (trapezoid time-weighted mean / true raw Vpp):
+
+| window | mean | raw Vpp |
+|---|---:|---:|
+| 40–45 ms | 162.179 V | 6.571 V |
+| 45–50 ms | 166.941 V | 5.789 V |
+| 50–55 ms | 170.442 V | 3.906 V |
+| 55–60 ms | 169.812 V | 2.431 V |
+
+These reproduce R1's published windows to <0.01 V. The 40–60 ms 13.463 Vpp is not a ripple metric — it spans the 46.2019 ms band entry.
+
+**60 ms is not settled.** The trace leaves a ±10 mV band at the final sample (zero margin), the mean moves −629.6 mV between the last two windows *with sign reversal* against the earlier ramp, and the quietest 2 ms bin still holds 1.474 Vpp.
+
+**FFT** (uniform resample at fs = 20 MHz, Nyquist 10 MHz, Hann, mean-detrended): the residual is a **200–600 Hz envelope** (55–60 ms: 2.170 V at 200 Hz), while the 60–140 kHz switching band is ≤13.4 mV. So this is envelope drift, not a 100.85 kHz limit cycle. I documented that interpolation smears content above the ~105 kHz native mean rate and aliases everything above 10 MHz.
+
+Two things I corrected rather than quietly overwrote, both recorded in `analysis.json`:
+- My first FFT draft had a broken frequency axis (Nyquist 0.0025 Hz, empty peak lists). It is preserved in `fft_selfcheck`, used for no conclusion, and the corrected axis is asserted sane.
+- My first small-signal draft applied the standard CCM boost RHP formula — but the **measured duty is 0.272** and I_L valley is −0.171 A, nowhere near the 0.845–0.873 the formula assumes. That value (2.56 MHz) is now flagged `RHP_applicable: false` and used as no plant zero; conduction mode stays INCONCLUSIVE.
+
+**Compensation: no edit, and I deliberately proposed no values** (`recommendation_values_justified: false`). The output pole is ~3.44 Hz against an existing 1.064 kHz zero, so mis-compensation isn't demonstrated — but adequacy isn't either, since no gain/phase margin exists. Recommend keeping 22k/6.8n/100p/140k and measuring first.
+
+The 200 ms unchanged observation is recommended but **not executed**, with two caveats: no outcome is predicted (the sign reversal breaks any monotonic-decay extrapolation), and R1 took ~287 s for 60 ms at 200 ns step, so 200 ms is ~3.3× that and needs principal budgeting.
+
+All acceptance thresholds are untouched and still failing (SENSE exceeds the LT3757A ±0.3 V rating); all HOLD remain, pending deterministic audit and Codex review.

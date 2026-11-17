@@ -1,0 +1,120 @@
+{
+  "worker_draft_sha256": "93c725cd622cb4eb0101d8d71430812d9b1456c0c064327bfb8757dbfc94beca",
+  "reviewer": "Current principal Codex",
+  "status": "APPROVED_NETLIST_TRANSFORMS_ONLY",
+  "checks": [
+    {
+      "kind": "vin21p6",
+      "circuit_sha256": "b1f51d409e5d4735d8b700e7b71882a5af2c733091c80cdbacdb5c7f19b7311c",
+      "metadata": {
+        "kind": "vin21p6",
+        "stop_s": 0.2,
+        "final_window_s": [
+          0.15,
+          0.2
+        ],
+        "load": "RLOAD hv 0 5200 (unchanged)",
+        "recovery_screen": 0.1,
+        "normal_band_V": [
+          164.9,
+          175.1
+        ],
+        "normal_peak_V": 180.0,
+        "runtime_budget_s": 900,
+        "preregistered_kinds": [
+          "vin21p6",
+          "vin26p4",
+          "load_step",
+          "overload"
+        ]
+      },
+      "vendor_model_bytes_changed": false
+    },
+    {
+      "kind": "vin26p4",
+      "circuit_sha256": "ae6e378b4001b965d4d6c63b0d812e3197b177c0d038ee384e58b67df349bad6",
+      "metadata": {
+        "kind": "vin26p4",
+        "stop_s": 0.2,
+        "final_window_s": [
+          0.15,
+          0.2
+        ],
+        "load": "RLOAD hv 0 5200 (unchanged)",
+        "recovery_screen": 0.1,
+        "normal_band_V": [
+          164.9,
+          175.1
+        ],
+        "normal_peak_V": 180.0,
+        "runtime_budget_s": 900,
+        "preregistered_kinds": [
+          "vin21p6",
+          "vin26p4",
+          "load_step",
+          "overload"
+        ]
+      },
+      "vendor_model_bytes_changed": false
+    },
+    {
+      "kind": "load_step",
+      "circuit_sha256": "2a0fe05db2f45229f64a786bcf4a99221226ba9e00b10b0a97b00c34d8f52ebb",
+      "metadata": {
+        "kind": "load_step",
+        "stop_s": 0.3,
+        "final_window_s": [
+          0.26,
+          0.3
+        ],
+        "load": "I=V(hv)/(if(time<80m,10400,if(time<180m,5200,10400)))",
+        "recovery_screen": 0.1,
+        "normal_band_V": [
+          164.9,
+          175.1
+        ],
+        "normal_peak_V": 180.0,
+        "runtime_budget_s": 900,
+        "preregistered_kinds": [
+          "vin21p6",
+          "vin26p4",
+          "load_step",
+          "overload"
+        ]
+      },
+      "vendor_model_bytes_changed": false
+    },
+    {
+      "kind": "overload",
+      "circuit_sha256": "8f08f4cca9dde82b66d1b81f8d178daedf71b63533b9a6a17604ff7a5157cb23",
+      "metadata": {
+        "kind": "overload",
+        "stop_s": 0.16,
+        "final_window_s": [
+          0.14,
+          0.16
+        ],
+        "load": "I=V(hv)/(if(time<80m,5200,1000))",
+        "recovery_screen": 0.1,
+        "normal_band_V": [
+          164.9,
+          175.1
+        ],
+        "normal_peak_V": 180.0,
+        "runtime_budget_s": 900,
+        "preregistered_kinds": [
+          "vin21p6",
+          "vin26p4",
+          "load_step",
+          "overload"
+        ]
+      },
+      "vendor_model_bytes_changed": false
+    }
+  ],
+  "limitations": [
+    "Too verbose vs100line request; functional assertions independently inspected",
+    "No actual eFuse, hotL or9tube models",
+    "Full cycle/fault qualification not inferred"
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "task": "device_energy_audit",
+  "raw_sha256": "6ddc12e96b0ac3983dab7cbf3267ada3b38560b15d62e17baa19240b17f53887",
+  "raw_sha256_matches_internal_analysis": true,
+  "solver": "LTspice 24.0.12 (Gear, reltol=1e-3, abstol=1n, vntol=1u)",
+  "solver_tolerance_v": 1e-06,
+  "solver_tolerance_A": 1e-09,
+  "integration_rule": "numpy.trapezoid on saved points with interpolated endpoints",
+  "points_total": 11008,
+  "dt_min_s": 9.999223942337016e-19,
+  "dt_max_s": 1.0000000000004986e-09,
+  "windows": [
+    {
+      "window": [
+        1.02e-06,
+        1.1e-06
+      ],
+      "LS_source_package": {
+        "window_s": [
+          1.02e-06,
+          1.1e-06
+        ],
+        "v_probe": "v(ls)",
+        "i_probe": "i(vqs)",
+        "current_sign": 1.0,
+        "inductance_H": 7.5e-09,
+        "points": 379,
+        "I_start_A": 0.27345573563905834,
+        "I_end_A": 1.131503469000341,
+        "energy_integral_J": 1.9385986516003235e-08,
+        "delta_stored_J": 4.520707728772151e-09,
+        "residual_J": 1.4865278787231085e-08,
+        "relative_error": 0.7668053815553683,
+        "v_extreme_V": [
+          -179.5182685605416,
+          34.65092940768412
+        ],
+        "i_extreme_A": [
+          0.23550248496127735,
+          10.555389966176993
+        ]
+      },
+      "LD_drain_package": {
+        "window_s": [
+          1.02e-06,
+          1.1e-06
+        ],
+        "v_probe": "v(ld)",
+        "i_probe": "i(vqd)",
+        "current_sign": -1.0,
+        "inductance_H": 4.5e-09,
+        "points": 379,
+        "I_start_A": -0.010858388426700616,
+        "I_end_A": 1.0035068950657329,
+        "energy_integral_J": 1.891517628038018e-08,
+        "delta_stored_J": 2.265543413651796e-09,
+        "residual_J": 1.664963286672838e-08,
+        "relative_error": 0.8802261538528859,
+        "v_extreme_V": [
+          -59.76354442245268,
+          212.68521758514802
+        ],
+        "i_extreme_A": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      },
+      "LS_opposite_sign_reference": {
+        "window_s": [
+          1.02e-06,
+          1.1e-06
+        ],
+        "v_probe": "v(ls)",
+        "i_probe": "i(vqs)",
+        "current_sign": -1.0,
+        "inductance_H": 7.5e-09,
+        "points": 379,
+        "I_start_A": 0.27345573563905834,
+        "I_end_A": 1.131503469000341,
+        "energy_integral_J": -1.9385986516003235e-08,
+        "delta_stored_J": 4.520707728772151e-09,
+        "residual_J": -2.3906694244775385e-08,
+        "relative_error": 1.2331946184446316,
+        "v_extreme_V": [
+          -179.5182685605416,
+          34.65092940768412
+        ],
+        "i_extreme_A": [
+          0.23550248496127735,
+          10.555389966176993
+        ]
+      },
+      "LD_opposite_sign_reference": {
+        "window_s": [
+          1.02e-06,
+          1.1e-06
+        ],
+        "v_probe": "v(ld)",
+        "i_probe": "i(vqd)",
+        "current_sign": 1.0,
+        "inductance_H": 4.5e-09,
+        "points": 379,
+        "I_start_A": -0.010858388426700616,
+        "I_end_A": 1.0035068950657329,
+        "energy_integral_J": -1.891517628038018e-08,
+        "delta_stored_J": 2.265543413651796e-09,
+        "residual_J": -2.1180719694031976e-08,
+        "relative_error": 1.119773846147114,
+        "v_extreme_V": [
+          -59.76354442245268,
+          212.68521758514802
+        ],
+        "i_extreme_A": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      },
+      "pin_current_pair_extremes_A": {
+        "I(VQS)": [
+          0.23550248496127735,
+          10.555389966176993
+        ],
+        "I(VQD)": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      }
+    },
+    {
+      "window": [
+        0.0,
+        1e-05
+      ],
+      "LS_source_package": {
+        "window_s": [
+          0.0,
+          1e-05
+        ],
+        "v_probe": "v(ls)",
+        "i_probe": "i(vqs)",
+        "current_sign": 1.0,
+        "inductance_H": 7.5e-09,
+        "points": 11008,
+        "I_start_A": 0.0,
+        "I_end_A": -0.0011550956322781943,
+        "energy_integral_J": 2.173403987217486e-08,
+        "delta_stored_J": 5.0034221989056045e-15,
+        "residual_J": 2.173403486875266e-08,
+        "relative_error": 0.9999997697886711,
+        "v_extreme_V": [
+          -179.5182685605416,
+          41.14460652972653
+        ],
+        "i_extreme_A": [
+          -0.3671156912499044,
+          10.555389966176993
+        ]
+      },
+      "LD_drain_package": {
+        "window_s": [
+          0.0,
+          1e-05
+        ],
+        "v_probe": "v(ld)",
+        "i_probe": "i(vqd)",
+        "current_sign": -1.0,
+        "inductance_H": 4.5e-09,
+        "points": 11008,
+        "I_start_A": 0.0,
+        "I_end_A": -0.00771332994893438,
+        "energy_integral_J": 2.4141222107960826e-08,
+        "delta_stored_J": 1.338647825275381e-13,
+        "residual_J": 2.4141088243178298e-08,
+        "relative_error": 0.999994454929335,
+        "v_extreme_V": [
+          -59.76354442245268,
+          212.68521758514802
+        ],
+        "i_extreme_A": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      },
+      "LS_opposite_sign_reference": {
+        "window_s": [
+          0.0,
+          1e-05
+        ],
+        "v_probe": "v(ls)",
+        "i_probe": "i(vqs)",
+        "current_sign": -1.0,
+        "inductance_H": 7.5e-09,
+        "points": 11008,
+        "I_start_A": 0.0,
+        "I_end_A": -0.0011550956322781943,
+        "energy_integral_J": -2.173403987217486e-08,
+        "delta_stored_J": 5.0034221989056045e-15,
+        "residual_J": -2.173404487559706e-08,
+        "relative_error": 1.0000002302113289,
+        "v_extreme_V": [
+          -179.5182685605416,
+          41.14460652972653
+        ],
+        "i_extreme_A": [
+          -0.3671156912499044,
+          10.555389966176993
+        ]
+      },
+      "LD_opposite_sign_reference": {
+        "window_s": [
+          0.0,
+          1e-05
+        ],
+        "v_probe": "v(ld)",
+        "i_probe": "i(vqd)",
+        "current_sign": 1.0,
+        "inductance_H": 4.5e-09,
+        "points": 11008,
+        "I_start_A": 0.0,
+        "I_end_A": -0.00771332994893438,
+        "energy_integral_J": -2.4141222107960826e-08,
+        "delta_stored_J": 1.338647825275381e-13,
+        "residual_J": -2.4141355972743355e-08,
+        "relative_error": 1.000005545070665,
+        "v_extreme_V": [
+          -59.76354442245268,
+          212.68521758514802
+        ],
+        "i_extreme_A": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      },
+      "pin_current_pair_extremes_A": {
+        "I(VQS)": [
+          -0.3671156912499044,
+          10.555389966176993
+        ],
+        "I(VQD)": [
+          -4.770021013905622,
+          10.498652414196116
+        ]
+      }
+    }
+  ],
+  "checks": {
+    "LS_source_package_identity_within_5%": false,
+    "LS_source_package_worst_relative_error": 0.9999997697886711,
+    "LD_drain_package_identity_within_5%": false,
+    "LD_drain_package_worst_relative_error": 0.999994454929335
+  },
+  "intrinsic_voltage_1p02_1p10us": {
+    "VGS_intrinsic_V": {
+      "min": 3.2761084815526527,
+      "max": 8.40779664915813
+    },
+    "VDS_intrinsic_V": {
+      "min": 0.08047832436130785,
+      "max": 90.41338076212142
+    }
+  },
+  "intrinsic_voltage_full_trace": {
+    "VGS_intrinsic_V": {
+      "min": -0.41237956753219274,
+      "max": 11.908819972871353
+    },
+    "VDS_intrinsic_V": {
+      "min": -0.6512165629015846,
+      "max": 98.56243679973143
+    }
+  },
+  "package_voltage_extrema_V": {
+    "v(src)": {
+      "minimum": -0.22274505502633515,
+      "maximum": 0.6528279890214813,
+      "abs_max": 0.6528279890214813
+    },
+    "v(drain)": {
+      "minimum": -311.4545527353288,
+      "maximum": 90.34327340608621,
+      "abs_max": 311.4545527353288
+    }
+  },
+  "cross_check_internal_analysis": {
+    "v(q:5)": {
+      "scripts_min": -172.09968145130782,
+      "scripts_max": 41.2581448569844,
+      "internal_analysis_min": -172.09968145130782,
+      "internal_analysis_max": 41.2581448569844
+    },
+    "v(q:9)": {
+      "scripts_min": -179.03603380090482,
+      "scripts_max": 41.21526252746718,
+      "internal_analysis_min": -179.03603380090482,
+      "internal_analysis_max": 41.21526252746718
+    },
+    "v(q:13)": {
+      "scripts_min": -144.3995144243629,
+      "scripts_max": 93.46040222582118,
+      "internal_analysis_min": -144.3995144243629,
+      "internal_analysis_max": 93.46040222582118
+    }
+  },
+  "model_hashes": {
+    "circuit.cir": "530fc4cb8a6fc5d1dcd9e2613cded049b8f2f5512ecfa552f1ae89e0e9d903de",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "circuit.raw": "6ddc12e96b0ac3983dab7cbf3267ada3b38560b15d62e17baa19240b17f53887",
+    "internal_analysis.json": "79f1b54a09d3c1a59be158397ea1f47502f1bf54f081667bfdeb24af063a16cb",
+    "analyze_energy.py": "6aae43c2a6db721b14b05e585874c378a62f2551593544d12177fcb328dd21bc"
+  },
+  "identity_failure_caveat": "The gross trace contains an extremely narrow reverse-drive event near 1.052us; a trapezoid sum over sparse saved points can under- or over-estimate work there. Failure of this discrete identity can therefore indicate coarse integration of a narrow event rather than a physical finding, and success does not certify the model. No physics, thermal or model PASS is claimed."
+}

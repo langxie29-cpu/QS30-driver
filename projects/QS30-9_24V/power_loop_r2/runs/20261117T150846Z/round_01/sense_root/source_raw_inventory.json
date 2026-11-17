@@ -1,0 +1,31 @@
+{
+  "source_raw": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.raw",
+  "source_raw_sha256": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba",
+  "source_raw_bytes": 658521960,
+  "source_cir": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.cir",
+  "source_cir_sha256": "5ba9d1b5503d3f15ba47dbaedf8b497caf8485f271113d0f49562057901df8dc",
+  "models": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12 for Windows, solver = Normal, method = Gear (from R1 circuit.log)",
+  "columns": [
+    "v(in)",
+    "v(drain)",
+    "v(gate)",
+    "v(src)",
+    "v(sense)",
+    "v(hv)",
+    "v(intvcc)",
+    "v(en)",
+    "v(ss)",
+    "v(vc)",
+    "i(drec)",
+    "i(lpower)"
+  ],
+  "n_points": 6331931,
+  "t_first": 0.0,
+  "t_last": 0.06
+}

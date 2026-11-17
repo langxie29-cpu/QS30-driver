@@ -1,0 +1,29 @@
+{
+  "task_id": "loop_followup",
+  "status": "PASS",
+  "notes": "CODE ONLY, nothing executed by this worker: delivered a single function-only netlist mutator (build_regression.py, 176 lines, no __main__, no filesystem writes, no simulator/lab/shell/network/model call) implementing the exact Round-4 pre-registered mutations on the completed filter22R_4p7n_60ms base cell (caller supplies the text; principal reads it). mutate(s,kind) supports exactly four kinds: vin21p6 and vin26p4 replace only the VINPUT PWL plateau 24 -> 21.6/26.4 with stop 0.2 s; load_step removes RLOAD hv 0 5200 and inserts BLOAD hv 0 I=V(hv)/(if(time<80m,10400,if(time<180m,5200,10400))) with stop 0.3 s; overload removes RLOAD hv 0 5200 and inserts BLOAD hv 0 I=V(hv)/(if(time<80m,5200,1000)) with stop 0.16 s. Only the .tran stop field is rewritten; START/MAXSTEP/UIC untouched. Exact unique-anchor assertions run before and after mutation and abort on 0 or >=2 matches, on CRLF, on a pre-existing/foreign RLOAD or BLOAD, and on altered solver tolerances; anchors assert RF 22, CF 4.7n, RG 22, RSRC .062, RCOMP 22k/CCOMP 6.8n/CHF 100p and all four .include lines survive, and that no .model/.lib card is introduced. No part, model, threshold or compensation value is modified and the source circuit.cir under evidence/principal is never written back. Returned metadata record thresholds_changed=false, acceptance_invented=false, extra_cases=0, runtime_budget_s=900, and the fixed final raw-ripple windows. NO numerical result of any kind is reported, estimated or hand-computed: no waveform, current, voltage, ripple or recovery time was measured, and no circuit.cir/run.log/waves.txt/metrics.json were fabricated. The load is an equivalent resistive sink I=V(hv)/R, explicitly not nine glow tubes and not a measured lamp; the overload case is a current-limit screen only, not normal-regulation and not 195 V OVP qualification. Pre-registered test intent recorded as text only (recovery <= 100 ms, band 164.9-175.1 V, peak <= 180 V, raw ripple <= 1 Vpp in fixed final windows). Principal must inspect and then execute via a single LTspice run per case at the 900 s budget; PASS here means evidence delivery only, is not a design approval, and all prior failures (60 ms and 200 ms qualification timeouts, 22R/4.7n filter timeouts) and every HOLD remain unchanged.",
+  "evidence_files": [
+    "build_regression.py",
+    "inventory.md",
+    "result.json"
+  ],
+  "source_urls": [],
+  "solver": "none (code-only task; no simulator invoked by this worker). Target provenance for the principal's later runs: LTspice 24.0.12.0 Windows Normal, method=gear, reltol=.001 abstol=1n vntol=1u, per the filter22R_4p7n_60ms preregister.json and R2/lab.py.",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "filter22R_4p7n_60ms/circuit.cir": "796b346683a29573a3577b0615a65b2aa76c87a8758c93783213ebd021bcca4e"
+  },
+  "blocking_issues": [
+    "No mutated netlist was executed and no simulation was run by this worker, so no load-step recovery time, input-regulation behaviour, ripple or current-limit behaviour is measured.",
+    "build_regression.py has not been syntax-checked or executed here (execution is prohibited in this round); it requires principal inspection and a first run before its anchors are trusted.",
+    "mutate() returns only the netlist string; wiring it into lab.execute (per-case directories, preregistration, attempt accounting against the remaining deterministic allowance under the 36-attempt cap) is the principal's step.",
+    "The load is an ideal equivalent resistive sink I=V(hv)/R: it does not model nine glow tubes, tube ignition, negative-resistance dynamics or any measured lamp; no glow-tube load behaviour is claimed.",
+    "The overload case screens current-limit behaviour only; normal-regulation qualification and 195 V OVP qualification are NOT established by it.",
+    "Recovery <= 100 ms, band 164.9-175.1 V, peak <= 180 V and raw ripple <= 1 Vpp in the fixed final windows are pre-registered test intents, not measured outcomes and not proven here.",
+    "The known 60 ms and 200 ms qualification timeouts, the 22R/4.7n pin-filter timeouts, the unresolved inductor energy identity (FAIL), the SENSE absolute-rating exceedance and all manufacturing/electrical HOLD remain unchanged and unqualified.",
+    "The runtime budget of 900 s per case is a budget, not an observed runtime; each executed case counts against the <= 36 deterministic simulation allowance."
+  ]
+}

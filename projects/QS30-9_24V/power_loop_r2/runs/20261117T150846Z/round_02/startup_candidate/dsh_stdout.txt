@@ -1,0 +1,25 @@
+## Result: `INCONCLUSIVE` (correct outcome for a code-only round)
+
+**Tool calls used: 25 of 25. No shell, no simulator, no Python execution, no git, no downloads, no deletion, no writes outside OUTPUT_DIR.**
+
+### Delivered (all in `…/round_02/startup_candidate/`)
+| file | role |
+|---|---|
+| `inventory.md` | required evidence: file manifest, hash table, quantified source review, 5 open questions for you |
+| `PREREGISTRATION.md` | three cases, one variable each, hard assertions, interpretation rules — written before any run can exist |
+| `build_startup.py` | **draft, unexecuted.** Exactly the 3 approved cases via `lab.full` → one-variable edit → `lab.execute`; refuses import, refuses overwrite, refuses non-unique anchors, re-asserts the inhibit per run |
+| `measure_startup.py` | **draft, unexecuted.** Read-back uses `lab.native` only; measurements frozen pre-execution (`V_pk=11.22 V` lossless bound); unevaluable thresholds marked as such, never as pass |
+| `ti_source_review.py` | **draft, unexecuted.** Notes the numbers + line references; does not fake `ti_source_review.json` |
+| `result.json` | contract, status INCONCLUSIVE |
+
+### Quantified source review (line-referenced, not run)
+- Native dVdT ramp **23.9 V / 1.6 ms = 14.94 V/ms**; external cap can only make it *slower* (TPS2660.txt L1365/1367).
+- C(dVdT)=47 nF → **10 ms / 23.9 V = 2.39 V/ms**; −10 % corner ⇒ **8.81 ms to 24 V**, reproducing the review's 8.49 ms within 0.1 %. **No min/max tdVdT exists in the archived text** — that corner is a derivation, not a TI guarantee.
+- Guaranteed I_OL at ΔV=1 V: **1.425/1.5/1.575 A** (8 k) and **2.11/2.23/2.35 A** (5.36 k); fast-trip is **87 % above** the programmed limit, not 87 % of it.
+- MSS1583-154KED: DCR 0.033/0.038 Ω, Isat **3.9/4.4 A**, Irms 3.4/4.8 A — the 10 % vs 20 % drop criterion is **not recoverable** from the extraction, and the SPICE inductor is linear, so peak current is not saturation evidence.
+
+### Things I deliberately did **not** paper over
+1. **Stop time** — `lab.full` caps `stop` at 10.08 ms, so `fault_peak_V ≤ 195 V` cannot be reached with the gate inhibited → reported NOT EVALUABLE, not failed.
+2. **Gate inhibition** — LT3757A SHDN (pin 9) is the unconnected 10th positional node here; I used the already-approved `REN1/REN2 → VEN en 0 0` mutation rather than inventing a new mechanism.
+3. **33 Ω placement** — `RPRE in drain 33` sits in the **load path** (16.5 V drop at 0.5 A). If you want it outside the load path, that's a different topology and different preregistration.
+4. Case C is a source ramp — it says nothing about TPS26601 dVdT, SOA, current limit or shutdown delay. All HOLD unchanged.

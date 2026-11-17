@@ -1,0 +1,368 @@
+{
+  "sessions": [
+    {
+      "session": "session-029d2527-ea9a-41c3-aa1c-9d8ec344aa53",
+      "task": "passive_bounds",
+      "zstd_frames": 431,
+      "compressed_bytes": 275500,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 52,
+      "tool_names": [
+        "pwsh",
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 42,
+      "usage": {
+        "inputTokens": 65553,
+        "outputTokens": 16824,
+        "cacheReadTokens": 2377728
+      },
+      "all_requests_expected": true,
+      "last_event": "tool-call-chunks"
+    },
+    {
+      "session": "session-65fa5eb2-bfe7-4c51-ad10-79e7e54d6f89",
+      "task": "sense_candidate",
+      "zstd_frames": 377,
+      "compressed_bytes": 226558,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 29,
+      "tool_names": [
+        "glob",
+        "read",
+        "write",
+        "edit"
+      ],
+      "usage_records": 22,
+      "usage": {
+        "inputTokens": 26590,
+        "outputTokens": 14980,
+        "cacheReadTokens": 548224
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-708007d2-9fff-4961-927d-d888c07529be",
+      "task": "startup_candidate",
+      "zstd_frames": 572,
+      "compressed_bytes": 334635,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 50,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 37,
+      "usage": {
+        "inputTokens": 39720,
+        "outputTokens": 22898,
+        "cacheReadTokens": 1348224
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-d82da19d-ba36-49c3-a9de-f594338f4b69",
+      "task": "sense_root",
+      "zstd_frames": 524,
+      "compressed_bytes": 292431,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 34,
+      "tool_names": [
+        "pwsh",
+        "glob",
+        "read",
+        "write",
+        "job_output",
+        "edit"
+      ],
+      "usage_records": 28,
+      "usage": {
+        "inputTokens": 37755,
+        "outputTokens": 22165,
+        "cacheReadTokens": 916096
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-de8dc1e4-6975-4187-867b-c0ef5dce0cfc",
+      "task": "loop_candidate",
+      "zstd_frames": 448,
+      "compressed_bytes": 280180,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 21,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 14,
+      "usage": {
+        "inputTokens": 40273,
+        "outputTokens": 18873,
+        "cacheReadTokens": 419840
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-f3947005-a57c-4bce-b70d-e5fee8e879c6",
+      "task": "settling_analysis",
+      "zstd_frames": 529,
+      "compressed_bytes": 324405,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 51,
+      "tool_names": [
+        "pwsh",
+        "read",
+        "glob",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 40,
+      "usage": {
+        "inputTokens": 73567,
+        "outputTokens": 21208,
+        "cacheReadTokens": 2573184
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-0caed6bf-b06f-42f9-a1e6-49e1551f93da",
+      "task": "ripple_split",
+      "zstd_frames": 1260,
+      "compressed_bytes": 894683,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 118,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 94,
+      "usage": {
+        "inputTokens": 132183,
+        "outputTokens": 70185,
+        "cacheReadTokens": 11075328
+      },
+      "all_requests_expected": true,
+      "last_event": "assistant/chunk"
+    },
+    {
+      "session": "session-1977989c-1da1-4998-8a28-a2a24425d29a",
+      "task": "device_followup",
+      "zstd_frames": 323,
+      "compressed_bytes": 228199,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 52,
+      "tool_names": [
+        "read",
+        "glob",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 37,
+      "usage": {
+        "inputTokens": 46446,
+        "outputTokens": 11314,
+        "cacheReadTokens": 1175936
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-32cb5709-eb7f-44fc-90e4-e8d38ca70e12",
+      "task": "loop_followup",
+      "zstd_frames": 297,
+      "compressed_bytes": 220425,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 41,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 34,
+      "usage": {
+        "inputTokens": 59880,
+        "outputTokens": 11074,
+        "cacheReadTokens": 1493504
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-555f686e-3fce-42f5-9f20-6edee2a92fd2",
+      "task": "device_energy_audit",
+      "zstd_frames": 392,
+      "compressed_bytes": 248225,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 49,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 42,
+      "usage": {
+        "inputTokens": 28244,
+        "outputTokens": 15813,
+        "cacheReadTokens": 968576
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-b120faa3-0132-4f06-bb04-226824d23461",
+      "task": "startup_path_audit",
+      "zstd_frames": 467,
+      "compressed_bytes": 329914,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 54,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "todo_write",
+        "write",
+        "edit"
+      ],
+      "usage_records": 41,
+      "usage": {
+        "inputTokens": 70857,
+        "outputTokens": 18691,
+        "cacheReadTokens": 2224000
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    },
+    {
+      "session": "session-b45e7b54-dd5e-4423-b58c-0cf871eb6714",
+      "task": "startup_followup",
+      "zstd_frames": 327,
+      "compressed_bytes": 249882,
+      "request_header_records": 1,
+      "headers": [
+        {
+          "provider": "deepseek-official",
+          "model": "deepseek-flash",
+          "maxTokens": 12000
+        }
+      ],
+      "tool_calls": 41,
+      "tool_names": [
+        "glob",
+        "read",
+        "grep",
+        "write",
+        "edit"
+      ],
+      "usage_records": 34,
+      "usage": {
+        "inputTokens": 57343,
+        "outputTokens": 12128,
+        "cacheReadTokens": 1505792
+      },
+      "all_requests_expected": true,
+      "last_event": "turn/end"
+    }
+  ],
+  "scope": "Operational metadata only, sessions are not token/currency caps; concatenated frames all decoded"
+}

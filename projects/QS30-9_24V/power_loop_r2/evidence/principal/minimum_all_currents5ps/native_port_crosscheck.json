@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "MOSdrain_probe_vs_native_port_max_A": 7.028155835087091e-12,
+    "MOSgate_probe_vs_native_port_max_A": 8.881784197001252e-16,
+    "MOSsource_probe_vs_native_port_max_A": 6.561418075534675e-14,
+    "negative_clamp_port_vs_RNEG_max_A": 2.1964780926361088e-05,
+    "drain_KCL_local_max_A": 0.0001270789386302873,
+    "source_KCL_local_max_A": 2.1964780917657764e-05,
+    "gate_KCL_local_max_A": 8.117424249443062e-06
+  },
+  "subcircuit_native_current_syntax": "Ix(q:1),Ix(q:2),Ix(q:3),Ix(neg:1),Ix(neg:2)",
+  "all_top_level_and_package_ports": "OBSERVED",
+  "internal_LS_LD_LG_body_diode_individual_currents": "NOT_DIRECTLY_SAVED_BY_WILDCARD: leadcurrents recoverable via packageports, bodydiode currentsnotdirectlymeasured",
+  "classification": "INCONCLUSIVE for requestedallinternalbranchobservability; LIMITED_PASS for independentnativeportvszeroprobe consistency",
+  "inherited_title_warning": "Title sayscoldstart/COUT0 butlocalnetlistactuallyIC89.17V/IL1.4A,forcedgate. It isNOT a coldstart/170Vqualification; originaltitle/deck/loghashpreserved."
+}

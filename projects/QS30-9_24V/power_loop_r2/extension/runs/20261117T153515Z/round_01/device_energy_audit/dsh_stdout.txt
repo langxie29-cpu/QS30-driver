@@ -1,0 +1,21 @@
+Both files are valid and complete. The inventory is 84 lines (well under 800 words), the script 178 lines, and only one script exists.
+
+## Summary
+
+Delivered the `device_energy_audit` code-only evidence into the output directory. **Status: INCONCLUSIVE**, because the script was not executed (no shell/simulator permitted), so no numerical result exists.
+
+**`analyze_energy.py`** (178 lines, single script, `lab.native` + numpy only):
+- Values taken from the actual `st.lib`, not memory: `LS 12 3 7.5n`, `LD 6 1 4.5n`, MOS nodes 13/5/9 — so `V(q:12)-V(src)` spans the source package inductor and `V(q:6)-V(drain)` the drain package inductor.
+- Asserts presence of the exact raw probes `v(q:12)`, `v(q:6)`, `v(src)`, `v(drain)`, `i(vqs)`, `i(vqd)`; aborts on a missing probe rather than proceeding.
+- Both fixed windows `[1.02µs,1.10µs]` and `[0,10µs]`, `numpy.trapezoid` with interpolated endpoints, comparing each integral against `.5·L·(Iend²−Istart²)`.
+- Also emits intrinsic `VGS=V(q:5)-V(q:9)`, `VDS=V(q:13)-V(q:9)` (windowed and full trace), `V(src)`/`V(drain)` extrema, solver tolerances, and a cross-check against `internal_analysis.json`.
+
+Three judgment calls worth flagging for your review:
+
+1. **Sign ambiguity handled by reporting, not deciding.** The contract's two expressions use opposite conventions (`+I(VQS)` but `−I(VQD)`). Since a closed inductor satisfies `v·i = d/dt(½Li²)` either way and probe-label vs pin direction isn't settleable from probe text, I emit *both* orientations rather than silently picking one. A disagreement is attributed only to a non-L branch, coarse integration, or an orientation mismatch — never to device physics.
+
+2. **Hash provenance corrected.** I initially listed model hashes as if computed. I have no shell, so they cannot be — I relabelled them explicitly as transcribed from `preregister.json`/`internal_analysis.json`, with the script re-hashing at run time to confirm or contradict.
+
+3. **INCONCLUSIVE over PASS.** The contract's `WorkerPASS=evidence delivery` could permit PASS, but `metrics.json`/`waves.txt` are absent by design, and the stated rule is to use INCONCLUSIVE when required files are missing. I also avoided fabricating them; the runner's script will produce them.
+
+No model file, source evidence, threshold, or HOLD was modified, and nothing was written outside the output directory.

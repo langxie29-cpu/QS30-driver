@@ -1,0 +1,25 @@
+--- D:\PROJECTS\dsharness\QS30-power-loop-r2\projects\QS30-9_24V\power_loop_r2\extension\runs\20261117T153515Z\round_01\device_energy_audit\analyze_energy.py
++++ D:\PROJECTS\dsharness\QS30-power-loop-r2\projects\QS30-9_24V\power_loop_r2\evidence\principal\worker_code_review\analyze_energy_corrected.py
+@@ -93,15 +93,18 @@
+               'internal_analysis.json': lab.sha(IA),
+               'analyze_energy.py': lab.sha(Path(__file__))}
+ 
++    c = dict(c)
++    c['v(ls)'] = c['v(q:12)'] - c['v(src)']
++    c['v(ld)'] = c['v(q:6)'] - c['v(drain)']
+     t = c['time']
+     checks = {}
+     rows = []
+     for a, b in WINDOWS:
+         # Evaluated exactly as the contract writes them.
+-        ls = branch(c, a, b, 'v(q:12)', 'i(vqs)', LS_H, +1.0)
+-        ls_alt = branch(c, a, b, 'v(q:12)', 'i(vqs)', LS_H, -1.0)
+-        ld = branch(c, a, b, 'v(q:6)', 'i(vqd)', LD_H, -1.0)
+-        ld_alt = branch(c, a, b, 'v(q:6)', 'i(vqd)', LD_H, +1.0)
++        ls = branch(c, a, b, 'v(ls)', 'i(vqs)', LS_H, +1.0)
++        ls_alt = branch(c, a, b, 'v(ls)', 'i(vqs)', LS_H, -1.0)
++        ld = branch(c, a, b, 'v(ld)', 'i(vqd)', LD_H, -1.0)
++        ld_alt = branch(c, a, b, 'v(ld)', 'i(vqd)', LD_H, +1.0)
+         # Pin-current extrema per window are reported, not assumed equal.
+         _, iqs = window_points(t, c['i(vqs)'], a, b)
+         _, iqd = window_points(t, c['i(vqd)'], a, b)

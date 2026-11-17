@@ -1,0 +1,260 @@
+{
+  "baseline": "96a1afef5e55f84d002f754510b97d8cbd49334f",
+  "local_r1_head": "96a1afef5e55f84d002f754510b97d8cbd49334f",
+  "r1_diff": "",
+  "raw_sha256": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba",
+  "net_sha256": "5ba9d1b5503d3f15ba47dbaedf8b497caf8485f271113d0f49562057901df8dc",
+  "points": 6331931,
+  "endpoint": 0.06,
+  "peak_event": {
+    "time": 0.010040718423769968,
+    "v(in)": 23.859941379085516,
+    "v(drain)": -310.8186122329684,
+    "v(gate)": 6.866865644497763,
+    "v(src)": 0.5601796185195652,
+    "v(sense)": 0.5243575292413777,
+    "v(hv)": 89.17656660427701,
+    "v(intvcc)": 11.99826674551143,
+    "v(en)": 1.435118985375093,
+    "v(ss)": 0.9176332018788271,
+    "v(vc)": 1.6176461876014248,
+    "i(drec)": -6.204600838120115,
+    "i(lpower)": 1.4004740850316062
+  },
+  "source_current_at_peak_A": 9.035155137412342,
+  "historical_55_60ms": {
+    "mean": 169.81247658617414,
+    "minimum": 168.57342548935023,
+    "maximum": 171.00428970521972,
+    "pp": 2.430864215869491
+  },
+  "models": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "holds": {
+    "manufacturing": "HOLD",
+    "task_status": {
+      "24V-07": "NOT_PASSED",
+      "24V-08": "NOT_ENTERED",
+      "24V-09": "PARTIAL_NOT_PASSED",
+      "24V-10": "PARTIAL_LOW_VOLTAGE_MODELS_NOT_PASSED"
+    },
+    "blockers": [
+      {
+        "id": "H01",
+        "severity": "P0",
+        "subject": "Complete request, fresh manual events, window watchdog, power-valid and set-dominant fault hardware not qualified"
+      },
+      {
+        "id": "H02",
+        "severity": "P0",
+        "subject": "eFuse encrypted dynamic model, RTN isolation including FLT/IMON, hot leakage and shutdown maxima missing"
+      },
+      {
+        "id": "H03",
+        "severity": "P0",
+        "subject": "Physical MOS short, branch stuck-on, input passive path and fuse coordination not contained by logic proof"
+      },
+      {
+        "id": "H04",
+        "severity": "P0",
+        "subject": "Independent residual measurement divider-open/ground-open coverage and branch-off witness incomplete"
+      },
+      {
+        "id": "H05",
+        "severity": "P0",
+        "subject": "OVP peak195V total detection/actuation/remaining energy not validated"
+      },
+      {
+        "id": "H06",
+        "severity": "P0",
+        "subject": "Real current limit, hot magnetics, controller startup/demagnetization and closed loop07/08 unqualified"
+      },
+      {
+        "id": "H07",
+        "severity": "P0",
+        "subject": "USB/5V failure OVP, brownout and partial-power backfeed not electrically qualified"
+      },
+      {
+        "id": "H08",
+        "severity": "P0",
+        "subject": "Bleeder single faults/modules removed and touch criterion; five-second engineering envelope can fail"
+      },
+      {
+        "id": "H09",
+        "severity": "P0",
+        "subject": "Thermal sensor exact MPN, tolerance and thermal coupling, sensor lead faults unqualified"
+      },
+      {
+        "id": "H10",
+        "severity": "P0",
+        "subject": "Native EDA/ERC/DRC, actual footprints/LCSC mapping and HV spacing basis incomplete"
+      }
+    ],
+    "release_policy": "No automatic HOLD closure; green software CI only validates its documented finite scope"
+  },
+  "solver_exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "required_inputs": [
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\ENGINEERING_REPORT.md",
+      "bytes": 10425,
+      "sha256": "b7744bcb5f8568d29c310484ca70a503ce6ce008af2e4e81e189a093c109092c"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\CONTROLLER_REVIEW.md",
+      "bytes": 3993,
+      "sha256": "4ddb64dddb035a865cadab66dc9ec5c71d8a991c32a9912111a4edf155e03122"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\MODEL_MATRIX.md",
+      "bytes": 4309,
+      "sha256": "b5ef0c11333642d2f39db9804b5fae70ce1fc57289ffe515670fa46547e2bdff"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\REPRODUCE.md",
+      "bytes": 4755,
+      "sha256": "44c13aa5a82df40647fa25413e06292ea56590dd14e48d7b3a4a79a2eba30c5a"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\orchestrate.py",
+      "bytes": 21025,
+      "sha256": "166303585a1d7dc16e68b474cc72e07beef4ba3b04b32324e720585ad9a1ec1c"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\config.json",
+      "bytes": 615,
+      "sha256": "76b873dca38cb3a5a9126f42b544a2dc77b7237e9d41be31a1ac0f47e6ebe5cc"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\tasks.json",
+      "bytes": 4516,
+      "sha256": "8ed91ef8fb9a62b4f09095c8b553cdccd622832fd3410b36df9d821c6f7f807c"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.cir",
+      "bytes": 1049,
+      "sha256": "5ba9d1b5503d3f15ba47dbaedf8b497caf8485f271113d0f49562057901df8dc"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.log",
+      "bytes": 330412,
+      "sha256": "3cdbf968b9f4e760af70e2585dfb764cec092980996b1348e3369f73955aa300"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.raw",
+      "bytes": 658521960,
+      "sha256": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\command.json",
+      "bytes": 707,
+      "sha256": "1076d7d0244eea194bdede108aae0ed9576cbec3a1e0078f3e5061ee34d323ee"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\controller.sub",
+      "bytes": 2572,
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\cycle_review.json",
+      "bytes": 1536,
+      "sha256": "c5dcf871c47196148c10ef0ede42bc6a01566958631c4db0d0f6da0a3c7dba0b"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\cycle_review_deglitched.json",
+      "bytes": 1513,
+      "sha256": "9ad2a958900b790648f07cb19d36cede1724b19266c566cc009803cb2d56be30"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\diode.lib",
+      "bytes": 510,
+      "sha256": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\independent_metrics.json",
+      "bytes": 1678,
+      "sha256": "54c9f2d2e7e8dab7c62fd4e7abe3f50487adcdbe53c46611381d846a05cb1897"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\preregister.json",
+      "bytes": 2224,
+      "sha256": "fd6385aa654570947f97509aad63b3bc6826765bc7b0cfe7630e4b271c53224d"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\settled_window_review.json",
+      "bytes": 1959,
+      "sha256": "a13066d94320cf2bd7e2f59e71df15528566a733fd2b8e90bb6da3d8a669b1b5"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\ss14.lib",
+      "bytes": 510,
+      "sha256": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\st.lib",
+      "bytes": 2657,
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\independent\\calculations.json",
+      "bytes": 1884,
+      "sha256": "867dc5015f29f88bb826935af4531dcbc079b36a0d396607b4203ea201102fb9"
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\independent\\compensation_screen.json",
+      "bytes": 1511,
+      "sha256": "6ff37a306b72bf43e9a76b0ec33838df6b00db8f8f1679e18a5628c0d0a7bf23"
+    }
+  ],
+  "log_review": {
+    "header": [
+      "LTspice 24.0.12 for Windows",
+      "Circuit: QS30 exploratory cold start, genuine controller, initial COUT=0",
+      "Start Time: Tue Nov 17 13:43:28 2026",
+      "solver = Normal",
+      "Maximum thread count: 16",
+      "tnom = 25",
+      "temp = 25",
+      "method = Gear",
+      "abstol = 1e-09",
+      "volttol = 1e-06",
+      "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+      "Per .tran options, skipping operating point for transient analysis.",
+      "Heightened Def Con from 0.00185012 to 0.00185012",
+      "Heightened Def Con from 0.00188376 to 0.00188377"
+    ],
+    "tail": [
+      "Heightened Def Con from 0.0597007 to 0.0597007",
+      "Heightened Def Con from 0.0597205 to 0.0597205",
+      "Heightened Def Con from 0.0597304 to 0.0597304",
+      "Heightened Def Con from 0.0597459 to 0.0597459",
+      "Heightened Def Con from 0.0597559 to 0.0597559",
+      "Heightened Def Con from 0.0597701 to 0.0597701",
+      "Heightened Def Con from 0.0598395 to 0.0598395",
+      "Heightened Def Con from 0.0598494 to 0.0598494",
+      "Heightened Def Con from 0.0598593 to 0.0598593",
+      "Heightened Def Con from 0.0598792 to 0.0598792",
+      "Heightened Def Con from 0.0598851 to 0.0598851",
+      "Heightened Def Con from 0.0598891 to 0.0598891",
+      "Heightened Def Con from 0.0599188 to 0.0599188",
+      "Heightened Def Con from 0.0599982 to 0.0599982",
+      "Total elapsed time: 286.150 seconds.",
+      ""
+    ],
+    "heightened_def_con_count": 7035,
+    "fatal_lines": []
+  }
+}

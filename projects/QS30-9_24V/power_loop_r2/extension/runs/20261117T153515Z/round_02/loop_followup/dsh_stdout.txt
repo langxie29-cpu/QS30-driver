@@ -1,0 +1,18 @@
+Delivered. Summary of the `loop_followup` session:
+
+**What was produced** (all inside OUTPUT_DIR; nothing else touched):
+| File | Content |
+|---|---|
+| `build_regression.py` | 176 lines, **function-only** (`mutate(s, kind)`, `describe(kind)`); no `__main__`, no FS writes, no `lab`/simulator/shell/network/model call |
+| `inventory.md` | source read-list, anchor/mutation table, scope limits |
+| `result.json` | contract JSON |
+
+**Mutator (read against the completed `filter22R_4p7n_60ms` cell supplied as text by the caller):**
+- `vin21p6` / `vin26p4` — replace only `VINPUT` PWL plateau `24` → `21.6`/`26.4`, RLOAD left untouched, stop 0.2 s
+- `load_step` — `RLOAD hv 0 5200` removed → `BLOAD hv 0 I=V(hv)/(if(time<80m,10400,if(time<180m,5200,10400)))`, stop 0.3 s
+- `overload` — `RLOAD hv 0 5200` removed → `BLOAD hv 0 I=V(hv)/(if(time<80m,5200,1000))`, stop 0.16 s
+- Only the `.tran` stop field is rewritten; exact unique-anchor asserts run before **and** after, plus asserts that RF 22, CF 4.7n, RG 22, RSRC .062, RCOMP 22k/CCOMP 6.8n/CHF 100p and all four `.include` lines survive, that no `.model`/`.lib` is introduced, and that solver tolerances are unchanged.
+
+**Deliberately not done:** nothing was executed, no numbers computed, no `circuit.cir`/`run.log`/`waves.txt`/`metrics.json` fabricated, no thresholds or compensation altered, no HOLD changed. The load is stated as an equivalent resistive sink (not glow tubes), and overload is labelled a current-limit screen only.
+
+`status: PASS` here means evidence delivery only; the script still needs principal inspection and execution (`lab.execute`, 900 s per case, attempt-capped).

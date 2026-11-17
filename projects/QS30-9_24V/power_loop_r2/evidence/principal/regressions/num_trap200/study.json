@@ -1,0 +1,11 @@
+{
+  "kind": "num_trap200",
+  "stop_s": 0.012,
+  "timeout_s": 180,
+  "final_window_s": null,
+  "worker_transform_sha256": "93c725cd622cb4eb0101d8d71430812d9b1456c0c064327bfb8757dbfc94beca",
+  "observations": "Ten essential top-level signals for corners; source/RF/RGS currents are derivable exactly from saved node voltages and unchanged ideal resistors. No waveform compression.",
+  "isolation": "Ideal1msinputandAUX,25ClinearL,equivalentresistiveload only. ActualeFuse/hot/fault/9tubeHOLD.",
+  "steady_diagnostic": "last consecutive10msmeans delta<=.1V plus full predefined final-window rawVpp<=1V",
+  "overload_diagnostic": "Intentional beyond6W resistive demand; normal170V regulation not required. Pinabs<.3V, observedtrueIL<=2A coldmodel screen only, not hotcurrentrating or faultOVP release."
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "CONTINUE",
+  "rationale": "Root mechanism requires minimal cell and one reviewed filter candidate; startup worker rejected. Round2 code-only removes direct worker execution; no electrical acceptance.",
+  "next_task_ids": [
+    "sense_candidate",
+    "startup_candidate",
+    "loop_candidate"
+  ],
+  "issues": [
+    "SENSE > .3V; local high-frequency physical fidelity unresolved",
+    "Passive worker deleted new defective evidence; preserve command audit, count attempts",
+    "eFuse native encrypted model/hot magnetics missing",
+    "No stable full-window ripple qualification"
+  ],
+  "controlling_assumptions": [
+    "All HOLD retained",
+    "Exactly2rounds6sessions; workers no shell inRound2",
+    "No hardware/manufacturing",
+    "No compensation change"
+  ]
+}

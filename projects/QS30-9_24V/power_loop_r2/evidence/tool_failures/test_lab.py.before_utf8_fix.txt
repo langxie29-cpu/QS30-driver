@@ -1,0 +1,35 @@
+import tempfile,struct,unittest
+from pathlib import Path
+import numpy as np
+import lab
+class NativeEvidenceTests(unittest.TestCase):
+ def raw(self,p,rows,utf16=False,mixed=False):
+  enc='utf-16-le' if utf16 else 'utf8'
+  head='Title: RC analytic decoder check\nFlags: real forward nocompression'+('' if mixed else ' double')+'\nNo. Variables: 2\nNo. Points: 3\nVariables:\n\t0\ttime\ttime\n\t1\tV(hv)\tvoltage\nBinary:\n'
+  p.write_bytes(head.encode(enc)+b''.join(struct.pack('<df' if mixed else '<dd',*row) for row in rows))
+ def test_utf16_double_and_mixed_evidence_agree(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'a.raw';q=Path(d)/'b.raw';rows=[(0.,0.),(.1,1.),(1.,2.)]
+   self.raw(p,rows,True);self.raw(q,rows,mixed=True)
+   a=lab.native(p);b=lab.native(q)
+   np.testing.assert_array_equal(a['time'],b['time']);np.testing.assert_array_equal(a['v(hv)'],b['v(hv)'])
+   # Adaptive sample arithmetic mean is1, actual time-weighted piecewise-linear mean1.4.
+   self.assertAlmostEqual(lab.stats(a,0,1)['mean'],1.4)
+ def test_truncation_is_not_completed_simulation(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'a.raw';self.raw(p,[(0,0),(.1,1),(1,2)]);p.write_bytes(p.read_bytes()[:-1])
+   with self.assertRaises(ValueError):lab.native(p)
+ def test_nonmonotonic_and_nan_rejected(self):
+  with tempfile.TemporaryDirectory() as d:
+   for rows in [[(0,0),(.1,1),(.1,2)],[(0,0),(.1,float('nan')),(1,2)]]:
+    p=Path(d)/'a.raw';self.raw(p,rows)
+    with self.assertRaises(ValueError):lab.native(p)
+ def test_windows_cannot_extrapolate_or_reverse(self):
+  c=dict(time=np.array([0,.1,1.]),**{'v(hv)':np.array([0,1,2.])})
+  for a,b in [(-.1,.5),(.5,1.1),(.5,.5),(.6,.5)]:
+   with self.assertRaises(ValueError):lab.stats(c,a,b)
+ def test_exact_parallel_load(self):
+  from independent_review import R,averaged
+  self.assertAlmostEqual(R,4801.650430149437)
+  self.assertAlmostEqual(averaged()['output_load_W'],6.018763843893687)
+if __name__=='__main__':unittest.main()

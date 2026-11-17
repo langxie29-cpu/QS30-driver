@@ -1,0 +1,31 @@
+Done. All four required artifacts are written, and nothing was executed.
+
+## What I delivered (all inside `OUTPUT_DIR`)
+
+| File | Purpose |
+|---|---|
+| `build_minimum.py` | Draft builder for the **3 approved local cases** (Gear 1 ns, Gear 0.5 ns, Trap 1 ns), 30 s runtime, precharge 89.17 V / 1.4 A, extended top-level KCL probes |
+| `build_filter.py` | Draft builder for the **ONE approved 60 ms candidate** — only `RF 10→22 Ω` and `CF 1 nF→4.7 nF` |
+| `inventory.md` | Required analysis evidence: decision mapping, source evidence, explicit assumptions |
+| `result.json` | `INCONCLUSIVE` — evidence delivery only |
+
+## Key engineering points a reviewer should check
+
+**Both builders are build-only.** They create case trees, copy vendor models byte-for-byte (re-hashed against the R1 preregistration, mismatches abort), and explicitly *do not* pre-write `preregister.json` — `lab.execute()` must write that itself so the hash commit is real.
+
+**Three traps I handled deliberately:**
+- `LPOWER IC=(1.4,0,0,0,0)` has 5 spans. LTspice takes only the *first* value of an `IC=` list, so this sets exactly the 1.4 A mesh current; the 4-span form would instead initialise `V(in)` and the LPOWER current.
+- The switch node (`drain`) and `b1`/`b2` internals are left **uninitialised on purpose** — no approved value exists, and writing 0 would make the cell quietly wrong (in the recovery regime `V(drain) > 89.17 V`).
+- `V(fbmid)=45.017 V` and `V(fb)=0.83948 V` are both initialised, because an L1/latch failure there would silently feed a wrong voltage into the controller's feedback input.
+
+**Two things I flagged rather than smoothed over:**
+- The decision's quoted ramp-lag pair (12.58 mA → 18.27 mA) is inconsistent with a pure 10.34× τ scaling — roughly 130 mA would follow. `build_filter.py` back-checks this and warns; I did not quietly accept the number, and the principal should re-derive it.
+- `run_passive_bounds.py` in the tree applies a `VEN en 0 0` SHDN hold that this decision does **not** authorise. I did not copy that policy.
+
+## Why INCONCLUSIVE rather than PASS
+
+Nothing was executed, so there is **no measured value at all** — no KCL residual, no recovery peak, no `|V(sense)|`, no turn-off timing. I fabricated no `circuit.cir`, `run.log`, `waves.txt` or `metrics.json`. Probe availability (`I(XQ:LD/LS/LG)`, `I(XNEG:K)`, `I(COUT)`) is unverified without a log, and the builders instruct the principal to report a **PARTIAL** KCL rather than a closed one if a term is missing — that is exactly the observability failure Round 1 rejected.
+
+Two caveats on the evidence itself: I recorded **no source URL**, since the ADI LT3757 RevH p14 permission for 22 Ω with 2.2–10 nF is quoted from the principal decision and I did not independently re-verify it here. And I did not syntax-check the two draft scripts — any execution would violate the round-2 override, so they are unvalidated code requiring principal inspection before the first `lab.execute` call.
+
+All HOLD entries remain in force; the Kelvin routing prerequisite cannot be demonstrated by SPICE at all.

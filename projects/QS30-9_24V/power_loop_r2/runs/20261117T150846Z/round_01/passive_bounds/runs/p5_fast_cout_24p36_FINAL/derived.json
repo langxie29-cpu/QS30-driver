@@ -1,0 +1,56 @@
+{
+  "name": "p5_fast_cout_24p36",
+  "artifact_dir": "p5_fast_cout_24p36_FINAL",
+  "variable": "SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)",
+  "hypothesis": "+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "COUT hv 0 20.3u",
+      "COUT hv 0 24.36u"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.616041600005701,
+  "timeout_s": 30,
+  "netlist_sha256": "13c6a4116beac36c3e34c93cd58896dff982bf85c4400c7f07cbc8e494ef1bb3",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.646 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60119,
+  "vin_final": 24.00000025998706,
+  "t_peak_vout": 0.0010984749999998424,
+  "vout_peak": 24.64869411860144,
+  "t_peak_il": 0.00022485156574304516,
+  "il_peak": 0.9815060366607622,
+  "il_rms": 0.36139198781125137,
+  "il_energy_J": 7.22515575001138e-05,
+  "vout_at_1ms": 22.96726402120599,
+  "vout_at_2ms": 24.45838744840792,
+  "vout_final": 24.25007163896429,
+  "il_final": -2.5998706822606655e-06,
+  "il_at_vout_peak": 0.026387368801580217,
+  "dvdt_1090_V_per_s": 24885.298874300104,
+  "dvdt_max_V_per_s": 40268.88278558105,
+  "divider_share_nominal": 0.1295336787564767,
+  "ideal_peak_A": 9.71194728157026,
+  "raw_sha256": "8b8a178eb1705b40ba1259bc40f8b58c7fc6ee5b7cd9061c3c2bec19cb65d3ef"
+}

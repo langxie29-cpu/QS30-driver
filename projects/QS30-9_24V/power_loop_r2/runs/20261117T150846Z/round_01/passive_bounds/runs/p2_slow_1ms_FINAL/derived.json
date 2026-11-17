@@ -1,0 +1,56 @@
+{
+  "name": "p2_slow_1ms",
+  "artifact_dir": "p2_slow_1ms_FINAL",
+  "variable": "SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)",
+  "hypothesis": "A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "VINPUT vin 0 PWL(0 0 1m 24)",
+      "VINPUT vin 0 PWL(0 0 1m 24)"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.97555299999658,
+  "timeout_s": 30,
+  "netlist_sha256": "d5043930c719fa462763e84035559cf81c419ba8186d5aefd9f5392e5a22fbc9",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.604 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60110,
+  "vin_final": 23.9999985138751,
+  "t_peak_vout": 0.0010826749999998677,
+  "vout_peak": 24.340778141784686,
+  "t_peak_il": 0.00020760156579058714,
+  "il_peak": 0.8205307773739349,
+  "il_rms": 0.2992995456149595,
+  "il_energy_J": 5.049530674634053e-05,
+  "vout_at_1ms": 23.221362764664306,
+  "vout_at_2ms": 24.112158220712914,
+  "vout_final": 23.86617079535495,
+  "il_final": 1.4861248815038059e-05,
+  "il_at_vout_peak": 0.018443539095994214,
+  "dvdt_1090_V_per_s": 25067.944371880363,
+  "dvdt_max_V_per_s": 40391.719729952514,
+  "divider_share_nominal": 0.1295336787564767,
+  "ideal_peak_A": 8.829042983245692,
+  "raw_sha256": "ee381a38b5a29c3478ccd37f7bb5c07aef254e6b5ac21de1718d231970311c9a"
+}

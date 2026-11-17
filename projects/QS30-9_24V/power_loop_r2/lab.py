@@ -62,6 +62,12 @@ def full(path,stop=.01008,step=2e-7,method='gear'):
 def execute(path,hypothesis,variable,timeout=180):
  path=Path(path).resolve()
  if (path/'preregister.json').exists():raise FileExistsError('Never overwrite a previous experiment')
+ # Initial worker deleted two completed NEW attempts; they still consume budget.
+ registered=0
+ for base,dirs,files in os.walk(HERE):
+  dirs[:]=[d for d in dirs if d not in ['.local','appdata','localappdata','sim_profile','__pycache__']]
+  registered+=int('preregister.json' in files)
+ if registered+2>=36:raise RuntimeError('Combined36 native-attempt cap exhausted (deleted attempts count)')
  s=(path/'circuit.cir').read_text(encoding='ascii')
  models={p.name:sha(p) for p in path.iterdir() if p.suffix.lower() in ['.sub','.lib']}
  base_models=json.loads((BASE/'preregister.json').read_text())['model_hashes']

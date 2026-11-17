@@ -1,0 +1,13 @@
+{
+  "task_id": "loop_candidate",
+  "grade": "INCONCLUSIVE",
+  "worker_claim": "INCONCLUSIVE",
+  "notes": "CODE ONLY - this worker executed nothing (no shell, no simulator, no tests, no imports). Delivered exactly the Round2 override: a drafted analyze_independent.py that (1) corrects R_eff away from the rejected 4560.74 ohm (two 181.8k bleed strings in parallel = 90.9k, not 45.45k) and carries a 4475.9-4801.7 ohm BAND instead of a point, because the review's own 4801.65043 ohm is NOT reproducible from its stated inputs with exact ideal resistors (exact value 4475.91 ohm); the sub-ohm delta is a hand-computation artefact and is flagged rather than copied forward at false precision; (2) replaces arithmetic/min-max statistics with trapezoid time-weighted mean, density-weighted cross-check, cluster-robust SE (non-uniform adaptive solver steps cluster the samples) and a TRUE ppt bound that includes the excursion the solver could have stepped over; (3) withdraws the 200 Hz oscillation claim mechanically - a 5 ms window at 200 Hz sees exactly 1 cycle, so the minimum resolvable oscillation is 400 Hz and a single bin at 1/T is hard-coded as NOT evidence - and substitutes a moving-block bootstrap drift test; (4) sets rhp_zero_evaluated=False and never evaluates the duty-based CCM RHP formula, using measured per-cycle zero-crossing/valley-sign conduction classification instead. Also wrote matrix.json: 6 P2 cells (resistor reference, const-power at 24V and 26.4V, const-current, current-limited, load transient), ALL BLOCKED, 0 allowed, 0 simulations requested, recording that a resistor presents +R while a const-power sink presents -R so stability results from the resistor fixture do not transfer to P2; P2-PULSE values and P2-ILIM equivalent R are deliberately left null rather than invented. Zero simulations run, so zero consumption of the <=24 cap. The script refuses to invoke LTspice unless the principal passes --run AND authors principal_preregistration_approval.json; a Flash worker can never satisfy both. No circuit component, vendor model, tolerance or electrical acceptance threshold was modified. All HOLD remain. INCONCLUSIVE is deliberate: the contract maps absent simulation to INCONCLUSIVE, and worker PASS would in any case mean evidence delivered only, never electrical acceptance.",
+  "evidence_sha256": {
+    "inventory.md": "2070a941772a2b04574d142973f3660878b79800031ac19cc2de37d0df4ef883",
+    "analyze_independent.py": "5afbd3f1adb8c3b4ff4a90e86c0300e7eae6ebd9bd6f6a9735a8989ec9ecda6e",
+    "matrix.json": "9591a86627761dd0562422c712836f2bae6f496b03ebfcbbe820f9911b894a27"
+  },
+  "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+  "process_rc": 0
+}

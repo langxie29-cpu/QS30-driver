@@ -1,0 +1,30 @@
+{
+  "task_id": "settling_analysis",
+  "status": "PASS",
+  "notes": "ANALYSIS ONLY; ZERO simulations run (none permitted this round). Read the original complete R1 60ms raw (6331931 pts, real double nocompression, gear 200ns maxstep, tolerances unchanged) with lab.native. Time-weighted mean / true raw Vpp on successive 5ms windows: 40-45ms 162.179V / 6.571Vpp; 45-50ms 166.941V / 5.789Vpp; 50-55ms 170.442V / 3.906Vpp; 55-60ms 169.812V / 2.431Vpp (reproduces R1 settled_window_review to <0.01V; the 40-60ms 13.463Vpp spans the 46.2019ms band entry and is not a ripple metric). 60ms is NOT qualified as settled: the trace leaves a +/-10mV band at the final sample (zero margin), the mean moves -629.6mV between 50-55 and 55-60ms with sign reversal versus the earlier ramp, and the quietest 2ms bin still has 1.474Vpp. FFT on linear-resampled uniform data at fs=20MHz (Nyquist 10MHz), Hann window, mean-detrended, bin ~200Hz: dominant non-DC content is an envelope at 200-600Hz (e.g. 55-60ms: 200Hz 2.170V, 400Hz 1.223V); switching band 60-140kHz <=13.4mV, so the residual is envelope drift, not a 100.85kHz limit cycle. Caveats documented: native samples are non-uniform so interpolation smears content above ~105kHz mean rate; content >10MHz (V(drain) edges) is aliased and unresolved. A first-draft FFT frequency-axis error (nyquist 0.0025Hz, empty peaks) is preserved in analysis.json fft_selfcheck and used for no conclusion. Load from actual raw: R_eff=4560.74ohm, Vout~169.83V -> 6.324W / 37.24mA vs 5.900W budget. Measured duty 0.272 and I_L valley -0.171A mean the CCM boost RHP formula (1-D)^2R/(2piL) is OUTSIDE its validity; it is recorded (2.56MHz) but flagged RHP_applicable=false and used as no plant zero; conduction mode/topology INCONCLUSIVE. Current-mode averaged output pole 1/(piRC)=3.44Hz (derivation only, no Bode/margins); existing compensation zero 1/(2pi*22k*6.8n)=1.064kHz, CHF pole ~398kHz, RT 140k. Compensation: NO edit and NO value proposed (recommendation_values_justified=false); the slow envelope is not shown to be a compensation deficiency and adequacy is likewise unproven. Recommend one unchanged 200ms observation (lab.full stop=0.2, same models/tolerances/200ns step, preregistered) as proposed-only-not-executed, with ~3.3x cost caveat; no 200ms outcome predicted. Worker PASS means evidence delivered only, never electrical acceptance: thresholds unchanged, SENSE still exceeds LT3757A +/-0.3V, all HOLD remain.",
+  "evidence_files": [
+    "inventory.md",
+    "analysis.py",
+    "analysis.json",
+    "result.json"
+  ],
+  "source_urls": [],
+  "solver": "none (analysis only; the source raw was produced earlier by native LTSpice, real double nocompression, method=gear, .tran 2e-07 0.06 0 2e-07 uic)",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "st.lib (STP9NK50Z level-3, 25C only)": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "diode.lib (US1G)": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib (SS14)": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "circuit.raw (R1 60ms source trace)": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba"
+  },
+  "blocking_issues": [
+    "60ms is not settled: band excursion reaches the last sample, mean still drifting -629.6mV per 5ms with sign reversal; no settling time established.",
+    "Conduction mode and actual power-stage topology at 170V are unresolved, so no valid RHP zero exists; the CCM boost formula was computed but explicitly not applied.",
+    "No gain or phase margin exists for any compensation; compensation adequacy and inadequacy are both unproven, so no value was proposed.",
+    "FFT depends on interpolation of a non-uniform adaptive-step trace; content above the ~105kHz mean sample rate is smeared and content above the 10MHz Nyquist is aliased and unresolved.",
+    "Hardware ripple not established: 20MHz instrument bandwidth was never modeled; reported values are solver-trace numbers.",
+    "controller.sub is archived as an undecryptable '<Binary File>' stub, so the vendor model internals were not readable in this pass; only its sha256 is recorded.",
+    "The unchanged 200ms observation is proposed only and was not executed; its cost (~3.3x of R1's ~287s for 60ms) needs principal budgeting.",
+    "Electrical acceptance unchanged and still failing (SENSE exceeds LT3757A +/-0.3V absolute rating); worker PASS is evidence delivery only, pending deterministic audit and Codex review."
+  ]
+}

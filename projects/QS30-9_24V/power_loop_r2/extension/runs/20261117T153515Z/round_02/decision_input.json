@@ -1,0 +1,80 @@
+{
+  "round_results": {
+    "device_energy_audit": {
+      "task_id": "device_energy_audit",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Code-only delivery: analyze_energy.py (178 lines, single script) reads evidence/principal/minimum_native_probes/circuit.raw through lab.native plus numpy only, and evaluates the contract identities on the two fixed windows [1.02us,1.10us] and [0,10us]: integral (V(q:12)-V(src))*I(VQS)dt vs .5*7.5n*(Iend^2-Istart^2) and integral (V(q:6)-V(drain))*(-I(VQD))dt vs .5*4.5n*(Iend^2-Istart^2), using the exact raw probe names v(q:12), v(q:6), v(src), v(drain), i(vqs), i(vqd). It also computes intrinsic VGS=V(q:5)-V(q:9) and VDS=V(q:13)-V(q:9) (windowed and full trace), V(src)/V(drain) package extrema, and a cross-check of v(q:5),v(q:9),v(q:13) ranges against internal_analysis.json. Package inductances 7.5n (LS 12-3) and 4.5n (LD 6-1) were read from the committed st.lib STP9NK50Z subckt (LG 2-4 7.5n, LS 12 3 7.5n, LD 6 1 4.5n, MOS nodes 13/5/9), not from memory. INCONCLUSIVE and not PASS because the script was NOT executed in this session: tools/shell/jobs/simulator/dispatch are disabled by the current contract, so metrics.json and waves.txt do not exist yet, and no numerical energy, current or voltage is reported, hand-computed or invented here. The script emits both the contract's sign orientation and the opposite orientation of each pair, because a closed inductor satisfies v*i=d/dt(.5*L*i^2) either way and probe-label vs pin direction cannot be settled from probe text; disagreement is attributed to a non-L branch, coarse trapezoid integration at a narrow event, or an orientation/name mismatch, never to device physics. Caveat recorded in output: a gross trace containing the extremely narrow reverse-drive event near 1.052us can defeat a trapezoid sum over saved points, so identity failure may reflect coarse integration rather than physics, and identity success would not certify the model. No model edited (st.lib left byte-identical and unreadable-as-UTF-8; hashed at run time), no simulation added, no acceptance threshold changed, no HOLD altered, nothing written outside OUTPUT_DIR. WorkerPASS is evidence delivery only; any device statement remains a preliminary WORKER_CLAIM pending deterministic audit and Codex review.",
+      "evidence_sha256": {
+        "analyze_energy.py": "43876954b5ab476d90099068f348b645e2506ab30cbde64491ef39f6ea45e484",
+        "inventory.md": "42664aa76281f8a9243791db84bb40038341edb25ed54c4b024128bdd1c4de70"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "startup_path_audit": {
+      "task_id": "startup_path_audit",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Code-only evidence delivery; zero shell/jobs/simulator/network/model calls. Delivered inventory.md (fact table with TPS2660.txt line citations) and startup_arith.py (141 lines, numpy arithmetic, NOT executed -- principal runs it). Key facts sourced verbatim: U101 TPS26601 MODE=OPEN is an electronic circuit breaker with latch-off (TPS2660.txt L170, L1412-L1413, L1717-L1719; latch reset only by SHDN or POR, L276), NOT continuous current limiting; MODE=402kohm to RTN is instead ACTIVE current limiting with latch-off (L554-L555, L1426-L1430) and MODE shorted to RTN is limiting WITH auto-retry -- three distinct behaviours. Guaranteed MIN/MAX limits exist only for GAIN(dVdT) 23.75/25.5 V/V (L453), I(OL)@12k 0.95/1.05 A (L461), I(CB)@120k MODE-open 0.045/0.11 A (L478), I(CB)@5.36k 2.0/2.4 A (L480), V(REVTH) -15/-5 mV (L530). The delays are TYPICAL-ONLY with NO published maximum: tCB(dly) 4 ms (L642), tFASTRIP(dly) 250 ns (L615), tCBretry(dly) 540 ms (L644), tdVdT 10 ms at 47 nF and 23.9 V/1.6 ms with dVdT open (L635-L636, L1365); therefore no max delay is claimed anywhere in this delivery. Arithmetic (to be computed by the principal, not hand-computed here): worst-case dVdT slew rate = Imax*Gmax/Cmin with Imax 5.5u, Gmax 25.5, Cmin 42.3n, giving the 0->26.4 V rise; V(dVdT)=Gmax*1 V (V(ILIM)=1 V, L457); the 10 mA sink absolute max (L309) is carried as a separate limit, not as a delay. Permanence check: for a fixed 33 ohm series element the maximum power transferable is Pmax=Vin^2/(4R), computed for nominal 33 ohm and the -5%/+5% corners and expressed as a percentage of the required 6 W; the resistance that would actually pass 6 W at 26.4 V is 0.5 ohm, so a permanent 33 ohm resistor cannot supply 6 W and the bypass MUST close. Route comparison: (A) permanent series R with eFuse MODE=open CB+latch, versus (B) independent precharge plus a bypass closed only when |Vin-Vout|<=1 V with PWM disabled -- B has NO hardware, NO bypass model and NO claimed maximum delay; it is a proposal only. Prior measured literals are copied from evidence/principal/startup_bounds/results.json (uncontrolled IL peak 9.557205715216934 A / Vout peak 45.063842693104874 V; precharge peak 0.7850974777642024 A, resistor peak 19.323451854700178 W, energy 0.007937059145663273 J, bound 0.8421052631578947 A satisfied; slew peak 0.09448891831428566 A) -- these are passive 25 C fixtures, not eFuse dynamic",
+      "evidence_sha256": {
+        "inventory.md": "07235498b7a28c0972c0d57be2b23afd7d4edcb1f28ae1a898752c30f7d6bad7",
+        "startup_arith.py": "3c7c21a04b229078239e9c5ff8231f695e6f1267e450a52af37cd7b15421b980"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "ripple_split": {
+      "task_id": "ripple_split",
+      "grade": "INCONCLUSIVE",
+      "reason": "Harness execution did not complete, irrespective of worker claim",
+      "process_rc": null
+    },
+    "device_followup": {
+      "task_id": "device_followup",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Code-only evidence delivery of the exact ROUND3_REVIEW.md final instruction for device_followup. Zero shell/job/simulator/network/model calls; nothing executed, so no numerical delta is reported or invented. Delivered check_refinement.py (~140 lines, single script) plus this inventory.md; st.lib is not valid UTF-8, so it is decoded latin-1 and never written, with its hash recorded. The script reads ONLY committed principal evidence: energy_refinement.json (uses just the actual 10ps and 5ps rows, asserted to share window_s=[1.02us,1.10us] with points 9027 vs 18661), 10ps/5ps st.lib (original STMicroelectronics STP9NK50Z text), the paired circuit.cir and 10ps/preregister.json. It computes with np.float64 the relative change (v_5ps - v_10ps)/abs(v_10ps) for exactly shunt_peak_A, sense_peak_V and Qnegative_DREC_C, plus the LS/LD relative_to_net residual shift, and emits the absolute values so the principal can audit the arithmetic. Package inductance is CONFIRMED FROM THE ORIGINAL st.lib TEXT (lines 37-39): LG 2-4 7.5E-09, LS 12-3 7.5E-09 (intrinsic source -> Source pin), LD 6-1 4.5E-09 (intrinsic drain -> Drain pin), MOS 13 5 9; the script asserts the subckt inductor set is exactly {LG,LS,LD}, that LS==7.5n and LD==4.5n within 1e-15 H, and that the 10ps/5ps copies are byte-identical (sha256 6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4, transcribed from preregister.json and re-hashed at run time). The net inductor-energy identity is kept explicitly FAIL, not softened: ROUND3_REVIEW records relative_to_net LS 0.4997 (10ps) and 0.4370 (5ps), LD 0.7700 and 0.7525, i.e. residual/|net| is O(1) at both gears and does NOT converge as maxstep is refined; the script sets FAIL true when every relative_to_net is >=0.4 and separately records that the residual does not trend to zero, and states that the cause is NOT established here. The known LTspice default series resistance of 1 mohm on an undeclared-Rser inductor is recorded only as a CITED, NOT-PROVEN reference and is explicitly NOT used to explain the residual (the package inductors declare no Rser and the ideal .5*L*i^2 identity ignores series loss; no LTspice manual, run or model test was performed). No automatic sign-off, no threshold change, no HOLD change, no source mutation. INCONCLUSIVE because refinement_check.json does not exist until the principal runs the script after code inspection; Wor",
+      "evidence_sha256": {
+        "check_refinement.py": "e6a564f18ba1793208941567c1f3d777843dabc6c68f89126be28059e773a99d",
+        "inventory.md": "8e0f5d1ab15ba284d7f729a2857c9f15f4eb6c344d069a250a3b232728a778a8"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "startup_followup": {
+      "task_id": "startup_followup",
+      "grade": "CLAIMED_PASS_AUDITED_FILES",
+      "worker_claim": "PASS",
+      "notes": "Code-only evidence delivery; zero shell/jobs/simulator/network/model calls and startup_calc_v2.py was deliberately NOT executed. Delivered the corrected startup calculator (110 lines, numpy) that fixes the ROUND3_REVIEW L4 defect where P=6 W had been used as the 26.4 V input: Pmax is now the array [21.6,24,26.4]**2/(4*R) (V^2/(4R)) instead of 6^2/(4*33), rise is V/dvdt with dvdt = Iprog*G/Cmin = 5.5e-6*25.5/42.3e-9 instead of 6/rate, and the assumed 0.5 ohm series element and all USB references are removed (grep-verified: no PIN, PMAX, USB or 0.5 in the script). Inputs are exactly V=26.4, P=6, R=33, Iprog=5.5e-6, G=25.5 (TPS2660.txt L453 GAIN(dVdT) max), Cmin=42.3e-9; no invented value. The script emits only executable numpy arithmetic plus boolean assertions, so the principal obtains the numeric results by running it; this worker transcribes none. Explicit statements carried: permanent series R cannot deliver 6 W (assertions all/max Pmax < 6 W on the array), and precharge bypass has hardware_missing=True with actual_device_MPN=None, bypass_model=None and max_delay=None, because MODE=open TPS26601 is circuit-breaker+latch (TPS2660.txt L170/L1717-L1719) and every protection delay is TYP-only (L615/L635/L642/L644). Copied literals from evidence/principal/startup_bounds uncontrolled, precharge and slew_corrected_7p962ms metrics.json are carried unchanged with src paths and sha256 recorded; the precharge pulse-rating/duration/bypass caveat is preserved. New UNRESOLVED item recorded rather than resolved: the factory dVdT rate 23.9 V/1.6 ms with Iprog 5.5 uA and Gmax 25.5 needs a ramp capacitor of Iprog*G/rate, so the prompt Cmin 42.3 nF is not consistent with the factory rate unless it is a factory trim; consequently no native-slew claim is made and Iprog is labelled as a prompt constant, not a datasheet current spec. No threshold, manufacturing HOLD or branch was changed; no approval requirement was created. arithmetic-only evidence pending principal execution and deterministic audit.",
+      "evidence_sha256": {
+        "inventory.md": "e68a828cdd3ba002a87f1838a58d4aa3937970727628e5f0ac0ef03e12e67ac1",
+        "startup_calc_v2.py": "81511da8e71c9e591461748863af1eb4db645ddf4904d16958f41c7ff846af28"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "loop_followup": {
+      "task_id": "loop_followup",
+      "grade": "CLAIMED_PASS_AUDITED_FILES",
+      "worker_claim": "PASS",
+      "notes": "CODE ONLY, nothing executed by this worker: delivered a single function-only netlist mutator (build_regression.py, 176 lines, no __main__, no filesystem writes, no simulator/lab/shell/network/model call) implementing the exact Round-4 pre-registered mutations on the completed filter22R_4p7n_60ms base cell (caller supplies the text; principal reads it). mutate(s,kind) supports exactly four kinds: vin21p6 and vin26p4 replace only the VINPUT PWL plateau 24 -> 21.6/26.4 with stop 0.2 s; load_step removes RLOAD hv 0 5200 and inserts BLOAD hv 0 I=V(hv)/(if(time<80m,10400,if(time<180m,5200,10400))) with stop 0.3 s; overload removes RLOAD hv 0 5200 and inserts BLOAD hv 0 I=V(hv)/(if(time<80m,5200,1000)) with stop 0.16 s. Only the .tran stop field is rewritten; START/MAXSTEP/UIC untouched. Exact unique-anchor assertions run before and after mutation and abort on 0 or >=2 matches, on CRLF, on a pre-existing/foreign RLOAD or BLOAD, and on altered solver tolerances; anchors assert RF 22, CF 4.7n, RG 22, RSRC .062, RCOMP 22k/CCOMP 6.8n/CHF 100p and all four .include lines survive, and that no .model/.lib card is introduced. No part, model, threshold or compensation value is modified and the source circuit.cir under evidence/principal is never written back. Returned metadata record thresholds_changed=false, acceptance_invented=false, extra_cases=0, runtime_budget_s=900, and the fixed final raw-ripple windows. NO numerical result of any kind is reported, estimated or hand-computed: no waveform, current, voltage, ripple or recovery time was measured, and no circuit.cir/run.log/waves.txt/metrics.json were fabricated. The load is an equivalent resistive sink I=V(hv)/R, explicitly not nine glow tubes and not a measured lamp; the overload case is a current-limit screen only, not normal-regulation and not 195 V OVP qualification. Pre-registered test intent recorded as text only (recovery <= 100 ms, band 164.9-175.1 V, peak <= 180 V, raw ripple <= 1 Vpp in fixed final windows). Principal must inspect and then execute via a single LTspice run per case at the 900 s budget; PASS here means evidence delivery only, is not a design approval, and all prior failures (60 ms and 200 ms qualification timeouts, 22R/4.7n filter timeouts) and every HOLD remain unchanged.",
+      "evidence_sha256": {
+        "build_regression.py": "93c725cd622cb4eb0101d8d71430812d9b1456c0c064327bfb8757dbfc94beca",
+        "inventory.md": "68982e4c719834ae430463f42bcc49c98255cca68cf9561453e714f757f2f39a",
+        "result.json": "957177588f8c653391332548c6851647f389c8e884dcd326976dd08bf77ce9e1"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    }
+  },
+  "used_task_ids": [
+    "device_energy_audit",
+    "device_followup",
+    "loop_followup",
+    "ripple_split",
+    "startup_followup",
+    "startup_path_audit"
+  ],
+  "remaining_rounds": 0
+}

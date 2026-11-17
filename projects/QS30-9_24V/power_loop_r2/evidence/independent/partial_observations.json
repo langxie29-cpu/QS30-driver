@@ -1,0 +1,125 @@
+[
+  {
+    "case": "unchanged_200ms",
+    "classification": "EXECUTION_FAIL",
+    "declared_complete_records": 10138801,
+    "last_declared_time_s": 0.09118406788184054,
+    "ignored_bytes": 36864,
+    "raw_sha256": "77101a01d8a7b981b8df5a6326f63b02a43625a8ae28962b145cd8cfb0615b50",
+    "scope": "Partial bytes read using declared completed records only; original tail retained; planned endpoints not achieved, no complete-run qualification",
+    "descriptive_available_fixed_windows": [
+      {
+        "start_s": 0.04,
+        "end_s": 0.05,
+        "mean": 164.55963728971344,
+        "minimum": 158.60382882824229,
+        "maximum": 169.57240425143576,
+        "pp": 10.968575423193471
+      },
+      {
+        "start_s": 0.05,
+        "end_s": 0.055,
+        "mean": 170.44158945974752,
+        "minimum": 168.16831576144185,
+        "maximum": 172.0859941075731,
+        "pp": 3.917678346131254
+      },
+      {
+        "start_s": 0.055,
+        "end_s": 0.06,
+        "mean": 169.81364127126682,
+        "minimum": 168.5731917017939,
+        "maximum": 171.00312705694313,
+        "pp": 2.42993535514924
+      }
+    ]
+  },
+  {
+    "case": "filter22R_4p7n_60ms",
+    "classification": "EXECUTION_FAIL",
+    "declared_complete_records": 5846401,
+    "last_declared_time_s": 0.056227034516724034,
+    "ignored_bytes": 4096,
+    "raw_sha256": "349f9614b2afd730e82183268deb3cce445f5b4dd31bdd235fff1ded265fa217",
+    "scope": "Partial bytes read using declared completed records only; original tail retained; planned endpoints not achieved, no complete-run qualification",
+    "descriptive_available_fixed_windows": [
+      {
+        "start_s": 0.04,
+        "end_s": 0.05,
+        "mean": 170.05062273219832,
+        "minimum": 169.33182993126303,
+        "maximum": 171.0049509456524,
+        "pp": 1.6731210143893804
+      },
+      {
+        "start_s": 0.05,
+        "end_s": 0.055,
+        "mean": 169.96747427836715,
+        "minimum": 169.84855097803836,
+        "maximum": 170.14806879910094,
+        "pp": 0.2995178210625795
+      }
+    ]
+  },
+  {
+    "case": "filter22R_4p7n_200ms",
+    "classification": "EXECUTION_FAIL",
+    "declared_complete_records": 18855601,
+    "last_declared_time_s": 0.1666725339244892,
+    "ignored_bytes": 16384,
+    "raw_sha256": "675da2694aab0767ebd41d734240e320db6a9b7b29593426c692ead0a4d00fac",
+    "scope": "Partial bytes read using declared completed records only; original tail retained; planned endpoints not achieved, no complete-run qualification",
+    "descriptive_available_fixed_windows": [
+      {
+        "start_s": 0.04,
+        "end_s": 0.05,
+        "mean": 170.05050852673642,
+        "minimum": 169.33179607501538,
+        "maximum": 171.0051138825951,
+        "pp": 1.6733178075797355
+      },
+      {
+        "start_s": 0.05,
+        "end_s": 0.055,
+        "mean": 169.9674968211035,
+        "minimum": 169.84880089729424,
+        "maximum": 170.14794599663935,
+        "pp": 0.299145099345111
+      },
+      {
+        "start_s": 0.055,
+        "end_s": 0.06,
+        "mean": 169.9827650664311,
+        "minimum": 169.92019793703523,
+        "maximum": 170.09975061098402,
+        "pp": 0.17955267394879115
+      },
+      {
+        "start_s": 0.06,
+        "end_s": 0.1,
+        "mean": 169.98587086293912,
+        "minimum": 169.9634331208712,
+        "maximum": 170.07963985530452,
+        "pp": 0.11620673443331953
+      },
+      {
+        "start_s": 0.1,
+        "end_s": 0.15,
+        "mean": 169.985582765058,
+        "minimum": 169.9735620675979,
+        "maximum": 170.06406812736557,
+        "pp": 0.09050605976767656
+      }
+    ]
+  },
+  {
+    "case": "unchanged_200ms_exclusive",
+    "classification": "SOLVER_FAIL",
+    "declared_complete_records": 4904701,
+    "last_declared_time_s": 0.046598783155929184,
+    "ignored_bytes": 35360,
+    "raw_sha256": "a563ae32cde151aad15399bdf06bc559f89cc45f3bfeb73be31ec99ca9618e39",
+    "scope": "Partial bytes read using declared completed records only; original tail retained; planned endpoints not achieved, no complete-run qualification",
+    "descriptive_available_fixed_windows": []
+  }
+]

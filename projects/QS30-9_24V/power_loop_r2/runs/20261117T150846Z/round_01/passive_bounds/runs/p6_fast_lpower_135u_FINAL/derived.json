@@ -1,0 +1,56 @@
+{
+  "name": "p6_fast_lpower_135u",
+  "artifact_dir": "p6_fast_lpower_135u_FINAL",
+  "variable": "SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)",
+  "hypothesis": "-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "LPOWER in drain 150u",
+      "LPOWER in drain 135u"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.400397600024007,
+  "timeout_s": 30,
+  "netlist_sha256": "c5cdcde8b9d91d8460eb9335b6bfd4010b01ed99bd0a9d7b4263f36355f35b1b",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.263 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60112,
+  "vin_final": 23.999977498891173,
+  "t_peak_vout": 0.0010844561163369367,
+  "vout_peak": 24.149469202278716,
+  "t_peak_il": 0.00019879812945531724,
+  "il_peak": 0.8136714458032872,
+  "il_rms": 0.2957383870061457,
+  "il_energy_J": 4.965459162867088e-05,
+  "vout_at_1ms": 23.101401274230614,
+  "vout_at_2ms": 23.92326938673715,
+  "vout_final": 23.682244541162312,
+  "il_final": 0.00022501108825099942,
+  "il_at_vout_peak": 0.016706176995737797,
+  "dvdt_1090_V_per_s": 25031.84161935695,
+  "dvdt_max_V_per_s": 40056.950394928455,
+  "divider_share_nominal": 0.1295336787564767,
+  "ideal_peak_A": 8.829042983245692,
+  "raw_sha256": "c9b80e97ffa7fe62e5403a759ee7429f4c8bd92f9e57e6d6c0d5473c9d90719c"
+}

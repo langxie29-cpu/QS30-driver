@@ -3,11 +3,11 @@ const fs=require('fs'),z=require('zlib'),path=require('path');
 const root=__dirname;
 function walk(p){return fs.readdirSync(p,{withFileTypes:true}).flatMap(x=>x.isDirectory()?walk(path.join(p,x.name)):[path.join(p,x.name)]);}
 const sessions=[];
-for(const p of walk(path.join(root,'.local/dsh_home/sessions')).filter(p=>p.endsWith('.zstd'))){
+for(const p of [path.join(root,'.local/dsh_home/sessions'),path.join(root,'extension/.local/dsh_home/sessions')].flatMap(walk).filter(p=>p.endsWith('.zstd'))){
  const b=fs.readFileSync(p);let offset=0,parts=[];
  while(offset<b.length){const d=z.zstdDecompressSync(b.subarray(offset),{info:true});if(!d.engine.bytesWritten)throw Error('No frame progress');parts.push(d.buffer.toString());offset+=d.engine.bytesWritten;}
  const rows=parts.join('').trim().split('\n').map(JSON.parse);
- const task=['sense_root','passive_bounds','settling_analysis','sense_candidate','startup_candidate','loop_candidate'].find(t=>rows.some(r=>JSON.stringify(r).includes('TASK_ID: '+t)));
+ const task=['sense_root','passive_bounds','settling_analysis','sense_candidate','startup_candidate','loop_candidate','device_energy_audit','startup_path_audit','ripple_split','device_followup','startup_followup','loop_followup'].find(t=>rows.some(r=>JSON.stringify(r).includes('TASK_ID: '+t)));
  const headers=rows.filter(r=>r.type==='request/header').map(r=>r.data.header.config);
  const use=rows.filter(r=>r.type==='assistant/message').map(r=>r.data.usage||{});
  const calls=rows.filter(r=>r.type==='tool/call');

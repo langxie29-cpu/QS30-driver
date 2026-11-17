@@ -1,0 +1,26 @@
+{
+  "task_id": "sense_root",
+  "phase": "B-does-not-exist-unless-phase-A-completes",
+  "purpose": "Diagnostic observability + solver/time-step sensitivity ONLY. No fix, no acceptance, no HOLD change.",
+  "runs": [
+    {"id": "DG_gear_200ns", "dir": "run_gear_2e-7", "stop_s": 0.01008, "step_s": 2e-7, "method": "gear"},
+    {"id": "DG_gear_100ns", "dir": "run_gear_1e-7", "stop_s": 0.01008, "step_s": 1e-7, "method": "gear"},
+    {"id": "DG_trap_200ns", "dir": "run_trap_2e-7", "stop_s": 0.01008, "step_s": 2e-7, "method": "trap"}
+  ],
+  "count": 3,
+  "api": "lab.full(dir, stop, step, method) then lab.execute(dir, hypothesis, variable, timeout=180)",
+  "shared_observability": [
+    "V(out)", "V(hv)", "V(drain)", "V(gate)", "V(src)", "V(sense)",
+    "I(XQ:LD)", "I(XQ:LS)", "I(XQ:LG)", "I(XNEG:ddio)", "I(XNEG:dgr)",
+    "I(RSRC)", "I(RF)", "I(RGS)", "I(RNEG)", "I(RSNUB)", "I(CSNUB)"
+  ],
+  "unmodified": "circuit.cir from R1 baseline copied byte-for-byte; only .tran line and .save line replaced by lab.full(). All four vendor models copied from OLD/sim/s06c_current_cell_v3/ST_AUX12_1ns and hash-checked by lab.execute against BASE/preregister.json model_hashes.",
+  "predictions_and_falsifiers": {
+    "global_peak": "R1 global max I(DREC) magnitude is a +-2us event; runs are expected to reproduce the switching phase within a few 10s of ns, predicted global I(Drec) peak within 30% of R1.",
+    "kcl_ability": "I(RSRC)+I(XQ:LS)+I(RF)-I(RGS)-I(RNEG) at node src. If LTspice rejects any of I(XQ:LD/LS/LG), I(XNEG:ddio/dgr) the run result is PRESERVED as failure; NOT retried.",
+    "solver_sensitivity": "gear200 vs gear100 vs trap200 compared on the COMMON complete window only; peak change >5% or KCL residual >1mA is reported as a failure of the diagnostic reproducibility screen (per lab.preregister diagnostic_reproducibility), not as an electrical fail.",
+    "no_sign_flip_claimed": "Phase may shift run-to-run; a peak shift is NOT evidence for or against diode recovery."
+  },
+  "forbidden": ["component change", "vendor model edit", "tolerance relaxation", "4th simulation", "retry of an unsupported-name failure"],
+  "worker_status_semantics": "PASS = evidence delivered only; electrical acceptance is NOT implied and remains HOLD."
+}

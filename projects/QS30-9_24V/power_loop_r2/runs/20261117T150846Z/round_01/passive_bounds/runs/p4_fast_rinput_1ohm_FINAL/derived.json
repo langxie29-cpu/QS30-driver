@@ -1,0 +1,56 @@
+{
+  "name": "p4_fast_rinput_1ohm",
+  "artifact_dir": "p4_fast_rinput_1ohm_FINAL",
+  "variable": "SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)",
+  "hypothesis": "Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "RINPUT vin in .1",
+      "RINPUT vin in 1"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.38735390000511,
+  "timeout_s": 30,
+  "netlist_sha256": "da702c9304c7e2915b87e1e6621de3cef0d577fd3ce4eda4f91c378322bed8d0",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.261 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60092,
+  "vin_final": 23.998977822267527,
+  "t_peak_vout": 0.0011054249999998312,
+  "vout_peak": 24.018809386341403,
+  "t_peak_il": 0.00021455160964751829,
+  "il_peak": 0.6769116902762756,
+  "il_rms": 0.28475497699536617,
+  "il_energy_J": 3.436570773245134e-05,
+  "vout_at_1ms": 22.561741462531018,
+  "vout_at_2ms": 23.799663171819777,
+  "vout_final": 23.57295652397446,
+  "il_final": 0.0010221777324593679,
+  "il_at_vout_peak": 0.013819987297149672,
+  "dvdt_1090_V_per_s": 24674.218310201733,
+  "dvdt_max_V_per_s": 33316.16666767746,
+  "divider_share_nominal": 0.5980861244019139,
+  "ideal_peak_A": 8.829042983245692,
+  "raw_sha256": "ce117a9b50cfa70cdeaaf9e529da0aae97e7c59355835192012517ccf0284abe"
+}

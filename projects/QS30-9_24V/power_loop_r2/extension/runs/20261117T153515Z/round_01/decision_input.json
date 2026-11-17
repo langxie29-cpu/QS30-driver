@@ -1,0 +1,40 @@
+{
+  "round_results": {
+    "device_energy_audit": {
+      "task_id": "device_energy_audit",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Code-only delivery: analyze_energy.py (178 lines, single script) reads evidence/principal/minimum_native_probes/circuit.raw through lab.native plus numpy only, and evaluates the contract identities on the two fixed windows [1.02us,1.10us] and [0,10us]: integral (V(q:12)-V(src))*I(VQS)dt vs .5*7.5n*(Iend^2-Istart^2) and integral (V(q:6)-V(drain))*(-I(VQD))dt vs .5*4.5n*(Iend^2-Istart^2), using the exact raw probe names v(q:12), v(q:6), v(src), v(drain), i(vqs), i(vqd). It also computes intrinsic VGS=V(q:5)-V(q:9) and VDS=V(q:13)-V(q:9) (windowed and full trace), V(src)/V(drain) package extrema, and a cross-check of v(q:5),v(q:9),v(q:13) ranges against internal_analysis.json. Package inductances 7.5n (LS 12-3) and 4.5n (LD 6-1) were read from the committed st.lib STP9NK50Z subckt (LG 2-4 7.5n, LS 12 3 7.5n, LD 6 1 4.5n, MOS nodes 13/5/9), not from memory. INCONCLUSIVE and not PASS because the script was NOT executed in this session: tools/shell/jobs/simulator/dispatch are disabled by the current contract, so metrics.json and waves.txt do not exist yet, and no numerical energy, current or voltage is reported, hand-computed or invented here. The script emits both the contract's sign orientation and the opposite orientation of each pair, because a closed inductor satisfies v*i=d/dt(.5*L*i^2) either way and probe-label vs pin direction cannot be settled from probe text; disagreement is attributed to a non-L branch, coarse trapezoid integration at a narrow event, or an orientation/name mismatch, never to device physics. Caveat recorded in output: a gross trace containing the extremely narrow reverse-drive event near 1.052us can defeat a trapezoid sum over saved points, so identity failure may reflect coarse integration rather than physics, and identity success would not certify the model. No model edited (st.lib left byte-identical and unreadable-as-UTF-8; hashed at run time), no simulation added, no acceptance threshold changed, no HOLD altered, nothing written outside OUTPUT_DIR. WorkerPASS is evidence delivery only; any device statement remains a preliminary WORKER_CLAIM pending deterministic audit and Codex review.",
+      "evidence_sha256": {
+        "analyze_energy.py": "43876954b5ab476d90099068f348b645e2506ab30cbde64491ef39f6ea45e484",
+        "inventory.md": "42664aa76281f8a9243791db84bb40038341edb25ed54c4b024128bdd1c4de70"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "startup_path_audit": {
+      "task_id": "startup_path_audit",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Code-only evidence delivery; zero shell/jobs/simulator/network/model calls. Delivered inventory.md (fact table with TPS2660.txt line citations) and startup_arith.py (141 lines, numpy arithmetic, NOT executed -- principal runs it). Key facts sourced verbatim: U101 TPS26601 MODE=OPEN is an electronic circuit breaker with latch-off (TPS2660.txt L170, L1412-L1413, L1717-L1719; latch reset only by SHDN or POR, L276), NOT continuous current limiting; MODE=402kohm to RTN is instead ACTIVE current limiting with latch-off (L554-L555, L1426-L1430) and MODE shorted to RTN is limiting WITH auto-retry -- three distinct behaviours. Guaranteed MIN/MAX limits exist only for GAIN(dVdT) 23.75/25.5 V/V (L453), I(OL)@12k 0.95/1.05 A (L461), I(CB)@120k MODE-open 0.045/0.11 A (L478), I(CB)@5.36k 2.0/2.4 A (L480), V(REVTH) -15/-5 mV (L530). The delays are TYPICAL-ONLY with NO published maximum: tCB(dly) 4 ms (L642), tFASTRIP(dly) 250 ns (L615), tCBretry(dly) 540 ms (L644), tdVdT 10 ms at 47 nF and 23.9 V/1.6 ms with dVdT open (L635-L636, L1365); therefore no max delay is claimed anywhere in this delivery. Arithmetic (to be computed by the principal, not hand-computed here): worst-case dVdT slew rate = Imax*Gmax/Cmin with Imax 5.5u, Gmax 25.5, Cmin 42.3n, giving the 0->26.4 V rise; V(dVdT)=Gmax*1 V (V(ILIM)=1 V, L457); the 10 mA sink absolute max (L309) is carried as a separate limit, not as a delay. Permanence check: for a fixed 33 ohm series element the maximum power transferable is Pmax=Vin^2/(4R), computed for nominal 33 ohm and the -5%/+5% corners and expressed as a percentage of the required 6 W; the resistance that would actually pass 6 W at 26.4 V is 0.5 ohm, so a permanent 33 ohm resistor cannot supply 6 W and the bypass MUST close. Route comparison: (A) permanent series R with eFuse MODE=open CB+latch, versus (B) independent precharge plus a bypass closed only when |Vin-Vout|<=1 V with PWM disabled -- B has NO hardware, NO bypass model and NO claimed maximum delay; it is a proposal only. Prior measured literals are copied from evidence/principal/startup_bounds/results.json (uncontrolled IL peak 9.557205715216934 A / Vout peak 45.063842693104874 V; precharge peak 0.7850974777642024 A, resistor peak 19.323451854700178 W, energy 0.007937059145663273 J, bound 0.8421052631578947 A satisfied; slew peak 0.09448891831428566 A) -- these are passive 25 C fixtures, not eFuse dynamic",
+      "evidence_sha256": {
+        "inventory.md": "07235498b7a28c0972c0d57be2b23afd7d4edcb1f28ae1a898752c30f7d6bad7",
+        "startup_arith.py": "3c7c21a04b229078239e9c5ff8231f695e6f1267e450a52af37cd7b15421b980"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "ripple_split": {
+      "task_id": "ripple_split",
+      "grade": "INCONCLUSIVE",
+      "reason": "Harness execution did not complete, irrespective of worker claim",
+      "process_rc": null
+    }
+  },
+  "used_task_ids": [
+    "device_energy_audit",
+    "ripple_split",
+    "startup_path_audit"
+  ],
+  "remaining_rounds": 1
+}

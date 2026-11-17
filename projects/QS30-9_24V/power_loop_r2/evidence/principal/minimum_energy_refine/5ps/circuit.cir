@@ -1,0 +1,47 @@
+QS30 exploratory cold start, genuine controller, initial COUT=0
+.include controller.sub
+.include st.lib
+.include diode.lib
+.include ss14.lib
+VINPUT vin 0 24
+RINPUT vin in .1
+LPOWER in drain 150u Rser=.16 IC=1.4
+VQD drain qd 0
+VQG gate qg 0
+VQS qs src 0
+XQ qd qg qs STP9NK50Z
+RSRC src 0 .062
+RF src sense 10
+CF sense 0 1n
+RG out gate 22
+RGS gate src 10k
+XNEG src neg ss14
+RNEG neg gate 2
+DREC drain hv US1G
+RSNUB drain sn 330
+CSNUB sn hv 100p
+COUT hv 0 20.3u Rser=.1 IC=89.17
+RLOAD hv 0 5200
+RB1A hv b1 90.9k
+RB1B b1 0 90.9k
+RB2A hv b2 90.9k
+RB2B b2 0 90.9k
+RFB1 hv fbmid 100k
+RFB2 fbmid fb 100k
+RFB3 fb 0 1900.6
+VAUX aux 0 PWL(0 0 1m 12)
+RAUX aux intvcc .1
+CINT intvcc 0 4.7u IC=0
+REN1 in en 200k
+REN2 en 0 12.8k
+CSS ss 0 100n IC=0
+RCOMP vc comp 22k
+CCOMP comp 0 6.8n IC=0
+CHF vc 0 100p IC=0
+RRT rt 0 140k
+VDRIVE out 0 PWL(0 0 1u 0 1.02u 12 5u 12 5.02u 0)
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15
+.tran 5e-12 1.1e-6 0 5e-12 uic
+.save V(q:6) V(q:7) V(q:9) V(q:12) V(q:13) V(q:5) I(L:q:LD) I(L:q:LS) I(L:q:LG) I(D:q:DBS) I(D:q:DBD) I(C:q:CGS) I(C:q:CGD) V(xq:6) I(xq:ld) V(hv) V(drain) V(src) V(gate) V(out) V(sense) I(VQD) I(VQG) I(VQS) I(LPOWER) I(DREC) I(RSRC) I(RF) I(RNEG) I(RGS) I(RSNUB) I(CSNUB)
+.end

@@ -1,0 +1,56 @@
+{
+  "name": "p3_fast_vin_26p4",
+  "artifact_dir": "p3_fast_vin_26p4_FINAL",
+  "variable": "SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)",
+  "hypothesis": "Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "VINPUT vin 0 PWL(0 0 1m 24)",
+      "VINPUT vin 0 PWL(0 0 1m 26.4)"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.433295499999076,
+  "timeout_s": 30,
+  "netlist_sha256": "1f1550047d4b7fec50fc1c42387877c0cb1aad578bb1fb560c406612297b3ff2",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.296 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60112,
+  "vin_final": 26.39999940475496,
+  "t_peak_vout": 0.0010819249999998689,
+  "vout_peak": 26.84075386108195,
+  "t_peak_il": 0.00020474714710500488,
+  "il_peak": 0.9078628237369464,
+  "il_rms": 0.3302548334144085,
+  "il_energy_J": 6.181611800427163e-05,
+  "vout_at_1ms": 25.63422682379242,
+  "vout_at_2ms": 26.588445953404776,
+  "vout_final": 26.31704945353254,
+  "il_final": 5.9524503362906725e-06,
+  "il_at_vout_peak": 0.020499267488392803,
+  "dvdt_1090_V_per_s": 27597.973252184085,
+  "dvdt_max_V_per_s": 44691.051360309124,
+  "divider_share_nominal": 0.5980861244019139,
+  "ideal_peak_A": 9.71194728157026,
+  "raw_sha256": "0a579c4d9088b5a3ff43c5515c7a3538e17d593f62011a7abec2457b5902993d"
+}

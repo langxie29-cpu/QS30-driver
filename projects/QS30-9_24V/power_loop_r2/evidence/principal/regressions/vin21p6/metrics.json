@@ -1,0 +1,42 @@
+{
+  "endpoint_s": 0.12,
+  "endpoint_reached": true,
+  "initial_V": 0.0,
+  "peak_V": 172.06978254991614,
+  "SENSE_peak_V": 0.10619898945734513,
+  "SENSE_min_V": -0.006752768294004231,
+  "IL_peak_A": 1.6488996682788046,
+  "source_shunt_peak_A": 11.957326475142203,
+  "VGS_min_V": -14.125848783809241,
+  "VGS_max_V": 11.974743980519916,
+  "sustained_entry_in_observed_trace_s": 0.03419208206153338,
+  "raw_sha256": "73329e9e2e29a4e6b022f90b045be15557adfac697934de11bf934611d94aef0",
+  "scope": "LIMITED25Cmodel/idealinput/resistiveload only. Noactualfront-end/hotL/9tubes/hardware signoff.",
+  "final_window_s": [
+    0.08,
+    0.12
+  ],
+  "final_window": {
+    "mean": 169.9826678600457,
+    "minimum": 169.96941411819046,
+    "maximum": 170.06235251682665,
+    "pp": 0.09293839863619269
+  },
+  "consecutive10ms_means_V": [
+    169.98271015186705,
+    169.98264791862965,
+    169.98266670109928,
+    169.98264666858665
+  ],
+  "maximum_mean_delta_V": 6.223323740073283e-05,
+  "assertions": {
+    "endpoint": true,
+    "SENSE_absolute": true,
+    "normal_mean": true,
+    "raw_ripple": true,
+    "normal_peak": true,
+    "steady_mean_diagnostic": true,
+    "cold_start_observed": true
+  },
+  "classification": "LIMITED_PASS"
+}

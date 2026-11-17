@@ -1,0 +1,32 @@
+{
+  "task_id": "startup_path_audit",
+  "status": "INCONCLUSIVE",
+  "notes": "Code-only evidence delivery; zero shell/jobs/simulator/network/model calls. Delivered inventory.md (fact table with TPS2660.txt line citations) and startup_arith.py (141 lines, numpy arithmetic, NOT executed -- principal runs it). Key facts sourced verbatim: U101 TPS26601 MODE=OPEN is an electronic circuit breaker with latch-off (TPS2660.txt L170, L1412-L1413, L1717-L1719; latch reset only by SHDN or POR, L276), NOT continuous current limiting; MODE=402kohm to RTN is instead ACTIVE current limiting with latch-off (L554-L555, L1426-L1430) and MODE shorted to RTN is limiting WITH auto-retry -- three distinct behaviours. Guaranteed MIN/MAX limits exist only for GAIN(dVdT) 23.75/25.5 V/V (L453), I(OL)@12k 0.95/1.05 A (L461), I(CB)@120k MODE-open 0.045/0.11 A (L478), I(CB)@5.36k 2.0/2.4 A (L480), V(REVTH) -15/-5 mV (L530). The delays are TYPICAL-ONLY with NO published maximum: tCB(dly) 4 ms (L642), tFASTRIP(dly) 250 ns (L615), tCBretry(dly) 540 ms (L644), tdVdT 10 ms at 47 nF and 23.9 V/1.6 ms with dVdT open (L635-L636, L1365); therefore no max delay is claimed anywhere in this delivery. Arithmetic (to be computed by the principal, not hand-computed here): worst-case dVdT slew rate = Imax*Gmax/Cmin with Imax 5.5u, Gmax 25.5, Cmin 42.3n, giving the 0->26.4 V rise; V(dVdT)=Gmax*1 V (V(ILIM)=1 V, L457); the 10 mA sink absolute max (L309) is carried as a separate limit, not as a delay. Permanence check: for a fixed 33 ohm series element the maximum power transferable is Pmax=Vin^2/(4R), computed for nominal 33 ohm and the -5%/+5% corners and expressed as a percentage of the required 6 W; the resistance that would actually pass 6 W at 26.4 V is 0.5 ohm, so a permanent 33 ohm resistor cannot supply 6 W and the bypass MUST close. Route comparison: (A) permanent series R with eFuse MODE=open CB+latch, versus (B) independent precharge plus a bypass closed only when |Vin-Vout|<=1 V with PWM disabled -- B has NO hardware, NO bypass model and NO claimed maximum delay; it is a proposal only. Prior measured literals are copied from evidence/principal/startup_bounds/results.json (uncontrolled IL peak 9.557205715216934 A / Vout peak 45.063842693104874 V; precharge peak 0.7850974777642024 A, resistor peak 19.323451854700178 W, energy 0.007937059145663273 J, bound 0.8421052631578947 A satisfied; slew peak 0.09448891831428566 A) -- these are passive 25 C fixtures, not eFuse dynamics. Inductor row locked to MSS1583-154KED only: 150 uH +/-10%, DCR max 0.159 ohm, Isat 10/20/30% = 3.1/3.6/3.9 A, Irms 20/40 C rise = 1.55/2.2 A (S06_CIRCUIT_DELTA.md L9); the MSS1583-154KE_ row in the extracted text is NOT this part and no alternative row was guessed. WorkerPASS here means evidence delivery only; nothing in this task approves startup behaviour. All electrical acceptance thresholds unchanged; manufacturing HOLD unchanged.",
+  "evidence_files": [
+    "inventory.md",
+    "startup_arith.py"
+  ],
+  "source_urls": [
+    "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+    "https://www.ti.com/lit/zip/slvmby3",
+    "https://www.ti.com/lit/zip/slvmby4",
+    "https://www.coilcraft.com/getmedia/fbfe8ea7-f5d8-4484-859e-2285f427326d/mss1583.pdf"
+  ],
+  "solver": "none (arithmetic only; task forbids shell/jobs/simulator/network/model calls -- startup_arith.py was written but deliberately not executed)",
+  "model_hashes": {
+    "TPS26601_pspice (SLVMBY3 encrypted PSpice package)": "0a936da3e3e2f7143d758a852749392019cdde988f856584b742d8e04c697302",
+    "TPS26601_tina (SLVMBY4 encrypted TINA package)": "0981731439deb3660ed9b34a5691436b98e10374e4c4a3ab077c8f700226719c",
+    "MSS1583 datasheet PDF (Coilcraft Doc1111)": "dba193babcbf95881cc8995479ca6e99bb7ad9a431f2d6e8ce8a893cf2802d3f"
+  },
+  "blocking_issues": [
+    "No native TPS26601 dynamic model is executable: both vendor libraries (SLVMBY3 PSpice, SLVMBY4 TINA) remain encrypted and were not decryptable; substitution is forbidden, so startup behaviour is unproven.",
+    "The vendor TPS26601 model does not model temperature-dependent behaviour, so no hot-state or SOA conclusion can come from it even in principle.",
+    "No bypass hardware and no bypass model exist for the independent precharge+bypass route; the |Vin-Vout|<=1 V enable condition is a proposal, not a qualified design.",
+    "All eFuse protection delays (tCB(dly), tFASTRIP(dly), tCBretry(dly), tdVdT) are TYPICAL-ONLY in TPS2660.txt with no published maximum, so no worst-case delay can be claimed from the datasheet.",
+    "Arithmetic results (slew rate, 0-26.4 V rise, Pmax vs 6 W, 0.5 ohm, startup 0.5*C*U^2) require the principal to execute startup_arith.py; this worker did not run it and claims no computed value.",
+    "MODE=402kohm active-limiting behaviour differs from the planned MODE=open circuit-breaker latch (S05_CIRCUIT_CANDIDATES.md L59); the S05 configuration has not been re-qualified and RTN isolation / reverse-polarity sequencing remain open.",
+    "Passive startup evidence (results.json) is a 25 C linear inductor fixture without eFuse dynamics, hot magnetics or 170 V qualification, and cannot be read as a startup pass.",
+    "MSS1583-154KED hot-state L(I), magnetic loss and temperature rise are unproven; the 25 C 3.1 A Isat is not a 100 C guarantee.",
+    "Full 200 ms qualification of the sense filter candidate was not achieved (attempts timed out), so downstream startup timing is not observable."
+  ]
+}

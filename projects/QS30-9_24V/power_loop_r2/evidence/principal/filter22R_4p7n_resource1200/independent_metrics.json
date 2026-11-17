@@ -1,0 +1,107 @@
+{
+  "case": "evidence\\principal\\filter22R_4p7n_resource1200",
+  "endpoint_s": 0.06,
+  "endpoint_reached": true,
+  "points": 6285673,
+  "raw_sha256": "d03a81f03f0eb67ab822e4aadff0c94e0918786b0070646fc3847d7ed4f7461d",
+  "peak_V": 172.28637608096759,
+  "initial_V": 0.0,
+  "sense_min_V": -0.006412864284268118,
+  "sense_peak_V": 0.10952541776301836,
+  "IL_peak_A": 1.6534553024920442,
+  "shunt_peak_A": 12.129215631372555,
+  "diode_reverse_A": -10.755434284293596,
+  "VGS_min_V": -14.335899677131085,
+  "VGS_max_V": 11.974078377946002,
+  "windows": [
+    {
+      "start_s": 0.04,
+      "end_s": 0.05,
+      "mean": 170.0497976719726,
+      "minimum": 169.33175206772822,
+      "maximum": 171.00507361544356,
+      "pp": 1.6733215477153465
+    },
+    {
+      "start_s": 0.05,
+      "end_s": 0.055,
+      "mean": 169.96730821119894,
+      "minimum": 169.8484898872401,
+      "maximum": 170.1481368666434,
+      "pp": 0.2996469794032919
+    },
+    {
+      "start_s": 0.055,
+      "end_s": 0.06,
+      "mean": 169.98307653319532,
+      "minimum": 169.92040309022212,
+      "maximum": 170.09976244668198,
+      "pp": 0.17935935645985523
+    }
+  ],
+  "event": {
+    "time": 0.01005773033388201,
+    "v(in)": 23.857745732496802,
+    "v(drain)": 1.19271551984464,
+    "v(gate)": 7.528381381323253,
+    "v(src)": 0.10835824469207422,
+    "v(sense)": 0.10952541776301836,
+    "v(out)": 11.624444354740174,
+    "v(hv)": 90.69745633092587,
+    "v(intvcc)": 11.997043975698345,
+    "v(en)": 1.4350219396494857,
+    "v(ss)": 0.919334219316771,
+    "v(vc)": 1.6193472046975814,
+    "i(csnub)": -0.13901786687143947,
+    "i(drec)": -2.734889129669114e-05,
+    "i(lpower)": 1.422430561231617,
+    "i(rsrc)": 1.7477136240657132,
+    "i(rf)": -5.30533214065515e-05,
+    "i(rgs)": 0.0007420023136631179,
+    "i(rneg)": -0.00446973216474067,
+    "i(rsnub)": -0.13901792511694314
+  },
+  "MOS_reconstructed_peak_event_A": {
+    "drain_in": 1.561475835239857,
+    "source_in": -1.742448836265903,
+    "gate_in": 0.18097294613145623,
+    "sum": -5.489458973495509e-08
+  },
+  "KCL_max_local_200ns_A": 0.0005286091941375803,
+  "KCL_max_whole_A": 0.0016082468349969403,
+  "sense_abs_over_0p3V_duration_s": 0.0,
+  "ideal_C_voltage_diagnostic_windows": [
+    {
+      "start_s": 0.04,
+      "end_s": 0.05,
+      "mean": 170.049941540442,
+      "minimum": 169.33539022876553,
+      "maximum": 170.93522940617473,
+      "pp": 1.5998391774091942
+    },
+    {
+      "start_s": 0.05,
+      "end_s": 0.055,
+      "mean": 169.9673307549897,
+      "minimum": 169.8521385263813,
+      "maximum": 170.0785976028,
+      "pp": 0.2264590764186778
+    },
+    {
+      "start_s": 0.055,
+      "end_s": 0.06,
+      "mean": 169.98305501260631,
+      "minimum": 169.9240531899062,
+      "maximum": 170.03025755407677,
+      "pp": 0.10620436417056567
+    }
+  ],
+  "fixed_10us_block_raw_Vpp_last_window": {
+    "median": 0.09039333627841017,
+    "p95": 0.09121650734735169,
+    "maximum": 0.09132203536680095
+  },
+  "pin_absolute_screen_pass": true,
+  "classification": "LIMITED_PASS",
+  "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+}

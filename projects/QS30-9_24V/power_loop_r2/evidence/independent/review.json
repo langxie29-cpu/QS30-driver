@@ -1,0 +1,408 @@
+{
+  "cases": [
+    {
+      "case": "runs\\20261117T150846Z\\round_01\\sense_root\\run_gear_1e-7",
+      "endpoint_s": 0.01008,
+      "endpoint_reached": true,
+      "points": 915241,
+      "raw_sha256": "646dc53093436162aec923ed088f8d672af60145dae048aae579458e69f7dd73",
+      "peak_V": 90.07815205543292,
+      "initial_V": 0.0,
+      "sense_min_V": -0.014272148001627398,
+      "sense_peak_V": 0.5195314294584736,
+      "IL_peak_A": 1.6519424384451782,
+      "shunt_peak_A": 12.007473058918094,
+      "diode_reverse_A": -10.61049685269327,
+      "VGS_min_V": -12.376412600199757,
+      "VGS_max_V": 11.966525072407888,
+      "windows": [],
+      "event": {
+        "time": 0.010010042435522412,
+        "v(in)": 23.86138163332072,
+        "v(drain)": -311.0985582269636,
+        "v(gate)": 6.222501072963445,
+        "v(src)": 0.5418014716965616,
+        "v(sense)": 0.5195314294584736,
+        "v(out)": 11.679710539471357,
+        "v(hv)": 88.88009110009739,
+        "v(intvcc)": 11.998271428059187,
+        "v(en)": 1.4352058449960787,
+        "v(ss)": 0.9145578567754518,
+        "v(vc)": 1.6145708431159873,
+        "i(csnub)": -1.2119110299865319,
+        "i(drec)": -5.894923066376178,
+        "i(lpower)": 1.3860715359031928,
+        "i(rsrc)": 8.73873341446067,
+        "i(rf)": 0.002227004223808793,
+        "i(rgs)": 0.0005680699601266885,
+        "i(rneg)": 1.5237276138907068,
+        "i(rsnub)": -1.211911783973002
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 8.492906386252374,
+        "source_in": -10.264119962615059,
+        "gate_in": 1.7712145196809397,
+        "sum": 9.433182546203511e-07
+      },
+      "KCL_max_local_200ns_A": 0.00012230073842056655,
+      "KCL_max_whole_A": 0.0022267752980957844,
+      "sense_abs_over_0p3V_duration_s": 6.391232036008899e-07,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    },
+    {
+      "case": "runs\\20261117T150846Z\\round_01\\sense_root\\run_gear_2e-7",
+      "endpoint_s": 0.01008,
+      "endpoint_reached": true,
+      "points": 562264,
+      "raw_sha256": "98fa5777ba9f385cc92559bdb1208420c543e09d96c7f3e913ea4e8e58dafa70",
+      "peak_V": 90.77991211471151,
+      "initial_V": 0.0,
+      "sense_min_V": -0.014266960768291113,
+      "sense_peak_V": 0.5250750548726987,
+      "IL_peak_A": 1.651884762441659,
+      "shunt_peak_A": 12.162327384033656,
+      "diode_reverse_A": -10.760416327729848,
+      "VGS_min_V": -14.302362931858328,
+      "VGS_max_V": 11.966527816573505,
+      "windows": [],
+      "event": {
+        "time": 0.010009020679528398,
+        "v(in)": 23.86188110358129,
+        "v(drain)": -310.86270239347976,
+        "v(gate)": 5.478613067668177,
+        "v(src)": 0.5024476773032389,
+        "v(sense)": 0.5250750548726987,
+        "v(out)": 11.654495348810109,
+        "v(hv)": 89.12674596409431,
+        "v(intvcc)": 11.998269343188882,
+        "v(en)": 1.4352360781107714,
+        "v(ss)": 0.91446375009103,
+        "v(vc)": 1.6144767364504662,
+        "i(csnub)": -1.2113558187104563,
+        "i(drec)": -5.228577496076408,
+        "i(lpower)": 1.3810768309614159,
+        "i(rsrc)": 8.10399479521353,
+        "i(rf)": -0.0022627377569459763,
+        "i(rgs)": 0.0004976165390364939,
+        "i(rneg)": 1.9015665991088917,
+        "i(rsnub)": -1.2113558308052115
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 7.821010157843035,
+        "source_in": -10.00280104002644,
+        "gate_in": 2.181790904439943,
+        "sum": 2.2256537057785408e-08
+      },
+      "KCL_max_local_200ns_A": 0.00023318885748802032,
+      "KCL_max_whole_A": 0.0014202083411765654,
+      "sense_abs_over_0p3V_duration_s": 6.379802139696563e-07,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    },
+    {
+      "case": "runs\\20261117T150846Z\\round_01\\sense_root\\run_trap_2e-7",
+      "endpoint_s": 0.01008,
+      "endpoint_reached": true,
+      "points": 588140,
+      "raw_sha256": "3c3419eddf7fe0929c6db0c727b78395be3be3e2061dd10c01ad27c05229759a",
+      "peak_V": 90.34949519026613,
+      "initial_V": 0.0,
+      "sense_min_V": -0.01415287443643489,
+      "sense_peak_V": 0.5289639299644232,
+      "IL_peak_A": 1.652030424172219,
+      "shunt_peak_A": 12.20561831188792,
+      "diode_reverse_A": -10.793993817327635,
+      "VGS_min_V": -14.446910973212423,
+      "VGS_max_V": 11.966457810705451,
+      "windows": [],
+      "event": {
+        "time": 0.010056881319444134,
+        "v(in)": 23.859870650014543,
+        "v(drain)": -311.1857016329415,
+        "v(gate)": 6.737985773191936,
+        "v(src)": 0.559716880989915,
+        "v(sense)": 0.5289639299644232,
+        "v(out)": 11.727888131046145,
+        "v(hv)": 88.80717895257702,
+        "v(intvcc)": 11.9982665920549,
+        "v(en)": 1.4351149437307475,
+        "v(ss)": 0.9192499502324097,
+        "v(vc)": 1.619262935630144,
+        "i(csnub)": -1.2120868171858286,
+        "i(drec)": -6.19068499350606,
+        "i(lpower)": 1.40118137607569,
+        "i(rsrc)": 9.027691628869597,
+        "i(rf)": 0.0030752951025491727,
+        "i(rgs)": 0.0006178268892202022,
+        "i(rneg)": 1.5038028949418996,
+        "i(rsnub)": -1.212086828820227
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 8.803953198401977,
+        "source_in": -10.533951992024825,
+        "gate_in": 1.729998811591507,
+        "sum": 1.79686594492523e-08
+      },
+      "KCL_max_local_200ns_A": 8.198876140719236e-05,
+      "KCL_max_whole_A": 0.00056867017223583,
+      "sense_abs_over_0p3V_duration_s": 6.553851515750762e-07,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    },
+    {
+      "case": "evidence\\principal\\minimum_cell\\gear_0p5ns",
+      "endpoint_s": 1e-05,
+      "endpoint_reached": true,
+      "points": 20823,
+      "raw_sha256": "8a74098e23a400cc7f2ad3c6d30c5b7c3632ffc6b35611065176c637c0aeaa43",
+      "peak_V": 89.81317962606545,
+      "initial_V": 0.0,
+      "sense_min_V": -0.0031829684430077624,
+      "sense_peak_V": 0.41962899833621875,
+      "IL_peak_A": 1.5465758744877902,
+      "shunt_peak_A": 10.52421435203177,
+      "diode_reverse_A": -9.55280503624271,
+      "VGS_min_V": -12.50957226265942,
+      "VGS_max_V": 11.910967262858529,
+      "windows": [],
+      "event": {
+        "time": 1.0520339250783814e-06,
+        "v(drain)": -311.2224147843956,
+        "v(gate)": 4.813379899962284,
+        "v(src)": 0.3774127455624565,
+        "v(sense)": 0.41962899833621875,
+        "v(out)": 12.0,
+        "v(hv)": 88.7387605577912,
+        "i(csnub)": -1.2109052993569502,
+        "i(drec)": -3.6112443351211714,
+        "i(lpower)": 0.9342665502990539,
+        "i(rsrc)": 6.087302347781557,
+        "i(rf)": -0.004221625277376223,
+        "i(rgs)": 0.0004435967154399827,
+        "i(rneg)": 2.071434162425887,
+        "i(rsnub)": -1.2109053128972487,
+        "i(vqd)": 5.756416184777346,
+        "i(vqg)": 2.3976551100852195,
+        "i(vqs)": 8.154071293955049
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 5.756416198317474,
+        "source_in": -8.154071288214627,
+        "gate_in": 2.3976551157121615,
+        "sum": 2.5815008353191615e-08
+      },
+      "KCL_max_local_200ns_A": 0.0003239650708366515,
+      "KCL_max_whole_A": 0.0003239650708366515,
+      "zero_probe_reconstruction_error_A": {
+        "drain": 0.0001646081582091785,
+        "source": 8.916820954629756e-05,
+        "gate": 8.516131330166266e-05
+      },
+      "sense_abs_over_0p3V_duration_s": 1.0019786202908841e-08,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    },
+    {
+      "case": "evidence\\principal\\minimum_cell\\gear_1ns",
+      "endpoint_s": 1e-05,
+      "endpoint_reached": true,
+      "points": 11008,
+      "raw_sha256": "8f4cb75894fbd08cac2efcbd11468857d6f248ceb34d28adf72ad183aeb9602c",
+      "peak_V": 89.79145478669551,
+      "initial_V": 0.0,
+      "sense_min_V": -0.003183192702586856,
+      "sense_peak_V": 0.41946641743246627,
+      "IL_peak_A": 1.5466190025819468,
+      "shunt_peak_A": 10.52948369389486,
+      "diode_reverse_A": -9.562584634053854,
+      "VGS_min_V": -12.31143789492186,
+      "VGS_max_V": 11.910965392500081,
+      "windows": [],
+      "event": {
+        "time": 1.0519417884496773e-06,
+        "v(drain)": -311.3063787801352,
+        "v(gate)": 5.848988107298267,
+        "v(src)": 0.425519615239938,
+        "v(sense)": 0.41946641743246627,
+        "v(out)": 12.0,
+        "v(hv)": 88.65598025202105,
+        "i(csnub)": -1.2115463074808526,
+        "i(drec)": -4.438426123917359,
+        "i(lpower)": 0.9342610435471271,
+        "i(rsrc)": 6.863219600644161,
+        "i(rf)": 0.0006053197807471711,
+        "i(rgs)": 0.0005423468492058329,
+        "i(rneg)": 1.7126475532049126,
+        "i(rsnub)": -1.2115463150978087,
+        "i(vqd)": 6.584233474946737,
+        "i(vqg)": 1.991696654012758,
+        "i(vqs)": 8.575930128817133
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 6.584233482562294,
+        "source_in": -8.575930126780616,
+        "gate_in": 1.9916966560239673,
+        "sum": 1.1805645794282782e-08
+      },
+      "KCL_max_local_200ns_A": 0.00015714250143794573,
+      "KCL_max_whole_A": 0.0001724512023644209,
+      "zero_probe_reconstruction_error_A": {
+        "drain": 0.00011356397000028551,
+        "source": 4.88470918704742e-05,
+        "gate": 4.69386460352772e-05
+      },
+      "sense_abs_over_0p3V_duration_s": 1.0021186584976885e-08,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    },
+    {
+      "case": "evidence\\principal\\minimum_cell\\trap_1ns",
+      "endpoint_s": 1e-05,
+      "endpoint_reached": true,
+      "points": 10812,
+      "raw_sha256": "a6ff9837ea8404a8ed73397b88a51ae7e544fcebcf55e3d14f47d068206ad2bc",
+      "peak_V": 89.81964806983866,
+      "initial_V": 0.0,
+      "sense_min_V": -0.0031829501270649214,
+      "sense_peak_V": 0.42011848793111156,
+      "IL_peak_A": 1.5465482131734167,
+      "shunt_peak_A": 10.538650420423446,
+      "diode_reverse_A": -9.570620116400804,
+      "VGS_min_V": -12.583329557537072,
+      "VGS_max_V": 11.910968670223989,
+      "windows": [],
+      "event": {
+        "time": 1.0520497054415088e-06,
+        "v(drain)": -311.340625424321,
+        "v(gate)": 6.361452355296835,
+        "v(src)": 0.4406005056515382,
+        "v(sense)": 0.42011848793111156,
+        "v(out)": 12.0,
+        "v(hv)": 88.6284889550813,
+        "i(csnub)": -1.2117882501955495,
+        "i(drec)": -4.713073083631178,
+        "i(lpower)": 0.9341972109007621,
+        "i(rsrc)": 7.1150279077013385,
+        "i(rf)": 0.002101324234637142,
+        "i(rgs)": 0.0005881313015885669,
+        "i(rneg)": 1.6107563385583432,
+        "i(rsnub)": -1.2117882613880606,
+        "i(vqd)": 6.859058544727224,
+        "i(vqg)": 1.8682388976246251,
+        "i(vqs)": 8.727297442225705
+      },
+      "MOS_reconstructed_peak_event_A": {
+        "drain_in": 6.859058555920001,
+        "source_in": -8.72729743919273,
+        "gate_in": 1.8664658274705348,
+        "sum": -0.0017730558021946674
+      },
+      "KCL_max_local_200ns_A": 0.006883528300483999,
+      "KCL_max_whole_A": 0.008521401221138869,
+      "zero_probe_reconstruction_error_A": {
+        "drain": 0.0002746209977892988,
+        "source": 8.207255819048243e-05,
+        "gate": 0.008501865277757759
+      },
+      "sense_abs_over_0p3V_duration_s": 1.0058270615159289e-08,
+      "pin_absolute_screen_pass": false,
+      "classification": "ELECTRICAL_FAIL",
+      "scope": "Pin absolute-voltage screen in this fixture ONLY; full cycle-limit/fault, hardware, hotL, input device and loop acceptance remain HOLD"
+    }
+  ],
+  "averaged_model": {
+    "R_effective_ohm": 4801.650430149437,
+    "output_load_W": 6.018763843893687,
+    "feedback_beta": 0.009413543099921446,
+    "constant_power_fp_Hz": 3.2656042308570647,
+    "DCM_assumed_frequency_Hz": 100000.0,
+    "DCM_Ipk_A": 0.8301852007922647,
+    "DCM_on_fraction": 0.5188657504951654,
+    "DCM_off_fraction": 0.08529300008139704,
+    "DCM_valid_under_assumptions": true,
+    "DCM_output_pole_Hz": 3.534010058050796,
+    "DCM_Ipk_to_Iout_AperA": 0.08529300008139704,
+    "DCM_Vc_to_Iout_AperV": 0.2501260999454459,
+    "DCM_Vc_to_Vout_DC": 554.9007655937313,
+    "CCM_RHP_zero_ideal_duty_Hz": 101541.6117535369,
+    "comp_zero_Hz": 1063.869940453846,
+    "comp_highpole_Hz": 73407.02589131537,
+    "derivation": "DCM Iout=L*f*Ipk^2/[2*(Vout-Vin)]. C*dV/dt=Iout-V/R. Linearize aboutVo: pole(2Vo-Vin)/[2piRC(Vo-Vin)], gainLfIpk/(Vo-Vin). Assumes fully demagnetized triangular positive currents; parasitic recovery and source ringing excluded. CCM zero uses idealD=.859, not measured duty.",
+    "classification": "INCONCLUSIVE",
+    "decision": "Explanatory model only; no Bode measurement or phase/gain-margin qualification. Compensation unchanged pending P0 credibility."
+  },
+  "history_fft": {
+    "window_s": [
+      0.04,
+      0.06
+    ],
+    "resample_fs_Hz": 5000000.0,
+    "nyquist_Hz": 2500000.0,
+    "bin_Hz": 50.0,
+    "window": "Hann",
+    "detrend": "linear",
+    "amplitude": "single-sided peak amplitude, not rawVpp",
+    "largest_bins": [
+      {
+        "f_Hz": 50.0,
+        "peak_amplitude_V": 2.0610747647769907
+      },
+      {
+        "f_Hz": 100.0,
+        "peak_amplitude_V": 1.161087101118041
+      },
+      {
+        "f_Hz": 150.0,
+        "peak_amplitude_V": 0.6216893920914254
+      },
+      {
+        "f_Hz": 200.0,
+        "peak_amplitude_V": 0.46988425911161724
+      },
+      {
+        "f_Hz": 250.0,
+        "peak_amplitude_V": 0.37201616866309556
+      },
+      {
+        "f_Hz": 300.0,
+        "peak_amplitude_V": 0.24477884911149222
+      },
+      {
+        "f_Hz": 350.0,
+        "peak_amplitude_V": 0.12675827782488108
+      },
+      {
+        "f_Hz": 400.0,
+        "peak_amplitude_V": 0.07362036634801292
+      },
+      {
+        "f_Hz": 450.0,
+        "peak_amplitude_V": 0.06846757479878039
+      },
+      {
+        "f_Hz": 500.0,
+        "peak_amplitude_V": 0.0636147409315668
+      },
+      {
+        "f_Hz": 550.0,
+        "peak_amplitude_V": 0.05890485522797722
+      },
+      {
+        "f_Hz": 600.0,
+        "peak_amplitude_V": 0.0528373219690734
+      }
+    ],
+    "native_average_rate_Hz": 105532166.66666667,
+    "caveats": [
+      "First50Hz bins may be unresolved startup trend, cannot establish physical oscillation frequency",
+      "Interpolation does not supply missing subns bandwidth; rawVpp remains acceptance metric",
+      "No established steady window in60ms; spectra are descriptive only"
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "cells": [
+    {
+      "vin_V": 21.6,
+      "load": "no_RLOAD_bleeders_feedback_only",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 21.6,
+      "load": "minimum_actual_load_UNDEFINED",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 21.6,
+      "load": "RLOAD5200_equivalent_only",
+      "temperature_C": 25,
+      "status": "LIMITED_PASS",
+      "raw_case": "regressions/vin21p6",
+      "scope": "25ClinearL/idealinput/equivalentresistance only; realfront/hot/9tubeHOLD"
+    },
+    {
+      "vin_V": 21.6,
+      "load": "nine_real_QS30_dynamic_MISSING",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 24,
+      "load": "no_RLOAD_bleeders_feedback_only",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 24,
+      "load": "minimum_actual_load_UNDEFINED",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 24,
+      "load": "RLOAD5200_equivalent_only",
+      "temperature_C": 25,
+      "status": "LIMITED_PASS",
+      "raw_case": "filter22R_4p7n_threads1_200ms",
+      "scope": "25ClinearL/idealinput/equivalentresistance only; realfront/hot/9tubeHOLD"
+    },
+    {
+      "vin_V": 24,
+      "load": "nine_real_QS30_dynamic_MISSING",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 26.4,
+      "load": "no_RLOAD_bleeders_feedback_only",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 26.4,
+      "load": "minimum_actual_load_UNDEFINED",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "vin_V": 26.4,
+      "load": "RLOAD5200_equivalent_only",
+      "temperature_C": 25,
+      "status": "LIMITED_PASS",
+      "raw_case": "regressions/vin26p4",
+      "scope": "25ClinearL/idealinput/equivalentresistance only; realfront/hot/9tubeHOLD"
+    },
+    {
+      "vin_V": 26.4,
+      "load": "nine_real_QS30_dynamic_MISSING",
+      "temperature_C": 25,
+      "status": "HOLD_NOT_EXECUTED",
+      "raw_case": null
+    },
+    {
+      "test": "MOS_hot_original_model_25C_ONLY",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "diode_Qrr_Cj_temperature",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "L_I_T_saturation_coreloss",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "Rsense_tolerance_TCR_and_parasiticL",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "RCcomp_tolerance",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "Cout_C_ESR_bias_temperature_exactMPN",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "actual_eFuse_AUX_shutdown_maxdelay_RTN",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "sustained_short_realfront_end",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "feedback_open_independent195V_OVP",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "abnormal_shutdown_energy",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    },
+    {
+      "test": "nine_tube_ignition_hold_negative_resistance",
+      "status": "HOLD_MODEL_OR_PARAMETER_GAP",
+      "simulation_allowed": false
+    }
+  ],
+  "manufacturing": "HOLD",
+  "fixed_limits": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "raw_ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "cold_start_s": 1,
+    "load_recovery_s": 0.1,
+    "fault_peak_V": 195
+  }
+}

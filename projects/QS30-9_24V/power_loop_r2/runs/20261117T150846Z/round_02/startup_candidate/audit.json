@@ -1,0 +1,15 @@
+{
+  "task_id": "startup_candidate",
+  "grade": "INCONCLUSIVE",
+  "worker_claim": "INCONCLUSIVE",
+  "notes": "Round2 override forbade executing shell or any simulator, so this session delivered reviewed-candidate code and a line-referenced source review, not measurements. build_startup.py drafts exactly the three authorized worst-scenario cases (26.4V, COUT 24.36u, LPOWER 135u, RINPUT .1, gate inhibited, .tran 5e-8 1.008e-2 0 5e-8 uic, gear, Normal, original reltol=.001 abstol=1n vntol=1u, 30s timeout): A uncontrolled 1us reference, B plus 33 ohm 5% precharge resistor, C source ramp 1us->8.49ms and no 33 ohm. It uses shared lab.py only (lab.full then one-variable netlist edit then lab.execute), refuses import, refuses to overwrite an existing run, refuses non-unique anchors, and asserts the inhibit (REN1 absent, VEN en 0 0) before each run. measure_startup.py pre-declares the read-back quantities (frozen bound V_pk=I_pk=26.4*sqrt(24.36u/135u)=11.22, an upper bound) and marks fault_peak_V<=195V, ripple<=1Vpp, mean 165-175V and startup<=1s NOT EVALUABLE because the gate is inhibited in all three cases so the converter never switches; not evaluable is never reported as pass. ti_source_review.py (not executed) reproduces the numbers from archived TI/Kemet text: native dVdT ramp 23.9V/1.6ms=14.94V/ms (TPS2660.txt L1365, external cap can only slow it, L1367), GAIN(dVdT) 24.6V/V typ 23.75-25.5 (L453), tdVdT 10ms at C(dVdT)=47nF (L635) giving 2.39V/ms and 24/(2.39/1.10)=8.81ms for the -10% corner, which reproduces the review's 8.49ms to 0.1%; no min/max tdVdT exists in the archived text so that corner is a derivation, not a TI guarantee. Guaranteed current limits at V(IN)-V(OUT)=1V are 1.425/1.5/1.575A at R(ILIM)=8k and 2.11/2.23/2.35A at 5.36k (L461-465), and fast-trip is 87% ABOVE the programmed limit (L1530). MSS1583-154KED shows DCR 0.033/0.038 ohm, Isat 3.9/4.4A, Irms 3.4/4.8A (MSS1583.txt L45) but the extraction cannot say whether the drop criterion is 10% or 20%, and the SPICE cell is linear with no saturation, so linear peak current is not saturation evidence. TPS26601 model status remains HOLD (encrypted). Status is INCONCLUSIVE, not PASS or FAIL: no required simulation evidence exists in this session and worker PASS would only ever mean evidence delivered, never electrical acceptance. All HOLD unchanged, all thresholds unchanged, no model modified, no recursive agent/model launched.",
+  "evidence_sha256": {
+    "inventory.md": "1713dbd072ba44fd268c1eeccb159ad7d90f15a0671d79431a900ae4211a7cce",
+    "PREREGISTRATION.md": "132d73d1ae41571cac4583076c0d9665974904babbfb189cdabb28c97cf54089",
+    "build_startup.py": "e9347baab334865671f21566690a0a7dec464c8bb323dc2b8aca4090e089068d",
+    "measure_startup.py": "fd27566a6c20022ce94cb4d7614c573223c302e1025c3c90e152f3fe9958bf6f",
+    "ti_source_review.py": "eeff7bc65b91241c11191e2cf9b5dccbccb8110e003c56bd2220d46a0decf8e5"
+  },
+  "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+  "process_rc": 0
+}

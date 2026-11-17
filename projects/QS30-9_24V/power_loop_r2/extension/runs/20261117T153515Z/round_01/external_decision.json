@@ -1,0 +1,21 @@
+{
+  "decision": "CONTINUE",
+  "rationale": "Principal accepted current path evidence and nominal filtered result, rejects defective drafted arithmetic; finalwave must generate narrow reviewable code for alreadydefinedregressions.",
+  "next_task_ids": [
+    "device_followup",
+    "startup_followup",
+    "loop_followup"
+  ],
+  "issues": [
+    "Originalmodelq101singularfailure retained",
+    "eFuse/bypass/hotmodelHOLD",
+    "Energyidentitynotclosed",
+    "Longfiltered200msnotyetcomplete"
+  ],
+  "controlling_assumptions": [
+    "Total4rounds12Flashsessions",
+    "Codeonly,shelldisabled",
+    "No further compensation changes",
+    "No hardware orHOLDclosure"
+  ]
+}

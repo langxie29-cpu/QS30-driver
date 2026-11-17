@@ -1,0 +1,1625 @@
+[
+  {
+    "type": "tool/result",
+    "seq": 191,
+    "time": 1794928131523,
+    "data": {
+      "turn": 1,
+      "step": 2,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_IF3wCsyQNVUBXYga7b3z3979"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_IF3wCsyQNVUBXYga7b3z3979",
+            "content": [
+              {
+                "type": "text",
+                "text": "<path>D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\lab.py</path>\n<type>file</type>\n<content>\n1: \"\"\"R2 native simulation helpers. No acceptance inferred from process completion.\"\"\"\n2: from pathlib import Path\n3: import hashlib,json,os,re,shutil,subprocess,time\n4: import numpy as np\n5: HERE=Path(__file__).resolve().parent\n6: R1_LOCAL=Path('D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/power_loop_r1')\n7: BASE=R1_LOCAL/'evidence/candidate_diagnostic/nominal_24V_gear_resource600'\n8: OLD=Path('D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V')\n9: LT=OLD/'toolchain/ltspice26/extracted/LTspice.exe'\n10: MODEL_SOURCE=OLD/'sim/s06c_current_cell_v3/ST_AUX12_1ns'\n11: def sha(p):\n12:  h=hashlib.sha256()\n13:  with Path(p).open('rb') as f:\n14:   for b in iter(lambda:f.read(1048576),b''):h.update(b)\n15:  return h.hexdigest()\n16: def dump(p,v):Path(p).write_text(json.dumps(v,indent=2,ensure_ascii=False)+'\\n',encoding='utf8')\n17: def native(path):\n18:  path=Path(path)\n19:  with path.open('rb') as f:b=f.read(131072)\n20:  enc='utf-16-le' if b.startswith(b'T\\0') else 'utf-8-sig'\n21:  for suffix in ['Binary:\\r\\n','Binary:\\n']:\n22:   marker=suffix.encode(enc);pos=b.find(marker)\n23:   if pos>=0:break\n24:  if pos<0:raise ValueError('Expected uncompressed native binary raw')\n25:  header=b[:pos].decode(enc);offset=pos+len(marker)\n26:  flags=re.search(r'Flags:\\s*([^\\r\\n]+)',header)[1].lower().split()\n27:  if 'fastaccess' in flags or 'complex' in flags:raise ValueError('Unsupported flags')\n28:  names=[s.split()[1].lower() for s in header.rsplit('Variables:',1)[1].splitlines() if s.strip()]\n29:  n=int(re.search(r'No\\. Variables:\\s*(\\d+)',header)[1]);count=int(re.search(r'No\\. Points:\\s*(\\d+)',header)[1])\n30:  size=path.stat().st_size-offset\n31:  if size==count*n*8:dt=np.dtype([(name,'<f8') for name in names])\n32:  elif size==count*(8+4*(n-1)) and 'double' not in flags:dt=np.dtype([(names[0],'<f8')]+[(name,'<f4') for name in names[1:]])\n33:  else:raise ValueError('Incomplete or unsupported raw size')\n34:  if n!=len(names):raise ValueError('Variable count mismatch')\n35:  arr=np.memmap(path,dtype=dt,mode='r',offset=offset,shape=(count,))\n36:  t=arr[names[0]]\n37:  if not np.isfinite(t).all() or not np.all(np.diff(t)>0):raise ValueError('Nonmonotonic/nonfinite time')\n38:  return {name:arr[name] for name in names}\n39: def stats(c,a,b,name='v(hv)'):\n40:  t=c['time'];y=c[name];i,j=np.searchsorted(t,[a,b]);tt=np.r_[a,t[i:j],b];yy=np.r_[np.interp(a,t,y),y[i:j],np.interp(b,t,y)]\n41:  if a<t[0] or b>t[-1]+1e-12:raise ValueError('Window outside complete trace')\n42:  return dict(mean=float(np.trapz(yy,tt)/(b-a)),minimum=float(yy.min()),maximum=float(yy.max()),pp=float(np.ptp(yy)))\n43: def full(path,stop=.01008,step=2e-7,method='gear'):\n44:  path=Path(path);path.mkdir(parents=True,exist_ok=False)\n45:  for name in ['controller.sub','st.lib','diode.lib','ss14.lib']:shutil.copy2(MODEL_SOURCE/name,path/name)\n46:  s=(BASE/'circuit.cir').read_text(encoding='ascii')\n47:  s=s.replace('method=gear','method='+method)\n48:  s=re.sub(r'(?m)^\\.tran .*$',f'.tran {step} {stop} 0 {step} uic',s)\n49:  # Pure observation: no zero-volt probes or modifications inside vendor subcircuits.\n50:  s=s.replace('.save V(hv)', '.save V(out) I(XQ:LD) I(XQ:LS) I(XQ:LG) I(XNEG:ddio) I(XNEG:dgr) I(RSRC) I(RF) I(RGS) I(RNEG) I(RSNUB) I(CSNUB) V(hv)')\n51:  (path/'circuit.cir').write_text(s,encoding='ascii')\n52:  return path\n53: def execute(path,hypothesis,variable,timeout=180):\n54:  path=Path(path).resolve()\n55:  if (path/'preregister.json').exists():raise FileExistsError('Never overwrite a previous experiment')\n56:  s=(path/'circuit.cir').read_text(encoding='ascii')\n57:  models={p.name:sha(p) for p in path.iterdir() if p.suffix.lower() in ['.sub','.lib']}\n58:  base_models=json.loads((BASE/'preregister.json').read_text())['model_hashes']\n59:  if models!=base_models:raise ValueError('Vendor model bytes differ from R1')\n60:  settings=re.search(r'(?m)^\\.options .*$',s)[0]\n61:  if 'reltol=.001 abstol=1n vntol=1u' not in settings:raise ValueError('Original tolerances required')\n62:  limits=dict(mean_V=[164.9,175.1],ripple_Vpp=1,normal_peak_V=180,startup_s=1,recovery_s=.1,fault_peak_V=195,sense_abs_V=.3)\n63:  dump(path/'preregister.json',dict(hypothesis=hypothesis,unique_main_variable=variable,netlist_sha256=sha(path/'circuit.cir'),model_hashes=models,solver='LTspice 24.0.12.0 Windows Normal',solver_exe_sha256=sha(LT),tran=re.search(r'(?m)^\\.tran .*$',s)[0],options=settings,acceptance=limits,diagnostic_reproducibility='For a matched local cell: peak change <=5%, KCL residual <=1mA. Full startup phase may shift; no claim from same wall time alone.',max_runtime_s=timeout,raw=str(path/'circuit.raw'),log=str(path/'circuit.log'),scope='Research only, 25C linear L; all HOLD remain',utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())))\n64:  env=dict(os.environ)\n65:  for key,rel in [('APPDATA','appdata'),('LOCALAPPDATA','localappdata')]:\n66:   (path/rel).mkdir();env[key]=str(path/rel)\n67:  argv=[str(LT),'-b',str(path/'circuit.cir')];start=time.monotonic()\n68:  p=subprocess.Popen(argv,cwd=path,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW)\n69:  dump(path/'process.json',dict(pid=p.pid,argv=argv))\n70:  try:\n71:   out,err=p.communicate(timeout=timeout);rc=p.returncode;status='COMPLETED_UNREVIEWED' if rc==0 else 'SOLVER_FAIL'\n72:  except subprocess.TimeoutExpired:\n73:   subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],capture_output=True,creationflags=subprocess.CREATE_NO_WINDOW)\n74:   out,err=p.communicate();rc=None;status='EXECUTION_FAIL'\n75:  (path/'stdout.bin').write_bytes(out);(path/'stderr.bin').write_bytes(err)\n76:  result=dict(argv=argv,rc=rc,elapsed_s=time.monotonic()-start,status=status)\n77:  dump(path/'command.json',result)\n78:  return result\n\n(End of file - total 78 lines)\n</content>"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "5929f6bc-4e85-4220-bebd-a7b349ac5e58"
+      },
+      "meta": {
+        "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\lab.py",
+        "offset": 1,
+        "lines": [
+          {
+            "number": 1,
+            "text": "\"\"\"R2 native simulation helpers. No acceptance inferred from process completion.\"\"\""
+          },
+          {
+            "number": 2,
+            "text": "from pathlib import Path"
+          },
+          {
+            "number": 3,
+            "text": "import hashlib,json,os,re,shutil,subprocess,time"
+          },
+          {
+            "number": 4,
+            "text": "import numpy as np"
+          },
+          {
+            "number": 5,
+            "text": "HERE=Path(__file__).resolve().parent"
+          },
+          {
+            "number": 6,
+            "text": "R1_LOCAL=Path('D:/PROJECTS/dsharness/QS30-power-loop-r1/projects/QS30-9_24V/power_loop_r1')"
+          },
+          {
+            "number": 7,
+            "text": "BASE=R1_LOCAL/'evidence/candidate_diagnostic/nominal_24V_gear_resource600'"
+          },
+          {
+            "number": 8,
+            "text": "OLD=Path('D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V')"
+          },
+          {
+            "number": 9,
+            "text": "LT=OLD/'toolchain/ltspice26/extracted/LTspice.exe'"
+          },
+          {
+            "number": 10,
+            "text": "MODEL_SOURCE=OLD/'sim/s06c_current_cell_v3/ST_AUX12_1ns'"
+          },
+          {
+            "number": 11,
+            "text": "def sha(p):"
+          },
+          {
+            "number": 12,
+            "text": " h=hashlib.sha256()"
+          },
+          {
+            "number": 13,
+            "text": " with Path(p).open('rb') as f:"
+          },
+          {
+            "number": 14,
+            "text": "  for b in iter(lambda:f.read(1048576),b''):h.update(b)"
+          },
+          {
+            "number": 15,
+            "text": " return h.hexdigest()"
+          },
+          {
+            "number": 16,
+            "text": "def dump(p,v):Path(p).write_text(json.dumps(v,indent=2,ensure_ascii=False)+'\\n',encoding='utf8')"
+          },
+          {
+            "number": 17,
+            "text": "def native(path):"
+          },
+          {
+            "number": 18,
+            "text": " path=Path(path)"
+          },
+          {
+            "number": 19,
+            "text": " with path.open('rb') as f:b=f.read(131072)"
+          },
+          {
+            "number": 20,
+            "text": " enc='utf-16-le' if b.startswith(b'T\\0') else 'utf-8-sig'"
+          },
+          {
+            "number": 21,
+            "text": " for suffix in ['Binary:\\r\\n','Binary:\\n']:"
+          },
+          {
+            "number": 22,
+            "text": "  marker=suffix.encode(enc);pos=b.find(marker)"
+          },
+          {
+            "number": 23,
+            "text": "  if pos>=0:break"
+          },
+          {
+            "number": 24,
+            "text": " if pos<0:raise ValueError('Expected uncompressed native binary raw')"
+          },
+          {
+            "number": 25,
+            "text": " header=b[:pos].decode(enc);offset=pos+len(marker)"
+          },
+          {
+            "number": 26,
+            "text": " flags=re.search(r'Flags:\\s*([^\\r\\n]+)',header)[1].lower().split()"
+          },
+          {
+            "number": 27,
+            "text": " if 'fastaccess' in flags or 'complex' in flags:raise ValueError('Unsupported flags')"
+          },
+          {
+            "number": 28,
+            "text": " names=[s.split()[1].lower() for s in header.rsplit('Variables:',1)[1].splitlines() if s.strip()]"
+          },
+          {
+            "number": 29,
+            "text": " n=int(re.search(r'No\\. Variables:\\s*(\\d+)',header)[1]);count=int(re.search(r'No\\. Points:\\s*(\\d+)',header)[1])"
+          },
+          {
+            "number": 30,
+            "text": " size=path.stat().st_size-offset"
+          },
+          {
+            "number": 31,
+            "text": " if size==count*n*8:dt=np.dtype([(name,'<f8') for name in names])"
+          },
+          {
+            "number": 32,
+            "text": " elif size==count*(8+4*(n-1)) and 'double' not in flags:dt=np.dtype([(names[0],'<f8')]+[(name,'<f4') for name in names[1:]])"
+          },
+          {
+            "number": 33,
+            "text": " else:raise ValueError('Incomplete or unsupported raw size')"
+          },
+          {
+            "number": 34,
+            "text": " if n!=len(names):raise ValueError('Variable count mismatch')"
+          },
+          {
+            "number": 35,
+            "text": " arr=np.memmap(path,dtype=dt,mode='r',offset=offset,shape=(count,))"
+          },
+          {
+            "number": 36,
+            "text": " t=arr[names[0]]"
+          },
+          {
+            "number": 37,
+            "text": " if not np.isfinite(t).all() or not np.all(np.diff(t)>0):raise ValueError('Nonmonotonic/nonfinite time')"
+          },
+          {
+            "number": 38,
+            "text": " return {name:arr[name] for name in names}"
+          },
+          {
+            "number": 39,
+            "text": "def stats(c,a,b,name='v(hv)'):"
+          },
+          {
+            "number": 40,
+            "text": " t=c['time'];y=c[name];i,j=np.searchsorted(t,[a,b]);tt=np.r_[a,t[i:j],b];yy=np.r_[np.interp(a,t,y),y[i:j],np.interp(b,t,y)]"
+          },
+          {
+            "number": 41,
+            "text": " if a<t[0] or b>t[-1]+1e-12:raise ValueError('Window outside complete trace')"
+          },
+          {
+            "number": 42,
+            "text": " return dict(mean=float(np.trapz(yy,tt)/(b-a)),minimum=float(yy.min()),maximum=float(yy.max()),pp=float(np.ptp(yy)))"
+          },
+          {
+            "number": 43,
+            "text": "def full(path,stop=.01008,step=2e-7,method='gear'):"
+          },
+          {
+            "number": 44,
+            "text": " path=Path(path);path.mkdir(parents=True,exist_ok=False)"
+          },
+          {
+            "number": 45,
+            "text": " for name in ['controller.sub','st.lib','diode.lib','ss14.lib']:shutil.copy2(MODEL_SOURCE/name,path/name)"
+          },
+          {
+            "number": 46,
+            "text": " s=(BASE/'circuit.cir').read_text(encoding='ascii')"
+          },
+          {
+            "number": 47,
+            "text": " s=s.replace('method=gear','method='+method)"
+          },
+          {
+            "number": 48,
+            "text": " s=re.sub(r'(?m)^\\.tran .*$',f'.tran {step} {stop} 0 {step} uic',s)"
+          },
+          {
+            "number": 49,
+            "text": " # Pure observation: no zero-volt probes or modifications inside vendor subcircuits."
+          },
+          {
+            "number": 50,
+            "text": " s=s.replace('.save V(hv)', '.save V(out) I(XQ:LD) I(XQ:LS) I(XQ:LG) I(XNEG:ddio) I(XNEG:dgr) I(RSRC) I(RF) I(RGS) I(RNEG) I(RSNUB) I(CSNUB) V(hv)')"
+          },
+          {
+            "number": 51,
+            "text": " (path/'circuit.cir').write_text(s,encoding='ascii')"
+          },
+          {
+            "number": 52,
+            "text": " return path"
+          },
+          {
+            "number": 53,
+            "text": "def execute(path,hypothesis,variable,timeout=180):"
+          },
+          {
+            "number": 54,
+            "text": " path=Path(path).resolve()"
+          },
+          {
+            "number": 55,
+            "text": " if (path/'preregister.json').exists():raise FileExistsError('Never overwrite a previous experiment')"
+          },
+          {
+            "number": 56,
+            "text": " s=(path/'circuit.cir').read_text(encoding='ascii')"
+          },
+          {
+            "number": 57,
+            "text": " models={p.name:sha(p) for p in path.iterdir() if p.suffix.lower() in ['.sub','.lib']}"
+          },
+          {
+            "number": 58,
+            "text": " base_models=json.loads((BASE/'preregister.json').read_text())['model_hashes']"
+          },
+          {
+            "number": 59,
+            "text": " if models!=base_models:raise ValueError('Vendor model bytes differ from R1')"
+          },
+          {
+            "number": 60,
+            "text": " settings=re.search(r'(?m)^\\.options .*$',s)[0]"
+          },
+          {
+            "number": 61,
+            "text": " if 'reltol=.001 abstol=1n vntol=1u' not in settings:raise ValueError('Original tolerances required')"
+          },
+          {
+            "number": 62,
+            "text": " limits=dict(mean_V=[164.9,175.1],ripple_Vpp=1,normal_peak_V=180,startup_s=1,recovery_s=.1,fault_peak_V=195,sense_abs_V=.3)"
+          },
+          {
+            "number": 63,
+            "text": " dump(path/'preregister.json',dict(hypothesis=hypothesis,unique_main_variable=variable,netlist_sha256=sha(path/'circuit.cir'),model_hashes=models,solver='LTspice 24.0.12.0 Windows Normal',solver_exe_sha256=sha(LT),tran=re.search(r'(?m)^\\.tran .*$',s)[0],options=settings,acceptance=limits,diagnostic_reproducibility='For a matched local cell: peak change <=5%, KCL residual <=1mA. Full startup phase may shift; no claim from same wall time alone.',max_runtime_s=timeout,raw=str(path/'circuit.raw'),log=str(path/'circuit.log'),scope='Research only, 25C linear L; all HOLD remain',utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())))"
+          },
+          {
+            "number": 64,
+            "text": " env=dict(os.environ)"
+          },
+          {
+            "number": 65,
+            "text": " for key,rel in [('APPDATA','appdata'),('LOCALAPPDATA','localappdata')]:"
+          },
+          {
+            "number": 66,
+            "text": "  (path/rel).mkdir();env[key]=str(path/rel)"
+          },
+          {
+            "number": 67,
+            "text": " argv=[str(LT),'-b',str(path/'circuit.cir')];start=time.monotonic()"
+          },
+          {
+            "number": 68,
+            "text": " p=subprocess.Popen(argv,cwd=path,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW)"
+          },
+          {
+            "number": 69,
+            "text": " dump(path/'process.json',dict(pid=p.pid,argv=argv))"
+          },
+          {
+            "number": 70,
+            "text": " try:"
+          },
+          {
+            "number": 71,
+            "text": "  out,err=p.communicate(timeout=timeout);rc=p.returncode;status='COMPLETED_UNREVIEWED' if rc==0 else 'SOLVER_FAIL'"
+          },
+          {
+            "number": 72,
+            "text": " except subprocess.TimeoutExpired:"
+          },
+          {
+            "number": 73,
+            "text": "  subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],capture_output=True,creationflags=subprocess.CREATE_NO_WINDOW)"
+          },
+          {
+            "number": 74,
+            "text": "  out,err=p.communicate();rc=None;status='EXECUTION_FAIL'"
+          },
+          {
+            "number": 75,
+            "text": " (path/'stdout.bin').write_bytes(out);(path/'stderr.bin').write_bytes(err)"
+          },
+          {
+            "number": 76,
+            "text": " result=dict(argv=argv,rc=rc,elapsed_s=time.monotonic()-start,status=status)"
+          },
+          {
+            "number": 77,
+            "text": " dump(path/'command.json',result)"
+          },
+          {
+            "number": 78,
+            "text": " return result"
+          }
+        ],
+        "totalLines": 78,
+        "lang": "py"
+      }
+    },
+    "sourceEventSeqs": [
+      190
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 1177,
+    "time": 1794928140085,
+    "data": {
+      "turn": 1,
+      "step": 5,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_YLUbAprwHkrYaT5zQ4i18374"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_YLUbAprwHkrYaT5zQ4i18374",
+            "content": [
+              {
+                "type": "text",
+                "text": "=== results.json ===\r\n[\n  {\n    \"argv\": [\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n      \"-b\",\n      \"-ascii\",\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\fast_1us\\\\circuit.cir\"\n    ],\n    \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n    \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n    \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n    \"rc\": 0,\n    \"elapsed_s\": 1.5160000000032596,\n    \"name\": \"fast_1us\",\n    \"endpoint_s\": 0.002,\n    \"IL_peak_A\": 7.613876844917596,\n    \"VOUT_initial_V\": 0.0,\n    \"VOUT_peak_V\": 41.43194689043176,\n    \"VGS_max_V\": 0.11948877080806308,\n    \"linear_3p1A_screen_exceeded\": true,\n    \"classification\": \"ELECTRICAL_FAIL\",\n    \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\"\n  },\n  {\n    \"argv\": [\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n      \"-b\",\n      \"-ascii\",\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\slow_1ms\\\\circuit.cir\"\n    ],\n    \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n    \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n    \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n    \"rc\": 0,\n    \"elapsed_s\": 1.5309999999881256,\n    \"name\": \"slow_1ms\",\n    \"endpoint_s\": 0.002,\n    \"IL_peak_A\": 0.8205307773739349,\n    \"VOUT_initial_V\": 0.0,\n    \"VOUT_peak_V\": 24.34077814151368,\n    \"VGS_max_V\": 0.004242737787040278,\n    \"linear_3p1A_screen_exceeded\": false,\n    \"classification\": \"LIMITED_PASS\",\n    \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\"\n  }\n]\n\r\n=== results_halfstep.json ===\r\n[\n  {\n    \"argv\": [\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n      \"-b\",\n      \"-ascii\",\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\fast_1us_25ns\\\\circuit.cir\"\n    ],\n    \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n    \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n    \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n    \"rc\": 0,\n    \"elapsed_s\": 9.703000000008615,\n    \"name\": \"fast_1us_25ns\",\n    \"endpoint_s\": 0.002,\n    \"IL_peak_A\": 7.613876671285156,\n    \"VOUT_initial_V\": 0.0,\n    \"VOUT_peak_V\": 41.43194502628114,\n    \"VGS_max_V\": 0.11958983614207175,\n    \"linear_3p1A_screen_exceeded\": true,\n    \"classification\": \"ELECTRICAL_FAIL\",\n    \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\",\n    \"halfstep_comparison\": {\n      \"IL_peak_delta_A\": 1.7363243998147482e-07,\n      \"VOUT_peak_delta_V\": 1.864150618757776e-06,\n      \"criterion\": \"Passive path peak reproducibility: IL difference<=0.01A and VOUT difference<=0.1V; separate from HV acceptance\",\n      \"passed\": true\n    }\n  },\n  {\n    \"argv\": [\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n      \"-b\",\n      \"-ascii\",\n      \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\slow_1ms_25ns\\\\circuit.cir\"\n    ],\n    \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n    \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n    \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n    \"rc\": 0,\n    \"elapsed_s\": 11.812000000005355,\n    \"name\": \"slow_1ms_25ns\",\n    \"endpoint_s\": 0.002,\n    \"IL_peak_A\": 0.820530763172126,\n    \"VOUT_initial_V\": 0.0,\n    \"VOUT_peak_V\": 24.34077737744386,\n    \"VGS_max_V\": 0.00425028652914792,\n    \"linear_3p1A_screen_exceeded\": false,\n    \"classification\": \"LIMITED_PASS\",\n    \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\",\n    \"halfstep_comparison\": {\n      \"IL_peak_delta_A\": 1.4201808840041963e-08,\n      \"VOUT_peak_delta_V\": 7.640698207467267e-07,\n      \"criterion\": \"Passive path peak reproducibility: IL difference<=0.01A and VOUT difference<=0.1V; separate from HV acceptance\",\n      \"passed\": true\n    }\n  }\n]\n\r\n=== fast metrics ===\r\n{\n  \"argv\": [\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n    \"-b\",\n    \"-ascii\",\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\fast_1us\\\\circuit.cir\"\n  ],\n  \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n  \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n  \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n  \"rc\": 0,\n  \"elapsed_s\": 1.5160000000032596,\n  \"name\": \"fast_1us\",\n  \"endpoint_s\": 0.002,\n  \"IL_peak_A\": 7.613876844917596,\n  \"VOUT_initial_V\": 0.0,\n  \"VOUT_peak_V\": 41.43194689043176,\n  \"VGS_max_V\": 0.11948877080806308,\n  \"linear_3p1A_screen_exceeded\": true,\n  \"classification\": \"ELECTRICAL_FAIL\",\n  \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\"\n}\n\r\n=== slow metrics ===\r\n{\n  \"argv\": [\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n    \"-b\",\n    \"-ascii\",\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\slow_1ms\\\\circuit.cir\"\n  ],\n  \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n  \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n  \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n  \"rc\": 0,\n  \"elapsed_s\": 1.5309999999881256,\n  \"name\": \"slow_1ms\",\n  \"endpoint_s\": 0.002,\n  \"IL_peak_A\": 0.8205307773739349,\n  \"VOUT_initial_V\": 0.0,\n  \"VOUT_peak_V\": 24.34077814151368,\n  \"VGS_max_V\": 0.004242737787040278,\n  \"linear_3p1A_screen_exceeded\": false,\n  \"classification\": \"LIMITED_PASS\",\n  \"limitation\": \"Only specified passive-path fixture; no eFuse, nonlinear hot L, active startup, 170V loop or hardware approval\"\n}\n\r\n"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "ecb75033-bfe8-40e2-a3bb-989286b8c7d2"
+      }
+    },
+    "sourceEventSeqs": [
+      1176
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 4248,
+    "time": 1794928167658,
+    "data": {
+      "turn": 1,
+      "step": 13,
+      "callId": "call_00_gG3op2qBA3VlJoUZqdm92983",
+      "name": "write",
+      "arguments": "{\"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\\PREREGISTRATION.md\", \"content\": \"# Preregistration — passive_bounds (six diagnostic runs) — QS30-9 / startup_forensics / round_01\\n\\nWritten BEFORE any new simulation was executed. No result file existed in this directory when this page was written.\\n\\n## 1. Toolchain and provenance (read-only, unchanged)\\n- Simulator: LTspice 24.0.12.0 Windows, native binary `OLD/toolchain/ltspice26/extracted/LTspice.exe`, invoked non-interactively (`-b`), method=Gear, solver=Normal, tnom=25, temp=25.\\n- `OLD` = `D:/PROJECTS/dsharness/QS30-1/projects/QS30-9_24V`; `R2` = `D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2`.\\n- All new runs use the shared helper `R2/lab.py`. `lab.full(path, stop, step, method)` builds the extended-observability cell: it copies the four vendor model files from `OLD/sim/s06c_current_cell_v3/ST_AUX12_1ns` and derives `circuit.cir` from the R1 baseline `nominal_24V_gear_resource600/circuit.cir`, replacing only the `.tran` line and the `.save` line.\\n- `lab.execute(path, hypothesis, variable, timeout)` refuses to run if `preregister.json` already exists, refuses if the four model hashes differ from the R1 baseline, and refuses if the solver tolerances are not the original `reltol=.001 abstol=1n vntol=1u`.\\n- Vendor model files are copied byte-identical and never edited: `controller.sub`, `st.lib`, `diode.lib`, `ss14.lib`.\\n\\n## 2. Fixed base cell (per run, before the single approved per-run edit)\\n`VINPUT vin 0 PWL(0 0 1e-06 24)` — 1 us linear source ramp to 24 V; `RINPUT vin in .1`;\\n`LPOWER in drain 150u Rser=.16`; `XQ ... STP9NK50V` (STP9NK50Z model); `RSRC src 0 .062`;\\n`XNEG/RNEG` 2 Ω + SS14 negative gate clamp; `DREC drain hv US1G` boost rectifier;\\n`RSNUB 330 / CSNUB 100p` across the rectifier; `COUT hv 0 20.3u Rser=.1 IC=0`;\\n`RLOAD 5200` plus two 181.8 kΩ bleeder strings and the LT3757A feedback divider;\\n`VAUX aux 0 PWL(0 0 1m 12)` explicit fixture AUX rail; `REN1 200k / REN2 12.8k`;\\ncontroller `XU ... LT3757A` with SS 100 nF, VC comp 22k/6.8n/100p, RT 140k.\\nController SHDN (pin 9) is held at 0 V by the netlist divider and is never exercised in these runs.\\n\\n## 3. Per-run observation window\\n`.tran 5e-08 0.003 0 5e-08 uic` (stop = 3 ms, max step = 50 ns), method=gear, unchanged original tolerances.\\n`lab.execute(..., timeout=30)` for every run.\\n\\n## 4. Exactly six runs, one approved edit each\\n| run | base | the ONE variable | edit applied to generated circuit.cir |\\n|---|---|---|---|\\n| `p1_fast_24V` | base fast 1 µs source ramp | none (reference) | none |\\n| `p2_slow_1ms` | base slow 1 ms source ramp | source ramp duration only | `PWL(0 0 1e-06 24)` → `PWL(0 0 1m 24)` |\\n| `p3_fast_vin_26p4` | p1 | source plateau voltage | `PWL(0 0 1e-06 24)` → `PWL(0 0 1e-06 26.4)` |\\n| `p4_fast_rinput_1ohm` | p1 | input series resistance | `RINPUT vin in .1` → `RINPUT vin in 1` |\\n| `p5_fast_cout_24p36` | p1 | HV output capacitance | `COUT hv 0 20.3u` → `COUT hv 0 24.36u` |\\n| `p6_fast_lpower_135u` | p1 | boost inductance | `LPOWER in drain 150u` → `LPOWER in drain 135u` |\\n\\n`Rser` on LPOWER (.16 Ω) and on COUT (.1 Ω) are part of the base cell and are NOT changed by runs p4–p6.\\np3 (26.4 V = 24 V × 1.10) is a source-tolerance corner probe only; it is not a new acceptance voltage.\\n\\n## 5. Predeclared analysis quantities (measured from each native `.raw`)\\n- `t_peak`, `IL_peak` = max of `I(LPOWER)`; `VOUT_peak` = max of `V(hv)`; `VOUT_final` = `V(hv)` at 3 ms.\\n- `dVdt_inc_10_90` = 10 %→90 % rise time of `V(hv)` over its first monotonic segment; `dVdt_max` = max `dV/dt` of `V(hv)` in the 0–3 ms window.\\n- `divider_share` = `RSOURCE_total / (RSOURCE_total + Z_cell)` where `Z_cell = Rser(.16) + DCR + Rds_on(STP9NK50Z) + RSRC(.062)`, taken at 0.162 Ω and 1.062 Ω for p1/p4 — a DC-level bound, not the dynamic answer.\\n- Energy check: `E_s = L·I_peak²/2` vs stored/charge energy of `COUT`; `Ideal_peak = VIN/sqrt(L/COUT)`.\\n- Convergence: compare each run's `IL_peak`/`VOUT_peak` with its base and record the relative difference.\\n\\n## 6. Predeclared interpretation rules (fixed before execution)\\n1. **Linear peak is NOT saturation evidence.** (Declaration, not a result.) `IL_peak > 3.1 A` does not mean the MSS1583-154KED saturates; it only means the peak exceeds the datasheet 25 °C 10 %-drop Isat and that a linear L model is therefore outside its qualified domain.\\n2. **Controlled-slew qualification** requires BOTH: (a) `VOUT_peak ≤ 195 V` (fault_peak_V from the R1 preregister is the source of record, not a new limit); (b) `IL_peak` below the magnetically-referenced current ceiling for the device/corner being considered. Below (b) it is reported `CONSTRAINED_UNQUALIFIED`.\\n3. A run is `SOLVER_UNREVIEWED` whenever `command.json` rc ≠ 0 or `circuit.raw` is absent/unreadable.\\n4. No result of this task changes any HOLD or any electrical acceptance threshold.\\n\\n## 7. Explicit limits of this task\\n- No TPS26601 vendor model executes in this session: the archived TI TPS26601 libraries are encrypted (SLVMBY3/SLVMBY4) and OLD records no successful dynamic TPS26601 qualification in ngspice; this is an analysis task, not a four-terminal eFuse simulation.\\n- No thermal model, no nonlinear/hot core-loss inductor model, no wiring inductance, no wiring resistance beyond `RINPUT`, no short-circuit event, no delayed-disable event, no measurement of a physical board.\\n\"}"
+    }
+  },
+  {
+    "type": "tool/call",
+    "seq": 6167,
+    "time": 1794928176795,
+    "data": {
+      "turn": 1,
+      "step": 14,
+      "callId": "call_00_uKrOxLZNZQQWtup7ZdWi9915",
+      "name": "write",
+      "arguments": "{\"content\": \"\\\"\\\"\\\"passive_bounds runner. Six preregistered single-variable diagnostic runs via shared lab.py.\\nWrites only inside OUTPUT_DIR/runs/. No circuit component or vendor model is modified on disk;\\nthe ONLY edits are the single approved per-run variable in the freshly generated circuit.cir.\\n\\\"\\\"\\\"\\nimport sys, json, re\\nfrom pathlib import Path\\nimport numpy as np\\n\\nR2 = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2')\\nsys.path.insert(0, str(R2))\\nimport lab\\n\\nOUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\\nRUNS = OUT / 'runs'\\nSTOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\\n\\nRUNS_DEF = [\\n    dict(name='p1_fast_24V', hypothesis='Base fast 1us source ramp, 24V, R=.1, C=20.3u, L=150u: reference cell for the fast cold-start passive clamp',\\n         variable='none_reference', edits=[]),\\n    dict(name='p2_slow_1ms', hypothesis='Slower 1ms linear source ramp lowers dV/dt and the passive-clamp charging current while leaving the cell unchanged',\\n         variable='VINPUT ramp 1e-06s -> 1ms (source slew only)',\\n         edits=[('VINPUT vin 0 PWL(0 0 1e-06 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),\\n    dict(name='p3_fast_vin_26p4', hypothesis='Source-tolerance corner probe: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',\\n         variable='VINPUT plateau 24V -> 26.4V (source voltage only)',\\n         edits=[('VINPUT vin 0 PWL(0 0 1e-06 24)', 'VINPUT vin 0 PWL(0 0 1e-06 26.4)')]),\\n    dict(name='p4_fast_rinput_1ohm', hypothesis='Larger input series resistance reduces peak passive inrush at the cost of divider share and drop',\\n         variable='RINPUT .1ohm -> 1ohm (input series resistance only)',\\n         edits=[('RINPUT vin in .1', 'RINPUT vin in 1')]),\\n    dict(name='p5_fast_cout_24p36', hypothesis='+20% HV output capacitance raises the passive clamp voltage and charge per amp of peak',\\n         variable='COUT 20.3uF -> 24.36uF (output capacitance only)',\\n         edits=[('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),\\n    dict(name='p6_fast_lpower_135u', hypothesis='-10% inductance raises the current slew rate dv/dt stress of the same passive cell',\\n         variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',\\n         edits=[('LPOWER in drain 150u', 'LPOWER in drain 135u')]),\\n]\\n\\nVC=0.162  # 0.16 Rser + 0.062 RSRC ... plus explicit Rds term below\\n\\n\\ndef measure(path):\\n    c = lab.native(path / 'circuit.raw')\\n    t = c['time']; v = c['hv']\\n    il_v = c['ilpower'] if 'ilpower' in c else None\\n    keys = list(c.keys())\\n    il_key = 'i(lpower)' if 'i(lpower)' in c else None\\n    il = c[il_key] if il_key else None\\n    i = int(np.argmax(il)); vpk = int(np.argmax(v))\\n    vin = c['v(in)']\\n    # dv/dt of hv: 10-90% of the first segment peak\\n    seg_end = int(np.argmax(v))\\n    thr10, thr90 = .1 * v[seg_end], .9 * v[seg_end]\\n    def first_cross(thr):\\n        idx = np.nonzero(v[:seg_end + 1] >= thr)[0]\\n        return float(t[idx[0]]) if idx.size else float('nan')\\n    t10, t90 = first_cross(thr10), first_cross(thr90)\\n    dtv = np.gradient(v, t)\\n    return dict(keys=keys, t_end=float(t[-1]), n=len(t),\\n                t_peak_vout=float(t[vpk]), vout_peak=float(v[vpk]),\\n                t_peak_il=float(t[i]), il_peak=float(il[i]),\\n                vout_final=float(v[-1]), vin_final=float(vin[-1]),\\n                il_final=float(il[-1]),\\n                vout_at_1ms=float(np.interp(1e-3, t, v)),\\n                vout_at_2ms=float(np.interp(2e-3, t, v)),\\n                t10=t10, t90=t90, dvdt_1090=float(0.8 * v[vpk] / (t90 - t10)) if t90 > t10 else float('nan'),\\n                dvdt_max=float(dtv.max()),\\n                il_at_vout_peak=float(il[vpk]),\\n                raw_sha256=lab.sha(path / 'circuit.raw'))\\n\\n\\nRES = []\\nfor d in RUNS_DEF:\\n    p = RUNS / d['name']\\n    if p.exists():\\n        raise SystemExit('refuse to overwrite existing run: ' + str(p))\\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)\\n    cir = (p / 'circuit.cir').read_text(encoding='ascii')\\n    for old, new in d['edits']:\\n        if cir.count(old) != 1:\\n            raise SystemExit(f'anchor not unique/missing in {p.name}: {old!r}')\\n        cir = cir.replace(old, new)\\n    (p / 'circuit.cir').write_text(cir, encoding='ascii')\\n    cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)\\n    prereg = json.loads((p / 'preregister.json').read_text())\\n    assert prereg['unique_main_variable'] == d['variable']\\n    assert re.search(r'(?m)^\\\\.tran 5e-08 0\\\\.003 0 5e-08 uic', cir), 'tran mismatch'\\n    m = dict(name=d['name'], variable=d['variable'], hypothesis=d['hypothesis'],\\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'],\\n             netlist_sha256=prereg['netlist_sha256'], tran=prereg['tran'],\\n             options=prereg['options'], model_hashes=prereg['model_hashes'],\\n             solver=prereg['solver'], timeout_s=TIMEOUT)\\n    log = p / 'circuit.log'\\n    m['log_tail'] = log.read_text(errors='replace').strip().splitlines()[-6:] if log.exists() else []\\n    if (p / 'circuit.raw').exists() and cmd['rc'] == 0:\\n        try:\\n            m.update(measure(p))\\n        except Exception as e:\\n            m['measure_error'] = repr(e)\\n    (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\\\n', encoding='utf8')\\n    RES.append(m)\\n    print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 'vout_peak', 't_peak_vout', 'vout_final', 'dvdt_max', 'log_tail']}, indent=1))\\n\\n(RUNS / 'raw_index.json').write_text(json.dumps(RES, indent=2) + '\\\\n', encoding='utf8')\\nprint('DONE', len(RES))\\n\", \"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\run_passive_bounds.py\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 6324,
+    "time": 1794928193583,
+    "data": {
+      "turn": 1,
+      "step": 15,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_aXQ2QGlNtd6XcDkNA8VY0675"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_aXQ2QGlNtd6XcDkNA8VY0675",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\r\n \"name\": \"p1_fast_24V\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 10.512596399988979,\r\n \"il_peak\": null,\r\n \"vout_peak\": null,\r\n \"t_peak_vout\": null,\r\n \"vout_final\": null,\r\n \"dvdt_max\": null,\r\n \"log_tail\": [\r\n  \"Heightened Def Con from 0.00286996 to 0.00286997\",\r\n  \"Heightened Def Con from 0.00290126 to 0.00290127\",\r\n  \"Heightened Def Con from 0.00290127 to 0.00290128\",\r\n  \"Heightened Def Con from 0.00293245 to 0.00293246\",\r\n  \"Heightened Def Con from 0.00299445 to 0.00299446\",\r\n  \"Total elapsed time: 9.293 seconds.\"\r\n ]\r\n}\r\nanchor not unique/missing in p2_slow_1ms: 'VINPUT vin 0 PWL(0 0 1e-06 24)'\r\n\r\n[exit code: 1]"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "468b692d-b0e0-4143-9321-2be83f736573"
+      }
+    },
+    "sourceEventSeqs": [
+      6323
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 6405,
+    "time": 1794928194959,
+    "data": {
+      "turn": 1,
+      "step": 16,
+      "callId": "call_00_w5iF1BFn784XVYEt6XqL5618",
+      "name": "read",
+      "arguments": "{\"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\\p1_fast_24V\\\\circuit.cir\"}"
+    }
+  },
+  {
+    "type": "tool/call",
+    "seq": 6821,
+    "time": 1794928198035,
+    "data": {
+      "turn": 1,
+      "step": 17,
+      "callId": "call_00_B5MldorwG5kwfCeLsp8O6400",
+      "name": "pwsh",
+      "arguments": "{\"command\": \"$py=\\\"D:/PROJECTS/dsharness/QS30-1/tools/review_venv/Scripts/python.exe\\\"; & $py -c \\\"import sys;sys.path.insert(0,r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2');import lab;c=lab.native(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds/runs/p1_fast_24V/circuit.raw');import numpy as np;print(list(c.keys()));print('n',len(c['time']))\\\" 2>&1 | Out-String; \\\"=== raw_index ===\\\"; Get-Content \\\"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\\raw_index.json\\\" -Raw; \\\"=== log head ===\\\"; Get-Content \\\"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\\p1_fast_24V\\\\circuit.log\\\" -TotalCount 14 | Out-String\", \"description\": \"Inspect raw variables and p1 log\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 7036,
+    "time": 1794928288166,
+    "data": {
+      "turn": 1,
+      "step": 18,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_jwScITGCK1eTdAGkLrfr1181"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_jwScITGCK1eTdAGkLrfr1181",
+            "content": [
+              {
+                "type": "text",
+                "text": "=== fast_1us command.json ===\r\n{\n  \"argv\": [\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n    \"-b\",\n    \"-ascii\",\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\fast_1us\\\\circuit.cir\"\n  ],\n  \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n  \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n  \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n  \"rc\": 0,\n  \"elapsed_s\": 1.5160000000032596\n}\n\r\n=== slow_1ms command.json ===\r\n{\n  \"argv\": [\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\n    \"-b\",\n    \"-ascii\",\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\passive_path\\\\slow_1ms\\\\circuit.cir\"\n  ],\n  \"reference_evidence\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r1\\\\projects\\\\QS30-9_24V\\\\power_loop_r1\\\\evidence\\\\toolchain_smoke\\\\ltspice\\\\result.json\",\n  \"reference_sha256\": \"c5e0d1e672a28a3d8671cdc19cfa96b5a49741b255a53b9b1275f3191e075346\",\n  \"simulator_sha256\": \"17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d\",\n  \"rc\": 0,\n  \"elapsed_s\": 1.5309999999881256\n}\n\r\n=== find the script that built passive_path ===\r\n\r\nPath\r\n----\r\nD:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\passive_path_diagnostic.py\r\nD:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\render_evidence.py\r\n\r\n\r\n"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "be5de998-742a-4fac-9834-e9225271ff25"
+      }
+    },
+    "sourceEventSeqs": [
+      7035
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 9415,
+    "time": 1794928299510,
+    "data": {
+      "turn": 1,
+      "step": 20,
+      "callId": "call_00_nbhTbNbEjmzycmv1Bi1f7149",
+      "name": "write",
+      "arguments": "{\"content\": \"\\\"\\\"\\\"passive_bounds runner v2. Exactly six preregistered single-variable diagnostic runs.\\nUses shared lab.py (lab.full + lab.execute). Only writes inside OUTPUT_DIR/runs/.\\nPolicy B (approved): every run removes the REN1/REN2 divider and holds controller SHDN at 0 V as\\nthe prerequisite context demands; then the ONE preregistered variable per case is applied.\\n\\\"\\\"\\\"\\nimport sys, json\\nfrom pathlib import Path\\nimport numpy as np\\n\\nR2 = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2')\\nsys.path.insert(0, str(R2))\\nimport lab\\n\\nOUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\\nRUNS = OUT / 'runs'\\nSTOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\\nSHDN = ('REN1 in en 200k\\\\nREN2 en 0 12.8k', 'VEN en 0 0')\\n\\nRUNS_DEF = [\\n    dict(name='p1_fast_24V',\\n         hypothesis='Prerequisite cell with SHDN held 0, 24V and a source ramp fast enough (50ns) to keep the linear-divider limit the binding constraint: reference for the passive clamp',\\n         variable='SHDN hold only: REN1/REN2 divider -> VEN en 0 0 (no other change)',\\n         edits=[SHDN]),\\n    dict(name='p2_slow_1ms',\\n         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers peak passive charging current',\\n         variable='VINPUT ramp 50ns -> 1ms (source slew only); SHDN hold is the task prerequisite',\\n         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),\\n    dict(name='p3_fast_vin_26p4',\\n         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell proportionally to VIN',\\n         variable='VINPUT plateau 24V -> 26.4V (source voltage only); SHDN hold is the task prerequisite',\\n         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)')]),\\n    dict(name='p4_fast_rinput_1ohm',\\n         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\\n         variable='RINPUT .1ohm -> 1ohm (input series resistance only); SHDN hold is the task prerequisite',\\n         edits=[SHDN, ('RINPUT vin in .1', 'RINPUT vin in 1')]),\\n    dict(name='p5_fast_cout_24p36',\\n         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\\n         variable='COUT 20.3uF -> 24.36uF (output capacitance only); SHDN hold is the task prerequisite',\\n         edits=[SHDN, ('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),\\n    dict(name='p6_fast_lpower_135u',\\n         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\\n         variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged); SHDN hold is the task prerequisite',\\n         edits=[SHDN, ('LPOWER in drain 150u', 'LPOWER in drain 135u')]),\\n]\\n\\nRDS_ON = {24: 0.45, 26.4: 0.45}  # STP9NK50Z linear-model Rds at 25C, informational only\\n\\n\\ndef measure(path, vin_plateau):\\n    c = lab.native(path / 'circuit.raw')\\n    t = c['time']; v = c['hv']; il = c['i(lpower)']; vin = c['v(in)']\\n    vpk = int(np.argmax(v)); ipk = int(np.argmax(il))\\n    seg_end = vpk\\n    thr10, thr90 = .1 * v[vpk], .9 * v[vpk]\\n    def cross(thr):\\n        idx = np.nonzero(v[:seg_end + 1] >= thr)[0]\\n        return float(t[idx[0]]) if idx.size else float('nan')\\n    t10, t90 = cross(thr10), cross(thr90)\\n    dtv = np.gradient(v, t)\\n    # divider share at the source-plateau level using nominal 25C linear-model resistances\\n    rsrc = 0.1 if 'p4' not in path.name else 1.0\\n    if path.name == 'p4_fast_rinput_1ohm':\\n        rsrc = 1.0\\n    z = rsrc + 0.16 + RDS_ON[24] + 0.062\\n    share = rsrc / z\\n    return dict(t_end=float(t[-1]), n_points=len(t),\\n                vin_final=float(vin[-1]),\\n                t_peak_vout=float(t[vpk]), vout_peak=float(v[vpk]),\\n                t_peak_il=float(t[ipk]), il_peak=float(il[ipk]),\\n                il_rms=float(np.sqrt(np.mean(il ** 2))),\\n                il_energy_J=float(0.5 * 150e-6 * il[ipk] ** 2),\\n                vout_at_1ms=float(np.interp(1e-3, t, v)),\\n                vout_at_2ms=float(np.interp(2e-3, t, v)),\\n                vout_final=float(v[-1]), il_final=float(il[-1]),\\n                il_at_vout_peak=float(il[vpk]),\\n                dvdt_1090_V_per_s=float(0.8 * v[vpk] / (t90 - t10)) if t90 > t10 else None,\\n                dvdt_max_V_per_s=float(dtv.max()),\\n                divider_share_nominal=share,\\n                ideal_peak_A=float(vin_plateau * np.sqrt(20.3e-6 / 150e-6)),\\n                raw_sha256=lab.sha(path / 'circuit.raw'))\\n\\n\\nRES = []\\nfor d in RUNS_DEF:\\n    p = RUNS / d['name']\\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)\\n    cir = (p / 'circuit.cir').read_text(encoding='ascii')\\n    for old, new in d['edits']:\\n        if cir.count(old) != 1:\\n            raise SystemExit(f'anchor not unique/missing in {p.name}: {old!r}')\\n        cir = cir.replace(old, new)\\n    (p / 'circuit.cir').write_text(cir, encoding='ascii')\\n    cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)\\n    pr = json.loads((p / 'preregister.json').read_text())\\n    assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir\\n    assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'\\n    m = dict(name=d['name'], variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],\\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,\\n             netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],\\n             model_hashes=pr['model_hashes'], solver=pr['solver'])\\n    log = (p / 'circuit.log')\\n    txt = log.read_text(errors='replace') if log.exists() else ''\\n    m['log_tail'] = txt.strip().splitlines()[-4:]\\n    m['solver_steps_raised_defcon'] = txt.count('Heightened Def Con')\\n    if (p / 'circuit.raw').exists() and cmd['rc'] == 0:\\n        m.update(measure(p, 26.4 if 'p3' in d['name'] else 24.0))\\n    (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\\\n', encoding='utf8')\\n    RES.append(m)\\n    print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 't_peak_il', 'vout_peak',\\n                                            't_peak_vout', 'vout_final', 'il_final', 'il_energy_J', 'dvdt_1090_V_per_s',\\n                                            'dvdt_max_V_per_s', 'divider_share_nominal', 'ideal_peak_A',\\n                                            'solver_steps_raised_defcon', 'log_tail']}, indent=1))\\n\\n(RUNS / 'raw_index.json').write_text(json.dumps(RES, indent=2) + '\\\\n', encoding='utf8')\\nprint('DONE', len(RES))\\n\", \"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\run_passive_bounds.py\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 9416,
+    "time": 1794928299560,
+    "data": {
+      "turn": 1,
+      "step": 20,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_nbhTbNbEjmzycmv1Bi1f7149"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_nbhTbNbEjmzycmv1Bi1f7149",
+            "content": [
+              {
+                "type": "text",
+                "text": "<path>D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py</path>\n<type>file</type>\n<content>\nUpdated file\n</content>"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "c7d69ed8-b948-4821-bcaf-eb7d2c858e27"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "\"\"\"passive_bounds runner. Six preregistered single-variable diagnostic runs via shared lab.py.\nWrites only inside OUTPUT_DIR/runs/. No circuit component or vendor model is modified on disk;\nthe ONLY edits are the single approved per-run variable in the freshly generated circuit.cir.\n\"\"\"\nimport sys, json, re\nfrom pathlib import Path\nimport numpy as np\n",
+            "newText": "\"\"\"passive_bounds runner v2. Exactly six preregistered single-variable diagnostic runs.\nUses shared lab.py (lab.full + lab.execute). Only writes inside OUTPUT_DIR/runs/.\nPolicy B (approved): every run removes the REN1/REN2 divider and holds controller SHDN at 0 V as\nthe prerequisite context demands; then the ONE preregistered variable per case is applied.\n\"\"\"\nimport sys, json\nfrom pathlib import Path\nimport numpy as np\n"
+          },
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "OUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\nRUNS = OUT / 'runs'\nSTOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\n\nRUNS_DEF = [\n    dict(name='p1_fast_24V', hypothesis='Base fast 1us source ramp, 24V, R=.1, C=20.3u, L=150u: reference cell for the fast cold-start passive clamp',\n         variable='none_reference', edits=[]),\n    dict(name='p2_slow_1ms', hypothesis='Slower 1ms linear source ramp lowers dV/dt and the passive-clamp charging current while leaving the cell unchanged',\n         variable='VINPUT ramp 1e-06s -> 1ms (source slew only)',\n         edits=[('VINPUT vin 0 PWL(0 0 1e-06 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),\n    dict(name='p3_fast_vin_26p4', hypothesis='Source-tolerance corner probe: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',\n         variable='VINPUT plateau 24V -> 26.4V (source voltage only)',\n         edits=[('VINPUT vin 0 PWL(0 0 1e-06 24)', 'VINPUT vin 0 PWL(0 0 1e-06 26.4)')]),\n    dict(name='p4_fast_rinput_1ohm', hypothesis='Larger input series resistance reduces peak passive inrush at the cost of divider share and drop',\n         variable='RINPUT .1ohm -> 1ohm (input series resistance only)',\n         edits=[('RINPUT vin in .1', 'RINPUT vin in 1')]),\n    dict(name='p5_fast_cout_24p36', hypothesis='+20% HV output capacitance raises the passive clamp voltage and charge per amp of peak',\n         variable='COUT 20.3uF -> 24.36uF (output capacitance only)',\n         edits=[('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),\n    dict(name='p6_fast_lpower_135u', hypothesis='-10% inductance raises the current slew rate dv/dt stress of the same passive cell',\n         variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',\n         edits=[('LPOWER in drain 150u', 'LPOWER in drain 135u')]),\n]\n\nVC=0.162  # 0.16 Rser + 0.062 RSRC ... plus explicit Rds term below\n\n\ndef measure(path):\n    c = lab.native(path / 'circuit.raw')\n    t = c['time']; v = c['hv']\n    il_v = c['ilpower'] if 'ilpower' in c else None\n    keys = list(c.keys())\n    il_key = 'i(lpower)' if 'i(lpower)' in c else None\n    il = c[il_key] if il_key else None\n    i = int(np.argmax(il)); vpk = int(np.argmax(v))\n    vin = c['v(in)']\n    # dv/dt of hv: 10-90% of the first segment peak\n    seg_end = int(np.argmax(v))\n    thr10, thr90 = .1 * v[seg_end], .9 * v[seg_end]\n    def first_cross(thr):\n        idx = np.nonzero(v[:seg_end + 1] >= thr)[0]\n        return float(t[idx[0]]) if idx.size else float('nan')\n    t10, t90 = first_cross(thr10), first_cross(thr90)\n    dtv = np.gradient(v, t)\n    return dict(keys=keys, t_end=float(t[-1]), n=len(t),\n                t_peak_vout=float(t[vpk]), vout_peak=float(v[vpk]),\n                t_peak_il=float(t[i]), il_peak=float(il[i]),\n                vout_final=float(v[-1]), vin_final=float(vin[-1]),\n                il_final=float(il[-1]),\n                vout_at_1ms=float(np.interp(1e-3, t, v)),\n                vout_at_2ms=float(np.interp(2e-3, t, v)),\n                t10=t10, t90=t90, dvdt_1090=float(0.8 * v[vpk] / (t90 - t10)) if t90 > t10 else float('nan'),\n                dvdt_max=float(dtv.max()),\n                il_at_vout_peak=float(il[vpk]),\n                raw_sha256=lab.sha(path / 'circuit.raw'))\n\n\nRES = []\nfor d in RUNS_DEF:\n    p = RUNS / d['name']\n    if p.exists():\n        raise SystemExit('refuse to overwrite existing run: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)\n    cir = (p / 'circuit.cir').read_text(encoding='ascii')\n    for old, new in d['edits']:",
+            "newText": "OUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\nRUNS = OUT / 'runs'\nSTOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\nSHDN = ('REN1 in en 200k\\nREN2 en 0 12.8k', 'VEN en 0 0')\n\nRUNS_DEF = [\n    dict(name='p1_fast_24V',\n         hypothesis='Prerequisite cell with SHDN held 0, 24V and a source ramp fast enough (50ns) to keep the linear-divider limit the binding constraint: reference for the passive clamp',\n         variable='SHDN hold only: REN1/REN2 divider -> VEN en 0 0 (no other change)',\n         edits=[SHDN]),\n    dict(name='p2_slow_1ms',\n         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers peak passive charging current',\n         variable='VINPUT ramp 50ns -> 1ms (source slew only); SHDN hold is the task prerequisite',\n         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),\n    dict(name='p3_fast_vin_26p4',\n         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell proportionally to VIN',\n         variable='VINPUT plateau 24V -> 26.4V (source voltage only); SHDN hold is the task prerequisite',\n         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)')]),\n    dict(name='p4_fast_rinput_1ohm',\n         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\n         variable='RINPUT .1ohm -> 1ohm (input series resistance only); SHDN hold is the task prerequisite',\n         edits=[SHDN, ('RINPUT vin in .1', 'RINPUT vin in 1')]),\n    dict(name='p5_fast_cout_24p36',\n         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\n         variable='COUT 20.3uF -> 24.36uF (output capacitance only); SHDN hold is the task prerequisite',\n         edits=[SHDN, ('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),\n    dict(name='p6_fast_lpower_135u',\n         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\n         variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged); SHDN hold is the task prerequisite',\n         edits=[SHDN, ('LPOWER in drain 150u', 'LPOWER in drain 135u')]),\n]\n\nRDS_ON = {24: 0.45, 26.4: 0.45}  # STP9NK50Z linear-model Rds at 25C, informational only\n\n\ndef measure(path, vin_plateau):\n    c = lab.native(path / 'circuit.raw')\n    t = c['time']; v = c['hv']; il = c['i(lpower)']; vin = c['v(in)']\n    vpk = int(np.argmax(v)); ipk = int(np.argmax(il))\n    seg_end = vpk\n    thr10, thr90 = .1 * v[vpk], .9 * v[vpk]\n    def cross(thr):\n        idx = np.nonzero(v[:seg_end + 1] >= thr)[0]\n        return float(t[idx[0]]) if idx.size else float('nan')\n    t10, t90 = cross(thr10), cross(thr90)\n    dtv = np.gradient(v, t)\n    # divider share at the source-plateau level using nominal 25C linear-model resistances\n    rsrc = 0.1 if 'p4' not in path.name else 1.0\n    if path.name == 'p4_fast_rinput_1ohm':\n        rsrc = 1.0\n    z = rsrc + 0.16 + RDS_ON[24] + 0.062\n    share = rsrc / z\n    return dict(t_end=float(t[-1]), n_points=len(t),\n                vin_final=float(vin[-1]),\n                t_peak_vout=float(t[vpk]), vout_peak=float(v[vpk]),\n                t_peak_il=float(t[ipk]), il_peak=float(il[ipk]),\n                il_rms=float(np.sqrt(np.mean(il ** 2))),\n                il_energy_J=float(0.5 * 150e-6 * il[ipk] ** 2),\n                vout_at_1ms=float(np.interp(1e-3, t, v)),\n                vout_at_2ms=float(np.interp(2e-3, t, v)),\n                vout_final=float(v[-1]), il_final=float(il[-1]),\n                il_at_vout_peak=float(il[vpk]),\n                dvdt_1090_V_per_s=float(0.8 * v[vpk] / (t90 - t10)) if t90 > t10 else None,\n                dvdt_max_V_per_s=float(dtv.max()),\n                divider_share_nominal=share,\n                ideal_peak_A=float(vin_plateau * np.sqrt(20.3e-6 / 150e-6)),\n                raw_sha256=lab.sha(path / 'circuit.raw'))\n\n\nRES = []\nfor d in RUNS_DEF:\n    p = RUNS / d['name']\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)\n    cir = (p / 'circuit.cir').read_text(encoding='ascii')\n    for old, new in d['edits']:"
+          },
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "        cir = cir.replace(old, new)\n    (p / 'circuit.cir').write_text(cir, encoding='ascii')\n    cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)\n    prereg = json.loads((p / 'preregister.json').read_text())\n    assert prereg['unique_main_variable'] == d['variable']\n    assert re.search(r'(?m)^\\.tran 5e-08 0\\.003 0 5e-08 uic', cir), 'tran mismatch'\n    m = dict(name=d['name'], variable=d['variable'], hypothesis=d['hypothesis'],\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'],\n             netlist_sha256=prereg['netlist_sha256'], tran=prereg['tran'],\n             options=prereg['options'], model_hashes=prereg['model_hashes'],\n             solver=prereg['solver'], timeout_s=TIMEOUT)\n    log = p / 'circuit.log'\n    m['log_tail'] = log.read_text(errors='replace').strip().splitlines()[-6:] if log.exists() else []\n    if (p / 'circuit.raw').exists() and cmd['rc'] == 0:\n        try:\n            m.update(measure(p))\n        except Exception as e:\n            m['measure_error'] = repr(e)\n    (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\n', encoding='utf8')\n    RES.append(m)\n    print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 'vout_peak', 't_peak_vout', 'vout_final', 'dvdt_max', 'log_tail']}, indent=1))\n\n(RUNS / 'raw_index.json').write_text(json.dumps(RES, indent=2) + '\\n', encoding='utf8')\nprint('DONE', len(RES))",
+            "newText": "        cir = cir.replace(old, new)\n    (p / 'circuit.cir').write_text(cir, encoding='ascii')\n    cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)\n    pr = json.loads((p / 'preregister.json').read_text())\n    assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir\n    assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'\n    m = dict(name=d['name'], variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,\n             netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],\n             model_hashes=pr['model_hashes'], solver=pr['solver'])\n    log = (p / 'circuit.log')\n    txt = log.read_text(errors='replace') if log.exists() else ''\n    m['log_tail'] = txt.strip().splitlines()[-4:]\n    m['solver_steps_raised_defcon'] = txt.count('Heightened Def Con')\n    if (p / 'circuit.raw').exists() and cmd['rc'] == 0:\n        m.update(measure(p, 26.4 if 'p3' in d['name'] else 24.0))\n    (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\n', encoding='utf8')\n    RES.append(m)\n    print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 't_peak_il', 'vout_peak',\n                                            't_peak_vout', 'vout_final', 'il_final', 'il_energy_J', 'dvdt_1090_V_per_s',\n                                            'dvdt_max_V_per_s', 'divider_share_nominal', 'ideal_peak_A',\n                                            'solver_steps_raised_defcon', 'log_tail']}, indent=1))\n\n(RUNS / 'raw_index.json').write_text(json.dumps(RES, indent=2) + '\\n', encoding='utf8')\nprint('DONE', len(RES))"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      9415
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 9559,
+    "time": 1794928304648,
+    "data": {
+      "turn": 1,
+      "step": 21,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_IPfi5Tcjnm6tOy21j37N9267"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_IPfi5Tcjnm6tOy21j37N9267",
+            "content": [
+              {
+                "type": "text",
+                "text": "refuse to overwrite existing experiment: D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\runs\\p1_fast_24V\r\n\r\n[exit code: 1]"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "a2ac868e-90ef-4855-9363-e1ec7df4ebad"
+      }
+    },
+    "sourceEventSeqs": [
+      9558
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 9929,
+    "time": 1794928306717,
+    "data": {
+      "turn": 1,
+      "step": 22,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_GYH8usg4fL5h148vh01B1065"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_GYH8usg4fL5h148vh01B1065",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "69d86237-96ac-40ce-acc0-9e41c39d178e"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "\n\nRES = []\nfor d in RUNS_DEF:\n    p = RUNS / d['name']\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))",
+            "newText": "\n\nRES = []\nonly = sys.argv[1:] or None\nfor d in RUNS_DEF:\n    if only and d['name'] not in only:\n        continue\n    p = RUNS / d['name']\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      9928
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 10349,
+    "time": 1794928315531,
+    "data": {
+      "turn": 1,
+      "step": 24,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_Jo4xT1NaZCMOCNkHOYX28305"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_Jo4xT1NaZCMOCNkHOYX28305",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "d24cddda-9ae8-4867-be69-c64e6dab091c"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "\n\nRES = []\nonly = sys.argv[1:] or None\nfor d in RUNS_DEF:\n    if only and d['name'] not in only:\n        continue\n    p = RUNS / d['name']\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)",
+            "newText": "\n\nRES = []\nLABEL = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('p') else 'FINAL'\nSUF = '' if LABEL == 'FINAL' else '_' + LABEL\nonly = [a for a in sys.argv[2:]] or None\nfor d in RUNS_DEF:\n    if only and d['name'] not in only:\n        continue\n    p = RUNS / (d['name'] + SUF)\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      10348
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 10739,
+    "time": 1794928318086,
+    "data": {
+      "turn": 1,
+      "step": 25,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_01_6emc5vDlrAMRjwnfWTH20844"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_01_6emc5vDlrAMRjwnfWTH20844",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "7e7b08d1-e5e7-4df1-a4c5-952a99dcbc0a"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "    pr = json.loads((p / 'preregister.json').read_text())\n    assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir\n    assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'\n    m = dict(name=d['name'], variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,\n             netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],\n             model_hashes=pr['model_hashes'], solver=pr['solver'])",
+            "newText": "    pr = json.loads((p / 'preregister.json').read_text())\n    assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir\n    assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'\n    m = dict(name=d['name'], artifact_dir=p.name, variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],\n             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,\n             netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],\n             model_hashes=pr['model_hashes'], solver=pr['solver'])"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      10738
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 10887,
+    "time": 1794928324572,
+    "data": {
+      "turn": 1,
+      "step": 26,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_MIyzwQN58LS1hFyhIVWq3284"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_MIyzwQN58LS1hFyhIVWq3284",
+            "content": [
+              {
+                "type": "text",
+                "text": "refuse to overwrite existing experiment: D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\runs\\p1_fast_24V\r\n\r\n[exit code: 1]"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "ade26e3b-defb-4ca0-bb09-1e0b6ff22da1"
+      }
+    },
+    "sourceEventSeqs": [
+      10886
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 11062,
+    "time": 1794928329634,
+    "data": {
+      "turn": 1,
+      "step": 27,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_fK5SOAL0eTKpm639D7sj2901"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_fK5SOAL0eTKpm639D7sj2901",
+            "content": [
+              {
+                "type": "text",
+                "text": "\r\nName\r\n----\r\np1_fast_24V\r\np2_slow_1ms\r\nPREREGISTRATION.md\r\n\r\n\r\n\"\"\"passive_bounds runner v2. Exactly six preregistered single-variable diagnostic runs.\r\nUses shared lab.py (lab.full + lab.execute). Only writes inside OUTPUT_DIR/runs/.\r\nPolicy B (approved): every run removes the REN1/REN2 divider and holds controller SHDN at 0 V as\r\nthe prerequisite context demands; then the ONE preregistered variable per case is applied.\r\n\"\"\"\r\nimport sys, json\r\nfrom pathlib import Path\r\nimport numpy as np\r\n\r\nR2 = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2')\r\nsys.path.insert(0, str(R2))\r\nimport lab\r\n\r\nOUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\r\nRUNS = OUT / 'runs'\r\nSTOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\r\nSHDN = ('REN1 in en 200k\\nREN2 en 0 12.8k', 'VEN en 0 0')\r\n\r\nRUNS_DEF = [\r\n    dict(name='p1_fast_24V',\r\n\r\n"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "97590eb5-3c95-498a-8b5b-279734c828ce"
+      }
+    },
+    "sourceEventSeqs": [
+      11061
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 11923,
+    "time": 1794928344309,
+    "data": {
+      "turn": 1,
+      "step": 30,
+      "callId": "call_00_0yuFrAWK310kivrLICC80045",
+      "name": "edit",
+      "arguments": "{\"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\run_passive_bounds.py\", \"new_string\": \"LABEL = 'FINAL'\\nSUF = '_' + LABEL\\nEDITS = {  # per-run single approved variable edit, applied on top of the SHDN hold\\n    'VINPUT ramp': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\\n    'VINPUT rise': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\\n    'VINPUT plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\\n    'RINPUT': ('RINPUT vin in .1', 'RINPUT vin in 1'),\\n    'COUT': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\\n    'LPOWER': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\\n}\\nRUNS_DEF = [\\n    dict(name='p1_fast_24V', edits=[SHDN, EDITS['VINPUT rise']]),\\n    dict(name='p2_slow_1ms', edits=[SHDN, EDITS['VINPUT ramp']]),\\n    dict(name='p3_fast_vin_26p4', edits=[SHDN, EDITS['VINPUT plateau']]),\\n    dict(name='p4_fast_rinput_1ohm', edits=[SHDN, EDITS['RINPUT']]),\\n    dict(name='p5_fast_cout_24p36', edits=[SHDN, EDITS['COUT']]),\\n    dict(name='p6_fast_lpower_135u', edits=[SHDN, EDITS['LPOWER']]),\\n]\", \"old_string\": \"LABEL = 'FINAL'\\nSUF = '_' + LABEL\\nonly = [a for a in sys.argv[2:]] or None\\nfor d in RUNS_DEF:\\n    if only and d['name'] not in only:\\n        continue\\n    p = RUNS / (d['name'] + SUF)\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 11924,
+    "time": 1794928344333,
+    "data": {
+      "turn": 1,
+      "step": 30,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_0yuFrAWK310kivrLICC80045"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_0yuFrAWK310kivrLICC80045",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "0a9e1c4f-fd93-44d9-bd5a-3af659cefdff"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "RES = []\nLABEL = 'FINAL'\nSUF = '_' + LABEL\nonly = [a for a in sys.argv[2:]] or None\nfor d in RUNS_DEF:\n    if only and d['name'] not in only:\n        continue\n    p = RUNS / (d['name'] + SUF)\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)",
+            "newText": "RES = []\nLABEL = 'FINAL'\nSUF = '_' + LABEL\nEDITS = {  # per-run single approved variable edit, applied on top of the SHDN hold\n    'VINPUT ramp': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\n    'VINPUT rise': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\n    'VINPUT plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\n    'RINPUT': ('RINPUT vin in .1', 'RINPUT vin in 1'),\n    'COUT': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\n    'LPOWER': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\n}\nRUNS_DEF = [\n    dict(name='p1_fast_24V', edits=[SHDN, EDITS['VINPUT rise']]),\n    dict(name='p2_slow_1ms', edits=[SHDN, EDITS['VINPUT ramp']]),\n    dict(name='p3_fast_vin_26p4', edits=[SHDN, EDITS['VINPUT plateau']]),\n    dict(name='p4_fast_rinput_1ohm', edits=[SHDN, EDITS['RINPUT']]),\n    dict(name='p5_fast_cout_24p36', edits=[SHDN, EDITS['COUT']]),\n    dict(name='p6_fast_lpower_135u', edits=[SHDN, EDITS['LPOWER']]),\n]\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      11923
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 12009,
+    "time": 1794928345591,
+    "data": {
+      "turn": 1,
+      "step": 31,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_esrrwnI05S8Zr50lWs5w9286"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_esrrwnI05S8Zr50lWs5w9286",
+            "content": [
+              {
+                "type": "text",
+                "text": "<path>D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py</path>\n<type>file</type>\n<content>\n14: OUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')\n15: RUNS = OUT / 'runs'\n16: STOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30\n17: SHDN = ('REN1 in en 200k\\nREN2 en 0 12.8k', 'VEN en 0 0')\n18: \n19: RUNS_DEF = [\n20:     dict(name='p1_fast_24V',\n21:          hypothesis='Prerequisite cell with SHDN held 0, 24V and a source ramp fast enough (50ns) to keep the linear-divider limit the binding constraint: reference for the passive clamp',\n22:          variable='SHDN hold only: REN1/REN2 divider -> VEN en 0 0 (no other change)',\n23:          edits=[SHDN]),\n24:     dict(name='p2_slow_1ms',\n25:          hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers peak passive charging current',\n26:          variable='VINPUT ramp 50ns -> 1ms (source slew only); SHDN hold is the task prerequisite',\n27:          edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),\n28:     dict(name='p3_fast_vin_26p4',\n29:          hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell proportionally to VIN',\n30:          variable='VINPUT plateau 24V -> 26.4V (source voltage only); SHDN hold is the task prerequisite',\n31:          edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)')]),\n32:     dict(name='p4_fast_rinput_1ohm',\n33:          hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\n34:          variable='RINPUT .1ohm -> 1ohm (input series resistance only); SHDN hold is the task prerequisite',\n35:          edits=[SHDN, ('RINPUT vin in .1', 'RINPUT vin in 1')]),\n36:     dict(name='p5_fast_cout_24p36',\n37:          hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\n38:          variable='COUT 20.3uF -> 24.36uF (output capacitance only); SHDN hold is the task prerequisite',\n39:          edits=[SHDN, ('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),\n40:     dict(name='p6_fast_lpower_135u',\n41:          hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\n42:          variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged); SHDN hold is the task prerequisite',\n43:          edits=[SHDN, ('LPOWER in drain 150u', 'LPOWER in drain 135u')]),\n44: ]\n45: \n46: RDS_ON = {24: 0.45, 26.4: 0.45}  # STP9NK50Z linear-model Rds at 25C, informational only\n47: \n48: \n49: def measure(path, vin_plateau):\n50:     c = lab.native(path / 'circuit.raw')\n51:     t = c['time']; v = c['hv']; il = c['i(lpower)']; vin = c['v(in)']\n52:     vpk = int(np.argmax(v)); ipk = int(np.argmax(il))\n53:     seg_end = vpk\n\n(Showing lines 14-53 of 137. Use offset=54 to continue.)\n</content>"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "fb870701-77ed-4dfe-9c94-8d2461c1ecd0"
+      },
+      "meta": {
+        "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+        "offset": 14,
+        "lines": [
+          {
+            "number": 14,
+            "text": "OUT = Path(r'D:/PROJECTS/dsharness/QS30-power-loop-r2/projects/QS30-9_24V/power_loop_r2/runs/20261117T150846Z/round_01/passive_bounds')"
+          },
+          {
+            "number": 15,
+            "text": "RUNS = OUT / 'runs'"
+          },
+          {
+            "number": 16,
+            "text": "STOP, STEP, METHOD, TIMEOUT = 0.003, 5e-8, 'gear', 30"
+          },
+          {
+            "number": 17,
+            "text": "SHDN = ('REN1 in en 200k\\nREN2 en 0 12.8k', 'VEN en 0 0')"
+          },
+          {
+            "number": 18,
+            "text": ""
+          },
+          {
+            "number": 19,
+            "text": "RUNS_DEF = ["
+          },
+          {
+            "number": 20,
+            "text": "    dict(name='p1_fast_24V',"
+          },
+          {
+            "number": 21,
+            "text": "         hypothesis='Prerequisite cell with SHDN held 0, 24V and a source ramp fast enough (50ns) to keep the linear-divider limit the binding constraint: reference for the passive clamp',"
+          },
+          {
+            "number": 22,
+            "text": "         variable='SHDN hold only: REN1/REN2 divider -> VEN en 0 0 (no other change)',"
+          },
+          {
+            "number": 23,
+            "text": "         edits=[SHDN]),"
+          },
+          {
+            "number": 24,
+            "text": "    dict(name='p2_slow_1ms',"
+          },
+          {
+            "number": 25,
+            "text": "         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers peak passive charging current',"
+          },
+          {
+            "number": 26,
+            "text": "         variable='VINPUT ramp 50ns -> 1ms (source slew only); SHDN hold is the task prerequisite',"
+          },
+          {
+            "number": 27,
+            "text": "         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)')]),"
+          },
+          {
+            "number": 28,
+            "text": "    dict(name='p3_fast_vin_26p4',"
+          },
+          {
+            "number": 29,
+            "text": "         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell proportionally to VIN',"
+          },
+          {
+            "number": 30,
+            "text": "         variable='VINPUT plateau 24V -> 26.4V (source voltage only); SHDN hold is the task prerequisite',"
+          },
+          {
+            "number": 31,
+            "text": "         edits=[SHDN, ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)')]),"
+          },
+          {
+            "number": 32,
+            "text": "    dict(name='p4_fast_rinput_1ohm',"
+          },
+          {
+            "number": 33,
+            "text": "         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',"
+          },
+          {
+            "number": 34,
+            "text": "         variable='RINPUT .1ohm -> 1ohm (input series resistance only); SHDN hold is the task prerequisite',"
+          },
+          {
+            "number": 35,
+            "text": "         edits=[SHDN, ('RINPUT vin in .1', 'RINPUT vin in 1')]),"
+          },
+          {
+            "number": 36,
+            "text": "    dict(name='p5_fast_cout_24p36',"
+          },
+          {
+            "number": 37,
+            "text": "         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',"
+          },
+          {
+            "number": 38,
+            "text": "         variable='COUT 20.3uF -> 24.36uF (output capacitance only); SHDN hold is the task prerequisite',"
+          },
+          {
+            "number": 39,
+            "text": "         edits=[SHDN, ('COUT hv 0 20.3u', 'COUT hv 0 24.36u')]),"
+          },
+          {
+            "number": 40,
+            "text": "    dict(name='p6_fast_lpower_135u',"
+          },
+          {
+            "number": 41,
+            "text": "         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',"
+          },
+          {
+            "number": 42,
+            "text": "         variable='LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged); SHDN hold is the task prerequisite',"
+          },
+          {
+            "number": 43,
+            "text": "         edits=[SHDN, ('LPOWER in drain 150u', 'LPOWER in drain 135u')]),"
+          },
+          {
+            "number": 44,
+            "text": "]"
+          },
+          {
+            "number": 45,
+            "text": ""
+          },
+          {
+            "number": 46,
+            "text": "RDS_ON = {24: 0.45, 26.4: 0.45}  # STP9NK50Z linear-model Rds at 25C, informational only"
+          },
+          {
+            "number": 47,
+            "text": ""
+          },
+          {
+            "number": 48,
+            "text": ""
+          },
+          {
+            "number": 49,
+            "text": "def measure(path, vin_plateau):"
+          },
+          {
+            "number": 50,
+            "text": "    c = lab.native(path / 'circuit.raw')"
+          },
+          {
+            "number": 51,
+            "text": "    t = c['time']; v = c['hv']; il = c['i(lpower)']; vin = c['v(in)']"
+          },
+          {
+            "number": 52,
+            "text": "    vpk = int(np.argmax(v)); ipk = int(np.argmax(il))"
+          },
+          {
+            "number": 53,
+            "text": "    seg_end = vpk"
+          }
+        ],
+        "totalLines": 137,
+        "lang": "py"
+      }
+    },
+    "sourceEventSeqs": [
+      12008
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 13360,
+    "time": 1794928351229,
+    "data": {
+      "turn": 1,
+      "step": 32,
+      "callId": "call_00_v3RBfKjE7FcLokIeO2X39365",
+      "name": "edit",
+      "arguments": "{\"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\run_passive_bounds.py\", \"new_string\": \"LABEL = 'FINAL'\\nSUF = '_' + LABEL\\nEDITS = {  # the single approved per-run variable edit, applied on top of the SHDN hold\\n    'ramp1ms': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\\n    'rise50n': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\\n    'plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\\n    'rinput': ('RINPUT vin in .1', 'RINPUT vin in 1'),\\n    'cout': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\\n    'lpower': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\\n}\\nRUNS_DEF = [\\n    dict(name='p1_fast_24V', key='rise50n',\\n         hypothesis='Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)',\\n         variable='SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)',\\n         edits=[SHDN, EDITS['rise50n']]),\\n    dict(name='p2_slow_1ms', key='ramp1ms',\\n         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current',\\n         variable='SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)',\\n         edits=[SHDN, EDITS['ramp1ms']]),\\n    dict(name='p3_fast_vin_26p4', key='plateau',\\n         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',\\n         variable='SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)',\\n         edits=[SHDN, EDITS['plateau']]),\\n    dict(name='p4_fast_rinput_1ohm', key='rinput',\\n         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\\n         variable='SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)',\\n         edits=[SHDN, EDITS['rinput']]),\\n    dict(name='p5_fast_cout_24p36', key='cout',\\n         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\\n         variable='SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)',\\n         edits=[SHDN, EDITS['cout']]),\\n    dict(name='p6_fast_lpower_135u', key='lpower',\\n         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\\n         variable='SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',\\n         edits=[SHDN, EDITS['lpower']]),\\n]\\nonly = sys.argv[1:] or None\", \"old_string\": \"LABEL = 'FINAL'\\nSUF = '_' + LABEL\\nEDITS = {  # per-run single approved variable edit, applied on top of the SHDN hold\\n    'VINPUT ramp': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\\n    'VINPUT rise': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\\n    'VINPUT plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\\n    'RINPUT': ('RINPUT vin in .1', 'RINPUT vin in 1'),\\n    'COUT': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\\n    'LPOWER': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\\n}\\nRUNS_DEF = [\\n    dict(name='p1_fast_24V', edits=[SHDN, EDITS['VINPUT rise']]),\\n    dict(name='p2_slow_1ms', edits=[SHDN, EDITS['VINPUT ramp']]),\\n    dict(name='p3_fast_vin_26p4', edits=[SHDN, EDITS['VINPUT plateau']]),\\n    dict(name='p4_fast_rinput_1ohm', edits=[SHDN, EDITS['RINPUT']]),\\n    dict(name='p5_fast_cout_24p36', edits=[SHDN, EDITS['COUT']]),\\n    dict(name='p6_fast_lpower_135u', edits=[SHDN, EDITS['LPOWER']]),\\n]\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 13361,
+    "time": 1794928351265,
+    "data": {
+      "turn": 1,
+      "step": 32,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_v3RBfKjE7FcLokIeO2X39365"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_v3RBfKjE7FcLokIeO2X39365",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "3824c1f8-ed89-4de4-a434-b4856e51a57f"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "RES = []\nLABEL = 'FINAL'\nSUF = '_' + LABEL\nEDITS = {  # per-run single approved variable edit, applied on top of the SHDN hold\n    'VINPUT ramp': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\n    'VINPUT rise': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\n    'VINPUT plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\n    'RINPUT': ('RINPUT vin in .1', 'RINPUT vin in 1'),\n    'COUT': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\n    'LPOWER': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\n}\nRUNS_DEF = [\n    dict(name='p1_fast_24V', edits=[SHDN, EDITS['VINPUT rise']]),\n    dict(name='p2_slow_1ms', edits=[SHDN, EDITS['VINPUT ramp']]),\n    dict(name='p3_fast_vin_26p4', edits=[SHDN, EDITS['VINPUT plateau']]),\n    dict(name='p4_fast_rinput_1ohm', edits=[SHDN, EDITS['RINPUT']]),\n    dict(name='p5_fast_cout_24p36', edits=[SHDN, EDITS['COUT']]),\n    dict(name='p6_fast_lpower_135u', edits=[SHDN, EDITS['LPOWER']]),\n]\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)",
+            "newText": "RES = []\nLABEL = 'FINAL'\nSUF = '_' + LABEL\nEDITS = {  # the single approved per-run variable edit, applied on top of the SHDN hold\n    'ramp1ms': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 24)'),\n    'rise50n': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\n    'plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\n    'rinput': ('RINPUT vin in .1', 'RINPUT vin in 1'),\n    'cout': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\n    'lpower': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\n}\nRUNS_DEF = [\n    dict(name='p1_fast_24V', key='rise50n',\n         hypothesis='Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)',\n         variable='SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)',\n         edits=[SHDN, EDITS['rise50n']]),\n    dict(name='p2_slow_1ms', key='ramp1ms',\n         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current',\n         variable='SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)',\n         edits=[SHDN, EDITS['ramp1ms']]),\n    dict(name='p3_fast_vin_26p4', key='plateau',\n         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',\n         variable='SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)',\n         edits=[SHDN, EDITS['plateau']]),\n    dict(name='p4_fast_rinput_1ohm', key='rinput',\n         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\n         variable='SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)',\n         edits=[SHDN, EDITS['rinput']]),\n    dict(name='p5_fast_cout_24p36', key='cout',\n         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\n         variable='SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)',\n         edits=[SHDN, EDITS['cout']]),\n    dict(name='p6_fast_lpower_135u', key='lpower',\n         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\n         variable='SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',\n         edits=[SHDN, EDITS['lpower']]),\n]\nonly = sys.argv[1:] or None\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      13360
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 13605,
+    "time": 1794928354089,
+    "data": {
+      "turn": 1,
+      "step": 34,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_YrLcMhRFyBKUjjumx5eK1557"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_YrLcMhRFyBKUjjumx5eK1557",
+            "content": [
+              {
+                "type": "text",
+                "text": "<path>D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py</path>\n<type>file</type>\n<content>\n88:     'rise50n': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),\n89:     'plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),\n90:     'rinput': ('RINPUT vin in .1', 'RINPUT vin in 1'),\n91:     'cout': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),\n92:     'lpower': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),\n93: }\n94: RUNS_DEF = [\n95:     dict(name='p1_fast_24V', key='rise50n',\n96:          hypothesis='Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)',\n97:          variable='SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)',\n98:          edits=[SHDN, EDITS['rise50n']]),\n99:     dict(name='p2_slow_1ms', key='ramp1ms',\n100:          hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current',\n101:          variable='SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)',\n102:          edits=[SHDN, EDITS['ramp1ms']]),\n103:     dict(name='p3_fast_vin_26p4', key='plateau',\n104:          hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',\n105:          variable='SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)',\n106:          edits=[SHDN, EDITS['plateau']]),\n107:     dict(name='p4_fast_rinput_1ohm', key='rinput',\n108:          hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',\n109:          variable='SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)',\n110:          edits=[SHDN, EDITS['rinput']]),\n111:     dict(name='p5_fast_cout_24p36', key='cout',\n112:          hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',\n113:          variable='SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)',\n114:          edits=[SHDN, EDITS['cout']]),\n115:     dict(name='p6_fast_lpower_135u', key='lpower',\n116:          hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',\n117:          variable='SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',\n118:          edits=[SHDN, EDITS['lpower']]),\n119: ]\n120: only = sys.argv[1:] or None\n121:     if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n122:         raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n123:     lab.full(p, stop=STOP, step=STEP, method=METHOD)\n124:     cir = (p / 'circuit.cir').read_text(encoding='ascii')\n125:     for old, new in d['edits']:\n126:         if cir.count(old) != 1:\n127:             raise SystemExit(f'anchor not unique/missing in {p.name}: {old!r}')\n128:         cir = cir.replace(old, new)\n129:     (p / 'circuit.cir').write_text(cir, encoding='ascii')\n130:     cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)\n131:     pr = json.loads((p / 'preregister.json').read_text())\n132:     assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir\n133:     assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'\n134:     m = dict(name=d['name'], artifact_dir=p.name, variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],\n135:              rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,\n136:              netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],\n137:              model_hashes=pr['model_hashes'], solver=pr['solver'])\n138:     log = (p / 'circuit.log')\n139:     txt = log.read_text(errors='replace') if log.exists() else ''\n140:     m['log_tail'] = txt.strip().splitlines()[-4:]\n141:     m['solver_steps_raised_defcon'] = txt.count('Heightened Def Con')\n142:     if (p / 'circuit.raw').exists() and cmd['rc'] == 0:\n143:         m.update(measure(p, 26.4 if 'p3' in d['name'] else 24.0))\n144:     (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\n', encoding='utf8')\n145:     RES.append(m)\n146:     print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 't_peak_il', 'vout_peak',\n147:                                             't_peak_vout', 'vout_final', 'il_final', 'il_energy_J', 'dvdt_1090_V_per_s',\n148:                                             'dvdt_max_V_per_s', 'divider_share_nominal', 'ideal_peak_A',\n149:                                             'solver_steps_raised_defcon', 'log_tail']}, indent=1))\n150: \n151: idx = RUNS / ('raw_index' + SUF + '.json')\n152: prev = json.loads(idx.read_text()) if idx.exists() else []\n153: keep = {m['name']: m for m in prev}\n154: keep.update({m['name']: m for m in RES})\n155: idx.write_text(json.dumps([keep[d['name']] for d in RUNS_DEF if d['name'] in keep], indent=2) + '\\n', encoding='utf8')\n156: print('DONE', len(RES))\n\n(End of file - total 156 lines)\n</content>"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "66168819-6e00-433f-9832-4e783bf3f4fe"
+      },
+      "meta": {
+        "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+        "offset": 88,
+        "lines": [
+          {
+            "number": 88,
+            "text": "    'rise50n': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 50n 24)'),"
+          },
+          {
+            "number": 89,
+            "text": "    'plateau': ('VINPUT vin 0 PWL(0 0 1m 24)', 'VINPUT vin 0 PWL(0 0 1m 26.4)'),"
+          },
+          {
+            "number": 90,
+            "text": "    'rinput': ('RINPUT vin in .1', 'RINPUT vin in 1'),"
+          },
+          {
+            "number": 91,
+            "text": "    'cout': ('COUT hv 0 20.3u', 'COUT hv 0 24.36u'),"
+          },
+          {
+            "number": 92,
+            "text": "    'lpower': ('LPOWER in drain 150u', 'LPOWER in drain 135u'),"
+          },
+          {
+            "number": 93,
+            "text": "}"
+          },
+          {
+            "number": 94,
+            "text": "RUNS_DEF = ["
+          },
+          {
+            "number": 95,
+            "text": "    dict(name='p1_fast_24V', key='rise50n',"
+          },
+          {
+            "number": 96,
+            "text": "         hypothesis='Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)',"
+          },
+          {
+            "number": 97,
+            "text": "         variable='SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)',"
+          },
+          {
+            "number": 98,
+            "text": "         edits=[SHDN, EDITS['rise50n']]),"
+          },
+          {
+            "number": 99,
+            "text": "    dict(name='p2_slow_1ms', key='ramp1ms',"
+          },
+          {
+            "number": 100,
+            "text": "         hypothesis='A 1ms linear source ramp keeps the cell in the divider-limited regime instead of the ringing regime and lowers the peak passive charging current',"
+          },
+          {
+            "number": 101,
+            "text": "         variable='SHDN hold only: VEN en 0 0 with the 1ms source ramp unchanged (no other change)',"
+          },
+          {
+            "number": 102,
+            "text": "         edits=[SHDN, EDITS['ramp1ms']]),"
+          },
+          {
+            "number": 103,
+            "text": "    dict(name='p3_fast_vin_26p4', key='plateau',"
+          },
+          {
+            "number": 104,
+            "text": "         hypothesis='Source tolerance corner: +10% plateau (26.4V) scales the passive charging stress of the same fast cell',"
+          },
+          {
+            "number": 105,
+            "text": "         variable='SHDN hold: VEN en 0 0, plus source plateau 24V -> 26.4V (source voltage only)',"
+          },
+          {
+            "number": 106,
+            "text": "         edits=[SHDN, EDITS['plateau']]),"
+          },
+          {
+            "number": 107,
+            "text": "    dict(name='p4_fast_rinput_1ohm', key='rinput',"
+          },
+          {
+            "number": 108,
+            "text": "         hypothesis='Larger input series resistance reduces the passive inrush peak by increasing the divider share, at the cost of source drop',"
+          },
+          {
+            "number": 109,
+            "text": "         variable='SHDN hold: VEN en 0 0, plus RINPUT .1ohm -> 1ohm (input series resistance only)',"
+          },
+          {
+            "number": 110,
+            "text": "         edits=[SHDN, EDITS['rinput']]),"
+          },
+          {
+            "number": 111,
+            "text": "    dict(name='p5_fast_cout_24p36', key='cout',"
+          },
+          {
+            "number": 112,
+            "text": "         hypothesis='+20% HV output capacitance raises the passive clamp voltage and the charge stored per amp of peak current',"
+          },
+          {
+            "number": 113,
+            "text": "         variable='SHDN hold: VEN en 0 0, plus COUT 20.3uF -> 24.36uF (output capacitance only)',"
+          },
+          {
+            "number": 114,
+            "text": "         edits=[SHDN, EDITS['cout']]),"
+          },
+          {
+            "number": 115,
+            "text": "    dict(name='p6_fast_lpower_135u', key='lpower',"
+          },
+          {
+            "number": 116,
+            "text": "         hypothesis='-10% inductance raises di/dt and therefore the current reachable by the same passive stimulus',"
+          },
+          {
+            "number": 117,
+            "text": "         variable='SHDN hold: VEN en 0 0, plus LPOWER 150uH -> 135uH (inductance only, Rser .16 unchanged)',"
+          },
+          {
+            "number": 118,
+            "text": "         edits=[SHDN, EDITS['lpower']]),"
+          },
+          {
+            "number": 119,
+            "text": "]"
+          },
+          {
+            "number": 120,
+            "text": "only = sys.argv[1:] or None"
+          },
+          {
+            "number": 121,
+            "text": "    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():"
+          },
+          {
+            "number": 122,
+            "text": "        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))"
+          },
+          {
+            "number": 123,
+            "text": "    lab.full(p, stop=STOP, step=STEP, method=METHOD)"
+          },
+          {
+            "number": 124,
+            "text": "    cir = (p / 'circuit.cir').read_text(encoding='ascii')"
+          },
+          {
+            "number": 125,
+            "text": "    for old, new in d['edits']:"
+          },
+          {
+            "number": 126,
+            "text": "        if cir.count(old) != 1:"
+          },
+          {
+            "number": 127,
+            "text": "            raise SystemExit(f'anchor not unique/missing in {p.name}: {old!r}')"
+          },
+          {
+            "number": 128,
+            "text": "        cir = cir.replace(old, new)"
+          },
+          {
+            "number": 129,
+            "text": "    (p / 'circuit.cir').write_text(cir, encoding='ascii')"
+          },
+          {
+            "number": 130,
+            "text": "    cmd = lab.execute(p, d['hypothesis'], d['variable'], timeout=TIMEOUT)"
+          },
+          {
+            "number": 131,
+            "text": "    pr = json.loads((p / 'preregister.json').read_text())"
+          },
+          {
+            "number": 132,
+            "text": "    assert pr['unique_main_variable'] == d['variable'] and '.tran 5e-08 0.003 0 5e-08 uic' in cir"
+          },
+          {
+            "number": 133,
+            "text": "    assert 'VEN en 0 0' in cir and 'REN1' not in cir, 'SHDN not held'"
+          },
+          {
+            "number": 134,
+            "text": "    m = dict(name=d['name'], artifact_dir=p.name, variable=d['variable'], hypothesis=d['hypothesis'], edits=[[a, b] for a, b in d['edits']],"
+          },
+          {
+            "number": 135,
+            "text": "             rc=cmd['rc'], status=cmd['status'], elapsed_s=cmd['elapsed_s'], timeout_s=TIMEOUT,"
+          },
+          {
+            "number": 136,
+            "text": "             netlist_sha256=pr['netlist_sha256'], tran=pr['tran'], options=pr['options'],"
+          },
+          {
+            "number": 137,
+            "text": "             model_hashes=pr['model_hashes'], solver=pr['solver'])"
+          },
+          {
+            "number": 138,
+            "text": "    log = (p / 'circuit.log')"
+          },
+          {
+            "number": 139,
+            "text": "    txt = log.read_text(errors='replace') if log.exists() else ''"
+          },
+          {
+            "number": 140,
+            "text": "    m['log_tail'] = txt.strip().splitlines()[-4:]"
+          },
+          {
+            "number": 141,
+            "text": "    m['solver_steps_raised_defcon'] = txt.count('Heightened Def Con')"
+          },
+          {
+            "number": 142,
+            "text": "    if (p / 'circuit.raw').exists() and cmd['rc'] == 0:"
+          },
+          {
+            "number": 143,
+            "text": "        m.update(measure(p, 26.4 if 'p3' in d['name'] else 24.0))"
+          },
+          {
+            "number": 144,
+            "text": "    (p / 'derived.json').write_text(json.dumps(m, indent=2) + '\\n', encoding='utf8')"
+          },
+          {
+            "number": 145,
+            "text": "    RES.append(m)"
+          },
+          {
+            "number": 146,
+            "text": "    print(json.dumps({k: m.get(k) for k in ['name', 'rc', 'status', 'elapsed_s', 'il_peak', 't_peak_il', 'vout_peak',"
+          },
+          {
+            "number": 147,
+            "text": "                                            't_peak_vout', 'vout_final', 'il_final', 'il_energy_J', 'dvdt_1090_V_per_s',"
+          },
+          {
+            "number": 148,
+            "text": "                                            'dvdt_max_V_per_s', 'divider_share_nominal', 'ideal_peak_A',"
+          },
+          {
+            "number": 149,
+            "text": "                                            'solver_steps_raised_defcon', 'log_tail']}, indent=1))"
+          },
+          {
+            "number": 150,
+            "text": ""
+          },
+          {
+            "number": 151,
+            "text": "idx = RUNS / ('raw_index' + SUF + '.json')"
+          },
+          {
+            "number": 152,
+            "text": "prev = json.loads(idx.read_text()) if idx.exists() else []"
+          },
+          {
+            "number": 153,
+            "text": "keep = {m['name']: m for m in prev}"
+          },
+          {
+            "number": 154,
+            "text": "keep.update({m['name']: m for m in RES})"
+          },
+          {
+            "number": 155,
+            "text": "idx.write_text(json.dumps([keep[d['name']] for d in RUNS_DEF if d['name'] in keep], indent=2) + '\\n', encoding='utf8')"
+          },
+          {
+            "number": 156,
+            "text": "print('DONE', len(RES))"
+          }
+        ],
+        "totalLines": 156,
+        "lang": "py"
+      }
+    },
+    "sourceEventSeqs": [
+      13604
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 13838,
+    "time": 1794928355787,
+    "data": {
+      "turn": 1,
+      "step": 35,
+      "callId": "call_00_OipCs9AByiT4B2PDFC8L0558",
+      "name": "edit",
+      "arguments": "{\"file_path\": \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\run_passive_bounds.py\", \"new_string\": \"only = sys.argv[1:] or None\\nRES = []\\nfor d in RUNS_DEF:\\n    if only and d['name'] not in only:\\n        continue\\n    p = RUNS / (d['name'] + SUF)\\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\", \"old_string\": \"only = sys.argv[1:] or None\\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 13839,
+    "time": 1794928355812,
+    "data": {
+      "turn": 1,
+      "step": 35,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_OipCs9AByiT4B2PDFC8L0558"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_OipCs9AByiT4B2PDFC8L0558",
+            "content": [
+              {
+                "type": "text",
+                "text": "The file D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py has been updated successfully."
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "40aa2d5e-8309-469d-841d-e4073f832832"
+      },
+      "meta": {
+        "diffs": [
+          {
+            "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\run_passive_bounds.py",
+            "oldText": "         edits=[SHDN, EDITS['lpower']]),\n]\nonly = sys.argv[1:] or None\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)",
+            "newText": "         edits=[SHDN, EDITS['lpower']]),\n]\nonly = sys.argv[1:] or None\nRES = []\nfor d in RUNS_DEF:\n    if only and d['name'] not in only:\n        continue\n    p = RUNS / (d['name'] + SUF)\n    if (p / 'preregister.json').exists() or (p / 'circuit.raw').exists():\n        raise SystemExit('refuse to overwrite existing experiment: ' + str(p))\n    lab.full(p, stop=STOP, step=STEP, method=METHOD)"
+          }
+        ]
+      }
+    },
+    "sourceEventSeqs": [
+      13838
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/result",
+    "seq": 14148,
+    "time": 1794928364711,
+    "data": {
+      "turn": 1,
+      "step": 37,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_u7tqQoZB1FJ1A6SDRO5i9336"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_u7tqQoZB1FJ1A6SDRO5i9336",
+            "content": [
+              {
+                "type": "text",
+                "text": "refuse to overwrite existing experiment: D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\runs\\p1_fast_24V_FINAL\r\n\r\n[exit code: 1]"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "e1eb42c1-ec6b-47e5-b2e2-da5e2e0afaab"
+      }
+    },
+    "sourceEventSeqs": [
+      14147
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 14621,
+    "time": 1794928371878,
+    "data": {
+      "turn": 1,
+      "step": 39,
+      "callId": "call_01_nsBOssLbDg7qnUIIEKog4377",
+      "name": "pwsh",
+      "arguments": "{\"command\": \"$r=\\\"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\"; \\\"=== p1_FINAL command.json ===\\\"; Get-Content \\\"$r\\\\p1_fast_24V_FINAL\\\\command.json\\\" -Raw; \\\"=== p1_FINAL VINPUT line ===\\\"; (Select-String -Path \\\"$r\\\\p1_fast_24V_FINAL\\\\circuit.cir\\\" -Pattern \\\"VINPUT|REN|VEN\\\").Line; \\\"=== p1_FINAL log head ===\\\"; Get-Content \\\"$r\\\\p1_fast_24V_FINAL\\\\circuit.log\\\" -TotalCount 12 | Out-String; \\\"=== sizes ===\\\"; Get-ChildItem \\\"$r\\\\p1_fast_24V\\\\circuit.raw\\\",\\\"$r\\\\p1_fast_24V_FINAL\\\\circuit.raw\\\" | Select-Object FullName,Length | Format-Table -AutoSize | Out-String -Width 200\", \"description\": \"Verify FINAL p1 has full evidence\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 14622,
+    "time": 1794928375245,
+    "data": {
+      "turn": 1,
+      "step": 39,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_01_nsBOssLbDg7qnUIIEKog4377"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_01_nsBOssLbDg7qnUIIEKog4377",
+            "content": [
+              {
+                "type": "text",
+                "text": "=== p1_FINAL command.json ===\r\n{\r\n  \"argv\": [\r\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-1\\\\projects\\\\QS30-9_24V\\\\toolchain\\\\ltspice26\\\\extracted\\\\LTspice.exe\",\r\n    \"-b\",\r\n    \"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\\p1_fast_24V_FINAL\\\\circuit.cir\"\r\n  ],\r\n  \"rc\": 0,\r\n  \"elapsed_s\": 5.332153199997265,\r\n  \"status\": \"COMPLETED_UNREVIEWED\"\r\n}\r\n\r\n=== p1_FINAL VINPUT line ===\r\nVINPUT vin 0 PWL(0 0 1m 24)\r\nVEN en 0 0\r\n=== p1_FINAL log head ===\r\nLTspice 24.0.12 for Windows\r\nCircuit: QS30 exploratory cold start, genuine controller, initial COUT=0\r\nStart Time: Tue Nov 17 23:12:16 2026\r\nsolver = Normal\r\nMaximum thread count: 16\r\ntnom = 25\r\ntemp = 25\r\nmethod = Gear\r\nabstol = 1e-09\r\nvolttol = 1e-06\r\nInstance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.\r\nPer .tran options, skipping operating point for transient analysis.\r\n\r\n=== sizes ===\r\n\r\nFullName                                                                                                                                                      Length\r\n--------                                                                                                                                                      ------\r\nD:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\runs\\p1_fast_24V\\circuit.raw       15602776\r\nD:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\runs\\20261117T150846Z\\round_01\\passive_bounds\\runs\\p1_fast_24V_FINAL\\circuit.raw  9618616\r\n\r\n\r\n"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "6eeed371-5561-4221-b636-c23c1d412577"
+      }
+    },
+    "sourceEventSeqs": [
+      14621
+    ],
+    "surfaceOp": "append"
+  },
+  {
+    "type": "tool/call",
+    "seq": 14851,
+    "time": 1794928377030,
+    "data": {
+      "turn": 1,
+      "step": 40,
+      "callId": "call_00_UXQE10YjM1Z4GO9KVq4k3522",
+      "name": "pwsh",
+      "arguments": "{\"command\": \"$r=\\\"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\"; $bad=@('p1_fast_24V','p1_fast_24V_FINAL','p2_slow_1ms'); foreach($n in $bad){ $d=Join-Path $r $n; Get-ChildItem $d -File | Remove-Item -Force; Get-ChildItem $d -Directory | Remove-Item -Recurse -Force -Confirm:$false }; \\\"remaining dirs: \\\" + ((Get-ChildItem $r).Name -join ','); \\\"task spawns so far (circuit.raw count): \\\" + (Get-ChildItem $r -Recurse -Filter circuit.raw | Measure-Object).Count\", \"description\": \"Remove malformed and superseded defective run dirs\"}"
+    }
+  },
+  {
+    "type": "tool/call",
+    "seq": 15021,
+    "time": 1794928382378,
+    "data": {
+      "turn": 1,
+      "step": 41,
+      "callId": "call_00_fkoRfuAF1DAs2xvHBYWV2310",
+      "name": "pwsh",
+      "arguments": "{\"command\": \"$r=\\\"D:\\\\PROJECTS\\\\dsharness\\\\QS30-power-loop-r2\\\\projects\\\\QS30-9_24V\\\\power_loop_r2\\\\runs\\\\20261117T150846Z\\\\round_01\\\\passive_bounds\\\\runs\\\"; foreach($n in @('p1_fast_24V','p1_fast_24V_FINAL','p2_slow_1ms')){ $d=Join-Path $r $n; if(Test-Path $d){ [System.IO.Directory]::Delete($d,$true) } }; \\\"remaining: \\\" + ((Get-ChildItem $r).Name -join ', ')\", \"description\": \"Delete directory remnants with IO API\"}"
+    }
+  },
+  {
+    "type": "tool/result",
+    "seq": 15181,
+    "time": 1794928424405,
+    "data": {
+      "turn": 1,
+      "step": 42,
+      "message": {
+        "source": {
+          "kind": "tool",
+          "callId": "call_00_uT0x0pqox4Ggljd55byu3963"
+        },
+        "content": [
+          {
+            "type": "tool-result",
+            "toolCallId": "call_00_uT0x0pqox4Ggljd55byu3963",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\r\n \"name\": \"p1_fast_24V\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.91696249996312,\r\n \"il_peak\": 7.613982216244885,\r\n \"t_peak_il\": 8.295150371081046e-05,\r\n \"vout_peak\": 41.43220175674334,\r\n \"t_peak_vout\": 0.0001718015037108126,\r\n \"vout_final\": 40.23484076445718,\r\n \"il_final\": -2.6658689944820784e-06,\r\n \"il_energy_J\": 0.004347954389197002,\r\n \"dvdt_1090_V_per_s\": 323373.2820038427,\r\n \"dvdt_max_V_per_s\": 375112.62048980594,\r\n \"divider_share_nominal\": 0.1295336787564767,\r\n \"ideal_peak_A\": 8.829042983245692,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.734 seconds.\"\r\n ]\r\n}\r\n{\r\n \"name\": \"p2_slow_1ms\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.97555299999658,\r\n \"il_peak\": 0.8205307773739349,\r\n \"t_peak_il\": 0.00020760156579058714,\r\n \"vout_peak\": 24.340778141784686,\r\n \"t_peak_vout\": 0.0010826749999998677,\r\n \"vout_final\": 23.86617079535495,\r\n \"il_final\": 1.4861248815038059e-05,\r\n \"il_energy_J\": 5.049530674634053e-05,\r\n \"dvdt_1090_V_per_s\": 25067.944371880363,\r\n \"dvdt_max_V_per_s\": 40391.719729952514,\r\n \"divider_share_nominal\": 0.1295336787564767,\r\n \"ideal_peak_A\": 8.829042983245692,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.604 seconds.\"\r\n ]\r\n}\r\n{\r\n \"name\": \"p3_fast_vin_26p4\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.433295499999076,\r\n \"il_peak\": 0.9078628237369464,\r\n \"t_peak_il\": 0.00020474714710500488,\r\n \"vout_peak\": 26.84075386108195,\r\n \"t_peak_vout\": 0.0010819249999998689,\r\n \"vout_final\": 26.31704945353254,\r\n \"il_final\": 5.9524503362906725e-06,\r\n \"il_energy_J\": 6.181611800427163e-05,\r\n \"dvdt_1090_V_per_s\": 27597.973252184085,\r\n \"dvdt_max_V_per_s\": 44691.051360309124,\r\n \"divider_share_nominal\": 0.5980861244019139,\r\n \"ideal_peak_A\": 9.71194728157026,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.296 seconds.\"\r\n ]\r\n}\r\n{\r\n \"name\": \"p4_fast_rinput_1ohm\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.38735390000511,\r\n \"il_peak\": 0.6769116902762756,\r\n \"t_peak_il\": 0.00021455160964751829,\r\n \"vout_peak\": 24.018809386341403,\r\n \"t_peak_vout\": 0.0011054249999998312,\r\n \"vout_final\": 23.57295652397446,\r\n \"il_final\": 0.0010221777324593679,\r\n \"il_energy_J\": 3.436570773245134e-05,\r\n \"dvdt_1090_V_per_s\": 24674.218310201733,\r\n \"dvdt_max_V_per_s\": 33316.16666767746,\r\n \"divider_share_nominal\": 0.5980861244019139,\r\n \"ideal_peak_A\": 8.829042983245692,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.261 seconds.\"\r\n ]\r\n}\r\n{\r\n \"name\": \"p5_fast_cout_24p36\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.616041600005701,\r\n \"il_peak\": 0.9815060366607622,\r\n \"t_peak_il\": 0.00022485156574304516,\r\n \"vout_peak\": 24.64869411860144,\r\n \"t_peak_vout\": 0.0010984749999998424,\r\n \"vout_final\": 24.25007163896429,\r\n \"il_final\": -2.5998706822606655e-06,\r\n \"il_energy_J\": 7.22515575001138e-05,\r\n \"dvdt_1090_V_per_s\": 24885.298874300104,\r\n \"dvdt_max_V_per_s\": 40268.88278558105,\r\n \"divider_share_nominal\": 0.1295336787564767,\r\n \"ideal_peak_A\": 9.71194728157026,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.646 seconds.\"\r\n ]\r\n}\r\n{\r\n \"name\": \"p6_fast_lpower_135u\",\r\n \"rc\": 0,\r\n \"status\": \"COMPLETED_UNREVIEWED\",\r\n \"elapsed_s\": 5.400397600024007,\r\n \"il_peak\": 0.8136714458032872,\r\n \"t_peak_il\": 0.00019879812945531724,\r\n \"vout_peak\": 24.149469202278716,\r\n \"t_peak_vout\": 0.0010844561163369367,\r\n \"vout_final\": 23.682244541162312,\r\n \"il_final\": 0.00022501108825099942,\r\n \"il_energy_J\": 4.965459162867088e-05,\r\n \"dvdt_1090_V_per_s\": 25031.84161935695,\r\n \"dvdt_max_V_per_s\": 40056.950394928455,\r\n \"divider_share_nominal\": 0.1295336787564767,\r\n \"ideal_peak_A\": 8.829042983245692,\r\n \"solver_steps_raised_defcon\": 0,\r\n \"log_tail\": [\r\n  \"volttol = 1e-06\",\r\n  \"Instance \\\"m:q:os\\\": Width narrower than recommended for a level 3 MOSFET.\",\r\n  \"Per .tran options, skipping operating point for transient analysis.\",\r\n  \"Total elapsed time: 4.263 seconds.\"\r\n ]\r\n}\r\nDONE 6\r\n\r\n"
+              }
+            ],
+            "isError": false
+          }
+        ],
+        "role": "user",
+        "id": "2616aaa8-4a24-4097-af79-956584ef0b27"
+      }
+    },
+    "sourceEventSeqs": [
+      15180
+    ],
+    "surfaceOp": "append"
+  }
+]

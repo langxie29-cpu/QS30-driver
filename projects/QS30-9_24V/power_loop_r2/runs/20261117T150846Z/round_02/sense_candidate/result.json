@@ -1,0 +1,31 @@
+{
+  "task_id": "sense_candidate",
+  "status": "INCONCLUSIVE",
+  "notes": "Round-2 override honoured: code generation and read-only review only, zero shell commands, zero simulator invocations, zero LTspice runs. Delivered two unreviewed draft builders that implement only the explicit Round-1 Codex decisions (ROUND1_REVIEW.md lines 6 and 7): build_minimum.py builds the 3 approved local minimum-switching-cell cases (precharge 89.17 V / IL 1.4 A via LPOWER IC=(1.4,0,0,0,0), Gear 1ns / Gear 0.5ns / Trap 1ns, 30 s runtime, extended top-level KCL probe list) and build_filter.py builds exactly ONE approved 60 ms candidate changing only RF 10->22 ohm and CF 1nF->4.7nF, preserving RSRC .062, RG 22, LPOWER 150u/0.16, COUT 20.3u/0.1, RLOAD 5200 and all other parts, with an asserted absence of added clamp devices. Vendor models are copied byte-for-byte and re-hashed against the R1 preregistration (controller.sub c0328424..., diode.lib f8669a85..., ss14.lib 3288afb6..., st.lib 6ad61988...); a mismatch aborts the build. Nothing was executed, so NO measured value exists: there is no KCL residual, no recovery peak, no pin |V(sense)|, no turn-off timing and no normal-peak result, and no circuit.cir/run.log/waves.txt/metrics.json are claimed or fabricated. Status INCONCLUSIVE rather than PASS because evidence delivery is the only thing achieved and even that is unexecuted and unvalidated: probe-name availability (I(XQ:LD/LS/LG), I(XNEG:K), I(COUT)) is unverified without a log, the 89.17 V feedback-node ICs (fbmid 45.017 V, fb 0.83948 V) and the deliberately-unset switch-node/b1 ICs are untested assumptions, and the 60 ms run at the baseline 2e-7 max step may exceed the worker budget. Fixed acceptance thresholds are copied unchanged from lab.py (mean 164.9-175.1 V, ripple 1 Vpp, normal peak 180 V, startup 1 s, recovery 0.1 s, fault peak 195 V, |sense| 0.3 V); none were relaxed. The decision's quoted ramp-lag pair (12.58 mA -> 18.27 mA) is copied, not recomputed, and build_filter.py back-checks it and warns because it is not consistent with a pure 10.34x tau scaling; the principal must re-derive it. Round-1's SHDN-hold policy applied by run_passive_bounds.py is deliberately NOT reused because the sense-fix decision does not authorise a SHDN change. Worker PASS/FAIL semantics: this is evidence delivery only, never electrical acceptance; all entries are preliminary WORKER_CLAIMS pending deterministic audit and Codex review. All HOLD remain; Kelvin routing prerequisite remains outsourced to layout and cannot be shown by SPICE.",
+  "evidence_files": [
+    "inventory.md",
+    "build_minimum.py",
+    "build_filter.py",
+    "result.json"
+  ],
+  "source_urls": [],
+  "solver": "none (LTspice 24.0.12.0 Windows Normal referenced only, never invoked)",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "blocking_issues": [
+    "No official source URL recorded in this session: the ADI LT3757 RevH p14 permission for 22 ohm with 2.2-10 nF is quoted from the principal decision, not independently re-verified here",
+    "No simulation executed: KCL closure, recovery peak, |V(sense)| pin protection, true inductor-current turn-off timing and normal output peaks are all unproven",
+    "Probe availability unverified: whether LTspice stores I(XQ:LD), I(XQ:LS), I(XQ:LG), I(XNEG:K) and I(COUT) is unknown without a log; a missing term must be reported as PARTIAL KCL, not closed",
+    "Initial conditions untested: feedback divider ICs (fbmid 45.017 V, fb 0.83948 V) and the deliberately unset switch-node/b1 spans may not latch correctly under L1",
+    "Both builders are unreviewed drafts; principal Codex must inspect the generated circuit.cir before any lab.execute call",
+    "60 ms candidate at baseline 2e-7 max step may exceed the runtime budget; a timeout consumes the attempt and must not be retried unless preregistered",
+    "Decision-quoted ramp-lag figures (12.58 mA / 18.27 mA) are not mutually consistent with the 10.34x tau ratio and must be re-derived",
+    "Kelvin sense routing prerequisite cannot be demonstrated by SPICE",
+    "Physical credibility of the R1 ~400 V reverse-avalanche-like excursion at US1G remains unresolved; model phenomenon, physical amplitude INCONCLUSIVE",
+    "No electrical acceptance is claimed; worker status is evidence delivery only, pending deterministic audit and Codex review"
+  ]
+}

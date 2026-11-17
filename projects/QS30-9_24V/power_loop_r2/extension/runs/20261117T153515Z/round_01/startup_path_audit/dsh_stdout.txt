@@ -1,0 +1,22 @@
+Task complete. All three artifacts are in OUTPUT_DIR; nothing outside it was written, and no shell, job, simulator, network or model call was made.
+
+## What was delivered
+
+**`inventory.md`** — 10-row fact table with `TPS2660.txt` line citations:
+- U101 TPS26601 MODE=**open** = electronic circuit breaker with **latch-off** (L170, L1412–13, L1717–19), reset only by SHDN or POR (L276) — **not** continuous limiting.
+- MODE=**402 kΩ** to RTN is *active* current limiting with latch (L554–55, L1426–30); MODE shorted to RTN is limiting **with auto-retry**. Three distinct behaviours that the task required me to separate.
+- **Guaranteed MIN/MAX exist only for** GAIN(dVdT) 23.75/25.5, I(OL)@12 k 0.95/1.05 A, I(CB)@120 k 0.045/0.11 A, I(CB)@5.36 k 2.0/2.4 A, V(REVTH) −15/−5 mV.
+- **All delays are TYPICAL-ONLY with no published maximum**: tCB(dly) 4 ms, tFASTRIP 250 ns, tCBretry 540 ms, tdVdT 10 ms @47 n and 23.9 V/1.6 ms open. No max delay is claimed anywhere in the delivery.
+- Inductor locked to **MSS1583-154KED only** (150 µH ±10 %, DCR max 0.159 Ω, Isat 3.1/3.6/3.9 A, Irms 1.55/2.2 A). I explicitly flagged that the `MSS1583-154KE_` row in the extracted PDF text is a *different* part and did not guess an alternative.
+
+**`startup_arith.py`** — 141 lines (limit 180), numpy, writes `startup_arith.json` in its own directory. Deliberately **not executed**, per "no hand-computed results": slew/rise from Gmax 25.5, Imax 5.5 µ, Cmin 42.3 n; Vin²/(4R) at nominal and ±5 % corners as a percentage of 6 W; the resistance 6 W would actually need; ½CU² into 24.36 µF.
+
+**`result.json`** — status **INCONCLUSIVE**, with the fact-provenance in notes and nine blocking issues.
+
+Two things worth flagging for your audit:
+
+1. **A correction I made to my own draft.** My first version wrote the series resistance needed to pass 6 W as `PIN**2*R33/(2*PIN**2)` and had invented placement of `loss_at_6W_W=6.0`. Both were wrong constants dressed as derivations. I rewrote them as `iload**2*R33` and `PIN**2/(2*PIN**2)` so they are genuinely computed. Also fixed a double-attribution of 5.5 µA to a `TPS2660.txt` line — it is a prompt constant, not a datasheet value, and now says so.
+
+2. **`model_hashes` contains only hashes I actually read** from `sprint06/manifest.json` (the two encrypted TPS26601 packages and the MSS1583 PDF). I did not hash `TPS2660.txt` itself, so it is absent rather than guessed.
+
+No threshold was touched, no HOLD changed, and no bypass model or maximum delay is asserted — the precharge+bypass route is recorded as hardware-missing. This is a preliminary WORKER_CLAIM pending deterministic audit; the arithmetic still needs your execution of `startup_arith.py` before any number in it means anything.

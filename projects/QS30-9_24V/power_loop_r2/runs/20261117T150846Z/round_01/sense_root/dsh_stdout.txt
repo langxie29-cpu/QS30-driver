@@ -1,0 +1,15 @@
+Done. `result.json` is written and all 43 evidence references resolve inside OUTPUT_DIR.
+
+## Outcome: `INCONCLUSIVE` (evidence delivered, no electrical acceptance, HOLD untouched)
+
+**Source forensics (read-only on the R1 raw).** The 10.040718 ms event is the *global* maximum of V(sense) = 0.5243575 V, and the R1 log shows 5 "Heightened Def Con" timestep reductions inside the ±2 µs window — the spike sits on solver step-control, not on a runtime artefact. 1509 samples are in `event_window.csv` / `event_json.json`. Critically, the original raw saves no MOS, gate-branch, shunt-segment, snubber or clamp currents, so **no node KCL was derivable from it** — that was the gap.
+
+**Three preregistered runs** (`prereg_runs.json` written before execution; `lab.full` + `lab.execute(timeout=180)`, no retries): gear 200 ns rc=0 / 70.0 s, gear 100 ns rc=0 / 164.9 s, trap 200 ns rc=0 / 59.8 s — all complete to 10.08 ms, models re-hashed identical to R1, tolerances unchanged.
+
+**Probe outcome:** all 11 top-level probes were honored, but the five internal ones (`I(XQ:LD) I(XQ:LS) I(XQ:LG) I(XNEG:ddio) I(XNEG:dgr)`) were **silently dropped** by LTspice — rc=0, no warning line, absent from the raw. Preserved as failure, no retry.
+
+**Established:** peak *magnitudes* are solver-robust — V(sense) spread 1.82 %, I(RSRC) 1.63 %, I(DREC) 1.70 % (R1's 0.52436 V reproduced to 0.14 %); the ~12 A branch is the shunt, not inductor current (I(LPOWER) ≤ 1.65 A); the RNEG/SS14 clamp branch carries the gate trough (6.79/5.90/6.86 A, coincident with it).
+
+**Not established:** the switching phase shifts ~5.9 µs between gear200 and trap200, and no run reproduces R1's event (anchor-time V(sense) 0.0006–0.0035 V vs 0.524 V), so **diode recovery charge at the event is unverified**. Gate-branch currents spread 14–19.5 %, and the gate trough itself differs 14 % (−14.72 V trap vs −12.61 V gear100) — a network-determined amplitude, so the fast transients are not converged; gear100 emitting 13 706 step reductions vs 475 moved the solution rather than converging it. The source-node partial KCL residual (0.052–0.356 A, 7× solver-dependent) *is* the unobservable MOS/clamp branch, which proves Coss, LS and the SS14 diode split cannot be resolved with these probes.
+
+The interpretation I'd flag for review: the apparent contradiction in the R1 review — `V(src)/0.062 = 9.04 A` versus `I(Lpower) = 1.40 A` — is not a decoding error, but the fast shunt spike being under-read on a coarse timestep. That reconciles the prior evidence without invalidating it, and it is why I rate the *magnitude* result robust while rating the *instant* and *recovery charge* as unproven.

@@ -1,0 +1,33 @@
+{
+  "hypothesis": "Does original diode/MOS/clamp network produce high shunt current with a finite gate edge, without controller? InitialHV89.17V/IL1.4A is local-state isolation only. No cold-start or current-limit qualification.",
+  "unique_main_variable": "maxstep/method one variable relativeGear1ns",
+  "netlist_sha256": "be5bb0e371f21c893dd1e987a17e027391290315c253afcaa6ed9e6f3bb86d8e",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "solver_exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "tran": ".tran 1e-09 1e-05 0 1e-09 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=trap plotwinsize=0 numdgt=15",
+  "acceptance": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "startup_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195,
+    "sense_abs_V": 0.3
+  },
+  "diagnostic_reproducibility": "For a matched local cell: peak change <=5%, KCL residual <=1mA. Full startup phase may shift; no claim from same wall time alone.",
+  "max_runtime_s": 30,
+  "raw": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\evidence\\principal\\minimum_cell\\trap_1ns\\circuit.raw",
+  "log": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\\evidence\\principal\\minimum_cell\\trap_1ns\\circuit.log",
+  "scope": "Research only, 25C linear L; all HOLD remain",
+  "utc": "2026-11-17T15:19:08Z"
+}

@@ -1,0 +1,21 @@
+Done. `device_followup` delivered as **INCONCLUSIVE** (code-only, nothing executed).
+
+## What I read (committed evidence only)
+- `extension/ROUND3_REVIEW.md` (the exact final instruction) and the runner context.
+- `evidence/principal/minimum_energy_refine/energy_refinement.json` — 10ps row (9027 pts) and 5ps row (18661 pts), both on `[1.02 µs, 1.10 µs]`.
+- The **original** model text `10ps/st.lib` and `5ps/st.lib` (not UTF-8; searched line-wise, never rewritten).
+- Paired `circuit.cir` files and `10ps/preregister.json`.
+
+## Confirmed from the original st.lib
+`LG 2 4 7.5E-09`, **`LS 12 3 7.5E-09`** (intrinsic source → Source pin), **`LD 6 1 4.5E-09`** (intrinsic drain → Drain pin), `MOS 13 5 9` — so the LS = 7.5 nH / LD = 4.5 nH assumption in the committed energy identity is correct, and the 10ps/5ps copies are byte-identical (sha 6ad61988…).
+
+## Deliverables in OUTPUT_DIR
+- `check_refinement.py` (~140 lines, 1 of ≤2 scripts) — computes `(v_5ps − v_10ps)/|v_10ps|` with `np.float64` for exactly `shunt_peak_A`, `sense_peak_V`, `Qnegative_DREC_C` from the actual rows, plus the LS/LD residual shift; asserts the matched window, that `.tran` differs *only* in maxstep, the exact inductor set and the 7.5n/4.5n values; writes `refinement_check.json` beside itself. Nothing typed in by hand.
+- `inventory.md` (required evidence).
+- `result.json`.
+
+## Kept FAIL, not softened
+Net inductor-energy identity stays **FAIL**: `relative_to_net` is LS 0.4997 → 0.4370 and LD 0.7700 → 0.7525 between 10 ps and 5 ps — O(1) at both gears and **not converging** with refiner step. The known LTspice 1 mΩ default series R on an undeclared-`Rser` inductor is recorded as *cited, NOT PROVEN* and explicitly not used to explain the residual. No sign-off, no threshold or HOLD change, no source mutation.
+
+## Caveats stated up front
+The 80-line request was exceeded (~140 lines, still under the 180-line task ceiling); `refinement_check.json` does not exist until you run the script, which is the sole reason for INCONCLUSIVE — no delta number is reported or invented here.

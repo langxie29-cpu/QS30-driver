@@ -1,0 +1,245 @@
+{
+  "window_s": [
+    0.010038718423769967,
+    0.010042718423769968
+  ],
+  "rows": {
+    "run_gear_2e-7": {
+      "i(rsrc)": {
+        "abspeak": 0.3573875982146398,
+        "t_us": 10040.4777,
+        "charge_C": 3.9560620353146306e-07
+      },
+      "i(rf)": {
+        "abspeak": 0.0015196094488545981,
+        "t_us": 10040.4741,
+        "charge_C": -2.3017991817961978e-10
+      },
+      "i(rgs)": {
+        "abspeak": 0.0011963554374107802,
+        "t_us": 10041.0889,
+        "charge_C": 2.5147824125554703e-09
+      },
+      "i(rneg)": {
+        "abspeak": 0.15934845115505158,
+        "t_us": 10040.473,
+        "charge_C": -1.3654077008419138e-09
+      },
+      "i(csnub)": {
+        "abspeak": 0.059741330742483,
+        "t_us": 10040.4947,
+        "charge_C": -2.5951879455188646e-09
+      },
+      "i(rsnub)": {
+        "abspeak": 0.059741330742489634,
+        "t_us": 10040.4947,
+        "charge_C": -2.595242872853391e-09
+      },
+      "i(drec)": {
+        "abspeak": 0.01394354384543632,
+        "t_us": 10040.4905,
+        "charge_C": -8.220498688544726e-11
+      },
+      "i(lpower)": {
+        "abspeak": 0.3391859615211971,
+        "t_us": 10042.6302,
+        "charge_C": 3.627863564425564e-07
+      },
+      "v(gate)": {
+        "abspeak": 1.246003515640814e-07,
+        "t_us": 10042.6302,
+        "charge_C": 2.5172351710173645e-05
+      },
+      "v(src)": {
+        "abspeak": 0.022158031089307667,
+        "t_us": 10040.4777,
+        "charge_C": 2.4527584618950707e-08
+      },
+      "v(sense)": {
+        "abspeak": 0.021655627524362515,
+        "t_us": 10042.6302,
+        "charge_C": 2.6829383800746906e-08
+      },
+      "kcl_src_partial": {
+        "terms_available": [
+          "I(RSRC): src->shunt? sign as-is",
+          "I(RF): src->sense",
+          "I(RGS): gate->src",
+          "I(RNEG): neg->gate"
+        ],
+        "max_abs_residual_A": 0.3558127190137105,
+        "mean_residual_A": 0.09522082542129638,
+        "unavailable": [
+          "I_XQ:LS (MOS source pin)",
+          "I_XQ:LD",
+          "I_XQ:LG",
+          "I_XNEG:ddio",
+          "I_XNEG:dgr"
+        ],
+        "note": "residual here is NOT a KCL error; it IS the unobserved MOS/normal-clamp port current, because that branch is exactly what is missing from the sum"
+      }
+    },
+    "run_gear_1e-7": {
+      "i(rsrc)": {
+        "abspeak": 0.35723963560931266,
+        "t_us": 10041.561,
+        "charge_C": 1.27520610882807e-07
+      },
+      "i(rf)": {
+        "abspeak": 0.0015227034943324053,
+        "t_us": 10041.5571,
+        "charge_C": -2.4560072652673913e-10
+      },
+      "i(rgs)": {
+        "abspeak": 0.0011963572523028064,
+        "t_us": 10042.1715,
+        "charge_C": 1.2756247366132523e-09
+      },
+      "i(rneg)": {
+        "abspeak": 0.16064285743032147,
+        "t_us": 10041.556,
+        "charge_C": -1.3596054902838007e-09
+      },
+      "i(csnub)": {
+        "abspeak": 0.0596964955329895,
+        "t_us": 10041.5776,
+        "charge_C": -3.0811423317744164e-09
+      },
+      "i(rsnub)": {
+        "abspeak": 0.05969649209389483,
+        "t_us": 10041.5776,
+        "charge_C": -3.0812259225873508e-09
+      },
+      "i(drec)": {
+        "abspeak": 0.013916368823898734,
+        "t_us": 10041.5734,
+        "charge_C": -1.0002445148156718e-10
+      },
+      "i(lpower)": {
+        "abspeak": 0.17484573199823153,
+        "t_us": 10042.6771,
+        "charge_C": 9.519284290967e-08
+      },
+      "v(gate)": {
+        "abspeak": 5.767079946490284e-07,
+        "t_us": 10042.6771,
+        "charge_C": 1.2764153644007255e-05
+      },
+      "v(src)": {
+        "abspeak": 0.022148857407777386,
+        "t_us": 10041.561,
+        "charge_C": 7.906277874734034e-09
+      },
+      "v(sense)": {
+        "abspeak": 0.01807819521492645,
+        "t_us": 10041.597,
+        "charge_C": 1.0362285140001427e-08
+      },
+      "kcl_src_partial": {
+        "terms_available": [
+          "I(RSRC): src->shunt? sign as-is",
+          "I(RF): src->sense",
+          "I(RGS): gate->src",
+          "I(RNEG): neg->gate"
+        ],
+        "max_abs_residual_A": 0.35571018739945565,
+        "mean_residual_A": 0.11542313140411418,
+        "unavailable": [
+          "I_XQ:LS (MOS source pin)",
+          "I_XQ:LD",
+          "I_XQ:LG",
+          "I_XNEG:ddio",
+          "I_XNEG:dgr"
+        ],
+        "note": "residual here is NOT a KCL error; it IS the unobserved MOS/normal-clamp port current, because that branch is exactly what is missing from the sum"
+      }
+    },
+    "run_trap_2e-7": {
+      "i(rsrc)": {
+        "abspeak": 0.051643850042089746,
+        "t_us": 10039.6017,
+        "charge_C": -1.4844652501127313e-08
+      },
+      "i(rf)": {
+        "abspeak": 0.00028083280516762193,
+        "t_us": 10039.3479,
+        "charge_C": -2.520075834419559e-10
+      },
+      "i(rgs)": {
+        "abspeak": 3.688731549702348e-05,
+        "t_us": 10040.1286,
+        "charge_C": -1.800283452477624e-12
+      },
+      "i(rneg)": {
+        "abspeak": 0.013396301421625147,
+        "t_us": 10039.5202,
+        "charge_C": 1.6651356018286727e-09
+      },
+      "i(csnub)": {
+        "abspeak": 0.05240738888098332,
+        "t_us": 10039.4481,
+        "charge_C": -6.5205664656597475e-09
+      },
+      "i(rsnub)": {
+        "abspeak": 0.052407455453376654,
+        "t_us": 10039.4481,
+        "charge_C": -6.520882679775776e-09
+      },
+      "i(drec)": {
+        "abspeak": 0.19320399513538072,
+        "t_us": 10038.7858,
+        "charge_C": 3.827206274072059e-08
+      },
+      "i(lpower)": {
+        "abspeak": 0.1931841429930125,
+        "t_us": 10038.7858,
+        "charge_C": 1.5865466011748175e-08
+      },
+      "v(gate)": {
+        "abspeak": 8.244760582707232e-09,
+        "t_us": 10040.1286,
+        "charge_C": -1.8923202979846133e-08
+      },
+      "v(src)": {
+        "abspeak": 0.0032019187026095645,
+        "t_us": 10039.6017,
+        "charge_C": -9.203684550698935e-10
+      },
+      "v(sense)": {
+        "abspeak": 0.002538301603073402,
+        "t_us": 10039.6147,
+        "charge_C": 1.5997073793496658e-09
+      },
+      "kcl_src_partial": {
+        "terms_available": [
+          "I(RSRC): src->shunt? sign as-is",
+          "I(RF): src->sense",
+          "I(RGS): gate->src",
+          "I(RNEG): neg->gate"
+        ],
+        "max_abs_residual_A": 0.051565507727642484,
+        "mean_residual_A": -0.012177378693803594,
+        "unavailable": [
+          "I_XQ:LS (MOS source pin)",
+          "I_XQ:LD",
+          "I_XQ:LG",
+          "I_XNEG:ddio",
+          "I_XNEG:dgr"
+        ],
+        "note": "residual here is NOT a KCL error; it IS the unobserved MOS/normal-clamp port current, because that branch is exactly what is missing from the sum"
+      }
+    },
+    "R1_source": {
+      "i(drec)": {
+        "charge_C": 2.0887108128312814e-06,
+        "abspeak": 10.725925968403935
+      },
+      "i(lpower)": {
+        "charge_C": 4.912175340512656e-06
+      },
+      "v(sense)": {
+        "max": 0.5243575292413777
+      }
+    }
+  }
+}

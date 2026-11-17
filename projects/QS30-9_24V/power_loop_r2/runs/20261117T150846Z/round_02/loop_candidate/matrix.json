@@ -1,0 +1,120 @@
+{
+  "schema": "blocked-matrix/v1",
+  "task": "QS30-9 power_loop_r2 / round_02 / loop_candidate",
+  "authored_by": "DeepSeek Flash worker loop_candidate (NOT an approval)",
+  "authored_without_execution": true,
+  "note": "This file is hand-authored here because the worker is not allowed to execute analyze_independent.py. The script emits a byte-equivalent structure at the same path when the principal runs it; if the two ever differ, the script output (computed from the real netlist) supersedes this file. R_eff numbers below are carried as a BAND, not a point -- see r_eff_band.caveat.",
+  "purpose": "Record, as data only, the P2 ACTUAL load models in contrast with the single resistor the entire existing analysis used, so that no future run silently substitutes a resistor for the real load.",
+  "overall_status": "BLOCKED",
+  "simulation_count_requested": 0,
+  "simulation_count_allowed": 0,
+  "cells_blocked": 6,
+  "cells_allowed": 0,
+  "global_blockers": [
+    "P0 physically credible: NOT established -- the SENSE pin exceeds the LT3757A absolute maximum on the solver trace, and the US1G 400 V reverse excursion is a model phenomenon of unproven physical amplitude (ROUND1_REVIEW.md l.3).",
+    "No compensation edit is approved (ROUND1_REVIEW.md l.5).",
+    "No thermal scan is approved (ROUND1_REVIEW.md l.9: 'No compensation or thermal scan until P0 physically credible; prepare blocked matrix only').",
+    "The Round2 simulation cap is <=24 new LT simulations in total, shared with the principal; P2 cells sit outside that budget."
+  ],
+  "r_eff_band": {
+    "corrected_R_eff_ohm": 4475.91,
+    "review_quoted_R_eff_ohm": 4801.65043,
+    "review_reproduced_from_its_own_inputs": false,
+    "rejected_R1_R_eff_ohm": 4560.74,
+    "accepted_range_ohm": [4400.0, 4850.0],
+    "caveat": "Two 181.8 kohm bleed strings in parallel give 90.9 kohm, not 45.45 kohm, so R1's 4560.74 ohm is definitively REJECTED. However the review's 4801.65043 ohm cannot be reproduced from exact ideal resistors: with RLOAD 5200 || bleed 90900 || (100k + 100k + 1900.6) = 4475.91 ohm. The two differ by ~7.3 % of a sub-ohm design choice in the divider tail group, which is a hand-computation artefact rather than a physical effect. Every load-dependent quantity in this matrix is therefore quoted over the 4475.9-4801.7 ohm band, and no conclusion here depends on the difference.",
+    "verdict": "R_eff corrected to the 4475.9-4801.7 ohm band; 4560.74 ohm rejected and used nowhere."
+  },
+  "resistor_reference": {
+    "description": "The CURRENT unchanged fixture: one 5200 ohm resistor to ground plus two 181.8 kohm bleeder strings plus the LT3757A feedback divider.",
+    "equivalent_R_ohm": 4475.91,
+    "equivalent_R_ohm_band": [4475.91, 4801.65],
+    "P_at_measured_vout_169p83V_W": 6.444,
+    "P_at_target_vout_175p1V_W": 6.851,
+    "note": "This is the ONLY load model that has ever been simulated. It is a reference, not the real load."
+  },
+  "small_signal_statement": "A resistor presents +R at the output node. A const-power sink presents -R = -V^2/P. For this R_eff the resistor damping term and the const-power term have OPPOSITE sign, so the output pole migrates and the stability question becomes a DIFFERENT question. Any stability statement derived from the resistor fixture does NOT transfer to P2 and must never be presented as if it did.",
+  "cells": [
+    {
+      "id": "P2-R0",
+      "description": "pure resistor reference (the current, unchanged fixture)",
+      "load_model": "single 5200 ohm resistor || bleed || divider",
+      "equivalent_R_ohm": 4475.91,
+      "equivalent_R_ohm_band": [4475.91, 4801.65],
+      "implied_P_at_budget_W": 5.900417,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "Baseline-load reference of record. Feeds no compensation decision."
+    },
+    {
+      "id": "P2-CP-24",
+      "description": "ACTUAL P2 load: constant-power sink at the corrected budget, 24.0 V nominal input",
+      "load_model": "behavioural constant-power sink, I = P/V",
+      "implied_P_W": 5.900417,
+      "implied_R_at_measured_vout_ohm": 4887.5,
+      "implied_I_at_measured_vout_A": 0.03475,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "Negative incremental resistance. A resistor cannot represent this."
+    },
+    {
+      "id": "P2-CP-26p4",
+      "description": "ACTUAL P2 load: constant-power sink at the corrected budget, 26.4 V max input corner",
+      "load_model": "behavioural constant-power sink, I = P/V",
+      "implied_P_W": 5.900417,
+      "implied_R_at_measured_vout_ohm": 4887.5,
+      "implied_I_at_measured_vout_A": 0.03475,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "Identical sink to P2-CP-24 at the output; differs only in the input corner. Retained as a separate cell so the two input corners are never conflated."
+    },
+    {
+      "id": "P2-CC",
+      "description": "ACTUAL P2 load: constant-current sink at the budget current",
+      "load_model": "constant-current sink I = P_budget/V_target = 33.70 mA",
+      "implied_I_A": 0.0337,
+      "implied_R_small_signal_ohm": null,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "0 dB small-signal output resistance for the load itself. R is left null because it is not a resistance."
+    },
+    {
+      "id": "P2-ILIM",
+      "description": "ACTUAL P2 load: sink that current-limits at the measured 110 mV ILIM point",
+      "load_model": "current-limited sink, I_limit = 0.110/0.062 = 1.7742 A",
+      "implied_R_ohm": null,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "Open-ish above threshold, stiff below it. Equivalent R is load-state dependent and is deliberately left null rather than invented."
+    },
+    {
+      "id": "P2-PULSE",
+      "description": "ACTUAL P2 load: load-transient step",
+      "load_model": "pulsed constant-power sink",
+      "implied_R_ohm": null,
+      "status": "BLOCKED",
+      "simulation_allowed": false,
+      "note": "Step amplitude and repetition rate are NOT fixed by any approved source. The cell stays empty until the principal supplies the specification; inventing values would be fabrication."
+    }
+  ],
+  "reason_blocked_all": [
+    "P0 not physically credible (SENSE over-rating; US1G reverse excursion amplitude unresolved)",
+    "no compensation or thermal scan permitted before P0",
+    "principal Codex has not unblocked any cell in writing",
+    "the <=24 total simulation cap is not budgeted to P2"
+  ],
+  "unblock_requires": [
+    "principal Codex written authorization naming the exact cell id",
+    "a P0-resolution round that closes the SENSE over-rating",
+    "an explicit budget line inside the <=24 simulation cap"
+  ],
+  "assertions": {
+    "no_simulation_performed": true,
+    "every_cell_blocked": true,
+    "cells_allowed_is_zero": true,
+    "any_cell_claims_stability": false,
+    "resistor_reference_is_the_existing_fixture": true,
+    "electrical_thresholds_unchanged": true,
+    "rejected_4560_ohm_used_nowhere": true
+  }
+}

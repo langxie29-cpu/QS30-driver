@@ -1,0 +1,555 @@
+{
+  "raw": {
+    "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.raw",
+    "sha256": "d8b11ebedbb1125bbd968bdaf3a4c6e6f691e7dae1872cf76b6d8411e8d260ba",
+    "size_bytes": 658521960,
+    "points": 6331931,
+    "variables": [
+      "i(drec)",
+      "i(lpower)",
+      "time",
+      "v(drain)",
+      "v(en)",
+      "v(gate)",
+      "v(hv)",
+      "v(in)",
+      "v(intvcc)",
+      "v(sense)",
+      "v(src)",
+      "v(ss)",
+      "v(vc)"
+    ],
+    "t_first_s": 0.0,
+    "t_last_s": 0.06,
+    "dt_min_s": 9.974659986866641e-18,
+    "dt_max_s": 2.0000000000054696e-07,
+    "flags": "real double forward nocompression (binary, 13 vars)",
+    "native_reader": "lab.native memmap (R2/lab.py)"
+  },
+  "netlist": {
+    "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.cir",
+    "sha256": "5ba9d1b5503d3f15ba47dbaedf8b497caf8485f271113d0f49562057901df8dc",
+    "text": "QS30 exploratory cold start, genuine controller, initial COUT=0\n.include controller.sub\n.include st.lib\n.include diode.lib\n.include ss14.lib\nVINPUT vin 0 PWL(0 0 1m 24)\nRINPUT vin in .1\nLPOWER in drain 150u Rser=.16\nXQ drain gate src STP9NK50Z\nRSRC src 0 .062\nRF src sense 10\nCF sense 0 1n\nRG out gate 22\nRGS gate src 10k\nXNEG src neg ss14\nRNEG neg gate 2\nDREC drain hv US1G\nRSNUB drain sn 330\nCSNUB sn hv 100p\nCOUT hv 0 20.3u Rser=.1 IC=0\nRLOAD hv 0 5200\nRB1A hv b1 90.9k\nRB1B b1 0 90.9k\nRB2A hv b2 90.9k\nRB2B b2 0 90.9k\nRFB1 hv fbmid 100k\nRFB2 fbmid fb 100k\nRFB3 fb 0 1900.6\nVAUX aux 0 PWL(0 0 1m 12)\nRAUX aux intvcc .1\nCINT intvcc 0 4.7u IC=0\nREN1 in en 200k\nREN2 en 0 12.8k\nCSS ss 0 100n IC=0\nRCOMP vc comp 22k\nCCOMP comp 0 6.8n IC=0\nCHF vc 0 100p IC=0\nRRT rt 0 140k\nXU vc fb ss rt 0 sense out intvcc en intvcc 0 LT3757A\n.temp 25\n.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15\n.tran 2e-07 0.06 0 2e-07 uic\n.save V(hv) V(gate) V(src) V(sense) V(vc) V(ss) V(drain) I(LPOWER) V(in) V(en) V(intvcc) I(DREC)\n.end\n"
+  },
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+  },
+  "log": {
+    "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.log",
+    "sha256": "3cdbf968b9f4e760af70e2585dfb764cec092980996b1348e3369f73955aa300",
+    "note": "original R1 native LTSpice log; not regenerated here"
+  },
+  "command": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\candidate_diagnostic\\nominal_24V_gear_resource600\\circuit.cir"
+    ],
+    "reference_evidence": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\\evidence\\native_reference_encoding_fix\\metrics.json",
+    "reference_sha256": "5e26fa8d0bd38799e4a00a0659e6047dc2eb479791fcd5907c9a864452a19c64",
+    "simulator_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+    "timeout_s": 600,
+    "rc": 0,
+    "elapsed_s": 286.6570000000065
+  },
+  "windows_5ms": [
+    {
+      "t_start": 0.04,
+      "t_end": 0.045,
+      "mean_V": 162.17914824805953,
+      "raw_Vpp": 6.57110814217782,
+      "min_V": 158.61578640394526,
+      "max_V": 165.18689454612309,
+      "arithmetic_mean_V": 162.20408811590568,
+      "n_points": 580319,
+      "mean_minus_arith_mV": -24.939867846143216
+    },
+    {
+      "t_start": 0.045,
+      "t_end": 0.05,
+      "mean_V": 166.94129536593758,
+      "raw_Vpp": 5.788823989165735,
+      "min_V": 163.7882107471088,
+      "max_V": 169.57703473627453,
+      "arithmetic_mean_V": 166.9538774704644,
+      "n_points": 595056,
+      "mean_minus_arith_mV": -12.582104526813964
+    },
+    {
+      "t_start": 0.05,
+      "t_end": 0.055,
+      "mean_V": 170.4420427428407,
+      "raw_Vpp": 3.9064878398024234,
+      "min_V": 168.1722237459017,
+      "max_V": 172.07871158570413,
+      "arithmetic_mean_V": 170.45057904007538,
+      "n_points": 588271,
+      "mean_minus_arith_mV": -8.536297234684298
+    },
+    {
+      "t_start": 0.055,
+      "t_end": 0.06,
+      "mean_V": 169.81247658617414,
+      "raw_Vpp": 2.430864215869491,
+      "min_V": 168.57342548935023,
+      "max_V": 171.00428970521972,
+      "arithmetic_mean_V": 169.8286038347991,
+      "n_points": 583386,
+      "mean_minus_arith_mV": -16.127248624968615
+    }
+  ],
+  "deciles_2ms": [
+    {
+      "t": 0.04,
+      "mean_V": 160.62055228985864,
+      "raw_Vpp": 3.586402401368872
+    },
+    {
+      "t": 0.042,
+      "mean_V": 162.72154972634073,
+      "raw_Vpp": 3.4441202526335246
+    },
+    {
+      "t": 0.044,
+      "mean_V": 164.68643253166567,
+      "raw_Vpp": 3.286266037672675
+    },
+    {
+      "t": 0.046,
+      "mean_V": 166.52486515392155,
+      "raw_Vpp": 3.187036830089795
+    },
+    {
+      "t": 0.048,
+      "mean_V": 168.2477093332062,
+      "raw_Vpp": 3.0789957289042036
+    },
+    {
+      "t": 0.05,
+      "mean_V": 169.86485983933144,
+      "raw_Vpp": 2.972791706488266
+    },
+    {
+      "t": 0.052000000000000005,
+      "mean_V": 171.40477458752244,
+      "raw_Vpp": 2.3384576663528662
+    },
+    {
+      "t": 0.054,
+      "mean_V": 169.1958246518587,
+      "raw_Vpp": 1.96158405379893
+    },
+    {
+      "t": 0.056,
+      "mean_V": 170.32243377328513,
+      "raw_Vpp": 1.9424921529957828
+    },
+    {
+      "t": 0.058,
+      "mean_V": 169.8484054705395,
+      "raw_Vpp": 1.47357845098324
+    }
+  ],
+  "trend_test_10ms": {
+    "mean_50_55_V": 170.4420427428407,
+    "mean_55_60_V": 169.81247658617414,
+    "delta_mV": -629.5661566665558,
+    "total_Vpp_50_60": 3.9064878398024234,
+    "within_band": false
+  },
+  "settling_probe": {
+    "band_V": 0.01,
+    "reference_final_mean_V": 170.12725966450742,
+    "last_excursion_s": 0.06,
+    "observation_end_s": 0.06,
+    "margin_to_end_s": 0.0,
+    "verdict": "NOT_SETTLED_IN_OBSERVED_60MS",
+    "band_floor_from_switching_alone_V": 1.47357845098324
+  },
+  "fft": {
+    "method": "Hann window, mean detrend, uniform resample at fs=20 MHz (nyquist 10 MHz) from native adaptive-step samples; linear interpolation acts as a mild low-pass/alias shaper on content above the mean sample rate (~105 kHz in the native trace), so switching harmonics above 10 MHz are aliased and NOT resolved; envelope content below 1 kHz is resolved exactly. Windows as labelled.",
+    "whole_trace": {
+      "label": "whole 0-60ms @fs=20MHz",
+      "fs_Hz": 20000000.0,
+      "nyquist_Hz": 10000000.0,
+      "n_points": 1200000,
+      "bin_Hz": 16.666666666666668,
+      "detrend": "mean subtraction (DC removed)",
+      "window": "Hann, amplitude corrected by 1/sum(w)",
+      "top_peaks": [
+        {
+          "f_Hz": 16.666666666666668,
+          "amp_Vpp": 63.377247833656305
+        },
+        {
+          "f_Hz": 33.333333333333336,
+          "amp_Vpp": 10.208637534937113
+        },
+        {
+          "f_Hz": 50.0,
+          "amp_Vpp": 3.1153346569806026
+        },
+        {
+          "f_Hz": 66.66666666666667,
+          "amp_Vpp": 1.9450625479735004
+        },
+        {
+          "f_Hz": 83.33333333333334,
+          "amp_Vpp": 1.5432390177790125
+        },
+        {
+          "f_Hz": 100.0,
+          "amp_Vpp": 1.1882449784514522
+        }
+      ],
+      "amp_2_1kHz_V": 31.688623916828153,
+      "amp_1k_60kHz_V": 0.023155039633381544,
+      "amp_60_140kHz_V": 0.01522048571471981
+    },
+    "windows": [
+      {
+        "label": "40-45ms @fs=20MHz",
+        "fs_Hz": 19999999.999424886,
+        "nyquist_Hz": 9999899.998712435,
+        "n_points": 99999,
+        "bin_Hz": 200.002000014249,
+        "detrend": "mean subtraction (DC removed)",
+        "window": "Hann, amplitude corrected by 1/sum(w)",
+        "top_peaks": [
+          {
+            "f_Hz": 200.002000014249,
+            "amp_Vpp": 2.4669255630303732
+          },
+          {
+            "f_Hz": 400.004000028498,
+            "amp_Vpp": 0.5482875262167338
+          },
+          {
+            "f_Hz": 600.006000042747,
+            "amp_Vpp": 0.13690337657309848
+          },
+          {
+            "f_Hz": 800.008000056996,
+            "amp_Vpp": 0.0548657351304395
+          },
+          {
+            "f_Hz": 50400.50400359075,
+            "amp_Vpp": 0.04032212523907666
+          },
+          {
+            "f_Hz": 1000.010000071245,
+            "amp_Vpp": 0.027570128046330324
+          }
+        ],
+        "amp_2_1kHz_V": 1.2334627815151866,
+        "amp_1k_60kHz_V": 0.02016106261953833,
+        "amp_60_140kHz_V": 0.013423307749722897
+      },
+      {
+        "label": "45-50ms @fs=20MHz",
+        "fs_Hz": 19999999.999424886,
+        "nyquist_Hz": 9999999.999712443,
+        "n_points": 100000,
+        "bin_Hz": 199.99999999424887,
+        "detrend": "mean subtraction (DC removed)",
+        "window": "Hann, amplitude corrected by 1/sum(w)",
+        "top_peaks": [
+          {
+            "f_Hz": 199.99999999424887,
+            "amp_Vpp": 2.0906566438771335
+          },
+          {
+            "f_Hz": 399.99999998849773,
+            "amp_Vpp": 0.46457526607668964
+          },
+          {
+            "f_Hz": 599.9999999827467,
+            "amp_Vpp": 0.11621249901852511
+          },
+          {
+            "f_Hz": 799.9999999769955,
+            "amp_Vpp": 0.04643755950577459
+          },
+          {
+            "f_Hz": 50399.99999855072,
+            "amp_Vpp": 0.03871656856852018
+          },
+          {
+            "f_Hz": 100799.99999710143,
+            "amp_Vpp": 0.025806356491112566
+          }
+        ],
+        "amp_2_1kHz_V": 1.0453283219385667,
+        "amp_1k_60kHz_V": 0.01935828428426009,
+        "amp_60_140kHz_V": 0.012903178245556283
+      },
+      {
+        "label": "50-55ms @fs=20MHz",
+        "fs_Hz": 19999999.999424886,
+        "nyquist_Hz": 9999999.999712443,
+        "n_points": 100000,
+        "bin_Hz": 199.99999999424887,
+        "detrend": "mean subtraction (DC removed)",
+        "window": "Hann, amplitude corrected by 1/sum(w)",
+        "top_peaks": [
+          {
+            "f_Hz": 199.99999999424887,
+            "amp_Vpp": 2.5492631057201356
+          },
+          {
+            "f_Hz": 399.99999998849773,
+            "amp_Vpp": 1.544506615170355
+          },
+          {
+            "f_Hz": 599.9999999827467,
+            "amp_Vpp": 0.5152058906131185
+          },
+          {
+            "f_Hz": 799.9999999769955,
+            "amp_Vpp": 0.23318382959096934
+          },
+          {
+            "f_Hz": 999.9999999712443,
+            "amp_Vpp": 0.1213910064371727
+          },
+          {
+            "f_Hz": 1199.9999999654933,
+            "amp_Vpp": 0.08363915442675454
+          }
+        ],
+        "amp_2_1kHz_V": 1.2746315528600678,
+        "amp_1k_60kHz_V": 0.04181957721337727,
+        "amp_60_140kHz_V": 0.006799040410542604
+      },
+      {
+        "label": "55-60ms @fs=20MHz",
+        "fs_Hz": 19999999.999424886,
+        "nyquist_Hz": 9999999.999712443,
+        "n_points": 100000,
+        "bin_Hz": 199.99999999424887,
+        "detrend": "mean subtraction (DC removed)",
+        "window": "Hann, amplitude corrected by 1/sum(w)",
+        "top_peaks": [
+          {
+            "f_Hz": 199.99999999424887,
+            "amp_Vpp": 2.1700301456829303
+          },
+          {
+            "f_Hz": 399.99999998849773,
+            "amp_Vpp": 1.2227573737037039
+          },
+          {
+            "f_Hz": 599.9999999827467,
+            "amp_Vpp": 0.11131646043150983
+          },
+          {
+            "f_Hz": 999.9999999712443,
+            "amp_Vpp": 0.029623882776003585
+          },
+          {
+            "f_Hz": 799.9999999769955,
+            "amp_Vpp": 0.02637638837041727
+          },
+          {
+            "f_Hz": 100999.99999709569,
+            "amp_Vpp": 0.01718062509757266
+          }
+        ],
+        "amp_2_1kHz_V": 1.0850150728414651,
+        "amp_1k_60kHz_V": 0.006755749200507869,
+        "amp_60_140kHz_V": 0.00859031254878633
+      }
+    ]
+  },
+  "nyquist": {
+    "fs_resampled_Hz": 20000000.0,
+    "nyquist_Hz": 10000000.0,
+    "native_mean_sample_rate_Hz": 105532166.66666666,
+    "native_min_sample_rate_Hz": 4999999.999986326,
+    "note": "Native trace is NOT uniformly spaced (adaptive LTSpice step); spacing irregularity is a documented alias/smearing source for any FFT of the true raw.",
+    "maxstep_s": 2.0000000000054696e-07
+  },
+  "fft_selfcheck": {
+    "first_draft_error": "An earlier draft built the frequency axis from a recomputed span expression; it produced nyquist_Hz=0.0025 and empty peak lists. That erroneous intermediate is recorded here and was NOT used for any conclusion.",
+    "fix": "frequency axis now taken from np.fft.rfftfreq(n, dt) with dt measured from the actual uniform grid",
+    "san_checks": {
+      "nyquist_equals_fs_over_2": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "bin_equals_fs_over_N": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "peaks_populated": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "switching_late": [
+    {
+      "t": 0.04,
+      "cycles": 756,
+      "f_median_Hz": 101217.70555479176,
+      "f_mean_Hz": 151297.45803205893,
+      "period_jitter_pp_ns": 9889.493182591024,
+      "duty_mean": 0.29037849416947004,
+      "V_swing_min_V": -399.956399143197,
+      "V_swing_max_V": 0.9408577443228126,
+      "I_L_pp_A": 1.677896198382844,
+      "I_L_mean_A": 0.8562551401577667,
+      "I_L_min_A": -0.16440137065969798,
+      "I_L_max_A": 1.513494827723146,
+      "v_out_mean_V": 162.2040884507025,
+      "v_in_mean_V": 23.914363247749954
+    },
+    {
+      "t": 0.045,
+      "cycles": 756,
+      "f_median_Hz": 101220.22235093515,
+      "f_mean_Hz": 151297.89563424038,
+      "period_jitter_pp_ns": 9890.545761816194,
+      "duty_mean": 0.2776958362217732,
+      "V_swing_min_V": -399.9555291871485,
+      "V_swing_max_V": 0.9398416185220242,
+      "I_L_pp_A": 1.682896281411299,
+      "I_L_mean_A": 0.8662096433577251,
+      "I_L_min_A": -0.16939986107552152,
+      "I_L_max_A": 1.5134964203357777,
+      "v_out_mean_V": 166.9538777097598,
+      "v_in_mean_V": 23.913367797902257
+    },
+    {
+      "t": 0.05,
+      "cycles": 632,
+      "f_median_Hz": 100853.8568305067,
+      "f_mean_Hz": 126482.34097638527,
+      "period_jitter_pp_ns": 9925.747009330298,
+      "duty_mean": 0.29425929567634884,
+      "V_swing_min_V": -399.9802291849214,
+      "V_swing_max_V": 0.9570545827718888,
+      "I_L_pp_A": 1.8244851713762742,
+      "I_L_mean_A": 0.4948495203134581,
+      "I_L_min_A": -0.17267896405279543,
+      "I_L_max_A": 1.6518062073234787,
+      "v_out_mean_V": 170.45058406682085,
+      "v_in_mean_V": 23.950503792692906
+    },
+    {
+      "t": 0.055,
+      "cycles": 505,
+      "f_median_Hz": 100846.11240415728,
+      "f_mean_Hz": 100840.8373154787,
+      "period_jitter_pp_ns": 18.93811683167934,
+      "duty_mean": 0.27234375797478694,
+      "V_swing_min_V": -171.6318579994493,
+      "V_swing_max_V": 0.9205145430207153,
+      "I_L_pp_A": 1.3378612568696266,
+      "I_L_mean_A": 0.27129488149260084,
+      "I_L_min_A": -0.17144020333110624,
+      "I_L_max_A": 1.1664210535385204,
+      "v_out_mean_V": 169.82860623484842,
+      "v_in_mean_V": 23.972859246114975
+    }
+  ],
+  "envelope_5ms_box": [
+    {
+      "t_mid": 0.042499999999999996,
+      "box_mean_V": 162.2040884507025
+    },
+    {
+      "t_mid": 0.0475,
+      "box_mean_V": 166.9538777097598
+    },
+    {
+      "t_mid": 0.052500000000000005,
+      "box_mean_V": 170.45058406682085
+    },
+    {
+      "t_mid": 0.057499999999999996,
+      "box_mean_V": 169.82860623484842
+    }
+  ],
+  "envelope_vs_switching": {
+    "switching_component_Vpp": 4.674321046753867,
+    "note": "Raw Vpp reported above is the TRUE raw total; the switching component is bounded here only by the FFT switching-band amplitude and by the per-cycle I_L ripple, not by a de-noised reconstruction."
+  },
+  "small_signal": {
+    "Vref_assumed_V": 1.6,
+    "Vout_target_V": 169.96788382616018,
+    "R_load_ohm": 5200.0,
+    "R_bleed_ohm": 45450.0,
+    "R_fb_ohm": 201900.6,
+    "R_eff_ohm": 4560.736644966784,
+    "C_out_F": 2.03e-05,
+    "L_H": 0.00015,
+    "P_measured_W": 6.323924782524085,
+    "I_out_measured_A": 0.03723709993697417,
+    "I_out_power_budget_A": 0.03369741290691034,
+    "P_budget_W": 5.900417,
+    "duty_measured": 0.27234375797478694,
+    "fsw_measured_Hz": 100846.11240415728,
+    "IL_avg_A": 0.27129488149260084,
+    "IL_pp_A": 1.3378612568696266,
+    "I_lim_A_nominal": 1.7741935483870968,
+    "DCM_peak_check_A": 0.1023480533427044,
+    "conduction_mode_outline": "CCM iff I_L valley > 0; measured valley -0.171 A over the late window",
+    "f_RHP_zero_CCM_formula_Hz": 2562219.818218698,
+    "RHP_applicable": false,
+    "RHP_mode_caveat": "NOT APPLIED as the plant zero. The (1-D)^2 R/(2 pi L) form is a BOOST CCM average-model result requiring D near the R1 ideal boost estimate 0.845-0.873. The MEASURED late-window duty is 0.2723 and the measured inductor current goes NEGATIVE (-0.171 A), so the CCM boost formula is outside its validity here (R1 reported 882/1134 late cycles with a zero crossing). In DCM there is no RHP zero in the control-to-output transfer; the value is recorded only to show the formula-on-measured-D residual and is NOT an estimate of any actual RHP zero. Actual topology/conduction mode remains INCONCLUSIVE from this offline pass.",
+    "f_out_pole_CM_Hz": 3.438104670458744,
+    "f_out_pole_note": "Current-mode averaged output pole 1/(pi R C) using measured R_eff/V(out)/C_out. This 1/(pi R C) form is the constant-power input-side RC approximation from R1 compensation_screen.py, NOT a validated mode-resolved current-mode plant; it is twice the passive RC pole. Derivation only, no Bode measurement, no margins.",
+    "f_passive_RC_Hz": 1.719052335229372,
+    "f_comp_zero_Hz": 1063.869940453846,
+    "f_comp_pole_Hz": 397887.35772973835,
+    "comp_zero_over_plant_pole": 309.4350063262892,
+    "existing_compensation": {
+      "RCOMP": 22000.0,
+      "CCOMP": 6.8e-09,
+      "CHF": 1e-10,
+      "RT": 140000.0
+    },
+    "recommendation": "No compensation edit is justified by this offline analysis and none is proposed. The observed residual is a slow envelope drift (window means 162.18/166.94/170.44/169.81 V over successive 5 ms windows) rather than a fast limit-cycle at the 100.85 kHz switching rate, and the estimated CM output pole (~3.4 Hz) is far below the existing RCOMP*CCOMP zero (~1.06 kHz), so the chain is not shown to be mis-compensated. Conversely nothing here proves it adequate: the plant is not mode-resolved, the ~170V topology assumption contradicts the measured duty, and no gain/phase margin exists. Keep 22k/6.8n/100p/140k unchanged and measure first.",
+    "recommendation_values_justified": false
+  },
+  "envelope_decay_probe": {
+    "positive_excursion_V": [
+      -4.940365118384335,
+      -0.5502249282328933,
+      1.951451921196707,
+      0.8770300407122988
+    ],
+    "estimated_tau_s": [
+      0.006251659004792697
+    ],
+    "note": "Crude single-exponential probe on positive excursions above the 55-60ms mean. The sign change between window 3 and 4 (mean falls from 170.44 to 169.81 V) breaks any monotonic-decay assumption, so this is NOT a settling time and NOT an extrapolation to 200 ms."
+  },
+  "extended_observation": {
+    "recommendation": "RECOMMEND a single unchanged 200 ms observation run in a later round under principal Codex approval, using lab.full(stop=0.2) with the identical models/tolerances and the SAME 200ns max step. It is the only way to see whether the 200 Hz envelope component and the ~630 mV/5ms drift continue, reverse or decay. 60 ms is NOT qualified as settled here and no 200 ms outcome is predicted.",
+    "why": "settling_probe.last_excursion_s reaches the trace end; delta_mV=-629.6 over 50-55 vs 55-60 ms; dominant non-DC FFT lobe is 200-600 Hz, which the 5 ms windows resolve but which is not demonstrated to be finished",
+    "proposed_only_not_executed": true,
+    "simulations_run": 0,
+    "cost_caveat": "R1 wall time was ~600 s for 60 ms at 200 ns max step; a 200 ms stop is ~3.3x and must be budgeted by the principal, not assumed."
+  },
+  "assertions": {
+    "no_simulation_performed": true,
+    "all_four_5ms_windows_present": true,
+    "vpp_computed_from_raw": true,
+    "time_weighted_mean_used": true,
+    "fft_uniform_resampled": true,
+    "nyquist_documented": true,
+    "not_qualified_as_settled": true,
+    "component_or_model_modified": false
+  },
+  "evaluation_status": "ANALYSIS_ONLY_NOT_SETTLED"
+}

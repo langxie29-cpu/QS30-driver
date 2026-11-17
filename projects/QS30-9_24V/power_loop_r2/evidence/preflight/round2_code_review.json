@@ -1,0 +1,19 @@
+{
+  "classification": "INCONCLUSIVE",
+  "all_worker_scripts_executed": false,
+  "reject_startup": [
+    "RPRE in drain33 is parallel with inductor, not series; replacement anchor150u missing after135u change",
+    "False statementSHDN unconnected; actual XU node9 en per vendor11pin order",
+    "Double counts RSNUB andCSNUB same series current in KCL",
+    "Wrong MSS1583 row: correct150u DCR.159max and Isat3.1/3.6/3.9A,Irms1.55/2.2A",
+    "8.81ms vs8.49ms false0.1% match; exact Imax/Gmax/Cmin gives7.962353ms",
+    "Wrong Vpk=Ipk dimension equality"
+  ],
+  "reject_loop": [
+    "Exact arithmetic R4801.650430149437, no reason for4475.9-4801.7 uncertainty band",
+    "Invented trueppt cannot infer missed extrema between samples",
+    "Constant-power orILIM1.77A output sink is not a real nine-glow-tube model",
+    "Mean rate6331931/.06=105.53MHz, not105kHz; FFT conclusions require correction"
+  ],
+  "decision": "Do not execute generated drafts. Use short independently checked principal scripts. Preserve every draft and rejection. No compensation change."
+}

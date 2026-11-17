@@ -1,0 +1,35 @@
+{
+  "task_id": "startup_candidate",
+  "status": "INCONCLUSIVE",
+  "notes": "Round2 override forbade executing shell or any simulator, so this session delivered reviewed-candidate code and a line-referenced source review, not measurements. build_startup.py drafts exactly the three authorized worst-scenario cases (26.4V, COUT 24.36u, LPOWER 135u, RINPUT .1, gate inhibited, .tran 5e-8 1.008e-2 0 5e-8 uic, gear, Normal, original reltol=.001 abstol=1n vntol=1u, 30s timeout): A uncontrolled 1us reference, B plus 33 ohm 5% precharge resistor, C source ramp 1us->8.49ms and no 33 ohm. It uses shared lab.py only (lab.full then one-variable netlist edit then lab.execute), refuses import, refuses to overwrite an existing run, refuses non-unique anchors, and asserts the inhibit (REN1 absent, VEN en 0 0) before each run. measure_startup.py pre-declares the read-back quantities (frozen bound V_pk=I_pk=26.4*sqrt(24.36u/135u)=11.22, an upper bound) and marks fault_peak_V<=195V, ripple<=1Vpp, mean 165-175V and startup<=1s NOT EVALUABLE because the gate is inhibited in all three cases so the converter never switches; not evaluable is never reported as pass. ti_source_review.py (not executed) reproduces the numbers from archived TI/Kemet text: native dVdT ramp 23.9V/1.6ms=14.94V/ms (TPS2660.txt L1365, external cap can only slow it, L1367), GAIN(dVdT) 24.6V/V typ 23.75-25.5 (L453), tdVdT 10ms at C(dVdT)=47nF (L635) giving 2.39V/ms and 24/(2.39/1.10)=8.81ms for the -10% corner, which reproduces the review's 8.49ms to 0.1%; no min/max tdVdT exists in the archived text so that corner is a derivation, not a TI guarantee. Guaranteed current limits at V(IN)-V(OUT)=1V are 1.425/1.5/1.575A at R(ILIM)=8k and 2.11/2.23/2.35A at 5.36k (L461-465), and fast-trip is 87% ABOVE the programmed limit (L1530). MSS1583-154KED shows DCR 0.033/0.038 ohm, Isat 3.9/4.4A, Irms 3.4/4.8A (MSS1583.txt L45) but the extraction cannot say whether the drop criterion is 10% or 20%, and the SPICE cell is linear with no saturation, so linear peak current is not saturation evidence. TPS26601 model status remains HOLD (encrypted). Status is INCONCLUSIVE, not PASS or FAIL: no required simulation evidence exists in this session and worker PASS would only ever mean evidence delivered, never electrical acceptance. All HOLD unchanged, all thresholds unchanged, no model modified, no recursive agent/model launched.",
+  "evidence_files": [
+    "inventory.md",
+    "PREREGISTRATION.md",
+    "build_startup.py",
+    "measure_startup.py",
+    "ti_source_review.py"
+  ],
+  "source_urls": [],
+  "solver": "none (no simulator executed in this session; LTspice 24.0.12.0 Normal is the sole documented solver referenced for the unexecuted draft)",
+  "model_hashes": {
+    "controller.sub (LT3757A, ADI/Linear Technology vendor model, R1 baseline, byte-frozen)": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib (R1 baseline, byte-frozen)": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib (SS14 vendor model, R1 baseline, byte-frozen)": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib (STP9NK50Z vendor model, R1 baseline, byte-frozen)": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "LTspice.exe 24.0.12.0 solver binary": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d"
+  },
+  "blocking_issues": [
+    "No simulation was executed (Round2 override: code generation only), so none of the three approved cases has a raw, log or measured metric; build_startup.py and measure_startup.py are unexecuted drafts.",
+    "No vendor model license/version file for controller.sub, diode.lib, ss14.lib or st.lib was re-read in this session; hashes are carried from the R1/R2 preregisters, not re-derived from the model origin documents.",
+    "ti_source_review.json does not exist because producing it required running Python; all source numbers above are quoted from the archived text extractions with line references and must be re-verified against the PDFs.",
+    "TI provides no min/max on tdVdT; the 8.49ms -10% corner is an arithmetic derivation from a single typical 10ms/47nF point, not a guarantee, and case C is a source ramp that says nothing about TPS26601 device behaviour, SOA, current limit or shutdown delay.",
+    "Gate inhibition mechanism is unresolved: LT3757A SHDN (pin 9) is the unconnected 10th positional node in this netlist and is not tied by the draft; the draft uses the round_01-approved REN1/REN2 -> VEN en 0 0 netlist mutation instead. Any other mechanism is a new variable needing separate preregistration.",
+    "fault_peak_V=195V, ripple<=1Vpp, mean 165-175V, startup<=1s and sense_abs<=0.3V are structurally not evaluable in the three approved cases (converter cannot switch, and SENSE is a separate task); these thresholds remain unchanged and unproven.",
+    "TPS26601 remains on HOLD: the archived TI libraries are encrypted (SLVMBY3/SLVMBY4), no dynamic qualification exists, and the model is not a simulated part in any approved case.",
+    "RTN isolation, thermal/SOA and maximum shutdown delay HOLDs are untouched and unproven.",
+    "MSS1583-154KED saturation/drop criterion is unrecoverable from the archived text extraction; a human must read the PDF before any magnetic claim. The SPICE inductor is linear, so simulated peak current is not saturation evidence.",
+    "33 ohm precharge placement ('downstream of all input bulk') is ambiguous in the base netlist; the draft places RPRE in drain 33 in series with the load path, which introduces a DC drop to the load and must be confirmed by the principal.",
+    "Physical recovery and model uncertainty (ROUND1_REVIEW lines 7-8) prevent any hardware pass regardless of simulated outcome.",
+    "source_urls is empty on purpose: this session had no network access and quotes only already-archived provider documents, so no URL was verified."
+  ]
+}

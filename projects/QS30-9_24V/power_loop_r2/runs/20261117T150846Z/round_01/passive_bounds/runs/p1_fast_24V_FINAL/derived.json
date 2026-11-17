@@ -1,0 +1,56 @@
+{
+  "name": "p1_fast_24V",
+  "artifact_dir": "p1_fast_24V_FINAL",
+  "variable": "SHDN hold: REN1/REN2 divider -> VEN en 0 0, plus source rise 1ms -> 50ns (source slew only)",
+  "hypothesis": "Prerequisite cell, SHDN held 0, 24V, source rise 50ns (fast relative to the L/C ringing mode so the linear divider limit is the binding constraint)",
+  "edits": [
+    [
+      "REN1 in en 200k\nREN2 en 0 12.8k",
+      "VEN en 0 0"
+    ],
+    [
+      "VINPUT vin 0 PWL(0 0 1m 24)",
+      "VINPUT vin 0 PWL(0 0 50n 24)"
+    ]
+  ],
+  "rc": 0,
+  "status": "COMPLETED_UNREVIEWED",
+  "elapsed_s": 5.91696249996312,
+  "timeout_s": 30,
+  "netlist_sha256": "46eb57f181b1f899a52b0fbb495cacc9c661b540e32b9421f673da9b222dd404",
+  "tran": ".tran 5e-08 0.003 0 5e-08 uic",
+  "options": ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "log_tail": [
+    "volttol = 1e-06",
+    "Instance \"m:q:os\": Width narrower than recommended for a level 3 MOSFET.",
+    "Per .tran options, skipping operating point for transient analysis.",
+    "Total elapsed time: 4.734 seconds."
+  ],
+  "solver_steps_raised_defcon": 0,
+  "t_end": 0.003,
+  "n_points": 60245,
+  "vin_final": 24.000000266586657,
+  "t_peak_vout": 0.0001718015037108126,
+  "vout_peak": 41.43220175674334,
+  "t_peak_il": 8.295150371081046e-05,
+  "il_peak": 7.613982216244885,
+  "il_rms": 1.2922747892695094,
+  "il_energy_J": 0.004347954389197002,
+  "vout_at_1ms": 41.06917073211037,
+  "vout_at_2ms": 40.64986593232054,
+  "vout_final": 40.23484076445718,
+  "il_final": -2.6658689944820784e-06,
+  "il_at_vout_peak": 0.2569026437906052,
+  "dvdt_1090_V_per_s": 323373.2820038427,
+  "dvdt_max_V_per_s": 375112.62048980594,
+  "divider_share_nominal": 0.1295336787564767,
+  "ideal_peak_A": 8.829042983245692,
+  "raw_sha256": "6b223d097a922974c5215aac5875514c81dc7a24b3f4108bf854058adfdda0aa"
+}

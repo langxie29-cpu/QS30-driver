@@ -1,0 +1,71 @@
+{
+  "scope": "Principal arithmetic/source decision, not vendor-model execution qualification",
+  "source": "TI TPS2660 RevG table7.5 andsection9.3.4/9.3.5; https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+  "existing_U101": {
+    "part": "TPS26601RHFR",
+    "R_ILIM_ohm": 20000,
+    "MODE": "OPEN: electronic circuit breaker+latch-off",
+    "C_dVdT_F": 4.7e-08,
+    "SHDN": "10k to ownRTN defaultOFF; isolatedpermit incomplete"
+  },
+  "decision": "ActualHVenable remainsHOLD/defaultOFF. Research primaryroute: U101 controlledslew and independentPWM inhibit during passivecharge. A separate33ohmprecharge+bypass is a bounded fallback candidate, not released. MODEOPEN cannot be treated ascontinuouslimiting.",
+  "proposed_unreleased_U101": {
+    "MODE": "402kohm to ownRTN: activecurrentlimit+latch",
+    "R_ILIM_ohm": 8000,
+    "I_limit_table_A": [
+      1.425,
+      1.5,
+      1.575
+    ],
+    "conditions": "Table at deltaV1V and5V; temperaturecolumnfullrange; datasheetgeneraltestVin24V; inputrangeextrapolationanddynamics not independentlyqualified",
+    "C_dVdT_F": 4.7e-08,
+    "component_MPNs": "Resistors/capacitor exactMPN andfullT/bias tolerance remainHOLD"
+  },
+  "slew": {
+    "cap_total_min_assumption_F": 4.23e-08,
+    "Iprog_max_A": 5.5e-06,
+    "gain_max": 25.5,
+    "calculated_max_V_per_s": 3315.6028368794323,
+    "calculated_rise_26p4_s": 0.00796235294117647,
+    "qualification": "Boundedparameter arithmetic plussource-ramp fixture only. ActualeFusemodel encrypted; Cmin/fullVin assumptionsunqualified."
+  },
+  "precharge": {
+    "R_nominal_ohm": 33,
+    "R_min_ohm": 31.35,
+    "cold_passive_current_bound_A": 0.8421052631578947,
+    "upper_instant_resistor_power_W": 22.23157894736842,
+    "normal_model_energy_J": 0.007937059145663273,
+    "fault_short_energy_20ms_J": 0.4446315789473684,
+    "cutoff_20ms": "hypothetical energy calculation, NOT a guaranteedprotectiondeadline",
+    "permanent_R_max_load_power_W": {
+      "21.6": 3.534545454545455,
+      "24": 4.363636363636363,
+      "26.4": 5.279999999999999
+    },
+    "bypass": "Necessaryfor6Wcapacity. RequiredefaultOFF, PWMdisableduntilprecharge/bypasswitness. RealbypassMPN/SOA/guardmaxdelays notimplemented; noqualification."
+  },
+  "fast_trip": {
+    "threshold_typ_formula": "1.87*IOL+0.015A",
+    "threshold_from_IOLmax_A": 2.9602500000000003,
+    "delay_typ_s": 2.5e-07,
+    "delay_max_s": null,
+    "qualification": "No guaranteedmaximumdelaybound; cannot inferhotL currentceiling"
+  },
+  "inductor": {
+    "part": "MSS1583-154KED",
+    "L_nom_H": 0.00015,
+    "DCR_max_25C_ohm": 0.159,
+    "Isat_25C_10_20_30pct_A": [
+      3.1,
+      3.6,
+      3.9
+    ],
+    "Irms_25C_20_40C_rise_A": [
+      1.55,
+      2.2
+    ],
+    "maximum_part_temperature_C": 125,
+    "qualification": "25C characteristics not hotqualification; L(I,T)/coreloss missing"
+  },
+  "manufacturing": "HOLD"
+}

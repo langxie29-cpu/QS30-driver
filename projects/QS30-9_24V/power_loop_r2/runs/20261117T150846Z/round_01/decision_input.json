@@ -1,0 +1,83 @@
+{
+  "round_results": {
+    "sense_root": {
+      "task_id": "sense_root",
+      "grade": "INCONCLUSIVE",
+      "worker_claim": "INCONCLUSIVE",
+      "notes": "Evidence delivered; NOT an electrical acceptance, no HOLD change. SOURCE (R1 raw, 6,331,931 pts): the 10.040718ms event is the GLOBAL max of V(sense)=0.5243575292413777 V (not local); log shows 5 'Heightened Def Con' timestep reductions inside the +-2us window (7035 total, no Newton/solver failure). Extracted 1509 samples to event_window.csv + event_json.json. The original raw saves no MOS/gate/shunt-segment/snubber/clamp currents, so no KCL was derivable from it. THREE preregistered runs (lab.full + lab.execute timeout=180, no retries): gear200ns rc=0 70.0s 562264pts; gear100ns rc=0 164.9s 915241pts; trap200ns rc=0 59.8s 588140pts; all complete to 10.08ms, models re-hashed identical to R1 preregister, tolerances unchanged. PROBE OUTCOME: all 11 top-level probes honored; the 5 internal probes I(XQ:LD) I(XQ:LS) I(XQ:LG) I(XNEG:ddio) I(XNEG:dgr) were SILENTLY DROPPED by LTspice (rc=0, no log warning, absent from raw) - preserved, not retried. MEASURED over the common complete window: global V(sense) peak 0.52508/0.51953/0.52896 V (spread 1.82%), I(RSRC) peak 12.162/12.007/12.206 A (1.63%), I(DREC) 10.760/10.610/10.794 A (1.70%), I(LPOWER) 0.01%, I(CSNUB)=I(RSNUB) 0.03%, V(drain) 0.03% - so peak MAGNITUDES pass the 5% reproducibility screen and R1's 0.52436 V is reproduced by gear200 to 0.14%. FAILING FIELDS: I(RF) 19.5%, V(gate) 14.3%, I(RGS) 14.3%, I(RNEG) 14.1% spread. Switching phase differs by ~5.9us between gear200 (gate edges 10.0405/10.0510/10.0615/10.0719 ms) and trap200 (10.0463/10.0569/10.0674/10.0779 ms), and at the anchor time gear200 reads V(sense)=0.0035 V vs 0.00064 V (gear100) vs 0.00060 V (trap200) with I(DREC) -2.4uA/-46uA/-466uA, whereas R1 had 0.524 V and +2.09e-6 C recovery charge there: the R1 event is NOT reproduced waveform-wise by any run. Phase-independent numerical residual: gate trough -14.72 V (trap200) vs -12.61 V (gear100), a 14% amplitude difference in a network-determined quantity; gear100 emitted 13706 step reductions vs 475 for gear200 and ran ~5.7us ahead, i.e. refinement moved the solution rather than converging it; dt_min 9.97e-18 s in all runs. Source-node partial KCL I(RSRC)-I(RF)-I(RGS) over +-2us: max residual 0.356 A (gear200 and gear100) vs 0.052 A (trap200) - that residual IS the unobserved MOS-source/normal-clamp branch, and its 7x solver dependence proves the missing-branch magnitude is unresolvable. ESTABLISHED: ",
+      "evidence_sha256": {
+        "inventory.md": "c7096c6563cd6407e477748e9757d583b2387188ea6f5fa85eb3209eb75a0b5b",
+        "event_window.csv": "4950be20d8885e0f453d8224197eb21e154ef2d6f37f5c8770d221fbb51b0c1f",
+        "event_json.json": "decbefcc03e4eda7e88071e3425b64aff5e03d36c7e264942e9e7fc9ba22c3d4",
+        "source_raw_inventory.json": "33e38f06f39627da86ed97c0217bf680561c029bc66f3ec8bc21f36194ea1722",
+        "source_log_diagnostics.json": "f3e679bc9a3354f4ddb2a82354ae3744b056d53a63193ca668b735171da88338",
+        "prereg_runs.json": "783fd95275d88e7cdce4f6b8b570d43e5b10c2799aedc826c3d7c9551a0b5423",
+        "runs_command.json": "12442508a9008f887fdd314c43e026b931d65d17f447864288050587ea913231",
+        "metrics.json": "6e5b830bc0ed90f9881f01ced60a8d143fe41d1c8b367c814e960837b4ee2ddf",
+        "window_metrics.json": "0d5b9527eec1ce3793f9158cda04bb8f0c827be107747aaf76c6ae4e656128c7",
+        "analyze_source.py": "4d190b0ff21c33fc1d2635fc21037c40651a2711f24ea4ff6f8f59fbb28662f0",
+        "launch_runs.py": "459746ac7002c8ebd1ecfa4060e98e27d8b8d38a1dc28025babf2b8a7a58973a",
+        "analyze_runs.py": "93e20d86c0a9e43cee87d52834dddff5948637e738451955445b63e131a95a93",
+        "window.py": "4d8df721eae0fce89fabeffb8ef564b8fb56b6d14814dcbad79f15af52e00507",
+        "emit_waves.py": "491ac8191e8ad11d40172d970e45a15272957006e3b470b92ca311c5c0e60486",
+        "peaks.py": "9d454f71286ee16c049b1120f27ce77d1c8c66d8acbf8cf6dc7a13861b253c2e",
+        "phase.py": "8f82fe2eb94f7c1416a02922bd9ae92123107222b1a6029ecc897270acfc46bc",
+        "run_gear_2e-7/circuit.cir": "c51aa27d310b35986997c4596a3996c697e3b0772065c25c85542033c17a2974",
+        "run_gear_2e-7/circuit_used.cir": "c51aa27d310b35986997c4596a3996c697e3b0772065c25c85542033c17a2974",
+        "run_gear_2e-7/preregister.json": "5307509f98a326000bc2073ef7f421c0bb20be45dac935125b4b30d4cc950ac3",
+        "run_gear_2e-7/command.json": "fac9aea5f71568361fa700f9227f47909d7c28132ba3ed60b4ed1cb066e32864",
+        "run_gear_2e-7/process.json": "7ae026556b5f9ded566f035fda00c2abb6176f016828ccd7bdcd28f81c2d0611",
+        "run_gear_2e-7/circuit.log": "710ed85850850a635f59a578cdcdf5370c3c96611f35cc096ec6020b1e5d18fc",
+        "run_gear_2e-7/run.log": "b80d1bcb9096871e6dcd804e039fa9b7361eb4b501ddd7674642aaf71f76c87c",
+        "run_gear_2e-7/circuit.raw": "98fa5777ba9f385cc92559bdb1208420c543e09d96c7f3e913ea4e8e58dafa70",
+        "run_gear_2e-7/waves_event_window.csv": "6e7c902fe28bab2868412ec1a96c0e2fd3c6636533fc0e24d150b0c158aca114",
+        "run_gear_1e-7/circuit.cir": "87ff89b2d9e4270bf1a9626a32b93999ad7b552be4af0330d4b25b495bcf33b1",
+        "run_gear_1e-7/circuit_used.cir": "87ff89b2d9e4270bf1a9626a32b93999ad7b552be4af0330d4b25b495bcf33b1",
+        "run_gear_1e-7/preregister.json": "c0f1d72424b7c9af4c82c73dd67897806d50634101b0e515f9f5f1003c59d10c",
+        "run_gear_1e-7/command.json": "7cc81e8e2fb563c781598c0994a3f314d74e334dc445ae361a6e251726cc11e7",
+        "run_gear_1e-7/process.json": "837136670ee3e48657d55d5f8451df85bbfcb3f6993e9505f259ce2af537af0f",
+        "run_gear_1e-7/circuit.log": "af23379fa1f946dac385f98b2da5f94eb102f9db3e7b16a44453367470df7061",
+        "run_gear_1e-7/run.log": "5fb8ed4c16d780a7233342d71b432948515e36d4253aaa3741b32fbcafe45346",
+        "run_gear_1e-7/circuit.raw": "646dc53093436162aec923ed088f8d672af60145dae048aae579458e69f7dd73",
+        "run_gear_1e-7/waves_event_window.csv": "6330abd8215628e7b3046c84ca0719912724d0acb61c5c8b8c34198e8b42839a",
+        "run_trap_2e-7/circuit.cir": "5ca84994b2bd93af6e12cb40c4a7cdd827d104adba3ccadca009769afb47e9d1",
+        "run_trap_2e-7/circuit_used.cir": "5ca84994b2bd93af6e12cb40c4a7cdd827d104adba3ccadca009769afb47e9d1",
+        "run_trap_2e-7/preregister.json": "f53e4997df8df5c831a6215aa72d94667a29d942551663dbecc15b7b636dd441",
+        "run_trap_2e-7/command.json": "25b9f40e501747f3b92422a09a0419df8a4a20b9b2849495aeb6c9883d49b3c9",
+        "run_trap_2e-7/process.json": "bfbaac523be04aaac072e9edd7da7bce5ea496a201654eb24da700f146db4e8a",
+        "run_trap_2e-7/circuit.log": "6077a1a60d77a9f0388987a41ab1c6a138d17caa839be634d6fab7908d07420e",
+        "run_trap_2e-7/run.log": "e2db75576aa2475d17fec98386f849de93d9575aa4914bda619a884e787647fa",
+        "run_trap_2e-7/circuit.raw": "3c3419eddf7fe0929c6db0c727b78395be3be3e2061dd10c01ad27c05229759a",
+        "run_trap_2e-7/waves_event_window.csv": "4dd737f503233b0135a706c3835ba55e9fd99205b9600e73ab1dc9e8fc5b576a"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    },
+    "passive_bounds": {
+      "task_id": "passive_bounds",
+      "grade": "INCONCLUSIVE",
+      "reason": "Harness execution did not complete, irrespective of worker claim",
+      "process_rc": 1
+    },
+    "settling_analysis": {
+      "task_id": "settling_analysis",
+      "grade": "CLAIMED_PASS_AUDITED_FILES",
+      "worker_claim": "PASS",
+      "notes": "ANALYSIS ONLY; ZERO simulations run (none permitted this round). Read the original complete R1 60ms raw (6331931 pts, real double nocompression, gear 200ns maxstep, tolerances unchanged) with lab.native. Time-weighted mean / true raw Vpp on successive 5ms windows: 40-45ms 162.179V / 6.571Vpp; 45-50ms 166.941V / 5.789Vpp; 50-55ms 170.442V / 3.906Vpp; 55-60ms 169.812V / 2.431Vpp (reproduces R1 settled_window_review to <0.01V; the 40-60ms 13.463Vpp spans the 46.2019ms band entry and is not a ripple metric). 60ms is NOT qualified as settled: the trace leaves a +/-10mV band at the final sample (zero margin), the mean moves -629.6mV between 50-55 and 55-60ms with sign reversal versus the earlier ramp, and the quietest 2ms bin still has 1.474Vpp. FFT on linear-resampled uniform data at fs=20MHz (Nyquist 10MHz), Hann window, mean-detrended, bin ~200Hz: dominant non-DC content is an envelope at 200-600Hz (e.g. 55-60ms: 200Hz 2.170V, 400Hz 1.223V); switching band 60-140kHz <=13.4mV, so the residual is envelope drift, not a 100.85kHz limit cycle. Caveats documented: native samples are non-uniform so interpolation smears content above ~105kHz mean rate; content >10MHz (V(drain) edges) is aliased and unresolved. A first-draft FFT frequency-axis error (nyquist 0.0025Hz, empty peaks) is preserved in analysis.json fft_selfcheck and used for no conclusion. Load from actual raw: R_eff=4560.74ohm, Vout~169.83V -> 6.324W / 37.24mA vs 5.900W budget. Measured duty 0.272 and I_L valley -0.171A mean the CCM boost RHP formula (1-D)^2R/(2piL) is OUTSIDE its validity; it is recorded (2.56MHz) but flagged RHP_applicable=false and used as no plant zero; conduction mode/topology INCONCLUSIVE. Current-mode averaged output pole 1/(piRC)=3.44Hz (derivation only, no Bode/margins); existing compensation zero 1/(2pi*22k*6.8n)=1.064kHz, CHF pole ~398kHz, RT 140k. Compensation: NO edit and NO value proposed (recommendation_values_justified=false); the slow envelope is not shown to be a compensation deficiency and adequacy is likewise unproven. Recommend one unchanged 200ms observation (lab.full stop=0.2, same models/tolerances/200ns step, preregistered) as proposed-only-not-executed, with ~3.3x cost caveat; no 200ms outcome predicted. Worker PASS means evidence delivered only, never electrical acceptance: thresholds unchanged, SENSE still exceeds LT3757A +/-0.3V, all HOLD remain.",
+      "evidence_sha256": {
+        "inventory.md": "1669f68540faf36f4a223ae8be38b5f57da9c1f7a21dec46b1c17de50112c6d4",
+        "analysis.py": "0685db899617f1b107be0b610da9df964177dd2d368aedcc6419f8da0ddae836",
+        "analysis.json": "c1510ff421ae2f57229b1a73802f2b90f12bb8a4152eb5cf7b42de87a0b1465d",
+        "result.json": "05577525f21f90194b75357b77b8beaf2b93088e6f79dcf59cfd09542c9f6363"
+      },
+      "warning": "File/protocol audit ONLY; neither physical nor SPICE electrical signoff",
+      "process_rc": 0
+    }
+  },
+  "used_task_ids": [
+    "passive_bounds",
+    "sense_root",
+    "settling_analysis"
+  ],
+  "remaining_rounds": 1
+}
