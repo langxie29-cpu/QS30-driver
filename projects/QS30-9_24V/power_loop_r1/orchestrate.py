@@ -92,6 +92,8 @@ def audit_worker_result(task: dict, task_dir: Path, size_cap: int) -> dict:
                 raise ValueError("SPICE process/endpoint not complete")
             if m["evaluation_status"] != "LIMITED_PASS" or not isinstance(m["assertions"], list) or not m["assertions"]:
                 raise ValueError("SPICE has no actual assertions")
+            if not all(isinstance(a, dict) and a.get("passed") is True for a in m["assertions"]):
+                raise ValueError("SPICE has failed/malformed assertions")
             if not isinstance(result.get("model_hashes"), dict) or not result["model_hashes"]:
                 raise ValueError("SPICE model origin not recorded")
         grade = "CLAIMED_PASS_AUDITED_FILES" if status == "PASS" else status
@@ -111,6 +113,14 @@ def eligible(task_id: str, tasks: dict, completed: dict, max_stage: int, history
         return False
     if t["stage"] >= 2 and not any(tasks[k]["stage"] == 1 for k in history):
         return False
+    if t["stage"] >= 3:
+        # A documented controller reference AND a documented nonlinear device cell
+        # are prerequisites for startup/loop exercises; textual model selection is not enough.
+        references = ("lt3757a_reference", "ucc28c43_reference")
+        if not any(completed.get(k, {}).get("grade") == "CLAIMED_PASS_AUDITED_FILES" for k in references):
+            return False
+        if completed.get("device_cells", {}).get("grade") != "CLAIMED_PASS_AUDITED_FILES":
+            return False
     return all(completed.get(dep, {}).get("grade") == "CLAIMED_PASS_AUDITED_FILES"
                for dep in t["depends"])
 
@@ -121,7 +131,7 @@ def validate_decision(dec: dict, tasks: dict, completed: dict, max_stage: int, h
     if not isinstance(dec.get("rationale"), str):
         raise ValueError("No rationale")
     nxt = dec.get("next_task_ids")
-    if not isinstance(nxt, list) or len(nxt) != len(set(nxt)) or len(nxt) > 4:
+    if not isinstance(nxt, list) or not all(isinstance(k, str) for k in nxt) or len(nxt) != len(set(nxt)) or len(nxt) > 4:
         raise ValueError("Bad next-task list")
     if dec["decision"] != "CONTINUE" and nxt:
         raise ValueError("Non-continue cannot schedule work")
