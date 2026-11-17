@@ -1,0 +1,21 @@
+{
+  "classification": "INCONCLUSIVE",
+  "scope": "Analytical order-of-magnitude only; no additional model calls or SPICE runs",
+  "source_net_sha256": "5ba9d1b5503d3f15ba47dbaedf8b497caf8485f271113d0f49562057901df8dc",
+  "Rload_effective_ohm": 4801.650430149437,
+  "Cout_F": 2.03e-05,
+  "RC_time_constant_s": 0.09747350373203356,
+  "passive_RC_pole_Hz": 1.6328021154285324,
+  "constant_power_control_approx_pole_Hz": 3.2656042308570647,
+  "compensator_R22k_C6p8n_zero_Hz": 1063.869940453846,
+  "compensator_zero_over_approx_plant_pole": 325.78042691187693,
+  "vendor_reference_RC_pole_Hz": 141.094807705581,
+  "reference_to_candidate_RC_pole_ratio": 86.41268061350493,
+  "derivation": "For C*dV/dt=Pcommand/V - V/R and P0=V0^2/R, d(deltaV)/dt=deltaP/(C*V0)-2*deltaV/(R*C), so fp=1/(pi*R*C). This is a constant-power approximation, not the exact finite-Vin, current-mode, DCM/CCM plant.",
+  "decision": "Do not infer compensation adequacy from the24V demo: the load/C pole scale changes greatly while the copied RC zero stays near1kHz. Actual operating-point frequency-response and settling must be evaluated after current-cell stress is understood. No component change approved by this calculation alone.",
+  "limitations": [
+    "Actual duty/current-control/slope compensation and conduction-mode transitions not modeled by this formula",
+    "Cannot separate the observed output oscillation cause from SENSE/diode/model artifacts",
+    "No gain margin/phase margin or final compensation values claimed"
+  ]
+}
