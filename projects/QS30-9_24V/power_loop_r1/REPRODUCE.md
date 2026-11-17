@@ -6,6 +6,7 @@
 
 1. `python -m unittest discover -s projects/QS30-9_24V/power_loop_r1 -p test_*.py -v`：22个离线工具/协议/算法检查，绝非22项电气PASS。
 2. `python projects/QS30-9_24V/power_loop_r1/verify_archive.py`：按worker封存manifest核对每个小文件及原始波形分片的精确重构SHA256。
+   本机另可运行`verify_historical_inputs.py`，对原QS30-1工作区的3034份既有输入（约9.84GB、124份raw）与首轮登记SHA做只读核对；远端没有这些旧未提交raw时，不能冒充可在空环境完成该项。
 3. 每份`.archive.json`及总`evidence/worker_run_20261117T051440Z/archive_manifest.json`都提供原文件路径、长度、SHA和gzip分片顺序。将`archive.parts`按顺序拼接后gzip解压，原字节SHA必须等于`sha256`。不归一换行、不插值改写原raw。原始未压缩文件仍保留在本机原路径。
 4. 需要提取的完整启动记录位于manifest中 `evidence/candidate_diagnostic/nominal_24V_gear_resource600/circuit.raw`；恢复到该目录后用数值环境运行`full_candidate_review.py nominal_24V_gear_resource600`、`settled_window_review.py`和`cycle_review_deglitched.py`。派生分析会写新结果，应先备份已有派生JSON；原raw不变。
 
