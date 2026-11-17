@@ -2,6 +2,9 @@
 import json
 import tempfile
 import unittest
+import shutil
+from unittest.mock import patch
+import orchestrate as orch
 from pathlib import Path
 from orchestrate import (HERE, load_catalog, audit_worker_result, bounded_path,
                          eligible, validate_decision)
@@ -90,6 +93,65 @@ class TestWorkflow(unittest.TestCase):
 
     def test_no_unexpected_file(self):
         self.assertTrue((HERE / "prompts" / "MASTER_PROMPT.md").is_file())
+
+
+    def test_spice_failed_assertion_forbidden(self):
+        t = self.tasks["device_cells"]
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for f in t["expected"]:
+                (root / f).write_text("example", encoding="utf-8")
+            (root / "result.json").write_text(json.dumps({
+                "task_id": t["id"], "status": "PASS", "notes": "claimed pass",
+                "model_hashes": {"MOS": "sha"},
+                "evidence_files": t["expected"]}), encoding="utf-8")
+            (root / "metrics.json").write_text(json.dumps({
+                "solver": "ngspice", "exit_code": 0, "endpoint_reached": True,
+                "maxstep_s": 1e-9, "evaluation_status": "LIMITED_PASS",
+                "assertions": [{"name": "peak", "passed": False}]}), encoding="utf-8")
+            self.assertEqual(audit_worker_result(t, root, 100000)["grade"], "INCONCLUSIVE")
+
+    def test_stage3_requires_model_and_cell_evidence(self):
+        base = {x: {"grade": "CLAIMED_PASS_AUDITED_FILES"} for x in
+                ["baseline_audit", "vendor_models", "acceptance_budget",
+                 "power_candidate_review", "zero_volt_startup"]}
+        history = set(base) | {"lt3757a_reference"}
+        self.assertFalse(eligible("closed_loop_corners", self.tasks, base, 2, history))
+        base["lt3757a_reference"] = {"grade": "CLAIMED_PASS_AUDITED_FILES"}
+        self.assertFalse(eligible("closed_loop_corners", self.tasks, base, 2, history))
+        base["device_cells"] = {"grade": "CLAIMED_PASS_AUDITED_FILES"}
+        self.assertTrue(eligible("closed_loop_corners", self.tasks, base, 2,
+                                 history | {"device_cells"}))
+
+    def test_mocked_two_wave_orchestration_without_model_calls(self):
+        with tempfile.TemporaryDirectory() as d:
+            fake_here = Path(d)
+            for fn in ("config.json", "tasks.json", "decision.schema.json"):
+                shutil.copy2(HERE / fn, fake_here / fn)
+            responses = [
+                {"decision": "CONTINUE", "rationale": "model inventory accepted",
+                 "next_task_ids": ["lt3757a_reference"], "issues": [],
+                 "controlling_assumptions": []},
+                {"decision": "HOLD", "rationale": "no electrical proof yet",
+                 "next_task_ids": [], "issues": [],
+                 "controlling_assumptions": []}
+            ]
+            def mock_worker(task, round_dir, cfg):
+                return {"task_id": task["id"], "grade": "CLAIMED_PASS_AUDITED_FILES"}
+            with patch.object(orch, "HERE", fake_here), \
+                 patch.object(orch, "preflight", return_value="mocked preflight"), \
+                 patch.object(orch, "do_worker", side_effect=mock_worker) as worker, \
+                 patch.object(orch, "codex_decision", side_effect=responses) as decision:
+                orch.run_live(self.cfg, self.tasks, 2)
+                self.assertEqual(worker.call_count, 4)
+                self.assertEqual(decision.call_count, 2)
+            runs = list((fake_here / "runs").iterdir())
+            self.assertEqual(len(runs), 1)
+            summary = json.loads((runs[0] / "run_summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["worker_calls"], 4)
+            self.assertEqual(summary["manufacturing"], "HOLD")
+            last = json.loads((runs[0] / "round_02" / "validated_decision.json").read_text(encoding="utf-8"))
+            self.assertEqual(last["decision"], "HOLD")
 
 
 if __name__ == "__main__":
