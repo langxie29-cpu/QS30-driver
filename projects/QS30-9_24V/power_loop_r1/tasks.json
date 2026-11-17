@@ -1,0 +1,143 @@
+[
+  {
+    "id": "baseline_audit",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "historical_auditor",
+    "depends": [],
+    "description": "Read committed 24V/S06C and safety R1; flag uncommitted S06D/F claims rather than invent evidence. Deliver baseline and control variant table.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "vendor_models",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "model_registrar",
+    "depends": [],
+    "description": "Inventory exact candidate control IC/MOS/diode/inductor and official SPICE artifacts; URLs, license, SHA256, supported simulator, versions, model limitations; do not rewrite original model.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "acceptance_budget",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "requirements_engineer",
+    "depends": [],
+    "description": "Reconcile 24V 21.6-26.4V, 170V 164.9-175.1V, ripple <=1Vpp, normal peak<=180V, startup<=1s, recovery<=100ms, fault peak target<=195V. Include revised bleeder delta and 0V cold startup.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "lt3757a_reference",
+    "stage": 1,
+    "kind": "spice",
+    "role": "reference_replayer",
+    "depends": [
+      "vendor_models"
+    ],
+    "description": "Use official LT3757A reference and native LTspice only if installed. Replay unmodified vendor design first; record original sources and console log/waveforms; no invented PASS.",
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json"
+    ]
+  },
+  {
+    "id": "ucc28c43_reference",
+    "stage": 1,
+    "kind": "spice",
+    "role": "reference_replayer",
+    "depends": [
+      "vendor_models"
+    ],
+    "description": "Replay original TI UCC28C43 controller fixture in supported engine, keeping original models immutable. Classify tool/setup/model/electrical failures separately; never equate controller-only oscillation to power stage qualification.",
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json"
+    ]
+  },
+  {
+    "id": "device_cells",
+    "stage": 1,
+    "kind": "spice",
+    "role": "power_cell_engineer",
+    "depends": [
+      "vendor_models"
+    ],
+    "description": "Qualify exact candidate MOSFET, diode and magnetics with independent fixtures. Hot L(I,T)/loss claims unsupported must be HOLD. Nonlinear switching, pins and timestep sensitivity mandatory.",
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json"
+    ]
+  },
+  {
+    "id": "power_candidate_review",
+    "stage": 2,
+    "kind": "analysis",
+    "role": "power_architect",
+    "depends": [
+      "acceptance_budget",
+      "lt3757a_reference",
+      "device_cells"
+    ],
+    "description": "Compare controllers and choose one documented primary candidate, reject mixed UCC/LT mappings. Compute duty, inductance, Isat hot, CS, snubber, feedback, losses and limits. Decision remains with Codex.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "zero_volt_startup",
+    "stage": 2,
+    "kind": "spice",
+    "role": "startup_simulator",
+    "depends": [
+      "power_candidate_review"
+    ],
+    "description": "Execute authentic 0V COUT startup with real controller model, no precharged 170V source. Measure inductor current, demagnetization, duty, gate, startup time, clamp, no forced PWM shortcut. FAIL/INCONCLUSIVE if no solver.",
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json"
+    ]
+  },
+  {
+    "id": "closed_loop_corners",
+    "stage": 3,
+    "kind": "spice",
+    "role": "loop_verifier",
+    "depends": [
+      "zero_volt_startup"
+    ],
+    "description": "Reproduce nominal 170V regulation and input/load corner steps at required baseline. Record ripple, peak, recovery, compensation and at least 2 timestep settings; no claim of overall qualification without full power model.",
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json"
+    ]
+  },
+  {
+    "id": "independent_challenge",
+    "stage": 3,
+    "kind": "analysis",
+    "role": "adversarial_reviewer",
+    "depends": [
+      "zero_volt_startup"
+    ],
+    "description": "Independent negative review: inspect raw netlist/log/wave and worst-case evidence, reproduce counterexamples, challenge missing I_limit and startup; no self-approval or release.",
+    "expected": [
+      "inventory.md"
+    ]
+  }
+]
