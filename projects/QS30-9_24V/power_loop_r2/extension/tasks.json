@@ -1,0 +1,68 @@
+[
+  {
+    "id": "device_energy_audit",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "device_auditor",
+    "depends": [],
+    "description": "Read actual lab.MODEL_SOURCE/st.lib and evidence/principal/minimum_native_probes/internal_analysis.json plus its circuit.cir. Draft one analyze_energy.py using lab.native and numpy ONLY. Read minimum_native_probes/circuit.raw: V(q:12),V(q:6),V(src),V(drain),I(VQS),I(VQD) exact names. Compute integral(Vq12-Vsrc)*I(VQS)dt vs .5*7.5n*(Iend^2-Istart^2) and integral(Vq6-Vdrain)*(-I(VQD))dt vs .5*4.5n*(Iend^2-Istart^2) on fixed [1.02us,1.10us], [0,10us]. Capture intrinsicVGS=V(q:5)-V(q:9), intrinsicVDS=V(q:13)-V(q:9), source and drain package voltages extrema. Explain that failure of this identity can indicate coarse integration at extreme narrow events; no automatic physics or model pass. Do not alter model or add simulations. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "startup_path_audit",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "startup_architect",
+    "depends": [],
+    "description": "Read exact OLD/sources/TPS2660.txt, S05/S06 config and current ROUND1_REVIEW.md, startup_bounds.py and its raw metrics. Produce at most500word fact table with source lines. Key: U101 TPS26601 MODE OPEN is electronic circuit breaker+latch, not continuous limiting; distinguish MODE402kohm active limiting+latch and min/max vs typical-only delays. Compute numerically in <=100line arithmetic script: Gmax25.5,Imax5.5u,Cmin42.3n exact slew and26.4V rise; Pmax into fixed33ohm=(Vin^2/4R) shows permanent resistor cannot supply6W. Compare independent precharge+bypass enabling only after voltage difference<=1V with PWM disabled; state hardware missing, no claimed bypass model or maxdelay. Correct MSS1583 row MUST be154KED 150uH DCRmax.159ohm, Isat10/20/30%=3.1/3.6/3.9A andIrms20/40rise1.55/2.2A. Do not guess alternative row. Native eFuse remains encrypted; no model substitution. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "ripple_split",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "waveform_auditor",
+    "depends": [],
+    "description": "Draft analyze_ripple.py <=180lines, noexecution. Input argv is a completed candidate circuit.raw. Use lab.native, lab.stats, fixed windows40-50,50-55,55-60ms. R=1/(1/5200+2/(90900+90900)+1/(200000+1900.6)); calculate not hand type. Output exact timeweighted mean/rawpp, plus10usblockpp distribution over55-60ms. Reconstruct diagnostic ideal capacitor Vcap=V(hv)-.1*(I(DREC)+I(RSNUB)-V(hv)/R); output same windows but clearly cannot use this as delivered-output acceptance. Use OUT6V rising edges separated>=5us, obtain per-cycleILminimum/maximum, actualOUTduty and frequency and phase. Compare within-cycle HVmax-min vs idealcapmax-min to identify ESR/recovery spikes versus slowmean drift. NoFFTrequired. No compensation proposals until actual results. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "device_followup",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "device_regression",
+    "depends": [],
+    "description": "Execute only exact CURRENT principal review instructions supplied in engineering_context.md. Code-only. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "startup_followup",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "startup_regression",
+    "depends": [],
+    "description": "Execute only exact CURRENT principal review instructions supplied in engineering_context.md. Code-only. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "loop_followup",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "loop_regression",
+    "depends": [],
+    "description": "Execute only exact CURRENT principal review instructions supplied in engineering_context.md. Code-only. CODE ONLY; no shell/jobs/simulator/network/model calls; tools disabled. Write at most180lines per .py, at most2 scripts, and at most800word inventory. Read exact sources and work only in OUTPUT_DIR. Do not hand-compute numerical results or invent model values; emit executable arithmetic using numpy. No deleting, overwriting prior artifacts, or changing any HOLD. Do not create approval requirements. Script output must be in its own directory, never mutate source evidence. Deliver result.json even if uncertain. WorkerPASS=evidence delivery only.",
+    "expected": [
+      "inventory.md"
+    ]
+  }
+]

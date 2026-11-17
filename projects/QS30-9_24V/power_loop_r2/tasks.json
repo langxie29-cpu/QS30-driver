@@ -1,0 +1,68 @@
+[
+  {
+    "id": "sense_root",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "current_forensics",
+    "depends": [],
+    "description": "Read the original raw in R1_LOCAL/evidence/candidate_diagnostic/nominal_24V_gear_resource600/circuit.raw and actual circuit.cir, all four models. Extract 10.040718ms event +-2us to CSV and JSON, derive KCL. Then exactly THREE diagnostic runs using lab.full(out, stop=.01008, step=2e-7/1e-7,method=gear/gear/trap) and lab.execute(timeout=180). No other simulations. Save additional OUT, MOS drain/source/gate port currents using I(XQ:LD),I(XQ:LS),I(XQ:LG), I(XNEG:ddio),I(XNEG:dgr),I(RSRC),I(RF),I(RGS),I(RNEG),I(RSNUB),I(CSNUB). Internal names may be unsupported: preserve failure, do not create further retries. Analyze global and local peaks, source/drain KCL and charge integrals, compare solver/time-step sensitivity over COMMON complete window; switching phase may shift. Identify what is and is not established about diode recovery, Coss, LS and negative gate clamp. No fix yet. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "passive_bounds",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "startup_forensics",
+    "depends": [],
+    "description": "Read archived fast_1us/slow_1ms and halfstep raw/metrics. Review actual U101 TPS26601 and MSS1583-154KED sources/config in OLD; derive guaranteed dVdt/ILIM bounds, min/max thermal/saturation caveats, delayed disable and protected path placement. Exactly SIX passive diagnostic runs using lab.full(stop=.003,step=5e-8), SHDN held0. Run base fast1us24V,R=.1,C20.3u,L150u; base slow1ms; then one variable per case: fast26.4V, fastR1ohm, fastC24.36u, fastL135u. lab.execute timeout30 per simulation. Do not use linear peak as real saturation qualification. Compare controlled slew, independent resistor precharge and current-limited switch; recommend concrete strategy with missing guarantees. No circuit fixes. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "settling_analysis",
+    "stage": 0,
+    "kind": "analysis",
+    "role": "loop_forensics",
+    "depends": [],
+    "description": "No simulations in Round1. Read original full R1 raw, analyze 40-60ms and successive fixed5ms windows with time weighted mean/true raw Vpp. FFT on uniformly resampled data with documented Nyquist, window, detrend, alias caveats; separate low frequency envelope and switching features using actual raw. Derive actual load, CCM RHP zero estimate with mode caveat, current-mode averaged output pole and existing compensation. Write analysis script plus evidence and recommend extended unchanged 200ms observation and compensation values only if justified, no edits. Do not qualify 60ms as settled. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "sense_candidate",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "approved_sense_fix",
+    "depends": [],
+    "description": "Only execute the explicit Round2 Codex decision in engineering_context.md. No extra fixtures. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "startup_candidate",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "approved_startup_fix",
+    "depends": [],
+    "description": "Only execute the explicit Round2 Codex decision in engineering_context.md. No extra fixtures. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  },
+  {
+    "id": "loop_candidate",
+    "stage": 1,
+    "kind": "analysis",
+    "role": "approved_loop_fix",
+    "depends": [],
+    "description": "Only execute the explicit Round2 Codex decision in engineering_context.md. No extra fixtures. Do not modify any circuit component or vendor model. No recursively launched agents/models. Use shared lab.py for all new simulation runs: preregistration before execution is mandatory. At most 25 tool calls. Always finish result.json; worker PASS means evidence delivered only, never electrical acceptance. Do not run git, download software or write outside OUTPUT_DIR.",
+    "expected": [
+      "inventory.md"
+    ]
+  }
+]

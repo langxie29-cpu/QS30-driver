@@ -1,0 +1,24 @@
+{
+  "schema": "qs30.power.loop.v1",
+  "controller": "codex",
+  "decision_model": "gpt-6.1-sol",
+  "decision_profile": "gpt",
+  "decision_provider": "openai",
+  "worker": "deepseek-harness",
+  "worker_binary": "dsh",
+  "worker_profile": "headless",
+  "expected_worker_model": "deepseek-flash",
+  "max_rounds": 2,
+  "max_worker_calls": 6,
+  "worker_timeout_s": 900,
+  "decision_timeout_s": 900,
+  "max_output_bytes": 2000000,
+  "max_evidence_bytes": 1500000000,
+  "manufacturing": "HOLD",
+  "hardware_high_voltage": false,
+  "entry_task_ids": [
+    "sense_root",
+    "passive_bounds",
+    "settling_analysis"
+  ]
+}

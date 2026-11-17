@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "rationale",
+    "next_task_ids",
+    "issues",
+    "controlling_assumptions"
+  ],
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": [
+        "CONTINUE",
+        "HOLD",
+        "STOP"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "next_task_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "controlling_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
