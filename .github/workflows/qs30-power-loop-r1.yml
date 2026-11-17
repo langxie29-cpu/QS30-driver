@@ -1,0 +1,25 @@
+name: QS30 power-loop orchestrator controls (no model/real-HV execution)
+on:
+  push:
+    branches: ['nxt/qs30-power-loop-orchestrator-r1']
+    paths:
+      - 'projects/QS30-9_24V/power_loop_r1/**'
+      - '.github/workflows/qs30-power-loop-r1.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-contract-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          sparse-checkout: |
+            projects/QS30-9_24V/power_loop_r1
+            .github/workflows
+      - name: Control-plane contract tests — no billable agents
+        working-directory: projects/QS30-9_24V/power_loop_r1
+        run: python3 -m unittest discover -s . -p 'test_*.py' -v
+      - name: Dry-run planner — no model calls
+        run: python3 projects/QS30-9_24V/power_loop_r1/orchestrate.py

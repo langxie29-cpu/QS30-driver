@@ -1,0 +1,96 @@
+"""Provider-free deterministic tests for workflow controls."""
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from orchestrate import (HERE, load_catalog, audit_worker_result, bounded_path,
+                         eligible, validate_decision)
+
+
+class TestWorkflow(unittest.TestCase):
+    def setUp(self):
+        self.cfg, self.tasks = load_catalog()
+        self.task = self.tasks["baseline_audit"]
+
+    def test_baseline_never_released(self):
+        self.assertEqual(self.cfg["manufacturing"], "HOLD")
+        self.assertFalse(self.cfg["hardware_high_voltage"])
+        self.assertEqual(self.cfg["decision_provider"], "openai")
+        self.assertEqual(self.cfg["expected_worker_model"], "deepseek-flash")
+
+    def test_stage_zero(self):
+        self.assertTrue(eligible("baseline_audit", self.tasks, {}, 0, set()))
+        self.assertFalse(eligible("zero_volt_startup", self.tasks, {}, 0, set()))
+
+    def test_requires_dependencies(self):
+        done = {}
+        self.assertFalse(eligible("lt3757a_reference", self.tasks, done, 0, set()))
+        done["vendor_models"] = {"grade": "CLAIMED_PASS_AUDITED_FILES"}
+        self.assertTrue(eligible("lt3757a_reference", self.tasks, done, 0, set()))
+        self.assertFalse(eligible("lt3757a_reference", self.tasks, done, 0,
+                                  {"lt3757a_reference"}))
+
+    def test_reject_fabricated_or_missing_pass(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "result.json").write_text(json.dumps({
+                "task_id": self.task["id"], "status": "PASS",
+                "notes": "claim", "evidence_files": ["inventory.md"]}), encoding="utf-8")
+            audit = audit_worker_result(self.task, root, 100000)
+            self.assertEqual(audit["grade"], "INCONCLUSIVE")
+            (root / "inventory.md").write_text("evidence", encoding="utf-8")
+            audit = audit_worker_result(self.task, root, 100000)
+            self.assertEqual(audit["grade"], "CLAIMED_PASS_AUDITED_FILES")
+
+    def test_spice_must_have_metrics(self):
+        t = self.tasks["device_cells"]
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for f in t["expected"]:
+                (root / f).write_text("example", encoding="utf-8")
+            (root / "result.json").write_text(json.dumps({
+                "task_id": t["id"], "status": "PASS", "notes": "claim",
+                "model_hashes": {"D20": "abcd"},
+                "evidence_files": t["expected"]}), encoding="utf-8")
+            self.assertEqual(audit_worker_result(t, root, 100000)["grade"], "INCONCLUSIVE")
+            (root / "metrics.json").write_text(json.dumps({
+                "solver": "ngspice", "exit_code": 0, "endpoint_reached": True,
+                "maxstep_s": 1e-9, "evaluation_status": "LIMITED_PASS",
+                "assertions": [{"name": "end", "passed": True}]}), encoding="utf-8")
+            self.assertEqual(audit_worker_result(t, root, 100000)["grade"],
+                             "CLAIMED_PASS_AUDITED_FILES")
+
+    def test_path_traversal(self):
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaises(ValueError):
+                bounded_path(Path(d), "../../secret")
+            with self.assertRaises(ValueError):
+                bounded_path(Path(d), "/tmp/secret")
+
+    def test_disallow_codex_arbitrary_task(self):
+        dec = {"decision": "CONTINUE", "rationale": "test",
+               "next_task_ids": ["delete_repo"], "issues": [],
+               "controlling_assumptions": []}
+        with self.assertRaises(ValueError):
+            validate_decision(dec, self.tasks, {}, 0, set())
+
+    def test_disallow_codex_jump(self):
+        dec = {"decision": "CONTINUE", "rationale": "test",
+               "next_task_ids": ["closed_loop_corners"], "issues": [],
+               "controlling_assumptions": []}
+        with self.assertRaises(ValueError):
+            validate_decision(dec, self.tasks, {}, 0, set())
+
+    def test_no_repeated_tasks(self):
+        dec = {"decision": "CONTINUE", "rationale": "test",
+               "next_task_ids": ["baseline_audit", "baseline_audit"],
+               "issues": [], "controlling_assumptions": []}
+        with self.assertRaises(ValueError):
+            validate_decision(dec, self.tasks, {}, 0, set())
+
+    def test_no_unexpected_file(self):
+        self.assertTrue((HERE / "prompts" / "MASTER_PROMPT.md").is_file())
+
+
+if __name__ == "__main__":
+    unittest.main()
