@@ -1,0 +1,109 @@
+{
+  "utc": "2026-11-17T23:52:28.593722+00:00",
+  "coordination_rounds": 2,
+  "Flash_sessions": 4,
+  "Flash_session_limit": 10,
+  "child_Codex_sessions": 0,
+  "child_Codex_limit": 0,
+  "native_invocations": 16,
+  "native_limit": 16,
+  "R2_historical_invocations": 36,
+  "native_wall_seconds": 1454.5141486998764,
+  "native_execution_counts": {
+    "COMPLETED_UNREVIEWED": 15,
+    "SOLVER_FAIL": 1
+  },
+  "Flash_usage": {
+    "prompt_tokens": 9014,
+    "completion_tokens": 9836,
+    "total_tokens": 18850
+  },
+  "Flash_wall_seconds": 59.726740499958396,
+  "Flash": [
+    {
+      "task": "round1_evt",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 513,
+        "completion_tokens": 1197,
+        "total_tokens": 1710,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 513
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 6.427221499965526,
+      "finish_reason": "stop"
+    },
+    {
+      "task": "round1_frontend",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 690,
+        "completion_tokens": 4618,
+        "total_tokens": 5308,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 690
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 26.352851499977987,
+      "finish_reason": "stop"
+    },
+    {
+      "task": "round1_stress",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 649,
+        "completion_tokens": 2382,
+        "total_tokens": 3031,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 649
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 16.657068100001197,
+      "finish_reason": "stop"
+    },
+    {
+      "task": "round2_adversarial",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 7162,
+        "completion_tokens": 1639,
+        "total_tokens": 8801,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 7162
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 10.289599400013685,
+      "finish_reason": "stop"
+    }
+  ],
+  "CPU_process_time_seconds": null,
+  "peak_RAM_bytes": null,
+  "resource_limit_disclosure": "Native process CPU and peak RSS were not instrumented at launch; do not infer them from wall time. No new runs after16-call cap.",
+  "billed_USD": null,
+  "billing_disclosure": "Provider response supplied token counts, no actual invoice or per-request charge. Session count is not a monetary/token ceiling.",
+  "native_raw_count": 15,
+  "native_raw_bytes": 12159689114,
+  "archived_records": 15,
+  "archive_bytes": 6527619477,
+  "archive_parts": 78,
+  "failed_native_attempts_retained": 1,
+  "failed_native_raw_count": 0,
+  "failed_native_log_count": 1,
+  "R3_deleted_raws": 0,
+  "R2_permanently_missing_raws": 2,
+  "first_nominal_raw_estimate_exceeded": true,
+  "estimate_disclosure": "1.5GB raw estimate was not a hard cap; nominal actually2.510GB. All bytes retained. Software/archive failures in process_corrections.json count separately from native invocations."
+}

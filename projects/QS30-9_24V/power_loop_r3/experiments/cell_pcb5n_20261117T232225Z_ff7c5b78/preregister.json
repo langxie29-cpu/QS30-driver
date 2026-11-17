@@ -1,0 +1,48 @@
+{
+  "case": "cell_pcb5n",
+  "run_id": "20261117T232225Z_ff7c5b78",
+  "utc": "2026-11-17T23:22:25.752400+00:00",
+  "hypothesis": "P0 localized stress or bounded compatibility study",
+  "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+  "stop_s": 1.1e-06,
+  "max_runtime_s": 90,
+  "estimated_cpu_budget_s": 90,
+  "estimated_raw_max_bytes": 1500000000,
+  "estimated_monetary_cost_USD": 0,
+  "netlist_sha256": "85d22c4095990109cd36668010c8e66a3ffe34f714117b0e0e66be890dd77d7e",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+  },
+  "exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "options": [
+    ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15 threads=1"
+  ],
+  "tran": [
+    ".tran 5p 1.1u 0 5p uic"
+  ],
+  "limits": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "startup_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195
+  },
+  "stop_conditions": [
+    "wall timeout",
+    "solver failure",
+    "endpoint reached"
+  ],
+  "qualification_rule": "rc0 + complete raw + endpoint are execution checks only; device stress and model credibility evaluated separately",
+  "analysis_windows_s": [],
+  "cell_event_window_s": [
+    1.02e-06,
+    1.1e-06
+  ]
+}

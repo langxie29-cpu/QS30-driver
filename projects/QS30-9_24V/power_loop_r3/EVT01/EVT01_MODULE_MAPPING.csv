@@ -1,0 +1,17 @@
+﻿formal_module,formal_reference,EVT01_module,reuse,change_or_gap,status
+Input,F100/U100/D100,INPUT,保护体系和RTN边界,上游1A与支路候选1.5A需协调,HOLD
+HV branch,U101,FRONTEND,TPS26601RHFR及SHDN默认关,MODE402k/ILIM8k研究候选;原20k/MODE开路不改历史,HOLD
+Controller,U20 previous UCC candidate,PWM,LT3757A闭环研究候选,不导入旧UCC28C43物理引脚;LT3757A重新逐针建图,SCHEMATIC_INPUT
+Controller supply,AUX12/DRV12,CTRL_SUPPLY,供电有效/失电禁止需求,比较外12V偏置与内部7.2VLDO;未冻结,HOLD
+Power switch,Q20,Q20,STP9NK50Z TO220,封装LS/LD/LG与PCB额外L分开;热/SOA待证,RETAIN_RESEARCH
+Rectifier,D20,D20,US1G-E3/61T SMA,原模型保留;400V恢复/雪崩样事件阻塞,HOLD
+Magnetics,L20,L20,MSS1583-154KED,"热L(I,T)/磁损缺失;不能用旧MSS1260替代",HOLD
+Current sense,R230/R36/CCS old values,RSRC/RF/CF,62mohm/22ohm/4.7nF,旧.82ohm/100ohm/220p数据不是R2候选,HOLD
+Gate loop,RG/RGS/XNEG/RNEG,GATE,22ohm/10k/SS14/2ohm,负栅分支MPN和重复脉冲资格,HOLD
+Compensation,VC,COMP,22k/6.8nF/100pF,物理值公差/布局/环路裕度待证,RETAIN_RESEARCH
+Feedback,R34A/B/R35,FB,2x100k plus1900.6ohm equivalent,1.9006k用可制造串联组合且误差重算,HOLD
+Storage,C11/C12 plus display caps,COUT,2xECQE2106JF,模块300n按独立可选模拟;ESR.1不是器件保证,HOLD
+Bleed,two181.8k branches,BLEED,两条独立2x90.9k,模块拆除不移去主板泄放;单开路重算,HOLD
+Independent protection,OVP/LATCH/THERMAL/RESIDUAL,SAFETY,独立硬件保护和人工事件,逐针实现未完整;不能用软件或行为源放行,HOLD
+Display,9xQS30/3xHV5622,NONE,不集成,以额定封闭负载接口接测试负载,OUT_OF_SCOPE
+Host,ESP32/USB,NONE,不集成正式主控,如接PC记录必须审仪器地与隔离;不供许可,OUT_OF_SCOPE

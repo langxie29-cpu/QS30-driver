@@ -1,0 +1,17 @@
+from r3lib import *
+import math
+d={}
+d['frontend']=dict(MODE_original='OPEN: circuit breaker latch TPS26601',MODE_candidate='402kohm to own RTN: active current limit latch',ILIM_original_ohm=20000,ILIM_candidate_ohm=8000,ILIM_max_with_Rminus1pct_A=1.575/.99,ILIM_min_with_Rplus1pct_A=1.425/1.01,ILIM_condition='table at24V and1V/5Vdrop; inverse-R scaling is design estimate, not guaranteed across full dropout range',CdVdT_min_F=47e-9*.9,CdVdT_max_F=47e-9*1.1,slew_max_V_per_s=5.5e-6*25.5/(47e-9*.9),slew_min_V_per_s=4e-6*23.75/(47e-9*1.1),startup_current_COUTmax_A=24.36e-6*5.5e-6*25.5/(47e-9*.9),ramp26p4_fast_s=26.4*47e-9*.9/(5.5e-6*25.5),ramp26p4_slow_s=26.4*47e-9*1.1/(4e-6*23.75),RONmax_ohm=.25,fasttrip_max_delay_s=None,shutdown_to_poweroff_max_s=None,thermal_SOA_qualified=False)
+d['short_power_sensitivity']=[dict(Vin_V=v,I_assumed_A=i,P_W=v*i,E_1ms_J=v*i*.001,E_10ms_J=v*i*.01,E_100ms_J=v*i*.1) for v in [21.6,24,26.4] for i in [1.575/.99,1.87*(1.575/.99)+.015]]
+d['stored_downstream']=[dict(C_F=c,V_V=26.4,E_J=.5*c*26.4**2,lossless_L135u_current_A=26.4*math.sqrt(c/135e-6),lossless_L121p5u_current_A=26.4*math.sqrt(c/121.5e-6),scope='LC energy scale only; not total upper bound with continued input or initial L current') for c in [1e-6,47e-6]]
+d['delay_headroom']=[dict(L_assumed_H=l,initial_A=i,target_A=3.1,V_V=26.4,remaining_delay_s=max(0,(3.1-i)*l/26.4),scope='constant-L sensitivity, not hot-L guarantee or maximum actual protection time') for l in [135e-6,121.5e-6,75e-6] for i in [1.575/.99,1.87*(1.575/.99)+.015]]
+d['RC']=dict(tau_nom_s=22*4.7e-9,tau_min_s=22*.99*4.7e-9*.95,tau_max_s=22*1.01*4.7e-9*1.05,assumption='candidate1%R5%C, exact cap temp/bias still to verify',ramp_delay_increment_A=[dict(L_H=l,deltaI_A=26.4/l*22*1.01*4.7e-9*1.05) for l in [135e-6,121.5e-6]],warning='RC is ramp asymptotic lag, not hard maximum comparator/blanking/driver delay')
+d['shunt']=dict(value_ohm=.062,original_MPN=None,candidate='WSL2512R0620FEA',candidate_power70C_W=1,spike12A_W=12**2*.062,assumed_TCR_ppm=75,shunt_R_100C_upper_assumed_ohm=.062*1.01*(1+75e-6*75),pulse_qualified=False)
+d['inductor']=dict(DCR25max_ohm=.159,DCR100_copper_only_ohm=.159*(1+.00393*75),Isat25_10pct_A=3.1,Isat25_20pct_A=3.6,Isat25_30pct_A=3.9,Irms20C_rise_A=1.55,Irms40C_rise_A=2.2,L_hot_guaranteed_H=None,coreloss_W=None,qualification='INCONCLUSIVE')
+d['controller_LDO_screen']=dict(Vin26p4_PIC_W=26.4*(.0016+100847*32e-9),deltaT_DFN43C_W=(26.4*(.0016+100847*32e-9))*43,assumptions='Qg32nC at400V10V published typical; circuit7.2V/170V differs. Only scale check, not maximum or measured internal loss. Exact package and current validation required')
+d['bleed']=dict(Rbranch_ohm=181800,Rall_ohm=90900,C_nom_F=20.3e-6,Cexploratory_max_F=24.36e-6,E195_Cmax_J=.5*24.36e-6*195**2,one_branch_open_t195to60_s=181800*1.01*24.36e-6*math.log(195/60),scope='Only when input passive supply removed, no backfeed; voltage threshold not touch-safety certification')
+d['bleed']['C_Jsuffix_plus5pct_modules_assumed5pct_F']=21.315e-6
+d['bleed']['one_branch_open_Jsuffix_capacitance_only_s']=181800*1.01*21.315e-6*math.log(195/60)
+d['bleed']['tolerance_disclosure']='24.36uF is extra exploratory+20pct C, NOT ECQE2106JF initial J5pct tolerance. 21.315uF budget also needs temperature/aging/module part confirmation.'
+d['output_cap_derating']=dict(rated85C_V=250,rate_per_C=.0125,rated105C_V=250*(1-.0125*20),temperature_at195V_rating_C=85+(1-195/250)/.0125,ESR_actual_ohm=None,ripple_current_rating_A=None)
+dump(HERE/'evidence/independent_bounds.json',d);print(json.dumps(d,indent=2))

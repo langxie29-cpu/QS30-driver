@@ -1,0 +1,19 @@
+﻿id,test,conditions,expected_observables,method,pass_condition,hold_dependency,authorization
+T01,不加高压的逐针/失电缺省,"0..26.4V, all rail sequences","SHDN/GATE/BL or absent display permit, RTN",电阻限流/低压注入+差分电压,保护未有效期间支路与PWM禁用;无自动运行,H01/H02/H07,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T02,真实0V启动,21.6/24/26.4V fast and normal input,"VIN,HV_IN24,IL,GATE,SENSE,HV,INTVCC,Iin",合格差分+校准电流探头;从输入首次建立记录,<=1s;164.9..175.1V;全程<=180V;各器件脉冲合格,H02/H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T03,连续稳态与功耗,"6W等效电阻,各输入/温度","HV原始波形,Pin/Pout,器件温度,各支路RMS",连续整段波形与独立功率测量,均值164.9..175.1;<=1Vpp;各器件热/电额定及预定降额合格,H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T04,快速断电再接,短中长断电;实际残压分别记录,"HV,branch,INTVCC,FAULT,RUN_TOKEN",人工新许可/自动恢复分别测试,无新人工许可不重启;无误许可;峰<=180V;非0V案例单列,H01/H02,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T05,PWM禁止被动路径,输入快接/PWM硬件关闭,"IL,D20电流,HV,branch",电流探头及输入支路波形,不超热态磁件和器件脉冲边界;不得称输出已隔离,H03/H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T06,受控启动转闭环,预充/使能边界及公差,"branch,IL,SHDN,SS,HV,FLT",多通道同步捕获,转接无电流/电压超额定;无假PG,H02/H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T07,输入保护开关热/SOA,正常浪涌及指定故障,"Vds*I pass energy,case/board temperature","差分与电流同步去偏斜,热标定",总最大延迟与脉冲热边界有证据;无仅典型值放行,H02/H03,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T08,MOS/整流换流,最坏恢复相位/输入/温度,"外VDS/VGS/Id/Is/Ig,D20 VR/IR/Qneg","高带宽差分,电流探头,去偏斜;记录探头寄生",外/本征推断分开;重复SOA与反向额定通过;不把30A半正弦套用ns恢复,H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T09,过载与输出短路,持续过载/不同故障时刻/CIN,"IL,IeFuse,HV,FLT,关断能量",先低能量缩放;高压注入须另行批准,过载掉压另列;指定故障<=195V;器件限流/热/SOA合格且锁存,H02/H03/H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T10,MOS短与支路卡通,单故障及指定双故障,实际输入切断/被动通路/源熔断I2t,能量预审后独立受控夹具,不能依赖PWM;未容错情况明确失败并HOLD,H03,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T11,独立OVP,FB开路/上臂短/阈值公差,"HV,独立检测,锁存,门驱,支路",独立分压/基准;从物理越阈计时,指定HV峰<=195V;总最大延迟与剩余能量闭合,H05,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T12,失电/偏置异常,AUX/INTVCC/监控轨欠压/掉电/异常先后,"GATE/VGS,branch,HV,permit","可编程低压轨/差分,禁止地夹到RTN",无未定义许可/反灌超额定;故障置位优先,H01/H07,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T13,负载阶跃,R10400->5200->10400;随后真实范围,"HV,IL,IN",封闭额定电子负载/电阻切换,恢复<=100ms;正常峰<=180V;纹波窗口预登记,H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T14,空载/最小负载,保留泄放/FB;模块模拟连接/拆除,"HV,gate bursts,纹波",高阻差分探头负载计入,均值/纹波/峰值满足适用正常指标,H06,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T15,泄放单故障,195V/最大C/任一泄放开路/模块拆除,HV实际下降/独立残压有效性,输入支路确认关;独立高阻测量,沿用5s到60V工程门槛并含误差;未证明可触摸,H04/H08,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T16,残压/参考故障,检测上臂/下臂/返回地断开,检测有效性/RESET/START,"先低压故障缩放,高压另审",未知/不一致禁止复位;不能谎报低压,H04/H08,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T17,温感与热态磁件,传感器开短/高低温/负载,"磁件L(I,T),表温/结温估算,阈值",温箱与校准传感/损耗模型,真实热饱和/温度降额及传感有效窗通过,H06/H09,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION
+T18,机械/探头/接地,盖闭/盖开/仪器多地/维护,防触及路径、额定、残压指示,机械检查+绝缘/接线图独立评审,无裸HV排针;仪器地不短RTN/SW;额定/间距依据冻结,H10,FUTURE_TEST_REQUIRES_SEPARATE_HARDWARE_AUTHORIZATION

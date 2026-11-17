@@ -1,0 +1,56 @@
+{
+  "utc": "2026-11-17T23:12:25.968466+00:00",
+  "acl": [
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1",
+      "argv": [
+        "icacls",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1",
+        "/deny",
+        "*S-1-5-21-4065676245-3946077577-4150095191-500:(OI)(CI)(W,D,DC)"
+      ],
+      "rc": 0,
+      "stdout": "processed file: D:\\PROJECTS\\dsharness\\QS30-power-loop-r1\\projects\\QS30-9_24V\\power_loop_r1\nSuccessfully processed 1 files; Failed processing 0 files\n",
+      "stderr": ""
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2",
+      "argv": [
+        "icacls",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2",
+        "/deny",
+        "*S-1-5-21-4065676245-3946077577-4150095191-500:(OI)(CI)(W,D,DC)"
+      ],
+      "rc": 0,
+      "stdout": "processed file: D:\\PROJECTS\\dsharness\\QS30-power-loop-r2\\projects\\QS30-9_24V\\power_loop_r2\nSuccessfully processed 1 files; Failed processing 0 files\n",
+      "stderr": ""
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r1",
+      "argv": [
+        "icacls",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r1",
+        "/deny",
+        "*S-1-5-21-4065676245-3946077577-4150095191-500:(OI)(CI)(W,D,DC)"
+      ],
+      "rc": 0,
+      "stdout": "processed file: D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r1\nSuccessfully processed 1 files; Failed processing 0 files\n",
+      "stderr": ""
+    },
+    {
+      "path": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r2",
+      "argv": [
+        "icacls",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r2",
+        "/deny",
+        "*S-1-5-21-4065676245-3946077577-4150095191-500:(OI)(CI)(W,D,DC)"
+      ],
+      "rc": 0,
+      "stdout": "processed file: D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r2\nSuccessfully processed 1 files; Failed processing 0 files\n",
+      "stderr": ""
+    }
+  ],
+  "worker_architecture": "Remote HTTPS completion with NO tools, NO local worker process, NO execution of generated code. Controller writes response text to drafts. No worker filesystem authority exists.",
+  "limitations": "Administrator can change ACLs; this is not an administrator-proof immutable store or a separate local worker SID sandbox.",
+  "historical_missing_raws_R2": 2
+}

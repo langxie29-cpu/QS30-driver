@@ -1,0 +1,54 @@
+QS30 R3 dissipative frontend PARAMETER STUDY, real LT3757A LDO, COUT0
+.include controller.sub
+.include st.lib
+.include diode.lib
+.include ss14.lib
+VINPUT vin 0 PWL(0 0 1u 26.4)
+* Favorable INSTANTANEOUS current regulation. Not TI vendor behavior or timing bound.
+* Cdvdt is a real charged state; pass current only moves energy VIN -> switched branch.
+VPERMIT permit 0 PWL(0 0 1u 0 1.001u 1)
+BVALID valid 0 V=if(V(vin)>19,if(V(permit)>.5,1,0),0)
+BDVDT 0 dvdt I=if(V(valid)>.5,if(V(dvdt)<1.2,5.5u,0),-V(dvdt)/14)
+CDVDT dvdt 0 42.3n IC=0
+BPASS vin in I=if(V(valid)>.5,max(0,min(1.591,min(V(vin,in)/.25,10*(25.5*V(dvdt)-V(in))))),0)
+CIN in 0 1u Rser=.05 IC=0
+RINBLEED in 0 100k
+* Required output negative clamp candidate, coarse diode only; exact MPN pulse qualification HOLD.
+DCLAMP 0 in DCL
+.model DCL D(Is=1u Rs=.05 N=1.1 Cjo=100p Bv=60)
+
+LPOWER in drain 150u Rser=.16
+XQ drain gate src STP9NK50Z
+RSRC src 0 .062
+RF src sense 22
+CF sense 0 4.7n
+RG out gate 22
+RGS gate src 10k
+XNEG src neg ss14
+RNEG neg gate 2
+DREC drain hv US1G
+RSNUB drain sn 330
+CSNUB sn hv 100p
+COUT hv 0 20.3u Rser=.1 IC=0
+RLOAD hv 0 5200
+RB1A hv b1 90.9k
+RB1B b1 0 90.9k
+RB2A hv b2 90.9k
+RB2B b2 0 90.9k
+RFB1 hv fbmid 100k
+RFB2 fbmid fb 100k
+RFB3 fb 0 1900.6
+CINT intvcc 0 4.7u IC=0
+REN1 in en 200k
+REN2 en 0 12.8k
+CSS ss 0 100n IC=0
+RCOMP vc comp 22k
+CCOMP comp 0 6.8n IC=0
+CHF vc 0 100p IC=0
+RRT rt 0 140k
+XU vc fb ss rt 0 sense out intvcc en in 0 LT3757A
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15 threads=1
+.tran 200n 0.08 0 200n uic
+.save V(vin) V(in) V(hv) V(en) V(intvcc) V(out) V(gate) V(src) V(sense) V(drain) V(ss) V(vc) I(LPOWER) I(DREC) I(RSRC) I(RNEG) I(RG) I(RSNUB) I(COUT) I(XQ:LD) I(XQ:LS) I(XQ:LG) V(XQ:13) V(XQ:9) V(XQ:5) V(XQ:7) V(XQ:6) V(XQ:12) V(dvdt) V(permit) I(BPASS) I(CIN) I(DCLAMP)
+.end

@@ -1,0 +1,19 @@
+{
+  "case": "tps_instantiated_probe",
+  "path": "experiments\\tps_instantiated_probe_20261117T233502Z_c8b1c1b8",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r3\\experiments\\pending_tps_instantiated_probe_20261117T233502Z_c8b1c1b8\\circuit.cir"
+    ],
+    "rc": 1,
+    "elapsed_s": 0.40101090003736317,
+    "execution_status": "SOLVER_FAIL",
+    "endpoint_s": null,
+    "raw_parse_error": null
+  },
+  "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+  "classification": "MODEL_FAIL",
+  "model_failure": "LTspice parser interprets encrypted body as device syntax: Fatal Error Too few nodes. Execution rc1 kept separately."
+}

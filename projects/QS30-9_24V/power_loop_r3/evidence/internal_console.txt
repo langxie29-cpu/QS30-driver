@@ -1,0 +1,90 @@
+{
+  "case": "cell_internal5ps_20261117T233503Z_6479ca05",
+  "window_s": [
+    1.02e-06,
+    1.1e-06
+  ],
+  "method": "Ohm law across unchanged model resistors and internal node8/13 KCL. Requested native internal branch-current expressions were not exported. These are inferred model currents, not separately measured probes.",
+  "MOS_intrinsic_drain_current_A": {
+    "min": -92071.04661038212,
+    "max": 10.521409035008128,
+    "mean": 0.15947643870330316,
+    "rms": 42.50601325197321
+  },
+  "MOS_intrinsic_channel_power_W": {
+    "min": -1.0303595610598143e-16,
+    "max": 97831.71773712435,
+    "mean": 7.584984780422496,
+    "rms": 71.03568606686868
+  },
+  "MOS_channel_event_energy": {
+    "signed_J": 8.320556486150832e-06,
+    "positive_J": 8.320556486150832e-06,
+    "negative_J": 0.0
+  },
+  "RD_event_energy": {
+    "signed_J": 5.905715980364041e-07,
+    "positive_J": 5.905715980364041e-07,
+    "negative_J": 0.0
+  },
+  "RS_event_energy": {
+    "signed_J": 6.702927750823961e-11,
+    "positive_J": 6.702927750823961e-11,
+    "negative_J": 0.0
+  },
+  "RG_event_energy": {
+    "signed_J": 1.4827260503293165e-07,
+    "positive_J": 1.4827260503293165e-07,
+    "negative_J": 0.0
+  },
+  "RJ_event_energy": {
+    "signed_J": 1.485310100052144e-10,
+    "positive_J": 1.485310100052144e-10,
+    "negative_J": 0.0
+  },
+  "MOS_intrinsic_VDS_V": {
+    "min": -1.0625676728876527,
+    "max": 100.29647201715656,
+    "mean": 85.73144597694653,
+    "rms": 87.75012111476445
+  },
+  "MOS_intrinsic_VGS_V": {
+    "min": -6.0090466774044495e-05,
+    "max": 8.40337272941681,
+    "mean": 0.5710219242456551,
+    "rms": 1.7917205802458709
+  },
+  "scope": "Single12V/89.17V/1.4A isolated edge; no repetition rate, no hot silicon, no SOA or total junction loss qualification. MOS body diodes/nonlinear capacitances/E3 model network not all separately integrated. Signed channel power can include model artifacts.",
+  "native_terminal_KCL_residual_A": 0.004884299409222461,
+  "event_derived_channel_current_A": {
+    "min": 1.0078620365391491e-10,
+    "max": 10.521409035008128,
+    "mean": 2.462511494675079,
+    "rms": 3.6287246700402482
+  },
+  "event_source_probe_A": {
+    "min": -10.54951650008697,
+    "max": -0.23535772097912558,
+    "mean": -2.5134371642092797,
+    "rms": 3.641067448871495
+  },
+  "event_gate_probe_A": {
+    "min": -0.3126553620726751,
+    "max": 7.094913973241978,
+    "mean": 0.2269489308050299,
+    "rms": 0.6089580284106098
+  },
+  "outside_event_derived_extreme": {
+    "time_s": 9.841367627240694e-07,
+    "current_A": -92071.04661038212,
+    "inside_event": false,
+    "interpretation": "Unvalidated internal dependent-source/very-small-R model excursion outside commutation window. Numerical/model artifact suspected; physical origin not established. Cannot use these internal inferred currents/energies to sign off silicon loss. All raw bytes/extrema retained."
+  },
+  "event_native_KCL_residual_A": 0.002571032908545462,
+  "event_channel_power_W": {
+    "min": 9.090623308213506e-09,
+    "max": 575.5157382414475,
+    "mean": 104.0069560768853,
+    "rms": 203.34601075698222
+  }
+}

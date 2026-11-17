@@ -1,0 +1,214 @@
+{
+  "case": "cell_pcb5n",
+  "path": "experiments\\cell_pcb5n_20261117T232225Z_ff7c5b78",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r3\\experiments\\pending_cell_pcb5n_20261117T232225Z_ff7c5b78\\circuit.cir"
+    ],
+    "rc": 0,
+    "elapsed_s": 8.200326499994844,
+    "execution_status": "COMPLETED_UNREVIEWED",
+    "endpoint_s": 1.1e-06,
+    "raw_parse_error": null
+  },
+  "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+  "endpoint_s": 1.1e-06,
+  "points": 377621,
+  "raw_sha256": "89d0c020810117ad6510f897d2981860f7e4a9c5688de6ed35386e7811964e38",
+  "signals": [
+    "time",
+    "v(vin)",
+    "v(in)",
+    "v(drain)",
+    "v(qd)",
+    "v(gate)",
+    "v(qg)",
+    "v(qs)",
+    "v(src)",
+    "v(q:12)",
+    "v(q:6)",
+    "v(q:5)",
+    "v(q:9)",
+    "v(q:7)",
+    "v(q:13)",
+    "v(sense)",
+    "v(out)",
+    "v(hv)",
+    "v(intvcc)",
+    "v(en)",
+    "v(ss)",
+    "v(vc)",
+    "i(cout)",
+    "i(drec)",
+    "i(lpower)",
+    "i(rsrc)",
+    "i(rg)",
+    "i(rneg)",
+    "i(rsnub)",
+    "i(vqd)",
+    "i(vqg)",
+    "i(vqs)"
+  ],
+  "v(hv)": {
+    "min": 0.0,
+    "max": 90.17385451649953,
+    "mean": 89.30025442888792,
+    "rms": 89.30030095680581
+  },
+  "i(lpower)": {
+    "min": 0.0,
+    "max": 1.3999995635264084,
+    "mean": 1.1570596337784473,
+    "rms": 1.1654994825702125
+  },
+  "v(sense)": {
+    "min": -0.00028253087497522565,
+    "max": 0.07819720773998777,
+    "mean": 0.0038388593907272488,
+    "rms": 0.01650582440935159
+  },
+  "i(drec)": {
+    "min": -7.992095911952101,
+    "max": 5.238922816832256,
+    "mean": 0.9962212959493316,
+    "rms": 1.357371923389978
+  },
+  "i(rsrc)": {
+    "min": -2.507107705855848,
+    "max": 8.94653753966871,
+    "mean": 0.1790576902770729,
+    "rms": 0.9123841564509672
+  },
+  "i(rneg)": {
+    "min": -1.5452215830365819,
+    "max": 5.980549767858773,
+    "mean": 0.003850104033437635,
+    "rms": 0.15756433630009128
+  },
+  "i(cout)": {
+    "min": -8.014426091722612,
+    "max": 9.737840125683988,
+    "mean": 0.9778290285726463,
+    "rms": 1.37000313232519
+  },
+  "v(intvcc)": {
+    "min": 0.0,
+    "max": 0.008103057342369087,
+    "mean": 0.0031377856462964497,
+    "rms": 0.004006071497065371
+  },
+  "MOS_VDS_external_V": {
+    "min": -311.87841792184344,
+    "max": 91.12376285069267,
+    "mean": 86.48984303336792,
+    "rms": 88.83231700347594
+  },
+  "MOS_VGS_external_V": {
+    "min": -12.644050610570792,
+    "max": 10.5774735788847,
+    "mean": 0.6937981240670068,
+    "rms": 2.379158586669198
+  },
+  "diode_anode_minus_cathode_V": {
+    "min": -399.9646646734357,
+    "max": 0.9509452580131921,
+    "mean": -2.7993098187228416,
+    "rms": 20.424495503401495
+  },
+  "MOS_external_drain_current_A": {
+    "min": -3.642192269008691,
+    "max": 8.927931206159974,
+    "mean": 0.16680476907975722,
+    "rms": 0.8959662569794673
+  },
+  "MOS_external_gate_current_A": {
+    "min": -1.87912497320704,
+    "max": 7.108960520100764,
+    "mean": 0.016367927900758087,
+    "rms": 0.19844647176704105
+  },
+  "MOS_external_source_current_A": {
+    "min": -8.971462243520605,
+    "max": 0.4362173943072184,
+    "mean": -0.1831685380165789,
+    "rms": 0.9225195137547229
+  },
+  "MOS_reconstructed_KCL_A": 0.005284191922776895,
+  "MOS_terminal_power_W": {
+    "min": -2461.387797873468,
+    "max": 876.7322440349693,
+    "mean": 10.536800661846609,
+    "rms": 81.63635497570648
+  },
+  "MOS_signed_terminal_energy_J": 1.1590480728031271e-05,
+  "MOS_positive_terminal_energy_J": 1.2726672795475881e-05,
+  "MOS_negative_terminal_energy_J": -1.1361920674446107e-06,
+  "diode_terminal_power_W": {
+    "min": -2091.0181043501098,
+    "max": 2306.978697099826,
+    "mean": 0.960587695335147,
+    "rms": 31.78783884639283
+  },
+  "diode_signed_terminal_energy_J": 1.0566464648686617e-06,
+  "shunt_power_W": {
+    "min": 0.0,
+    "max": 4.962513104819491,
+    "mean": 0.05161158063445006,
+    "rms": 0.37683997198767866
+  },
+  "shunt_energy_J": 5.6772738697895066e-08,
+  "initialization_sample": {
+    "time": 0.0,
+    "v(hv)": 0.0,
+    "i(lpower)": 0.0
+  },
+  "IL_nonzero_time_A": {
+    "min": 0.9319284595625861,
+    "max": 1.3999995635264084,
+    "mean": 1.1570596337992227,
+    "rms": 1.165499482577591
+  },
+  "inductor_copper25_est_W": 0.2173422470194293,
+  "inductor_copper100_est_W": 0.28140387432840613,
+  "classification": "INCONCLUSIVE",
+  "diode_negative_terminal_charge_C": 1.0963737708565476e-07,
+  "diode_window_signed_energy_J": -5.847503268125023e-08,
+  "MOS_event_signed_terminal_energy_J": 1.1396740694712523e-05,
+  "MOS_event_positive_terminal_energy_J": 1.2187748078592318e-05,
+  "MOS_event_negative_terminal_energy_J": -7.910073838797937e-07,
+  "MOS_event_external_VDS_V": {
+    "min": -311.87841792184344,
+    "max": 90.88057784982144,
+    "mean": 39.61596179752136,
+    "rms": 68.6768413128929
+  },
+  "MOS_event_external_VGS_V": {
+    "min": -12.644050610570792,
+    "max": 10.5774735788847,
+    "mean": 7.879121265772678,
+    "rms": 8.58502065394301
+  },
+  "diode_event_max_reverse_dvdt_V_per_ns": 3031255.28243951,
+  "diode_reverse_above400V_samples": 0,
+  "diode_reverse_above380V_duration_s": 6.001831054604401e-10,
+  "diode_max_reverse_dvdt_V_per_ns": 5190768.480056792,
+  "MOS_intrinsic_VDS_V": {
+    "min": -6.892293811233685e-07,
+    "max": 119.28156620926612,
+    "mean": 86.05264725403863,
+    "rms": 87.90556737372627
+  },
+  "MOS_intrinsic_VGS_V": {
+    "min": -4.425840979216389e-05,
+    "max": 8.708763534791318,
+    "mean": 0.5963617599719109,
+    "rms": 1.8611581563768824
+  },
+  "independent_terminal_probe_errors_A": {
+    "drain": 0.00015272493181373026,
+    "gate": 9.597762519408803e-06,
+    "source": 2.546975349826397e-05
+  }
+}

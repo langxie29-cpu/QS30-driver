@@ -1,0 +1,13 @@
+{
+  "historical_data_modified":false,
+  "issues":[
+    {"item":"Initial evidence ACL generic W","effect":"DenyW included Synchronize, briefly prevented ordinary reads/imports. Corrected to explicit0x10156 denying write/delete without Synchronize. No evidence bytes overwritten.","retained_record":"preservation_control.json plus acl_verified.json"},
+    {"item":"Six local Flash launcher imports failed before any API request","effect":"No paid/model sessions consumed; errors caused by temporary read denial. Three actual round1 calls and one round2 call executed after correction.","classification":"LOCAL_EXECUTION_FAIL"},
+    {"item":"Initial sealing invocation WindowsPowerShell","effect":"ExecutionPolicy and inheritedmodulepath problems; some rc0 receipts contained module errors and were not accepted. Switched to pwsh with Stop-on-error; explicit process-only policy for reviewed local script. Reapplied evidence ACLs and verified ordinary write/delete denial.","retained_record":"evidence/seals original receipts and seals_repaired/final receipt"},
+    {"item":"First TPS model probe omitted instance","effect":"Kept as no-instance smoke only and counted. Second instantiated probe failed parser. No false compatibility PASS."},
+    {"item":"Requested native internal branch-current expressions absent from raw","effect":"Absence explicitly inspected. Internal node voltages available; Ohm-law/KCL inference separately labelled. No fabricated branch probes."},
+    {"item":"R2rawcodec rejected small mixed-format smoke raw","effect":"Original byte-gzip fallback added for mixed raw; original file retained. Failed archive invocation did not alter/delete evidence."},
+    {"item":"Stress-matrix launcher ran before final metrics index completed","effect":"FileNotFoundError, no simulation or evidence mutation. Re-executed after prerequisite completion."},
+    {"item":"Initial source URLs/timeouts","effect":"TI/ADI/Coilcraft/WSL downloaded; STdownloadtimedout; US1oldURL404; Microchip403. Existing primaryST/HV files and correctedVishayURL used; all failed downloads recorded."}
+  ]
+}

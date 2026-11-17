@@ -1,0 +1,7 @@
+TPS26601 compatibility probe only
+.include "D:/PROJECTS/dsharness/QS30-power-loop-r3/projects/QS30-9_24V/sources/sprint06/TPS26601_pspice/unpacked/TPS26601_TRANS.LIB"
+V1 in 0 24
+R1 in 0 1k
+.tran 1u 10u
+.save V(in)
+.end

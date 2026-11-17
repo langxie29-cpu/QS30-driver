@@ -1,0 +1,33 @@
+﻿references,MPN,package,quantity,value,budget_unit_CNY_NOT_QUOTE,candidate_channel,status,notes
+U20,LT3757AEMSE#PBF,MSE MSOP10 EP,1,controller,65,ADI authorized distributors / DigiKey / Mouser,RESEARCH_CANDIDATE,准确封装针脚见ADI RevH p2;预算非报价
+Q20,STP9NK50Z,TO-220,1,500V7.2A,8,ST authorized / DigiKey / Mouser,RETAIN_RESEARCH_HOLD,7.2V门驱RDSon保证及脉冲SOA未闭合
+D20,US1G-E3/61T,SMA DO-214AC,1,400V1A,2,Vishay authorized / DigiKey / Mouser,RETAIN_MODEL_HOLD,反恢复/雪崩样事件未资格
+L20,MSS1583-154KED,14.8x14.8x8.6mm SMD,1,150uH10%,35,Coilcraft direct / Mouser,RETAIN_RESEARCH_HOLD,"热态L(I,T)/磁损缺失"
+RSRC,WSL2512R0620FEA,2512,1,62mohm1%1W,7,Vishay authorized / DigiKey,NEW_CANDIDATE_NOT_ORIGINAL,公开列表仅可订购且长交期;不能称现货;脉冲保证待证
+U100/U101,TPS26601RHFR,RHF VQFN24 5x4mm EP,2,input protection,42,TI direct / authorized DigiKey / Mouser,HOLD,MODE/ILIM协调;RTN/EP;原厂模型受限
+F100,0451001.MRL,SMD fuse 2410,1,1A,5,Littelfuse authorized,HOLD,I2t/源限流/故障协调;不得单凭标称1A
+D100,SMBJ33CA-E3/52,SMBJ DO-214AA,1,bidirectional33VTVS,3,Vishay authorized,HOLD,浪涌条件和最大钳位待审
+C100,EEUFR1J470,radial electrolytic,1,47uF63V upstream,4,Panasonic authorized,CANDIDATE,上游位置明确;不自动放在U101后
+C11/C12,ECQE2106JF,radial27.5mm pitch,2,10uF250V5%,25,Panasonic authorized / DigiKey / Mouser,HOLD_ESR_RIPPLE,31x15.9x25.8mm;85C以上电压降额;不是耐压无限的安全电容
+RF/RG,RC0603FR-0722RL,0603,2,22ohm1%,0.2,Yageo authorized,CANDIDATE,RF与栅电阻各自脉冲/寄生审查
+CF,GRM1885C1H472JA01D,0603,1,4.7nF50V5%C0G,0.8,Murata authorized,CANDIDATE_MPN_VERIFY,全温C0G与公差待逐料确认
+RNEG,RC0805FR-072RL,0805,1,2ohm1%,0.3,Yageo authorized,HOLD_PULSE,RNEG重复脉冲不得仅凭平均功率
+XNEG,SS14-E3/61T,SMA,1,40V1ASchottky,2,Vishay authorized / LCSC C47460,CANDIDATE_MODEL_MATCH_HOLD,原SS14模型不自动证明Vishay实物匹配;不替换历史字节
+RGS,RC0603FR-0710KL,0603,1,10kohm1%,0.1,Yageo authorized,CANDIDATE,默认关栅
+RB1A/B/RB2A/B,TNPW120690K9BEEA,1206,4,90.9kohm0.1%,2,Vishay authorized,CANDIDATE_MPN_VERIFY,两条各181.8k;耐压/爬电/故障短路审查
+RFB1/RFB2,TNPW1206100KBEEA,1206,2,100kohm0.1%,2,Vishay authorized,CANDIDATE,上臂各自耐压;FB不能兼作独立OVP
+RFB3a,TNPW06031K90BEEA,0603,1,1.9kohm0.1%,2,Vishay authorized,CANDIDATE,与.6ohm串联形成1900.6ohm;组合误差需回归
+RFB3b,PENDING_0R6_QUALIFIED_MPN,0603 candidate,1,.6ohm,1,authorized channel pending,BLOCKER,不得把理想1900.6ohm当现成料号
+RCOMP,RC0603FR-0722KL,0603,1,22kohm1%,0.1,Yageo authorized,CANDIDATE,保持补偿研究值
+CCOMP,GRM1885C1H682JA01D,0603,1,6.8nF50V5%C0G,0.8,Murata authorized,CANDIDATE_MPN_VERIFY,容差需回归
+CHF,GRM1885C2A101JA01D,0603,1,100pF100V5%C0G,1,Murata authorized,CANDIDATE_MPN_VERIFY,低压VC滤波;准确库存/尺寸待证
+CSNUB,PENDING_100pF_630V_C0G,1206/1210 pending,1,100pF high voltage,3,authorized pending,BLOCKER,恢复时吸收支路电压远高于正常直流;不得装100V料件
+CSS,GRM188R71H104KA93D,0603,1,100nF50V10%X7R,0.5,Murata authorized,CANDIDATE,SS时序温度/偏压
+CINT,GRM21BR71E106KA73L,0805,1,10uF25V10%X7R,2,Murata authorized,HOLD_EFFECTIVE_C,偏压/温度后必须>=4.7uF;未证明
+CIN local,PENDING_1u_50V_MIN_C,0805/1206 pending,1,1uF研究值,2,authorized pending,BLOCKER,"总下游电容包括VIN旁路,与故障能量一起冻结"
+RRT,RC0603FR-07140KL,0603,1,140kohm1%,0.1,Yageo authorized,CANDIDATE,100kHz量级;实际频率记录
+MODE101,RC0603FR-07402KL,0603,1,402kohm1%,0.1,Yageo authorized,CANDIDATE,只回RTN101
+ILIM101,PENDING_8K000_1PCT,0603,1,8kohm1%,1,authorized pending,BLOCKER,"8.06k不是8k,值改变需计算;无虚构料号"
+CdVdT101,PENDING_47n_C0G_50V,0805/1206 pending,1,47nF10%orbetter,3,authorized pending,BLOCKER,以真实有效Cmin/Cmax替代纯假设
+OVP/LATCH/UV/THERMAL/RESIDUAL,PENDING_REVIEWED_SAFETY_BOM,mixed,1,independent safety assembly allowance,120,authorized suppliers pending,BLOCKER,不能由一个behavioralFAULT元件代表
+HV ports/cover/interlock,PENDING_RATED_TOUCH_PROTECTED_PARTS,enclosed,1,protected interfaces allowance,100,rated connector vendors pending,BLOCKER,禁止普通裸排针;额定/机械评审

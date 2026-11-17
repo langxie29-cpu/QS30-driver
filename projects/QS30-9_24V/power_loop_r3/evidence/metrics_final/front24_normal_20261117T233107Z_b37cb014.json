@@ -1,0 +1,206 @@
+{
+  "case": "front24_normal",
+  "path": "experiments\\front24_normal_20261117T233107Z_b37cb014",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r3\\projects\\QS30-9_24V\\power_loop_r3\\experiments\\pending_front24_normal_20261117T233107Z_b37cb014\\circuit.cir"
+    ],
+    "rc": 0,
+    "elapsed_s": 180.8283245000057,
+    "execution_status": "COMPLETED_UNREVIEWED",
+    "endpoint_s": 0.08,
+    "raw_parse_error": null
+  },
+  "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+  "endpoint_s": 0.08,
+  "points": 7458529,
+  "raw_sha256": "7d6c7875d8b50a892395feac926520815373b573bf03e824619e5d9b68e5de46",
+  "signals": [
+    "time",
+    "v(vin)",
+    "v(permit)",
+    "v(dvdt)",
+    "v(in)",
+    "v(drain)",
+    "v(gate)",
+    "v(src)",
+    "v(sense)",
+    "v(out)",
+    "v(hv)",
+    "v(intvcc)",
+    "v(en)",
+    "v(ss)",
+    "v(vc)",
+    "i(bpass)",
+    "i(cin)",
+    "i(cout)",
+    "i(dclamp)",
+    "i(drec)",
+    "i(lpower)",
+    "i(rsrc)",
+    "i(rg)",
+    "i(rneg)",
+    "i(rsnub)"
+  ],
+  "v(hv)": {
+    "min": -3.012085663572148e-12,
+    "max": 172.27953386168625,
+    "mean": 125.53038099439577,
+    "rms": 139.54831028333442
+  },
+  "i(lpower)": {
+    "min": -0.6875000007333333,
+    "max": 1.649237754885053,
+    "mean": 0.37220258711011966,
+    "rms": 0.5917026463187313
+  },
+  "v(sense)": {
+    "min": -0.006448405932914699,
+    "max": 0.1039804714478872,
+    "mean": 0.02000498863832565,
+    "rms": 0.03392478775425832
+  },
+  "i(drec)": {
+    "min": -3.9260245449189903,
+    "max": 2.333250587809401,
+    "mean": 0.06927030376538504,
+    "rms": 0.25016547439891285
+  },
+  "i(rsrc)": {
+    "min": -0.8891609120064959,
+    "max": 5.268088952884697,
+    "mean": 0.30308008737583153,
+    "rms": 0.544138567836375
+  },
+  "i(rneg)": {
+    "min": -0.624292824831515,
+    "max": 2.3401601365835614,
+    "mean": 0.0002421384297595588,
+    "rms": 0.007060613910348398
+  },
+  "i(cout)": {
+    "min": -3.9462333496934434,
+    "max": 2.161230256665135,
+    "mean": 0.04312436600697654,
+    "rms": 0.24898597580148468
+  },
+  "v(intvcc)": {
+    "min": 0.0,
+    "max": 7.185282306537905,
+    "mean": 6.242424707561702,
+    "rms": 6.6895824945433695
+  },
+  "MOS_VDS_external_V": {
+    "min": -132.87605309857253,
+    "max": 173.15493175059552,
+    "mean": 21.571283877202973,
+    "rms": 48.789561045942705
+  },
+  "MOS_VGS_external_V": {
+    "min": -3.6169437394555657,
+    "max": 7.442444779335353,
+    "mean": 3.3373840437581155,
+    "rms": 4.844043004227969
+  },
+  "diode_anode_minus_cathode_V": {
+    "min": -222.07165308180646,
+    "max": 0.9681047859101994,
+    "mean": -103.94030615177549,
+    "rms": 126.01448288279762
+  },
+  "MOS_external_drain_current_A": {
+    "min": -1.2750327700650042,
+    "max": 5.269458588925939,
+    "mean": 0.30293513831114,
+    "rms": 0.5452993934167814
+  },
+  "MOS_external_gate_current_A": {
+    "min": -0.3994651161980825,
+    "max": 2.744737080263768,
+    "mean": -1.873070579425174e-06,
+    "rms": 0.021133687895317686
+  },
+  "MOS_external_source_current_A": {
+    "min": -5.2796201705438826,
+    "max": 0.2591013539703999,
+    "mean": -0.30293330452753237,
+    "rms": 0.5437766561124557
+  },
+  "MOS_reconstructed_KCL_A": 0.6875000007333333,
+  "MOS_terminal_power_W": {
+    "min": -334.5627392900928,
+    "max": 842.7228354016377,
+    "mean": 0.7972903980798567,
+    "rms": 14.288592003461543
+  },
+  "MOS_signed_terminal_energy_J": 0.06378323184638854,
+  "MOS_positive_terminal_energy_J": 0.06699611124390044,
+  "MOS_negative_terminal_energy_J": -0.0032128793975118993,
+  "diode_terminal_power_W": {
+    "min": -272.9354117763147,
+    "max": 335.28803585898555,
+    "mean": 0.06208431755438464,
+    "rms": 0.6425362524243555
+  },
+  "diode_signed_terminal_energy_J": 0.0049667454043507715,
+  "shunt_power_W": {
+    "min": 0.0,
+    "max": 1.7206711953613587,
+    "mean": 0.01835738042243532,
+    "rms": 0.04619928145035014
+  },
+  "shunt_energy_J": 0.0014685904337948257,
+  "initialization_sample": {
+    "time": 0.0,
+    "v(hv)": 0.0,
+    "i(lpower)": -0.6875000007333333
+  },
+  "IL_nonzero_time_A": {
+    "min": -0.1729328863028561,
+    "max": 1.649237754885053,
+    "mean": 0.37220258712801846,
+    "rms": 0.591702646321135
+  },
+  "inductor_copper25_est_W": 0.056017923465694335,
+  "inductor_copper100_est_W": 0.07252920640720774,
+  "frontend_power_W": {
+    "min": -0.0,
+    "max": 1.7532661723974943,
+    "mean": 0.16047119580075125,
+    "rms": 0.329461115455507
+  },
+  "frontend_signed_energy_J": 0.0128376956640601,
+  "frontend_current_A": {
+    "min": 0.0,
+    "max": 1.591,
+    "mean": 0.37648095644709595,
+    "rms": 0.5894609705447658
+  },
+  "branch_voltage_V": {
+    "min": -7.830079570907022e-10,
+    "max": 24.073122721420727,
+    "mean": 21.644982993348084,
+    "rms": 22.558123352394613
+  },
+  "input_energy_J": 0.7227275036480401,
+  "windows": {
+    "0.04-0.06": {
+      "mean": 169.72925444166768,
+      "minimum": 164.1460818328137,
+      "maximum": 172.27953386168625,
+      "pp": 8.13345202887254
+    },
+    "0.06-0.08": {
+      "mean": 169.9879632602639,
+      "minimum": 169.91710589909485,
+      "maximum": 170.1503808068139,
+      "pp": 0.2332749077190499
+    }
+  },
+  "entered_and_remained_to_endpoint_s": 0.040355969081184905,
+  "output_only_pass": true,
+  "classification": "LIMITED_PASS",
+  "qualification_scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification."
+}

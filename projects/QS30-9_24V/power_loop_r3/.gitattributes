@@ -1,0 +1,6 @@
+# Preserve byte-exact evidence and avoid applying code whitespace checks to logs/prompts.
+experiments/** -text -whitespace
+drafts/** -text -whitespace
+prompts/** -text -whitespace
+evidence/readable_logs/** -text -whitespace
+*.json -text

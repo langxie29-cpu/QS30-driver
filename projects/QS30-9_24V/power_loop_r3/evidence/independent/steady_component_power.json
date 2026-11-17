@@ -1,0 +1,83 @@
+{
+  "window_s": [
+    0.10000003463014473,
+    0.12
+  ],
+  "requested_window_s": [
+    0.1,
+    0.12
+  ],
+  "boundary_disclosure": "Native samples adjacent to exact boundaries, offset below maximum step; formal output acceptance uses exact interpolated boundaries in stats().",
+  "quantities": {
+    "IL_A": {
+      "min": -0.1703634526072345,
+      "max": 0.8664611517417629,
+      "mean": 0.2726831263035615,
+      "rms": 0.4078078993563131
+    },
+    "shunt_A": {
+      "min": -0.1729382000905033,
+      "max": 0.8574755111892454,
+      "mean": 0.2373296036193214,
+      "rms": 0.3765683178527014
+    },
+    "MOS_drain_A": {
+      "min": -0.14724601504201093,
+      "max": 0.8607600441917551,
+      "mean": 0.2373022641042993,
+      "rms": 0.37890845526480843
+    },
+    "MOS_gate_A": {
+      "min": -0.24338015457282539,
+      "max": 0.21101342861931316,
+      "mean": 7.184850841121943e-07,
+      "rms": 0.02257615753759839
+    },
+    "MOS_external_signed_power_W": {
+      "min": -17.749385516544837,
+      "max": 77.60063313958541,
+      "mean": 0.24645926186928563,
+      "rms": 3.3301656041394714
+    },
+    "diode_current_A": {
+      "min": -0.11750234246116883,
+      "max": 0.7456986413365456,
+      "mean": 0.03539157760920812,
+      "rms": 0.14011191858500321
+    },
+    "diode_signed_terminal_power_W": {
+      "min": -1.0912844196771945,
+      "max": 0.6378173933090298,
+      "mean": 0.03112426132584576,
+      "rms": 0.13823254728993004
+    },
+    "COUT_current_A": {
+      "min": -0.15522489394243166,
+      "max": 0.8620974662792378,
+      "mean": -2.0416126321761996e-05,
+      "rms": 0.1425434239933525
+    },
+    "frontend_current_A": {
+      "min": 0.0,
+      "max": 0.8342348291219537,
+      "mean": 0.2768713149497272,
+      "rms": 0.4003467350106481
+    },
+    "frontend_power_W": {
+      "min": -0.0,
+      "max": 0.1739869375300338,
+      "mean": 0.04006937705842152,
+      "rms": 0.0661829485643026
+    },
+    "INTVCC_V": {
+      "min": 7.173827242778225,
+      "max": 7.177314602910572,
+      "mean": 7.175513767845679,
+      "rms": 7.175513839861378
+    }
+  },
+  "copper25_W": 0.02660916524438541,
+  "copper100_W": 0.03445221670016801,
+  "shunt_mean_W": 0.008791829276645615,
+  "scope": "25C parameter frontend/native LDO only; signed terminal power includes stored energy, not guaranteed silicon thermal loss."
+}

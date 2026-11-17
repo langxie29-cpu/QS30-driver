@@ -1,0 +1,204 @@
+{
+  "overall": "INCONCLUSIVE",
+  "actual_frontend_startup": "INCONCLUSIVE",
+  "manufacturing": "HOLD",
+  "frozen_limits": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "raw_ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "cold_start_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195
+  },
+  "cases": [
+    {
+      "case": "cell10ps",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 1.1e-06,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\cell10ps_20261117T232213Z_3201c1e4.json"
+    },
+    {
+      "case": "cell5ps",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 1.1e-06,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\cell5ps_20261117T232217Z_49038689.json"
+    },
+    {
+      "case": "cell_internal5ps",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 1.1e-06,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\cell_internal5ps_20261117T233503Z_6479ca05.json"
+    },
+    {
+      "case": "cell_pcb5n",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 1.1e-06,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\cell_pcb5n_20261117T232225Z_ff7c5b78.json"
+    },
+    {
+      "case": "front21p6_fast",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.08,
+      "electrical": "LIMITED_PASS",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front21p6_fast_20261117T232440Z_0a6c9ba0.json"
+    },
+    {
+      "case": "front24_bias_loss",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.12,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front24_bias_loss_20261117T234222Z_2f18916a.json"
+    },
+    {
+      "case": "front24_fast",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.12,
+      "electrical": "LIMITED_PASS",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front24_fast_20261117T231636Z_9efec337.json"
+    },
+    {
+      "case": "front24_normal",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.08,
+      "electrical": "LIMITED_PASS",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front24_normal_20261117T233107Z_b37cb014.json"
+    },
+    {
+      "case": "front24_permit_loss",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.12,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front24_permit_loss_20261117T234000Z_76b8a052.json"
+    },
+    {
+      "case": "front24_restart",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.12,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Power interruption fixture only; no real manual-fresh interlock. Automatic resumption is not an approved system behavior.",
+      "metrics": "evidence\\metrics_final\\front24_restart_20261117T233512Z_d8edef6f.json"
+    },
+    {
+      "case": "front26p4_disabled",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.025,
+      "electrical": "INCONCLUSIVE",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\front26p4_disabled_20261117T233957Z_7ba01676.json"
+    },
+    {
+      "case": "front26p4_fast",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.08,
+      "electrical": "LIMITED_PASS",
+      "scope": "Output metrics only under favorable parameter frontend / native LDO / 25C power models; NOT actual TPS26601, thermal, independent OVP or manufacturing qualification.",
+      "metrics": "evidence\\metrics_final\\front26p4_fast_20261117T232747Z_8abea66d.json"
+    },
+    {
+      "case": "front26p4_short1u",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.025,
+      "electrical": "ELECTRICAL_FAIL",
+      "scope": "25C constant150uH result exceeds manufacturer3.1A10pct-L-drop point. Invalidates linear-L saturation-margin screen; actual saturated peak not bounded. Not a destructive-current absolute rating.",
+      "metrics": "evidence\\metrics_final\\front26p4_short1u_20261117T232410Z_04a54a98.json"
+    },
+    {
+      "case": "front26p4_short47u",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 0.025,
+      "electrical": "ELECTRICAL_FAIL",
+      "scope": "25C constant150uH result exceeds manufacturer3.1A10pct-L-drop point. Invalidates linear-L saturation-margin screen; actual saturated peak not bounded. Not a destructive-current absolute rating.",
+      "metrics": "evidence\\metrics_final\\front26p4_short47u_20261117T232413Z_04791784.json"
+    },
+    {
+      "case": "tps_encrypted_probe",
+      "software_execution": "COMPLETED_UNREVIEWED",
+      "native_rc": 0,
+      "endpoint_s": 9.999999999999999e-06,
+      "electrical": "INCONCLUSIVE",
+      "scope": "No TPS instance: smoke execution only, not model compatibility evidence.",
+      "metrics": "evidence\\metrics_final\\tps_encrypted_probe_20261117T232439Z_562d1a39.json"
+    },
+    {
+      "case": "tps_instantiated_probe",
+      "software_execution": "SOLVER_FAIL",
+      "native_rc": 1,
+      "endpoint_s": null,
+      "electrical": "MODEL_FAIL",
+      "scope": "Not vendor frontend timing/thermal qualification. Genuine control and power models retained; behavioral protection delay favorable/unbounded in hardware. All safety holds retained.",
+      "metrics": "evidence\\metrics_final\\tps_instantiated_probe_20261117T233502Z_c8b1c1b8.json"
+    }
+  ],
+  "unexecuted": [
+    {
+      "test": "actualTPS26601_fulltemperature_delay_SOA",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "U100_U101_fuse_coordination",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "hot_L_I_T_coreloss",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "real_nine_tube_dynamic",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "independent_OVP195V_faults",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "complete_H01_H10_single_and_double_faults",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "full_R2_loadstep_under_new_frontend",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    },
+    {
+      "test": "full_emptyload_tolerance_temperature_matrix",
+      "status": "INCONCLUSIVE",
+      "reason": "Model/maximum parameter/physical implementation evidence missing"
+    }
+  ]
+}

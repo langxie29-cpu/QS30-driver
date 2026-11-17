@@ -1,0 +1,71 @@
+{
+  "manufacturing": "HOLD",
+  "task_status": {
+    "24V-07": "NOT_PASSED",
+    "24V-08": "NOT_ENTERED",
+    "24V-09": "PARTIAL_NOT_PASSED",
+    "24V-10": "PARTIAL_LOW_VOLTAGE_MODELS_NOT_PASSED"
+  },
+  "blockers": [
+    {
+      "id": "H01",
+      "severity": "P0",
+      "subject": "Complete request, fresh manual events, window watchdog, power-valid and set-dominant fault hardware not qualified"
+    },
+    {
+      "id": "H02",
+      "severity": "P0",
+      "subject": "eFuse encrypted dynamic model, RTN isolation including FLT/IMON, hot leakage and shutdown maxima missing"
+    },
+    {
+      "id": "H03",
+      "severity": "P0",
+      "subject": "Physical MOS short, branch stuck-on, input passive path and fuse coordination not contained by logic proof"
+    },
+    {
+      "id": "H04",
+      "severity": "P0",
+      "subject": "Independent residual measurement divider-open/ground-open coverage and branch-off witness incomplete"
+    },
+    {
+      "id": "H05",
+      "severity": "P0",
+      "subject": "OVP peak195V total detection/actuation/remaining energy not validated"
+    },
+    {
+      "id": "H06",
+      "severity": "P0",
+      "subject": "Real current limit, hot magnetics, controller startup/demagnetization and closed loop07/08 unqualified"
+    },
+    {
+      "id": "H07",
+      "severity": "P0",
+      "subject": "USB/5V failure OVP, brownout and partial-power backfeed not electrically qualified"
+    },
+    {
+      "id": "H08",
+      "severity": "P0",
+      "subject": "Bleeder single faults/modules removed and touch criterion; five-second engineering envelope can fail"
+    },
+    {
+      "id": "H09",
+      "severity": "P0",
+      "subject": "Thermal sensor exact MPN, tolerance and thermal coupling, sensor lead faults unqualified"
+    },
+    {
+      "id": "H10",
+      "severity": "P0",
+      "subject": "Native EDA/ERC/DRC, actual footprints/LCSC mapping and HV spacing basis incomplete"
+    }
+  ],
+  "release_policy": "No automatic HOLD closure; green software CI only validates its documented finite scope",
+  "R3_overall": "INCONCLUSIVE",
+  "R3_additions": [
+    "No guaranteed frontend delay/pulse thermal boundary",
+    "Downstream1u/47u short magnetic linearity screen failed",
+    "7.2V MOS RDSon guarantee missing",
+    "Intrinsic current/power inference inconclusive",
+    "COUT105C voltage rating187.5V below195V"
+  ],
+  "source_sha256": "93a8eb434ad81029ab2c3577b3750777b6d0f4326708de06ef2f746e1c125e65"
+}

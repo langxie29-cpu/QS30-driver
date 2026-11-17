@@ -1,0 +1,14 @@
+TPS26601 actual instantiated compatibility probe
+.include "D:/PROJECTS/dsharness/QS30-power-loop-r3/projects/QS30-9_24V/sources/sprint06/TPS26601_pspice/unpacked/TPS26601_TRANS.LIB"
+V1 in 0 24
+VSH sh 0 2
+RIL ilim 0 8k
+RMODE mode 0 402k
+CDV dvdt 0 47n
+COUT out 0 1u
+RLOAD out 0 1k
+XEF flt 0 sh mode ilim nc0 nc1 dvdt imon 0 0 0 out out in in 0 TPS26601_TRANS
+.options threads=1
+.tran 1u 10u
+.save V(in) V(out)
+.end

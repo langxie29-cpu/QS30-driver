@@ -1,0 +1,11 @@
+from r3lib import *
+import collections
+def main():
+ ledger=json.loads((HERE/'evidence/execution_ledger.json').read_text());r=ledger['records'];flash=[]
+ for p in sorted((HERE/'drafts').glob('*/execution.json')):
+  x=json.loads(p.read_text());flash.append(dict(task=p.parent.name,**x))
+ raws=[p for p in (HERE/'experiments').glob('*/circuit.raw') if not p.parent.name.startswith('pending')]
+ manifest=json.loads((HERE/'evidence/raw_archive_manifest.json').read_text()) if (HERE/'evidence/raw_archive_manifest.json').exists() else dict(records=[])
+ out=dict(utc=utc(),coordination_rounds=2,Flash_sessions=len(flash),Flash_session_limit=10,child_Codex_sessions=0,child_Codex_limit=0,native_invocations=len(r),native_limit=16,R2_historical_invocations=36,native_wall_seconds=sum(x.get('elapsed_s',0) for x in r),native_execution_counts=dict(collections.Counter(x['status'] for x in r)),Flash_usage={k:sum(x.get('usage',{}).get(k,0) for x in flash) for k in ['prompt_tokens','completion_tokens','total_tokens']},Flash_wall_seconds=sum(x['elapsed_s'] for x in flash),Flash=flash,CPU_process_time_seconds=None,peak_RAM_bytes=None,resource_limit_disclosure='Native process CPU and peak RSS were not instrumented at launch; do not infer them from wall time. No new runs after16-call cap.',billed_USD=None,billing_disclosure='Provider response supplied token counts, no actual invoice or per-request charge. Session count is not a monetary/token ceiling.',native_raw_count=len(raws),native_raw_bytes=sum(p.stat().st_size for p in raws),archived_records=len(manifest['records']),archive_bytes=sum(p['bytes'] for x in manifest['records'] for p in x['parts']),archive_parts=sum(len(x['parts']) for x in manifest['records']),failed_native_attempts_retained=1,failed_native_raw_count=0,failed_native_log_count=1,R3_deleted_raws=0,R2_permanently_missing_raws=2,first_nominal_raw_estimate_exceeded=True,estimate_disclosure='1.5GB raw estimate was not a hard cap; nominal actually2.510GB. All bytes retained. Software/archive failures in process_corrections.json count separately from native invocations.')
+ dump(HERE/'evidence/resource_usage.json',out);print(json.dumps({k:v for k,v in out.items() if k!='Flash'},indent=2))
+if __name__=='__main__':main()

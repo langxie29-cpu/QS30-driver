@@ -1,0 +1,204 @@
+{
+  "frontend": {
+    "MODE_original": "OPEN: circuit breaker latch TPS26601",
+    "MODE_candidate": "402kohm to own RTN: active current limit latch",
+    "ILIM_original_ohm": 20000,
+    "ILIM_candidate_ohm": 8000,
+    "ILIM_max_with_Rminus1pct_A": 1.5909090909090908,
+    "ILIM_min_with_Rplus1pct_A": 1.4108910891089108,
+    "ILIM_condition": "table at24V and1V/5Vdrop; inverse-R scaling is design estimate, not guaranteed across full dropout range",
+    "CdVdT_min_F": 4.23e-08,
+    "CdVdT_max_F": 5.17e-08,
+    "slew_max_V_per_s": 3315.6028368794323,
+    "slew_min_V_per_s": 1837.5241779497096,
+    "startup_current_COUTmax_A": 0.08076808510638299,
+    "ramp26p4_fast_s": 0.00796235294117647,
+    "ramp26p4_slow_s": 0.014367157894736842,
+    "RONmax_ohm": 0.25,
+    "fasttrip_max_delay_s": null,
+    "shutdown_to_poweroff_max_s": null,
+    "thermal_SOA_qualified": false
+  },
+  "short_power_sensitivity": [
+    {
+      "Vin_V": 21.6,
+      "I_assumed_A": 1.5909090909090908,
+      "P_W": 34.36363636363637,
+      "E_1ms_J": 0.03436363636363637,
+      "E_10ms_J": 0.3436363636363637,
+      "E_100ms_J": 3.436363636363637
+    },
+    {
+      "Vin_V": 21.6,
+      "I_assumed_A": 2.99,
+      "P_W": 64.584,
+      "E_1ms_J": 0.064584,
+      "E_10ms_J": 0.6458400000000001,
+      "E_100ms_J": 6.458400000000001
+    },
+    {
+      "Vin_V": 24,
+      "I_assumed_A": 1.5909090909090908,
+      "P_W": 38.18181818181818,
+      "E_1ms_J": 0.03818181818181818,
+      "E_10ms_J": 0.38181818181818183,
+      "E_100ms_J": 3.8181818181818183
+    },
+    {
+      "Vin_V": 24,
+      "I_assumed_A": 2.99,
+      "P_W": 71.76,
+      "E_1ms_J": 0.07176,
+      "E_10ms_J": 0.7176,
+      "E_100ms_J": 7.176000000000001
+    },
+    {
+      "Vin_V": 26.4,
+      "I_assumed_A": 1.5909090909090908,
+      "P_W": 41.99999999999999,
+      "E_1ms_J": 0.041999999999999996,
+      "E_10ms_J": 0.41999999999999993,
+      "E_100ms_J": 4.199999999999999
+    },
+    {
+      "Vin_V": 26.4,
+      "I_assumed_A": 2.99,
+      "P_W": 78.936,
+      "E_1ms_J": 0.078936,
+      "E_10ms_J": 0.7893600000000001,
+      "E_100ms_J": 7.893600000000001
+    }
+  ],
+  "stored_downstream": [
+    {
+      "C_F": 1e-06,
+      "V_V": 26.4,
+      "E_J": 0.00034847999999999997,
+      "lossless_L135u_current_A": 2.2721502297750176,
+      "lossless_L121p5u_current_A": 2.3950566373879965,
+      "scope": "LC energy scale only; not total upper bound with continued input or initial L current"
+    },
+    {
+      "C_F": 4.7e-05,
+      "V_V": 26.4,
+      "E_J": 0.016378559999999997,
+      "lossless_L135u_current_A": 15.57707717555939,
+      "lossless_L121p5u_current_A": 16.419681054330074,
+      "scope": "LC energy scale only; not total upper bound with continued input or initial L current"
+    }
+  ],
+  "delay_headroom": [
+    {
+      "L_assumed_H": 0.000135,
+      "initial_A": 1.5909090909090908,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 7.716942148760331e-06,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    },
+    {
+      "L_assumed_H": 0.000135,
+      "initial_A": 2.99,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 5.624999999999994e-07,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    },
+    {
+      "L_assumed_H": 0.0001215,
+      "initial_A": 1.5909090909090908,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 6.945247933884299e-06,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    },
+    {
+      "L_assumed_H": 0.0001215,
+      "initial_A": 2.99,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 5.062499999999995e-07,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    },
+    {
+      "L_assumed_H": 7.5e-05,
+      "initial_A": 1.5909090909090908,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 4.287190082644628e-06,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    },
+    {
+      "L_assumed_H": 7.5e-05,
+      "initial_A": 2.99,
+      "target_A": 3.1,
+      "V_V": 26.4,
+      "remaining_delay_s": 3.1249999999999965e-07,
+      "scope": "constant-L sensitivity, not hot-L guarantee or maximum actual protection time"
+    }
+  ],
+  "RC": {
+    "tau_nom_s": 1.034e-07,
+    "tau_min_s": 9.72477e-08,
+    "tau_max_s": 1.096557e-07,
+    "assumption": "candidate1%R5%C, exact cap temp/bias still to verify",
+    "ramp_delay_increment_A": [
+      {
+        "L_H": 0.000135,
+        "deltaI_A": 0.02144378133333333
+      },
+      {
+        "L_H": 0.0001215,
+        "deltaI_A": 0.023826423703703702
+      }
+    ],
+    "warning": "RC is ramp asymptotic lag, not hard maximum comparator/blanking/driver delay"
+  },
+  "shunt": {
+    "value_ohm": 0.062,
+    "original_MPN": null,
+    "candidate": "WSL2512R0620FEA",
+    "candidate_power70C_W": 1,
+    "spike12A_W": 8.928,
+    "assumed_TCR_ppm": 75,
+    "shunt_R_100C_upper_assumed_ohm": 0.0629722375,
+    "pulse_qualified": false
+  },
+  "inductor": {
+    "DCR25max_ohm": 0.159,
+    "DCR100_copper_only_ohm": 0.20586525000000003,
+    "Isat25_10pct_A": 3.1,
+    "Isat25_20pct_A": 3.6,
+    "Isat25_30pct_A": 3.9,
+    "Irms20C_rise_A": 1.55,
+    "Irms40C_rise_A": 2.2,
+    "L_hot_guaranteed_H": null,
+    "coreloss_W": null,
+    "qualification": "INCONCLUSIVE"
+  },
+  "controller_LDO_screen": {
+    "Vin26p4_PIC_W": 0.1274355456,
+    "deltaT_DFN43C_W": 5.4797284608000005,
+    "assumptions": "Qg32nC at400V10V published typical; circuit7.2V/170V differs. Only scale check, not maximum or measured internal loss. Exact package and current validation required"
+  },
+  "bleed": {
+    "Rbranch_ohm": 181800,
+    "Rall_ohm": 90900,
+    "C_nom_F": 2.03e-05,
+    "Cexploratory_max_F": 2.436e-05,
+    "E195_Cmax_J": 0.4631445,
+    "one_branch_open_t195to60_s": 5.272046573160823,
+    "scope": "Only when input passive supply removed, no backfeed; voltage threshold not touch-safety certification",
+    "C_Jsuffix_plus5pct_modules_assumed5pct_F": 2.1315e-05,
+    "one_branch_open_Jsuffix_capacitance_only_s": 4.61304075151572,
+    "tolerance_disclosure": "24.36uF is extra exploratory+20pct C, NOT ECQE2106JF initial J5pct tolerance. 21.315uF budget also needs temperature/aging/module part confirmation."
+  },
+  "output_cap_derating": {
+    "rated85C_V": 250,
+    "rate_per_C": 0.0125,
+    "rated105C_V": 187.5,
+    "temperature_at195V_rating_C": 102.6,
+    "ESR_actual_ohm": null,
+    "ripple_current_rating_A": null
+  }
+}
