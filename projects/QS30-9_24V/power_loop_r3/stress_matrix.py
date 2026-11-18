@@ -39,6 +39,10 @@ def main():
  row('OVP/latch','notimplementedfully','FBopen_fault','HV_peak_and_delay','UNKNOWN','V/s','not executed','HV<=195V designatedfault','INCONCLUSIVE','independent physical chain missing')
  row('CSNUB/RSNUB','100pF/330ohm value-only','recovery','pulsevoltage_energy','UNKNOWN','V/J','observedD20reverse near400V;nodeSN notsaved','need exactHVcap/resistor pulse ratings','INCONCLUSIVE','BOM intentionally blocks100Vcap in snubber')
  row('Controller','LT3757AEMSE#PBF candidate','biasfault','LDOjunction_and_permit','UNKNOWN','W/degC','internalnativeLDO and bias clamp study','VIN40V;INTVCC<=VIN+.3V,20V;GATE<=INTVCC+.3V','INCONCLUSIVE','rail fault transient/thermal tolerance/independentpermit')
+ for ref,mpn in [('U101','TPS26601RHFR'),('L20','MSS1583-154KED'),('Q20','STP9NK50Z'),('D20','US1G-E3/61T'),('RSRC','62mohm value only'),('XNEG/RNEG','SS14model/2ohm'),('COUT','2xECQE2106JF')]:
+  row(ref,mpn,'R3_sustained_overload_NOT_EXECUTED','maximum_stress','UNKNOWN','mixed','R2idealfrontend overload evidence cannot be inherited under new frontend','component-specific current/thermal/SOA boundary required','INCONCLUSIVE','new sustainedoverload and physical protection timing stillmissing')
+ for ref in ['C11','C12']:
+  row(ref,'ECQE2106JF','individual_cap_current','ripple_and_pulse','UNKNOWN','A','R3COUT is lumped20.3uF withoneESR,not two separately modeled physical parts','actualcurrent split needsESR/ESL/layout/temp','INCONCLUSIVE','do not divide aggregatecurrent by2 without validated matching')
  headers=['reference','MPN_or_candidate','scenario','quantity','maximum_provable_or_measured_value','unit','evidence_and_scope','rating_or_criterion','classification','remaining_gap']
  with (HERE/'COMPONENT_STRESS_MATRIX.csv').open('w',encoding='utf-8-sig',newline='') as f:w=csv.writer(f);w.writerow(headers);w.writerows(rows)
  print('Stress rows',len(rows))

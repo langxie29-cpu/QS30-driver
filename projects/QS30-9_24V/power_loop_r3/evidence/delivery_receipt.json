@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-18T00:01:18.726939+00:00",
+  "status": "COMPLETE_SOFTWARE_EVIDENCE_DELIVERY",
+  "electrical": "INCONCLUSIVE_HOLD",
+  "branch": "nxt/qs30-power-loop-engineering-r3",
+  "baseline": "bd1762f6b801a004b01de0f31ba5bbb8e2a60a3d",
+  "source_result_commit": "d655c976325087907d3d7e439560330f3b56a6e1",
+  "final_commit_reference": "Final branch HEAD reported in delivery response; receipt cannot self-reference its containing commit SHA.",
+  "Flash_sessions": 4,
+  "Flash_tokens": {
+    "prompt_tokens": 9014,
+    "completion_tokens": 9836,
+    "total_tokens": 18850
+  },
+  "native_calls": 16,
+  "native_wall_seconds": 1454.5141486998764,
+  "raw_files": 15,
+  "raw_bytes": 12159689114,
+  "archive_parts": 78,
+  "archive_bytes": 6527619477,
+  "remote_SHA256_verified": 78,
+  "failed_native_attempts": 1,
+  "failed_raws": 0,
+  "failed_logs_preserved": 1,
+  "R3_deleted_raws": 0,
+  "R2_permanently_missing_raws": 2,
+  "qualified_model_status_counts": {
+    "INCONCLUSIVE": 9,
+    "LIMITED_PASS": 4,
+    "ELECTRICAL_FAIL": 2,
+    "MODEL_FAIL": 1
+  },
+  "unit_tests": 7,
+  "evidence_checks": [
+    "unique_runs_and_budget",
+    "no_unsealed_pending_runs",
+    "all_sealed_file_manifest_bytes",
+    "execution_model_electrical_separation",
+    "holds_and_actual_frontend_not_promoted",
+    "git_changes_R3_only",
+    "all2172_historical_files_byte_identical"
+  ],
+  "release": {
+    "id": 449329019,
+    "html_url": "https://github.com/langxie29-cpu/QS30-driver/releases/tag/untagged-ecdfe682d3108522ae9f",
+    "draft": true,
+    "published_at": null
+  },
+  "hardware_actions": 0,
+  "manufacturing": "HOLD",
+  "main_merged": false
+}
