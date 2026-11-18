@@ -1,0 +1,6 @@
+# Preserve research artifacts byte-for-byte, including native CRLF logs.
+* -text whitespace=cr-at-eol
+# Generated native graphics and screenshots are evidence, not source-code diffs.
+*.svg -diff
+*.png -diff
+*.bin -diff

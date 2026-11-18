@@ -1,0 +1,3058 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-18T12:09:38",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a",
+            "violations": [
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 J100 [PORT]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "23e842f6-0bc7-5f30-aeda-24f45ff982d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R101 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "3634bc8c-a6f7-5ea2-915b-547cb93755fd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R105 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "a00b04df-89e6-5809-847e-1055587a689f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 OP100 [VOS618A]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "f209d97c-c8af-57a7-aeb7-6f3632f599c7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R110 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "1a2a999b-0807-5fde-b4c3-6f2f661af28e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "在库 'Fuse' 中找不到封装 'Fuse_2410_6125Metric'",
+                    "items": [
+                        {
+                            "description": "符号 F100 [F]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "541129e4-c340-5ee2-a456-d1a57aab9610"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 F100 [F]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "541129e4-c340-5ee2-a456-d1a57aab9610"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R102 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "456ec9ee-6475-56eb-b088-5f1e2916736c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R106 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "09133c00-2039-579f-9205-5edb3c5ba415"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R108 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "bb59ec07-c950-5468-80b7-b1594b4fe8cd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP101 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "8c70ec6b-58c7-5967-96b2-e52631f54f65"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 D100 [D]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "ef577016-c7bf-5f7d-bf63-a9e1248ff7e1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R103 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "8fd5bbc4-6ab5-57a7-8f3e-c65fced3ba26"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R107 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "12cd8279-c4b4-56d1-a46d-b675d2089b6c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 OP102 [VOS618A]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "5ffa8838-d660-5a87-b7d7-4d4a3ee49fb5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C100 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "780ec9bb-8f31-57fe-8f19-26ab05f40d42"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U100 [TPS26601]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "83b8b791-d38c-50cd-9a16-e3c08d6bd2ff"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R104 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "8bfb0590-c00f-5d18-becb-c2f10b0236e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C101 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "f7923a59-55c3-5cd9-92d9-4c798abab2e6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R109 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "53a09004-126e-501f-891e-3f7096cf70cf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA9 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "bfe0436f-d43f-575e-8a30-a8f05e506a3e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CALDOIN [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "69b74c72-d756-5742-8dcc-d5929ac07b07"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CALDOOUT [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "13176b22-0cc8-58b3-af5a-a7299d81ada6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA10 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "be69a7bb-0b90-5ff9-bb7b-ecd47350ce1a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB12 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "3e58fef0-42bf-5e78-9da9-06b457af3c1f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB23 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "cacc485f-a723-5f91-902d-cd542a9f8289"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB13 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "195c0388-1091-5f86-a2e7-885f36c918a1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RQENOFF [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "d71896fe-aa9d-5c16-b2f8-65038655ee7d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB21 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "5c00d629-8fa4-53cf-938d-cbf84f4ff11e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB22 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "25270a3d-4a19-5c3b-8dff-97bdb41289dc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U500 [TPS3808]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "1dda1e7d-08b7-5506-8568-415326b318c1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U502 [TPS3808]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "26d6b74f-81a0-5b87-bb9b-b95c153f81fc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RPG3 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "a08324c0-e3f8-5822-8b04-a9b19171d389"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U511 [HCS08]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "1b46d9b8-65fb-5b5c-ad2e-eb0b3032e891"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U500 [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "8d4ebf99-9bf2-54ea-8587-7dfc1a257739"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U500_CT [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "1dad7fa1-c0d0-5d1d-96a3-514a7ff20794"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U502_CT [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "e2fe6075-1a46-5e4a-a096-fc79a2496bc1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RPG4 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "7d8602c2-9c24-5357-a38c-6aaec36b3cfe"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U512 [HCS08]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "ab8ad521-e352-50a3-b387-874d53f9ad7f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U501 [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "71ae6ca3-6fe1-5a80-8dc6-69f2fcccd817"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U501 [TPS3808]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "2c38d46f-175d-599b-bff3-4012a6abc432"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RPG1 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "97347b9b-f50c-5508-935b-aab14d8a7d6e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RFAULT [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "0c2cbd92-89f5-5a37-a474-31ca35d80931"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U513 [HCS08]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "921de7d5-df28-5962-9fb1-c05f62e496e5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U502 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "0ef53339-473f-51a9-9eef-44020154c72a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U501_CT [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "57defc05-e798-5fa8-8832-76539b69e41c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RPG2 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "ac74bd60-ea43-5c22-ae36-8d41edbc50a3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U510 [HCS14]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "03984a2a-88ea-59ab-9ec1-bdb37b4ad298"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U514 [HCS74]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "39320522-3259-5d5f-a242-669a2af04349"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U510 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "5805bec1-dca9-5409-b0b3-c374310d4a70"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP504 [TP]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "3d716c70-5eb4-5468-af49-3a318b70650b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF2 [FLAG]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "ab46c137-cb02-5caa-a724-91435b2b8a52"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF6 [FLAG]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "bd408555-1008-5a44-942d-1e2eb73a98a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP505 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "d7a893c7-c0ae-5af8-ae70-14d4ea506291"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF3 [FLAG]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "a4c86fb8-e2c8-5f3d-bcf4-44b5da0ad0e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF7 [FLAG]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "b36487e7-2179-5070-ba44-2aee54151c92"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP506 [TP]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "02465566-39f7-5d6a-840e-ba77a05c6665"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF4 [FLAG]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "1df70ae3-e4e9-5b89-96bb-8b6a3ed9b46b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF8 [FLAG]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "3057c367-c688-5a90-a4c4-bc58c988b1d7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF1 [FLAG]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "dfb44eb4-8909-5622-ac45-eb4722cbf611"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 PF5 [FLAG]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "97120fdb-37d5-509e-9220-0d00c9ed9db6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U101 [LM5069]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "a9c10fee-4086-5cff-bdf1-4b20c381c43f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R113 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "ed3b86bb-6cd6-5f52-982b-dc208cc3b129"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R116 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "375ac91e-eb4c-5b96-a408-7a45ea44a3cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C111 [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "d3894752-a149-5dbd-b05d-9878227f0ebc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R111 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "3c00c034-f839-5858-ac84-255d3fc7dc21"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R114 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "a77605cf-2bbe-5837-87ee-83d35876a844"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R117 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "27c7b6c2-bb80-5c29-9360-3fe0c153cc90"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R119 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "1148c00e-869b-5834-b334-cb6900eb9172"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 Q101 [Q]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "2d4141ee-9f42-532b-b41f-b92ffc2069e8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 OP101 [VOS618A]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "7c531127-96ac-5998-9f80-156486787110"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R118 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "9929a8b0-c1bc-5d92-b611-470f2c9f417e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP110 [TP]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "917ac387-26cc-5d24-8f1d-134424609909"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R112 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "4ed1f797-c44a-52bb-a7d9-ac7af5ae7c14"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 R115 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "3fb601dc-5b53-5c57-a4cc-8dfe37422964"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C110 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "69aefe45-1b25-592d-ad01-b417d90426e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 L20 [L]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "1f75a3b2-a92b-59ce-be84-1d26d0d32c72"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 NT1 [NT]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "da5d4c2e-e778-5d90-b9cc-94bc0e7d6bf2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U201 [UCC27511]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "e82db38a-6cca-5c04-a299-25b59b1c8ada"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 DGNEG [D]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "aefa2301-d405-5b7d-a5bf-14cbe28ddae9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RCOMP [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "08dbabc1-ef61-5bfb-96a2-c980b32af57b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 Q20 [Q]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "f0f0b3d8-5cd1-5c43-8fd3-978f28cbe39e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 NT2 [NT]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "84dd8f5e-8ab6-5383-b832-d7469a887446"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RGON [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "f75c2792-f6ea-56de-aec7-1c762d9669ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNEG [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "cfe861fc-52b7-56c3-b77b-40c9b3df445b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRT [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "13324898-3a10-5bf2-ab49-aff5a98f82dd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 D20 [D]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "50244322-9fda-52cc-8d96-33f86b02cc2d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 NT3 [NT]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "27dbb9c7-aa76-5d12-9ea7-7c2b065c94d1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RGOFF [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "38c595be-4b65-53f7-ae8e-6b2262e2a295"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RF [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "9ffa5591-ee03-5d5b-bc91-e85c955edbb8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 REN1 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "1ebbdf92-2b21-5d60-9060-a6c621467322"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RS20 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "9f6ccb5e-000f-509f-bfd9-8c00769497a1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U20 [LT3757A]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "22df5b1f-b686-5b7e-ab47-164dacee5bd1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RGS [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "33c46b2f-559c-54fa-bccc-2a9e949cede2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CF [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "ff5d2658-bc4a-53d9-b85c-e2ff885243cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 REN2 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "0eba72e4-bc01-5a39-8f03-ffdbe649440d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U430 [TPS3700]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "0a63ea6f-5d3b-56a6-b72f-f9412dadc576"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV4 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "4e99af3f-e05b-5d63-a967-1a0ed8790ec7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRA1 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "555384d4-bb8d-5f2e-889d-fac7ed1a146e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U432 [TPS3700]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "1d497ecf-480b-505a-985a-5103480df385"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRB4 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "6e61a85b-ce9b-5176-8fb4-ba6ae8398002"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV1 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "909af3af-7a15-58da-b6b9-14bc93b100ff"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV5 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "ce182fd1-4db5-52e5-9fd9-0cf954929654"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRA2 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "ad7ecc21-c429-5eae-ac3d-2b601b9089d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRB1 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "112bab1e-c59b-53b2-8c2e-7145b954ab2f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U433 [TPS3700]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "ae08d105-41f7-5d3e-afc5-f0053028c9a5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV2 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "d93b707c-ee9d-5585-8168-8732d6e77fba"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV6 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "aa41da89-0939-5002-b790-4550f4f470ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRA3 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "33c8dfe2-afa1-51bc-8a9d-5ac08eeef478"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRB2 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "607945eb-1bec-5fb2-ad89-8325c2570f36"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RBRO1 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "03f49fd8-b597-5ce5-9c9d-9db211e6ae5f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 ROV3 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "87155675-0e98-5f21-a2de-58783ab5165a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U431 [TPS3700]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "dadf3b7c-b558-5b8a-a863-3dc8cd61c066"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRA4 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "07b3a2fe-382e-5075-864a-2f3c0917c0a4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RRB3 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "f99aeb28-a6b3-5625-80c2-6f1aa44b970e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RBRO2 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "8fb6c525-cfcd-5069-ba71-65a3b21e8f6d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U511 [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "4f2f3acc-31de-5de4-8515-cf4253876874"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U512 [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "eb160eae-616a-5733-b2fc-c090f50305b8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U513 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "8a830250-94df-59c5-8488-12031bdd6e79"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U514 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "438eeefa-aa56-531d-80db-8dbf5c2ce1c7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 DA1 [D]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "ce295239-0e20-5153-8c3d-149a17ee5669"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA1 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "31ced220-4a08-5090-aa2b-e32ae9142153"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 LA1 [L]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "94501874-0dcd-55fa-bc90-032faccf322d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA5 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "2866f044-5b43-5e3c-b91e-5d81361be618"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA7 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "06577fea-2f51-5f48-857b-0b82380fd1ad"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 UA1 [LM5164]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "ec6472d6-be69-52b8-8e61-2bee0425233c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA2 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "2ca15d47-e498-5069-9d41-7f272273b2be"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CAOUT1 [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "75292e68-1bb6-5308-a76c-389a5ba6198d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA6 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "693dba0c-a73f-5dc6-b6f4-366f05f8e684"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TPA1 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "87563818-21b6-503d-8bda-8bf1d07a1819"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CAIN1 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "51022bb2-6de3-55dd-ba5a-d8b89e45fa6c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA3 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "38d3e72e-149d-57d0-8ff4-e7ea2175593f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CAOUT2 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "0f34b357-d795-5c98-a1b3-db1526a664ca"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CARA [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "e3801fd2-5d5f-5bf2-9260-890527ed0e5f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 UA2 [TPS7A1601]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "f2ad6a84-db77-587a-86c1-460188912758"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CAIN2 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "d8b263a9-df87-5368-90a8-8a6beea24b0f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CAB [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "f91aa67f-063b-5aba-bf51-270c32dd9d33"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA4 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "6d85d02f-989f-506e-8f84-d3a4341abc2a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CARB [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "5623d7df-989e-5ac9-9cfc-ae31106aff19"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RA8 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "0f8298c1-a313-5ab4-abab-dc0f5da582c0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CCOMP [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "598b6719-e59e-5650-9f5c-597f5a4b1d85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CVIN [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "18d90f44-0cd8-5030-87c8-c63338603e29"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RBEN [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "f0f84a18-3fa6-58c0-b48a-484cc9f74d3c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RFB1 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "e70a0d93-7c93-5b29-b5c2-4feebde76e09"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CSNUB [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "7caf88e4-6a0c-5a40-ae14-145f7e732064"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CHF [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "b4b9c5cf-15e5-5010-9713-93d3313a9e63"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CDRV [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "b0f11224-7a59-5568-a055-606d8c03aa00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 QEN [NPN]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "22a0d497-8798-51df-a042-defa94f8ddfc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RFB2 [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "8abc1bd7-0af9-50eb-af25-62f7f61ca8cd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C11 [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "16df0eec-c856-55ed-be55-8e642fbcc837"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CSS [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "eb0c1c9b-84ba-57ff-8d17-2adcc789f730"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CDRVHF [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "fee85554-b39f-5120-a95e-8e794333e011"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RBSD [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "7005c407-f50f-5f32-a647-3f78188267f6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RFB3 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "68694a76-eac2-55df-a579-f1ef4b1dbd7e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 C12 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "97b05391-5fd0-581d-878f-66f448fe7803"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CINT [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "b258a217-911c-5dbd-9b20-fada6a4aaeff"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RINH [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "7b196601-0332-5d42-928c-3e17ef320b7e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 QSD [NPN]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "4c211514-a994-5ea9-869f-b9613191e118"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RSNUB [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "f7a23191-5af2-5d9d-b8c3-a5d9dd0fe93b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RB11 [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "3b446ad5-5859-5cea-8a0d-947546a4e7cc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RBRO3 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "faedc5ea-9845-57b1-ad6e-1575da932c04"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTLQ [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "160641c3-7aac-5ad2-a4f3-ca69a2af9d2a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTHL [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "fa9b9614-763a-51c2-8829-9b314cb44e54"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U431 [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "df9ededb-d178-580d-8ffe-2a50e1605e9b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U441 [C]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "1827e72f-39c3-50ff-bd2b-d9e74f17c761"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U440 [TPS3700]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "b8d75529-b826-5f9e-b891-f25212136f6a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RTQ [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "a903e49e-ff66-56a3-bbcc-8787f5dd3f8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTLL [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "c2a8e8ef-f9bf-517d-9db9-9c732c0ea137"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U432 [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "8b915920-7074-5363-b155-0527bbbb3a0b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTQ [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "cc932121-2de9-5bb7-982a-c8df2742e9d2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 U441 [TPS3700]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "84e74ad3-98b4-54f5-94fd-cee1de0855e7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RTL [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "6d271a3d-ea4d-5221-bc87-df525fce540d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U433 [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "8719b1d3-65e3-54ca-a37f-fde81586d0f9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTHQ [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "19644c92-9bc4-503d-a740-7ce5dcde131c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RNTL [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "576d0387-53ab-5de0-93ee-69fea011dc91"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U430 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "2185c896-3b3f-595b-befe-80911e8106fa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CD_U440 [C]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "fbe1ef45-f7a5-5604-a38d-f750657f4a1f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 SW_START [SW]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 50.8
+                            },
+                            "uuid": "d75e5842-644a-56d6-b97d-c8c13dbea416"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RSW_RESET [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 96.52
+                            },
+                            "uuid": "59d1ee32-ce79-538e-8e41-0a1675d69dbd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RHOLD1 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 142.24
+                            },
+                            "uuid": "59a106d7-0b95-59a4-a414-9c71daf27b79"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RHOLD3 [R]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 187.96
+                            },
+                            "uuid": "11bdc5e4-7a86-575a-b0dd-a2eea8f0fbea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 JHV [PORT]",
+                            "pos": {
+                                "x": 55.88,
+                                "y": 233.68
+                            },
+                            "uuid": "66f05eaf-d85a-5d63-b002-8b1796f8e3c2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RSW_START [R]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 50.8
+                            },
+                            "uuid": "df95d27a-4c97-5208-9374-bb46dacbe2bc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CSW_RESET [C]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 96.52
+                            },
+                            "uuid": "8afd2f12-051f-5ccf-aa94-d393f3ebd93a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TPH1 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 142.24
+                            },
+                            "uuid": "5b3176e1-ab23-5050-a561-300e61744d22"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TPH3 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 187.96
+                            },
+                            "uuid": "e77d5943-4032-5bde-acca-5cb2536faebf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP501 [TP]",
+                            "pos": {
+                                "x": 157.48,
+                                "y": 233.68
+                            },
+                            "uuid": "3dcf0c4b-f3fa-5de9-92f0-d2a16217ff18"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 CSW_START [C]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 50.8
+                            },
+                            "uuid": "930a7dc9-a18f-5ed7-9f0c-28baa6c4f8da"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 SW_STOP [SW]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 96.52
+                            },
+                            "uuid": "ef355661-8da3-5ab1-816b-38ccd3a6a3a8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RHOLD2 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 142.24
+                            },
+                            "uuid": "de07e079-3037-5178-804b-a7787390678e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RHOLD4 [R]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 187.96
+                            },
+                            "uuid": "ee893883-8762-5623-8e57-c42088dd5d66"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP502 [TP]",
+                            "pos": {
+                                "x": 259.08,
+                                "y": 233.68
+                            },
+                            "uuid": "f6e7cf59-14f5-5b05-9563-16299b9df255"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 SW_RESET [SW]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 50.8
+                            },
+                            "uuid": "d5ea5d82-57f8-5b5e-a39b-32c0e1703d10"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 RSTOP [R]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 96.52
+                            },
+                            "uuid": "5b202b78-84df-5ab7-9764-2202735665e2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TPH2 [TP]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 142.24
+                            },
+                            "uuid": "2a2e7ad7-f798-5fcc-baee-cdea776ee765"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TPH4 [TP]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 187.96
+                            },
+                            "uuid": "deb51b15-f283-5e7d-8096-9b4aea121ff2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'NXT'",
+                    "items": [
+                        {
+                            "description": "符号 TP503 [TP]",
+                            "pos": {
+                                "x": 360.68,
+                                "y": 233.68
+                            },
+                            "uuid": "10a95c6a-8d91-5fb8-9dde-1734a3e371df"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        },
+        {
+            "path": "/INPUT_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/b2ba6215-edd3-54ee-9139-18a2490d9e7a",
+            "violations": []
+        },
+        {
+            "path": "/AUX_2/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/e8baf208-fcc7-59d4-9d0a-042a4cafa73b",
+            "violations": []
+        },
+        {
+            "path": "/POWER_3/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/d5fd084d-1de3-5e73-b419-d810a08bf8ee",
+            "violations": []
+        },
+        {
+            "path": "/SAFETY_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/ad9690a6-28f1-555f-aa42-74302a06b3de",
+            "violations": []
+        },
+        {
+            "path": "/INTERFACES_2/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/a3373e92-48ab-58be-a8c5-092c2bcfca2b",
+            "violations": []
+        },
+        {
+            "path": "/FRONTEND_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/4da44719-04dd-5f83-a4b4-78aac14423f3",
+            "violations": []
+        },
+        {
+            "path": "/POWER_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/121571b1-7a20-5a0c-95b4-8c51b9e6bff6",
+            "violations": []
+        },
+        {
+            "path": "/MONITORS_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/6157def1-89de-5e67-bcb5-e8330a82d836",
+            "violations": []
+        },
+        {
+            "path": "/SAFETY_2/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/396284b7-bc5e-53a2-8e05-579690a2a1da",
+            "violations": []
+        },
+        {
+            "path": "/AUX_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/56a17e09-92cc-5b71-a975-8a5cbc124912",
+            "violations": []
+        },
+        {
+            "path": "/POWER_2/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/cb4cc7a5-5544-5b9c-871d-dc6343113d75",
+            "violations": []
+        },
+        {
+            "path": "/MONITORS_2/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/7d5792db-d1ff-5b5f-8d92-75756a43e164",
+            "violations": []
+        },
+        {
+            "path": "/INTERFACES_1/",
+            "uuid_path": "/60c6dcfb-1cdc-5f2c-8cc5-349b1588d71a/265ad40b-4637-5a75-a353-908c1ef8909b",
+            "violations": []
+        }
+    ],
+    "source": "NXT-PWR-EVT01.kicad_sch"
+}

@@ -1,0 +1,118 @@
+{
+  "utc": "2026-11-18T04:59:45.536582+00:00",
+  "rounds": 2,
+  "Flash_sessions": 6,
+  "Flash_session_cap": 6,
+  "Flash_usage": [
+    {
+      "session": "A_frontend",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 674,
+        "completion_tokens": 3963,
+        "total_tokens": 4637,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 674
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 33.98866350000026,
+      "finish_reason": "stop"
+    },
+    {
+      "session": "B_components",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 645,
+        "completion_tokens": 3659,
+        "total_tokens": 4304,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 645
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 28.504698700038716,
+      "finish_reason": "stop"
+    },
+    {
+      "session": "C_safety_eda",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 700,
+        "completion_tokens": 3543,
+        "total_tokens": 4243,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 700
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 28.52758629998425,
+      "finish_reason": "stop"
+    },
+    {
+      "session": "D_calculations",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 2193,
+        "completion_tokens": 3036,
+        "total_tokens": 5229,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2193
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 19.610515500011388,
+      "finish_reason": "stop"
+    },
+    {
+      "session": "E_pin_bom",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 6422,
+        "completion_tokens": 4500,
+        "total_tokens": 10922,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 6422
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 28.17753470002208,
+      "finish_reason": "length"
+    },
+    {
+      "session": "F_adversarial",
+      "status": "COMPLETED_UNREVIEWED",
+      "usage": {
+        "prompt_tokens": 13594,
+        "completion_tokens": 3466,
+        "total_tokens": 17060,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 13594
+      },
+      "provider_model": "deepseek-flash",
+      "elapsed_s": 37.31348800001433,
+      "finish_reason": "stop"
+    }
+  ],
+  "provider_tokens": 46395,
+  "native_LT_calls": 6,
+  "native_LT_cap": 12,
+  "native_elapsed_s": 318.28971049992833,
+  "child_Codex": 0,
+  "additional_native_runs": "Not justified by current gaps; unused quota is not a research target",
+  "E_review": "finish_reason length; incomplete, never used as signoff",
+  "money": "Provider billing/actual CNY UNKNOWN; session/token counts are not monetary hard caps"
+}

@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-18T04:19:23.084392+00:00",
+  "front_choice": "C preferred bounded-development controller, noqualifiedarchitectureselected",
+  "architecture_freeze": "HOLD",
+  "reason": {
+    "Rs_max_to_avoid_currentlimit_ohm": 0.029116161554583037,
+    "Rs_min_to_trip_by3p1_cold_before_anydelay_ohm": 0.042359074617139135,
+    "claim": "Disjoint conditions even before gatecharge/delay. This rejects a guarantee based only on fastbreaker with unchangedR3currentpolicy, NOT allpossibleLM5069designs. Differentcurrentpolicy/frequency/magnetics requires newqualification.",
+    "voltage_test_condition": "LM electricaltable defaultVIN48V; actual21.6..26.4 applicability also notindependentlyguaranteed"
+  },
+  "schematic_R111": "HOLD_CURRENT_SETTING; no false50mselection",
+  "Q101": "DNP/unselected; do notchoosepassFETwithoutfeasiblefullcurrent/energywindow",
+  "MOS_bias": "RealLM5164 nominal12.094V feedsLT3757VINandUCCVDD. LT3757INTVCCremainsinternal7.2V. This avoids forcingINTVCCaboveVIN+.3V and movescontrollerbypassbeforebranch. Nofull12VrealrailSPICEPASS",
+  "bleed": "Two3x49.9kstrings, upgradeCRCW2512 forsingleRs shortpower. Exactcatalog/thermalboardverificationstillHOLD",
+  "further_native_calls": "Not justified untilmodel/loadedcutoff/currentpolicy gapsclose; sixof12used, noaimtouseall",
+  "original_holds": "UNCHANGED"
+}

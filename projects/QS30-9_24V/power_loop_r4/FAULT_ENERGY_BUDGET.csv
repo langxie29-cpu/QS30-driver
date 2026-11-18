@@ -1,0 +1,11 @@
+﻿zone,components,maximum_C_F,maximum_V_V,stored_energy_J,fault_release_path,classification,remaining_gap
+U100前/辅助输入,CAIN1+CAIN2 via DA1,4.84e-06,26.4,0.0016866431999999999,rawinput/biasconverter fault; not directlyL unlessadditionalfailure,INCONCLUSIVE,C tolerance/DCbias andsourceinrush/F100 I2t coordination; rawinputsourcecontinuousenergy unbounded
+U100至U101,C100+C111,5.650999999999999e-05,26.4,0.019692604799999996,V24P->R111->Q101->L20->D20/outputshort orQ20short,INCONCLUSIVE,Q101notselected/loadedoffmaxunknown; +20%C100assumption; allactualstorageincludingprobesmustenumerate
+U101后全部LV储能,No fittedbulk atL_FEED; Q101Coss/PCB/probe/TVS,UNKNOWN,26.4 envelope,UNKNOWN,L_FEEDcap->L20->fault bypasses U101sense/pass control,INCONCLUSIVE,No zeroC assumption. Need maximumremainingC/Eossinclmeasurementfixture + actualhotL
+R3反例,1e-06F afterU101,1e-06,26.4,0.00034847999999999997,Aftercutstorage directtoL even if upstreamswitchoff,ELECTRICAL_FAIL,"R3observed3.578762/14.171475A,25C10pctLdrop screening; not damagecurrent"
+R3反例,4.7e-05F afterU101,4.7e-05,26.4,0.016378559999999997,Aftercutstorage directtoL even if upstreamswitchoff,ELECTRICAL_FAIL,"R3observed3.578762/14.171475A,25C10pctLdrop screening; not damagecurrent"
+Boost电感,L20 normal peak1.65A at165u sensitivity,N/A,N/A,0.00022460624999999997,L->D20->HV afterPWMoff; saturationfaultenergynotlinear,INCONCLUSIVE,"L(I,T)unknown; energycalculationonlywithinlinearassumption"
+高压输出,2xB32774D4106K000 + optional300nmodule,2.2315000000000002e-05,195,0.4242639375,"COUT->externalorinternalshort/return, doesNOT traverselowvoltageeFuse",INCONCLUSIVE,"ESR/ESL minimum andshortloopL unknown, no guaranteedpeak; touchprotectedinterface andpulsepathstillHOLD"
+12V控制与门驱,CAOUTx2/CALDOIN/CDRV/CVIN etc,Enumerated in nativeBOM,12.6 planning envelope,UNKNOWN,"Controller/gatedriver supply, reverse/partialpower paths; distinctfromL_FEED",INCONCLUSIVE,ExacteffectiveC andallrailfaultsnotqualified; notcountedaszeroorallowedL_FEEDbulk
+持续输入,External24Vsource,N/A,26.4,NO FINITE BOUND,Q101stuckon orno effectivecut continuesfeedingfault,INCONCLUSIVE,Do not substituteTYP triptime orfuse nominal1A for finiteenergyguarantee
+故障开关与返回,Q101/Q20/D20/COUT returncopper,UNKNOWN,UNKNOWN,UNKNOWN,Different faultloops mustbeexaminedseparately,INCONCLUSIVE,No infiniteSOA/zeroESL/ideal0delaycredit; noPCBextraction yet

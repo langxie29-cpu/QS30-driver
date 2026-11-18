@@ -1,0 +1,74 @@
+{
+  "utc": "2026-11-18T04:51:07.907574+00:00",
+  "cases": [
+    {
+      "case": "sic_1ns",
+      "raw_sha256": "7769d1ec52f58040d5b787a8d2601ad4d99e11bdef3dc987a7e626ff1558cef2",
+      "window_s": [
+        1.02e-06,
+        1.1e-06
+      ],
+      "port_current_names": [
+        "i(vqd)",
+        "i(vqg)",
+        "i(vqs)"
+      ],
+      "MOS_three_terminal_KCL_abs_residual_A": 7.242908495186384e-10,
+      "KCL_acceptance_A": 0.001,
+      "KCL_status": "PASS",
+      "intrinsic_VGS_fulltrace_V": [
+        -6.693616521292658e-05,
+        7.986319404399032
+      ],
+      "negative_clamp_peak_abs_A": 2.219105306844649
+    },
+    {
+      "case": "sic_0p5ns",
+      "raw_sha256": "88a61b2302908464078f7cdc0d812e952b9fbf04d446604a2e3cbf4a3cb1083d",
+      "window_s": [
+        1.02e-06,
+        1.1e-06
+      ],
+      "port_current_names": [
+        "i(vqd)",
+        "i(vqg)",
+        "i(vqs)"
+      ],
+      "MOS_three_terminal_KCL_abs_residual_A": 5.152526405538538e-09,
+      "KCL_acceptance_A": 0.001,
+      "KCL_status": "PASS",
+      "intrinsic_VGS_fulltrace_V": [
+        -6.69362020811518e-05,
+        7.986929873780464
+      ],
+      "negative_clamp_peak_abs_A": 2.2176193742130765
+    },
+    {
+      "case": "ucc_driver_local",
+      "raw_sha256": "a86ec816be6cb7ce75e346cee402169e901e29864c9e60cb35e2a4d581172498",
+      "window_s": [
+        1.02e-06,
+        1.1e-06
+      ],
+      "port_current_names": [
+        "i(vqd)",
+        "i(vqg)",
+        "i(vqs)"
+      ],
+      "MOS_three_terminal_KCL_abs_residual_A": 8.955209596095415e-08,
+      "KCL_acceptance_A": 0.001,
+      "KCL_status": "PASS",
+      "intrinsic_VGS_fulltrace_V": [
+        -4.133778878682926e-05,
+        11.907051211107566
+      ],
+      "negative_clamp_peak_abs_A": 5.421886287856246
+    }
+  ],
+  "step_halving_change_pct": {
+    "shunt_abs_peak_A": 0.4306560203780152,
+    "Dnegative_port_charge_C": 0.021873285236676834,
+    "Dreverse_peak_A": 0.5413766420094389
+  },
+  "scope": "Typical models/finite matched cell; port KCL is topology consistency, not physical model validation or device qualification"
+}

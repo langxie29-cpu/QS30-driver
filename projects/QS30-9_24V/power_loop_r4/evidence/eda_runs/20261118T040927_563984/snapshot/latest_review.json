@@ -1,0 +1,99 @@
+{
+  "run": "evidence\\eda_runs\\20261118T040429_72efea",
+  "utc": "2026-11-18T04:04:45.133687+00:00",
+  "KiCad": "10.0.8",
+  "commands": [
+    {
+      "name": "netlist",
+      "argv": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\evidence\\eda_runs\\20261118T040429_72efea\\native.net",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\EVT01\\NXT-PWR-EVT01.kicad_sch"
+      ],
+      "rc": 0
+    },
+    {
+      "name": "ERC",
+      "argv": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--exit-code-violations",
+        "-o",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\evidence\\eda_runs\\20261118T040429_72efea\\erc.json",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\EVT01\\NXT-PWR-EVT01.kicad_sch"
+      ],
+      "rc": 5
+    },
+    {
+      "name": "SVG",
+      "argv": [
+        "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+        "sch",
+        "export",
+        "svg",
+        "-o",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\evidence\\eda_runs\\20261118T040429_72efea\\svg",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\EVT01\\NXT-PWR-EVT01.kicad_sch"
+      ],
+      "rc": 0
+    }
+  ],
+  "pin_comparison": {
+    "status": "PASS",
+    "expected_connected_pins": 508,
+    "exported_connected_pins": 529,
+    "differences": [],
+    "unexpected": []
+  },
+  "ERC": {
+    "violations": 896,
+    "severity_counts": {
+      "warning": 893,
+      "error": 3
+    },
+    "type_counts": {
+      "endpoint_off_grid": 700,
+      "lib_symbol_issues": 192,
+      "footprint_link_issues": 1,
+      "power_pin_not_driven": 2,
+      "pin_to_pin": 1
+    }
+  },
+  "PCB_present": false,
+  "DRC_performed": false,
+  "manufacturing": "HOLD",
+  "snapshot_sha256": {
+    "AUX_1.kicad_sch": "96faff139b7e5642668b5a7553fa77b3e158094d573922ce022053c6c33c84a8",
+    "AUX_2.kicad_sch": "caa08a55fb10b56e3104be1e9b68fe810e69a26128f8a3911369dd100fd7668f",
+    "design_source.json": "d2bfd487f0a5cdf7c3fe6b4bd9755ef82fca4fb1a00db20632b3705c13d6cc8d",
+    "footprint_audit.json": "4e8feef1b98f0cc6eca4f19177b5543d1de388b60134f3dc208a3962f13a8f04",
+    "fp-lib-table": "03220828653e68bb12b24e15b4c734422d25672b3408031b8d62b1b0691429fa",
+    "FRONTEND_1.kicad_sch": "5c3bd99c811a295c1eefba259d1c359c2e1c8590a1af16da0e9f6afa802ed510",
+    "generation_receipt.json": "e66e9edc397c75566273526c40734f4b2cb9a28800106a639e382826c7e9a55e",
+    "INPUT_1.kicad_sch": "dc1929773541b1d3db8d5f0583b0fc71cdc367a180dcb10b069215a1d7a4dc77",
+    "INTERFACES_1.kicad_sch": "fc14645badba698687359b778f3bd0a9f164da7ea5bd7a42d73346b8fbc29b94",
+    "INTERFACES_2.kicad_sch": "f07fd1d015d255c34658aa0a0b67268d15a5b2f41efed089e3a8b488eb19dbf6",
+    "MONITORS_1.kicad_sch": "1139fda47311aced23279f786b40a5860732a9465eada4d4004436e6379456d8",
+    "MONITORS_2.kicad_sch": "9aa71a281240a1249cc6fb90e53c784f3f38fe8393bb1d0e8991337a0222ce6a",
+    "NXT-PWR-EVT01.kicad_pro": "ad3ddfa2934e94df7943c7cb492eb0c62b2ba59fc5c684ca5e2153ec88db28bc",
+    "NXT-PWR-EVT01.kicad_sch": "dc0e5571e8a878d63285a6474e57186127c8c07cc7a4a6cdeb8529c2b2e14d26",
+    "NXT.kicad_sym": "b0e0e4ba40a2683947532bd535930d1668ba6158d2ed53cb9fa366739f88b4bb",
+    "pin_connections.csv": "d17a51b8bc391d821274cbb257b9c1f40703aea568ef5efa1f4eb97292e06af0",
+    "POWER_1.kicad_sch": "9bcb876038e5a4b81f17be2843756a24869eb1a5934d7dedbb04d30aff0797a7",
+    "POWER_2.kicad_sch": "2c6e97f28b3386445926a22b91ebd955f239cc3e6360ad3a44bb5225e796c8ac",
+    "POWER_3.kicad_sch": "fa40794675cad0848216de45874be867ef9cfd9a3b2129ab01e359246e877cef",
+    "SAFETY_1.kicad_sch": "abf42ce1d87971255b82bef1fbd38af629cb00b555589bdb9c6ada55ac00f734",
+    "SAFETY_2.kicad_sch": "58d0db7585e1462b756eb110a03a2041c0078daf5cf97005ff74613e829b70c2",
+    "sym-lib-table": "94ec53d2898077e466419b47dd0c2e6ee12af2d475a69bca14a7929808d2b4f1"
+  }
+}

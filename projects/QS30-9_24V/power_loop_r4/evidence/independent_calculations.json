@@ -1,0 +1,84 @@
+{
+  "utc": "2026-11-18T04:10:49.868392+00:00",
+  "OVP_trip_V": [
+    180.9347980658531,
+    192.10707728447264
+  ],
+  "residual_trip_V": [
+    54.903352011796926,
+    58.28201418439717
+  ],
+  "branch_off_trip_V": [
+    1.5643568316831684,
+    1.6446064646464646
+  ],
+  "bias12_supervisor_trip_V": [
+    10.658521336633664,
+    11.30093590909091
+  ],
+  "raw24_supervisor_trip_V": [
+    19.06894381188119,
+    20.231447727272727
+  ],
+  "bias12_nominal_V": 12.0937875751503,
+  "bias5_nominal_V": 4.99867,
+  "feedback_nominal_1p91k_V": 169.13926701570682,
+  "feedback_conservative_1p568_1p632_0p1pct_V": [
+    165.42843276095633,
+    172.8641745829599
+  ],
+  "new_cap_voltage_at105C_V": 330.3,
+  "cap_ESR_70C10k_typ_ohm_each": 0.0109,
+  "cap_ESL_typ_H_each": 2.4e-08,
+  "cap_RMS_70C10k_A_each": 8,
+  "cap_max_initial_plus_optional_module_F": 2.2315000000000002e-05,
+  "bleed_nominal_string_ohm": 149700.0,
+  "bleed_single_string_open_195_to60_s": 3.976736054937882,
+  "bleed_1pct_and100ppm_100C_single_open_s": 4.006266273167619,
+  "bleed_total_power_170_W": 0.3861055444221777,
+  "bleed_total_power_195_W": 0.5080160320641283,
+  "bleed_resistor_one_short_max_W": 0.19243031517580617,
+  "bleed_CRCW2512_linear_derated_power_at100C_W": 0.6470588235294118,
+  "bleed_CRCW2512_max_working_V": 500,
+  "temperature_trip_model_C": [
+    81.58843772336456,
+    89.41195527486997
+  ],
+  "temperature_scope": "ElectricalNTC R25/B window only; cable/thermalhotspotlag and sensoradhesion UNKNOWN,100Cengineeringlimitunchanged",
+  "LM5069_stable_Ilim_A": [
+    0.9603960396039604,
+    1.2424242424242424
+  ],
+  "LM5069_breaker_threshold_A": [
+    1.584158415841584,
+    2.6262626262626263
+  ],
+  "LM5069_timer_component_s": [
+    0.00028199999999999997,
+    0.0008972549019607844
+  ],
+  "LM5069_total_cutoff_max_s": "UNKNOWN (12us TIMER->GATE typical;1.2us breaker unloaded/VIN48condition; actualpassFET absent)",
+  "R12p4_cold_passive_Vmax_over_Rmin_A": 2.150537634408602,
+  "R12p4_continuous_short_power_W": 56.77419354838709,
+  "R12p4_max_deliverable_power_at21p6_V_W": 9.313318428617055,
+  "R33_max_deliverable_power_at21p6_V_W": 3.366233766233767,
+  "normal_inductor_copper_from_R3_RMS25C_W": 0.026442871013376,
+  "source_constant_fault_energy_upper_bound_J": "UNBOUNDED without source/time/thermal qualification",
+  "scope": "Independent interval arithmetic; any assumedtolerance marked, no actualL(I,T), parasitic/fastcut ormanufacturingPASS",
+  "LM5069_no_feasible_Rs_for_unchanged_R3_peak_and_guaranteed_breaker_screen": {
+    "Rs_max_to_avoid_currentlimit_ohm": 0.029116161554583037,
+    "Rs_min_to_trip_by3p1_cold_before_anydelay_ohm": 0.042359074617139135,
+    "claim": "Disjoint conditions even before gatecharge/delay. This rejects a guarantee based only on fastbreaker with unchangedR3currentpolicy, NOT allpossibleLM5069designs. Differentcurrentpolicy/frequency/magnetics requires newqualification.",
+    "voltage_test_condition": "LM electricaltable defaultVIN48V; actual21.6..26.4 applicability also notindependentlyguaranteed"
+  },
+  "LT3757_SENSE_current_limit_mV_source": [
+    100,
+    110,
+    120
+  ],
+  "LT3757_SENSE_threshold_scope": "MIN/TYP/MAX primaryelectricaltable; do NOT borrow110typ asphysicalmaximum",
+  "independent_V5_OV_threshold_V": [
+    5.325611881188119,
+    5.638452525252526
+  ]
+}

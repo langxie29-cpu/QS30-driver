@@ -1,5 +1,6 @@
 """Restore exact raw bytes from authenticated draft assets, no SPICE/API model calls."""
 from archive import *
+from artifact_store import token
 import argparse,io
 class SafeRedirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,req,fp,code,msg,headers,newurl):

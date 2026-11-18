@@ -1,0 +1,5 @@
+﻿category,before_MPN,decision,after_candidate,physical_basis,qualification,package,remaining_risk
+MOSFET,STP9NK50Z,RETAIN,STP9NK50Z + UCC27511DBVR + LM5164DDAR,外部真实12V驱动；内部7.2V不具有原10V RDS(on)保证,CANDIDATE/HOLD,TO220-3 / SOT23-6 / SO8 PowerPAD,真实12V轨/掉电/门极负脉冲/热态SOA未资格
+RECTIFIER,US1G-E3/61T,REPLACE,STPSC4H065D,SiC减少少子恢复；原厂未修改v13模型可运行，仍有Cj位移电流,CANDIDATE/HOLD,TO220AC,无BV模型；热态开关损耗/寄生/重复脉冲未资格；C3D04065A仅备选
+MAGNETICS,MSS1583-154KED,HOLD,MSS1583-154KED,"正常研究保留；热态L(I,T)/磁芯损耗/故障允许时间未知",HOLD,14.8x14.8x8.6mm SMD,3.1A仅25C降感10%参考；不等同破坏阈值
+OUTPUT_CAP,ECQE2106JF,REPLACE,B32774D4106K000 x2,450V85C，105C计算330.3V，解决195V静态降额冲突,CANDIDATE/HOLD,31.5x15x24.5mm max P27.5 lead0.8mm,10u±10%；尺寸/成本增加；100kHz热态纹波与寿命未资格
