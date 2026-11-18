@@ -1,0 +1,28 @@
+{
+  "case": "cap_only_baseline_120ms",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\cap_only_baseline_120ms_20261118T034712_a64d1095\\circuit.cir"
+    ],
+    "rc": 0,
+    "elapsed_s": 315.8117172999773,
+    "execution_status": "COMPLETED_UNREVIEWED",
+    "endpoint_s": 0.12,
+    "raw_parse_error": null
+  },
+  "classification": "INCONCLUSIVE",
+  "scope": "Only capacitor assembly changed in R3 favorable parametricfront/internal7.2drive. Actualnew12Vbuffer/front/bleed assembly NOT qualified",
+  "IL_peak_A": 1.6492024811229171,
+  "final_window": {
+    "mean": 169.98518264850549,
+    "minimum": 169.9185633572934,
+    "maximum": 170.10699238580273,
+    "pp": 0.18842902850931864
+  },
+  "peak_V": 172.32999601332946,
+  "SENSE_peak_V": 0.10394601344635843,
+  "min_SENSE_V": -0.006445302434714559,
+  "output_only_status": "LIMITED_PASS"
+}

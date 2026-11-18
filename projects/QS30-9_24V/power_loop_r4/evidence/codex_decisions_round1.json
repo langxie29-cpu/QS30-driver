@@ -1,0 +1,72 @@
+{
+  "utc": "2026-11-18T03:45:21.992383+00:00",
+  "round": 1,
+  "reviewer": "Current principal Codex; no child reviewers",
+  "arch_preferred_development": "C: LM5069-1 external hot-swap candidate + all deliberate VIN bypass upstream of final branch cutoff; branch pass-FET MPN and loaded/hot cut timing still HOLD",
+  "architecture_frozen": false,
+  "rejected": [
+    {
+      "worker": "A",
+      "claim": "8k lowers limit versus20k",
+      "correction": "8k raises nominal0.6A to1.5A; inverse R"
+    },
+    {
+      "worker": "A",
+      "claim": "6W load means6W series-resistor power rating",
+      "correction": "Ptransfer_max=Vin^2/(4R), separate from resistor heat;12.4ohm can theoretically support6W but fault26.4V gives56.2W continuous unless cutoff guarantee"
+    },
+    {
+      "worker": "A",
+      "claim": "LM5069 remaining gaps are bounded and verifiable",
+      "correction": "Some remain UNKNOWN; no finite loaded gateoff/hotSOA bound yet"
+    },
+    {
+      "worker": "B",
+      "claim": "Ipeak^2DCR is normal steady copperloss",
+      "correction": "Only a loose upper bound; R3 observedILrms.407808A gives~.0266W25C, hot/core unknown"
+    },
+    {
+      "worker": "C",
+      "claim": "Scope converged in structure / simple open-divider bias remedy",
+      "correction": "Physical net/pin implementation and commonground/upper-open diagnostics incomplete; no safety PASS"
+    },
+    {
+      "source": "Initial name screening",
+      "claim": "SN74HC279DR / VOS618A-4X001T / TPS7A1650DGNR can be assumed",
+      "correction": "Do not assume exact codes. HCS74 async PRE implements set-priority with CLR inactive. Verified VOS618A bins3 or8, not4. TPS7A1601 adjustable used if fixed50 not listed."
+    }
+  ],
+  "components": {
+    "MOS": "RETAIN STP9NK50Z + external UCC27511DBVR 12V buffer. LT3757 INTVCC stays internal; do not force12V into INTVCC (VIN+.3V abs rule). LM5164 rail candidate, full railqualification HOLD",
+    "diode": "REPLACE US1G in new candidate with active STPSC4H065D, alternative activeC3D04065A. Earlier2A names lifecycle-screened out; no deep qualification. Original model libraries unchanged",
+    "inductor": "HOLD; MSS1583-154KED normal candidate retained, hotfault applicability unproven",
+    "capacitor": "REPLACE ECQE2106JF with B32774D4106K000 x2;450V,10u±10%,27.5mm,31.5x15x24.5mm. Vop105C330.3V arithmetic fromJune2026primary1.33%/C. ESR10.9mohm/ESL24nH are typical70C10kHz, not max or100k guarantee"
+  },
+  "approved_experiments": [
+    {
+      "case": "sic_local_1ns and halfstep",
+      "variable": "Only rectifier model US1G->unaltered STPSC4H065D",
+      "budget": "2 invocations,120s each",
+      "scope": "89.17V/1.4A local commutation only, not coldstartup/SOA;ST diode has no BV, cannot model avalanche"
+    },
+    {
+      "case": "ucc_driver_local",
+      "variable": "Original UCC27511 macro and 7.2V logic stimulus",
+      "budget": "1 invocation,120s; stop on modelparser failure, no vendor edits",
+      "scope": "Ideal12V is local stimulus only, never fullsystemqualification"
+    },
+    {
+      "case": "energy47_before_vs_after_R",
+      "variable": "47u location around same12.4ohm resistor",
+      "budget": "2 invocations,120s each",
+      "scope": "PWMoff passive energy path, stiff source, NO protective interruption assumption; resistor not selected for final board"
+    },
+    {
+      "case": "cap_only_baseline_120ms",
+      "variable": "Only COUT new2x10u typicalRLC and revised bleed3x49.9k each string",
+      "budget": "1 invocation,600s",
+      "scope": "Multiple declared physical changes comprise capacitor/bleed assembly; R3parameterfront/internal7.2 drive retained for isolatedresearch only; no completeR4qualification"
+    }
+  ],
+  "holds": "All original unchanged; no production PCB, no purchase or real HV"
+}

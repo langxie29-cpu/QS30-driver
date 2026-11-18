@@ -1,0 +1,15 @@
+QS30 R4 isolated low-voltage stored-energy cell NOT COLDSTART OR SYSTEM QUALIFICATION
+.include diode.lib
+VINPUT supply 0 26.4
+RINPUT supply bulk .1
+CBULK bulk 0 1n Rser=.05 IC=26.4
+RLIMIT bulk in 12.4
+CPOST in 0 47u Rser=.05 IC=26.4
+LPOWER in sw 135u Rser=.16 IC=0
+DREC sw fault US1G
+RFAULT fault 0 .01
+.temp 25
+.options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15 threads=1
+.tran 10n 200u 0 10n uic
+.save V(*) I(*)
+.end

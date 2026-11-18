@@ -1,0 +1,19 @@
+{
+  "case": "energy47_after_R",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\energy47_after_R_20261118T034710_343d9337\\circuit.cir"
+    ],
+    "rc": 0,
+    "elapsed_s": 0.43988229997921735,
+    "execution_status": "COMPLETED_UNREVIEWED",
+    "endpoint_s": 0.00019999999999999998,
+    "raw_parse_error": null
+  },
+  "classification": "ELECTRICAL_FAIL",
+  "scope": "Stiffsource, NEVER shut off. Intentional charged low-voltage capacitor diagnostic; noCOUT discharge, no controller or eFuse guarantee, linearL cold only",
+  "IL_peak_A": 13.862684460700079,
+  "I_input_peak_A": 3.0409696506650903
+}

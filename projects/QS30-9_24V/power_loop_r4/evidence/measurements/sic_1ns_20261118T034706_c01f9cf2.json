@@ -1,0 +1,26 @@
+{
+  "case": "sic_1ns",
+  "execution": {
+    "argv": [
+      "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+      "-b",
+      "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\sic_1ns_20261118T034706_c01f9cf2\\circuit.cir"
+    ],
+    "rc": 0,
+    "elapsed_s": 0.6590577000170015,
+    "execution_status": "COMPLETED_UNREVIEWED",
+    "endpoint_s": 1.1e-06,
+    "raw_parse_error": null
+  },
+  "classification": "INCONCLUSIVE",
+  "scope": "Finite diagnostic only; all safety/manufacturing HOLD retained",
+  "IL_peak_A": 1.3999995580189106,
+  "SENSE_peak_V": 0.04229471665632908,
+  "shunt_abs_peak_A": 5.06355672856141,
+  "Dreverse_peak_A": 0.6967212936842538,
+  "Dreverse_voltage_peak_V": 88.49488882151556,
+  "Dnegative_port_charge_C": 5.541094041692757e-09,
+  "VGS_min_V": -4.562051520841597,
+  "VGS_max_V": 13.316696512090443,
+  "qualification": "Typical model mechanism comparison; factorySiC model has noBV/avalanche; no hardware/SOA PASS"
+}

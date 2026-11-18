@@ -1,0 +1,53 @@
+{
+  "utc": "2026-11-18T03:47:08.205846+00:00",
+  "case": "sic_0p5ns",
+  "hypothesis": "SiC eliminates stored minority-carrier recovery but retains junction displacement",
+  "unique_main_variable": "Original factoryrectifier model only; half-step case changesmaxstep",
+  "netlist_sha256": "d5f712aab0bf778855581a105768a620da1c5ccbae2043a54f0d981ddd5a9964",
+  "model_hashes": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2",
+    "sic.lib": "2804c54c723a212582ce7f7a62a89fb99ed93e66ca65f13e1d56bb51a77f38a7"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "solver_exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "stop_s": 1.1e-06,
+  "max_runtime_s": 120,
+  "options": [
+    ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15 threads=1"
+  ],
+  "tran": [
+    ".tran 0.5n 1.1u 0 0.5n uic"
+  ],
+  "analysis_windows_s": [
+    [
+      1.02e-06,
+      1.1e-06
+    ]
+  ],
+  "raw": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\sic_0p5ns_20261118T034708_467dbe49\\circuit.raw",
+  "log": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\sic_0p5ns_20261118T034708_467dbe49\\circuit.log",
+  "scope": "Local precharged cell, not systemstartup/SOA. NoBV infactorySiC model; no avalanche qualification",
+  "limits": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "raw_ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "startup_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195,
+    "SENSE_abs_V": 0.3
+  },
+  "diagnostic_acceptance": "<=5% peak change in matched half-step cell; <=1mA local KCL for directly observed ports. Does not grant device/SOA/system qualification",
+  "stop_conditions": [
+    "wall budget",
+    "solver failure",
+    "registered endpoint"
+  ],
+  "estimated_raw_bytes": "UNKNOWN; all bytes retained",
+  "CPU_and_peak_RAM": "Not instrumented; UNKNOWN"
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "case": "sic_1ns",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\sic_1ns_20261118T034706_c01f9cf2\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 0.6590577000170015,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 1.1e-06,
+      "raw_parse_error": null
+    },
+    "classification": "INCONCLUSIVE",
+    "scope": "Finite diagnostic only; all safety/manufacturing HOLD retained",
+    "IL_peak_A": 1.3999995580189106,
+    "SENSE_peak_V": 0.04229471665632908,
+    "shunt_abs_peak_A": 5.06355672856141,
+    "Dreverse_peak_A": 0.6967212936842538,
+    "Dreverse_voltage_peak_V": 88.49488882151556,
+    "Dnegative_port_charge_C": 5.541094041692757e-09,
+    "VGS_min_V": -4.562051520841597,
+    "VGS_max_V": 13.316696512090443,
+    "qualification": "Typical model mechanism comparison; factorySiC model has noBV/avalanche; no hardware/SOA PASS"
+  },
+  {
+    "case": "sic_0p5ns",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\sic_0p5ns_20261118T034708_467dbe49\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 0.4469457999803126,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 1.1e-06,
+      "raw_parse_error": null
+    },
+    "classification": "INCONCLUSIVE",
+    "scope": "Finite diagnostic only; all safety/manufacturing HOLD retained",
+    "IL_peak_A": 1.399999560214471,
+    "SENSE_peak_V": 0.042295073989818764,
+    "shunt_abs_peak_A": 5.041843725021553,
+    "Dreverse_peak_A": 0.6929697174975235,
+    "Dreverse_voltage_peak_V": 88.49489291868991,
+    "Dnegative_port_charge_C": 5.539882287438249e-09,
+    "VGS_min_V": -4.5895157269231355,
+    "VGS_max_V": 13.109355474595764,
+    "qualification": "Typical model mechanism comparison; factorySiC model has noBV/avalanche; no hardware/SOA PASS"
+  },
+  {
+    "case": "ucc_driver_local",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\ucc_driver_local_20261118T034709_84021dba\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 0.4881652999902144,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 4e-06,
+      "raw_parse_error": null
+    },
+    "classification": "INCONCLUSIVE",
+    "scope": "Ideal12V and7.2V are LOCAL TEST STIMULI ONLY, not realrail/fullsystem PASS",
+    "IL_peak_A": 1.4000159167615478,
+    "VGS_min_V": -11.351832327060304,
+    "VGS_max_V": 12.260743903380098
+  },
+  {
+    "case": "energy47_after_R",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\energy47_after_R_20261118T034710_343d9337\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 0.43988229997921735,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 0.00019999999999999998,
+      "raw_parse_error": null
+    },
+    "classification": "ELECTRICAL_FAIL",
+    "scope": "Stiffsource, NEVER shut off. Intentional charged low-voltage capacitor diagnostic; noCOUT discharge, no controller or eFuse guarantee, linearL cold only",
+    "IL_peak_A": 13.862684460700079,
+    "I_input_peak_A": 3.0409696506650903
+  },
+  {
+    "case": "energy47_before_R",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\energy47_before_R_20261118T034711_939c860f\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 0.4439420999842696,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 0.00019999999999999998,
+      "raw_parse_error": null
+    },
+    "classification": "INCONCLUSIVE",
+    "scope": "Stiffsource, NEVER shut off. Intentional charged low-voltage capacitor diagnostic; noCOUT discharge, no controller or eFuse guarantee, linearL cold only",
+    "IL_peak_A": 2.0049035824631365,
+    "I_input_peak_A": 2.0049035678381415
+  },
+  {
+    "case": "cap_only_baseline_120ms",
+    "execution": {
+      "argv": [
+        "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+        "-b",
+        "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\cap_only_baseline_120ms_20261118T034712_a64d1095\\circuit.cir"
+      ],
+      "rc": 0,
+      "elapsed_s": 315.8117172999773,
+      "execution_status": "COMPLETED_UNREVIEWED",
+      "endpoint_s": 0.12,
+      "raw_parse_error": null
+    },
+    "classification": "INCONCLUSIVE",
+    "scope": "Only capacitor assembly changed in R3 favorable parametricfront/internal7.2drive. Actualnew12Vbuffer/front/bleed assembly NOT qualified",
+    "IL_peak_A": 1.6492024811229171,
+    "final_window": {
+      "mean": 169.98518264850549,
+      "minimum": 169.9185633572934,
+      "maximum": 170.10699238580273,
+      "pp": 0.18842902850931864
+    },
+    "peak_V": 172.32999601332946,
+    "SENSE_peak_V": 0.10394601344635843,
+    "min_SENSE_V": -0.006445302434714559,
+    "output_only_status": "LIMITED_PASS"
+  }
+]

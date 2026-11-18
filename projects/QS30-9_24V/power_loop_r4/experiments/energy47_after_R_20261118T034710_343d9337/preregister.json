@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-18T03:47:10.229772+00:00",
+  "case": "energy47_after_R",
+  "hypothesis": "Storage behind a resistor bypasses its input current bound; moving it before the resistor changes this",
+  "unique_main_variable": "47uF position only; complementary1nF explicit residual, both capacitorIC26.4V",
+  "netlist_sha256": "0a9c60c4e199ab3402ee5d8386c37a0df481ffb7093800f1dcab75d1fc8b8e7e",
+  "model_hashes": {
+    "diode.lib": "f8669a85e8f3ed412ba97ab72bc6b7b0facbdf57111187ede39a365801324ec3"
+  },
+  "solver": "LTspice 24.0.12.0 Windows Normal",
+  "solver_exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "stop_s": 0.0002,
+  "max_runtime_s": 120,
+  "options": [
+    ".options tnom=25 reltol=.001 abstol=1n vntol=1u method=gear plotwinsize=0 numdgt=15 threads=1"
+  ],
+  "tran": [
+    ".tran 10n 200u 0 10n uic"
+  ],
+  "analysis_windows_s": [
+    [
+      0,
+      0.0002
+    ]
+  ],
+  "raw": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\energy47_after_R_20261118T034710_343d9337\\circuit.raw",
+  "log": "D:\\PROJECTS\\dsharness\\QS30-power-loop-r4\\projects\\QS30-9_24V\\power_loop_r4\\experiments\\energy47_after_R_20261118T034710_343d9337\\circuit.log",
+  "scope": "Lowvoltagechargedcell, noCOUT. Stiffinput NEVERcuts;12.4ohmresearchonly, notproductioncomponent. LinearL not hot bound",
+  "limits": {
+    "mean_V": [
+      164.9,
+      175.1
+    ],
+    "raw_ripple_Vpp": 1,
+    "normal_peak_V": 180,
+    "startup_s": 1,
+    "recovery_s": 0.1,
+    "fault_peak_V": 195,
+    "SENSE_abs_V": 0.3
+  },
+  "diagnostic_acceptance": "<=5% peak change in matched half-step cell; <=1mA local KCL for directly observed ports. Does not grant device/SOA/system qualification",
+  "stop_conditions": [
+    "wall budget",
+    "solver failure",
+    "registered endpoint"
+  ],
+  "estimated_raw_bytes": "UNKNOWN; all bytes retained",
+  "CPU_and_peak_RAM": "Not instrumented; UNKNOWN"
+}
