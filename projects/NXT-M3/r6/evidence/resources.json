@@ -1,0 +1,191 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "purpose": "Architecture and basis",
+      "tracked_files": [
+        "BASELINE.md",
+        "POWER_CORNERS.csv",
+        "SYSTEM_ARCHITECTURE.md",
+        "POWER_REQUIREMENTS.md",
+        "POWER_TOPOLOGY_COMPARISON.md"
+      ],
+      "decision": "R1_DECISION_RECORD.md",
+      "first_flash_receipt_utc": "2026-11-18T15:47:46+00:00",
+      "called": 4,
+      "flash_seconds": 35.39,
+      "flash_states": {
+        "COMPLETED": 4
+      },
+      "flash_finish": {
+        "length": 4
+      },
+      "flash_tokens": 5105,
+      "LTspice_calls": 0,
+      "LTspice_wall_seconds_total": 0,
+      "LTspice_classes": {},
+      "model_sources": [],
+      "independent_reviews": [
+        "flash_r1_1.json",
+        "flash_r1_2.json",
+        "flash_r1_3.json",
+        "flash_r1_4.json"
+      ],
+      "charging": "UNKNOWN",
+      "quotes": "N/A"
+    },
+    {
+      "round": 2,
+      "purpose": "Design and protections",
+      "tracked_files": [
+        "BOOST_DESIGN.md",
+        "SAFETY_ARCHITECTURE.md",
+        "FAULT_ENERGY_BUDGET.csv",
+        "COMPONENT_SELECTION.csv",
+        "PRELIMINARY_BOM.csv"
+      ],
+      "decision": "R2_DECISION_RECORD.md",
+      "first_flash_receipt_utc": "2026-11-18T15:50:09+00:00",
+      "called": 2,
+      "flash_seconds": 18.22,
+      "flash_states": {
+        "COMPLETED": 2
+      },
+      "flash_finish": {
+        "stop": 1,
+        "length": 1
+      },
+      "flash_tokens": 2458,
+      "LTspice_calls": 0,
+      "LTspice_wall_seconds_total": 0,
+      "LTspice_classes": {},
+      "model_sources": [],
+      "independent_reviews": [
+        "flash_r2_1.json",
+        "flash_r2_2.json"
+      ],
+      "charging": "UNKNOWN",
+      "quotes": "PRELIMINARY_BOM.csv"
+    },
+    {
+      "round": 3,
+      "purpose": "Native LTspice",
+      "tracked_files": [
+        "LTSPICE_MODEL",
+        "SIMULATION_MATRIX.csv",
+        "SIMULATION_RESULTS.csv",
+        "PARAMETER_ITERATIONS.csv",
+        "WAVEFORM_ANALYSIS.md"
+      ],
+      "decision": "R3_DECISION_RECORD.md",
+      "first_flash_receipt_utc": "2026-11-18T15:55:44+00:00",
+      "called": 1,
+      "flash_seconds": 10.25,
+      "flash_states": {
+        "COMPLETED": 1
+      },
+      "flash_finish": {
+        "length": 1
+      },
+      "flash_tokens": 1268,
+      "LTspice_calls": 22,
+      "LTspice_wall_seconds_total": 1528.42,
+      "LTspice_classes": {
+        "INCONCLUSIVE": 13,
+        "LIMITED_PASS": 2,
+        "MODEL_FAIL": 1,
+        "EXECUTION_FAIL": 6
+      },
+      "model_sources": [
+        "ADI bundled LT3757A",
+        "ST factory STP9NK50Z/SiC",
+        "Vishay SS14",
+        "explicit behavioral/placeholders restricted per experiment"
+      ],
+      "independent_reviews": [
+        "flash_r3_1.json"
+      ],
+      "charging": "UNKNOWN",
+      "quotes": "N/A"
+    },
+    {
+      "round": 4,
+      "purpose": "Native EDA and C prototype",
+      "tracked_files": [
+        "NXT_M3_EDA",
+        "FIRMWARE_PROTOTYPE",
+        "PIN_MAPPING.csv",
+        "FOOTPRINT_REVIEW.csv",
+        "ERC_REPORT.md",
+        "COMMUNICATION_PROTOCOL.md",
+        "MODULAR_INTERFACE_SPEC.md"
+      ],
+      "decision": "R4_DECISION_RECORD.md",
+      "first_flash_receipt_utc": "2026-11-18T16:03:54+00:00",
+      "called": 1,
+      "flash_seconds": 9.62,
+      "flash_states": {
+        "COMPLETED": 1
+      },
+      "flash_finish": {
+        "stop": 1
+      },
+      "flash_tokens": 1220,
+      "LTspice_calls": 0,
+      "LTspice_wall_seconds_total": 0,
+      "LTspice_classes": {},
+      "model_sources": [],
+      "independent_reviews": [
+        "flash_r4_1.json"
+      ],
+      "charging": "UNKNOWN",
+      "quotes": "N/A"
+    },
+    {
+      "round": 5,
+      "purpose": "Costs and qualifications",
+      "tracked_files": [
+        "COST_COMPARISON.csv",
+        "FINAL_ENGINEERING_REPORT.md",
+        "QUALIFICATION_MATRIX.json",
+        "LEGACY_REUSE_MATRIX.csv",
+        "MANUFACTURING_BLOCKERS.md",
+        "HARDWARE_VALIDATION_PLAN.md"
+      ],
+      "decision": "R5_DECISION_RECORD.md",
+      "first_flash_receipt_utc": "2026-11-18T16:21:19+00:00",
+      "called": 1,
+      "flash_seconds": 9.77,
+      "flash_states": {
+        "COMPLETED": 1
+      },
+      "flash_finish": {
+        "length": 1
+      },
+      "flash_tokens": 1354,
+      "LTspice_calls": 0,
+      "LTspice_wall_seconds_total": 0,
+      "LTspice_classes": {},
+      "model_sources": [],
+      "independent_reviews": [
+        "flash_r5_1.json"
+      ],
+      "charging": "UNKNOWN",
+      "quotes": "PRICE_EVIDENCE.csv"
+    }
+  ],
+  "total": {
+    "flash_calls": 9,
+    "flash_tokens": 11405,
+    "LTspice_calls": 22,
+    "classes": {
+      "INCONCLUSIVE": 13,
+      "LIMITED_PASS": 2,
+      "MODEL_FAIL": 1,
+      "EXECUTION_FAIL": 6
+    },
+    "child_codex_calls": 0,
+    "currency_cost": "UNKNOWN"
+  },
+  "timing_scope": "Actual recorded tool wall times, summed and may overlap; total round wall time not instrumented separately"
+}

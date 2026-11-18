@@ -1,0 +1,67 @@
+{
+  "case": "bleeder_both",
+  "hypothesis": "See SIMULATION_MATRIX.csv",
+  "inputs": {
+    "vin": 12,
+    "vin_wave": "0",
+    "load_wave": "0",
+    "fault_wave": "0",
+    "temp": 25,
+    "step": "10m",
+    "stop": 3,
+    "inductance": "150u",
+    "dcr": 0.16,
+    "cap": "5.5u",
+    "shunt": 0.13,
+    "rcomp": "22k",
+    "ccomp": "6.8n",
+    "rt": "140k",
+    "cap_ic": "195",
+    "model": "bounded",
+    "bleed_b": "249k",
+    "opts": "reltol=.006 abstol=10n vntol=50u method=trap plotwinsize=300 numdgt=6 threads=1",
+    "output_cap": "Resr hv vcstore .0211\nCout vcstore 0 5.5u\n.ic V(hv)=195 V(vcstore)=195",
+    "late_end": 2.999,
+    "late_start": 2.991
+  },
+  "models": [
+    {
+      "file": "controller.sub",
+      "source": "ADI bundled LT3757A",
+      "sha256": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634"
+    },
+    {
+      "file": "st.lib",
+      "source": "ST STP9NK50Z factory",
+      "sha256": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4"
+    },
+    {
+      "file": "sic.lib",
+      "source": "ST STPSC4H065D factory",
+      "sha256": "2804c54c723a212582ce7f7a62a89fb99ed93e66ca65f13e1d56bb51a77f38a7"
+    },
+    {
+      "file": "ss14.lib",
+      "source": "Vishay SS14 factory",
+      "sha256": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+    }
+  ],
+  "tool_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "command": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "D:\\PROJECTS\\dsharness\\QS30-nxt-m3-r6\\projects\\NXT-M3\\r6\\LTSPICE_MODEL\\runs\\bleeder_both\\boost.cir"
+  ],
+  "netlist_sha256": "b76f861d79efc5e38916eff73af8e6c460fc9350833c1a3dec35fec04a39d253",
+  "limits": {
+    "mean_V": [
+      165,
+      175
+    ],
+    "ripple_Vpp": 2,
+    "normal_peak_V": 180,
+    "start160_s": 0.05,
+    "fault_peak_V": 195
+  },
+  "scope": "Real controller and semiconductor models; driver, pre-stage, tube loads and OVP timing approximated."
+}

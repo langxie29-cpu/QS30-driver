@@ -1,0 +1,78 @@
+NXT-M3 P1 - Native LT3757A / ST vendor devices; bounded model
+.include models/controller.sub
+.include models/st.lib
+.include models/sic.lib
+.include models/ss14.lib
+VINPUT raw 0 PWL(0 0 100u 12)
+Bpermit permit 0 V=if(V(latch)>.5,0,1)
+Spass raw in permit 0 pass
+.model pass SW(Ron=.2 Roff=100Meg Vt=.5 Vh=.1)
+CIN in 0 1u Rser=.05
+Rin in 0 100k
+Lpower in sw 150u Rser=0.16
+Xq sw gate src STP9NK50Z
+Rs src 0 0.13
+Rsf src sense 22
+Csf sense 0 4.7n
+* Behavioral limit/driver supply, no guaranteed delay or bias tolerances.
+Bdrv drv 0 V=if(V(in)>8,if(V(en)>1.22,limit(8*(V(pwm)-1.8),0,12),0),0)
+Rg drv gate 22
+Doff gate off GFAST
+Roff off drv 10
+.model GFAST D(Is=.1n Rs=1 N=1)
+Rgs gate src 10k
+Xneg src neg ss14
+Rneg neg gate 2
+Drec sw hv STPSC4H065D
+Rsn sw sn 330
+Csn sn hv 100p
+Resr hv vcstore .0211
+Cout vcstore 0 5u
+.ic V(hv)=0 V(vcstore)=0
+Vload ctl 0 1.1475
+Bload hv 0 I=max(0,V(hv))*V(ctl)/28900
+Rb1a hv b1 249k
+Rb1b b1 0 249k
+Rb2a hv b2 249k
+Rb2b b2 0 249k
+Rf1 hv fbmid 100k
+Rf2 fbmid fb 100k
+Rf3 fb 0 1.90k
+Rov1 hv ov_mid 230k
+Rov2 ov_mid ov 230k
+Rov3 ov 0 1k
+Vfault fault 0 0
+Sfault fb fb_fault fault 0 pass
+Rfault fb_fault 0 9.1k
+* Diagnostic ideal comparator and charge latch; does not model actual HW timing.
+Bovp 0 latch I=if(V(latch)>.4,(1-V(latch))/1k,if(V(ov)>.4,1m,0))
+Clatch latch 0 10n
+Rhold latch 0 10Gig
+Cint intvcc 0 4.7u
+Ren1 in en 68k
+Ren2 en 0 12k
+Sshdn en 0 latch 0 pass
+Css ss 0 100n
+Rcomp vc comp 22k
+Ccomp comp 0 6.8n
+Chf vc 0 100p
+Rrt rt 0 140k
+XU vc fb ss rt 0 sense pwm intvcc en in 0 LT3757A
+.temp 25
+.options tnom=25 reltol=.006 abstol=10n vntol=50u method=trap plotwinsize=300 numdgt=6 threads=1
+.tran 0 0.058 0 350n uic
+.save V(raw) V(in) V(hv) V(sw) V(gate) V(src) V(sense) V(pwm) V(vc) V(en) V(latch) I(Lpower) I(Drec) I(Cout) I(VINPUT)
+.meas tran HV_AVG AVG V(hv) FROM 0.049 TO 0.057
+.meas tran HV_PP PP V(hv) FROM 0.049 TO 0.057
+.meas tran HV_PEAK MAX V(hv)
+.meas tran HV_END FIND V(hv) AT 0.058
+.meas tran START_160 WHEN V(hv)=160 RISE=1
+.meas tran I_L_PEAK MAX I(Lpower)
+.meas tran VDS_PEAK MAX V(sw,src)
+.meas tran VGS_HI MAX V(gate,src)
+.meas tran VGS_LO MIN V(gate,src)
+.meas tran D_REVERSE MAX V(hv,sw)
+.meas tran CAP_RMS RMS I(Cout) FROM 0.049 TO 0.057
+.meas tran IIN_AVG AVG I(VINPUT) FROM 0.049 TO 0.057
+.meas tran FAULT_TIME WHEN V(latch)=.5 RISE=1
+.end

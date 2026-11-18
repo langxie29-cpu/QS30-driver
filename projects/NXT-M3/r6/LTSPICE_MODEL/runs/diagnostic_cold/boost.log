@@ -1,0 +1,64 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 P1 - Native LT3757A / ST vendor devices
+Start Time: Thu Nov 19 00:01:44 2026
+solver = Normal
+Maximum thread count: 1
+tnom = 25
+temp = 25
+method = modified trap
+abstol = 1e-08
+reltol = 0.006
+volttol = 5e-05
+cout: Increased Cpar to 5e-12
+Instance "m:q:os": Width narrower than recommended for a level 3 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Heightened Def Con from 0.00923302 to 0.00923302
+Heightened Def Con from 0.00992505 to 0.00992505
+Heightened Def Con from 0.0102457 to 0.0102457
+Heightened Def Con from 0.0102681 to 0.0102681
+Heightened Def Con from 0.0104241 to 0.0104241
+Heightened Def Con from 0.0110069 to 0.0110069
+Heightened Def Con from 0.0111747 to 0.0111747
+Heightened Def Con from 0.0112371 to 0.0112371
+Heightened Def Con from 0.0113407 to 0.0113407
+Heightened Def Con from 0.0114437 to 0.0114437
+Heightened Def Con from 0.0115868 to 0.0115868
+Heightened Def Con from 0.0116883 to 0.0116883
+Heightened Def Con from 0.0118696 to 0.0118696
+Heightened Def Con from 0.0118897 to 0.0118897
+Heightened Def Con from 0.0121881 to 0.0121881
+Heightened Def Con from 0.0123072 to 0.0123072
+Heightened Def Con from 0.0123271 to 0.0123271
+Heightened Def Con from 0.0123469 to 0.0123469
+Heightened Def Con from 0.0123965 to 0.0123965
+Heightened Def Con from 0.0186196 to 0.0186197
+Heightened Def Con from 0.0191755 to 0.0191755
+Heightened Def Con from 0.0193938 to 0.0193938
+Heightened Def Con from 0.0194137 to 0.0194137
+Heightened Def Con from 0.0194732 to 0.0194732
+Heightened Def Con from 0.0194931 to 0.0194931
+Heightened Def Con from 0.0197114 to 0.0197114
+Heightened Def Con from 0.0198702 to 0.0198702
+Heightened Def Con from 0.0212994 to 0.0212994
+Heightened Def Con from 0.0213987 to 0.0213987
+Heightened Def Con from 0.0220537 to 0.0220537
+Heightened Def Con from 0.0222919 to 0.022292
+
+hv_avg: AVG(v(hv))=127.177 FROM 0.01625 TO 0.022
+hv_pp: PP(v(hv))=28.8699 FROM 0.01625 TO 0.022
+hv_peak: MAX(v(hv))=143.114 FROM 0 TO 0.023
+hv_end: v(hv)=140.424 at 0.023
+
+Measurement "start_160" FAIL'ed
+i_l_peak: MAX(i(lpower))=1.09919 FROM 0 TO 0.023
+vds_peak: MAX(v(sw,src))=142.286 FROM 0 TO 0.023
+vgs_hi: MAX(v(gate,src))=11.9785 FROM 0 TO 0.023
+vgs_lo: MIN(v(gate,src))=-0.331112 FROM 0 TO 0.023
+d_reverse: MAX(v(hv,sw))=142.859 FROM 0 TO 0.023
+cap_rms: RMS(i(cout))=0.122209 FROM 0.01625 TO 0.022
+iin_avg: AVG(i(vinput))=-0.30111 FROM 0.01625 TO 0.022
+
+Measurement "fault_time" FAIL'ed
+
+Total elapsed time: 74.535 seconds.
+

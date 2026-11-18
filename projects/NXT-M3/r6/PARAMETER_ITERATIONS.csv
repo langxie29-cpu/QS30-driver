@@ -1,0 +1,12 @@
+stage,from,to,reason,observed_result,tradeoff,authority
+P0,P=24V 6W legacy,P1 12V 2W architecture,independence and lower nominal input,recompute all corners,extra regulated 12V rail and repeated protections,R6 candidates
+P0,P1 shunt candidate 0.30ohm,P1 0.13ohm,guaranteed static current limit too low,0.762 to 0.932A static window,hard-fault branch and delay need own qualification,schematic
+S01,SiC X instance,SiC D instance,real model uses .model D,parser fatal corrected,full solves still time out,executed
+S02,Boolean gate hold and hard latch,continuous gate gain and finite latch hold,reduce event discontinuity,full attempts remain around 33ms,does not represent UCC physical edges,executed
+S03,ESL-internal cap with precharge,explicit external ESR and both matching initial voltages,exclude artificial initial voltage mismatch,warm peak 170.1V rather than 366V class,excluded ESL in bounded diagnostic,executed
+S04,P1 compensation 22k/6.8nF,10k/22nF,check warm recovery dependence,6ms endpoint unchanged within 1mV,warm limited window dominated by soft start; production value unchanged,executed
+S05,200 or 500ns maximum step,250ns matched load trace,compare numerical sensitivity,VGS negative peak shifts 1.91V,mark stress unqualified,executed
+S06,STP macro,FET proxy for three long corners,isolate heavy nonlinear switching from LT macro,each timed out,not equivalent or qualification,executed
+E01,eFuse mode tied low,402k to RTN,TI table1 shows hard short causes auto-retry,latching mode defined by part topology,active limit thermal latch time still not bounded,EDA
+E02,10k 1206 anode pair,2W MFR02SF1002A10 pair,shorted tube could sustain >0.72W per resistor,static voltage and T70 margins improved,thermal testing and THT assembly budget required,EDA
+E03,no external bias-ready signal,TPS3700 channel-A clamp on Boost UVLO,prevent early MOS switching on weak AUX12,bias threshold separate in graph,loss-of-bias with charged HV still open,EDA

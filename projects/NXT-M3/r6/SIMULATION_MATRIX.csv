@@ -1,0 +1,35 @@
+case,change,hypothesis,independent_evidence_limit
+nominal,12V tube equivalent 1.1475W,cold start and steady closes numeric screen,model resistor not ignition
+low_high,10.8V 1.53W,high-load at lowest line,switched input ideal on
+high_max,13.2V 2.5W,upper power research,typical models
+low_2w,10.8V 2W,main power target at low line,hot not covered
+no_tubes,13.2V external load zero,bleeders retained light load,real tube disconnect not modelled
+line_step,10.8 to 13.2V,build and recover,late window only
+load_step,1.1475 to 1.53W,build and recover,late window only
+ovp_fault,feedback shunt at 45ms,OVP latch caps excursion,ideal comparator and pass switch
+disconnect,disconnect at 48ms,decay starts,85ms only
+hot_min_l,85C 135uH 2W,hot sensitivity,linear core
+half_step,100ns max vs 200ns,solver sensitivity,mixed vendor and proxy
+p2_nominal,VC 10k-22nF,compensation sensitivity,depends on P1 outcome
+p2_no_tubes,VC 10k-22nF,light-load compensation sensitivity,depends on P1 outcome
+p2_low_2w,VC 10k-22nF,low-line compensation sensitivity,depends on P1 outcome
+p3_nominal,0.115R and VC 10k-22nF,peak margin trade-off,analytical fault constraints separately
+diagnostic_cold,23ms original cold start limited trace,inspect pre-regulation startup,limited window
+diagnostic_warm,precharge and 3ms,short typical cell,initial ESL artifact
+diagnostic_light,precharge and 3ms external no load,light cell,initial ESL artifact
+diagnostic_ovp,precharge 186V,ideal latch crossing,initial ESL artifact
+diagnostic_decay,precharge 195V with ESL,decay proxy test,initial ESL artifact
+warm_line,coherent 170V precharge input change at 3ms,bounded line response,controlled ramp and proxy limits
+warm_load,coherent 170V precharge load change at 3ms,bounded load response,under initial controller softstart
+warm_max_hot,135uH at 85C 10.8V 2.5W,bounded peak margin,active controller still softstarting
+warm_ovp,feedback perturbation after coherent 170V precharge,closed-loop fault pickup within short window,threshold not reached
+warm_halfstep,warm_load at 250ns,peak sensitivity,only matched limited window
+warm_retune,warm_load with 10k/22nF,compensation sensitivity,short-window outcome similar
+bleeder_both,195V and 5.5uF original network,precharge/bleeder sanity,parallel load paths included
+bleeder_single,195V and 5.5uF one bleed open,precharge/bleeder sanity,parallel load paths included
+isolation_cells,independent 195V RC and inductor diode test,static passive path and discharge,ideal cutoff only
+ovp_pickup,coherent 186V without external tubes,OVP proxy picks up,not true comparator propagation
+p1c_full,full nominal with bounded cap and trap order,complete source conditions with slower timeout,limited by run wall clock
+surrogate_nominal,substitute fixed MOS diagnostic 12V typical,test reduced solver dependence,not a switching stress model
+surrogate_high_line,substitute MOS diagnostic 13.2V 2.5W,test corner feasibility,not a switching stress model
+surrogate_low_line,substitute MOS diagnostic 10.8V 2W,test corner feasibility,not a switching stress model

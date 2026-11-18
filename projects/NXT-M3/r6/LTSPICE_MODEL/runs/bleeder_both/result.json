@@ -1,0 +1,58 @@
+{
+  "case": "bleeder_both",
+  "exit_code": 0,
+  "execution": "EXITED",
+  "classification": "INCONCLUSIVE",
+  "seconds": 1.766,
+  "measures": {
+    "hv_avg": 0.440915,
+    "hv_pp": 0.00733994,
+    "hv_peak": 195.17,
+    "hv_end": 0.436342,
+    "i_l_peak": 0.00165333,
+    "vds_peak": 194.912,
+    "vgs_hi": 12.6669,
+    "vgs_lo": -9.20244,
+    "d_reverse": 195.673,
+    "cap_rms": 5.01767e-06,
+    "iin_avg": 4.335e-11,
+    "start_160": 8.24651e-15,
+    "fault_time": 5.73435e-06
+  },
+  "raw": {
+    "bytes": 185960,
+    "sha256": "e2e95f04bdac80dcd3e2cfd4da35fe54f8190eadecc0c8d7cd18b4135002c0e5"
+  },
+  "evidence": [
+    {
+      "file": "boost.cir",
+      "bytes": 2364,
+      "sha256": "b76f861d79efc5e38916eff73af8e6c460fc9350833c1a3dec35fec04a39d253"
+    },
+    {
+      "file": "preregister.json",
+      "bytes": 2101,
+      "sha256": "19e69eae193a4d78ea3814d003609409f08b97860e3b778eede6a95c8d5b611b"
+    },
+    {
+      "file": "boost.log",
+      "bytes": 1258,
+      "sha256": "f91dbf937e51af9d05322c9a211034c602c31812d3198b7eea34e0f5edc4aac7"
+    },
+    {
+      "file": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "boost.raw.part00.gz",
+      "bytes": 150237,
+      "sha256": "e78224307a1b23f1ab317a58f49a4dce3c282f3bce4581297b7db052e64f3b76"
+    }
+  ]
+}

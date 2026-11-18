@@ -1,0 +1,23 @@
+item,disposition,source_evidence,reuse_value,reconstruction_cost,new_exit
+QS30 physical pins,DIRECT_REUSE,design/model.py and docs/source_scans QS30-1 factory scan,30 digit nets and fixed NC mapping,low,observed low-voltage socket continuity and orientation
+QS30 recommended limits,DIRECT_REUSE,docs9/electrical_sprint04/POWER_BUDGET_9TUBE.md,170V 20k 1.5/2.25/3mA and strike boundary,low,bench distributions temperature and actual HV5622 drop
+HV5622PG physical pinout,DIRECT_REUSE,design/model.py Microchip DS20005854A Table 2-1,accurate PG ordering NC and control pins,low,walking-one and 1:1 footprint check
+HV5622 cascade,RETIRE,docs9 ARCHITECTURE and FINAL_REPORT9,96-bit cable chain removed,medium,32 local bits and network group behavior
+Static drive and translation,CONCEPT_REUSE,design9/build9.py and docs9/HOLD_REGISTER.md,known polarity and level-shift requirements,medium,power sequence and BL-low on lost bias/MCU control
+24V 6W nominal stage,RETIRE,power_loop_r4/EVT01 and R5 qualification,comparison baseline only,high,independent R6 qualification
+Boost circuit topology,RECALCULATE,power_loop_r1 to r4 ENGINEERING_REPORT and R4 calculations,selection framework feedback and clamp,high,12V startup/steady corners and verified thermal models
+LT3757A original model,CONCEPT_REUSE,power_loop_r4 REPRODUCE and preregister model hashes,real ADI macro and demonstrated pin order,medium,cross-solver startup issue and warm/full durations
+STP9NK50Z and UCC27511,RECALCULATE,power_loop_r4 local driver experiments,model/cell method and manufacturer drawings,medium, Vgs and Vds transients and switching dissipation; supply stock
+DCM/CCM analysis,RECALCULATE,power_loop_r1 to r4 calculation evidence,formulas and interpretation,medium,new duty/peak and startup CCM transitions
+Diode recovery investigation,CONCEPT_REUSE,power_loop_r4 sic_1ns and sic_0p5ns,local sensitivity and polarity checks,medium,actual SiC charge/hot leakage or alternative Qrr
+Hot magnetics,RECALCULATE,power_loop_r4 and R5 FRONTEND_ARCHITECTURE_R5,L and temperature dependence awareness,medium,L(I T) and loss at hot startup/control fault
+Fault energy and cap-after counterexample,RECALCULATE,power_loop_r4 energy47_after_R and R5 blocker,distinguishes local energy from current-cut delay,high,R6 full upstream/current limit/cap and source cut model
+LM5069 immediate single-shunt mechanism,RETIRE,power_loop_r5 FRONTEND_ARCHITECTURE_R5 42.359–29.117mOhm gap,records conflict; replacement not drop-in,high,own 12V eFuse window and hard fault clearing
+Independent OVP,REDESIGN,power_loop_r4 SAFETY_CIRCUIT_IMPLEMENTATION and docs9 H02/H03,separate sense and hardware inhibition,high,corner window and maximum enabled safe latency
+Bleed and residual,RECALCULATE,power_loop_r4 energy experiments and docs9 H11,dual branches and single-open method,medium,195V/Cmax and ground disconnect physical test
+Latch and permissions,REDESIGN,power_loop_r4 SAFETY_CIRCUIT_IMPLEMENTATION,fault dominance and explicit permit principles,high,residual/momentary arm and bias-loss refresh
+R4 native symbol and foot libs,CONCEPT_REUSE,power_loop_r4/EVT01 build_eda.py manufacturer_pin_review.csv,LT/eFuse driver physical pins and exporter pattern,medium,KiCad 10 ERC XML and dimensional audit
+R5 price evidence,CONCEPT_REUSE,power_loop_r5 LCSC_PRICE_EVIDENCE.csv and procurement.py,exact identity and stock/price fields,medium,small-lot quote and MOQ refresh
+R4/R5 manufacturing HOLD,DIRECT_REUSE,power_loop_r5 MANUFACTURING_BLOCKERS.md and docs9 HOLD register,unchanged signed baseline / no new release,low,R6 matrix R6-01 through R6-15
+24V-07/08/09/10,DIRECT_REUSE,power_loop_r4/R5 reports and prior safety ledgers,historical gate identity remains,low,R6-03 R6-04 R6-05 R6-06 and R6-08 must independently close
+220/230V HV5622 grade,DIRECT_REUSE,Microchip DS20005854A p5,220V recommended output and absolute maxima separately,low,layout and switching excursions bounded under faults

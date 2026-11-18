@@ -1,0 +1,12 @@
+case,source,assumption,stored_J,limitation
+normal_output,C_HV,5uF 170V,0.07225,nominal
+fault_output,C_HV,5.5uF 195V,0.10456875,screen only
+cap_nameplate_sensitivity,C_HV,5.5uF 450V,0.556875,not shutdown bound
+input_local,C_PRE_L,1uF 13.2V,0.00008712,excludes auxiliary and other rail backfeed
+inductor,L_POWER,165uH 0.932A,0.00007166248,linear only; allow downstream rail energy
+input_source_100us_illustrative,source,13.2V 0.6A 100us,0.000792,delay not guaranteed; sustained fault not bounded
+input_source_10ms_illustrative,source,13.2V 0.6A 10ms,0.0792,large enough to matter; source impedance unknown
+both_bleeders_to_60V,C_HV,5.5uF 249k equivalent 195V to 60V,0.09466875,time 1.614s nominal resistance
+single_bleeder_to_60V,C_HV,5.5uF 498k 195V to 60V,0.09466875,time 3.228s before R tolerance
+tube_discharge,HVBUS_to_GND,short without series resistor beyond cap ESR,0.10456875,peak path/arc unchecked
+post_eFuse_storage,C_PRE_L_plus_other_rails,calculate sum of each releasable capacitance,UNKNOWN,reverse blocking and layout dependent

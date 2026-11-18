@@ -1,0 +1,58 @@
+{
+  "case": "diagnostic_ovp",
+  "exit_code": 0,
+  "execution": "EXITED",
+  "classification": "INCONCLUSIVE",
+  "seconds": 0.937,
+  "measures": {
+    "hv_avg": 185.323,
+    "hv_pp": 0.309731,
+    "hv_peak": 406.848,
+    "hv_end": 184.756,
+    "start_160": 160.0,
+    "i_l_peak": 0.0206445,
+    "vds_peak": 256.426,
+    "vgs_hi": 9.21314,
+    "vgs_lo": -5.13418,
+    "d_reverse": 186.91,
+    "cap_rms": 0.00206483,
+    "iin_avg": -9.90475e-09,
+    "fault_time": 0.5
+  },
+  "raw": {
+    "bytes": 917708,
+    "sha256": "687fd86ddbc1108def072ce555a275be0878c7aa94d651099ee1151fc5d16d51"
+  },
+  "evidence": [
+    {
+      "file": "boost.cir",
+      "bytes": 2351,
+      "sha256": "6f0d96846a8f726c95258627c6d4f646158cfa23f130b297a174ef458196e526"
+    },
+    {
+      "file": "preregister.json",
+      "bytes": 1969,
+      "sha256": "1c7e6aa802713b0f2d484ffe6871a485d29d1e4c3d922e694b39181a1c35165a"
+    },
+    {
+      "file": "boost.log",
+      "bytes": 1184,
+      "sha256": "813364ed57dd4ddeec1f8be6332fcaa19547fdcc584039ffbee40cc6ea328992"
+    },
+    {
+      "file": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "boost.raw.part00.gz",
+      "bytes": 598010,
+      "sha256": "76fdcbc0c131556c9d48a6311ace07361f6b2fe8b007dfd596d96429731208d0"
+    }
+  ]
+}

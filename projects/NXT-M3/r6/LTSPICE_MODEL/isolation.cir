@@ -1,0 +1,26 @@
+NXT-M3 R6 isolated physical mechanisms - specified resistor losses and an ideal input switch
+.include models/sic.lib
+Cdual dual 0 5.5u IC=195
+RdualA dual 0 498k
+RdualB dual 0 498k
+Csingle single 0 5.5u IC=195
+Rsingle single 0 498k
+Vdc vin 0 12
+Lconnected vin path1 150u Rser=.16
+D1 path1 passive STPSC4H065D
+R1 passive 0 1k
+Vopen enable 0 0
+Soff vin path2 enable 0 openinput
+.model openinput SW(Ron=.2 Roff=100Meg Vt=.5)
+Lisolated path2 path3 150u Rser=.16
+D2 path3 isolated STPSC4H065D
+R2 isolated 0 1k
+.tran 0 4 0 1m uic
+.options numdgt=6
+.save V(dual) V(single) V(passive) V(isolated)
+.meas tran DUAL_60 WHEN V(dual)=60 FALL=1
+.meas tran SINGLE_60 WHEN V(single)=60 FALL=1
+.meas tran PASSIVE_NOW FIND V(passive) AT 10m
+.meas tran ISOLATED_NOW FIND V(isolated) AT 10m
+.meas tran HV_END FIND V(single) AT 4
+.end

@@ -1,0 +1,35 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 P1 - Native LT3757A / ST vendor devices
+Start Time: Thu Nov 19 00:01:44 2026
+solver = Normal
+Maximum thread count: 1
+tnom = 25
+temp = 25
+method = modified trap
+abstol = 1e-08
+reltol = 0.006
+volttol = 5e-05
+cout: Increased Cpar to 5e-12
+Instance "m:q:os": Width narrower than recommended for a level 3 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Changing Tseed to 2.5e-11
+Changing Tseed to 2.5e-13
+Changing Tseed to 2.5e-10
+Changing Tseed to 2.5e-14
+
+hv_avg: AVG(v(hv))=185.323 FROM 0.00125 TO 0.002
+hv_pp: PP(v(hv))=0.309731 FROM 0.00125 TO 0.002
+hv_peak: MAX(v(hv))=406.848 FROM 0 TO 0.003
+hv_end: v(hv)=184.756 at 0.003
+start_160: v(hv)=160 AT 2.16133e-14
+i_l_peak: MAX(i(lpower))=0.0206445 FROM 0 TO 0.003
+vds_peak: MAX(v(sw,src))=256.426 FROM 0 TO 0.003
+vgs_hi: MAX(v(gate,src))=9.21314 FROM 0 TO 0.003
+vgs_lo: MIN(v(gate,src))=-5.13418 FROM 0 TO 0.003
+d_reverse: MAX(v(hv,sw))=186.91 FROM 0 TO 0.003
+cap_rms: RMS(i(cout))=0.00206483 FROM 0.00125 TO 0.002
+iin_avg: AVG(i(vinput))=-9.90475e-09 FROM 0.00125 TO 0.002
+fault_time: v(latch)=.5 AT 5.84992e-06
+
+Total elapsed time: 0.305 seconds.
+

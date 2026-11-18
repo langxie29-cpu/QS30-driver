@@ -1,0 +1,160 @@
+{
+  "overall": "HOLD",
+  "baseline": "5bc45db875b26dde9f1f4d8cf20fcd0f8943b5c0",
+  "statusDefinitions": {
+    "PASS": "only explicitly named scope",
+    "LIMITED_PASS": "bounded evidence for subfunction",
+    "INCONCLUSIVE": "essential evidence incomplete",
+    "FAIL": "verified violation",
+    "HOLD": "authorization or release blocked"
+  },
+  "conclusions": [
+    {
+      "item": "Modular technical feasibility",
+      "status": "LIMITED_PASS",
+      "evidence": [
+        "SYSTEM_ARCHITECTURE.md",
+        "PIN_MAPPING.csv",
+        "evidence/firmware_check.txt"
+      ],
+      "scope": "Independent architecture and C routing, no integrated electrical qualification"
+    },
+    {
+      "item": "12V formal input rating",
+      "status": "INCONCLUSIVE",
+      "evidence": [
+        "POWER_CORNERS.csv",
+        "SIMULATION_RESULTS.csv"
+      ],
+      "scope": "Study range 10.8–13.2V; input limiting and 170V closed loop unresolved"
+    },
+    {
+      "item": "Material cost",
+      "status": "INCONCLUSIVE",
+      "evidence": [
+        "PRICE_EVIDENCE.csv",
+        "COST_COMPARISON.csv"
+      ],
+      "scope": "planning range; checkout and full stock unknown"
+    },
+    {
+      "item": "Historical reuse auditable",
+      "status": "PASS",
+      "evidence": [
+        "BASELINE.md",
+        "LEGACY_REUSE_MATRIX.csv"
+      ],
+      "scope": "Frozen ancestry and explicit dispositions"
+    },
+    {
+      "item": "First validation PCB",
+      "status": "HOLD",
+      "evidence": [
+        "MANUFACTURING_BLOCKERS.md",
+        "HARDWARE_VALIDATION_PLAN.md"
+      ],
+      "scope": "no PCB, DRC, physical HV, purchase or fab"
+    }
+  ],
+  "gates": [
+    {
+      "id": "R6-01",
+      "status": "INCONCLUSIVE",
+      "legacy": "H01/H04",
+      "open": "native long closed loop timeout"
+    },
+    {
+      "id": "R6-02",
+      "status": "INCONCLUSIVE",
+      "legacy": "H01/H04",
+      "open": "nonconverged VGS peaks and no L(I,T)"
+    },
+    {
+      "id": "R6-03",
+      "status": "HOLD",
+      "legacy": "24V-07/08",
+      "open": "eFuse current/load/thermal timing window"
+    },
+    {
+      "id": "R6-04",
+      "status": "HOLD",
+      "legacy": "H02/H03 and 24V-08/09",
+      "open": "comparator proxy verified only"
+    },
+    {
+      "id": "R6-05",
+      "status": "LIMITED_PASS",
+      "legacy": "H11 and 24V-09/10",
+      "open": "ideal independent RC & passive path tested; hardware remains HOLD"
+    },
+    {
+      "id": "R6-06",
+      "status": "HOLD",
+      "legacy": "H02/H10 and 24V-10",
+      "open": "AUX power and residual, manual arm and reset"
+    },
+    {
+      "id": "R6-07",
+      "status": "HOLD",
+      "legacy": "H05/H06/H12",
+      "open": "three no validated sockets, geometry"
+    },
+    {
+      "id": "R6-08",
+      "status": "HOLD",
+      "legacy": "H06/H07/H09",
+      "open": "insulation, layout, DRC"
+    },
+    {
+      "id": "R6-09",
+      "status": "INCONCLUSIVE",
+      "legacy": "H10/H12/H13",
+      "open": "RS485/shared power hardware"
+    },
+    {
+      "id": "R6-10",
+      "status": "HOLD",
+      "legacy": "H14 and R5 procurement",
+      "open": "complete priced qualified BOM"
+    },
+    {
+      "id": "R6-11",
+      "status": "LIMITED_PASS",
+      "legacy": "H08 and R5 EDA",
+      "open": "KiCad native ERC and netlist PASS within source scope, EasyEDA not qualified"
+    },
+    {
+      "id": "R6-12",
+      "status": "LIMITED_PASS",
+      "legacy": "H10/H12",
+      "open": "portable C run, STM32 source syntax; no ARM link or bench"
+    },
+    {
+      "id": "R6-13",
+      "status": "HOLD",
+      "legacy": "H04/H06",
+      "open": "2W anode resistors candidate, physical dissipation untested"
+    },
+    {
+      "id": "R6-14",
+      "status": "HOLD",
+      "legacy": "H09 and legacy HOLD",
+      "open": "all manufacturing and physical HV hold"
+    },
+    {
+      "id": "R6-15",
+      "status": "INCONCLUSIVE",
+      "legacy": "H12/H13",
+      "open": "V1 missing ACK, stale display window"
+    }
+  ],
+  "hardware_holds": [
+    "purchase",
+    "payment",
+    "PCB",
+    "SMT",
+    "high voltage energization",
+    "physical faults",
+    "merge main"
+  ]
+}

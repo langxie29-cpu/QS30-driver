@@ -1,0 +1,58 @@
+{
+  "case": "diagnostic_decay",
+  "exit_code": 0,
+  "execution": "EXITED",
+  "classification": "LIMITED_PASS",
+  "seconds": 0.672,
+  "measures": {
+    "hv_avg": 2.2738,
+    "hv_pp": 0.042284,
+    "hv_peak": 409.206,
+    "hv_end": 2.24737,
+    "start_160": 160.0,
+    "i_l_peak": 0.00366689,
+    "vds_peak": 251.016,
+    "vgs_hi": 10.6482,
+    "vgs_lo": -4.9136,
+    "d_reverse": 196.001,
+    "cap_rms": 2.54667e-05,
+    "iin_avg": 5.77138e-11,
+    "fault_time": 0.5
+  },
+  "raw": {
+    "bytes": 99396,
+    "sha256": "3d1402d1325206cd7d9d88cf206026e8cae8bf2668901b924c22d4f6639f25f0"
+  },
+  "evidence": [
+    {
+      "file": "boost.cir",
+      "bytes": 2329,
+      "sha256": "fa5284c4b3e224413706c5c100a9aab1305c31e9533be292fb5f0fa5b89ede28"
+    },
+    {
+      "file": "preregister.json",
+      "bytes": 1961,
+      "sha256": "fdf628e85e4073cd5e42b712d453fed27e1477aeee4d88b2b521a01b39af0c0e"
+    },
+    {
+      "file": "boost.log",
+      "bytes": 1276,
+      "sha256": "eb3451c96e2fefa6a70eaa95b7defb19ae6ebcf0c1ad8a4c54d7b82cd4059a3d"
+    },
+    {
+      "file": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "boost.raw.part00.gz",
+      "bytes": 82341,
+      "sha256": "5726ed74c91ca2a559202bb3e5895c224ef1580e51e61ce8f529dcef7fa4e2f1"
+    }
+  ]
+}

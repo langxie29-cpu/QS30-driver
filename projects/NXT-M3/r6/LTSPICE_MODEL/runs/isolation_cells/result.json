@@ -1,0 +1,50 @@
+{
+  "case": "isolation_cells",
+  "exit_code": 0,
+  "execution": "EXITED",
+  "classification": "LIMITED_PASS",
+  "seconds": 0.484,
+  "measures": {
+    "passive_now": 11.1406,
+    "isolated_now": 0.000119979,
+    "hv_end": 45.2686,
+    "dual_60": 1.61114,
+    "single_60": 3.229
+  },
+  "raw": {
+    "bytes": 1608,
+    "sha256": "9a0f075afb4ab8ebaa526bff3dbb01da4568acf09c58a86f7d59d854af2a1cf9"
+  },
+  "evidence": [
+    {
+      "file": "boost.cir",
+      "bytes": 839,
+      "sha256": "ae9b633f3450a43b6c1930102dc990e35a6eb3a18d52933772387c966a41d781"
+    },
+    {
+      "file": "preregister.json",
+      "bytes": 2088,
+      "sha256": "6c62b61214195af0fa6125d7200c089ed1d6cee18c3cec0567cfe9c07c2c7fef"
+    },
+    {
+      "file": "boost.log",
+      "bytes": 543,
+      "sha256": "1143dfc14158d5685756ac7783b7892ab7c37c72202f5502d304955ad257b2b4"
+    },
+    {
+      "file": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "boost.raw.part00.gz",
+      "bytes": 1008,
+      "sha256": "0e04a225374774222106cffe7edefd7ae9ff98114fa9a4782612f5b509f49df4"
+    }
+  ]
+}

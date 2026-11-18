@@ -1,0 +1,58 @@
+{
+  "case": "bleeder_single",
+  "exit_code": 0,
+  "execution": "EXITED",
+  "classification": "INCONCLUSIVE",
+  "seconds": 1.75,
+  "measures": {
+    "hv_avg": 1.33295,
+    "hv_pp": 0.018236,
+    "hv_peak": 195.17,
+    "hv_end": 1.32161,
+    "i_l_peak": 0.00133121,
+    "vds_peak": 194.912,
+    "vgs_hi": 12.6669,
+    "vgs_lo": -9.20244,
+    "d_reverse": 195.674,
+    "cap_rms": 1.22953e-05,
+    "iin_avg": 5.10064e-11,
+    "start_160": 8.24651e-15,
+    "fault_time": 5.76572e-06
+  },
+  "raw": {
+    "bytes": 180248,
+    "sha256": "9e3d54a6f099de3c88cb65ea3592f681818cde67d5f10c515fa4941f25eba0a8"
+  },
+  "evidence": [
+    {
+      "file": "boost.cir",
+      "bytes": 2362,
+      "sha256": "f1f13d66e3bb8cda9e9745e6913409845c4608464fbd01abc02a4e598876a1de"
+    },
+    {
+      "file": "preregister.json",
+      "bytes": 2103,
+      "sha256": "8ea9782f2abf5b2189da2d282e9c13e68dd09d5a89218da77d1bd03d394b5019"
+    },
+    {
+      "file": "boost.log",
+      "bytes": 1256,
+      "sha256": "98d4eeaf337a9eb84e9d789dbc799ed80037175a32b733e0162fc6a87e223a50"
+    },
+    {
+      "file": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "boost.raw.part00.gz",
+      "bytes": 145261,
+      "sha256": "3db16cc89fb6e49c305097ab422868c92d11f6e71024ee86259cbd5db4272798"
+    }
+  ]
+}
