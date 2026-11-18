@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\Administrator\AppData\Local\Temp\qs30-r5-kicad-qhmhmstf\POWER_1.kicad_sch</source>
+    <date>2026-11-18T13:36:31</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>NXT-PWR-EVT01 / POWER_1</title>
+        <company/>
+        <rev>R4-DRAFT-HOLD</rev>
+        <date/>
+        <source>POWER_1.kicad_sch</source>
+        <comment number="1" value="No manufacture/HV authorization. Q101 DNP; HOLD inputs pulled LOW."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="CF">
+      <value>4.7n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">GRM1885C1H472JA01D</field>
+        <field name="Status">CANDIDATE_EFFECTIVE_C_HOLD</field>
+        <field name="Notes"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="C" description=""/>
+      <property name="MPN" value="GRM1885C1H472JA01D"/>
+      <property name="Status" value="CANDIDATE_EFFECTIVE_C_HOLD"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ff5d2658-bc4a-53d9-b85c-e2ff885243cb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D20">
+      <value>650V_SiC</value>
+      <footprint>Package_TO_SOT_THT:TO-220-2_Vertical</footprint>
+      <fields>
+        <field name="MPN">STPSC4H065D</field>
+        <field name="Status">REPLACE_CANDIDATE_HOLD</field>
+        <field name="Notes">Pin1K/2A; factorymodelnoBV/avalanche; hot/repetitivePCB qualification HOLD</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-2_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="D" description=""/>
+      <property name="MPN" value="STPSC4H065D"/>
+      <property name="Status" value="REPLACE_CANDIDATE_HOLD"/>
+      <property name="Notes" value="Pin1K/2A; factorymodelnoBV/avalanche; hot/repetitivePCB qualification HOLD"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>50244322-9fda-52cc-8d96-33f86b02cc2d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="DGNEG">
+      <value>NEGATIVE_GATE_CLAMP</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <fields>
+        <field name="MPN">SS14-E3/61T</field>
+        <field name="Status">HOLD_MODEL_AND_PULSE</field>
+        <field name="Notes"/>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="D" description=""/>
+      <property name="MPN" value="SS14-E3/61T"/>
+      <property name="Status" value="HOLD_MODEL_AND_PULSE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aefa2301-d405-5b7d-a5bf-14cbe28ddae9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L20">
+      <value>150u_10pct</value>
+      <footprint>Inductor_SMD:L_Coilcraft_MSS1583-XXX</footprint>
+      <fields>
+        <field name="MPN">MSS1583-154KED</field>
+        <field name="Status">HOLD_HOT_FAULT</field>
+        <field name="Notes"/>
+        <field name="Footprint">Inductor_SMD:L_Coilcraft_MSS1583-XXX</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="L" description=""/>
+      <property name="MPN" value="MSS1583-154KED"/>
+      <property name="Status" value="HOLD_HOT_FAULT"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1f75a3b2-a92b-59ce-be84-1d26d0d32c72</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="NT1">
+      <value>KELVIN_STAR</value>
+      <footprint>NetTie:NetTie-2_SMD_Pad0.5mm</footprint>
+      <fields>
+        <field name="MPN">PCB_NET_TIE</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes">Layout constraint, not arbitrarygroundplaneconnection</field>
+        <field name="Footprint">NetTie:NetTie-2_SMD_Pad0.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="NT" description=""/>
+      <property name="MPN" value="PCB_NET_TIE"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value="Layout constraint, not arbitrarygroundplaneconnection"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da5d4c2e-e778-5d90-b9cc-94bc0e7d6bf2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="NT2">
+      <value>CONTROL_STAR</value>
+      <footprint>NetTie:NetTie-2_SMD_Pad0.5mm</footprint>
+      <fields>
+        <field name="MPN">PCB_NET_TIE</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes"/>
+        <field name="Footprint">NetTie:NetTie-2_SMD_Pad0.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="NT" description=""/>
+      <property name="MPN" value="PCB_NET_TIE"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>84dd8f5e-8ab6-5383-b832-d7469a887446</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="NT3">
+      <value>DRIVER_RETURN_STAR</value>
+      <footprint>NetTie:NetTie-2_SMD_Pad0.5mm</footprint>
+      <fields>
+        <field name="MPN">PCB_NET_TIE</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes">Wide independentgatedrive return, not Kelvinthintrace</field>
+        <field name="Footprint">NetTie:NetTie-2_SMD_Pad0.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="NT" description=""/>
+      <property name="MPN" value="PCB_NET_TIE"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value="Wide independentgatedrive return, not Kelvinthintrace"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27dbb9c7-aa76-5d12-9ea7-7c2b065c94d1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q20">
+      <value>500V_MOS</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <fields>
+        <field name="MPN">STP9NK50Z</field>
+        <field name="Status">RETAIN_EXTERNAL12_CANDIDATE</field>
+        <field name="Notes">Tab2isDrain, exposedHV; gatebuffer12rail, not7.2RDSguarantee</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-3_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="Q" description=""/>
+      <property name="MPN" value="STP9NK50Z"/>
+      <property name="Status" value="RETAIN_EXTERNAL12_CANDIDATE"/>
+      <property name="Notes" value="Tab2isDrain, exposedHV; gatebuffer12rail, not7.2RDSguarantee"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f0f0b3d8-5cd1-5c43-8fd3-978f28cbe39e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RCOMP">
+      <value>22k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">UNKNOWN_ORDER_CODE_22k</field>
+        <field name="Status">CANDIDATE_MPN_VERIFY</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="UNKNOWN_ORDER_CODE_22k"/>
+      <property name="Status" value="CANDIDATE_MPN_VERIFY"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08dbabc1-ef61-5bfb-96a2-c980b32af57b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="REN1">
+      <value>82.5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">UNKNOWN_ORDER_CODE_82.5k</field>
+        <field name="Status">CANDIDATE_MPN_VERIFY</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="UNKNOWN_ORDER_CODE_82.5k"/>
+      <property name="Status" value="CANDIDATE_MPN_VERIFY"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1ebbdf92-2b21-5d60-9060-a6c621467322</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="REN2">
+      <value>12.4k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">UNKNOWN_ORDER_CODE_12.4k</field>
+        <field name="Status">CANDIDATE_MPN_VERIFY</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="UNKNOWN_ORDER_CODE_12.4k"/>
+      <property name="Status" value="CANDIDATE_MPN_VERIFY"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0eba72e4-bc01-5a39-8f03-ffdbe649440d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RF">
+      <value>22</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0722RL</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0722RL"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9ffa5591-ee03-5d5b-bc91-e85c955edbb8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RGOFF">
+      <value>22</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0722RL</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0722RL"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38c595be-4b65-53f7-ae8e-6b2262e2a295</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RGON">
+      <value>22</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0722RL</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0722RL"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f75c2792-f6ea-56de-aec7-1c762d9669ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RGS">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>33c46b2f-559c-54fa-bccc-2a9e949cede2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RNEG">
+      <value>2</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="MPN">RC0805FR-072RL</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes">Actual0805sizechecked separately; repetitivepulseHOLD</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="RC0805FR-072RL"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value="Actual0805sizechecked separately; repetitivepulseHOLD"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cfe861fc-52b7-56c3-b77b-40c9b3df445b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RRT">
+      <value>140k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">UNKNOWN_ORDER_CODE_140k</field>
+        <field name="Status">CANDIDATE_MPN_VERIFY</field>
+        <field name="Notes"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="UNKNOWN_ORDER_CODE_140k"/>
+      <property name="Status" value="CANDIDATE_MPN_VERIFY"/>
+      <property name="Notes" value=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>13324898-3a10-5bf2-ab49-aff5a98f82dd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RS20">
+      <value>62m</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <fields>
+        <field name="MPN">WSL2512R0620FEA</field>
+        <field name="Status">HOLD_PULSE</field>
+        <field name="Notes">Kelvin sense posfrompad1, negativeviaNT1 atpad2;1Wavg not pulsepermission</field>
+        <field name="Footprint">Resistor_SMD:R_2512_6332Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="R" description=""/>
+      <property name="MPN" value="WSL2512R0620FEA"/>
+      <property name="Status" value="HOLD_PULSE"/>
+      <property name="Notes" value="Kelvin sense posfrompad1, negativeviaNT1 atpad2;1Wavg not pulsepermission"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9f6ccb5e-000f-509f-bfd9-8c00769497a1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U20">
+      <value>LT3757A</value>
+      <footprint>Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm</footprint>
+      <fields>
+        <field name="MPN">LT3757AEMSE#PBF</field>
+        <field name="Status">CANDIDATE</field>
+        <field name="Notes">VIN fromreal12rail upstreambranch; INTVCC internalLDO only, VIN+.3absolute respected structurally</field>
+        <field name="Footprint">Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="LT3757A" description=""/>
+      <property name="MPN" value="LT3757AEMSE#PBF"/>
+      <property name="Status" value="CANDIDATE"/>
+      <property name="Notes" value="VIN fromreal12rail upstreambranch; INTVCC internalLDO only, VIN+.3absolute respected structurally"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>22df5b1f-b686-5b7e-ab47-164dacee5bd1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U201">
+      <value>12V_GATE_BUFFER</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="MPN">UCC27511DBVR</field>
+        <field name="Status">HOLD_RAIL_AND_PULSE</field>
+        <field name="Notes">PhysicalpinoutDIFFERSfromSPICEorder; independentinputthreshold, outputlowUVLO</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="NXT" part="UCC27511" description=""/>
+      <property name="MPN" value="UCC27511DBVR"/>
+      <property name="Status" value="HOLD_RAIL_AND_PULSE"/>
+      <property name="Notes" value="PhysicalpinoutDIFFERSfromSPICEorder; independentinputthreshold, outputlowUVLO"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="C:/Users/Administrator/AppData/Local/Temp/qs30-r5-kicad-qhmhmstf/POWER_1.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e82db38a-6cca-5c04-a299-25b59b1c8ada</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="NXT" part="C">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="D">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="L">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="LT3757A">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LT3757A</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VC" type="passive"/>
+        <pin num="2" name="FBX" type="input"/>
+        <pin num="3" name="SS" type="passive"/>
+        <pin num="4" name="RT" type="passive"/>
+        <pin num="5" name="SYNC" type="input"/>
+        <pin num="6" name="SENSE" type="input"/>
+        <pin num="7" name="GATE" type="output"/>
+        <pin num="8" name="INTVCC" type="power_out"/>
+        <pin num="9" name="SHDN_UVLO" type="input"/>
+        <pin num="10" name="VIN" type="power_in"/>
+        <pin num="11" name="GND_EP" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="NT">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="Q">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Q</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="R">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="NXT" part="UCC27511">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">UCC27511</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="OUTH" type="output"/>
+        <pin num="3" name="OUTL" type="output"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="IN-" type="input"/>
+        <pin num="6" name="IN+" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries/>
+  <nets>
+    <net code="1" name="DRV_INHIBIT" class="Default">
+      <node ref="U201" pin="5" pinfunction="IN-_5" pintype="input"/>
+    </net>
+    <net code="2" name="FB" class="Default">
+      <node ref="U20" pin="2" pinfunction="FBX_2" pintype="input"/>
+    </net>
+    <net code="3" name="GATE_OFF" class="Default">
+      <node ref="RGOFF" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U201" pin="3" pinfunction="OUTL_3" pintype="output"/>
+    </net>
+    <net code="4" name="GATE_ON" class="Default">
+      <node ref="RGON" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U201" pin="2" pinfunction="OUTH_2" pintype="output"/>
+    </net>
+    <net code="5" name="GATE_PWR" class="Default">
+      <node ref="Q20" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="RGOFF" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RGON" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RGS" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RNEG" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="6" name="GND_CTRL" class="Default">
+      <node ref="NT2" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="7" name="GND_DRV" class="Default">
+      <node ref="NT3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U201" pin="4" pinfunction="GND_4" pintype="power_in"/>
+    </net>
+    <net code="8" name="GND_KELVIN" class="Default">
+      <node ref="CF" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="NT1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="REN2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RRT" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U20" pin="11" pinfunction="GND_EP_11" pintype="power_in"/>
+      <node ref="U20" pin="5" pinfunction="SYNC_5" pintype="input"/>
+    </net>
+    <net code="9" name="HV_BUS" class="Default">
+      <node ref="D20" pin="1" pinfunction="K_1" pintype="passive"/>
+    </net>
+    <net code="10" name="INTVCC" class="Default">
+      <node ref="U20" pin="8" pinfunction="INTVCC_8" pintype="power_out"/>
+    </net>
+    <net code="11" name="L_FEED" class="Default">
+      <node ref="L20" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="12" name="NEG_DAMP" class="Default">
+      <node ref="DGNEG" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="RNEG" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="13" name="PGND" class="Default">
+      <node ref="NT1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="NT2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="NT3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RS20" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="14" name="PWM_RAW" class="Default">
+      <node ref="U20" pin="7" pinfunction="GATE_7" pintype="output"/>
+      <node ref="U201" pin="6" pinfunction="IN+_6" pintype="input"/>
+    </net>
+    <net code="15" name="PWM_SHDN" class="Default">
+      <node ref="REN1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="REN2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U20" pin="9" pinfunction="SHDN_UVLO_9" pintype="input"/>
+    </net>
+    <net code="16" name="RT" class="Default">
+      <node ref="RRT" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U20" pin="4" pinfunction="RT_4" pintype="passive"/>
+    </net>
+    <net code="17" name="SENSE" class="Default">
+      <node ref="CF" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RF" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U20" pin="6" pinfunction="SENSE_6" pintype="input"/>
+    </net>
+    <net code="18" name="SRC" class="Default">
+      <node ref="DGNEG" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="Q20" pin="3" pinfunction="S_3" pintype="passive"/>
+      <node ref="RF" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RGS" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RS20" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="19" name="SS" class="Default">
+      <node ref="U20" pin="3" pinfunction="SS_3" pintype="passive"/>
+    </net>
+    <net code="20" name="SW_HV" class="Default">
+      <node ref="D20" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="L20" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="Q20" pin="2" pinfunction="D_2" pintype="passive"/>
+    </net>
+    <net code="21" name="V12" class="Default">
+      <node ref="REN1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U20" pin="10" pinfunction="VIN_10" pintype="power_in"/>
+      <node ref="U201" pin="1" pinfunction="VDD_1" pintype="power_in"/>
+    </net>
+    <net code="22" name="VC" class="Default">
+      <node ref="RCOMP" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U20" pin="1" pinfunction="VC_1" pintype="passive"/>
+    </net>
+    <net code="23" name="VC_COMP" class="Default">
+      <node ref="RCOMP" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+  </nets>
+</export>

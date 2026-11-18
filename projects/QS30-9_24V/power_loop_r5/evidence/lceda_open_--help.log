@@ -1,0 +1,13 @@
+
+open
+
+Open a project and return its session id; .eprj3 folder projects stay in two-way sync with the editor (disk edits reload automatically, editor saves land on disk automatically); without --path open a bare editor (visible window; --headless for a hidden render)
+
+Usage:
+  lceda-pro open [--path <undefined>] [--headless <boolean>]
+
+Options:
+  --path  Project file path (.eprj/.eprj2/.eprj3/.elib); omit to open a bare editor with no project
+  --headless  Open without a visible window (hidden render); default opens a GUI window (default: false)
+
+Global flags: see "lceda-pro --help"

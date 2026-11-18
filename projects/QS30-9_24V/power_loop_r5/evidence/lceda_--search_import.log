@@ -1,0 +1,5 @@
+
+Matches:
+  doctor                   Probe the endpoint and report its identity
+  session.abort            Force-kill a session (last resort; unsaved edits in its window are lost): closes the window even when visible and removes the session from the list; works on windows the user opened too (the only way to drop a stuck one); prefer `session close`
+  session.close            Close any session. For CLI-opened visible windows it ends the session but leaves the window open and usable (pass --destroy to close the window too); windows the user opened are destroyed (the session ends; use `session abort` to also drop it from the list)

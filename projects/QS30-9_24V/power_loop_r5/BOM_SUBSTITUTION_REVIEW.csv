@@ -1,0 +1,10 @@
+reference,old_mpn,new_mpn,electrical_justification,cost_impact,approval
+Q101,UNKNOWN_LINEAR_SOA_PASS_FET,IPB017N10N5LFATMA1,100V linear hot-swap SOA candidate with documented package and gate charge; loaded cutoff and hot SOA open,PRICE_UNKNOWN,RESEARCH_ONLY_DNP
+Q101,UNKNOWN_LINEAR_SOA_PASS_FET,IPB017N10N5LF-VB,Similar identifier from another maker; unverified worst-case linear SOA and die behavior,PRICE_UNKNOWN,REJECT_EXACT_MATCH
+D20,STPSC4H065D,STPSC4H065DI,Insulated case variant requires different thermal and mechanical qualification; exact suffix differs,PRICE_UNKNOWN,REJECT_AUTOMATIC_SUBSTITUTION
+U20,LT3757AEMSE#PBF,LT3757EMSE#PBF,Different controller revision and startup behavior needs full equivalence,PRICE_UNKNOWN,REJECT_AUTOMATIC_SUBSTITUTION
+U201,UCC27511DBVR,UCC27511DBVR-JSM,Different maker with unverified bias UVLO and propagation limits,PRICE_UNKNOWN,REJECT_AUTOMATIC_SUBSTITUTION
+L20,MSS1583-154KED,SRR1280-151K,150uH alone cannot establish hot L(I) saturation or turn-off limit,PRICE_UNKNOWN,REJECT_COST_ONLY_SWAP
+RB11-RB23,CRCW251249K9FKEG,UNSELECTED,Need matched working and pulse voltage power derating and physical safety review,PRICE_UNKNOWN,HOLD
+R111,UNKNOWN_ORDER_CODE_HOLD_CURRENT_SETTING,UNSELECTED,Original single-shunt static window is empty at the frozen startup peak,PRICE_UNKNOWN,HOLD
+LOW_VOLTAGE_PASSIVES,UNKNOWN_ORDER_CODE,UNSELECTED,Consider consolidation after DC bias tolerance TCR circuit and footprint checks,UNQUANTIFIED,HOLD
