@@ -7,3 +7,5 @@
 - 小 `.raw` 分卷在 Git；大分卷在 [GitHub 草稿档](evidence/large_raw_archive.json) 依权限可见。下载该清单中相应 case 的全部分卷，去除上传名称的 case 前缀，将 `boost.raw.partXX.gz` 与该 case 的 `result.json` 放一起。运行 `python LTSPICE_MODEL/restore.py CASE_DIR NEW.raw`，校验每卷 SHA、总长度与原始 SHA。主控保留本机原始件。 `python LTSPICE_MODEL/summarize.py --verify` 在有全部分卷的环境复核。
 - 低压协议 `python FIRMWARE_PROTOTYPE/host_packet.py 123456789 --mask 7 --seq 41 --output example.bin`。任意标准 C11 构建器可跑 `nxt.c test.c`。本次签名过的 Espressif GCC 加 Unicorn RV32 实际运行，`python -m pip install unicorn==2.1.4 pyelftools==0.33`，再 `python verify_firmware.py --gcc GCC_EXE --clang CLANG_EXE`。STM32 源仅通过目标语义检查，复现 ARM 候选链接须用具有 ARM 后端的 clang/lld 或另一个官方 ARM 工具链。没有 MCU 烧录。
 - 成本 `python procurement.py`（历史和本次固定公开快照）及 `python cost_model.py`（计划算式）。电源角点 `python power_corners.py`。审查收据 [目录](evidence/)，费用标为 UNKNOWN。制造、PCB、SMT、实物高压与采购依旧 HOLD。
+
+- 已恢复/存在相关本地 raw 时，执行 python LTSPICE_MODEL/partial_windows.py，产生证据窗采样摘要。四个窗口用于描述收敛途径，原预注册门槛仍由各运行的 preregister.json 控制。

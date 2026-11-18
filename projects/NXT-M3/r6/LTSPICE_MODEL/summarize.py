@@ -23,14 +23,17 @@ def endpoints(raw):
         flags = re.search(r'Flags:\s*([^\n]+)',head)[1]
         layout = struct.Struct('<d'+('d' if 'double' in flags else 'f')*(count-1))
         whole, tail = divmod(raw.stat().st_size-start,layout.size)
-        if whole == 0:
+        declared=int(re.search(r'No\. Points:\s*(\d+)',head)[1])
+        available=min(whole,declared)
+        if available == 0:
             return {}
-        source.seek(start+(whole-1)*layout.size)
+        source.seek(start+(available-1)*layout.size)
         values = layout.unpack(source.read(layout.size))
         names = re.findall(r'^\s*\d+\s+(\S+)\s+\S+$',head,re.M)
         if len(names)!=count:
             raise ValueError(raw)
-        return dict(zip(names,values), samples=whole, trailing_bytes=tail)
+        return dict(zip(names,(abs(values[0]),*values[1:])), samples=available,
+                    trailing_bytes=tail+(whole-available)*layout.size)
 
 def restore_verify(directory, result, archive, write_to=None):
     raw = result['raw']
@@ -83,7 +86,7 @@ def main(verify):
         ep = endpoints(raw) if raw.exists() else {}
         rows.append(dict(run=directory.name,input_case=r['case'],classification=classification,
                          elapsed_s=r['seconds'],actual_endpoint_s=ep.get('time',''),raw_endpoint_hv=ep.get('V(hv)',''),
-                         raw_samples=ep.get('samples',''),raw_sha256=(r['raw'] or {}).get('sha256',''),
+                         raw_samples=ep.get('samples',''),raw_unindexed_bytes=ep.get('trailing_bytes',''),raw_sha256=(r['raw'] or {}).get('sha256',''),
                          evidence=str(directory.relative_to(HERE.parent)).replace('\\','/'),**vals))
     keys = list(dict.fromkeys(k for row in rows for k in row))
     with (HERE.parent/'SIMULATION_RESULTS.csv').open('w',newline='',encoding='utf-8') as out:

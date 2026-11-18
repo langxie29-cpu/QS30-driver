@@ -12,7 +12,7 @@
 
 原生 KiCad 10.0.8 工程入口 [NXT-M3.kicad_pro](NXT_M3_EDA/NXT-M3.kicad_pro)，原生 CLI 完整层级 0 ERC 违规，120 个器件或机械实例，418 槽、135 网络。三管座几何未划定，无 PCB 或 DRC。原理图实现了独立 12V 电源、故障链、局部辅助偏置、MCU 和短线路总线、SWD 等连接。只在软件环境验证。 [ERC](ERC_REPORT.md) · [电路图](evidence/NXT-M3.pdf)
 
-执行 22 次 LTspice，其中 2 次有界机制 LIMITED_PASS、13 次 INCONCLUSIVE、1 次 MODEL_FAIL，6 次 EXECUTION_FAIL。186V 注入的理想 OVP 代理能锁存。前级未隔离时，禁止 PWM 仍有 11.14V 被动通路。5.5µF/195V 下独立 RC 双路/单路约 1.611/3.229s 到 60V。已做供电阶跃、负载阶跃、热负载与应力有限窗复核，也保留求解器失败、预充伪峰和失败复测。没有完整电气 PASS。 [模型及原始证据](LTSPICE_MODEL/) · [逐次结果](SIMULATION_RESULTS.csv)
+执行 22 次 LTspice，其中 2 次有界机制 LIMITED_PASS、13 次 INCONCLUSIVE、1 次 MODEL_FAIL，6 次 EXECUTION_FAIL。186V 注入的理想 OVP 代理能锁存。前级未隔离时，禁止 PWM 仍有 11.14V 被动通路。5.5µF/195V 下独立 RC 双路/单路约 1.611/3.229s 到 60V。已做供电阶跃、负载阶跃、热负载与应力有限窗复核，也保留求解器失败、预充伪峰和失败复测。最完整厂商模型的 35–37ms 波形子窗有 0.786A 电感峰值，高于前级 0.6A 标称研究阈值，限制实际输入差异的实物模型仍需闭合。没有完整电气 PASS。 [模型及原始证据](LTSPICE_MODEL/) · [逐次结果](SIMULATION_RESULTS.csv)
 
 C 核心在 RV32 模拟器执行，覆盖单机、三块独立显示、3/6/9 位、CRC、序号回绕、失联/重连与异常熄管。STM32 端通过目标语法检查，目标链接、实物波特率和 HV5622 时序待验。两步提交无法保证一块失联时瞬时整组画面一致。 [低压软件](FIRMWARE_PROTOTYPE/) · [协议](COMMUNICATION_PROTOCOL.md)
 
