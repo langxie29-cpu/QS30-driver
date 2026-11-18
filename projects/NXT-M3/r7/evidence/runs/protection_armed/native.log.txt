@@ -1,0 +1,33 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 U6/U5 vendor fault timing cell, latch and disconnect are explicit proxies
+Start Time: Thu Nov 19 07:18:01 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+reltol = 0.003
+cmp:_u3_u6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u3_u4:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u1_d1:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u1_u4_d6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u2_u1_d6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u2_d1:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(cmp:ina)
+Ignoring empty pin current: Ix(cmp:inb)
+Changing Tseed to 1e-11
+Heightened Def Con from 0.00148135 to 0.00148136
+
+ov_cross: v(hv)=184.4 AT 0.001144
+fault_time: v(pre)=1.65 AT 0.00116278
+cut_cmd: v(allow)=.5 AT 0.00116273
+gate_after_ovp: MAX(v(gate))=2.70947e-10 FROM 0.00122 TO 0.00138
+gate_before_ovp: MAX(v(gate))=11.9914 FROM 0.00098 TO 0.00102
+aux_after_trip: MAX(v(en))=0.00637957 FROM 0.00046 TO 0.00058
+aux_alone_gate: MAX(v(gate))=9.99587 FROM 0.00046 TO 0.00058
+residual_input: v(in)=1.11324 at 0.0014
+latched_end: v(latch)=3.3 at 0.00199
+
+Total elapsed time: 6.661 seconds.
+

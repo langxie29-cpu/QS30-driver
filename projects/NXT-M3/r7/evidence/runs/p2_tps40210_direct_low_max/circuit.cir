@@ -1,0 +1,135 @@
+NXT-M3 R7 P2 TPS40210 12V DCM research with vendor controller
+.include TPS40210_TRANS.LIB
+.include models/st.lib
+.include models/sic.lib
+.include models/ss14.lib
+.include TPS3700_TRANS.LIB
+.include UCC27511_TRANS.LIB
+VINPUT raw 0 PWL(0 0 100u 10.8)
+* Input wiring, eFuse envelope, ARM stimulus and regulated AUX current bookkeeping.
+* MODE timer, thermal behavior, POR distribution and reverse blocking are not modeled.
+Varm arm 0 PWL(0 0 1m 0 1.05m 1)
+Rcable raw board .10
+C1 board 0 1u Rser=.05
+Vbias vdd 0 PWL(0 0 .15m 3.3)
+Bpermit permit 0 V=if(V(latch)>1.65,0,V(arm))
+Vpasssense board fuse_in 0
+Spass fuse_in in permit 0 pass
+.model pass SW(Ron=.15 Roff=100Meg Vt=.5 Vh=.1)
+CIN in 0 1u Rser=.05
+Rin in 0 100k
+* Split the 0.45W low-voltage input planning budget into 0.22W upstream and
+* 0.23W protected (12V bias incl. driver). Smooth near power-off to avoid singularities.
+Bpre board 0 I=.22*V(board)/(V(board)*V(board)+16)
+BtmrLoad in 0 I=(.23/.8+0)*V(in)/(V(in)*V(in)+16)
+Btmr aux_source 0 V=12*limit((V(in)-8.9)/.5,0,1)
+Raux aux_source aux_feed 1
+Vauxmeter aux_feed aux 0
+Caux aux 0 4.7u
+CauxLocal aux 0 .3u
+RauxSenseA aux aux_ok 265k
+RauxSenseB aux_ok 0 10k
+Lpower in sw 150u Rser=0.16
+Xq sw gate src STP9NK50Z
+Rs src 0 0.16
+Rsf src sense 22
+Csf sense 0 4.7n
+* Behavioral limit/driver supply, no guaranteed delay or bias tolerances.
+Rg pwm gate 22
+Doff gate off GFAST
+Roff off pwm 10
+.model GFAST D(Is=.1n Rs=1 N=1)
+Rgs gate src 10k
+Xneg src neg ss14
+Rneg neg gate 2
+Drec sw hv STPSC4H065D
+Rsn sw sn 330
+Csn sn hv 100p
+Resr hv vcstore .0211
+Cout vcstore 0 5u Lser=19n
+.ic V(hv)=0 V(vcstore)=0
+* QS30-1 screen with branch-level ignition and extinction hysteresis.
+* Sustaining V derives from 20k and specified current at 170V. Dynamic resistance 100R assumed.
+.model TUBE SW(Ron=100 Roff=1T Vt=125 Vh=25)
+Vdisplay display 0 PWL(0 0 20m 0 20.05m 1)
+Vhold sustain 0 110
+Rtube1a hv a1m 10k
+Rtube1b a1m a1 10k
+Rtube2a hv a2m 10k
+Rtube2b a2m a2 10k
+Rtube3a hv a3m 10k
+Rtube3b a3m a3 10k
+Bign1 ign1 0 V=if(V(display)>.5,V(a1),0)
+Bign2 ign2 0 V=if(V(display)>.5,V(a2),0)
+Bign3 ign3 0 V=if(V(display)>.5,V(a3),0)
+Sgas1 a1 sustain ign1 0 TUBE
+Sgas2 a2 sustain ign2 0 TUBE
+Sgas3 a3 sustain ign3 0 TUBE
+RADC1 hv adc_mid 100k
+RADC2 adc_mid adc_pre 100k
+RADC3 adc_pre 0 2.49k
+RADC4 adc_pre adc 10k
+CADC adc 0 10n
+Rb1a hv b1 249k
+Rb1b b1 0 249k
+Rb2a hv b2 249k
+Rb2b b2 0 249k
+Rf1 hv fbmid 100k
+Rf2 fbmid fb 100k
+Rf3 fb 0 825
+Rov1 hv ov_mid 230k
+Rov2 ov_mid ov 230k
+Rov3 ov 0 1k
+Vfault fault 0 0
+Sfault fb fb_fault fault 0 pass
+Rfault fb_fault 0 9.1k
+* Vendor U6 and U5, proxy U7 latch and manual ARM/POR. U8 and TPS26600 timing omitted.
+Xcmp vdd aux_ok ov en pre_n 0 TPS3700_TRANS
+Rpull vdd pre_n 10k
+Bset set 0 V=if(V(vdd)>2.7,if(V(pre_n)<.8,1,0),1)
+Sset vdd latch set 0 slatch
+.model slatch SW(Ron=60 Roff=1T Vt=.5 Vh=.1)
+Clatch latch 0 20p
+Rhold latch 0 100T
+Vreset arm_edge 0 PWL(0 0 1m 0 1.001m 1 1.03m 1 1.031m 0)
+Breset reset 0 V=if(V(pre_n)>2,V(arm_edge),0)
+Sreset latch 0 reset 0 slatch
+* DIS logic maps R6 AUX low and latched OVP into active-high TPS40210 DIS/EN.
+Bdis dis 0 V=if(V(en)<1.22,3.3,0)
+Ren1 in en 68k
+Ren2 en 0 12k
+Sshdn en 0 latch 0 slatch
+Cbp bp 0 1u
+Css ss 0 22n
+Rcomp vc comp 10k
+Ccomp comp fb 22n
+Chf vc fb 220p
+Rrt in rt 187k
+Crt rt 0 1n
+XU bp vc dis 0 fb pwm 0 sense rt ss in TPS40210_TRANS
+.temp 25
+.options tnom=25 reltol=.006 abstol=10n vntol=50u method=gear plotwinsize=300 numdgt=6 threads=1
+.tran 0 60m 0 350n uic
+.save V(raw) V(in) V(hv) V(sw) V(gate) V(src) V(sense) V(pwm) V(vc) V(en) V(latch) I(Lpower) I(Drec) I(Cout) I(VINPUT) I(Vpasssense) V(pre_n) V(aux) V(adc) I(Rtube1a) V(a1) V(a2) V(a3)
+.meas tran HV_AVG AVG V(hv) FROM 0.050 TO 0.058
+.meas tran HV_PP PP V(hv) FROM 0.050 TO 0.058
+.meas tran HV_PEAK MAX V(hv)
+.meas tran HV_END FIND V(hv) AT 60m
+.meas tran START_160 WHEN V(hv)=160 RISE=1
+.meas tran I_L_PEAK MAX I(Lpower)
+.meas tran VDS_PEAK MAX V(sw,src)
+.meas tran VGS_HI MAX V(gate,src)
+.meas tran VGS_LO MIN V(gate,src)
+.meas tran D_REVERSE MAX V(hv,sw)
+.meas tran CAP_RMS RMS I(Cout) FROM 0.050 TO 0.058
+.meas tran IIN_AVG AVG I(VINPUT) FROM 0.050 TO 0.058
+.meas tran FAULT_TIME WHEN V(latch)=.5 RISE=1
+.meas tran i_pass_pk MAX I(Vpasssense)
+.meas tran i_pass_avg AVG I(Vpasssense) FROM 50m TO 58m
+.meas tran vin_min MIN V(in) FROM 50m TO 58m
+.meas tran p_dc AVG V(raw)*-I(VINPUT) FROM 50m TO 58m
+.meas tran aux_min MIN V(aux) FROM 50m TO 58m
+.meas tran tube1_avg AVG I(Rtube1a) FROM 50m TO 58m
+.meas tran i_gate_peak MAX I(Rg)
+.meas tran tmr_i_pk MAX I(BtmrLoad)
+.end

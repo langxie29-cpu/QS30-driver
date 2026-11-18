@@ -1,0 +1,14 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 P1 substrate
+Start Time: Thu Nov 19 07:18:01 2026
+solver = Normal
+Maximum thread count: 1
+tnom = 25
+temp = 25
+method = Gear
+abstol = 1e-08
+reltol = 0.006
+volttol = 5e-05
+cout: Increased Cpar to 5e-12
+Fatal Error: Voltage source VFAULT and voltage source BFAULT are paralleled making an over-defined circuit matrix.
+You will need to correct the circuit or add some series resistance.

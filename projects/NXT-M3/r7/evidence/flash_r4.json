@@ -1,0 +1,22 @@
+{
+  "round": 4,
+  "requested_model": "deepseek-flash",
+  "prompt": "Compare LT3757A with external 12 V gate drive, TPS40210 with external or direct drive, and UCC28C43 on a three-digit 170 V / 2 W autonomous module. 10.8–13.2 V or 21.6–26.4 V inputs. Offer pitfalls for minimum line startup, slope/ramp/limits, compensation, 12 V bias and independent fault chain. Do not infer equivalence from incomplete cases.",
+  "called": true,
+  "charge": "UNKNOWN",
+  "status": "COMPLETED",
+  "provider_model": "deepseek-flash",
+  "usage": {
+    "prompt_tokens": 114,
+    "completion_tokens": 850,
+    "total_tokens": 964,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 114
+  },
+  "finish": "length",
+  "review": "# Comparison for a 170 V / 2 W autonomous module\n\n**Scope note:** I'm treating this as a design-review comparison, not a validated reference design. All three controllers can, in principle, be arranged for a flyback/boost-family topology producing ~170 V at ~2 W (≈12 mA) from either 10.8–13.2 V or 21.6–26.4 V. Nothing below should be read as \"these are interchangeable.\" Any claimed equivalence is **not established** by public datasheet facts alone; bench verification at both line extremes and hot/cold is required.\n\n---\n\n## 1. Device-by-device facts and uncertainties\n\n### LT3757A (with external 12 V gate drive)\n- **Public facts:** Current-mode controller; wide VIN; programmable frequency; soft-start; internal LDO/BIAS arrangement with an external BIAS pin; UVLO/EN divider; COMP external compensation; slope compensation is internal/fixed per datasheet (verify exact value in your revision — **uncertain**).\n- **External 12 V gate drive:** For a 10.8–13.2 V input this is nearly a pass-through; for 21.6–26.4 V it must be derived (LDO from VIN burns ~ (VIN−12)·Qgate·f; with a small FET at ~100 kHz this is a few mW–tens of mW — acceptable at 2 W but must be budgeted). **Pitfall:** the 12 V rail must be present and valid *before* or concurrently with controller enable, otherwise gate drive is undefined during startup. If 12 V is derived from the output or an auxiliary winding, you get a chicken-and-egg startup problem.\n- **Uncertainty:** exact BIAS/LDO headroom behavior and whether the external 12 V can back-drive the BIAS pin within abs-max — check the specific datasheet revision.\n\n### TPS40210 (external or direct drive)\n- **Public facts:** Current-mode boost/flyback controller; VIN range covers both input classes; internal gate driver powered from VDD (typically ~8–12 V via an external VDD supply or bootstrap arrangement depending on configuration); programmable current limit via sense resistor; RC compensation on COMP; soft-start capacitor; slope compensation set by external resistor (Rsl).\n- **Direct drive:** simplest, but gate-drive amplitude tracks VDD, so switching losses and EMI differ between 10.8 V and 26.4 V operation — verify FET Vgs margin and driver dissipation at the 26.4 V end.\n- **Uncertainty:** VDD sourcing topology (external rail vs. bootstrap) materially changes startup; datasheet supports multiple arrangements — **do not assume** one is equivalent to another without matching your schematic.\n\n### UCC28C43 (current-mode, industry-standard PWM)\n- **Public facts:** Classic current-mode controller with UVLO thresholds set by the '43 variant; needs an external VCC (typically bootstrap/aux winding), external oscillator (RT/CT), external compensation, and external slope compensation (or relies on transformer/inductor ripple). No integrated high-side driver logic beyond a totem-pole output.\n- **Pitfall:** the '43 UVLO/startup current and VCC clamp behavior define the minimum-line startup sequence; VCC must come from a startup path (resistor bleed or aux winding) — at 10.8 V minimum line with a high turns-ratio flyback, aux-winding startup can be marginal. **Uncertainty:** exact UVLO variant thresholds and startup current — confirm from the specific suffix datasheet.\n\n---\n\n## 2. Minimum-line startup pitfalls (all three)\n\n- **UVLO divider tolerance:** At 10.8 V and 21.6 V minimums, resistor tolerance + comparator hysteresis + temperature drift can push effective startup above the specified minimum. Budget worst-case, not typical.\n- **Aux-winding / bias bootstrap:** If VCC or 12 V bias comes from an aux winding, the converter must first start",
+  "seconds": 10.641
+}

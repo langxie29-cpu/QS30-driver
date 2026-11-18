@@ -1,0 +1,111 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-19T07:18:42",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70",
+            "violations": []
+        },
+        {
+            "path": "/INPUT_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/6dd7dc4c-5146-5517-912a-b06e46308543",
+            "violations": []
+        },
+        {
+            "path": "/INPUT_2/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/3e441db6-5107-5b7c-ab5e-2860f39f2216",
+            "violations": []
+        },
+        {
+            "path": "/BIAS_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/7eb1b83a-bd06-5aba-8ef1-bb40a718833d",
+            "violations": []
+        },
+        {
+            "path": "/BOOST_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/901dbd86-37a7-51a5-944e-677d05738423",
+            "violations": []
+        },
+        {
+            "path": "/BOOST_2/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/cd151db4-4a42-5a6d-94ad-490d6deb8ad3",
+            "violations": []
+        },
+        {
+            "path": "/BOOST_3/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/78f34e01-c689-526d-83dd-f9249db3ebb0",
+            "violations": []
+        },
+        {
+            "path": "/SAFETY_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/b2e095db-70b3-5216-acbd-1e253e0acb9e",
+            "violations": []
+        },
+        {
+            "path": "/SAFETY_2/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/ba6a7b75-dfa3-5b69-9039-55a7f26cbd40",
+            "violations": []
+        },
+        {
+            "path": "/MCU_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/a07875bf-ab31-5345-b563-64adcbb9685f",
+            "violations": []
+        },
+        {
+            "path": "/MCU_2/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/593d8c02-dcba-59f8-af27-77d0ae536557",
+            "violations": []
+        },
+        {
+            "path": "/BUS_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/6da12d76-8ae8-54e3-ae89-c5c5b0369827",
+            "violations": []
+        },
+        {
+            "path": "/DRIVE_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/a543ca4f-5570-52bb-9b43-eeebb5dc74d6",
+            "violations": []
+        },
+        {
+            "path": "/DRIVE_U12/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/262cb8a2-7e4a-5d4b-9c22-bd6480cad59a",
+            "violations": []
+        },
+        {
+            "path": "/TUBES_1/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/28408c46-63c0-54d3-ac0f-c5d4c96ff826",
+            "violations": []
+        },
+        {
+            "path": "/TUBES_2/",
+            "uuid_path": "/a3a79466-150b-591d-8442-6e6b064c1a70/fc9cd1f8-d554-5a49-a9e0-826839a30c59",
+            "violations": []
+        }
+    ],
+    "source": "NXT-M3.kicad_sch"
+}

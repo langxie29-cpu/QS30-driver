@@ -1,0 +1,32 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 P1 substrate
+Start Time: Thu Nov 19 07:13:17 2026
+Questionable use of curly braces in "b§e_u1_abm19 u1_n16828921 0 v={3e+06*v(u1_isense)**3-118681*v(u1_isense)**2+1650.7*v(u1_isense)+36.047} "
+    Error: undefined symbol in: "3e+06*[v](u1_isense)**3-118681*v(u1_isense)**2+1650.7*v(u1_isense)+36.047"
+Questionable use of curly braces in "b§e_u2_abm19 u2_n16830694 0 v={3e+06*v(u2_isense)**3-118681*v(u2_isense)**2+1650.7*v(u2_isense)+36.047} "
+    Error: undefined symbol in: "3e+06*[v](u2_isense)**3-118681*v(u2_isense)**2+1650.7*v(u2_isense)+36.047"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}}&v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b§e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vdd)),((vss)))"
+solver = Normal
+Maximum thread count: 1
+tnom = 25
+temp = 25
+method = Gear
+abstol = 1e-08
+reltol = 0.006
+volttol = 5e-05
+cout: Increased Cpar to 5e-12

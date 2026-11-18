@@ -1,0 +1,19 @@
+{
+  "deck": "p2_ucc28c43_probe.cir",
+  "deck_sha256": "3db4495d52e02b7ae449a6d23e820dbcd33ca032f92f306e1826ddbc663a7ac7",
+  "engine_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "model_sha256": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "sic.lib": "2804c54c723a212582ce7f7a62a89fb99ed93e66ca65f13e1d56bb51a77f38a7",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+  },
+  "additional_libraries": {
+    "ucc28c43_trans_unencrypted.lib": "08ce2a53dabe96b79d1622553f1066d17bcb7bf062222927fa1e8a77f04b544c"
+  },
+  "engine_switches": [
+    "-b"
+  ],
+  "timeout_s": 85,
+  "hypothesis": "UCC28C43DR vendor-controller UVLO and loaded gate, not boost qualification"
+}

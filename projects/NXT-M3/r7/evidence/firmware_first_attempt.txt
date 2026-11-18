@@ -1,0 +1,21 @@
+D:\Espressif\tools\riscv32-esp-elf\esp-15.2.0_20251204\riscv32-esp-elf\bin\riscv32-esp-elf-gcc.exe --version
+exit=0
+riscv32-esp-elf-gcc.exe (crosstool-NG esp-15.2.0_20251204) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+D:\Espressif\tools\riscv32-esp-elf\esp-15.2.0_20251204\riscv32-esp-elf\bin\riscv32-esp-elf-gcc.exe -march=rv32im -mabi=ilp32 -mno-relax -msmall-data-limit=0 -std=c11 -Os -Wall -Wextra -Werror -ffreestanding -fno-builtin -nostdlib -DNXT_EMULATED -Wl,-T,FIRMWARE_PROTOTYPE/machine_test.ld,--no-relax FIRMWARE_PROTOTYPE/nxt.c FIRMWARE_PROTOTYPE/test.c FIRMWARE_PROTOTYPE/machine_test.c -o C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf
+exit=0
+
+D:/Espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/15.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf has a LOAD segment with RWX permissions
+
+D:\Espressif\tools\python\python.exe C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\FIRMWARE_PROTOTYPE\machine_run.py C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf
+exit=1
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\FIRMWARE_PROTOTYPE\machine_run.py", line 5, in <module>
+    from elftools.elf.elffile import ELFFile
+ModuleNotFoundError: No module named 'elftools'

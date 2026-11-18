@@ -1,0 +1,20 @@
+{
+  "deck": "p1_vendor_low_max.cir",
+  "deck_sha256": "98876cbc5b4cddde265c1b36c2bcf8e567b03dae18637a004beebb5e1269265b",
+  "engine_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "model_sha256": {
+    "controller.sub": "c03284243ac3b8e500e5bed3696deb8ebbde10eb8cb2a58b6e37929d9d18b634",
+    "st.lib": "6ad61988b9e045684dc8271bc51ddfdca00d65b745e6edd6c4492a42df1ad7a4",
+    "sic.lib": "2804c54c723a212582ce7f7a62a89fb99ed93e66ca65f13e1d56bb51a77f38a7",
+    "ss14.lib": "3288afb62761edfc9e9095127e92e5f9d0e52cd79c1ec948db82bec9ed1f8ae2"
+  },
+  "additional_libraries": {
+    "TPS3700_TRANS.LIB": "70146a8d6ef83cd116a204446bbe89a730292237c747dac7eda1a55575865952",
+    "UCC27511_TRANS.LIB": "8e17d92edd68786189ad99439f4db06b8726fbf911c1282a85027e998c36e9f6"
+  },
+  "engine_switches": [
+    "-b"
+  ],
+  "timeout_s": 180,
+  "hypothesis": "Full load and minimum terminal input with vendor U5/U6"
+}

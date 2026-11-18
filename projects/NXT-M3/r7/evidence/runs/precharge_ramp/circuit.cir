@@ -1,0 +1,24 @@
+NXT-M3 R7 passive precharge, TPS26600 data-sheet slew envelope without PWM
+.include models/sic.lib
+.param SLEW=11.562k LIMIT=.6 CMAX=5.5u
+VINPUT raw 0 PWL(0 0 .1m 12)
+Vpasssense raw pass 0
+Vtarget target 0 PWL(0 0 .5m 0 {0.5m+12/SLEW} 12)
+Bpass pass in I=max(0,min((min(V(pass),V(target))-V(in))/.15,LIMIT))
+CIN in 0 1u Rser=.05
+Lpower in sw 150u Rser=.16
+Drec sw hv STPSC4H065D
+Rsn sw sn 330
+Csn sn hv 100p
+Cout hv 0 {CMAX} Rser=.0211
+Rbleed hv 0 249k
+RFB hv 0 201.9k
+RAD hv 0 202.49k
+ROV hv 0 461k
+.options method=trap reltol=.003
+.tran 0 3m 0 200n uic
+.save V(raw) V(in) V(hv) I(Lpower) I(Drec) I(Cout) I(VINPUT) I(Vpasssense)
+.meas tran i_pass_pk MAX I(Vpasssense)
+.meas tran I_L_PEAK MAX I(Lpower)
+.meas tran hv_end FIND V(hv) AT 2.95m
+.end

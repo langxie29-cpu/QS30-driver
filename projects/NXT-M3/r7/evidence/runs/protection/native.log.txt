@@ -1,0 +1,54 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 U6/U5 vendor fault timing cell, latch and disconnect are explicit proxies
+Start Time: Thu Nov 19 07:16:16 2026
+Questionable use of curly braces in "b�e_u1_abm19 u1_n16828921 0 v={3e+06*v(u1_isense)**3-118681*v(u1_isense)**2+1650.7*v(u1_isense)+36.047} "
+    Error: undefined symbol in: "3e+06*[v](u1_isense)**3-118681*v(u1_isense)**2+1650.7*v(u1_isense)+36.047"
+Questionable use of curly braces in "b�e_u2_abm19 u2_n16830694 0 v={3e+06*v(u2_isense)**3-118681*v(u2_isense)**2+1650.7*v(u2_isense)+36.047} "
+    Error: undefined symbol in: "3e+06*[v](u2_isense)**3-118681*v(u2_isense)**2+1650.7*v(u2_isense)+36.047"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}}&v(b)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}}|v(b)>{{vthresh}},{{vss}},{{vdd}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh))|v(b)>((vthresh)),((vss)),((vdd)))"
+Questionable use of curly braces in "b�e_abmgate yint 0 v={if(v(a)>{{vthresh}},{{vdd}},{{vss}})}"
+    Error: undefined symbol in: "if([v](a)>((vthresh)),((vdd)),((vss)))"
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+reltol = 0.003
+cmp:_u3_u6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u3_u4:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u1_d1:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u1_u4_d6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u2_u1_d6:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+cmp:_u2_d1:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+driver:_u3_u48:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+driver:_u3_u47:dd1: Emission coefficient, N=0.001, too small, limited to 0.1
+Per .tran options, skipping operating point for transient analysis.
+Ignoring empty pin current: Ix(cmp:ina)
+Ignoring empty pin current: Ix(cmp:inb)
+Changing Tseed to 1e-11
+
+ov_cross: v(hv)=184.4 AT 0.001144
+fault_time: v(pre)=1.65 AT 0.00116285
+cut_cmd: v(allow)=.5 AT 7.69627e-10
+gate_after_ovp: MAX(v(gate))=2.70946e-10 FROM 0.00122 TO 0.00138
+gate_before_ovp: MAX(v(gate))=2.70948e-10 FROM 0.00098 TO 0.00102
+aux_after_trip: MAX(v(en))=2.04049e-07 FROM 0.00046 TO 0.00058
+aux_alone_gate: MAX(v(gate))=2.2461e-10 FROM 0.00046 TO 0.00058
+residual_input: v(in)=1.2033e-05 at 0.0014
+latched_end: v(latch)=12 at 0.00199
+
+Total elapsed time: 3.847 seconds.
+

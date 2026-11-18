@@ -1,0 +1,25 @@
+NXT-M3 R7 candidate UCC28C43DR oscillator, start and output gate cell
+.include ucc28c43_trans_unencrypted.lib
+.include models/st.lib
+Vcc vcc 0 PWL(0 0 100u 10.8)
+Vrequest fb 0 2.0
+Rrt ref rt 17.8k
+Crt rt 0 1n
+Cref ref 0 100n
+Ccomp comp fb 22n
+Rg out gate 22
+Rgs gate src 10k
+Vbus hv 0 170
+Rload hv sw 283
+Xq sw gate src STP9NK50Z
+Rsh src 0 1.3
+Rcs src cs 100
+Ccs cs 0 330p
+Xctl comp fb cs rt 0 out vcc ref UCC28C43_START
+.options method=trap reltol=.003
+.tran 0 2m 0 100n uic
+.meas tran vgs_hi MAX V(gate,src) FROM 1m TO 2m
+.meas tran vgs_lo MIN V(gate,src) FROM 1m TO 2m
+.meas tran cs_max MAX V(cs) FROM 1m TO 2m
+.meas tran ref_mean AVG V(ref) FROM 1m TO 2m
+.end

@@ -1,0 +1,17 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 passive precharge, TPS26600 data-sheet slew envelope without PWM
+Start Time: Thu Nov 19 07:23:00 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+reltol = 0.003
+Per .tran options, skipping operating point for transient analysis.
+
+i_pass_pk: MAX(i(vpasssense))=0.116893 FROM 0 TO 0.003
+i_l_peak: MAX(i(lpower))=0.105329 FROM 0 TO 0.003
+hv_end: v(hv)=11.411 at 0.00295
+
+Total elapsed time: 0.926 seconds.
+

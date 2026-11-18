@@ -1,0 +1,13 @@
+path,min,typ,max,unit,scope,status
+U1 UVLO rising,9.165000000000001,9.282,9.555,V,TI thresholds at nominal divider; tolerance separate,LIMITED_PASS
+U1 OVP rising,14.975999999999999,15.232,15.680000000000001,V,TI thresholds at nominal divider; input TVS dynamic clamp separate,LIMITED_PASS
+U1 dVdT ramp,9.5,11.562000000000001,14.025,V/ms,10nF nominal; ramp/interactions still open,LIMITED_PASS
+U1 dVdT at 10.8 V,0.770053475935829,0.934094447327452,1.1368421052631579,ms,Plus enable delay; C2 tolerance and foldback separate,LIMITED_PASS
+U1 programmed limit,UNKNOWN,0.6,UNKNOWN,A,"20k, nominal formula. 0.54/0.66A diagnostic sweep only",HOLD
+OVP output bus pick-up,182.192043956044,184.4,186.61605205205203,V,"1% threshold, all divider 0.1%, before leakage/delay",LIMITED_PASS
+U6 AUX falling release,UNKNOWN,10.84875,UNKNOWN,V,Hysteresis typical - confirm loaded AUX and all corners,HOLD
+U6 input to fault output ,UNKNOWN,MEASURED_IN_CELL,UNKNOWN,us,"Actual vendor macro, one ramp; threshold and slope dependent",LIMITED_PASS
+U7 compare to hard shutdown,UNKNOWN,UNKNOWN,UNKNOWN,us,"Supply, clear/setup/hold; simulation proxy",HOLD
+U1 power interruption,UNKNOWN,UNKNOWN,UNKNOWN,us,Measure OUT current fall upstream of C3 with Kelvin sense; FLT not cut current,HOLD
+AUX loss shift/blank after fault,UNKNOWN,UNKNOWN,UNKNOWN,us,U6 A commands LT only. U5 continues to respond to forced PWM above its UVLO,HOLD
+POR / residual ARM,UNKNOWN,UNKNOWN,UNKNOWN,ms,"U8, U7 and button qualification. No residual hardware permit exists",HOLD

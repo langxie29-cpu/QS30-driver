@@ -1,0 +1,48 @@
+NXT-M3 R7 U6/U5 vendor fault timing cell, latch and disconnect are explicit proxies
+.include TPS3700_TRANS.LIB
+.include UCC27511_TRANS.LIB
+Vlv vdd 0 3.3
+Vin raw 0 12
+Vhv hv 0 PWL(0 170 1m 170 1.2m 190 1.4m 190 1.6m 170 2m 170)
+Vaux aux 0 PWL(0 12 .4m 12 .42m 10 .6m 10 .62m 12 2m 12)
+Vpwm pwm 0 PULSE(0 7 10u 10n 10n 4u 10u)
+Rov1 hv ov_mid 230k
+Rov2 ov_mid ov 230k
+Rov3 ov 0 1k
+Raux1 aux ak 265k
+Raux2 ak 0 10k
+Rpull vdd pre 10k
+Ren1 in en 68k
+Ren2 en 0 12k
+Xcmp vdd ak ov en pre 0 TPS3700_TRANS
+Vready ready 0 PWL(0 0 .30m 0 .31m 1)
+Bset set 0 V=if(V(ready)>.5,if(V(pre)<.8,1,if(V(latch)>1.65,1,0)),0)
+Bfault fault 0 V=if(V(latch)>1.65,3.3,0)
+Spreset vdd latch set 0 LATCH
+.model LATCH SW(Ron=60 Roff=1T Vt=.5 Vh=.1)
+Clatch latch 0 20p IC=0
+Rhold latch 0 100T
+* ARM is not driven again after the forced OVP.
+Ballow allow 0 V=if(V(latch)>1.65,0,1)
+Spass raw in allow 0 PASS
+.model PASS SW(Ron=.15 Roff=100Meg Vt=.5 Vh=.1)
+CIN in 0 1u
+Rin in 0 100
+Sdisable en 0 latch 0 LATCH
+Xdriver pwm fault 0 aux drive_hi drive_lo UCC27511_TRANS
+Rg drive_hi gate 22
+Roff drive_lo gate 10
+Rgs gate 0 10k
+Cgate gate 0 2n
+.options method=trap reltol=.003
+.tran 0 2m 0 100n uic
+.meas tran ov_cross WHEN V(hv)=184.4 RISE=1
+.meas tran fault_time WHEN V(pre)=1.65 FALL=LAST
+.meas tran cut_cmd WHEN V(allow)=.5 FALL=1
+.meas tran gate_after_ovp MAX V(gate) FROM 1.22m TO 1.38m
+.meas tran gate_before_ovp MAX V(gate) FROM .98m TO 1.02m
+.meas tran aux_after_trip MAX V(en) FROM .46m TO .58m
+.meas tran aux_alone_gate MAX V(gate) FROM .46m TO .58m
+.meas tran residual_input FIND V(in) AT 1.4m
+.meas tran latched_end FIND V(latch) AT 1.99m
+.end

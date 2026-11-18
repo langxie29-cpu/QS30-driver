@@ -1,0 +1,14 @@
+LTspice 24.0.12 for Windows
+Circuit: NXT-M3 R7 P2 TPS40210 12V DCM research with vendor controller
+Start Time: Thu Nov 19 07:19:21 2026
+Questionable use of curly braces in "b_ldo_bgtest_abm5 ldo_bgtest_n01104 0 v={if(v(vdd)<8,v(vdd),8})"
+    Error: undefined symbol in: "if([v](vdd)<8,v(vdd),8"
+solver = Normal
+Maximum thread count: 1
+tnom = 25
+temp = 25
+method = modified trap
+abstol = 1e-08
+reltol = 0.006
+volttol = 5e-05
+cout: Increased Cpar to 5e-12

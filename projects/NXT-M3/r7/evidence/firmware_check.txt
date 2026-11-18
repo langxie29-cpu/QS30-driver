@@ -1,0 +1,31 @@
+D:\Espressif\tools\riscv32-esp-elf\esp-15.2.0_20251204\riscv32-esp-elf\bin\riscv32-esp-elf-gcc.exe --version
+exit=0
+riscv32-esp-elf-gcc.exe (crosstool-NG esp-15.2.0_20251204) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+D:\Espressif\tools\riscv32-esp-elf\esp-15.2.0_20251204\riscv32-esp-elf\bin\riscv32-esp-elf-gcc.exe -march=rv32im -mabi=ilp32 -mno-relax -msmall-data-limit=0 -std=c11 -Os -Wall -Wextra -Werror -ffreestanding -fno-builtin -nostdlib -DNXT_EMULATED -Wl,-T,FIRMWARE_PROTOTYPE/machine_test.ld,--no-relax FIRMWARE_PROTOTYPE/nxt.c FIRMWARE_PROTOTYPE/test.c FIRMWARE_PROTOTYPE/machine_test.c -o C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf
+exit=0
+
+D:/Espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/../lib/gcc/riscv32-esp-elf/15.2.0/../../../../riscv32-esp-elf/bin/ld.exe: warning: C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf has a LOAD segment with RWX permissions
+
+D:\Espressif\tools\python\python.exe C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\FIRMWARE_PROTOTYPE\machine_run.py C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\nxt-c-test-rv32.elf
+exit=0
+PASS: portable C firmware tests executed in RV32 emulator
+
+
+D:\Espressif\tools\esp-clang\esp-21.1.3_20260408\esp-clang\bin\clang.exe --target=arm-none-eabi -mcpu=cortex-m0plus -mthumb -std=c11 -Wall -Wextra -Werror -Wno-missing-multilib -ffreestanding -fsyntax-only FIRMWARE_PROTOTYPE/nxt.c FIRMWARE_PROTOTYPE/stm32c011.c
+exit=0
+
+
+D:\Espressif\tools\python\python.exe C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\FIRMWARE_PROTOTYPE\host_packet.py 123456789 --mask 7 --seq 41 --output C:\Users\Administrator\AppData\Local\Temp\nxt-r7-firmware\.local\example.bin
+exit=0
+
+
+RV32 emulator executes the portable C tests; STM32 frontend validates syntax only.
+ARM link unsupported by installed Espressif Clang backend; alternate Zig stopped by host application control.
+RV32 file SHA256 36f8f72f6033473750c64166ed1808de955bb448eb1ca826f79ae9d202694df7
+V1 9-digit binary frame hex: a5 01 01 01 29 00 07 01 02 03 17 a7 a5 01 01 02 29 00 07 04 05 06 57 5d a5 01 01 03 29 00 07 07 08 09 d5 3b a5 01 02 00 29 00 07 00 00 00 32 b6

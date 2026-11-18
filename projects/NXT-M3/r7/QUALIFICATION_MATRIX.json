@@ -1,0 +1,30 @@
+{
+  "baseline": "163a60b2f1525e47b66f929103ff446a3f57c460",
+  "stage_gates": [
+    {"id":"G0","status":"LIMITED_PASS","scope":"Exact R6 replay complete, timeout reproduced by other solver settings, full causation unresolved","evidence":["R1_DECISION.md","evidence/runs/exact/","SIMULATION_DIAGNOSTICS.md"]},
+    {"id":"G1","status":"HOLD","scope":"Full load, temperature, fault windows and physical dynamics open","evidence":["R2_DECISION.md","ELECTRICAL_QUALIFICATION.md"]},
+    {"id":"G2","status":"HOLD","scope":"Exact-MPN public subset advantage only, landed full cost and common stock not closed","evidence":["R3_DECISION.md","BEFORE_AFTER_COST.csv"]},
+    {"id":"G3","status":"HOLD","scope":"TPS40210 and UCC28C43 are development candidates; equivalence not established","evidence":["R4_DECISION.md","SIMULATION_RESULTS.csv"]},
+    {"id":"G4","status":"LIMITED_PASS","scope":"Native schematic, library, ERC, pin and BOM verified, full system correlation open","evidence":["R5_DECISION.md","evidence/erc.json","evidence/native_delta.json","FINAL_BOM.csv"]},
+    {"id":"G5","status":"HOLD","scope":"Layout, PCB, insulation, BOM, verification and approval open","evidence":["MANUFACTURING_BLOCKERS.md"]}
+  ],
+  "tests": [
+    {"id":"R6_nominal_closed_loop_proxy","status":"LIMITED_PASS","evidence":"evidence/runs/exact/"},
+    {"id":"R7_native_full_electrical","status":"INCONCLUSIVE","evidence":"SIMULATION_RESULTS.csv"},
+    {"id":"eFuse_real_current_and_power_cutoff","status":"HOLD","evidence":"PROTECTION_TIMING_BUDGET.csv"},
+    {"id":"OVP_nominal_unit","status":"LIMITED_PASS","evidence":"evidence/runs/protection_armed/"},
+    {"id":"RC_discharge_unit","status":"LIMITED_PASS","evidence":"evidence/runs/isolation/"},
+    {"id":"P2_raw_vendor_parser","status":"FAIL","evidence":"evidence/runs/p2_tps40210_low_max/"},
+    {"id":"P2_corrected_low_line_normal_behavior","status":"INCONCLUSIVE","evidence":"evidence/runs/p2_final_low/"},
+    {"id":"native_erc","status":"PASS","scope":"KiCad default checks","evidence":"evidence/erc.json"},
+    {"id":"native_netlist_bom_identity","status":"PASS","evidence":"evidence/native_delta.json"}
+  ],
+  "design_titles": {
+    "reference_design":"12 V P1 LT3757A",
+    "lowest_cost_candidate":"UNKNOWN",
+    "recommended_design":"12 V P1 for continued engineering; manufacturing HOLD",
+    "lowest_controller_subset":"P2 UCC28C43DR",
+    "priority_alternative_development":"P2 TPS40210DGQR"
+  },
+  "holds": ["purchase","payment","pcb","smt","physical_HV","physical_fault_injection","merge_main"]
+}

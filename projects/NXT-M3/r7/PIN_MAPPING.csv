@@ -1,0 +1,419 @@
+ref,pin,function,type,expected,kicad_export,match,source
+J1,1,1,passive,VIN_RAW,VIN_RAW,True,R6 connection intent
+J1,2,2,passive,GND,GND,True,R6 connection intent
+F1,1,1,passive,VIN_RAW,VIN_RAW,True,R6 connection intent
+F1,2,2,passive,VIN_FUSED,VIN_FUSED,True,R6 connection intent
+D1,1,1,passive,VIN_FUSED,VIN_FUSED,True,R6 connection intent
+D1,2,2,passive,GND,GND,True,R6 connection intent
+#FLG01,1,PWR,power_out,VIN_FUSED,NONE,True,R6 connection intent
+#FLG02,1,PWR,power_out,GND,NONE,True,R6 connection intent
+#FLG03,1,PWR,power_out,FUSE_RTN,NONE,True,R6 connection intent
+U1,1,NC,no_connect,NC,unconnected-(U1-NC-Pad1),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,2,NC,no_connect,NC,unconnected-(U1-NC-Pad2),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,3,NC,no_connect,NC,unconnected-(U1-NC-Pad3),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,4,NC,no_connect,NC,unconnected-(U1-NC-Pad4),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,5,NC,no_connect,NC,unconnected-(U1-NC-Pad5),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,6,NC,no_connect,NC,unconnected-(U1-NC-Pad6),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,7,NC,no_connect,NC,unconnected-(U1-NC-Pad7),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,8,IN,power_in,VIN_FUSED,VIN_FUSED,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,9,IN,power_in,VIN_FUSED,VIN_FUSED,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,10,UVLO,input,IN_UV,IN_UV,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,11,NC,no_connect,NC,unconnected-(U1-NC-Pad11),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,12,OVP,input,IN_OV,IN_OV,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,13,MODE,input,FUSE_MODE,FUSE_MODE,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,14,SHDN,input,FUSE_EN,FUSE_EN,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,15,RTN,power_in,FUSE_RTN,FUSE_RTN,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,16,NC,no_connect,NC,unconnected-(U1-NC-Pad16),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,17,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,18,IMON,output,NC,unconnected-(U1-IMON-Pad18),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,19,ILIM,passive,ILIM,ILIM,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,20,dVdT,passive,RAMP,RAMP,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,21,NC,no_connect,NC,unconnected-(U1-NC-Pad21),True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,22,FLT,open_collector,EFUSE_FLT_N,EFUSE_FLT_N,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,23,OUT,power_out,VIN_PROTECTED,VIN_PROTECTED,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,24,OUT_PARALLEL,passive,VIN_PROTECTED,VIN_PROTECTED,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U1,25,EP_RTN,power_in,FUSE_RTN,FUSE_RTN,True,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+R1,1,1,passive,VIN_FUSED,VIN_FUSED,True,R6 connection intent
+R1,2,2,passive,IN_UV,IN_UV,True,R6 connection intent
+R2,1,1,passive,IN_UV,IN_UV,True,R6 connection intent
+R2,2,2,passive,GND,GND,True,R6 connection intent
+R3,1,1,passive,VIN_FUSED,VIN_FUSED,True,R6 connection intent
+R3,2,2,passive,IN_OV,IN_OV,True,R6 connection intent
+R4,1,1,passive,IN_OV,IN_OV,True,R6 connection intent
+R4,2,2,passive,GND,GND,True,R6 connection intent
+R5,1,1,passive,ILIM,ILIM,True,R6 connection intent
+R5,2,2,passive,GND,GND,True,R6 connection intent
+R6,1,1,passive,FUSE_EN,FUSE_EN,True,R6 connection intent
+R6,2,2,passive,GND,GND,True,R6 connection intent
+R7,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R7,2,2,passive,EFUSE_FLT_N,EFUSE_FLT_N,True,R6 connection intent
+C1,1,1,passive,VIN_FUSED,VIN_FUSED,True,R6 connection intent
+C1,2,2,passive,GND,GND,True,R6 connection intent
+C2,1,1,passive,RAMP,RAMP,True,R6 connection intent
+C2,2,2,passive,GND,GND,True,R6 connection intent
+C3,1,1,passive,VIN_PROTECTED,VIN_PROTECTED,True,R6 connection intent
+C3,2,2,passive,GND,GND,True,R6 connection intent
+R8,1,1,passive,FUSE_MODE,FUSE_MODE,True,R6 connection intent
+R8,2,2,passive,FUSE_RTN,FUSE_RTN,True,R6 connection intent
+R9,1,1,passive,RUN_QN,RUN_QN,True,R6 connection intent
+R9,2,2,passive,FUSE_EN,FUSE_EN,True,R6 connection intent
+D2,1,K,passive,BIAS_IN,BIAS_IN,True,https://www.vishay.com/docs/88794/us1a.pdf
+D2,2,A,passive,VIN_FUSED,VIN_FUSED,True,https://www.vishay.com/docs/88794/us1a.pdf
+#FLG04,1,PWR,power_out,BIAS_IN,NONE,True,R6 connection intent
+U2,1,OUT,power_out,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,2,FB,input,LDO_FB,LDO_FB,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,3,PG,open_collector,NC,unconnected-(U2-PG-Pad3),True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,4,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,5,EN,input,BIAS_IN,BIAS_IN,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,6,NC,no_connect,NC,unconnected-(U2-NC-Pad6),True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,7,DELAY,passive,NC,unconnected-(U2-DELAY-Pad7),True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,8,IN,power_in,BIAS_IN,BIAS_IN,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+U2,9,EP,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/tps7a1601.pdf
+R10,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R10,2,2,passive,LDO_FB,LDO_FB,True,R6 connection intent
+R11,1,1,passive,LDO_FB,LDO_FB,True,R6 connection intent
+R11,2,2,passive,GND,GND,True,R6 connection intent
+C4,1,1,passive,BIAS_IN,BIAS_IN,True,R6 connection intent
+C4,2,2,passive,GND,GND,True,R6 connection intent
+C5,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C5,2,2,passive,GND,GND,True,R6 connection intent
+U3,1,-Vin,power_in,GND,GND,True,https://datasheet.lcsc.com/datasheet/pdf/c27041be2e95a09c7b457df29162e8ec.pdf
+U3,2,+Vin,power_in,VIN_PROTECTED,VIN_PROTECTED,True,https://datasheet.lcsc.com/datasheet/pdf/c27041be2e95a09c7b457df29162e8ec.pdf
+U3,4,+Vout,power_out,AUX12,AUX12,True,https://datasheet.lcsc.com/datasheet/pdf/c27041be2e95a09c7b457df29162e8ec.pdf
+U3,6,-Vout,passive,GND,GND,True,https://datasheet.lcsc.com/datasheet/pdf/c27041be2e95a09c7b457df29162e8ec.pdf
+C6,1,1,passive,AUX12,AUX12,True,R6 connection intent
+C6,2,2,passive,GND,GND,True,R6 connection intent
+J4,1,1,passive,BOOST_ARM_SRC,BOOST_ARM_SRC,True,R6 connection intent
+J4,2,2,passive,BOOST_EN,BOOST_EN,True,R6 connection intent
+U4,1,VC,passive,VC,VC,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,2,FBX,input,FBX,FBX,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,3,SS,passive,SS,SS,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,4,RT,passive,RT,RT,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,5,SYNC,input,GND,GND,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,6,SENSE,input,SENSE,SENSE,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,7,GATE,output,PWM_RAW,PWM_RAW,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,8,INTVCC,power_out,INTVCC,INTVCC,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,9,SHDN_UVLO,input,BOOST_EN,BOOST_EN,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,10,VIN,power_in,VIN_PROTECTED,VIN_PROTECTED,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U4,11,EP_GND,power_in,GND,GND,True,https://www.analog.com/media/en/technical-documentation/data-sheets/LT3757-3757A.pdf
+U5,1,VDD,power_in,AUX12,AUX12,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+U5,2,OUTH,output,DRV_ON,DRV_ON,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+U5,3,OUTL,output,DRV_OFF,DRV_OFF,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+U5,4,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+U5,5,IN-,input,FAULT_Q,FAULT_Q,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+U5,6,IN+,input,PWM_RAW,PWM_RAW,True,https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+Q1,1,G,input,GATE,GATE,True,https://www.st.com/resource/en/datasheet/stp9nk50z.pdf
+Q1,2,D,passive,SW_HV,SW_HV,True,https://www.st.com/resource/en/datasheet/stp9nk50z.pdf
+Q1,3,S,passive,FET_SOURCE,FET_SOURCE,True,https://www.st.com/resource/en/datasheet/stp9nk50z.pdf
+D20,1,K,passive,HV170,HV170,True,https://www.st.com/resource/en/datasheet/stpsc4h065.pdf
+D20,2,A,passive,SW_HV,SW_HV,True,https://www.st.com/resource/en/datasheet/stpsc4h065.pdf
+D21,1,K,passive,NEG_GATE,NEG_GATE,True,https://www.vishay.com/docs/88746/ss12.pdf
+D21,2,A,passive,FET_SOURCE,FET_SOURCE,True,https://www.vishay.com/docs/88746/ss12.pdf
+L1,1,1,passive,VIN_PROTECTED,VIN_PROTECTED,True,R6 connection intent
+L1,2,2,passive,SW_HV,SW_HV,True,R6 connection intent
+C20,1,1,passive,HV170,HV170,True,R6 connection intent
+C20,2,2,passive,GND,GND,True,R6 connection intent
+R20,1,1,passive,FET_SOURCE,FET_SOURCE,True,R6 connection intent
+R20,2,2,passive,GND,GND,True,R6 connection intent
+R21,1,1,passive,FET_SOURCE,FET_SOURCE,True,R6 connection intent
+R21,2,2,passive,SENSE,SENSE,True,R6 connection intent
+C21,1,1,passive,SENSE,SENSE,True,R6 connection intent
+C21,2,2,passive,GND,GND,True,R6 connection intent
+R22,1,1,passive,DRV_ON,DRV_ON,True,R6 connection intent
+R22,2,2,passive,GATE,GATE,True,R6 connection intent
+R23,1,1,passive,DRV_OFF,DRV_OFF,True,R6 connection intent
+R23,2,2,passive,GATE,GATE,True,R6 connection intent
+R24,1,1,passive,GATE,GATE,True,R6 connection intent
+R24,2,2,passive,FET_SOURCE,FET_SOURCE,True,R6 connection intent
+R25,1,1,passive,NEG_GATE,NEG_GATE,True,R6 connection intent
+R25,2,2,passive,GATE,GATE,True,R6 connection intent
+R26,1,1,passive,SW_HV,SW_HV,True,R6 connection intent
+R26,2,2,passive,SNUB,SNUB,True,R6 connection intent
+C22,1,1,passive,SNUB,SNUB,True,https://search.kemet.com/component-documentation/download/specsheet/C1206C101JCGACTU
+C22,2,2,passive,HV170,HV170,True,https://search.kemet.com/component-documentation/download/specsheet/C1206C101JCGACTU
+R27,1,1,passive,HV170,HV170,True,R6 connection intent
+R27,2,2,passive,FB_MID,FB_MID,True,R6 connection intent
+R28,1,1,passive,FB_MID,FB_MID,True,R6 connection intent
+R28,2,2,passive,FBX,FBX,True,R6 connection intent
+R29,1,1,passive,FBX,FBX,True,R6 connection intent
+R29,2,2,passive,GND,GND,True,R6 connection intent
+R30,1,1,passive,RT,RT,True,R6 connection intent
+R30,2,2,passive,GND,GND,True,R6 connection intent
+R31,1,1,passive,VIN_PROTECTED,VIN_PROTECTED,True,R6 connection intent
+R31,2,2,passive,BOOST_ARM_SRC,BOOST_ARM_SRC,True,R6 connection intent
+R32,1,1,passive,BOOST_EN,BOOST_EN,True,R6 connection intent
+R32,2,2,passive,GND,GND,True,R6 connection intent
+C23,1,1,passive,INTVCC,INTVCC,True,R6 connection intent
+C23,2,2,passive,GND,GND,True,R6 connection intent
+C24,1,1,passive,SS,SS,True,R6 connection intent
+C24,2,2,passive,GND,GND,True,R6 connection intent
+R33,1,1,passive,VC,VC,True,R6 connection intent
+R33,2,2,passive,COMP,COMP,True,R6 connection intent
+C25,1,1,passive,COMP,COMP,True,R6 connection intent
+C25,2,2,passive,GND,GND,True,R6 connection intent
+C26,1,1,passive,VC,VC,True,R6 connection intent
+C26,2,2,passive,GND,GND,True,R6 connection intent
+C27,1,1,passive,AUX12,AUX12,True,R6 connection intent
+C27,2,2,passive,GND,GND,True,R6 connection intent
+U6,1,OUTA,open_collector,BOOST_EN,BOOST_EN,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U6,2,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U6,3,INA+,input,AUX_OK_SENSE,AUX_OK_SENSE,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U6,4,INB-,input,OVP_SENSE,OVP_SENSE,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U6,5,VDD,power_in,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U6,6,OUTB,open_collector,OVP_PRE_N,OVP_PRE_N,True,https://www.ti.com/lit/ds/symlink/tps3700.pdf
+U7,1,CLK,input,ARM_CLK,ARM_CLK,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,2,D,input,GND,GND,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,3,QN,output,RUN_QN,RUN_QN,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,4,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,5,Q,output,FAULT_Q,FAULT_Q,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,6,CLR_N,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,7,PRE_N,input,OVP_PRE_N,OVP_PRE_N,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U7,8,VCC,power_in,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+U8,1,RESET_N,open_collector,OVP_PRE_N,OVP_PRE_N,True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+U8,2,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+U8,3,MR_N,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+U8,4,CT,passive,NC,unconnected-(U8-CT-Pad4),True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+U8,5,SENSE,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+U8,6,VDD,power_in,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/tps3808.pdf
+Q2,1,G,input,FAULT_Q,FAULT_Q,True,R6 connection intent
+Q2,2,S,passive,GND,GND,True,R6 connection intent
+Q2,3,D,passive,BOOST_EN,BOOST_EN,True,R6 connection intent
+J5,1,1,passive,V3V3,V3V3,True,R6 connection intent
+J5,2,2,passive,ARM_CLK,ARM_CLK,True,R6 connection intent
+R40,1,1,passive,ARM_CLK,ARM_CLK,True,R6 connection intent
+R40,2,2,passive,GND,GND,True,R6 connection intent
+R41,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R41,2,2,passive,OVP_PRE_N,OVP_PRE_N,True,R6 connection intent
+R42,1,1,passive,HV170,HV170,True,R6 connection intent
+R42,2,2,passive,OVP_MID,OVP_MID,True,R6 connection intent
+R43,1,1,passive,OVP_MID,OVP_MID,True,R6 connection intent
+R43,2,2,passive,OVP_SENSE,OVP_SENSE,True,R6 connection intent
+R44,1,1,passive,OVP_SENSE,OVP_SENSE,True,R6 connection intent
+R44,2,2,passive,GND,GND,True,R6 connection intent
+R45,1,1,passive,HV170,HV170,True,R6 connection intent
+R45,2,2,passive,BLEED_A,BLEED_A,True,R6 connection intent
+R46,1,1,passive,BLEED_A,BLEED_A,True,R6 connection intent
+R46,2,2,passive,GND,GND,True,R6 connection intent
+R47,1,1,passive,HV170,HV170,True,R6 connection intent
+R47,2,2,passive,BLEED_B,BLEED_B,True,R6 connection intent
+R48,1,1,passive,BLEED_B,BLEED_B,True,R6 connection intent
+R48,2,2,passive,GND,GND,True,R6 connection intent
+R49,1,1,passive,HV170,HV170,True,R6 connection intent
+R49,2,2,passive,ADC_MID,ADC_MID,True,R6 connection intent
+R50,1,1,passive,ADC_MID,ADC_MID,True,R6 connection intent
+R50,2,2,passive,ADC_PRE,ADC_PRE,True,R6 connection intent
+R51,1,1,passive,ADC_PRE,ADC_PRE,True,R6 connection intent
+R51,2,2,passive,GND,GND,True,R6 connection intent
+R52,1,1,passive,ADC_PRE,ADC_PRE,True,R6 connection intent
+R52,2,2,passive,HV_ADC,HV_ADC,True,R6 connection intent
+R70,1,1,passive,AUX12,AUX12,True,R6 connection intent
+R70,2,2,passive,AUX_OK_SENSE,AUX_OK_SENSE,True,R6 connection intent
+R71,1,1,passive,AUX_OK_SENSE,AUX_OK_SENSE,True,R6 connection intent
+R71,2,2,passive,GND,GND,True,R6 connection intent
+C40,1,1,passive,HV_ADC,HV_ADC,True,R6 connection intent
+C40,2,2,passive,GND,GND,True,R6 connection intent
+C41,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C41,2,2,passive,GND,GND,True,R6 connection intent
+C42,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C42,2,2,passive,GND,GND,True,R6 connection intent
+C43,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C43,2,2,passive,GND,GND,True,R6 connection intent
+U9,1,PB7,input,SER_RX,SER_RX,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,2,PC14,input,FAULT_Q,FAULT_Q,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,3,PC15,input,EFUSE_FLT_N,EFUSE_FLT_N,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,4,VDD,power_in,V3V3,V3V3,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,5,VSS,power_in,GND,GND,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,6,PF2_NRST,bidirectional,NRST,NRST,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,7,PA0,input,HV_ADC,HV_ADC,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,8,PA1,output,BL3,BL3,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,9,PA2,output,LE3,LE3,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,10,PA3,output,CLK3,CLK3,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,11,PA4,output,DATA3,DATA3,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,12,PA5,input,ADDR0,ADDR0,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,13,PA6,input,ADDR1,ADDR1,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,14,PA7,output,LED_N,LED_N,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,15,PB0,output,BUS_DE,BUS_DE,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,16,PA9_PA11,bidirectional,NC,unconnected-(U9-PA9_PA11-Pad16),True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,17,PA10_PA12,bidirectional,NC,unconnected-(U9-PA10_PA12-Pad17),True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,18,PA13,bidirectional,SWDIO,SWDIO,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,19,PA14,input,SWCLK,SWCLK,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+U9,20,PB6,output,SER_TX,SER_TX,True,https://www.st.com/resource/en/datasheet/stm32c011f4.pdf
+C50,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C50,2,2,passive,GND,GND,True,R6 connection intent
+C51,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C51,2,2,passive,GND,GND,True,R6 connection intent
+R53,1,1,passive,BL3,BL3,True,R6 connection intent
+R53,2,2,passive,GND,GND,True,R6 connection intent
+R54,1,1,passive,LE3,LE3,True,R6 connection intent
+R54,2,2,passive,GND,GND,True,R6 connection intent
+R55,1,1,passive,CLK3,CLK3,True,R6 connection intent
+R55,2,2,passive,GND,GND,True,R6 connection intent
+R56,1,1,passive,DATA3,DATA3,True,R6 connection intent
+R56,2,2,passive,GND,GND,True,R6 connection intent
+R57,1,1,passive,BUS_DE,BUS_DE,True,R6 connection intent
+R57,2,2,passive,GND,GND,True,R6 connection intent
+R58,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R58,2,2,passive,ADDR0,ADDR0,True,R6 connection intent
+R59,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R59,2,2,passive,ADDR1,ADDR1,True,R6 connection intent
+R60,1,1,passive,V3V3,V3V3,True,R6 connection intent
+R60,2,2,passive,LED_A,LED_A,True,R6 connection intent
+D50,1,K,passive,LED_N,LED_N,True,R6 connection intent
+D50,2,A,passive,LED_A,LED_A,True,R6 connection intent
+J6,1,1,passive,ADDR0,ADDR0,True,R6 connection intent
+J6,2,2,passive,GND,GND,True,R6 connection intent
+J6,3,3,passive,ADDR1,ADDR1,True,R6 connection intent
+J6,4,4,passive,GND,GND,True,R6 connection intent
+J7,1,1,passive,V3V3,V3V3,True,R6 connection intent
+J7,2,2,passive,SWDIO,SWDIO,True,R6 connection intent
+J7,3,3,passive,GND,GND,True,R6 connection intent
+J7,4,4,passive,SWCLK,SWCLK,True,R6 connection intent
+J7,5,5,passive,NRST,NRST,True,R6 connection intent
+U10,1,R,output,SER_RX,SER_RX,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,2,RE_N,input,BUS_DE,BUS_DE,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,3,DE,input,BUS_DE,BUS_DE,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,4,D,input,SER_TX,SER_TX,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,5,GND,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,6,A,bidirectional,BUS_A,BUS_A,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,7,B,bidirectional,BUS_B,BUS_B,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+U10,8,VCC,power_in,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/thvd1450.pdf
+J2,1,1,passive,BUS_A,BUS_A,True,R6 connection intent
+J2,2,2,passive,BUS_B,BUS_B,True,R6 connection intent
+J2,3,3,passive,GND,GND,True,R6 connection intent
+J3,1,1,passive,BUS_A,BUS_A,True,R6 connection intent
+J3,2,2,passive,BUS_B,BUS_B,True,R6 connection intent
+J3,3,3,passive,GND,GND,True,R6 connection intent
+J8,1,1,passive,BUS_A,BUS_A,True,R6 connection intent
+J8,2,2,passive,BUS_TERM,BUS_TERM,True,R6 connection intent
+R65,1,1,passive,BUS_TERM,BUS_TERM,True,R6 connection intent
+R65,2,2,passive,BUS_B,BUS_B,True,R6 connection intent
+C52,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C52,2,2,passive,GND,GND,True,R6 connection intent
+D51,1,IO1,passive,BUS_A,BUS_A,True,https://www.littelfuse.com/products/tvs-diode-arrays/automotive/sm712
+D51,2,IO2,passive,BUS_B,BUS_B,True,https://www.littelfuse.com/products/tvs-diode-arrays/automotive/sm712
+D51,3,GND,passive,GND,GND,True,https://www.littelfuse.com/products/tvs-diode-arrays/automotive/sm712
+U11,1,VCC,power_in,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,2,ENA,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,3,A,input,DATA3,DATA3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,4,E,output,DATA12,DATA12,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,5,F,output,CLK12,CLK12,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,6,B,input,CLK3,CLK3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,7,ENB,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,8,VSS,power_in,GND,GND,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,9,ENC,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,10,C,input,LE3,LE3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,11,G,output,LE12,LE12,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,12,NC,no_connect,NC,unconnected-(U11-NC-Pad12),True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,13,H,output,BL12,BL12,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,14,D,input,BL3,BL3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,15,END,input,V3V3,V3V3,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U11,16,VDD,power_in,AUX12,AUX12,True,https://www.ti.com/lit/ds/symlink/cd40109b.pdf
+U12,1,HVOUT22,open_collector,K3_1,K3_1,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,2,HVOUT21,open_collector,K3_0,K3_0,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,3,HVOUT20,open_collector,K2_9,K2_9,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,4,HVOUT19,open_collector,K2_8,K2_8,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,5,HVOUT18,open_collector,K2_7,K2_7,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,6,HVOUT17,open_collector,K2_6,K2_6,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,7,HVOUT16,open_collector,K2_5,K2_5,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,8,HVOUT15,open_collector,K2_4,K2_4,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,9,HVOUT14,open_collector,K2_3,K2_3,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,10,HVOUT13,open_collector,K2_2,K2_2,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,11,HVOUT12,open_collector,K2_1,K2_1,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,12,HVOUT11,open_collector,K2_0,K2_0,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,13,HVOUT10,open_collector,K1_9,K1_9,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,14,HVOUT9,open_collector,K1_8,K1_8,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,15,HVOUT8,open_collector,K1_7,K1_7,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,16,HVOUT7,open_collector,K1_6,K1_6,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,17,HVOUT6,open_collector,K1_5,K1_5,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,18,HVOUT5,open_collector,K1_4,K1_4,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,19,HVOUT4,open_collector,K1_3,K1_3,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,20,HVOUT3,open_collector,K1_2,K1_2,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,21,HVOUT2,open_collector,K1_1,K1_1,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,22,HVOUT1,open_collector,K1_0,K1_0,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,23,DOUT,output,NC,unconnected-(U12-DOUT-Pad23),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,24,NC,no_connect,NC,unconnected-(U12-NC-Pad24),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,25,NC,no_connect,NC,unconnected-(U12-NC-Pad25),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,26,NC,no_connect,NC,unconnected-(U12-NC-Pad26),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,27,POL,input,AUX12,AUX12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,28,CLK,input,CLK12,CLK12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,29,VSS,power_in,GND,GND,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,30,VDD,power_in,AUX12,AUX12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,31,LE,input,LE12,LE12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,32,DIN,input,DATA12,DATA12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,33,BL,input,BL12,BL12,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,34,NC,no_connect,NC,unconnected-(U12-NC-Pad34),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,35,HVOUT32,open_collector,NC,unconnected-(U12-HVOUT32-Pad35),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,36,HVOUT31,open_collector,NC,unconnected-(U12-HVOUT31-Pad36),True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,37,HVOUT30,open_collector,K3_9,K3_9,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,38,HVOUT29,open_collector,K3_8,K3_8,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,39,HVOUT28,open_collector,K3_7,K3_7,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,40,HVOUT27,open_collector,K3_6,K3_6,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,41,HVOUT26,open_collector,K3_5,K3_5,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,42,HVOUT25,open_collector,K3_4,K3_4,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,43,HVOUT24,open_collector,K3_3,K3_3,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+U12,44,HVOUT23,open_collector,K3_2,K3_2,True,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/20005854A.pdf
+R66,1,1,passive,DATA12,DATA12,True,R6 connection intent
+R66,2,2,passive,GND,GND,True,R6 connection intent
+R67,1,1,passive,CLK12,CLK12,True,R6 connection intent
+R67,2,2,passive,GND,GND,True,R6 connection intent
+R68,1,1,passive,LE12,LE12,True,R6 connection intent
+R68,2,2,passive,GND,GND,True,R6 connection intent
+R69,1,1,passive,BL12,BL12,True,R6 connection intent
+R69,2,2,passive,GND,GND,True,R6 connection intent
+C53,1,1,passive,V3V3,V3V3,True,R6 connection intent
+C53,2,2,passive,GND,GND,True,R6 connection intent
+C54,1,1,passive,AUX12,AUX12,True,R6 connection intent
+C54,2,2,passive,GND,GND,True,R6 connection intent
+C55,1,1,passive,AUX12,AUX12,True,R6 connection intent
+C55,2,2,passive,GND,GND,True,R6 connection intent
+V1,1,IC1,no_connect,NC,unconnected-(V1-IC1-Pad1),True,Legacy QS30-1 factory pin map
+V1,2,ANODE,passive,ANODE1,ANODE1,True,Legacy QS30-1 factory pin map
+V1,3,K0,passive,K1_0,K1_0,True,Legacy QS30-1 factory pin map
+V1,4,K9,passive,K1_9,K1_9,True,Legacy QS30-1 factory pin map
+V1,5,K8,passive,K1_8,K1_8,True,Legacy QS30-1 factory pin map
+V1,6,K7,passive,K1_7,K1_7,True,Legacy QS30-1 factory pin map
+V1,7,K6,passive,K1_6,K1_6,True,Legacy QS30-1 factory pin map
+V1,8,IC8,no_connect,NC,unconnected-(V1-IC8-Pad8),True,Legacy QS30-1 factory pin map
+V1,9,K5,passive,K1_5,K1_5,True,Legacy QS30-1 factory pin map
+V1,10,K4,passive,K1_4,K1_4,True,Legacy QS30-1 factory pin map
+V1,11,K3,passive,K1_3,K1_3,True,Legacy QS30-1 factory pin map
+V1,12,K2,passive,K1_2,K1_2,True,Legacy QS30-1 factory pin map
+V1,13,K1,passive,K1_1,K1_1,True,Legacy QS30-1 factory pin map
+R72,1,1,passive,HV170,HV170,True,https://item.szlcsc.com/59791.html
+R72,2,2,passive,ANODE_MID1,ANODE_MID1,True,https://item.szlcsc.com/59791.html
+R73,1,1,passive,ANODE_MID1,ANODE_MID1,True,https://item.szlcsc.com/59791.html
+R73,2,2,passive,ANODE1,ANODE1,True,https://item.szlcsc.com/59791.html
+V2,1,IC1,no_connect,NC,unconnected-(V2-IC1-Pad1),True,Legacy QS30-1 factory pin map
+V2,2,ANODE,passive,ANODE2,ANODE2,True,Legacy QS30-1 factory pin map
+V2,3,K0,passive,K2_0,K2_0,True,Legacy QS30-1 factory pin map
+V2,4,K9,passive,K2_9,K2_9,True,Legacy QS30-1 factory pin map
+V2,5,K8,passive,K2_8,K2_8,True,Legacy QS30-1 factory pin map
+V2,6,K7,passive,K2_7,K2_7,True,Legacy QS30-1 factory pin map
+V2,7,K6,passive,K2_6,K2_6,True,Legacy QS30-1 factory pin map
+V2,8,IC8,no_connect,NC,unconnected-(V2-IC8-Pad8),True,Legacy QS30-1 factory pin map
+V2,9,K5,passive,K2_5,K2_5,True,Legacy QS30-1 factory pin map
+V2,10,K4,passive,K2_4,K2_4,True,Legacy QS30-1 factory pin map
+V2,11,K3,passive,K2_3,K2_3,True,Legacy QS30-1 factory pin map
+V2,12,K2,passive,K2_2,K2_2,True,Legacy QS30-1 factory pin map
+V2,13,K1,passive,K2_1,K2_1,True,Legacy QS30-1 factory pin map
+R74,1,1,passive,HV170,HV170,True,https://item.szlcsc.com/59791.html
+R74,2,2,passive,ANODE_MID2,ANODE_MID2,True,https://item.szlcsc.com/59791.html
+R75,1,1,passive,ANODE_MID2,ANODE_MID2,True,https://item.szlcsc.com/59791.html
+R75,2,2,passive,ANODE2,ANODE2,True,https://item.szlcsc.com/59791.html
+V3,1,IC1,no_connect,NC,unconnected-(V3-IC1-Pad1),True,Legacy QS30-1 factory pin map
+V3,2,ANODE,passive,ANODE3,ANODE3,True,Legacy QS30-1 factory pin map
+V3,3,K0,passive,K3_0,K3_0,True,Legacy QS30-1 factory pin map
+V3,4,K9,passive,K3_9,K3_9,True,Legacy QS30-1 factory pin map
+V3,5,K8,passive,K3_8,K3_8,True,Legacy QS30-1 factory pin map
+V3,6,K7,passive,K3_7,K3_7,True,Legacy QS30-1 factory pin map
+V3,7,K6,passive,K3_6,K3_6,True,Legacy QS30-1 factory pin map
+V3,8,IC8,no_connect,NC,unconnected-(V3-IC8-Pad8),True,Legacy QS30-1 factory pin map
+V3,9,K5,passive,K3_5,K3_5,True,Legacy QS30-1 factory pin map
+V3,10,K4,passive,K3_4,K3_4,True,Legacy QS30-1 factory pin map
+V3,11,K3,passive,K3_3,K3_3,True,Legacy QS30-1 factory pin map
+V3,12,K2,passive,K3_2,K3_2,True,Legacy QS30-1 factory pin map
+V3,13,K1,passive,K3_1,K3_1,True,Legacy QS30-1 factory pin map
+R76,1,1,passive,HV170,HV170,True,https://item.szlcsc.com/59791.html
+R76,2,2,passive,ANODE_MID3,ANODE_MID3,True,https://item.szlcsc.com/59791.html
+R77,1,1,passive,ANODE_MID3,ANODE_MID3,True,https://item.szlcsc.com/59791.html
+R77,2,2,passive,ANODE3,ANODE3,True,https://item.szlcsc.com/59791.html
