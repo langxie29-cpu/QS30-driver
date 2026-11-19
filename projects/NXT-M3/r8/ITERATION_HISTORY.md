@@ -9,4 +9,8 @@
 
 前 R8 编排器提交为 `448b791a3ba32559892fb84c2a6749a5a28c1773`，其旧工作流参考 `6be8cbbf4729dacae8aced5981f9d5f32703f27b`，本轮继续复用文件审计、任务依赖、输出预算、证据与恢复逻辑，加入分立 G0/G1/G2 的强制准入。
 
-用户已允许使用 `deepseek-v4-flash`。隔离 `headless` 的配置 dump 和 help 成功，生效 provider 为 `deepseek-official`。实际运行身份、受控 worker host 与计费条件须分别成立。独立 DeepSeek 与 Codex CLI 请求数均为 0，CLI token 为 0，当前会话 token、费用均 UNKNOWN。原 Harness 配置目录链接问题通过隔离启动只读取证；原设置与其他工作树未修改。 [模型取证](evidence/harness_identity.json) · [干运行](evidence/dry_run.json)
+用户已允许使用 `deepseek-v4-flash`。隔离 `headless` 的配置 dump 和 help 成功，生效 provider 为 `deepseek-official`。实际运行身份、受控 worker host 与计费条件须分别成立。上述两波期间 DeepSeek 与独立 Codex CLI 请求数均为 0，CLI token 为 0，当前会话 token、费用均 UNKNOWN。原 Harness 配置目录链接问题通过隔离启动只读取证；原设置与其他工作树未修改。 [模型取证](evidence/harness_identity.json) · [干运行](evidence/dry_run.json)
+
+## 批准后续作
+
+两次真实 DeepSeek 请求合计 3830 tokens。第一份保留输出上限中断证据，两份模型计算均经独立复算纠正。LTspice 波形验证了输入切断后输出电容向故障支路供能的反例。G0 仍为 REWORK。 [续作与资源记录](GATE0_CONTINUATION.md)

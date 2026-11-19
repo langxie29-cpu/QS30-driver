@@ -1,0 +1,17 @@
+* R8 G0 passive energy diagnostic; resistor analog for one instantaneous partial-on point
+* Post-cutoff only. 195 V is assumed residual, not a supply or cold-start test.
+Cout faultbus 0 5.5e-06 IC=195.0
+Rb1 faultbus 0 502980.0
+Rb2 faultbus 0 502980.0
+Ranode faultbus q 19800.0
+Ranalog q 0 19800.0
+Cisolated reservoir 0 5.5e-06 IC=195.0
+Ri1 reservoir 0 502980.0
+Ri2 reservoir 0 502980.0
+.tran 0 4 0 100u uic
+.opt plotwinsize=0
+.meas tran v_at_1ms FIND V(q) AT 1m
+.meas tran fault_60 WHEN V(faultbus)=60 FALL=1
+.meas tran reservoir_60 WHEN V(reservoir)=60 FALL=1
+.meas tran fault_energy INTEG V(q)*V(q)/19800.0 FROM 0 TO 1
+.end

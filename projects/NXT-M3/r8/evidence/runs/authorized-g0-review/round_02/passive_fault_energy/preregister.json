@@ -1,0 +1,24 @@
+{
+  "scope": "Constant-resistance passive analog only; no transistor, cutoff timing or SOA modeled.",
+  "capacitance_F": 5.5e-06,
+  "initial_V": 195.0,
+  "independent_bleed_branch_ohm": 502980.0,
+  "anode_limiter_and_analog_ohm": 19800.0,
+  "requested_end_s": 4,
+  "maxstep_s": 0.0001,
+  "limit_relative_error": 0.003,
+  "expected": {
+    "preinitial": 0.47503769278900365,
+    "fault_60": 0.22178798319257073,
+    "reservoir_60": 1.6303096976647833,
+    "fault_energy": 0.04517049402542264
+  },
+  "engine_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "circuit_sha256": "89ce898c412c4ae23a1c09a69f6d8c9bd8801ab0f911ea2d3528c1ee58706a35",
+  "command": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "D:\\PROJECTS\\dsharness\\QS30-NXT-M3-R8-Discrete\\projects\\NXT-M3\\r8\\evidence\\runs\\authorized-g0-review\\round_02\\passive_fault_energy\\circuit.cir"
+  ],
+  "manufacturing": "ENGINEERING HOLD"
+}

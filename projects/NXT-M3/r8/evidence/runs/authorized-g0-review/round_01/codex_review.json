@@ -1,0 +1,23 @@
+{
+  "decision": "CONTINUE",
+  "next_task": "g0_fault_bounds_challenge",
+  "scope": "Independent evidence review within Gate 0; no formal gpt-6.1-sol identity receipt",
+  "reviewed_evidence_sha256": "7dff63b7e875dd4cb85c2b17f803653acd1d94f3319ef1d410c0c2131f5251a6",
+  "valid_claims": [
+    "VCE(sat) limits apply to the 25 C / 20 mA / 2 mA table point",
+    "No hot ICBO or linear dual-die SOA in supplied primary table",
+    "DC thermal calculation indicates 480mW outside 300mW reference condition"
+  ],
+  "rejected_claims": [
+    "Worker summed Rseries and Rpull-down as if in series. Under the VBE screen, use KCL: IB=Iseries-Ishunt.",
+    "195V/19.8k is a short-circuit current limit, not an open-circuit current",
+    "Steady-state thetaJA does not establish survival time or real transient temperature"
+  ],
+  "recomputed_mA": {
+    "10k_22k": 0.19909090909090907,
+    "3k_10k_worst_resistor_tol": 0.36103610361036104
+  },
+  "model_outcome": "OUTPUT_TOKEN_LIMIT; HTTP transport succeeded; partial response retained",
+  "reason": "Independent fault energy and feeder separation question remains valuable; tighten next prompt and preserve the first result",
+  "manufacturing": "ENGINEERING HOLD"
+}

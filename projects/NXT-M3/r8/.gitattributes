@@ -1,1 +1,7 @@
 * text eol=lf
+evidence/runs/authorized-g0-review/** -text whitespace=cr-at-eol,-blank-at-eof
+evidence/runs/authorized-g0-review/**/*.raw binary
+evidence/runs/authorized-g0-review/**/*.log binary
+harness_review.mjs -text whitespace=cr-at-eol,-blank-at-eof
+prompts/g0_device_evidence_challenge.md -text whitespace=cr-at-eol,-blank-at-eof
+prompts/g0_fault_bounds_challenge.md -text whitespace=cr-at-eol,-blank-at-eof

@@ -20,3 +20,16 @@ python orchestrate.py --live --accept-model-costs --external-decisions --run-id 
 ~~~
 
 原有工作流及 R7 文件保留。恢复检查 Git HEAD、模型身份、控制文件与历史证据散列，断点回到已验证任务。实物高压、采购、PCB、Gerber 和放行均受 ENGINEERING HOLD 约束。
+
+## 批准后的 Gate 0 独立审查
+
+两次已完成的调用使用本机 DeepSeek Harness 适配器的纯文本方案。探针验证模型/路由而不产生计费。有限方案与正式 \`orchestrate.py\` 的通用工具权限分开。历史调用目录已存在，重复执行同一轮会被拒绝。
+
+~~~powershell
+python gate0_worker_review.py --install D:/PROJECTS/DeepSeekHarness
+python verify_offline.py
+python verify_authorized.py
+python g0_fault_energy.py --solver D:/path/to/LTspice.exe --output evidence/diagnostic-reproduction
+~~~
+
+计费说明、调用结果和独立复算见 [续作报告](GATE0_CONTINUATION.md)。

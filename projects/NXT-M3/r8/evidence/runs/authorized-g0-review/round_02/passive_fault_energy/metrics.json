@@ -1,0 +1,41 @@
+{
+  "solver": "LTspice 24.0.12 (local executable)",
+  "exit_code": 0,
+  "raw_span": {
+    "last_s": 4.0,
+    "points": 40018,
+    "complete_records_present": 40018
+  },
+  "raw_sha256": "0b8b3b6909cc1608e74d7eaffb3fd88253696c980317d08a375d932925ca15eb",
+  "maxstep_s": 0.0001,
+  "computed_peak_W": 0.48011363636363635,
+  "energy_initial_reservoir_J": 0.10456875,
+  "fixed_analog_expected": {
+    "preinitial": 0.47503769278900365,
+    "fault_60": 0.22178798319257073,
+    "reservoir_60": 1.6303096976647833,
+    "fault_energy": 0.04517049402542264
+  },
+  "solver_measured": {
+    "fault_60": 0.221788,
+    "reservoir_60": 1.63031,
+    "fault_energy": 0.0451705,
+    "preinitial": 0.4750374283959596
+  },
+  "assertions": {
+    "preinitial": true,
+    "fault_60": true,
+    "reservoir_60": true,
+    "fault_energy": true,
+    "raw_endpoint": true
+  },
+  "status": "LIMITED_PASS",
+  "resistance_only_screen": {
+    "thermal_budget_85C_W": 0.15587529976019185,
+    "minimum_anode_ohm_for_thermal_screen": 60986.25,
+    "nominal_current_at_170V_125Vsustain_mA": 0.7378712414683638,
+    "nominal_current_at_170V_110Vsustain_mA": 0.9838283219578183,
+    "scope": "Ignores additional secondary breakdown and thermal coupling; not an SOA guarantee."
+  },
+  "caveat": "Physical deenergization, detection time, BJT behavior and allowable pulse/JT remain unknown."
+}

@@ -14,7 +14,8 @@
         "Guaranteed low-current saturation over temperature",
         "Hot off leakage and partial conduction SOA",
         "Independent deenergization and package pin qualification"
-      ]
+      ],
+      "new_diagnostic": "Passive fault load path 45.17 mJ after upstream cutoff; R-only screens conflict"
     },
     "G1": {
       "status": "NOT_ENTERED",
@@ -33,11 +34,15 @@
     "worker_model": "deepseek-v4-flash",
     "provider": "deepseek-official",
     "native_profile_identity_matches": true,
-    "worker_calls": 0,
-    "billable_requests": 0,
-    "billing_authorization": false,
+    "worker_calls": 2,
+    "billable_requests": 2,
+    "billing_authorization": true,
     "decision_model": "gpt-6.1-sol",
     "decision_model_actual": "UNVERIFIED",
-    "live_adapter_verified": false
+    "live_adapter_verified": false,
+    "billed_run_total_tokens": 3830,
+    "actual_cost": "UNKNOWN",
+    "text_only_transport_verified": true,
+    "independent_decision_approval": "Current session engineering review; requested model identity not independently verified"
   }
 }

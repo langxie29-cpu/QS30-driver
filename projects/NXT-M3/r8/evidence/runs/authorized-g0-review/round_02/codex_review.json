@@ -1,0 +1,28 @@
+{
+  "decision": "HOLD",
+  "G0": "REWORK",
+  "scope": "Current Codex session independently audited; gpt-6.1-sol execution unverified",
+  "reviewed_evidence_sha256": "b4678d0aff3fd3477286fbcc022267bb2dab24031bf19da44df3c0ec02add4b8",
+  "solver_metrics_sha256": "be70bcacb155909c00f244afea294e9831c7f8436d962d4b3c715650d27cb4f7",
+  "accepted_claims": [
+    "Stored capacitor may feed a fault after converter cutoff.",
+    "A global OCP threshold may miss an abnormal branch below normal whole-module load."
+  ],
+  "rejected_claims": [
+    "Numerical base current range does not follow the stated KCL.",
+    "Anode resistor calculation incorrectly uses whole-rail power and gives 185.5k; correct fault peak is V^2/(4R), while normal tube current uses the voltage remaining after sustain.",
+    "Passive bleeder discharge evidence alone does not prove independent anode isolation."
+  ],
+  "independent": {
+    "base_current_mA_range": [
+      0.36103610361036104,
+      0.3723705703903723
+    ],
+    "base_unallocated_injection_uA_screen": 4.702970297029701,
+    "thermal_Rmin_85C_ohm": 60986.25,
+    "nominal_Rmax_1p5mA_170V_125V_sustain_ohm": 30000.0,
+    "continued_reservoir_branch_energy_mJ_0_to_1s": 45.170500000000004
+  },
+  "next_task": null,
+  "manufacturing": "ENGINEERING HOLD"
+}

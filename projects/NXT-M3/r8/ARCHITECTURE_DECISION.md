@@ -2,7 +2,7 @@
 
 ## RECOMMENDED ARCHITECTURE
 
-保留三块 STM32C011F4P6 自主三管板、每板独立高压切断和 RS-485 模块网络。5 V 外部输入 + 3.3 V 逻辑 + 分立阴极开关继续列为研究目标。下一项设计研究候选是四路 MMDTA42-7-F、SN74LVC595APWR 与 3.0 kΩ 串阻/10 kΩ 下拉。G0 当前 **REWORK**，正式工作流 **HOLD**。 [Gate](GATE_STATUS.json)
+保留三块 STM32C011F4P6 自主三管板、每板独立高压切断和 RS-485 模块网络。5 V 外部输入 + 3.3 V 逻辑 + 分立阴极开关继续列为研究目标。下一项设计研究候选是四路 MMDTA42-7-F、SN74LVC595APWR 与 3.0 kΩ 串阻/10 kΩ 下拉。G0 当前 **REWORK**，正式工作流 **HOLD**。 [Gate](GATE_STATUS.json) · [批准调用后的续作](GATE0_CONTINUATION.md)
 
 ## ACCEPTED / REJECTED COMPONENTS
 
