@@ -33,3 +33,17 @@ python g0_fault_energy.py --solver D:/path/to/LTspice.exe --output evidence/diag
 ~~~
 
 计费说明、调用结果和独立复算见 [续作报告](GATE0_CONTINUATION.md)。
+
+
+## R8 G0D
+
+从本目录运行。下列核验从已有原始数据重算 23 个积分窗口，检查冻结输入、文件散列、两次决策与零计费调度。重放 LTspice 时使用已有本地求解器和不存在的新证据目录，避免修改已归档数据。
+
+~~~powershell
+python g0d_verify.py --dry-run
+python gate0_worker_review.py --install D:/PROJECTS/DeepSeekHarness
+python g0d_verify.py
+python g0d_residual_energy.py --solver D:/path/to/LTspice.exe --output evidence/g0d-local-replay
+~~~
+
+数据入口为 [冻结参数](g0d_preregister.json)、[本轮决策与资源台账](evidence/runs/g0d-offline/run_summary.json) 和 [SHA-256](evidence/runs/g0d-offline/sha256.json)。诊断模型从 195 V 初态研究切断后放电。复现用 LTspice 24.0.12，旧数据的原始 SHA 在轮次目录保留。新运行的日志时间、路径及波形字节可因求解器与环境变化。比较标准按冻结容差判断。资料引用与价格快照见 [来源清单](evidence/runs/g0d-offline/sources.json)。本次 G0D 没有授权硬件、采购、制板或新增计费。

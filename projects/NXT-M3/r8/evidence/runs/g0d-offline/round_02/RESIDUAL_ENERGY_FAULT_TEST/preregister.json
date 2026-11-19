@@ -1,0 +1,147 @@
+{
+  "input_config_sha256": "4dae716dc15ce45574149dd1cb1f755cbb87d30cb5a2eb4ab2cf1fcb3c64d026",
+  "git_head": "fd8a4dd18b2dfeee72109e13b8d6189c843f4148",
+  "native_solver_path": "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+  "native_solver_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "command": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "D:\\PROJECTS\\dsharness\\QS30-NXT-M3-R8-Discrete\\projects\\NXT-M3\\r8\\evidence\\runs\\g0d-offline\\round_02\\RESIDUAL_ENERGY_FAULT_TEST\\circuit.cir"
+  ],
+  "generated_deck_sha256": "9d0bb5a62c7aac5992342005ad519936f9241c3cc732ed580366b7b1bfd6bc16",
+  "cfg": {
+    "baseline_sha": "fd8a4dd18b2dfeee72109e13b8d6189c843f4148",
+    "branch": "nxt/nxt-m3-5v-discrete-cathode-r8",
+    "manufacturing": "ENGINEERING HOLD",
+    "limits": {
+      "max_decision_rounds": 2,
+      "max_worker_calls": 4,
+      "billable_calls_authorized_for_g0d": false,
+      "solver_wall_s": 35,
+      "reported_delay_s": 0,
+      "endpoint_s": 8,
+      "max_step_s": 0.0002,
+      "balance_abs_mJ": 0.02,
+      "closed_form_rel_error": 0.005
+    },
+    "criteria": {
+      "allowed_display": "transient residual flash or abnormal display that self extinguishes in safe shutdown",
+      "review_voltage_V": 195,
+      "residual_comparison_V": 60,
+      "ambient_reference_screen_C": 85,
+      "required_fault_energy": "evidence-based limit at actual temperature and pulse waveform",
+      "prior_power_screens": "R6 POWER_REQUIREMENTS.md remains applicable for any future P1 qualification",
+      "release": "requires demonstrated source removal, no uncontrolled restart, protected touch and single-fault thermal/SOA evidence"
+    },
+    "params": {
+      "baseline_max_cap_F": 5.5e-06,
+      "p1_candidate_max_cap_F": 3.63e-06,
+      "initial_V": 195,
+      "min_anode_ohm": 19800,
+      "nominal_bleed_resistor_ohm": 249000,
+      "bleed_branch_high_ohm": 502980,
+      "bleed_branch_low_ohm": 493020,
+      "passive_feed_ref_V": 5.5,
+      "pulse_ideal_plasma_V": 100
+    },
+    "assumptions": [
+      "Isolated cases start after ideal actual cutoff, with no converter, downstream input capacitance, or external supply. Rail and initial C are specified diagnostic values.",
+      "All R analogs are passive and one point only; arc100 uses an ideal constant-voltage already-lit load, no tube ignition, extinction hysteresis or real curve.",
+      "P2 ideal open is a reference at t=0, no device or delay validated.",
+      "60 V is a comparison point, actual touch and re-ARM limits need product requirements.",
+      "Continuing feed case is an ideal 5.5 V one-way source with 10 ohm path after PWM stops; no claim of fault converter equivalence.",
+      "The 85 C setting is reference ambient for arithmetic, not a measured junction or a qualification point."
+    ],
+    "cases": [
+      {
+        "id": "f1off",
+        "role": "F1 no sink / ideal P2 after branch opening",
+        "branches": 2,
+        "q_ohm": null,
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "f3half",
+        "role": "F3 worst initial power at bypass load line, P0",
+        "branches": 2,
+        "q_ohm": "match",
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "f3env",
+        "role": "F3 energy envelope maximizing trajectory with two bleeders, P0",
+        "branches": 2,
+        "q_ohm": "energy",
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "f3arc",
+        "role": "F3 static plasma drop sensitivity, P0",
+        "branches": 2,
+        "q_ohm": "match",
+        "tube_V": 100,
+        "cap": "P0"
+      },
+      {
+        "id": "f4arc",
+        "role": "F4 almost ideal C-E short, already-lit constant plasma proxy",
+        "branches": 2,
+        "q_ohm": 0.001,
+        "tube_V": 100,
+        "cap": "P0"
+      },
+      {
+        "id": "f4short",
+        "role": "F4 C-E short plus independently bypassed tube, stacked-fault limit",
+        "branches": 2,
+        "q_ohm": 0.001,
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "f5feed",
+        "role": "F5 ideal one-way 5.5 V feed after PWM stops",
+        "branches": 2,
+        "q_ohm": 0.001,
+        "tube_V": 0,
+        "feed": true,
+        "cap": "P0"
+      },
+      {
+        "id": "f6one",
+        "role": "F6 one bleed branch open, no credit for a tube path",
+        "branches": 1,
+        "q_ohm": null,
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "f6env",
+        "role": "Sensitivity F3 plus independent bleed failure or common cause, one bleeder",
+        "branches": 1,
+        "q_ohm": "energy",
+        "tube_V": 0,
+        "cap": "P0"
+      },
+      {
+        "id": "p1env",
+        "role": "P1 3.3uF +/-10% cap maximum, energy envelope",
+        "branches": 2,
+        "q_ohm": "energy",
+        "tube_V": 0,
+        "cap": "P1"
+      },
+      {
+        "id": "p1one",
+        "role": "P1 one bleed branch open, no credit for tube path",
+        "branches": 1,
+        "q_ohm": null,
+        "tube_V": 0,
+        "cap": "P1"
+      }
+    ]
+  }
+}

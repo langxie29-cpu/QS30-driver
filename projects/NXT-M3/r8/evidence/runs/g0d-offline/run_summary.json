@@ -1,0 +1,126 @@
+{
+  "reviewed_at_utc": "2026-11-19T15:30:33.161338+00:00",
+  "baseline": "fd8a4dd18b2dfeee72109e13b8d6189c843f4148",
+  "branch": "nxt/nxt-m3-5v-discrete-cathode-r8",
+  "clean_worktree_verified_at_start": true,
+  "remote": {
+    "name": "origin",
+    "query": [
+      "git",
+      "-c",
+      "http.sslBackend=openssl",
+      "ls-remote",
+      "origin",
+      "refs/heads/nxt/nxt-m3-5v-discrete-cathode-r8",
+      "refs/heads/nxt/nxt-m3-power-cost-optimization-r7"
+    ],
+    "observed_refs": {
+      "refs/heads/nxt/nxt-m3-power-cost-optimization-r7": "bfaa22d1080544b754c8809873c136ee7247688a"
+    },
+    "r8_ref_visible": false,
+    "repeat_query_diagnostic": "A default schannel retry failed TLS handshake; one invocation with process-local OpenSSL backend returned the same sole R7 ref.",
+    "push": "not authorized in G0D"
+  },
+  "input_config_sha256": "4dae716dc15ce45574149dd1cb1f755cbb87d30cb5a2eb4ab2cf1fcb3c64d026",
+  "dry_run": {
+    "status": "DRY_RUN",
+    "baseline": "fd8a4dd18b2dfeee72109e13b8d6189c843f4148",
+    "entry_task_ids": [
+      "g0d_archive_qualification"
+    ],
+    "task_count": 2,
+    "max_rounds": 2,
+    "max_worker_calls": 4,
+    "worker": {
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "profile": "headless"
+    },
+    "decision": {
+      "model": "gpt-6.1-sol",
+      "provider": "openai",
+      "mode": "external-decisions"
+    },
+    "model_requests": 0,
+    "manufacturing": "ENGINEERING HOLD",
+    "dispatch": "offline host only",
+    "tasks": {
+      "g0d_archive_qualification": {
+        "kind": "research",
+        "stage": 0,
+        "depends": []
+      },
+      "residual_energy_fault_test": {
+        "kind": "spice",
+        "stage": 0,
+        "depends": [
+          "g0d_archive_qualification"
+        ]
+      }
+    },
+    "authorization": "not confirmed for G0D"
+  },
+  "decisions": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_provider": "openai",
+    "current_session": true,
+    "exact_identity": "UNVERIFIED",
+    "completed": 2
+  },
+  "worker_read_only_probe": {
+    "command": [
+      "python",
+      "gate0_worker_review.py",
+      "--install",
+      "D:/PROJECTS/DeepSeekHarness"
+    ],
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "transport": "installed DeepSeek Harness adapter",
+    "credential_present": true,
+    "provider_requests": 0,
+    "tools": "none",
+    "max_requests_per_call": 1
+  },
+  "worker_requests": 0,
+  "worker_failed_requests": 0,
+  "worker_tokens": 0,
+  "g0d_accounted_amount": "COST_UNKNOWN",
+  "prior_authorized_run_separate": {
+    "worker_calls": 2,
+    "total_tokens": 3830,
+    "actual_cost": "UNKNOWN"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "task": "g0d_archive_qualification",
+      "mode": "offline independent source and original waveform review",
+      "decision": "CONTINUE",
+      "evidence": "round_01/audit.json"
+    },
+    {
+      "round": 2,
+      "task": "residual_energy_fault_test",
+      "mode": "offline LTspice 24.0.12",
+      "decision": "HOLD",
+      "batch_count": 1,
+      "passive_cases": 11,
+      "end_s": 8.0,
+      "observed_max_balance_error_mJ": 0.004062384669809016,
+      "removed_uncertainty": "Peak power and max cumulative energy differ; guaranteed two/one bleed passive bounds and ideal F5 feed are quantified.",
+      "evidence": "round_02/RESIDUAL_ENERGY_FAULT_TEST/metrics.json"
+    }
+  ],
+  "verification": {
+    "legacy_unittest": "21 PASS",
+    "legacy_verify_offline": "PASS",
+    "legacy_verify_authorized": "PASS",
+    "csv_round_trip": "@oai/artifact-tool 2.8.158 CSV imports: 23x23, 9x7, 13x11 data cells"
+  },
+  "manufacturing": "ENGINEERING HOLD",
+  "gate_0": "REWORK",
+  "g0d": "P0_REWORK"
+}

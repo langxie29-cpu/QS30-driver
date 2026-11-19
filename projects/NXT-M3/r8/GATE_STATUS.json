@@ -17,6 +17,14 @@
       ],
       "new_diagnostic": "Passive fault load path 45.17 mJ after upstream cutoff; R-only screens conflict"
     },
+    "G0D": {
+      "status": "P0_REWORK",
+      "scheduler_disposition": "HOLD",
+      "limited_evidence": "Passive residual-energy ledger only",
+      "allow_self_extinguishing_display_after_shutdown": true,
+      "source": "G0D_DECISION.md",
+      "evidence": "evidence/runs/g0d-offline/run_summary.json"
+    },
     "G1": {
       "status": "NOT_ENTERED",
       "reason": "G0 requires ACCEPT_CANDIDATE"

@@ -1,0 +1,13 @@
+{
+  "decision": "CONTINUE",
+  "rationale": "Independent integration of the archived waveform resolves the 45.17 mJ energy path, but cannot determine the largest possible sink energy. A single bounded passive batch can distinguish the peak-power and cumulative-energy cases and test reservoir, bleeder and feed sensitivity.",
+  "next_task_ids": [
+    "residual_energy_fault_test"
+  ],
+  "issues": [
+    "Existing fixed-resistor waveform uses no real transistor, plasma or continuous input."
+  ],
+  "controlling_assumptions": [
+    "Frozen 5.5 uF, 195 V, intact 19.8 kOhm anode path and separately enumerated bleed cases."
+  ]
+}

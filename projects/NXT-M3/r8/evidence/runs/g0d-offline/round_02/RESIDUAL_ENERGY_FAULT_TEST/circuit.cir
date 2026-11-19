@@ -1,0 +1,50 @@
+* RESIDUAL_ENERGY_FAULT_TEST: passive cases after ideal removal unless F5
+* Fixed resistor and ideal already-lit constant drop. No MMDTA42 junction or SOA model.
+Cf1off f1off 0 5.5e-06 IC=195
+Rbleedf1off1 f1off 0 502980
+Rbleedf1off2 f1off 0 502980
+Cf3half f3half 0 5.5e-06 IC=195
+Rbleedf3half1 f3half 0 502980
+Rbleedf3half2 f3half 0 502980
+Raf3half f3half qf3half 19800
+Rqf3half qf3half 0 19800
+Cf3env f3env 0 5.5e-06 IC=195
+Rbleedf3env1 f3env 0 502980
+Rbleedf3env2 f3env 0 502980
+Raf3env f3env qf3env 19800
+Rqf3env qf3env 0 73290.80433
+Cf3arc f3arc 0 5.5e-06 IC=195
+Rbleedf3arc1 f3arc 0 502980
+Rbleedf3arc2 f3arc 0 502980
+Bloadf3arc f3arc 0 I=max((V(f3arc)-100)/39600,0)
+Cf4arc f4arc 0 5.5e-06 IC=195
+Rbleedf4arc1 f4arc 0 502980
+Rbleedf4arc2 f4arc 0 502980
+Bloadf4arc f4arc 0 I=max((V(f4arc)-100)/19800.001,0)
+Cf4short f4short 0 5.5e-06 IC=195
+Rbleedf4short1 f4short 0 502980
+Rbleedf4short2 f4short 0 502980
+Raf4short f4short qf4short 19800
+Rqf4short qf4short 0 0.001
+Cf5feed f5feed 0 5.5e-06 IC=195
+Rbleedf5feed1 f5feed 0 502980
+Rbleedf5feed2 f5feed 0 502980
+Raf5feed f5feed qf5feed 19800
+Rqf5feed qf5feed 0 0.001
+Bfeedf5feed 0 f5feed I=max((5.5-V(f5feed))/10,0)
+Cf6one f6one 0 5.5e-06 IC=195
+Rbleedf6one1 f6one 0 502980
+Cf6env f6env 0 5.5e-06 IC=195
+Rbleedf6env1 f6env 0 502980
+Raf6env f6env qf6env 19800
+Rqf6env qf6env 0 101740.0806
+Cp1env p1env 0 3.63e-06 IC=195
+Rbleedp1env1 p1env 0 502980
+Rbleedp1env2 p1env 0 502980
+Rap1env p1env qp1env 19800
+Rqp1env qp1env 0 73290.80433
+Cp1one p1one 0 3.63e-06 IC=195
+Rbleedp1one1 p1one 0 502980
+.tran 0 8 0 0.0002 uic
+.opt plotwinsize=0
+.end
