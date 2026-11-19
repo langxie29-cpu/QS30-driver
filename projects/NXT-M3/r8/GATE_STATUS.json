@@ -1,0 +1,43 @@
+{
+  "architecture": "5V input, three autonomous STM32C011 modules, 3.3V shift logic and discrete cathode switches under study",
+  "manufacturing": "ENGINEERING HOLD",
+  "scheduler_disposition": "HOLD",
+  "gates": {
+    "G0": {
+      "status": "REWORK",
+      "G0A": "REWORK",
+      "G0B": "REWORK",
+      "G0C": "REVIEWED",
+      "original_base_10k": "REJECTED_BY_ARITHMETIC_SCREEN",
+      "rework": "SN74LVC595APWR + MMDTA42-7-F + 3.0k/10k 1% analytical candidate",
+      "core_blockers": [
+        "Guaranteed low-current saturation over temperature",
+        "Hot off leakage and partial conduction SOA",
+        "Independent deenergization and package pin qualification"
+      ]
+    },
+    "G1": {
+      "status": "NOT_ENTERED",
+      "reason": "G0 requires ACCEPT_CANDIDATE"
+    },
+    "G2": {
+      "status": "NOT_ENTERED",
+      "reason": "G1 requires LIMITED_PASS"
+    },
+    "G3": {
+      "status": "NOT_ENTERED",
+      "reason": "Full design costing and 5V power cell await Gate 2, initial quote and power bounds are diagnostic"
+    }
+  },
+  "live": {
+    "worker_model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "native_profile_identity_matches": true,
+    "worker_calls": 0,
+    "billable_requests": 0,
+    "billing_authorization": false,
+    "decision_model": "gpt-6.1-sol",
+    "decision_model_actual": "UNVERIFIED",
+    "live_adapter_verified": false
+  }
+}

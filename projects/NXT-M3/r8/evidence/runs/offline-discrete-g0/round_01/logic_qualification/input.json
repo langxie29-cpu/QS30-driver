@@ -1,0 +1,33 @@
+{
+  "task_id": "logic_qualification",
+  "mode": "offline_independent_research",
+  "baseline_sha": "bfaa22d1080544b754c8809873c136ee7247688a",
+  "sources": [
+    {
+      "file": "hc.pdf",
+      "source": "https://www.ti.com/lit/ds/symlink/sn74hc595.pdf",
+      "version": "SCLS041J",
+      "location": "sections 6.3, 6.5, 6.6, 8.4",
+      "sha256": "5a6a5aeecc79a2d4bf4e15aae681e0f99cb13b54d6524be253a6844c898eeb0d",
+      "bytes": 2710710,
+      "archived_path": null
+    },
+    {
+      "file": "stm.pdf",
+      "source": "https://www.st.com/resource/en/datasheet/stm32c011f4.pdf",
+      "version": "DS13866 Rev 5",
+      "location": "manufacturer web page PDF Table 50; local HTTP download unavailable",
+      "sha256": "UNKNOWN",
+      "bytes": null,
+      "archived_path": null
+    }
+  ],
+  "commands": [
+    "primary document inspection; pdftoppm read-only render where visual evidence applies"
+  ],
+  "configuration": {
+    "config.json": "bd6e8a25e4925ac95dbede4f2be13fba804bb46e58c82d5e1f0e8d36c15d6dcb",
+    "tasks.json": "31409a9b32cf183dded9fdfb4703077468918821303296cb7de65f7f54b7f646",
+    "acceptance.json": "da56e94d27edeb25db0a87803139fa40041b935851ba413d85b2c36a52b512e8"
+  }
+}

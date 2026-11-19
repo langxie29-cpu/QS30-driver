@@ -1,0 +1,28 @@
+{
+  "schema": "nxt.m3.r8.discrete.v1",
+  "repository": "https://github.com/langxie29-cpu/QS30-driver.git",
+  "baseline_branch": "nxt/nxt-m3-power-cost-optimization-r7",
+  "baseline_sha": "bfaa22d1080544b754c8809873c136ee7247688a",
+  "branch": "nxt/nxt-m3-5v-discrete-cathode-r8",
+  "legacy_sha": "6be8cbbf4729dacae8aced5981f9d5f32703f27b",
+  "reused_r8_sha": "448b791a3ba32559892fb84c2a6749a5a28c1773",
+  "manufacturing": "ENGINEERING HOLD",
+  "hardware_high_voltage": false,
+  "decision_model": "gpt-6.1-sol",
+  "decision_provider": "openai",
+  "worker_model": "deepseek-v4-flash",
+  "worker_provider": "deepseek-official",
+  "worker_profile": "headless",
+  "max_rounds": 4,
+  "max_worker_calls": 12,
+  "worker_timeout_s": 900,
+  "decision_timeout_s": 900,
+  "max_output_bytes": 2000000,
+  "max_evidence_bytes": 536870912,
+  "entry_task_ids": [
+    "bjt_qualification",
+    "logic_qualification",
+    "reference_v3_review",
+    "base_drive_bound"
+  ]
+}

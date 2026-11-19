@@ -1,0 +1,54 @@
+{
+  "status": "rework_sensitivity_same_acceptance",
+  "goal": "G0 evidence before formal EDA or new closed-loop simulation",
+  "nominal_logic_V": 3.3,
+  "logic_high_sensitivity_V": [
+    2.4,
+    2.6,
+    2.8,
+    3,
+    3.3
+  ],
+  "vbe_sensitivity_V": [
+    0.65,
+    0.9,
+    1
+  ],
+  "collector_test_mA": [
+    1.5,
+    2.25,
+    3,
+    3.3
+  ],
+  "forced_beta_screen": 10,
+  "base_series_ohm": [
+    4700,
+    3900,
+    3300,
+    3000
+  ],
+  "pulldown_ohm": [
+    10000,
+    15000,
+    22000
+  ],
+  "tolerance_fraction": 0.01,
+  "off_base_voltage_screen_V": 0.3,
+  "logic_output_leak_uA": [
+    5,
+    10,
+    15
+  ],
+  "estimated_collector_base_leak_uA": [
+    0.1,
+    2,
+    5,
+    10
+  ],
+  "normal_hv_V": 170,
+  "fault_hv_V": 195,
+  "anode_limit_nominal_ohm": 20000,
+  "anode_tolerance_fraction": 0.01,
+  "comment": "VBE and leakage sweeps are engineering assumptions beyond exact datasheet test points. They do not confer device qualification.",
+  "revision_reason": "R1 10k test failed. Bound both continuous base drive and off leakage using LVC loaded VOH."
+}

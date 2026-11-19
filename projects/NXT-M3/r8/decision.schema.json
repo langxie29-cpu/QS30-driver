@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "rationale",
+    "next_task_ids",
+    "issues",
+    "controlling_assumptions"
+  ],
+  "properties": {
+    "decision": {
+      "enum": [
+        "CONTINUE",
+        "HOLD",
+        "STOP"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_task_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]{0,79}$"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "controlling_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "decision": {
+            "const": "CONTINUE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "next_task_ids": {
+            "minItems": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "next_task_ids": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

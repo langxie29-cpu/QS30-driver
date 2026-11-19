@@ -1,0 +1,25 @@
+architecture,function,manufacturer,exact_mpn_or_value,per_board,per_9_digit_system,qualification,source_or_scope
+ALL,local controller,ST,STM32C011F4P6,1,3,RETAINED,R7 MCU and software scope
+ALL,local RS-485,TI,THVD1410DR,1,3,RETAINED,R7 low voltage bus; backdrive HOLD
+ALL,tube,Nanchang,QS30-1,3,9,RETAINED,owned stock/footprint mechanics HOLD
+ALL,anode limiter,Yageo,MFR02SF1002A10,6,18,R7_REFERENCE,2×10k per tube; retain
+ALL,dual independent bleeder resistors,Vishay,CRCW1206249KFKEA,4,12,R7_REFERENCE,2 series per branch times 2; keep function
+ALL,independent cutoff and residual-permit chain,TBD,UNKNOWN,UNKNOWN,UNKNOWN,HOLD,retain three local chains; exact BOM TBD
+A,integrated HV sink,Microchip,HV5622PG-G,1,3,REFERENCE,R7 native BOM
+A,12V regulated auxiliary,Traco,TMR 1-1212,1,3,REFERENCE,R7 native BOM
+A,boost controller,ADI,LT3757AEMSE#PBF,1,3,REFERENCE,R7 native BOM
+A,MOS gate driver,TI,UCC27511DBVR,1,3,REFERENCE,R7 native BOM
+B,integrated HV sink,Microchip,HV5524K7-G,1,3,COMPARISON_ONLY,"4.5–5.5 V bias, no small-lot public in-stock price"
+B,3.3V to 5V logic interface,TI,SN74LXC8T245 candidate,1,3,HOLD,voltage compatibility and power-off to qualify
+B,5V bias conditioning,TBD,UNKNOWN,UNKNOWN,UNKNOWN,HOLD,protected-rail lower bound
+C,shift and store register,TI,SN74HC595PWR,4,12,REWORK,3.3V loaded VOH and power sequencing
+C,dual high-voltage NPN,Diodes,MMDTA42-7-F,15,45,CANDIDATE_HOLD,DS30438
+C,series base resistor,Yageo,RC0603FR-0710KL,30,90,10K_SCREEN_REJECTED,initial quantity basis only
+C,base pull-down,Yageo,RC0603FR-0722KL,30,90,22K_SCREEN_REWORK,initial quantity basis only
+C_REWORK,shift and store register,TI,SN74LVC595APWR,4,12,RESEARCH_CANDIDATE,SCASE93A
+C_REWORK,dual high-voltage NPN,Diodes,MMDTA42-7-F,15,45,CANDIDATE_HOLD,same package
+C_REWORK,series base resistor,Yageo,RC0603FR-073KL,30,90,3K_SCREEN_ONLY,±1%
+C_REWORK,base pull-down,Yageo,RC0603FR-0710KL,30,90,10K_SCREEN_ONLY,±1%
+C / C_REWORK,local decoupling,TBD,100nF X7R candidate,4,12,RESEARCH_CANDIDATE,one per register; bulk decoupling additional
+C / C_REWORK,OE supervisor and independent permission,TBD,UNKNOWN,UNKNOWN,UNKNOWN,HOLD,true fail-safe topology remains open
+B / C,protected 5V HV power cell,TBD,UNKNOWN,1,3,NOT_ENTERED,same three modules; G2 dependency

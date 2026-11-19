@@ -1,0 +1,9 @@
+# Codex decision gate
+
+The controller is gpt-6.1-sol using OpenAI, authenticated outside the worker. The default is external-decisions so a running Codex session does not recurse. Read original manufacturer tables, circuit, committed reference and raw traces independently. A worker or file-audit claim alone never completes a dependency. Use the frozen acceptance.json screens and retain the 90 independent static cathodes, nine anode limits, three modules and independent protection. Confirm exact binding of analysis scope and audit SHA-256 before accepting a dependency.
+
+Return JSON matching decision.schema.json, with CONTINUE, HOLD, or STOP. Include engineering reason, next_task_ids, issues and controlling_assumptions. Select unscheduled tasks whose dependencies were independently approved. Use a distinct preregistered task ID and directory for a changed-parameter retest. The external review record identifies model/provider, exact approved audit digests and the independent evidence reviewed.
+
+Rank candidates only within documented evidence. Keep unsupported electrical claims unknown, and follow permanent ENGINEERING HOLD for manufacture, purchase and energized tests. Use STOP when budget or a terminal condition prevents further defensible work, and HOLD when a recoverable dependency blocks the next gate.
+
+R8 retains three autonomous STM32C011F4P6 and RS-485 modules. Gate 0 requires independent BJT, register, V3 schematic and base-current evidence before ACCEPT_CANDIDATE. Report G0 as ACCEPT_CANDIDATE, REWORK, REJECT, or INCONCLUSIVE. Gate 1 four-channel and Gate 2 mapped instrument-free native candidates each require at least LIMITED_PASS. Do not route power-design or 30-channel work around their predecessor. A repeated identical numeric solver failure triggers independent review before any changed preregistration. Every review names the uncertainty reduced and the still-open hardware fault coverage.

@@ -1,0 +1,60 @@
+{
+  "task_id": "reference_v3_review",
+  "mode": "offline_independent_research",
+  "baseline_sha": "bfaa22d1080544b754c8809873c136ee7247688a",
+  "sources": [
+    {
+      "file": "v3.pdf",
+      "source": "https://raw.githubusercontent.com/marcinsaj/Nixie-Tube-Driver-V3/fc8950f4666dad26a65288d4631fe2a6298ec930/datasheet/Schematic-Nixie-Tubes-Controller-40.pdf",
+      "version": "fc8950f4666dad26a65288d4631fe2a6298ec930",
+      "location": "page 1 schematic",
+      "sha256": "0903e66454826b5a45ca9185f7768a4685a1cd765f0146789d6c399fa363132d",
+      "bytes": 40054,
+      "archived_path": null
+    },
+    {
+      "file": "v3.png",
+      "source": "https://raw.githubusercontent.com/marcinsaj/Nixie-Tube-Driver-V3/fc8950f4666dad26a65288d4631fe2a6298ec930/datasheet/Nixie-Tubes-Controller-40-Schematic.png",
+      "version": "fc8950f4666dad26a65288d4631fe2a6298ec930",
+      "location": "author image cross-check",
+      "sha256": "f8f67f0458fa26c27a4edd564f5e510179ce633991d7fff29a72d8ae67f0df72",
+      "bytes": 155045,
+      "archived_path": null
+    },
+    {
+      "file": "v3-example.ino",
+      "source": "https://raw.githubusercontent.com/marcinsaj/Nixie-Tube-Driver-V3/fc8950f4666dad26a65288d4631fe2a6298ec930/example/Nixie-Tube-Driver-V3-Example-3.ino",
+      "version": "fc8950f4666dad26a65288d4631fe2a6298ec930",
+      "location": "nixieDisplay() clock and latch frame",
+      "sha256": "e0d3b0e03c46c767f925ab7be36634f132809a5484406695efc8119c175710b9",
+      "bytes": 6027,
+      "archived_path": null
+    },
+    {
+      "file": "v3-bottom.jpg",
+      "source": "https://raw.githubusercontent.com/marcinsaj/Nixie-Tube-Driver-V3/fc8950f4666dad26a65288d4631fe2a6298ec930/extras/nixie-tubes-controller-40-outputs-project-cover-bottom-project.jpg",
+      "version": "fc8950f4666dad26a65288d4631fe2a6298ec930",
+      "location": "author PCB photographed underside or mechanical outline",
+      "sha256": "377127b64bea2b230091e4735f18cfeadd70a02c494d51cfe4249c0f18caa5e9",
+      "bytes": 61267,
+      "archived_path": null
+    },
+    {
+      "file": "v3-mechanical.png",
+      "source": "https://raw.githubusercontent.com/marcinsaj/Nixie-Tube-Driver-V3/fc8950f4666dad26a65288d4631fe2a6298ec930/extras/nixie-tube-controller-40-dimensions-pinout.png",
+      "version": "fc8950f4666dad26a65288d4631fe2a6298ec930",
+      "location": "author PCB photographed underside or mechanical outline",
+      "sha256": "5e55ca7878cfbe45cd132af401b27a69698a4ca14dc1402075c594c088f22bd0",
+      "bytes": 381291,
+      "archived_path": null
+    }
+  ],
+  "commands": [
+    "primary document inspection; pdftoppm read-only render where visual evidence applies"
+  ],
+  "configuration": {
+    "config.json": "bd6e8a25e4925ac95dbede4f2be13fba804bb46e58c82d5e1f0e8d36c15d6dcb",
+    "tasks.json": "31409a9b32cf183dded9fdfb4703077468918821303296cb7de65f7f54b7f646",
+    "acceptance.json": "da56e94d27edeb25db0a87803139fa40041b935851ba413d85b2c36a52b512e8"
+  }
+}

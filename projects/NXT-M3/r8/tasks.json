@@ -1,0 +1,189 @@
+[
+  {
+    "id": "bjt_qualification",
+    "stage": 0,
+    "kind": "analysis",
+    "depends": [],
+    "description": "Extract exact Diodes MMDTA42-7-F device conditions, package pin numbering, hot leakage and SOA gaps.",
+    "acceptance": [
+      "Extract exact Diodes MMDTA42-7-F device conditions, package pin numbering, hot leakage and SOA gaps.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "logic_qualification",
+    "stage": 0,
+    "kind": "analysis",
+    "depends": [],
+    "description": "Audit exact SN74HC595PWR and STM32C011 at 3.3 V, including /OE and partial supply.",
+    "acceptance": [
+      "Audit exact SN74HC595PWR and STM32C011 at 3.3 V, including /OE and partial supply.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "reference_v3_review",
+    "stage": 0,
+    "kind": "analysis",
+    "depends": [],
+    "description": "Review pinned Marcin Saj V3 schematic, Arduino frame and public board images.",
+    "acceptance": [
+      "Review pinned Marcin Saj V3 schematic, Arduino frame and public board images.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "base_drive_bound",
+    "stage": 0,
+    "kind": "analysis",
+    "depends": [],
+    "description": "Recompute 10 kΩ base drive, worst-case VOH/VBE, bias-down sensitivity and partial-conduction fault.",
+    "acceptance": [
+      "Recompute 10 kΩ base drive, worst-case VOH/VBE, bias-down sensitivity and partial-conduction fault.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "four_channel_fixture",
+    "stage": 1,
+    "kind": "analysis",
+    "depends": [
+      "bjt_qualification",
+      "logic_qualification",
+      "reference_v3_review",
+      "base_drive_bound"
+    ],
+    "description": "Prepare four-channel non-production KiCad fixture and verifiable four-output connections, only after G0 acceptance.",
+    "acceptance": [
+      "Prepare four-channel non-production KiCad fixture and verifiable four-output connections, only after G0 acceptance.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "four_channel_fault_validation",
+    "stage": 1,
+    "kind": "analysis",
+    "depends": [
+      "bjt_qualification",
+      "logic_qualification",
+      "reference_v3_review",
+      "base_drive_bound"
+    ],
+    "description": "Audit the frozen four-channel interface and validate the ten logic/rail/fault states using manufacturer evidence.",
+    "acceptance": [
+      "Audit the frozen four-channel interface and validate the ten logic/rail/fault states using manufacturer evidence.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "thirty_channel_eda",
+    "stage": 2,
+    "kind": "analysis",
+    "depends": [
+      "four_channel_fixture",
+      "four_channel_fault_validation"
+    ],
+    "description": "Audit Codex-approved native 30 route exercise: one ERC export, pin map, identity, and two unused outputs.",
+    "acceptance": [
+      "Audit Codex-approved native 30 route exercise: one ERC export, pin map, identity, and two unused outputs.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "cost_comparison",
+    "stage": 2,
+    "kind": "analysis",
+    "depends": [
+      "four_channel_fixture",
+      "four_channel_fault_validation"
+    ],
+    "description": "Compare exact parts, total driver, PCB/SMT, full system and development costs, in lots of 1/3/5/10.",
+    "acceptance": [
+      "Compare exact parts, total driver, PCB/SMT, full system and development costs, in lots of 1/3/5/10.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "power_architecture",
+    "stage": 3,
+    "kind": "analysis",
+    "depends": [
+      "thirty_channel_eda",
+      "cost_comparison"
+    ],
+    "description": "After G2, screen 5 V power choices while keeping each R7 protection and board independent.",
+    "acceptance": [
+      "After G2, screen 5 V power choices while keeping each R7 protection and board independent.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "adversarial_review",
+    "stage": 3,
+    "kind": "analysis",
+    "depends": [
+      "thirty_channel_eda",
+      "cost_comparison"
+    ],
+    "description": "Challenge selected driver, thermal, supply and protection assumptions without approving manufacture.",
+    "acceptance": [
+      "Challenge selected driver, thermal, supply and protection assumptions without approving manufacture.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "final_architecture_decision",
+    "stage": 4,
+    "kind": "codex",
+    "depends": [
+      "power_architecture",
+      "adversarial_review"
+    ],
+    "description": "Codex-only final evidence-linked decision.",
+    "acceptance": [
+      "Codex-only final evidence-linked decision.",
+      "Reference primary evidence and record limitations."
+    ],
+    "expected": []
+  }
+]

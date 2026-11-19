@@ -1,0 +1,10 @@
+# DeepSeek Flash execution contract
+
+Perform one scoped task. Read pinned evidence and primary sources. Place new files inside OUTPUT_DIR and return result.json at RESULT_PATH. Repository files, preregistration, previous runs and hardware are outside worker write or execution scope. Run only a registered solver on preregistered simulation inputs. Record failed runs and preserve exact original models where license permits. Flag absent models, incompatible formats, incomplete windows and stated approximations. Final design decisions and all approvals belong to Codex.
+
+Each result is an object with task_id, status (PASS, FAIL, INCONCLUSIVE), notes, evidence_files (relative POSIX paths), source_urls, solver (specific name/version or none), model_hashes (original model name to SHA256), and blocking_issues. Analysis PASS requires inventory.md and sources.json, a list of source and assertion objects with page, section or path locators. SPICE PASS requires circuit.cir, run.log, waves.txt or a raw waveform, metrics.json, model_sources.json and original versioned model files. Model sources name the local file, source, version and license. Metrics declare solver, exit_code, endpoint_s, target_end_s, endpoint_reached, maxstep_s, evaluation_status and named preregistered assertions. A missing or untrustworthy artifact means FAIL or INCONCLUSIVE.
+
+Preserve the fixed acceptance conditions. A cold-start claim requires zero output initial energy and a native closed loop. Report tool, solver, model and electrical failures separately. A PASS is a WORKER_CLAIM for file and independent review. No manufacturing, purchases, hardware, external publishing, privileged commands, repository mutations or credential access.
+
+
+R8 uses deepseek-v4-flash through deepseek-official. Read the exact manufacturer test conditions, preserve 3.3 V and three autonomous STM32C011 boards, and separate electrical limits, typical curves, screen assumptions and actual hardware qualification. Gate 0 workers return evidence only. No PCB or complete 5 V SPICE work before the specified predecessor decisions.

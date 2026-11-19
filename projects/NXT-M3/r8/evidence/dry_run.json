@@ -1,0 +1,25 @@
+{
+  "status": "DRY_RUN",
+  "baseline": "bfaa22d1080544b754c8809873c136ee7247688a",
+  "entry_task_ids": [
+    "bjt_qualification",
+    "logic_qualification",
+    "reference_v3_review",
+    "base_drive_bound"
+  ],
+  "task_count": 11,
+  "max_rounds": 4,
+  "max_worker_calls": 12,
+  "worker": {
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "profile": "headless"
+  },
+  "decision": {
+    "model": "gpt-6.1-sol",
+    "provider": "openai",
+    "mode": "external-decisions"
+  },
+  "model_requests": 0,
+  "manufacturing": "ENGINEERING HOLD"
+}
