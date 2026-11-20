@@ -1,0 +1,321 @@
+record,oled,category,item,candidate_mpn,build_qty,installed_per_board,used_qty,planned_buy_qty,model_unit_cny,used_or_summary_cny,cash_cny,reference_currency,reference_unit_price,reference_tier_qty,availability_or_class,notes,evidence
+SUMMARY,A,CNY,MATERIAL_PER_BOARD,,1,,,,,220.54,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,MATERIAL_BATCH,,1,,,,,220.54,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_BUY_LANDED,,1,,,,,,328.34,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,OUTSOURCED_ASSEMBLY,,1,,,,,141,320.34,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_PCBA_LANDED,,1,,,,,,648.68,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,REPEAT_PCBA_PER_BOARD,,1,,,,,,,,,,ENGINEERING_SCENARIO,N/A for exact one outsourced unit. Minimum-two first cash in FIRST_PCBA_LANDED,
+SUMMARY,A,CNY,GAP_TO_60,,1,,,,,160.54,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,A,CNY,GAP_TO_100,,1,,,,,120.54,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,A,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,1,1,1,1,25.5,25.5,25.5,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,A,LV,3.3 V 1 A buck,TPS62162DSGR,1,1,1,1,6,6,6,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,A,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,1,1,1,2,1.8,1.8,3.6,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,A,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,1,3,3,5,0.55,1.65,2.75,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,A,LV,Decoupling capacitors,GRM188R71H104KA93D,1,10,10,20,0.09,0.9,1.8,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,A,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",1,1,1,2,1.7,1.7,3.4,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,A,LV,EN strap / control R and C,RC0603 family + 1uF,1,12,12,20,0.1,1.2,2,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,A,Digital,Shift register,SN74HC595PWR,1,4,4,4,4.44,17.76,17.76,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,A,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,1,30,30,50,0.24,7.2,12,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,A,Digital,Bipolar base series resistor,RC0603FR-073KL,1,30,30,50,0.055,1.65,2.75,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,A,Digital,Bipolar base pull down,RC0603FR-0710KL,1,30,30,50,0.055,1.65,2.75,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,A,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,1,1,1,1,4.2,4.2,4.2,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,A,Power,Boost controller,LM5155DSSR / C545416,1,1,1,1,11.5,11.5,11.5,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,A,Power,Boost magnetic,MSS1278-223MLD,1,1,1,1,5.5,5.5,5.5,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,A,Power,Main switch,STD13N60M2,1,1,1,1,17.12,17.12,17.12,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,A,Power,Rectifier,ES1G-13-F,1,1,1,5,0.9,0.9,4.5,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,A,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,1,1,1,1,7.5,7.5,7.5,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,A,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,1,1,1,1,4.2,4.2,4.2,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,A,Power,HV reservoir,B32774M4335K000,1,1,1,1,10.5,10.5,10.5,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,A,Protection,Real HV input cut and reverse block,TPS259474LRPWR,1,1,1,1,13.68,13.68,13.68,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,A,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,1,1,1,1,6,6,6,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,A,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,1,1,1,1,3.2,3.2,3.2,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,A,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,1,1,1,1,6.7,6.7,6.7,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,A,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,1,1,1,1,5.5,5.5,5.5,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,A,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,1,1,1,1,8,8,8,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,A,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,1,4,4,10,0.45,1.8,4.5,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,A,Protection,Anode load resistors,MFR02SF1002A10,1,6,6,10,0.55,3.3,5.5,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,A,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",1,1,1,1,4,4,4,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,A,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",1,1,1,1,3.5,3.5,3.5,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,A,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,1,3,3,5,2.8,8.4,14,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,A,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",1,1,1,2,2.4,2.4,4.8,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,A,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,1,1,1,2,2,2,4,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,A,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,1,1,1,1,0.85,0.85,0.85,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,A,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",1,1,1,5,13,13,65,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,A,OLED,0.91in 128x32 yellow module,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,1,1,1,1,9.78,9.78,9.78,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; yellow approval pending,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+CASH,A,Freight,Consolidated inbound freight / tax allowance,,1,,,,,,24,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,A,Assembly,SMT setup and stencil,,1,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Feeder / handling / programming and inspection setup,,1,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,SMT + THT + basic assembly and functional screening,,1,,2,2,13,26,26,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Additional materials for second assembly,,1,,1,1,0,0,179.34,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+SUMMARY,A,CNY,MATERIAL_PER_BOARD,,3,,,,,194.45,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,MATERIAL_BATCH,,3,,,,,583.36,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_BUY_LANDED,,3,,,,,,638.8,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,OUTSOURCED_ASSEMBLY,,3,,,,,154,154,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_PCBA_LANDED,,3,,,,,,792.8,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,REPEAT_PCBA_PER_BOARD,,3,,,,,245.79,,,,,ENGINEERING_SCENARIO,Consumed materials plus recurring batch conversion per delivered board; freight excluded,
+SUMMARY,A,CNY,GAP_TO_60,,3,,,,,134.45,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,A,CNY,GAP_TO_100,,3,,,,,94.45,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,A,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,3,1,3,3,25.5,76.5,76.5,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,A,LV,3.3 V 1 A buck,TPS62162DSGR,3,1,3,3,5,15,15,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,A,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,3,1,3,3,1.4,4.2,4.2,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,A,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,3,3,9,9,0.42,3.78,3.78,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,A,LV,Decoupling capacitors,GRM188R71H104KA93D,3,10,30,30,0.07,2.1,2.1,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,A,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",3,1,3,3,1.3,3.9,3.9,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,A,LV,EN strap / control R and C,RC0603 family + 1uF,3,12,36,36,0.075,2.7,2.7,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,A,Digital,Shift register,SN74HC595PWR,3,4,12,12,3.136,37.63,37.63,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,A,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,3,30,90,90,0.22,19.8,19.8,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,A,Digital,Bipolar base series resistor,RC0603FR-073KL,3,30,90,90,0.045,4.05,4.05,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,A,Digital,Bipolar base pull down,RC0603FR-0710KL,3,30,90,90,0.045,4.05,4.05,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,A,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,3,1,3,3,3.25,9.75,9.75,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,A,Power,Boost controller,LM5155DSSR / C545416,3,1,3,3,11.5,34.5,34.5,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,A,Power,Boost magnetic,MSS1278-223MLD,3,1,3,3,4.3,12.9,12.9,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,A,Power,Main switch,STD13N60M2,3,1,3,3,17.12,51.36,51.36,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,A,Power,Rectifier,ES1G-13-F,3,1,3,5,0.72,2.16,3.6,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,A,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,3,1,3,3,6,18,18,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,A,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,3,1,3,3,3.5,10.5,10.5,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,A,Power,HV reservoir,B32774M4335K000,3,1,3,3,8.8,26.4,26.4,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,A,Protection,Real HV input cut and reverse block,TPS259474LRPWR,3,1,3,3,13.68,41.04,41.04,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,A,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,3,1,3,3,4.8,14.4,14.4,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,A,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,3,1,3,3,2.75,8.25,8.25,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,A,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,3,1,3,3,5.6,16.8,16.8,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,A,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,3,1,3,3,4.4,13.2,13.2,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,A,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,3,1,3,3,6.5,19.5,19.5,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,A,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,3,4,12,12,0.35,4.2,4.2,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,A,Protection,Anode load resistors,MFR02SF1002A10,3,6,18,18,0.4,7.2,7.2,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,A,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",3,1,3,3,3.15,9.45,9.45,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,A,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",3,1,3,3,2.6,7.8,7.8,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,A,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,3,3,9,9,2.35,21.15,21.15,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,A,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",3,1,3,3,2,6,6,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,A,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,3,1,3,3,1.6,4.8,4.8,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,A,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,3,1,3,3,0.65,1.95,1.95,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,A,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",3,1,3,5,13,39,65,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,A,OLED,0.91in 128x32 yellow module,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,3,1,3,3,9.78,29.34,29.34,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; yellow approval pending,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+CASH,A,Freight,Consolidated inbound freight / tax allowance,,3,,,,,,28,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,A,Assembly,SMT setup and stencil,,3,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Feeder / handling / programming and inspection setup,,3,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,SMT + THT + basic assembly and functional screening,,3,,3,3,13,39,39,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Additional materials for second assembly,,3,,0,0,0,0,0,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+SUMMARY,A,CNY,MATERIAL_PER_BOARD,,10,,,,,158.29,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,MATERIAL_BATCH,,10,,,,,1582.9,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_BUY_LANDED,,10,,,,,,1622.9,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,OUTSOURCED_ASSEMBLY,,10,,,,,245,245,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,FIRST_PCBA_LANDED,,10,,,,,,1867.9,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,A,CNY,REPEAT_PCBA_PER_BOARD,,10,,,,,182.79,,,,,ENGINEERING_SCENARIO,Consumed materials plus recurring batch conversion per delivered board; freight excluded,
+SUMMARY,A,CNY,GAP_TO_60,,10,,,,,98.29,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,A,CNY,GAP_TO_100,,10,,,,,58.29,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,A,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,10,1,10,10,23.5,235,235,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,A,LV,3.3 V 1 A buck,TPS62162DSGR,10,1,10,10,4,40,40,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,A,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,10,1,10,10,1,10,10,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,A,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,10,3,30,30,0.32,9.6,9.6,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,A,LV,Decoupling capacitors,GRM188R71H104KA93D,10,10,100,100,0.06,6,6,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,A,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",10,1,10,10,1,10,10,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,A,LV,EN strap / control R and C,RC0603 family + 1uF,10,12,120,120,0.06,7.2,7.2,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,A,Digital,Shift register,SN74HC595PWR,10,4,40,40,2.8048,112.19,112.19,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,A,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,10,30,300,300,0.17,51,51,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,A,Digital,Bipolar base series resistor,RC0603FR-073KL,10,30,300,300,0.03,9,9,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,A,Digital,Bipolar base pull down,RC0603FR-0710KL,10,30,300,300,0.03,9,9,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,A,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,10,1,10,10,2.8,28,28,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,A,Power,Boost controller,LM5155DSSR / C545416,10,1,10,10,9.7,97,97,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,A,Power,Boost magnetic,MSS1278-223MLD,10,1,10,10,3.5,35,35,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,A,Power,Main switch,STD13N60M2,10,1,10,10,10.892,108.92,108.92,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,A,Power,Rectifier,ES1G-13-F,10,1,10,10,0.55,5.5,5.5,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,A,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,10,1,10,10,5,50,50,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,A,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,10,1,10,10,2.9,29,29,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,A,Power,HV reservoir,B32774M4335K000,10,1,10,10,7.5,75,75,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,A,Protection,Real HV input cut and reverse block,TPS259474LRPWR,10,1,10,10,9.979,99.79,99.79,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,A,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,10,1,10,10,4,40,40,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,A,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,10,1,10,10,2.3,23,23,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,A,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,10,1,10,10,4.5,45,45,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,A,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,10,1,10,10,3.6,36,36,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,A,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,10,1,10,10,5,50,50,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,A,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,10,4,40,40,0.28,11.2,11.2,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,A,Protection,Anode load resistors,MFR02SF1002A10,10,6,60,60,0.32,19.2,19.2,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,A,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",10,1,10,10,2.6,26,26,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,A,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",10,1,10,10,2,20,20,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,A,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,10,3,30,30,1.9,57,57,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,A,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",10,1,10,10,1.7,17,17,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,A,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,10,1,10,10,1.35,13.5,13.5,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,A,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,10,1,10,10,0.5,5,5,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,A,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",10,1,10,10,9.5,95,95,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,A,OLED,0.91in 128x32 yellow module,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,10,1,10,10,9.78,97.8,97.8,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; yellow approval pending,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+CASH,A,Freight,Consolidated inbound freight / tax allowance,,10,,,,,,40,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,A,Assembly,SMT setup and stencil,,10,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Feeder / handling / programming and inspection setup,,10,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,SMT + THT + basic assembly and functional screening,,10,,10,10,13,130,130,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,A,Assembly,Additional materials for second assembly,,10,,0,0,0,0,0,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+SUMMARY,B,CNY,MATERIAL_PER_BOARD,,1,,,,,248.36,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,MATERIAL_BATCH,,1,,,,,248.36,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_BUY_LANDED,,1,,,,,,356.16,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,OUTSOURCED_ASSEMBLY,,1,,,,,141,348.16,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_PCBA_LANDED,,1,,,,,,704.32,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,REPEAT_PCBA_PER_BOARD,,1,,,,,,,,,,ENGINEERING_SCENARIO,N/A for exact one outsourced unit. Minimum-two first cash in FIRST_PCBA_LANDED,
+SUMMARY,B,CNY,GAP_TO_60,,1,,,,,188.36,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,B,CNY,GAP_TO_100,,1,,,,,148.36,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,B,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,1,1,1,1,25.5,25.5,25.5,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,B,LV,3.3 V 1 A buck,TPS62162DSGR,1,1,1,1,6,6,6,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,B,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,1,1,1,2,1.8,1.8,3.6,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,B,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,1,3,3,5,0.55,1.65,2.75,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,B,LV,Decoupling capacitors,GRM188R71H104KA93D,1,10,10,20,0.09,0.9,1.8,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,B,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",1,1,1,2,1.7,1.7,3.4,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,B,LV,EN strap / control R and C,RC0603 family + 1uF,1,12,12,20,0.1,1.2,2,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,B,Digital,Shift register,SN74HC595PWR,1,4,4,4,4.44,17.76,17.76,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,B,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,1,30,30,50,0.24,7.2,12,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,B,Digital,Bipolar base series resistor,RC0603FR-073KL,1,30,30,50,0.055,1.65,2.75,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,B,Digital,Bipolar base pull down,RC0603FR-0710KL,1,30,30,50,0.055,1.65,2.75,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,B,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,1,1,1,1,4.2,4.2,4.2,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,B,Power,Boost controller,LM5155DSSR / C545416,1,1,1,1,11.5,11.5,11.5,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,B,Power,Boost magnetic,MSS1278-223MLD,1,1,1,1,5.5,5.5,5.5,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,B,Power,Main switch,STD13N60M2,1,1,1,1,17.12,17.12,17.12,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,B,Power,Rectifier,ES1G-13-F,1,1,1,5,0.9,0.9,4.5,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,B,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,1,1,1,1,7.5,7.5,7.5,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,B,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,1,1,1,1,4.2,4.2,4.2,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,B,Power,HV reservoir,B32774M4335K000,1,1,1,1,10.5,10.5,10.5,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,B,Protection,Real HV input cut and reverse block,TPS259474LRPWR,1,1,1,1,13.68,13.68,13.68,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,B,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,1,1,1,1,6,6,6,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,B,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,1,1,1,1,3.2,3.2,3.2,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,B,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,1,1,1,1,6.7,6.7,6.7,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,B,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,1,1,1,1,5.5,5.5,5.5,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,B,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,1,1,1,1,8,8,8,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,B,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,1,4,4,10,0.45,1.8,4.5,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,B,Protection,Anode load resistors,MFR02SF1002A10,1,6,6,10,0.55,3.3,5.5,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,B,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",1,1,1,1,4,4,4,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,B,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",1,1,1,1,3.5,3.5,3.5,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,B,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,1,3,3,5,2.8,8.4,14,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,B,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",1,1,1,2,2.4,2.4,4.8,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,B,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,1,1,1,2,2,2,4,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,B,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,1,1,1,1,0.85,0.85,0.85,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,B,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",1,1,1,5,13,13,65,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,B,OLED,2.23in 128x32 orange module,Screenshot MPN UNKNOWN; ZJY-2.23OLEDORANGE candidate,1,1,1,1,37.6,37.6,37.6,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; public orange module price listed separately,https://www.tinytronics.nl/en/displays/oled/2.23-inch-oled-display-128*32-pixels-orange-i2c
+CASH,B,Freight,Consolidated inbound freight / tax allowance,,1,,,,,,24,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,B,Assembly,SMT setup and stencil,,1,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Feeder / handling / programming and inspection setup,,1,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,SMT + THT + basic assembly and functional screening,,1,,2,2,13,26,26,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Additional materials for second assembly,,1,,1,1,0,0,207.16,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+SUMMARY,B,CNY,MATERIAL_PER_BOARD,,3,,,,,222.27,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,MATERIAL_BATCH,,3,,,,,666.82,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_BUY_LANDED,,3,,,,,,722.26,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,OUTSOURCED_ASSEMBLY,,3,,,,,154,154,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_PCBA_LANDED,,3,,,,,,876.26,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,REPEAT_PCBA_PER_BOARD,,3,,,,,273.61,,,,,ENGINEERING_SCENARIO,Consumed materials plus recurring batch conversion per delivered board; freight excluded,
+SUMMARY,B,CNY,GAP_TO_60,,3,,,,,162.27,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,B,CNY,GAP_TO_100,,3,,,,,122.27,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,B,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,3,1,3,3,25.5,76.5,76.5,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,B,LV,3.3 V 1 A buck,TPS62162DSGR,3,1,3,3,5,15,15,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,B,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,3,1,3,3,1.4,4.2,4.2,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,B,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,3,3,9,9,0.42,3.78,3.78,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,B,LV,Decoupling capacitors,GRM188R71H104KA93D,3,10,30,30,0.07,2.1,2.1,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,B,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",3,1,3,3,1.3,3.9,3.9,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,B,LV,EN strap / control R and C,RC0603 family + 1uF,3,12,36,36,0.075,2.7,2.7,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,B,Digital,Shift register,SN74HC595PWR,3,4,12,12,3.136,37.63,37.63,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,B,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,3,30,90,90,0.22,19.8,19.8,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,B,Digital,Bipolar base series resistor,RC0603FR-073KL,3,30,90,90,0.045,4.05,4.05,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,B,Digital,Bipolar base pull down,RC0603FR-0710KL,3,30,90,90,0.045,4.05,4.05,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,B,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,3,1,3,3,3.25,9.75,9.75,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,B,Power,Boost controller,LM5155DSSR / C545416,3,1,3,3,11.5,34.5,34.5,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,B,Power,Boost magnetic,MSS1278-223MLD,3,1,3,3,4.3,12.9,12.9,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,B,Power,Main switch,STD13N60M2,3,1,3,3,17.12,51.36,51.36,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,B,Power,Rectifier,ES1G-13-F,3,1,3,5,0.72,2.16,3.6,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,B,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,3,1,3,3,6,18,18,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,B,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,3,1,3,3,3.5,10.5,10.5,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,B,Power,HV reservoir,B32774M4335K000,3,1,3,3,8.8,26.4,26.4,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,B,Protection,Real HV input cut and reverse block,TPS259474LRPWR,3,1,3,3,13.68,41.04,41.04,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,B,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,3,1,3,3,4.8,14.4,14.4,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,B,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,3,1,3,3,2.75,8.25,8.25,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,B,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,3,1,3,3,5.6,16.8,16.8,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,B,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,3,1,3,3,4.4,13.2,13.2,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,B,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,3,1,3,3,6.5,19.5,19.5,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,B,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,3,4,12,12,0.35,4.2,4.2,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,B,Protection,Anode load resistors,MFR02SF1002A10,3,6,18,18,0.4,7.2,7.2,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,B,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",3,1,3,3,3.15,9.45,9.45,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,B,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",3,1,3,3,2.6,7.8,7.8,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,B,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,3,3,9,9,2.35,21.15,21.15,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,B,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",3,1,3,3,2,6,6,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,B,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,3,1,3,3,1.6,4.8,4.8,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,B,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,3,1,3,3,0.65,1.95,1.95,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,B,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",3,1,3,5,13,39,65,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,B,OLED,2.23in 128x32 orange module,Screenshot MPN UNKNOWN; ZJY-2.23OLEDORANGE candidate,3,1,3,3,37.6,112.8,112.8,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; public orange module price listed separately,https://www.tinytronics.nl/en/displays/oled/2.23-inch-oled-display-128*32-pixels-orange-i2c
+CASH,B,Freight,Consolidated inbound freight / tax allowance,,3,,,,,,28,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,B,Assembly,SMT setup and stencil,,3,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Feeder / handling / programming and inspection setup,,3,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,SMT + THT + basic assembly and functional screening,,3,,3,3,13,39,39,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Additional materials for second assembly,,3,,0,0,0,0,0,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+SUMMARY,B,CNY,MATERIAL_PER_BOARD,,10,,,,,186.11,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,MATERIAL_BATCH,,10,,,,,1861.1,,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_BUY_LANDED,,10,,,,,,1901.1,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,OUTSOURCED_ASSEMBLY,,10,,,,,245,245,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,FIRST_PCBA_LANDED,,10,,,,,,2146.1,,,,ENGINEERING_SCENARIO,Cash column used for first buy and first outsource batch,
+SUMMARY,B,CNY,REPEAT_PCBA_PER_BOARD,,10,,,,,210.61,,,,,ENGINEERING_SCENARIO,Consumed materials plus recurring batch conversion per delivered board; freight excluded,
+SUMMARY,B,CNY,GAP_TO_60,,10,,,,,126.11,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+SUMMARY,B,CNY,GAP_TO_100,,10,,,,,86.11,,,,,ENGINEERING_SCENARIO,Material per board minus target; positive means over,
+MATERIAL,B,Wi-Fi,MCU and PCB antenna,ESP32-S3-WROOM-1-N8 / C2913198,10,1,10,10,23.5,235,235,,,,ENGINEERING_ESTIMATE,1/3 use manufacturer sample reference as estimate. 10 volume forecast. MCU fixed.,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+MATERIAL,B,LV,3.3 V 1 A buck,TPS62162DSGR,10,1,10,10,4,40,40,,,,ENGINEERING_ESTIMATE,Low-line RF transient and sourcing open,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+MATERIAL,B,LV,2.2 uH buck inductor,Bourns SRN4018-2R2M candidate,10,1,10,10,1,10,10,,,,ENGINEERING_ESTIMATE,Exact current rating at temperature to qualify,
+MATERIAL,B,LV,3.3 V local reservoir and buck MLCC,GRM family; 2x22uF + 1x10uF,10,3,30,30,0.32,9.6,9.6,,,,ENGINEERING_ESTIMATE,"DC bias/ESR, in addition to 100 nF bypass",
+MATERIAL,B,LV,Decoupling capacitors,GRM188R71H104KA93D,10,10,100,100,0.06,6,6,,,,ENGINEERING_ESTIMATE,Four HC banks plus MCU/supervisor/control bypass,
+MATERIAL,B,LV,Input bulk and RF transient reserve,"68–100uF low ESR 10V and damping, TBD",10,1,10,10,1,10,10,,,,ENGINEERING_ESTIMATE,Budget pending loop/inrush and board choice,
+MATERIAL,B,LV,EN strap / control R and C,RC0603 family + 1uF,10,12,120,120,0.06,7.2,7.2,,,,ENGINEERING_ESTIMATE,"Reset, GPIO ties and SPI damping",
+MATERIAL,B,Digital,Shift register,SN74HC595PWR,10,4,40,40,2.8048,112.19,112.19,,,,PUBLIC_PRICE_APPLIED,Published cut-tape tier applied; 4/12/40 ordered at 1/10/25 tiers,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+MATERIAL,B,Digital,Cathode NPN,Jingdao MMBTA42 / C4749118,10,30,300,300,0.17,51,51,,,,ENGINEERING_ESTIMATE,Estimated price and lot minimum; qualification open; Yangjie alternate,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+MATERIAL,B,Digital,Bipolar base series resistor,RC0603FR-073KL,10,30,300,300,0.03,9,9,,,,ENGINEERING_ESTIMATE,3.0k 1% planned,
+MATERIAL,B,Digital,Bipolar base pull down,RC0603FR-0710KL,10,30,300,300,0.03,9,9,,,,ENGINEERING_ESTIMATE,10k 1% planned,
+MATERIAL,B,Digital,OLED switched rail and I2C isolation,TPS22918DBVR + TCA9517DGKR class / TBD,10,1,10,10,2.8,28,28,,,,ENGINEERING_ESTIMATE,Includes fail-safe pull-up domains; pass FET alternate after test,
+MATERIAL,B,Power,Boost controller,LM5155DSSR / C545416,10,1,10,10,9.7,97,97,,,,ENGINEERING_ESTIMATE,CNY engineering allowances; USD distributor tiers listed separately,https://www.lcsc.com/product-detail/C545416.html
+MATERIAL,B,Power,Boost magnetic,MSS1278-223MLD,10,1,10,10,3.5,35,35,,,,ENGINEERING_ESTIMATE,Catalog reference; lower-cost equivalent needs qualification,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+MATERIAL,B,Power,Main switch,STD13N60M2,10,1,10,10,10.892,108.92,108.92,,,,PUBLIC_PRICE_APPLIED,"Public CNY cut-tape tiers; 600V, 0.38 ohm max at 10V; thermal remains open",https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+MATERIAL,B,Power,Rectifier,ES1G-13-F,10,1,10,10,0.55,5.5,5.5,,,,ENGINEERING_ESTIMATE,"1A avg, 400V; verify pulse and thermal",https://www.diodes.com/part/view/ES1G?BackID=8339
+MATERIAL,B,Power,Gate bias / driver,UCC27511DBVR + 5V to 10–12V bias cell TBD,10,1,10,10,5,50,50,,,,ENGINEERING_ESTIMATE,"Includes driver, small magnetic/diodes/cap, supply UVLO and gate network",
+MATERIAL,B,Power,Feedback / shunt / compensation / snubber,HV voltage-rated R chain + shunt + RC + clamp TBD,10,1,10,10,2.9,29,29,,,,ENGINEERING_ESTIMATE,Includes converter decoupling/input cap downstream of cutoff,
+MATERIAL,B,Power,HV reservoir,B32774M4335K000,10,1,10,10,7.5,75,75,,,,ENGINEERING_ESTIMATE,3.3uF 450V MKP. Ripple/availability and quotation open,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+MATERIAL,B,Protection,Real HV input cut and reverse block,TPS259474LRPWR,10,1,10,10,9.979,99.79,99.79,,,,PUBLIC_PRICE_APPLIED,Published cut-tape price at 1/1/10; pin network included in protection passives,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+MATERIAL,B,Protection,Independent HV OVP/OCP detector,TPS3700DDCR and independent reference network TBD,10,1,10,10,4,40,40,,,,ENGINEERING_ESTIMATE,Function allocation; comparator supply independence and thresholds open,
+MATERIAL,B,Protection,Fault latch and hardware OE,SN74LVC1G74DCUR + open-drain gates / discrete support,10,1,10,10,2.3,23,23,,,,ENGINEERING_ESTIMATE,Hardware trip latch and request-only MCU control,
+MATERIAL,B,Protection,Window watchdog and rail supervisor,TPS3430WDRCR class + voltage monitor TBD,10,1,10,10,4.5,45,45,,,,ENGINEERING_ESTIMATE,Includes separate reset and brownout supervision,https://www.ti.com/product/TPS3430
+MATERIAL,B,Protection,Residual voltage sense and re-arm,Independent divider / comparator / local ARM hardware TBD,10,1,10,10,3.6,36,36,,,,ENGINEERING_ESTIMATE,Default deenergized state and residual detect validity required,
+MATERIAL,B,Protection,Branch fault detect allocation,3 x independent sense paths; circuit TBD,10,1,10,10,5,50,50,,,,ENGINEERING_ESTIMATE,Budget reserve; does not establish detection coverage or a firm ceiling,
+MATERIAL,B,Protection,Permanent bleeder resistors,CRCW1206249KFKEA,10,4,40,40,0.28,11.2,11.2,,,,ENGINEERING_ESTIMATE,Two independent strings of two 249k 1% each,
+MATERIAL,B,Protection,Anode load resistors,MFR02SF1002A10,10,6,60,60,0.32,19.2,19.2,,,,ENGINEERING_ESTIMATE,Two 10k 1% per tube. Pulse and derating open,../r8/MINIMUM_PROTECTION_BOM.csv
+MATERIAL,B,Protection,"5V fuse/TVS, protection passives","PTC/TVS, independent sense dividers and timing R/C TBD",10,1,10,10,2.6,26,26,,,,ENGINEERING_ESTIMATE,Front-end PTC/TVS and rail circuitry,
+MATERIAL,B,Protection,Touch guard / service interface within electronics,"Insulating shield / spacers / hardware, TBD",10,1,10,10,2,20,20,,,,ENGINEERING_ESTIMATE,"Electronic subassembly only, external housing excluded",
+MATERIAL,B,Mechanical,QS30-1 tube sockets,13-contact QS30-1 socket interface TBD,10,3,30,30,1.9,57,57,,,,ENGINEERING_ESTIMATE,No qualified final socket; budget and MOQ assumed,
+MATERIAL,B,Mechanical,5 V keyed connector and mating pigtail,"JST B2B-XH-A family + mate / wire, TBD",10,1,10,10,1.7,17,17,,,,ENGINEERING_ESTIMATE,Current and keying to validate,
+MATERIAL,B,Mechanical,OLED header and cable,4-pin keyed 2.54 mm family / TBD,10,1,10,10,1.35,13.5,13.5,,,,ENGINEERING_ESTIMATE,Harness included; A/B fitting determined by sample,
+MATERIAL,B,Mechanical,Service pads / hardware,USB/UART pads + 2x fixture pads + reset interface,10,1,10,10,0.5,5,5,,,,ENGINEERING_ESTIMATE,Low-voltage fixture contacts budget; RS-485 DNP,
+MATERIAL,B,PCB,"Bare PCB, identical for each module","FR-4, RF board and creepage outline TBD",10,1,10,10,9.5,95,95,,,,ENGINEERING_ESTIMATE,Estimated price at lot 5/5/10. Larger than teaser dimension possible.,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+MATERIAL,B,OLED,2.23in 128x32 orange module,Screenshot MPN UNKNOWN; ZJY-2.23OLEDORANGE candidate,10,1,10,10,37.6,376,376,,,,USER_SCREENSHOT_MODEL_INPUT,User screenshot input; public orange module price listed separately,https://www.tinytronics.nl/en/displays/oled/2.23-inch-oled-display-128*32-pixels-orange-i2c
+CASH,B,Freight,Consolidated inbound freight / tax allowance,,10,,,,,,40,,,,ENGINEERING_ESTIMATE,Domestic consolidation estimate; international tax/freight and test equipment excluded,
+CONVERSION,B,Assembly,SMT setup and stencil,,10,,1,1,70,70,70,,,,ENGINEERING_ESTIMATE,Recurring batch overhead,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Feeder / handling / programming and inspection setup,,10,,1,1,45,45,45,,,,ENGINEERING_ESTIMATE,Reach actual quote after CPL and fixture,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,SMT + THT + basic assembly and functional screening,,10,,10,10,13,130,130,,,,ENGINEERING_ESTIMATE,Min 2 PCBA; allowance for incremental placement and inspection,https://jlcpcb.com/help/article/pcb-assembly-faqs
+CONVERSION,B,Assembly,Additional materials for second assembly,,10,,0,0,0,0,0,,,,ENGINEERING_ESTIMATE,1-board order assembles 2; cost incremental MOQ gap only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+QUOTE,,Wi-Fi,2026-11-20 page check,ESP32-S3-WROOM-1-N8,,,,,,,,CNY,25.5,1,MANUFACTURER_SAMPLE_REFERENCE,"Reference, domestic purchase linked",https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+QUOTE,,Wi-Fi,2026-11-20 page check,ESP32-S3-WROOM-1-N8,,,,,,,,CNY,46.81,1,PUBLIC_STOCK_PRICE,"1608 in snapshot, 13% VAT",https://www.digikey.cn/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N8/15200089
+QUOTE,,Wi-Fi,2026-11-20 page check,ESP32-S3-WROOM-1-N8,,,,,,,,CNY,40.498,10,PUBLIC_STOCK_PRICE,"Alternate distribution cost, 13% VAT",https://www.digikey.cn/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N8/15200089
+QUOTE,,Digital,2026-11-20 page check,SN74HC595PWR,,,,,,,,CNY,4.44,1,PUBLIC_STOCK_PRICE,"DigiKey CN cut tape 13% VAT, excludes reel service",https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+QUOTE,,Digital,2026-11-20 page check,SN74HC595PWR,,,,,,,,CNY,3.136,10,PUBLIC_STOCK_PRICE,"DigiKey CN cut tape 13% VAT, excludes reel service",https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+QUOTE,,Digital,2026-11-20 page check,SN74HC595PWR,,,,,,,,CNY,2.8048,25,PUBLIC_STOCK_PRICE,"DigiKey CN cut tape 13% VAT, excludes reel service",https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+QUOTE,,Digital,2026-11-20 page check,Jingdao MMBTA42 / C4749118,,,,,,,,,,,LISTING_PRICE_UNKNOWN,Domestic procurement/PCBA record,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+QUOTE,,Digital,2026-11-20 page check,Yangjie MMBTA42 / C699244,,,,,,,,,,,LISTING_PRICE_UNKNOWN,Domestic listing; live CNY price unavailable,https://item.szlcsc.com/733936.html
+QUOTE,,Digital,2026-11-20 page check,Yangjie MMBTA42,,,,,,,,USD,0.05,10,PUBLIC_STOCK_PRICE,TME US has listing price and 2841 stock in snapshot,https://www.tme.com/us/en-us/details/mmbta42-yan/npn-smd-transistors/yangjie-technology/mmbta42/
+QUOTE,,Digital,2026-11-20 page check,Yangjie MMBTA42,,,,,,,,USD,0.04,100,PUBLIC_STOCK_PRICE,TME US has listing price and 2841 stock in snapshot,https://www.tme.com/us/en-us/details/mmbta42-yan/npn-smd-transistors/yangjie-technology/mmbta42/
+QUOTE,,Digital,2026-11-20 page check,Yangjie MMBTA42,,,,,,,,USD,0.03,250,PUBLIC_STOCK_PRICE,TME US has listing price and 2841 stock in snapshot,https://www.tme.com/us/en-us/details/mmbta42-yan/npn-smd-transistors/yangjie-technology/mmbta42/
+QUOTE,,Power,2026-11-20 page check,LM5155DSSR / C545416,,,,,,,,USD,1.5411,1,PUBLIC_STOCK_PRICE,"LCSC, 297 stock in snapshot; no currency conversion in totals",https://www.lcsc.com/product-detail/C545416.html
+QUOTE,,Power,2026-11-20 page check,LM5155DSSR / C545416,,,,,,,,USD,1.3168,10,PUBLIC_STOCK_PRICE,"LCSC, 297 stock in snapshot; no currency conversion in totals",https://www.lcsc.com/product-detail/C545416.html
+QUOTE,,Power,2026-11-20 page check,LM5155DSSR,,,,,,,,CNY,19.76,1,PUBLIC_PRICE_NO_STOCK,DigiKey CN shows 0 stock in checked view,https://www.digikey.cn/en/products/detail/texas-instruments/LM5155DSSR/10434739
+QUOTE,,Power,2026-11-20 page check,STD13N60M2,,,,,,,,CNY,17.12,1,PUBLIC_STOCK_PRICE,DigiKey CN cut tape 13% VAT; 75 stock in snapshot,https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+QUOTE,,Power,2026-11-20 page check,STD13N60M2,,,,,,,,CNY,10.892,10,PUBLIC_STOCK_PRICE,DigiKey CN cut tape 13% VAT; 75 stock in snapshot,https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+QUOTE,,Power,2026-11-20 page check,B32774M4335K000,,,,,,,,,,,SPEC_PRICE_UNKNOWN,TDK spec list; firm availability and price not obtained,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+QUOTE,,Power,2026-11-20 page check,UVR2G2R2MPD,,,,,,,,USD,0.6,1,PUBLIC_STOCK_PRICE,Alternate 2.2uF/400V; not suitable as standalone under screened ripple,https://www.digikey.com/en/products/detail/nichicon/UVR2G2R2MPD/588968
+QUOTE,,Power,2026-11-20 page check,UVR2G2R2MPD,,,,,,,,USD,0.376,10,PUBLIC_STOCK_PRICE,Alternate sensitivity only,https://www.digikey.com/en/products/detail/nichicon/UVR2G2R2MPD/588968
+QUOTE,,Protection,2026-11-20 page check,TPS259474LRPWR,,,,,,,,CNY,13.68,1,PUBLIC_STOCK_PRICE,DigiKey CN cut tape 13% VAT,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+QUOTE,,Protection,2026-11-20 page check,TPS259474LRPWR,,,,,,,,CNY,9.979,10,PUBLIC_STOCK_PRICE,DigiKey CN cut tape 13% VAT,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+QUOTE,,Protection,2026-11-20 page check,IXTP10P50P (conditional P2),,,,,,,,USD,9.82,1,R8_HISTORICAL_REFERENCE,Not included in P1 totals; add drive and copper/assembly if P2 required,https://www.digikey.com/en/products/detail/littelfuse-ixys/IXTP10P50P/1995392
+QUOTE,,OLED A,2026-11-20 page check,Screenshot SKU unknown,,,,,,,,CNY,9.78,1,USER_SCREENSHOT,Unmatched seller / source and availability unknown,
+QUOTE,,OLED A,2026-11-20 page check,WEA012832F yellow variant,,,,,,,,,,,FACTORY_RFQ,Ask yellow suffix / stock / price,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+QUOTE,,OLED B,2026-11-20 page check,Screenshot SKU unknown,,,,,,,,CNY,37.6,1,USER_SCREENSHOT,Unmatched seller / source and availability unknown,
+QUOTE,,OLED B,2026-11-20 page check,ZJY-2.23OLEDORANGE / retailer SKU 004936,,,,,,,,EUR,10.25,1,PUBLIC_STOCK_PRICE,"20+ stock; VAT included, EUR 8.47 ex tax",https://www.tinytronics.nl/en/displays/oled/2.23-inch-oled-display-128*32-pixels-orange-i2c
+QUOTE,,PCB,2026-11-20 page check,5-board 100x100 promo floor,,,,,,,,USD,2,5,PUBLISHED_FLOOR,USD price per lot of five. Not applied to NXT,https://jlcpcb.com/ads/pcb-prototype
+QUOTE,,Assembly,2026-11-20 page check,Vendor setup,,,,,,,,USD,8,1,PUBLISHED_FEE,Stencil/parts etc separate. No NXT quote,https://jlcpcb.com/help/article/pcb-assembly-faqs
+QUOTE,,Assembly,2026-11-20 page check,Vendor stencil,,,,,,,,USD,1.5,1,PUBLISHED_FEE,Reference only,https://jlcpcb.com/help/article/pcb-assembly-faqs
+TARGET,,Cost,LONG_TERM_MATERIAL,,,,,,,,,CNY,60,1,USER_TARGET,"Includes board and protections, no assembly labor",
+TARGET,,Cost,STAGE_MATERIAL_LOW,,,,,,,,,CNY,80,1,USER_TARGET,"Includes board and protections, no assembly labor",
+TARGET,,Cost,STAGE_MATERIAL_HIGH,,,,,,,,,CNY,100,1,USER_TARGET,"Includes board and protections, no assembly labor",

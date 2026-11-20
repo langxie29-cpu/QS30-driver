@@ -1,0 +1,45 @@
+2026-11-20 | NXT-M3 R9 | host-only / archived evidence checks
+R9 parent: b264d74dce5b799ecd13286fa3c2880b1b7135d2
+
+> python --version
+Python 3.11.15
+exit_code=0
+
+> python -B projects/NXT-M3/r8/g0d_verify.py
+PASSED G0D hashes, 2 decisions, 0 provider calls, 23 energy windows, ENGINEERING HOLD
+exit_code=0
+
+> python -B projects/NXT-M3/r8/verify_authorized.py
+Two provider receipts, raw wave, model/tool limits, accepted and rejected claims verified.
+exit_code=0
+
+> python -B verify_r9.py
+BOM verified: six scenarios, 210 installed lines, quote and target separation
+Analytical screens verified: base drive, steady/peak input, switch and capacitor RMS, and fault energy
+exit_code=0
+
+> python -B -m unittest -v
+test_clock_uncertainty_growth_shortens_source_validity (test_low_voltage_display.DisplayProtocolTests.test_clock_uncertainty_growth_shortens_source_validity) ... ok
+test_coordinator_rejects_mixed_semantics (test_low_voltage_display.DisplayProtocolTests.test_coordinator_rejects_mixed_semantics) ... ok
+test_duplicate_replay_and_late_commit (test_low_voltage_display.DisplayProtocolTests.test_duplicate_replay_and_late_commit) ... ok
+test_failed_oled_write_show_and_bus_cut (test_low_voltage_display.DisplayProtocolTests.test_failed_oled_write_show_and_bus_cut) ... ok
+test_lease_renewal_is_bounded_and_idempotent (test_low_voltage_display.DisplayProtocolTests.test_lease_renewal_is_bounded_and_idempotent) ... ok
+test_link_disconnect_and_bounded_peer_lease (test_low_voltage_display.DisplayProtocolTests.test_link_disconnect_and_bounded_peer_lease) ... ok
+test_missing_ready_never_commits (test_low_voltage_display.DisplayProtocolTests.test_missing_ready_never_commits) ... ok
+test_nine_digits_same_semantics_and_order (test_low_voltage_display.DisplayProtocolTests.test_nine_digits_same_semantics_and_order) ... ok
+test_ota_interruption_and_hardware_fault_are_fail_closed (test_low_voltage_display.DisplayProtocolTests.test_ota_interruption_and_hardware_fault_are_fail_closed) ... ok
+test_partial_commit_even_if_abort_lost_is_bounded (test_low_voltage_display.DisplayProtocolTests.test_partial_commit_even_if_abort_lost_is_bounded) ... ok
+test_reboot_rejects_old_session_and_starts_blank (test_low_voltage_display.DisplayProtocolTests.test_reboot_rejects_old_session_and_starts_blank) ... ok
+test_single_module_and_atomic_event_order (test_low_voltage_display.DisplayProtocolTests.test_single_module_and_atomic_event_order) ... ok
+test_six_digits_keep_leading_zeros_and_blank_padding (test_low_voltage_display.DisplayProtocolTests.test_six_digits_keep_leading_zeros_and_blank_padding) ... ok
+test_skew_limit_and_bad_data (test_low_voltage_display.DisplayProtocolTests.test_skew_limit_and_bad_data) ... ok
+test_source_ttl_overrides_lease (test_low_voltage_display.DisplayProtocolTests.test_source_ttl_overrides_lease) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+OK
+exit_code=0
+
+Scope: no R9 hardware, PCB ERC/DRC, actual Wi-Fi/OLED timing, or new HV simulation.
+Gate 0 REWORK / ENGINEERING HOLD
