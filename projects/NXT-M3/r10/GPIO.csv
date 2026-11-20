@@ -1,0 +1,18 @@
+gpio,module_pin,net,mode,reset_or_function
+4,4,SR_SER,OUT,"47k after 33R, normally low"
+5,5,SR_CLK,OUT,"47k after 33R, normally low"
+6,6,SR_LATCH,OUT,"47k after 33R, normally low"
+7,7,DIGITS_REQ,OUT,"47k low, hardware AND with ARMED"
+15,8,OLED_REQ,OUT,"47k low, hardware AND with MCU_EN"
+16,9,FAULT_N,IN,"Active low hardware fault, open drain"
+17,10,MCU_SDA,OD,4.7k pull-up on MCU side
+18,11,MCU_SCL,OD,4.7k pull-up on MCU side
+8,12,ARMED,IN,Hardware latch state
+9,17,WDI,OUT,"Watchdog candidate falling edge every 1.1 s, no hardware PWM"
+3,15,STRAP3,STRAP,"10k low, ROM JTAG policy verify"
+46,16,STRAP46,STRAP,10k low for UART download with GPIO0 low
+45,26,STRAP45,STRAP,10k low for default flash supply
+0,27,BOOT_N,STRAP,"10k high, hold SW1 while asserting J2 EN"
+44,36,UART_RX,IN,"Use 3.3V UART only, no adapter power pin"
+43,37,UART_TX,OUT,ROM serial recovery
+EN,3,MCU_EN,RESET,"TPS3808 supervisor, pull-up and C11"

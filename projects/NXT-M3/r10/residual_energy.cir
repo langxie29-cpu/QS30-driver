@@ -1,0 +1,32 @@
+* NXT R10 bounded transient study. Offline. GATE_0 REWORK.
+* Resistor envelope from actual R10 C47, 2 x R302/R303, and bleeders R400..R407.
+* 3.63uF and 500.96k are high corners. 19.8k is low corner. No credit for divider leakage.
+Cdual dual 0 3.63u ic=195
+Rdual1 dual 0 500.96k
+Rdual2 dual 0 500.96k
+Csingle single 0 3.63u ic=195
+Rsingle1 single 0 500.96k
+Cfault fault 0 3.63u ic=195
+Rfault1 fault 0 500.96k
+Rfault2 fault 0 500.96k
+Ra fault collector 19.8k
+Rq collector 0 19.8k
+Bpq pq 0 V=v(collector)^2/19800
+* Positive feed path of boost diode with PWM held off, versus ideal true cutoff.
+* Generic diode, not a TI eFuse / ES1G switching model. Live source runs at a bounded 5.5V.
+Vbus in 0 5.5
+Rpath in in_d 0.1
+Dpath in_d precharged Dproxy
+Rload precharged 0 250.48k
+Cpath precharged 0 3.63u
+Cisolated isolated 0 3.63u
+Risolated isolated 0 250.48k
+.model Dproxy D(IS=1n RS=0.08 N=1.7)
+.tran 100u 4 uic
+.meas tran dual_t60 when v(dual)=60 fall=1
+.meas tran single_t60 when v(single)=60 fall=1
+.meas tran fault_q_peak_w max v(pq)
+.meas tran fault_q_j integ v(pq) from=0 to=4
+.meas tran pwm_off_feed_v find v(precharged) at=3
+.meas tran isolated_feed_v find v(isolated) at=3
+.end

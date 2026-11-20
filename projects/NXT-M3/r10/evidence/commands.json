@@ -1,0 +1,98 @@
+[
+  {
+    "name": "KiCad version",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" version",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "22:51:16: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:16: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)\r\n10.0.8"
+  },
+  {
+    "name": "Generate native hierarchy",
+    "command": "D:\\Espressif\\tools\\python\\python.exe build_schematic.py",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": ""
+  },
+  {
+    "name": "Native ERC",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" sch erc --exit-code-violations -o evidence/ERC.rpt eda/NXT-M3-R10.kicad_sch",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "22:51:16: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:16: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)\r\n发现 0 条违规项\r\n已将 ERC 报告保存到文件 evidence/ERC.rpt"
+  },
+  {
+    "name": "Native netlist",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" sch export netlist --format kicadxml -o evidence/native_netlist.xml eda/NXT-M3-R10.kicad_sch",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "22:51:20: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:20: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)"
+  },
+  {
+    "name": "Native BOM",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" sch export bom --fields Reference,Value,Footprint,MPN,Status,${DNP} --group-by Value,Footprint,MPN,Status -o evidence/native_bom.csv eda/NXT-M3-R10.kicad_sch",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "22:51:21: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:21: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)\r\n写入物料清单到 'evidence/native_bom.csv'。"
+  },
+  {
+    "name": "Native schematic PDF rendering",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" sch export pdf -o evidence/NXT-M3-R10.pdf eda/NXT-M3-R10.kicad_sch",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "22:51:21: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:21: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)\r\n绘制到 'evidence\\NXT-M3-R10.pdf'。\r\n完成。"
+  },
+  {
+    "name": "Native footprint/load and pad sync",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\python.exe\" build_pcb.py",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "Unresolved placement boxes: []\r\nCompared 285 native schematic components; 282 placed, 3 logical sockets without pads"
+  },
+  {
+    "name": "Native DRC/ECAD parity",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe\" pcb drc --schematic-parity --format json --exit-code-violations -o evidence/DRC.json eda/NXT-M3-R10.kicad_pcb",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 5,
+    "expected_exit": 5,
+    "output": "22:51:31: Error: Can't create registry key 'HKCU\\Software\\kicad-cli' (error 5: ?????)\r\n22:51:31: Error: Can't open registry key 'HKCU\\Software\\kicad-cli' (error 2: ???????????)\r\n发现 292 条违规项\r\n发现 499 个未连接的项目\r\n发现 3 个原理图一致性问题\r\n保存 DRC 报告到 evidence/DRC.json"
+  },
+  {
+    "name": "Mechanical projection",
+    "command": "D:\\Espressif\\tools\\python\\python.exe mechanical_layout.py",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "Checked 13 mechanical statements, including two explicitly unresolved items."
+  },
+  {
+    "name": "ngspice bounded transient",
+    "command": "\"C:\\Program Files\\KiCad\\10.0\\bin\\python.exe\" run_residual_spice.py",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "Matched six bounded ngspice measurements, including diode feed-through with PWM off."
+  },
+  {
+    "name": "R9 BOM delta",
+    "command": "D:\\Espressif\\tools\\python\\python.exe revise_cost.py",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r10",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "1 220.54 26.84 247.38\r\n3 194.45 23.72 218.17\r\n10 158.29 17.38 175.67"
+  },
+  {
+    "name": "Inherited R9 display tests",
+    "command": "D:\\Espressif\\tools\\python\\python.exe -m unittest -q test_low_voltage_display",
+    "cwd": "D:\\PROJECTS\\dsharness\\QS30-1\\.worktrees\\NXT-R10\\projects\\NXT-M3\\r9",
+    "exit": 0,
+    "expected_exit": 0,
+    "output": "----------------------------------------------------------------------\r\nRan 15 tests in 0.001s\r\n\r\nOK"
+  }
+]

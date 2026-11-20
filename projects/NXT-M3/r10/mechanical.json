@@ -1,0 +1,108 @@
+{
+  "status": "PROVISIONAL",
+  "units": "mm",
+  "board": {
+    "size": [
+      130,
+      80
+    ],
+    "cad_origin": [
+      50,
+      50
+    ],
+    "initial_layers": 2
+  },
+  "tube": {
+    "part": "QS30-1",
+    "source": "user measurement 2026-11-20",
+    "diameter": 29.6,
+    "glass_height": 26.4,
+    "pin_exposed": 7,
+    "pin_diameter": 0.9,
+    "opposed_pin_center_distance": 16.5,
+    "full_pin_pattern": null,
+    "centers": [
+      [
+        27,
+        52
+      ],
+      [
+        65,
+        52
+      ],
+      [
+        103,
+        52
+      ]
+    ]
+  },
+  "socket": {
+    "part": null,
+    "outer_diameter": null,
+    "seated_height": null,
+    "pad_coordinates": null,
+    "orientation": null,
+    "engagement_depth": null,
+    "fastening": null,
+    "approach_envelope_diameter": 35,
+    "approach_envelope_note": "Projection only. No inferred socket dimensions or drills. Allow additional axial removal travel pending socket."
+  },
+  "oled": {
+    "size_in": 0.91,
+    "resolution": [
+      128,
+      32
+    ],
+    "status": "TBD",
+    "carrier_keepout": {
+      "center": [
+        65,
+        15
+      ],
+      "size": [
+        42,
+        17
+      ]
+    },
+    "purchased_board_size": null,
+    "purchased_board_mounting": null,
+    "purchased_board_connector": null
+  },
+  "mounting": {
+    "hole_centers": [
+      [
+        6,
+        6
+      ],
+      [
+        124,
+        6
+      ],
+      [
+        6,
+        74
+      ],
+      [
+        124,
+        74
+      ]
+    ],
+    "candidate_diameter": 3.2,
+    "hardware_envelope_diameter": 8,
+    "fixture": "Common carrier for wall and desktop. Captive insulated rear standoffs and common panel datum."
+  },
+  "rf": {
+    "module_anchor": [
+      6.7,
+      25
+    ],
+    "rotation": 90,
+    "near_field_reserve": [
+      0,
+      9,
+      17,
+      41
+    ],
+    "qualification": "15 mm enclosure clearance and actual RF throughput still open."
+  }
+}

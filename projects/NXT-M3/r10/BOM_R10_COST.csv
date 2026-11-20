@@ -1,0 +1,133 @@
+modules,item,R10_ref_or_range,R9_mpn_text,R9_cny_per_board,R10_cny_per_board,delta_cny_per_board,evidence_class,note,source
+1,MCU and PCB antenna,U3,ESP32-S3-WROOM-1-N8 / C2913198,25.50,25.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+1,3.3 V 1 A buck,U2,TPS62162DSGR,6.00,6.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+1,2.2 uH buck inductor,L1,Bourns SRN4018-2R2M candidate,1.80,1.80,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,3.3 V local reservoir and buck MLCC,C4 C6 C7 C8 C10,GRM family; 2x22uF + 1x10uF,1.65,2.75,1.10,R10_INCREMENT_ESTIMATE,5 rather than 3 selected-size MLCCs,
+1,Decoupling capacitors,C1 C9 C12 C14 C16 C17 C18 C19 C20 C21 C22 C23 C24 C27 C29 C30 C32 C33 C34 C39 C46 C49 C50 C51,GRM188R71H104KA93D,0.90,2.16,1.26,R10_INCREMENT_ESTIMATE,Increment above budgeted ten; keep value-specific sourcing open,
+1,Input bulk and RF transient reserve,C5,"68–100uF low ESR 10V and damping, TBD",1.70,1.70,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,EN strap / control R and C,R7 R8 R9 R10 R11 R12 R13 R14 R15 R16 R17 R30 R31 R32 R33 R34 R35 R36 R54 R55 C11,RC0603 family + 1uF,1.20,2.10,0.90,R10_INCREMENT_ESTIMATE,Nine additional small passives,
+1,Shift register,U20 U21 U22 U23,SN74HC595PWR,17.76,17.76,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+1,Cathode NPN,Q1..Q30,Jingdao MMBTA42 / C4749118,7.20,7.20,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+1,Bipolar base series resistor,R100..R129,RC0603FR-073KL,1.65,1.65,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,Bipolar base pull down,R200..R229,RC0603FR-0710KL,1.65,1.65,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,OLED switched rail and I2C isolation,U5 U6 U7 D1 R18 R19 R20 R21 R22 C13 C15,TPS22918DBVR + TCA9517DGKR class / TBD,4.20,5.40,1.20,R10_INCREMENT_ESTIMATE,Adds reset gating and ESD; TCA9517A variant,
+1,Boost controller,U17,LM5155DSSR / C545416,11.50,11.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.lcsc.com/product-detail/C545416.html
+1,Boost magnetic,L3,MSS1278-223MLD,5.50,5.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+1,Main switch,Q32,STD13N60M2,17.12,17.12,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+1,Rectifier,D3,ES1G-13-F,0.90,0.90,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.diodes.com/part/view/ES1G?BackID=8339
+1,Gate bias / driver,U16 U18 L2 D2 R70 R71 R74 R75 R76 C37 C38 C45,UCC27511DBVR + 5V to 10–12V bias cell TBD,7.50,7.50,0.00,ENGINEERING_ESTIMATE,TPS61040 bias completed in CAD; retain R9 allowance until sourcing,
+1,Feedback / shunt / compensation / snubber,R72 R73 R77 R78 R79 R80 R81 R82 R83 R84 R85 R86 C40 C41 C42 C43 C44 C48,HV voltage-rated R chain + shunt + RC + clamp TBD,4.20,5.40,1.20,R10_INCREMENT_ESTIMATE,"Four-element FB divider, R73 and snubber candidates",
+1,HV reservoir,C47,B32774M4335K000,10.50,10.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+1,Real HV input cut and reverse block,U11,TPS259474LRPWR,13.68,13.68,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+1,Independent HV OVP/OCP detector,U12 U13 R47 R48 R49 R60 R61 R62 R63 R64 C31 C35,TPS3700DDCR and independent reference network TBD,6.00,6.00,0.00,ENGINEERING_ESTIMATE,TLV1702+REF3312; allowance retained pending RFQ,
+1,Fault latch and hardware OE,U8 U9 U10 U19 Q31 R23 R24 R25 R26 R27,SN74LVC1G74DCUR + open-drain gates / discrete support,3.20,4.80,1.60,R10_INCREMENT_ESTIMATE,"Series permit chain and Q31, above the R9 allowance",
+1,Window watchdog and rail supervisor,U4 U25,TPS3430WDRCR class + voltage monitor TBD,6.70,6.70,0.00,ENGINEERING_ESTIMATE,TPS3808G33 and TPS3430; retain R9 allowance,https://www.ti.com/product/TPS3430
+1,Residual voltage sense and re-arm,U14 U15 R28 R46 R50 R51 R52 R53 R65 R66 R67 R68 R69 C36,Independent divider / comparator / local ARM hardware TBD,5.50,5.50,0.00,ENGINEERING_ESTIMATE,Detection and bias qualification candidates; R9 allowance retained,
+1,Branch fault detect allocation,,3 x independent sense paths; circuit TBD,8.00,8.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,Permanent bleeder resistors,R400..R407,CRCW1206249KFKEA,1.80,2.80,1.00,R10_INCREMENT_ESTIMATE,"Four series 2512 resistors per independent path; unit estimate, exact MPN open",
+1,Anode load resistors,R302 R303 R304 R305 R306 R307,MFR02SF1002A10,3.30,4.20,0.90,R10_INCREMENT_ESTIMATE,Move from axial R9 allowance to power SMD; derating and tolerance open,../r8/MINIMUM_PROTECTION_BOM.csv
+1,"5V fuse/TVS, protection passives",F1 D4 R1 R2 R3 R4 R5 R6 R40 R41 R42 R43 R44 R45 C2 C3 C25 C26 C28,"PTC/TVS, independent sense dividers and timing R/C TBD",4.00,5.40,1.40,R10_INCREMENT_ESTIMATE,Adds second set of startup/timing parts; R9 had a protection allowance,
+1,Touch guard / service interface within electronics,,"Insulating shield / spacers / hardware, TBD",3.50,3.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,QS30-1 tube sockets,V1 V2 V3,13-contact QS30-1 socket interface TBD,8.40,8.40,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,5 V keyed connector and mating pigtail,J1,"JST B2B-XH-A family + mate / wire, TBD",2.40,2.40,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,OLED header and cable,J3,4-pin keyed 2.54 mm family / TBD,2.00,2.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+1,Service pads / hardware,J2 J4 SW1 U24 TP1 TP2 TP3 TP4 TP5 TP6 TP7 TP8 TP9,USB/UART pads + 2x fixture pads + reset interface,0.85,3.45,2.60,R10_INCREMENT_ESTIMATE,UART service buffer and hardware above R9 allowance,
+1,"Bare PCB, identical for each module",,"FR-4, RF board and creepage outline TBD",13.00,13.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+1,0.91in 128x32 yellow module,,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,9.78,9.78,0.00,USER_SCREENSHOT_MODEL_INPUT,R9 unit estimate retained,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+1,5 V system entry eFuse,U1,TPS259474LRPWR,0.00,13.68,13.68,R9_PUBLIC_PRICE_APPLIED,"Uses same tier as U11; shipping, lot and CAD release TBD",../r9/BOM_COST_MODEL.csv
+1,Consolidated inbound freight / tax allowance,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 24; R10 quote pending,
+1,SMT setup and stencil,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 70; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+1,Feeder / handling / programming and inspection setup,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 45; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+1,SMT + THT + basic assembly and functional screening,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 26; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+1,Additional materials for second assembly,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 179.34; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+3,MCU and PCB antenna,U3,ESP32-S3-WROOM-1-N8 / C2913198,25.50,25.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+3,3.3 V 1 A buck,U2,TPS62162DSGR,5.00,5.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+3,2.2 uH buck inductor,L1,Bourns SRN4018-2R2M candidate,1.40,1.40,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,3.3 V local reservoir and buck MLCC,C4 C6 C7 C8 C10,GRM family; 2x22uF + 1x10uF,1.26,2.10,0.84,R10_INCREMENT_ESTIMATE,5 rather than 3 selected-size MLCCs,
+3,Decoupling capacitors,C1 C9 C12 C14 C16 C17 C18 C19 C20 C21 C22 C23 C24 C27 C29 C30 C32 C33 C34 C39 C46 C49 C50 C51,GRM188R71H104KA93D,0.70,1.68,0.98,R10_INCREMENT_ESTIMATE,Increment above budgeted ten; keep value-specific sourcing open,
+3,Input bulk and RF transient reserve,C5,"68–100uF low ESR 10V and damping, TBD",1.30,1.30,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,EN strap / control R and C,R7 R8 R9 R10 R11 R12 R13 R14 R15 R16 R17 R30 R31 R32 R33 R34 R35 R36 R54 R55 C11,RC0603 family + 1uF,0.90,1.58,0.68,R10_INCREMENT_ESTIMATE,Nine additional small passives,
+3,Shift register,U20 U21 U22 U23,SN74HC595PWR,12.54,12.54,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+3,Cathode NPN,Q1..Q30,Jingdao MMBTA42 / C4749118,6.60,6.60,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+3,Bipolar base series resistor,R100..R129,RC0603FR-073KL,1.35,1.35,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,Bipolar base pull down,R200..R229,RC0603FR-0710KL,1.35,1.35,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,OLED switched rail and I2C isolation,U5 U6 U7 D1 R18 R19 R20 R21 R22 C13 C15,TPS22918DBVR + TCA9517DGKR class / TBD,3.25,4.15,0.90,R10_INCREMENT_ESTIMATE,Adds reset gating and ESD; TCA9517A variant,
+3,Boost controller,U17,LM5155DSSR / C545416,11.50,11.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.lcsc.com/product-detail/C545416.html
+3,Boost magnetic,L3,MSS1278-223MLD,4.30,4.30,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+3,Main switch,Q32,STD13N60M2,17.12,17.12,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+3,Rectifier,D3,ES1G-13-F,0.72,0.72,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.diodes.com/part/view/ES1G?BackID=8339
+3,Gate bias / driver,U16 U18 L2 D2 R70 R71 R74 R75 R76 C37 C38 C45,UCC27511DBVR + 5V to 10–12V bias cell TBD,6.00,6.00,0.00,ENGINEERING_ESTIMATE,TPS61040 bias completed in CAD; retain R9 allowance until sourcing,
+3,Feedback / shunt / compensation / snubber,R72 R73 R77 R78 R79 R80 R81 R82 R83 R84 R85 R86 C40 C41 C42 C43 C44 C48,HV voltage-rated R chain + shunt + RC + clamp TBD,3.50,4.40,0.90,R10_INCREMENT_ESTIMATE,"Four-element FB divider, R73 and snubber candidates",
+3,HV reservoir,C47,B32774M4335K000,8.80,8.80,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+3,Real HV input cut and reverse block,U11,TPS259474LRPWR,13.68,13.68,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+3,Independent HV OVP/OCP detector,U12 U13 R47 R48 R49 R60 R61 R62 R63 R64 C31 C35,TPS3700DDCR and independent reference network TBD,4.80,4.80,0.00,ENGINEERING_ESTIMATE,TLV1702+REF3312; allowance retained pending RFQ,
+3,Fault latch and hardware OE,U8 U9 U10 U19 Q31 R23 R24 R25 R26 R27,SN74LVC1G74DCUR + open-drain gates / discrete support,2.75,3.90,1.15,R10_INCREMENT_ESTIMATE,"Series permit chain and Q31, above the R9 allowance",
+3,Window watchdog and rail supervisor,U4 U25,TPS3430WDRCR class + voltage monitor TBD,5.60,5.60,0.00,ENGINEERING_ESTIMATE,TPS3808G33 and TPS3430; retain R9 allowance,https://www.ti.com/product/TPS3430
+3,Residual voltage sense and re-arm,U14 U15 R28 R46 R50 R51 R52 R53 R65 R66 R67 R68 R69 C36,Independent divider / comparator / local ARM hardware TBD,4.40,4.40,0.00,ENGINEERING_ESTIMATE,Detection and bias qualification candidates; R9 allowance retained,
+3,Branch fault detect allocation,,3 x independent sense paths; circuit TBD,6.50,6.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,Permanent bleeder resistors,R400..R407,CRCW1206249KFKEA,1.40,2.24,0.84,R10_INCREMENT_ESTIMATE,"Four series 2512 resistors per independent path; unit estimate, exact MPN open",
+3,Anode load resistors,R302 R303 R304 R305 R306 R307,MFR02SF1002A10,2.40,3.15,0.75,R10_INCREMENT_ESTIMATE,Move from axial R9 allowance to power SMD; derating and tolerance open,../r8/MINIMUM_PROTECTION_BOM.csv
+3,"5V fuse/TVS, protection passives",F1 D4 R1 R2 R3 R4 R5 R6 R40 R41 R42 R43 R44 R45 C2 C3 C25 C26 C28,"PTC/TVS, independent sense dividers and timing R/C TBD",3.15,4.15,1.00,R10_INCREMENT_ESTIMATE,Adds second set of startup/timing parts; R9 had a protection allowance,
+3,Touch guard / service interface within electronics,,"Insulating shield / spacers / hardware, TBD",2.60,2.60,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,QS30-1 tube sockets,V1 V2 V3,13-contact QS30-1 socket interface TBD,7.05,7.05,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,5 V keyed connector and mating pigtail,J1,"JST B2B-XH-A family + mate / wire, TBD",2.00,2.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,OLED header and cable,J3,4-pin keyed 2.54 mm family / TBD,1.60,1.60,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+3,Service pads / hardware,J2 J4 SW1 U24 TP1 TP2 TP3 TP4 TP5 TP6 TP7 TP8 TP9,USB/UART pads + 2x fixture pads + reset interface,0.65,2.65,2.00,R10_INCREMENT_ESTIMATE,UART service buffer and hardware above R9 allowance,
+3,"Bare PCB, identical for each module",,"FR-4, RF board and creepage outline TBD",13.00,13.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+3,0.91in 128x32 yellow module,,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,9.78,9.78,0.00,USER_SCREENSHOT_MODEL_INPUT,R9 unit estimate retained,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+3,5 V system entry eFuse,U1,TPS259474LRPWR,0.00,13.68,13.68,R9_PUBLIC_PRICE_APPLIED,"Uses same tier as U11; shipping, lot and CAD release TBD",../r9/BOM_COST_MODEL.csv
+3,Consolidated inbound freight / tax allowance,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 28; R10 quote pending,
+3,SMT setup and stencil,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 70; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+3,Feeder / handling / programming and inspection setup,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 45; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+3,SMT + THT + basic assembly and functional screening,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 39; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+3,Additional materials for second assembly,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 0; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+10,MCU and PCB antenna,U3,ESP32-S3-WROOM-1-N8 / C2913198,23.50,23.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.espressif.com/zh-hans/products/modules/esp32-s3-wroom-1u
+10,3.3 V 1 A buck,U2,TPS62162DSGR,4.00,4.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.ti.com/product/TPS62162/part-details/TPS62162DSGR
+10,2.2 uH buck inductor,L1,Bourns SRN4018-2R2M candidate,1.00,1.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,3.3 V local reservoir and buck MLCC,C4 C6 C7 C8 C10,GRM family; 2x22uF + 1x10uF,0.96,1.60,0.64,R10_INCREMENT_ESTIMATE,5 rather than 3 selected-size MLCCs,
+10,Decoupling capacitors,C1 C9 C12 C14 C16 C17 C18 C19 C20 C21 C22 C23 C24 C27 C29 C30 C32 C33 C34 C39 C46 C49 C50 C51,GRM188R71H104KA93D,0.60,1.44,0.84,R10_INCREMENT_ESTIMATE,Increment above budgeted ten; keep value-specific sourcing open,
+10,Input bulk and RF transient reserve,C5,"68–100uF low ESR 10V and damping, TBD",1.00,1.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,EN strap / control R and C,R7 R8 R9 R10 R11 R12 R13 R14 R15 R16 R17 R30 R31 R32 R33 R34 R35 R36 R54 R55 C11,RC0603 family + 1uF,0.72,1.26,0.54,R10_INCREMENT_ESTIMATE,Nine additional small passives,
+10,Shift register,U20 U21 U22 U23,SN74HC595PWR,11.22,11.22,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/SN74HC595PWR/1571275
+10,Cathode NPN,Q1..Q30,Jingdao MMBTA42 / C4749118,5.10,5.10,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/partdetail/5321818-MMBTA42/C4749118
+10,Bipolar base series resistor,R100..R129,RC0603FR-073KL,0.90,0.90,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,Bipolar base pull down,R200..R229,RC0603FR-0710KL,0.90,0.90,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,OLED switched rail and I2C isolation,U5 U6 U7 D1 R18 R19 R20 R21 R22 C13 C15,TPS22918DBVR + TCA9517DGKR class / TBD,2.80,3.40,0.60,R10_INCREMENT_ESTIMATE,Adds reset gating and ESD; TCA9517A variant,
+10,Boost controller,U17,LM5155DSSR / C545416,9.70,9.70,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.lcsc.com/product-detail/C545416.html
+10,Boost magnetic,L3,MSS1278-223MLD,3.50,3.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.coilcraft.com/en-us/products/power/shielded-inductors/ferrite-drum/mss-mos/mss1278/
+10,Main switch,Q32,STD13N60M2,10.89,10.89,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/stmicroelectronics/STD13N60M2/4250759
+10,Rectifier,D3,ES1G-13-F,0.55,0.55,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.diodes.com/part/view/ES1G?BackID=8339
+10,Gate bias / driver,U16 U18 L2 D2 R70 R71 R74 R75 R76 C37 C38 C45,UCC27511DBVR + 5V to 10–12V bias cell TBD,5.00,5.00,0.00,ENGINEERING_ESTIMATE,TPS61040 bias completed in CAD; retain R9 allowance until sourcing,
+10,Feedback / shunt / compensation / snubber,R72 R73 R77 R78 R79 R80 R81 R82 R83 R84 R85 R86 C40 C41 C42 C43 C44 C48,HV voltage-rated R chain + shunt + RC + clamp TBD,2.90,3.55,0.65,R10_INCREMENT_ESTIMATE,"Four-element FB divider, R73 and snubber candidates",
+10,HV reservoir,C47,B32774M4335K000,7.50,7.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D
+10,Real HV input cut and reverse block,U11,TPS259474LRPWR,9.98,9.98,0.00,PUBLIC_PRICE_APPLIED,R9 unit estimate retained,https://www.digikey.cn/en/products/detail/texas-instruments/TPS259474LRPWR/14123976
+10,Independent HV OVP/OCP detector,U12 U13 R47 R48 R49 R60 R61 R62 R63 R64 C31 C35,TPS3700DDCR and independent reference network TBD,4.00,4.00,0.00,ENGINEERING_ESTIMATE,TLV1702+REF3312; allowance retained pending RFQ,
+10,Fault latch and hardware OE,U8 U9 U10 U19 Q31 R23 R24 R25 R26 R27,SN74LVC1G74DCUR + open-drain gates / discrete support,2.30,3.15,0.85,R10_INCREMENT_ESTIMATE,"Series permit chain and Q31, above the R9 allowance",
+10,Window watchdog and rail supervisor,U4 U25,TPS3430WDRCR class + voltage monitor TBD,4.50,4.50,0.00,ENGINEERING_ESTIMATE,TPS3808G33 and TPS3430; retain R9 allowance,https://www.ti.com/product/TPS3430
+10,Residual voltage sense and re-arm,U14 U15 R28 R46 R50 R51 R52 R53 R65 R66 R67 R68 R69 C36,Independent divider / comparator / local ARM hardware TBD,3.60,3.60,0.00,ENGINEERING_ESTIMATE,Detection and bias qualification candidates; R9 allowance retained,
+10,Branch fault detect allocation,,3 x independent sense paths; circuit TBD,5.00,5.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,Permanent bleeder resistors,R400..R407,CRCW1206249KFKEA,1.12,1.60,0.48,R10_INCREMENT_ESTIMATE,"Four series 2512 resistors per independent path; unit estimate, exact MPN open",
+10,Anode load resistors,R302 R303 R304 R305 R306 R307,MFR02SF1002A10,1.92,2.52,0.60,R10_INCREMENT_ESTIMATE,Move from axial R9 allowance to power SMD; derating and tolerance open,../r8/MINIMUM_PROTECTION_BOM.csv
+10,"5V fuse/TVS, protection passives",F1 D4 R1 R2 R3 R4 R5 R6 R40 R41 R42 R43 R44 R45 C2 C3 C25 C26 C28,"PTC/TVS, independent sense dividers and timing R/C TBD",2.60,3.35,0.75,R10_INCREMENT_ESTIMATE,Adds second set of startup/timing parts; R9 had a protection allowance,
+10,Touch guard / service interface within electronics,,"Insulating shield / spacers / hardware, TBD",2.00,2.00,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,QS30-1 tube sockets,V1 V2 V3,13-contact QS30-1 socket interface TBD,5.70,5.70,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,5 V keyed connector and mating pigtail,J1,"JST B2B-XH-A family + mate / wire, TBD",1.70,1.70,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,OLED header and cable,J3,4-pin keyed 2.54 mm family / TBD,1.35,1.35,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,
+10,Service pads / hardware,J2 J4 SW1 U24 TP1 TP2 TP3 TP4 TP5 TP6 TP7 TP8 TP9,USB/UART pads + 2x fixture pads + reset interface,0.50,1.95,1.45,R10_INCREMENT_ESTIMATE,UART service buffer and hardware above R9 allowance,
+10,"Bare PCB, identical for each module",,"FR-4, RF board and creepage outline TBD",9.50,9.50,0.00,ENGINEERING_ESTIMATE,R9 unit estimate retained,https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype
+10,0.91in 128x32 yellow module,,Screenshot MPN UNKNOWN; Winstar WEA012832F reference,9.78,9.78,0.00,USER_SCREENSHOT_MODEL_INPUT,R9 unit estimate retained,https://www.winstar.com.tw/products/oled-module/graphic-oled-display/0_91-oled.html
+10,5 V system entry eFuse,U1,TPS259474LRPWR,0.00,9.98,9.98,R9_PUBLIC_PRICE_APPLIED,"Uses same tier as U11; shipping, lot and CAD release TBD",../r9/BOM_COST_MODEL.csv
+10,Consolidated inbound freight / tax allowance,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 40; R10 quote pending,
+10,SMT setup and stencil,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 70; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+10,Feeder / handling / programming and inspection setup,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 45; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+10,SMT + THT + basic assembly and functional screening,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 130; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+10,Additional materials for second assembly,,,,,,R9_BATCH_ALLOWANCE_CARRIED,R9 cash allowance CNY 0; R10 quote pending,https://jlcpcb.com/help/article/pcb-assembly-faqs
+1,TOTAL MATERIAL,,,220.54,247.38,26.84,ENGINEERING_ESTIMATE,"includes PCB and protection reserves; excludes assembly, freight and tubes",
+3,TOTAL MATERIAL,,,194.45,218.17,23.72,ENGINEERING_ESTIMATE,"includes PCB and protection reserves; excludes assembly, freight and tubes",
+10,TOTAL MATERIAL,,,158.29,175.67,17.38,ENGINEERING_ESTIMATE,"includes PCB and protection reserves; excludes assembly, freight and tubes",
+,existing QS30-1 tubes,,,,,,SCOPE,User has tubes; serviceability and interchangeability unverified. Excluded as in R9.,
+,0.91 inch OLED,,,,,,SCOPE,"Yellow screenshot input ¥9.78; SKU, fit and optical acceptance open.",
+,branch fault hardware,,,,,,SCOPE,R9 allowance retained. Open architecture and pricing.,
+,bare PCB,,,,,,SCOPE,Existing R9 allowance only. 130×80 is a placement screen and quotes are open.,
+,assembly,,,,,,SCOPE,"R9 conversion rows retained. 282 preliminary placed designators plus future sockets, stencil and sequence require a new RFQ.",
+,inventory,,,,,,SCOPE,No stock assumed for R10 parts apart from the user's visible tube pool.,

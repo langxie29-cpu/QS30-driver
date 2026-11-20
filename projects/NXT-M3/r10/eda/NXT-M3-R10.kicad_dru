@@ -1,0 +1,26 @@
+(version 1)
+
+# A provisional copper screen. See PCB_LAYOUT.md for the assumptions and open qualification.
+(rule "Protected 5V and buck trunk width"
+    (condition "A.Type == 'Track' && (A.NetName == '5V_RAW' || A.NetName == '5V_FUSED' || A.NetName == '5V_PROT' || A.NetName == '5V_HV' || A.NetName == 'HV_ISOLATE_IN' || A.NetName == 'LV_SW')")
+    (constraint track_width (min 0.50mm) (opt 0.80mm)))
+
+(rule "Ordinary electrical copper away from routed edge"
+    (constraint edge_clearance (min 0.30mm)))
+
+(rule "Candidate mounting fastener isolation to HV copper"
+    (condition "A.NetName == 'HV_BUS' || A.NetName == 'K*' || A.NetName == 'ANODE_*' || A.NetName == 'ALIM_*' || A.NetName == 'BLEED_*' || A.NetName == 'HV_FB_*' || A.NetName == 'HV_OVP_S_*' || A.NetName == 'HV_RES_S_*' || A.NetName == 'SW_HV' || A.NetName == 'SNUB'")
+    (constraint edge_clearance (min 2.00mm)))
+
+(rule "HV bus and display conservative creepage screen"
+    (condition "A.NetName == 'HV_BUS' || B.NetName == 'HV_BUS' || A.NetName == 'K*' || B.NetName == 'K*' || A.NetName == 'ANODE_*' || B.NetName == 'ANODE_*' || A.NetName == 'ALIM_*' || B.NetName == 'ALIM_*' || A.NetName == 'BLEED_*' || B.NetName == 'BLEED_*' || A.NetName == 'HV_FB_*' || B.NetName == 'HV_FB_*' || A.NetName == 'HV_OVP_S_*' || B.NetName == 'HV_OVP_S_*' || A.NetName == 'HV_RES_S_*' || B.NetName == 'HV_RES_S_*'")
+    (constraint clearance (min 2.00mm)))
+
+(rule "Switch node provisional repetitive-peak screen"
+    (condition "A.NetName == 'SW_HV' || B.NetName == 'SW_HV' || A.NetName == 'SNUB' || B.NetName == 'SNUB'")
+    (constraint clearance (min 3.20mm)))
+
+
+(rule "HV copper to candidate M3 hardware footprint"
+    (condition "(B.memberOfFootprint('MH*') && (A.NetName == 'HV_BUS' || A.NetName == 'K*' || A.NetName == 'ANODE_*' || A.NetName == 'ALIM_*' || A.NetName == 'BLEED_*' || A.NetName == 'HV_FB_*' || A.NetName == 'HV_OVP_S_*' || A.NetName == 'HV_RES_S_*' || A.NetName == 'SW_HV' || A.NetName == 'SNUB')) || (A.memberOfFootprint('MH*') && (B.NetName == 'HV_BUS' || B.NetName == 'K*' || B.NetName == 'ANODE_*' || B.NetName == 'ALIM_*' || B.NetName == 'BLEED_*' || B.NetName == 'HV_FB_*' || B.NetName == 'HV_OVP_S_*' || B.NetName == 'HV_RES_S_*' || B.NetName == 'SW_HV' || B.NetName == 'SNUB'))")
+    (constraint hole_clearance (min 4.40mm)))
