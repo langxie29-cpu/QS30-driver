@@ -1,0 +1,185 @@
+reference,MPN,schematic_value,spice_model,model_source_or_part_datasheet,proxy,difference,scope
+U1,TPS259474LRPWR,TPS259474LRPWR,V5 upstream boundary,https://www.ti.com/lit/ds/symlink/tps25947.pdf,yes,Front switch/fuse/TVS/buck not solved with boost; crest inrush not valid,Power-path boundary only
+U2,TPS62162DSGR,TPS62162DSGR,V33 / Crail,https://www.ti.com/lit/ds/symlink/tps62162.pdf,yes,No buck regulation/load dynamics; open-loop capacitive bound,3.3 V rail screen
+U3,ESP32-S3-WROOM-1-N8,ESP32-S3-WROOM-1-N8,Vin GPIO and active logic levels,https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf,yes,Boundary sources only,Logic and back-power screen
+U24,SN74LVC1G125DBVR,SN74LVC1G125DBVR,unmodeled,https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf,yes,Native Ioff UART buffer remains outside cathode clamp test,UART requalification
+U5,TPS22918DBVR,TPS22918DBVR,unmodeled,https://www.ti.com/lit/ds/symlink/tps22918.pdf,yes,OLED load switch QOD timing not modeled,OLED rail requalification
+U6,TCA9517ADGKR,TCA9517ADGKR,unmodeled,https://www.ti.com/lit/ds/symlink/tca9517a.pdf,yes,"No buffer-specific direction, offset or rail loss model",OLED bus requalification
+U8,SN74LVC1G74DCUR,SN74LVC1G74DCUR,"C_LATCH_A, S_KILL",https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf,yes,"Interlock approximation; no digital clock, enable or supply-loss proof",Fault latch surrogate
+U9,SN74LVC1G08DBVR,SN74LVC1G08DBVR,B_ARMED,https://www.ti.com/lit/ds/symlink/sn74lvc1g08.pdf,yes,Proxy fault clear gating; no 3.3 V loss-state verification,Fault latch surrogate
+U20,SN74HC595PWR,SN74HC595PWR,VOUT / RDRV,https://www.ti.com/lit/ds/symlink/sn74hc595.pdf,yes,Output equivalent and 30-channel current bound; no 3.3 V VOH/IOH guarantee,Digital drive
+U21,SN74HC595PWR,SN74HC595PWR,VOUT / RDRV,https://www.ti.com/lit/ds/symlink/sn74hc595.pdf,yes,Output equivalent and 30-channel current bound; no 3.3 V VOH/IOH guarantee,Digital drive
+U22,SN74HC595PWR,SN74HC595PWR,VOUT / RDRV,https://www.ti.com/lit/ds/symlink/sn74hc595.pdf,yes,Output equivalent and 30-channel current bound; no 3.3 V VOH/IOH guarantee,Digital drive
+U23,SN74HC595PWR,SN74HC595PWR,VOUT / RDRV,https://www.ti.com/lit/ds/symlink/sn74hc595.pdf,yes,Output equivalent and 30-channel current bound; no 3.3 V VOH/IOH guarantee,Digital drive
+Q1,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R100,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R200,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q2,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R101,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R201,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q3,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R102,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R202,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q4,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R103,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R203,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q5,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R104,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R204,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q6,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R105,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R205,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q7,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R106,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R206,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q8,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R107,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R207,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q9,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R108,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R208,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q10,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R109,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R209,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q11,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R110,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R210,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q12,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R111,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R211,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q13,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R112,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R212,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q14,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R113,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R213,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q15,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R114,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R214,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q16,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R115,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R215,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q17,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R116,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R216,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q18,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R117,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R217,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q19,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R118,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R218,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q20,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R119,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R219,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q21,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R120,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R220,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q22,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R121,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R221,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q23,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R122,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R222,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q24,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R123,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R223,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q25,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R124,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R224,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q26,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R125,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R225,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q27,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R126,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R226,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q28,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R127,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R227,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q29,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R128,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R228,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+Q30,MMBTA42 / C4749118,Jingdao MMBTA42,NPN_BOUND / equivalent resistance,https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf,yes,Generic BJT and half-on resistance sweep points; no vendor SOA,Per-channel sensitivity
+R129,RC0603FR-073KL,3.0k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+R229,RC0603FR-0710KL,10k 1%,RBASE or RPD,R10 schematic value,no,3 kΩ / 10 kΩ tolerance; representative per-channel fixture,Drive margin
+V1,QS30-1 / used socket TBD,QS30-1 / socket geometry TBD,BLOAD / VSTRIKE,R10 schematic value,yes,Current envelope with extinction ramp or fixed arc offset; no reignition dynamics,Load sensitivity
+R302,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+R303,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+V2,QS30-1 / used socket TBD,QS30-1 / socket geometry TBD,BLOAD / VSTRIKE,R10 schematic value,yes,Current envelope with extinction ramp or fixed arc offset; no reignition dynamics,Load sensitivity
+R304,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+R305,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+V3,QS30-1 / used socket TBD,QS30-1 / socket geometry TBD,BLOAD / VSTRIKE,R10 schematic value,yes,Current envelope with extinction ramp or fixed arc offset; no reignition dynamics,Load sensitivity
+R306,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+R307,CRCW251210K0FKEG,10k 1% HV 1W,"R1, R2 / Rfa, Rfb",R10 schematic value,mixed,Tubes as 7.65/9.9 mA aggregate for converter; two 10 kΩ resistors in cathode fixture,Load and fault
+R40,,DNP power-link open,R40,R10 schematic value,mixed,"Native DNP. 1 mΩ populated equivalent for converter screen, 1 TΩ for open-link case",DNP and populated sensitivity
+U11,TPS259474LRPWR,TPS259474LRPWR,S11,https://www.ti.com/lit/ds/symlink/tps25947.pdf,yes,"28 mΩ switch with imposed enable; omits slew limiter, dynamic reverse blocking, thermal",Supply-path sensitivity
+C28,,22u 16V,C28,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R45,,10k,R45,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+U12,REF3312AIDBZR,REF3312AIDBZR,VREF,https://www.ti.com/lit/ds/symlink/ref33.pdf,yes,Fixed 1.25 V; no tolerance or fail-low hold,Nominal protection thresholds
+U13,TLV1702DGKR,TLV1702DGKR,"B_RAW, B_O, B_C",https://www.ti.com/lit/ds/symlink/tlv1701.pdf,yes,Comparator/RC proxy; no certified latency or power sequencing,Modeled threshold/cutoff
+U14,TLV1702DGKR,TLV1702DGKR,residual and bias divider crossings,https://www.ti.com/lit/ds/symlink/tlv1701.pdf,yes,BIAS_OK proxy; residual monitor voltage only; fail-low and common cause open,Nominal thresholds
+U15,SN74LVC1G08DBVR,SN74LVC1G08DBVR,B_PERMIT,https://www.ti.com/lit/ds/symlink/sn74lvc1g08.pdf,yes,BIAS_OK and ARMED as analog gating; no ramp qualification,Bias gate
+R47,,93.1k,R47,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R48,,10k,R48,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R49,,470R,R49,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C31,,100p,C31,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R50,,64.9k,R50,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R51,,10k,R51,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R52,,47k,R52,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R53,,10k,R53,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R60,,499k 1% HV,R60,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R61,,499k 1% HV,R61,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R62,,499k 1% HV,R62,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R63,,499k 1% HV,R63,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R64,,13.3k 1%,R64,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R65,,453k 1% HV,R65,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R66,,453k 1% HV,R66,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R67,,453k 1% HV,R67,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R68,,453k 1% HV,R68,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R69,,42.2k 1%,R69,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C35,,100p,C35,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C36,,100p,C36,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+U16,TPS61040DBVR,TPS61040DBVR,S16 / B_BCTL,https://www.ti.com/lit/ds/symlink/tps61040.pdf,yes,TPS61040 timing and feedback proxy; internal peak limit and EN behavior absent,Bias/permission sequencing
+L2,SRN4018-100M,10uH,L2,R10 schematic value,mixed,10 uH ideal; no saturation,Bias buildup
+D2,SS14,SS14,SS14_PROXY,R10 schematic value,yes,Generic Schottky model,Bias charging
+R70,,845k,R70,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R71,,100k,R71,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C37,,4.7u 16V,C37,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C38,,4.7u 25V,C38,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C39,,100n,C39,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+U17,LM5155DSSR,LM5155DSSR,"LM5155-Q1_TRANS / B_GM, S_SET, S_LRST",https://www.ti.com/lit/ds/symlink/lm5155.pdf,mixed,TI Q1 Rev H attempted with LM51551=0; all native attempts invalid; functional 100 kHz current-mode proxy,Closed-loop screening with preserved passives
+U18,UCC27511DBVR,UCC27511DBVR,"S18_H, S18_L",https://www.ti.com/lit/ds/symlink/ucc27511.pdf,yes,"Finite RON gate switches; UVLO, delay variation and supply transfer absent",Switching stress screen
+Q32,STD13N60M2,STD13N60M2,M32 ST_PROXY,https://www.st.com/resource/en/datasheet/std13n60m2.pdf,yes,Level-1 model with assumed capacitances/RDS; no breakdown or thermal network,Switch stress bounds
+D3,ES1G-13-F,ES1G-13-F,ES1G_PROXY,R10 schematic value,yes,"Generic recovery, capacitance and forward I-V",Reverse spike/current sensitivity
+L3,MSS1278-223MLD,22uH,"L3, RLD",R10 schematic value,mixed,"22 uH, 39.5 mΩ; no saturation/core loss",Inductor and sense stress
+R72,,100R,R72,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R73,WSL2512R0500FEA,50mR Kelvin candidate,R73,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R74,,10R,R74,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R75,,4.7R,R75,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R76,,10k,R76,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R77,,10k,R77,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R78,,47k,R78,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R79,,220k RT candidate,R79,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R80,,10k COMP candidate,R80,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C40,,2.2u 16V,C40,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C41,,100n,C41,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C42,,100p,C42,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C43,,10n COMP candidate,C43,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C44,,100p COMP candidate,C44,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C45,,1u 25V,C45,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C46,,100n 16V,C46,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C47,B32774M4335K000,3.3u 450V 10%,"C47, RESR",R10 schematic value,mixed,"3.3 uF nominal or 3.63 uF discharge; 25 mΩ screen, no ESL",Stored energy/ripple
+R81,,422k 0.1% HV,R81,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R82,,422k 0.1% HV,R82,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R83,,422k 0.1% HV,R83,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R84,,422k 0.1% HV,R84,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R85,,10k 0.1%,R85,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R86,,100R snubber TBD,R86,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+C48,,100p 630V snubber TBD,C48,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R400,,124k 1% HV,R400,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R401,,124k 1% HV,R401,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R402,,124k 1% HV,R402,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R403,,124k 1% HV,R403,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R404,,124k 1% HV,R404,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R405,,124k 1% HV,R405,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R406,,124k 1% HV,R406,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
+R407,,124k 1% HV,R407,R10 schematic value,no,Nominal ideal passives; tolerance parasitics only as noted in decks,Circuit topology
