@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+    "pcb",
+    "drc",
+    "--refill-zones",
+    "--save-board",
+    "--all-track-errors",
+    "--schematic-parity",
+    "--format",
+    "json",
+    "--exit-code-violations",
+    "-o",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\socket_fit\\fuse_pivot_166.json",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+  ],
+  "exit": 5,
+  "stdout": "发现 293 条违规项\r\n发现 348 个未连接的项目\r\n发现 0 个原理图一致性问题\r\n保存 DRC 报告到 C:/Users/Administrator/.codex/worktrees/nxt-r11-socket/QS30-NXT-M3-R11/projects/NXT-M3/r11/evidence/socket_fit/fuse_pivot_166.json\r\n已保存电路板\r\n",
+  "stderr": ""
+}

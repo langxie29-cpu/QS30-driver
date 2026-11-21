@@ -1,5 +1,7 @@
 # R11 续轮：5 V Type-C 输入与 R10 管座参考
 
+后续实际六孔、手焊焊盘和现行投板结论见 [管座与投板审核](SOCKET_FIT_AND_RELEASE_REVIEW.md)。本文保留 Type-C 阶段结果。
+
 **GATE_0 = REWORK · ENGINEERING HOLD · MANUFACTURING_RELEASE = HOLD**
 
 ## 原生工程
