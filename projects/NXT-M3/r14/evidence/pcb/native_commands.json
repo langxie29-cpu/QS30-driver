@@ -1,0 +1,142 @@
+[
+  {
+    "args": [
+      "version"
+    ],
+    "exit": 0,
+    "stdout": "10.0.8\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "sch",
+      "erc",
+      "--format",
+      "report",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/baseline/ERC.rpt",
+      "../r11/eda/NXT-M3-R11.kicad_sch"
+    ],
+    "exit": 0,
+    "stdout": "发现 0 条违规项\r\n已将 ERC 报告保存到文件 evidence/baseline/ERC.rpt\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "pcb",
+      "drc",
+      "--schematic-parity",
+      "--format",
+      "report",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/baseline/DRC.rpt",
+      "../r11/eda/NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "stdout": "发现 263 条违规项\r\n发现 345 个未连接的项目\r\n发现 0 个原理图一致性问题\r\n保存 DRC 报告到 evidence/baseline/DRC.rpt\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "sch",
+      "erc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/baseline/ERC.json",
+      "../r11/eda/NXT-M3-R11.kicad_sch"
+    ],
+    "exit": 0,
+    "stdout": "发现 0 条违规项\r\n已将 ERC 报告保存到文件 evidence/baseline/ERC.json\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "pcb",
+      "drc",
+      "--schematic-parity",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/baseline/DRC.json",
+      "../r11/eda/NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "stdout": "发现 263 条违规项\r\n发现 345 个未连接的项目\r\n发现 0 个原理图一致性问题\r\n保存 DRC 报告到 evidence/baseline/DRC.json\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "sch",
+      "erc",
+      "--format",
+      "report",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/erc/ERC.rpt",
+      "eda/NXT-M3-R14.kicad_sch"
+    ],
+    "exit": 0,
+    "stdout": "发现 0 条违规项\r\n已将 ERC 报告保存到文件 evidence/erc/ERC.rpt\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "pcb",
+      "drc",
+      "--schematic-parity",
+      "--format",
+      "report",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/drc/DRC.rpt",
+      "eda/NXT-M3-R14.kicad_pcb"
+    ],
+    "exit": 5,
+    "stdout": "发现 260 条违规项\r\n发现 365 个未连接的项目\r\n发现 0 个原理图一致性问题\r\n保存 DRC 报告到 evidence/drc/DRC.rpt\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "sch",
+      "erc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/erc/ERC.json",
+      "eda/NXT-M3-R14.kicad_sch"
+    ],
+    "exit": 0,
+    "stdout": "发现 0 条违规项\r\n已将 ERC 报告保存到文件 evidence/erc/ERC.json\r\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "pcb",
+      "drc",
+      "--schematic-parity",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "evidence/drc/DRC.json",
+      "eda/NXT-M3-R14.kicad_pcb"
+    ],
+    "exit": 5,
+    "stdout": "发现 260 条违规项\r\n发现 365 个未连接的项目\r\n发现 0 个原理图一致性问题\r\n保存 DRC 报告到 evidence/drc/DRC.json\r\n",
+    "stderr": ""
+  }
+]

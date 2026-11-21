@@ -1,0 +1,44 @@
+R14 HV STOP latch and discharge proxy: loop_short
+VDD dd 0 PWL(0 3.3 3.99999 3.3 4 0 4.09999 0 4.1 3.3)
+VMCU mcu 0 PWL(0 3.3 3.99999 3.3 4 0 4.09999 0 4.1 3.3)
+VLOOP contact 0 PWL(0 3.3 4.7 3.3)
+SLOOP loop 0 contact 0 CTRL
+R509 loop gate 220
+R510 dd gate 3300
+C64 gate 0 1n
+Bdet det 0 V=(v(gate)>1.6 ? 3.3 : 0)
+SSTOP fault 0 det 0 CTRL
+VOTHER other 0 PWL(0 0 2.29999 0 2.3 3.3 2.39999 3.3 2.4 0)
+SOTHER fault 0 other 0 CTRL
+R27 dd fault 10000
+Bclear clr 0 V=(v(fault)<1.3 || v(mcu)<2 ? 3.3 : 0)
+SCLR armed 0 clr 0 CTRL
+Varm edge 0 PWL(0 0
++ 0.19999 0 0.2 3.3 0.20002 3.3 0.20003 0
++ 1.84999 0 1.85 3.3 1.85002 3.3 1.85003 0
++ 3.64999 0 3.65 3.3 3.65002 3.3 3.65003 0)
+Bres res 0 V=(v(hv)<54.92 ? v(dd) : 0)
+SARM res armed edge 0 SET
+CQ armed 0 1n
+RQ armed 0 1T
+V5 raw 0 5
+S11 raw feed armed 0 CTRL
+C28 feed 0 22u
+R45 feed 0 10k
+Bpermit permit 0 V=(v(armed)>1.2 ? v(dd) : 0)
+Boe oe 0 V=(v(permit)>1.2 && v(feed)>2.7 ? 0 : v(dd))
+Vboost src 0 195
+RSTART permit startup 1k
+CSTART startup 0 1u
+BSTART boost 0 V=(v(permit)>1.2 && v(startup)>1.2 ? 3.3 : 0)
+SBOOST src hv boost 0 CTRL
+Dpass feed hv PASS
+CHV hv 0 3.63u
+RB1 hv 0 500960
+RB2 hv 0 500960
+.model CTRL SW(Ron=1 Roff=1e12 Vt=1.2 Vh=.02)
+.model SET SW(Ron=1000 Roff=1e13 Vt=1.2 Vh=.02)
+.model PASS D(IS=1e-12 N=1 RS=.1)
+.tran 1m 4.7 0 1m
+.save v(contact) v(gate) v(fault) v(armed) v(oe) v(permit) v(feed) v(hv) v(res)
+.end

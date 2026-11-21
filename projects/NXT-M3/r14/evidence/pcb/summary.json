@@ -1,0 +1,660 @@
+{
+  "r11": {
+    "violations_by_type": {
+      "clearance": 263
+    },
+    "violations_by_severity": {
+      "error": 263
+    },
+    "clearance_groups": {
+      "same_footprint_pad": 103,
+      "HV_to_HV": 16,
+      "between_footprint_pads": 160,
+      "HV_to_LV_or_boundary": 208,
+      "LV_or_unclassified": 39,
+      "any_Q1_Q30": 153,
+      "same_Q1_Q30_package": 60,
+      "Q1_clearance": 5
+    },
+    "unconnected": 345,
+    "unconnected_nets": 166,
+    "opens_by_net": {
+      "3V3": 16,
+      "5V_FUSED": 1,
+      "5V_HV": 2,
+      "5V_PROT": 3,
+      "5V_RAW": 2,
+      "ANODE_1": 1,
+      "ARMED": 1,
+      "ARM_STROBE": 1,
+      "BASE_00": 1,
+      "BASE_01": 1,
+      "BASE_02": 1,
+      "BASE_03": 1,
+      "BASE_04": 1,
+      "BASE_05": 1,
+      "BASE_06": 1,
+      "BASE_07": 1,
+      "BASE_08": 1,
+      "BASE_09": 1,
+      "BASE_10": 1,
+      "BASE_11": 1,
+      "BASE_12": 1,
+      "BASE_13": 1,
+      "BASE_14": 2,
+      "BASE_15": 1,
+      "BASE_16": 1,
+      "BASE_17": 1,
+      "BASE_18": 1,
+      "BASE_19": 1,
+      "BASE_20": 1,
+      "BASE_21": 1,
+      "BASE_22": 1,
+      "BASE_23": 1,
+      "BASE_24": 2,
+      "BASE_25": 1,
+      "BASE_26": 1,
+      "BASE_27": 1,
+      "BASE_28": 1,
+      "BASE_29": 2,
+      "BIAS_OK": 1,
+      "BIAS_S": 2,
+      "BUCK_PG": 1,
+      "COMP_Z": 1,
+      "CS_FILT": 1,
+      "CUT_DVDT": 1,
+      "CUT_ILM": 1,
+      "CUT_OVLO": 2,
+      "CUT_PGTH": 1,
+      "CUT_TIMER": 1,
+      "DIGITS_REQ": 3,
+      "DRV_00": 1,
+      "DRV_01": 1,
+      "DRV_02": 1,
+      "DRV_03": 1,
+      "DRV_04": 1,
+      "DRV_05": 1,
+      "DRV_06": 1,
+      "DRV_07": 1,
+      "DRV_08": 1,
+      "DRV_09": 1,
+      "DRV_10": 1,
+      "DRV_11": 1,
+      "DRV_12": 1,
+      "DRV_13": 1,
+      "DRV_14": 1,
+      "DRV_15": 1,
+      "DRV_16": 1,
+      "DRV_18": 1,
+      "DRV_19": 1,
+      "DRV_21": 1,
+      "DRV_22": 1,
+      "DRV_23": 1,
+      "DRV_24": 1,
+      "DRV_25": 1,
+      "DRV_26": 1,
+      "DRV_27": 1,
+      "DRV_28": 1,
+      "DRV_29": 1,
+      "FAULT_N": 1,
+      "FRONT_ILM": 1,
+      "FRONT_OVLO": 1,
+      "GATE_BIAS": 1,
+      "GATE_HV": 1,
+      "GATE_SNK": 1,
+      "GND": 122,
+      "HC_CLEAR_N": 4,
+      "HV_BUS": 7,
+      "HV_COMP": 2,
+      "HV_CS": 2,
+      "HV_FB": 2,
+      "HV_FB_1": 1,
+      "HV_FB_3": 1,
+      "HV_ISENSE": 3,
+      "HV_ISOLATE_IN": 1,
+      "HV_OVP_S": 3,
+      "HV_OVP_S_2": 1,
+      "HV_READY": 2,
+      "HV_RES_S": 3,
+      "HV_RES_S_3": 1,
+      "HV_RT": 1,
+      "HV_SS": 1,
+      "HV_UVLO": 1,
+      "K1_0": 1,
+      "K1_1": 1,
+      "K1_2": 1,
+      "K1_3": 1,
+      "K1_4": 1,
+      "K1_5": 1,
+      "K1_6": 1,
+      "K1_7": 1,
+      "K1_8": 1,
+      "K1_9": 1,
+      "K2_0": 1,
+      "K2_1": 1,
+      "K2_2": 1,
+      "K2_3": 1,
+      "K2_4": 1,
+      "K2_5": 1,
+      "K2_6": 1,
+      "K2_7": 1,
+      "K2_8": 1,
+      "K2_9": 1,
+      "K3_0": 1,
+      "K3_1": 1,
+      "K3_2": 1,
+      "K3_3": 1,
+      "K3_4": 1,
+      "K3_5": 1,
+      "K3_6": 1,
+      "K3_7": 1,
+      "K3_8": 1,
+      "K3_9": 1,
+      "LATCH_CLR_N": 1,
+      "LV_SW": 1,
+      "MCU_EN": 1,
+      "MCU_SCL": 2,
+      "MCU_SDA": 1,
+      "OCP_REF": 2,
+      "OE_SINK": 2,
+      "OLED_QOD": 1,
+      "OLED_SCL": 1,
+      "OLED_SDA": 1,
+      "PWM_PERMIT": 3,
+      "REF_1V25": 3,
+      "RESIDUAL_OK": 2,
+      "RST_REQ_N": 1,
+      "SER1": 1,
+      "SER2": 1,
+      "SER3": 1,
+      "SNUB": 1,
+      "SR_CLK": 1,
+      "SR_CLK_BUS": 3,
+      "SR_LATCH": 1,
+      "SR_LATCH_BUS": 1,
+      "SR_SER": 1,
+      "STRAP3": 1,
+      "STRAP45": 1,
+      "STRAP46": 1,
+      "SW_HV": 2,
+      "UART_RX": 1,
+      "UART_TX": 1,
+      "USBC_1V2": 1,
+      "USBC_2V7": 1,
+      "USBC_3A_N": 2,
+      "USBC_CC1": 1,
+      "USBC_VALID_N": 1,
+      "WDI": 2
+    },
+    "parity": {},
+    "ignored_drc": [
+      "missing_courtyard",
+      "track_not_centered_on_via",
+      "tuning_profile_track_geometries",
+      "footprint_filters_mismatch",
+      "footprint_type_mismatch"
+    ],
+    "q1_open_non_ground": {
+      "BASE_00": 1,
+      "DRV_00": 1,
+      "K1_0": 1
+    },
+    "erc": {},
+    "ignored_erc": [
+      "single_global_label",
+      "four_way_junction",
+      "simulation_model_issue",
+      "footprint_filter"
+    ]
+  },
+  "r14": {
+    "violations_by_type": {
+      "clearance": 260
+    },
+    "violations_by_severity": {
+      "error": 260
+    },
+    "clearance_groups": {
+      "same_footprint_pad": 103,
+      "HV_to_HV": 16,
+      "between_footprint_pads": 157,
+      "HV_to_LV_or_boundary": 205,
+      "LV_or_unclassified": 39,
+      "any_Q1_Q30": 150,
+      "same_Q1_Q30_package": 60,
+      "Q1_clearance": 2
+    },
+    "unconnected": 365,
+    "unconnected_nets": 169,
+    "opens_by_net": {
+      "3V3": 21,
+      "5V_FUSED": 1,
+      "5V_HV": 2,
+      "5V_PROT": 3,
+      "5V_RAW": 2,
+      "ANODE_1": 1,
+      "AUX1": 1,
+      "AUX1_GPIO": 2,
+      "AUX2_GPIO": 3,
+      "BASE_00": 1,
+      "BASE_01": 1,
+      "BASE_02": 1,
+      "BASE_03": 1,
+      "BASE_04": 1,
+      "BASE_05": 1,
+      "BASE_06": 1,
+      "BASE_07": 1,
+      "BASE_08": 1,
+      "BASE_09": 1,
+      "BASE_10": 1,
+      "BASE_11": 1,
+      "BASE_12": 1,
+      "BASE_13": 1,
+      "BASE_14": 2,
+      "BASE_15": 1,
+      "BASE_16": 1,
+      "BASE_17": 1,
+      "BASE_18": 1,
+      "BASE_19": 1,
+      "BASE_20": 1,
+      "BASE_21": 1,
+      "BASE_22": 1,
+      "BASE_23": 1,
+      "BASE_24": 2,
+      "BASE_25": 1,
+      "BASE_26": 1,
+      "BASE_27": 1,
+      "BASE_28": 1,
+      "BASE_29": 2,
+      "BIAS_OK": 1,
+      "BIAS_S": 2,
+      "BTN1_GPIO": 3,
+      "BTN2_GPIO": 3,
+      "BUCK_PG": 1,
+      "COMP_Z": 1,
+      "CS_FILT": 1,
+      "CUT_DVDT": 1,
+      "CUT_ILM": 1,
+      "CUT_OVLO": 2,
+      "CUT_PGTH": 1,
+      "CUT_TIMER": 1,
+      "DIGITS_REQ": 3,
+      "DRV_00": 1,
+      "DRV_01": 1,
+      "DRV_02": 1,
+      "DRV_03": 1,
+      "DRV_04": 1,
+      "DRV_05": 1,
+      "DRV_06": 1,
+      "DRV_07": 1,
+      "DRV_08": 1,
+      "DRV_09": 1,
+      "DRV_10": 1,
+      "DRV_11": 1,
+      "DRV_12": 1,
+      "DRV_13": 1,
+      "DRV_14": 1,
+      "DRV_15": 1,
+      "DRV_16": 1,
+      "DRV_18": 1,
+      "DRV_19": 1,
+      "DRV_21": 1,
+      "DRV_22": 1,
+      "DRV_23": 1,
+      "DRV_24": 1,
+      "DRV_25": 1,
+      "DRV_26": 1,
+      "DRV_27": 1,
+      "DRV_28": 1,
+      "DRV_29": 1,
+      "FAULT_N": 2,
+      "FRONT_ILM": 1,
+      "FRONT_OVLO": 1,
+      "GATE_BIAS": 1,
+      "GATE_HV": 1,
+      "GATE_SNK": 1,
+      "GND": 126,
+      "HC_CLEAR_N": 4,
+      "HV_BUS": 7,
+      "HV_COMP": 2,
+      "HV_CS": 2,
+      "HV_FB": 2,
+      "HV_FB_1": 1,
+      "HV_FB_3": 1,
+      "HV_ISENSE": 3,
+      "HV_ISOLATE_IN": 1,
+      "HV_OVP_S": 3,
+      "HV_OVP_S_2": 1,
+      "HV_READY": 2,
+      "HV_RES_S": 3,
+      "HV_RES_S_3": 1,
+      "HV_RT": 1,
+      "HV_SS": 1,
+      "HV_UVLO": 1,
+      "K1_0": 1,
+      "K1_1": 1,
+      "K1_2": 1,
+      "K1_3": 1,
+      "K1_4": 1,
+      "K1_5": 1,
+      "K1_6": 1,
+      "K1_7": 1,
+      "K1_8": 1,
+      "K1_9": 1,
+      "K2_0": 1,
+      "K2_1": 1,
+      "K2_2": 1,
+      "K2_3": 1,
+      "K2_4": 1,
+      "K2_5": 1,
+      "K2_6": 1,
+      "K2_7": 1,
+      "K2_8": 1,
+      "K2_9": 1,
+      "K3_0": 1,
+      "K3_1": 1,
+      "K3_2": 1,
+      "K3_3": 1,
+      "K3_4": 1,
+      "K3_5": 1,
+      "K3_6": 1,
+      "K3_7": 1,
+      "K3_8": 1,
+      "K3_9": 1,
+      "LATCH_CLR_N": 1,
+      "LV_SW": 1,
+      "MCU_EN": 1,
+      "MCU_SCL": 2,
+      "MCU_SDA": 1,
+      "OCP_REF": 2,
+      "OE_SINK": 2,
+      "OLED_QOD": 1,
+      "OLED_SCL": 1,
+      "OLED_SDA": 1,
+      "PWM_PERMIT": 3,
+      "REF_1V25": 3,
+      "RESIDUAL_OK": 2,
+      "RST_REQ_N": 1,
+      "SER1": 1,
+      "SER2": 1,
+      "SER3": 1,
+      "SNUB": 1,
+      "SR_CLK": 1,
+      "SR_CLK_BUS": 3,
+      "SR_LATCH": 1,
+      "SR_LATCH_BUS": 1,
+      "SR_SER": 1,
+      "STRAP3": 1,
+      "STRAP45": 1,
+      "STRAP46": 1,
+      "SW_HV": 2,
+      "UART_RX": 1,
+      "UART_TX": 1,
+      "USBC_1V2": 1,
+      "USBC_2V7": 1,
+      "USBC_3A_N": 2,
+      "USBC_CC1": 1,
+      "USBC_VALID_N": 1,
+      "WDI": 2
+    },
+    "parity": {},
+    "ignored_drc": [
+      "missing_courtyard",
+      "track_not_centered_on_via",
+      "tuning_profile_track_geometries",
+      "footprint_filters_mismatch",
+      "footprint_type_mismatch"
+    ],
+    "q1_open_non_ground": {
+      "BASE_00": 1,
+      "DRV_00": 1,
+      "K1_0": 1
+    },
+    "erc": {},
+    "ignored_erc": [
+      "single_global_label",
+      "four_way_junction",
+      "simulation_model_issue",
+      "footprint_filter"
+    ]
+  },
+  "netlist": {
+    "changed_existing_pins": [
+      [
+        "U3",
+        "18",
+        "unconnected-(U3-IO10-Pad18)",
+        "BTN1_GPIO"
+      ],
+      [
+        "U3",
+        "19",
+        "unconnected-(U3-IO11-Pad19)",
+        "BTN2_GPIO"
+      ],
+      [
+        "U3",
+        "20",
+        "unconnected-(U3-IO12-Pad20)",
+        "AUX1_GPIO"
+      ],
+      [
+        "U3",
+        "21",
+        "unconnected-(U3-IO13-Pad21)",
+        "AUX2_GPIO"
+      ]
+    ],
+    "gpio_all_pins": [
+      {
+        "pad": "1",
+        "pin": "GND_1",
+        "net": "GND"
+      },
+      {
+        "pad": "2",
+        "pin": "3V3_2",
+        "net": "3V3"
+      },
+      {
+        "pad": "3",
+        "pin": "EN_3",
+        "net": "MCU_EN"
+      },
+      {
+        "pad": "4",
+        "pin": "IO4_4",
+        "net": "SR_SER"
+      },
+      {
+        "pad": "5",
+        "pin": "IO5_5",
+        "net": "SR_CLK"
+      },
+      {
+        "pad": "6",
+        "pin": "IO6_6",
+        "net": "SR_LATCH"
+      },
+      {
+        "pad": "7",
+        "pin": "IO7_7",
+        "net": "DIGITS_REQ"
+      },
+      {
+        "pad": "8",
+        "pin": "IO15_8",
+        "net": "OLED_REQ"
+      },
+      {
+        "pad": "9",
+        "pin": "IO16_9",
+        "net": "FAULT_N"
+      },
+      {
+        "pad": "10",
+        "pin": "IO17_10",
+        "net": "MCU_SDA"
+      },
+      {
+        "pad": "11",
+        "pin": "IO18_11",
+        "net": "MCU_SCL"
+      },
+      {
+        "pad": "12",
+        "pin": "IO8_12",
+        "net": "ARMED"
+      },
+      {
+        "pad": "13",
+        "pin": "IO19_USB_DM_13",
+        "net": "unconnected-(U3-IO19_USB_DM-Pad13)"
+      },
+      {
+        "pad": "14",
+        "pin": "IO20_USB_DP_14",
+        "net": "unconnected-(U3-IO20_USB_DP-Pad14)"
+      },
+      {
+        "pad": "15",
+        "pin": "IO3_15",
+        "net": "STRAP3"
+      },
+      {
+        "pad": "16",
+        "pin": "IO46_16",
+        "net": "STRAP46"
+      },
+      {
+        "pad": "17",
+        "pin": "IO9_17",
+        "net": "WDI"
+      },
+      {
+        "pad": "18",
+        "pin": "IO10_18",
+        "net": "BTN1_GPIO"
+      },
+      {
+        "pad": "19",
+        "pin": "IO11_19",
+        "net": "BTN2_GPIO"
+      },
+      {
+        "pad": "20",
+        "pin": "IO12_20",
+        "net": "AUX1_GPIO"
+      },
+      {
+        "pad": "21",
+        "pin": "IO13_21",
+        "net": "AUX2_GPIO"
+      },
+      {
+        "pad": "22",
+        "pin": "IO14_22",
+        "net": "unconnected-(U3-IO14-Pad22)"
+      },
+      {
+        "pad": "23",
+        "pin": "IO21_23",
+        "net": "unconnected-(U3-IO21-Pad23)"
+      },
+      {
+        "pad": "24",
+        "pin": "IO47_24",
+        "net": "unconnected-(U3-IO47-Pad24)"
+      },
+      {
+        "pad": "25",
+        "pin": "IO48_25",
+        "net": "unconnected-(U3-IO48-Pad25)"
+      },
+      {
+        "pad": "26",
+        "pin": "IO45_26",
+        "net": "STRAP45"
+      },
+      {
+        "pad": "27",
+        "pin": "IO0_27",
+        "net": "BOOT_N"
+      },
+      {
+        "pad": "28",
+        "pin": "IO35_28",
+        "net": "unconnected-(U3-IO35-Pad28)"
+      },
+      {
+        "pad": "29",
+        "pin": "IO36_29",
+        "net": "unconnected-(U3-IO36-Pad29)"
+      },
+      {
+        "pad": "30",
+        "pin": "IO37_30",
+        "net": "unconnected-(U3-IO37-Pad30)"
+      },
+      {
+        "pad": "31",
+        "pin": "IO38_31",
+        "net": "unconnected-(U3-IO38-Pad31)"
+      },
+      {
+        "pad": "32",
+        "pin": "IO39_32",
+        "net": "unconnected-(U3-IO39-Pad32)"
+      },
+      {
+        "pad": "33",
+        "pin": "IO40_33",
+        "net": "unconnected-(U3-IO40-Pad33)"
+      },
+      {
+        "pad": "34",
+        "pin": "IO41_34",
+        "net": "unconnected-(U3-IO41-Pad34)"
+      },
+      {
+        "pad": "35",
+        "pin": "IO42_35",
+        "net": "unconnected-(U3-IO42-Pad35)"
+      },
+      {
+        "pad": "36",
+        "pin": "RXD0_36",
+        "net": "UART_RX"
+      },
+      {
+        "pad": "37",
+        "pin": "TXD0_37",
+        "net": "UART_TX"
+      },
+      {
+        "pad": "38",
+        "pin": "IO2_38",
+        "net": "unconnected-(U3-IO2-Pad38)"
+      },
+      {
+        "pad": "39",
+        "pin": "IO1_39",
+        "net": "unconnected-(U3-IO1-Pad39)"
+      },
+      {
+        "pad": "40",
+        "pin": "GND_40",
+        "net": "GND"
+      },
+      {
+        "pad": "41",
+        "pin": "GND_EP_41",
+        "net": "GND"
+      }
+    ],
+    "added_pins": 56,
+    "r40_dnp": true,
+    "j5_dnp": true
+  },
+  "shared_dru_sha256": "44e9d6d4526b1dd8a456c948b177a32a770ce06bd6f3dd8f95e3805126315f8f"
+}

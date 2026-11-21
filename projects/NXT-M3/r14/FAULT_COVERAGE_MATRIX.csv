@@ -1,0 +1,19 @@
+case,plant_assumptions,upstream_supply,retention_or_time,ovp_ocp_expected,anode_sense,regional_ntc,remaining_fault
+off,Generic BJT cutoff and floating collector,170 V sustained,4 s model,No,Dark baseline only,No,Real high-temperature leakage and node transient
+on,Generic BJT saturated with 130 V tube sensitivity,170 V sustained,4 s model,No,On-state window only,No,Gain and ignition variability
+half_170_sustain,Equal C-E fault resistance 19.8 kΩ and zero tube drop,170 V sustained,4 s model then indefinite possible,Not guaranteed,Possible with a qualified current window,Conditional and delayed,Exceeds device 25 C steady rating
+half_195_sustain,Equal C-E fault resistance 19.8 kΩ and zero tube drop,195 V forced bound,4 s model then indefinite possible,OVP should respond only if chain intact and thresholds exceeded; OCP blind,Possible but overlapping load,Conditional and delayed,Sustained thermal overstress
+half_195_isolated,3.63 uF and two bleed paths initially charged,Isolated at t=0,Discharge over 4 s,Independent cutoff assumed,Current transient possible,Usually too fast,Transient SOA missing
+half_195_tube130,Illustrative tube drop of 130 V,195 V forced bound,4 s model,As for half_195_sustain,May overlap normal,Usually weak,Tube drop and arc not bounded by this sensitivity
+ce_short,0.1 ohm C-E and zero tube drop,195 V forced bound,4 s model,Only if upstream limit crossed,Dark-state current or overcurrent may detect,Mostly ballast heat,Wrong digit might draw normal current
+cb_10meg_to_short,C-B leakage sweep on generic BJT,195 V forced bound,4 s model,Indirect and not guaranteed,Detects only sufficient additional anode current,Depends on hotspot and delay,Base drive injection and local BJT dissipation
+leak_ce_1meg_to_10k,PCB equivalent C-E leakage sweep,195 V forced bound,4 s model,Indirect and not guaranteed,High leakage may be visible,Depends on PCB heat path,Low leakage and tracking may be invisible
+open_cathode,1 T ballast proxy and commanded on,170 V sustained,4 s model,No,Possible watch commanded branch timing,No,Disconnected or wrong electrode indistinguishable
+erroneous_on,Command fault drives generic BJT with zero tube drop,195 V forced bound,4 s model,Indirect and not guaranteed,May match intended operating current,No reliable signature,Command corruption or wrong digit
+three_half,Three independent loaded digits in proxy,195 V forced bound,4 s model,Total may still miss current threshold,Local windows only,More likely with enough thermal coupling,Simultaneous same-tube paths need actual glow model
+logic_off_cb_short,Dead driver output clamped low and C-B short,195 V forced bound,4 s model,Protection rail and cutoff depend on actual failure,May see anode current only,Conditional,Proxy driver clamp and actual supply recovery unqualified
+highz_cb_short,Unpowered high-Z driver and assumed diode to dead rail,195 V forced bound,4 s model,Protection rail may be backfed,May see anode current only,Conditional,82 uA proxy rail injection and latch consequences
+intermediate_output,Artificial driver at 0.82 V,195 V forced bound,4 s model,Not guaranteed,May be within dark or active window,Delayed,True transistor SOA unknown
+hv_stop_loop_open,NC logic and ideal latch plus eFuse proxy,Upstream cut only if U11 operates,Latched until a new qualifying ARM edge,Uses common fault path,Independent measurement only,No,Open fault detectable subject to PCB chain and power
+hv_stop_loop_short,Line short masks NC open,Upstream stays powered at stop,Until separate fault or intervention,No STOP detection,No,No,Single-channel blind spot
+u11_stuck_on,PWM disabled but boost rectifier path remains powered,5 V feed persists,Until independent isolation,May assert without stopping power,No reliable coverage,No,Need independent cutoff if required by product risk analysis

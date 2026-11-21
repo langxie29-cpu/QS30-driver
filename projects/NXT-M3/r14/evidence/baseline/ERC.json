@@ -1,0 +1,107 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-22T02:01:09",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6",
+            "violations": []
+        },
+        {
+            "path": "/Input_and_3V3/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/4e9a115e-acdb-5b96-9035-b30e6891e182",
+            "violations": []
+        },
+        {
+            "path": "/ESP32/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/ee1ff48c-25a6-55cc-b73a-7455c3aff77b",
+            "violations": []
+        },
+        {
+            "path": "/OLED/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/33948352-ffb2-5286-a270-5a7e2d14b25b",
+            "violations": []
+        },
+        {
+            "path": "/Hardware_inhibit/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/35a66b2c-d7c6-59e0-81ff-d478076c1658",
+            "violations": []
+        },
+        {
+            "path": "/Shift_registers/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/df5e1dc6-e60c-5643-be37-74713c57038c",
+            "violations": []
+        },
+        {
+            "path": "/Cathodes_1/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/f2860951-97f1-59e2-accb-ea3aa2c756b0",
+            "violations": []
+        },
+        {
+            "path": "/Cathodes_2/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/4bf2d3d7-42f2-561d-9c55-fa4ca8efd9bc",
+            "violations": []
+        },
+        {
+            "path": "/Cathodes_3/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/810cac75-01df-5e91-8229-e2d5e0607f02",
+            "violations": []
+        },
+        {
+            "path": "/Tube_interfaces/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/dc7c61cf-ff40-587e-bc0f-5101291ff1a3",
+            "violations": []
+        },
+        {
+            "path": "/HV_cutoff/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/68d76501-a6d9-5869-a85d-14c54c0a41a0",
+            "violations": []
+        },
+        {
+            "path": "/Analog_protection/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/fea94883-208c-58ff-97c2-f5d8abd2d1e3",
+            "violations": []
+        },
+        {
+            "path": "/Gate_bias/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/643c12f3-97cb-5dc8-9880-d3a335134edd",
+            "violations": []
+        },
+        {
+            "path": "/HV_boost/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/e65e2dac-0d82-50de-88e9-ad2757424944",
+            "violations": []
+        },
+        {
+            "path": "/HV_bleeders/",
+            "uuid_path": "/291289d0-40d1-520c-94bf-4c43df5338f6/0e905cac-2039-5ebc-9715-a7b94c0d67fb",
+            "violations": []
+        }
+    ],
+    "source": "NXT-M3-R11.kicad_sch"
+}
