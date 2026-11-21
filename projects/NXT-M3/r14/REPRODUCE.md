@@ -1,4 +1,20 @@
-# 复现 R14
+# 复现 R14 与 R14.1
+
+## R14.1 当前候选
+
+直接打开 [NXT-M3-R14.kicad_pro](eda/NXT-M3-R14.kicad_pro)。在本目录运行以下命令复查已提交的 PCB、原理图、铜连通与低压代理。KiCad CLI 对仍有净距违规的候选返回 5。
+
+```powershell
+$p = 'C:/Program Files/KiCad/10.0/bin/python.exe'
+& $p -u verify_r14_1.py r14_1_verify.tmp/baseline.kicad_pcb
+& $p -u stop_r14_1.py
+```
+
+原生规则使用与基线相同的约束设置。[R14.1 工程结论](R14_1_COMPLETION.md) 中的端点审计基于实际 KiCad 连通图，不以同网名代替同一铜连接。布线复作工具 `close_r14_1.py` 从冻结 R14 的 EDA 归档载入，使用 `landslatch4`、`finish`、`blank`、`returns`、`prune`、`cutoff` 的顺序在独立临时目录实施。其外层 / 内层几何筛查和候选回滚以后续 KiCad 原生验证为准。候选板保存的对象 UUID 是本次证据的主键。 [布线证据](evidence/r14_1/routing/)
+
+## R14 历史交付复作
+
+以下历史生成指令应在原提交 `d203259673981fc9dc7dcc8ede4780305f21c041` 的独立工作树运行。
 
 在本目录用 KiCad 10.0.8 打开 [NXT-M3-R14.kicad_pro](eda/NXT-M3-R14.kicad_pro)。原理图、局部符号/封装库、项目参数和 PCB 均在 eda。符号的标准封装名称依赖 KiCad 10 自带库。工程生成脚本使用同仓库 R10/R11 的工具，查看 EDA 文件无需执行脚本。
 
