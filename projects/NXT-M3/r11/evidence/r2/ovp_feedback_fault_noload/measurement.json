@@ -1,0 +1,39 @@
+{
+  "case": "ovp_feedback_fault_noload",
+  "model": "dynamically coupled comparator, latch and U11 boundary proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\ovp_feedback_fault_noload\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 39.984,
+  "measurements": {
+    "hv_final": 186.577,
+    "hv_ripple": 0.640173,
+    "hv_peak": 188.876,
+    "t_95": 0.0156403,
+    "il_peak": 1.73527,
+    "q_vds": 190.198,
+    "q_current": 1.86874,
+    "d_if": 1.63752,
+    "d_irev": -0.168854,
+    "input_peak": -152.821,
+    "cs_peak": 0.0868203,
+    "cap_charge": 1.63716,
+    "cap_discharge": -0.169917,
+    "cap_rms": 0.00105635,
+    "q_loss": 3.55821e-09,
+    "d_loss": 1.43351e-06,
+    "l_copper": 3.05248e-18,
+    "sense_loss": 2.71e-20,
+    "bias_peak": 11.6563,
+    "trip_time": 0.0218929,
+    "armed_loss": 0.0218929,
+    "hv_25ms": 187.862
+  },
+  "raw_points": 1055242,
+  "waveform_sha256": "c5d40a65d955697e18f2bdb359785b9ccc4bb48f8effc937de703ad5791ef2bd",
+  "vendor_model_sha256": null
+}

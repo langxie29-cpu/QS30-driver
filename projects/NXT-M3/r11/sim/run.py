@@ -80,6 +80,7 @@ def main():
     parser.add_argument("group", choices=("vendor", "proxy", "fault", "layout", "protection"))
     parser.add_argument("--vendor-zip")
     parser.add_argument("--case")
+    parser.add_argument("--suffix", default="")
     args = parser.parse_args()
     base = template("proxy")
     cases = []
@@ -116,22 +117,26 @@ def main():
         test = test.replace(".save v(HV)", ".save v(TRIP) v(ARMED) v(CS_FILT) v(HV)")
         logic = (HERE / "protection_proxy.inc").read_text().strip()
         for name, fault in (
-            ("ovp_feedback_fault", "V_FAIL FAIL 0 PULSE(0 1 18m 10n 10n 30m 60m)\nS_FB FB 0 FAIL 0 HARD_FAULT"),
+            ("ovp_feedback_fault_noload", "V_FAIL FAIL 0 PULSE(0 1 18m 10n 10n 30m 60m)\nS_FB FB 0 FAIL 0 HARD_FAULT"),
             ("ocp_sense_fault", "V_FAIL FAIL 0 PULSE(0 1 18m 10n 10n 30m 60m)\nV_OVER OVER 0 .15\nS_OC OVER CS_FILT FAIL 0 HARD_FAULT"),
         ):
             additions = logic + "\n" + fault + "\n.model HARD_FAULT SW(Ron=1 Roff=1T Vt=.5 Vh=.02)"
-            cases.append((name, test.replace(".end", additions + "\n.end"),
+            deck = test.replace("VLOAD REQUEST 0 7.65m", "VLOAD REQUEST 0 0") if name.endswith("noload") else test
+            cases.append((name, deck.replace(".end", additions + "\n.end"),
                           "dynamically coupled comparator, latch and U11 boundary proxies"))
     if args.case:
         cases = [case for case in cases if case[0] == args.case]
         if not cases:
             raise ValueError(args.case)
+    cases = [(case[0] + args.suffix, *case[1:]) for case in cases]
     with ThreadPoolExecutor(max_workers=4) as workers:
         list(workers.map(lambda case: run(*case), cases))
 
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

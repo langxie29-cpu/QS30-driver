@@ -1,0 +1,36 @@
+{
+  "case": "layout_10nh",
+  "model": "assumed switch branch inductance, not field extraction",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\layout_10nh\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 55.61,
+  "measurements": {
+    "hv_final": 169.809,
+    "hv_ripple": 0.127852,
+    "hv_peak": 170.64,
+    "t_95": 0.0186603,
+    "il_peak": 1.73518,
+    "q_vds": 175.385,
+    "q_current": 1.73516,
+    "d_if": 1.89166,
+    "d_irev": -0.152854,
+    "input_peak": -152.821,
+    "cs_peak": 0.0880707,
+    "cap_charge": 1.89131,
+    "cap_discharge": -0.161467,
+    "cap_rms": 0.0773572,
+    "q_loss": 0.124433,
+    "d_loss": 0.00612506,
+    "l_copper": 0.0127982,
+    "sense_loss": 0.0157769,
+    "bias_peak": 11.6564
+  },
+  "raw_points": 1470139,
+  "waveform_sha256": "689d850bdc868c5d43a1b6c60b1f2c926989058266c0664a5a5cdf6f4b785221",
+  "vendor_model_sha256": null
+}
