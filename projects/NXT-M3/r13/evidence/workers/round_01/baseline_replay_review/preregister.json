@@ -1,0 +1,27 @@
+{
+  "task_id": "baseline_replay_review",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Analyze the R11 proxy replay 100 kHz vs 80 kHz. Quantify any improvement, isolate false claims, and propose design action based on correct LM5155 frequency range and independent protection.",
+  "input_receipts": [
+    {
+      "file": "r11/LOWLINE_BLOCKER_SWEEP.csv",
+      "sha256": "a28642abfb309bc63fe1800f243dcf7f8b00d45fbcf4bfeb7c4dde98efe2ccb6"
+    },
+    {
+      "file": "r12/R12_ANALYTICAL_SCREEN.md",
+      "sha256": "4dad98c811a584352b8b54dcd4280327edadb1775bfeccd6dfbf2e3a5989bc5f"
+    },
+    {
+      "file": "r13/evidence/spice/d_replay/cold_nominal_repeat/run.log",
+      "sha256": "949e247c04de08695b37e84ce49dc917d8e92fc7e9836b7d51c09583493bbae3"
+    },
+    {
+      "file": "r13/evidence/spice/d_replay/diagnostic_80khz_22u/run.log",
+      "sha256": "f970d154605c8cc6c210b7e03cd85ec9dcf819ef6a1072d1f1444bb0777b59e1"
+    }
+  ]
+}

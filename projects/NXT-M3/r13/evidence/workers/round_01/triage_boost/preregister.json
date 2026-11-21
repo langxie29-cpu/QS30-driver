@@ -1,0 +1,27 @@
+{
+  "task_id": "triage_boost",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Explain the repeated UCC3803 error-amplifier numerical failure and separately the physical 4.30 V UVLO constraint. Review fixture assumptions, propose one test which changes one input and discriminates the failure cause.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/spice/round1/a_low_50k/run.log",
+      "sha256": "35929718d0e52a94a683695a451b035469cbc8beb0a036fb3c2ef40779ab50e6"
+    },
+    {
+      "file": "r13/evidence/spice/round2/a_low_ea_trap/run.log",
+      "sha256": "157548c7d03258d7ce63c2d664f9bac3364bdd6cdc7c6e354cd830b85e739c40"
+    },
+    {
+      "file": "r13/sim/a_boost.inc",
+      "sha256": "71e47d59b8fe8d48297df63e0fa167f9dcba63c8c702eed2138ac77c851f5393"
+    },
+    {
+      "file": "r13/evidence/device_facts.md",
+      "sha256": "d35443f94e5a685e3be39ed213558a239bca870020bfea2afee08cae45a6c560"
+    }
+  ]
+}

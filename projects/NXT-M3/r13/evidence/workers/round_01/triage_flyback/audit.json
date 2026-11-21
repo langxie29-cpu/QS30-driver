@@ -1,0 +1,23 @@
+{
+  "task_id": "triage_flyback",
+  "worker_claim": "PASS",
+  "grade": "CLAIMED_PASS_AUDITED_FILES",
+  "evidence_sha256": {
+    "inventory.md": "079015cd631de50584360bbaf9fe5c106481b3ed8ac4f0b409d999b30058cbb5",
+    "sources.json": "ec35954f2f5381322e89ea3b802e7d46203c0ec97954dbe02fce7d71706af76b"
+  },
+  "rc": 0,
+  "failure": null,
+  "started": "2026-11-21T16:40:58.782905+00:00",
+  "seconds": 117.562,
+  "identity": {
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "configuration_sha256": "39b8d1a4c0641ec6843ea44de6095a17b6120ffd7285cecd40f826c948b053b2",
+    "mode": "SEALED_TEXT_ONLY",
+    "worker_tools": [],
+    "background_model_requests": false
+  }
+}

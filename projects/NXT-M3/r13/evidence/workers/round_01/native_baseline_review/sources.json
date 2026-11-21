@@ -1,0 +1,22 @@
+[
+  {
+    "source": "r13/evidence/eda_baseline/summary.json",
+    "locator": "violations.clearance; severity.error; unconnected_items; schematic_parity",
+    "assertion": "Clearance 263 均为 error；unconnected 345；schematic_parity 为空对象，不能证明 parity 通过。"
+  },
+  {
+    "source": "r13/evidence/eda_baseline/ERC_REPORT.txt",
+    "locator": "ERC messages; Ignored checks",
+    "assertion": "ERC 0 errors/0 warnings，但四项检查被忽略，故零错误仅限已启用检查。"
+  },
+  {
+    "source": "r13/evidence/eda_baseline/export_exits.json",
+    "locator": "gerber; drill; bom",
+    "assertion": "三个导出退出码均为 0；仅证明导出命令成功。"
+  },
+  {
+    "source": "r11/BLOCKER_CLOSURE_REPORT.md",
+    "locator": "实物设计文件与原生检查; Type-C 四层实布分支; 从 0 V 启动的低线和容差复验",
+    "assertion": "记录 Gate 0 REWORK/工程与制造 HOLD、DRC 退出 5、166 网络、开项、U3 局部改善、四层仅 CC1 局部、低线仿真 4/10 通过。"
+  }
+]

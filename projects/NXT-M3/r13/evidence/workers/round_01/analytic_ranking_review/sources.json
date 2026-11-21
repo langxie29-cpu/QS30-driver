@@ -1,0 +1,17 @@
+[
+  {
+    "source": "r13/evidence/analytical_summary.txt",
+    "locator": "Selected A–D summary rows",
+    "assertion": "Selected best rows show A 0/24, B 10/24, C 24/24, D 24/24 cleared and all UNQUALIFIED; metrics: A occupancy 1.0406/peak 1.322/ripple 0.1647; B 0.8304/2.180/0.0322/leakage 0.2780; C 0.9844/1.691/0.0302/leakage 0.2787; D 0.9239/1.467/0.1735/leakage 0."
+  },
+  {
+    "source": "r13/screen.py",
+    "locator": "OPTIONS, screen(), main(), pareto()",
+    "assertion": "Defines first-order DCM model with fixed 0.55/0.65 efficiency, 0.47–3.3 µF capacitance sweep, assumed peak/80% VDS/ripple/shunt gates, K=0.95 leakage estimate, and ANALYTICAL_ONLY/UNQUALIFIED output."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "B upstream measurement and LM3488/UCC3803/FDS2672/LM5155 bullets",
+    "assertion": "Reports B upstream physical 179.5 V/19.2 mA/63.9% and 180.0 V/9.5 mA/61.43%; 33 mΩ shunt, 0.47 µF marked reservoir, 200 V A proxy, and vendor frequency limits; these are not a qualification of the model."
+  }
+]

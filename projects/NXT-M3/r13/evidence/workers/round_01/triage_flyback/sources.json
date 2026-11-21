@@ -1,0 +1,32 @@
+[
+  {
+    "source": "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+    "locator": "stderr final TRAN error",
+    "assertion": "At time 0.000390766 s with timestep 1.25e-19, TRAN reports Timestep too small and trouble with node b_sw#branch; next line reports run simulation(s) aborted."
+  },
+  {
+    "source": "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+    "locator": "stdout near end",
+    "assertion": "No. of Data Rows : 140493; cshunt added 204 capacitors at 1e-14 F each; last Reference value 3.90743e-4 matches the abort time, consistent with time stamps."
+  },
+  {
+    "source": "r13/evidence/spice/round1/b_low/run.log",
+    "locator": "stdout excerpt",
+    "assertion": "Reference value sequence reaches about 1.77e-3; the provided excerpt has no TRAN error or aborted line, so it does not demonstrate a stall."
+  },
+  {
+    "source": "r13/sim/b_flyback.inc",
+    "locator": "VQ, X_Q, LPOWER, LSEC, K_XF, R_FB lines",
+    "assertion": "VQ is a 0-V source between drain and sw in series with X_Q drain, so b_sw#branch is VQ current. LPOWER dot is at primary/input and LSEC dot at 0; relative polarity is flyback-correct. FB divider is 1.2Meg/8674."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "LM3488 bullet",
+    "assertion": "LM3488 FB is 1.26 V typ, 1.24-1.28 V full range; TI model header sets 1.26 V; upstream ASC uses 1.22 V; transformer is a custom 10:145 EFD15 with no dot convention given."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "LM3488 model bullet",
+    "assertion": "LM3488_TRANS pin order and oscillator syntax are model details; do not infer model speed, oscillation, or silicon behavior from syntax alone."
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "task_id": "cost_market",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Compute CNY verified subtotal limits and evaluate HV-60 and M3-60. Compare material and actual cash scope. Give three concrete component RFP target prices, keep caps separate from quotes. Acknowledge exact stock and pricing limitations.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/quote_observations.md",
+      "sha256": "488dc3f4974234145b3f525ed264f20f072f0f1cb90056aced6415a47fd66fdd"
+    },
+    {
+      "file": "r12/HV_COST_CEILINGS.csv",
+      "sha256": "b9197b3a1ab6c1b29d14f5e1bbf992d5399407d40682ded93086f2f6a5e7dc1c"
+    },
+    {
+      "file": "r12/R12_HV_REDESIGN_PROGRAM.md",
+      "sha256": "6116990c714c85ca361b0c9e0fa6e635ee7a53ae3ca3509191cced26842b2f9b"
+    },
+    {
+      "file": "r13/evidence/cost_history_excerpt.md",
+      "sha256": "f4b9a2758072226403ab9d7ffbf755521e0175611e190ae9730bc7e3203057b7"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "native_baseline_review",
+  "status": "PASS",
+  "notes": "仅据摘录做文件级审查，未运行工具或打开原始 PCB/完整 DRC，不能独立复算；PASS 仅指审查完成，不是设计门或发布结论。ERC 0/0 但 4 项检查被忽略，零错误只覆盖已启用检查。summary 显示 263 clearance error、345 unconnected、parity 空对象；R11 另有 DRC 退出 5、166 网络、parity 0 的叙述，故 parity 需重跑，空对象不能当作通过。Gerber/Drill/BOM 退出码 0 只证明导出成功。R11 的 Gate 0 REWORK/工程 HOLD/制造 HOLD、USB-C 与阴极开项、U3 工艺确认、四层仅 CC1 局部可行性、低线仿真 4/10 通过等均为发布阻塞。新建工程须重布/修复开项和净距、显式处理 ignored ERC、补齐 parity、移植并验证 U3 封装、完成管座与高压绝缘复核，且不得放宽规则。四层若采用需整板重跑与报价。blocking_issues=[] 仅表示审查无阻塞。",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

@@ -1,0 +1,23 @@
+{
+  "task_id": "source_protection",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Audit the R11 safety chain for indispensable functions and possible conditional simplifications. Calculate energy/time or thermal bounds only when input values are available. Provide pass/fail evidence requirements for the partially conducting cathode and one failed bleeder.",
+  "input_receipts": [
+    {
+      "file": "r11/GATE0_SAFETY_ASSESSMENT.md",
+      "sha256": "a6614f8c841ac56a2b0fafd07c8bbbf751de614019adb52c0b9ac6011f7d3a64"
+    },
+    {
+      "file": "r12/HV_COST_CEILINGS.csv",
+      "sha256": "b9197b3a1ab6c1b29d14f5e1bbf992d5399407d40682ded93086f2f6a5e7dc1c"
+    },
+    {
+      "file": "r13/evidence/device_facts.md",
+      "sha256": "d35443f94e5a685e3be39ed213558a239bca870020bfea2afee08cae45a6c560"
+    }
+  ]
+}

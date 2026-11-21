@@ -1,0 +1,23 @@
+{
+  "task_id": "triage_boost",
+  "worker_claim": "PASS",
+  "grade": "CLAIMED_PASS_AUDITED_FILES",
+  "evidence_sha256": {
+    "inventory.md": "cf0dbcb63ca7bb067092abb4b5b9dad34b5a0e5afa1df80fc59a7a5665f387f9",
+    "sources.json": "6baf6a39bfdb401fc5bba0578bec0a59a748fdd69c869d391cc6167ac7462816"
+  },
+  "rc": 0,
+  "failure": null,
+  "started": "2026-11-21T16:40:07.814199+00:00",
+  "seconds": 50.281,
+  "identity": {
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "configuration_sha256": "39b8d1a4c0641ec6843ea44de6095a17b6120ffd7285cecd40f826c948b053b2",
+    "mode": "SEALED_TEXT_ONLY",
+    "worker_tools": [],
+    "background_model_requests": false
+  }
+}

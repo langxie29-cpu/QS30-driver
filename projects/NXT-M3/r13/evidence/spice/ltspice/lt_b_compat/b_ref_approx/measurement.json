@@ -1,0 +1,35 @@
+{
+  "case": "b_ref_approx",
+  "nominal_v": 180,
+  "endpoint_required_s": 0.01,
+  "command": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r13\\.local\\lt_b_compat\\b_ref_approx\\circuit.cir"
+  ],
+  "exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "exit_code": null,
+  "raw_size": 156202068,
+  "raw_sha256": "7a6279f2919109dcc30a8fcd2bb4804e03a8adc005cd134b878058bd9d3128e6",
+  "measurements": {},
+  "log_errors": [
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh))&v(c)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](yint2)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](yint2)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))\""
+  ],
+  "raw_local_path": "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r13\\.local\\lt_b_compat\\b_ref_approx\\circuit.raw",
+  "waveform_qualification": "PARTIAL_UNASSESSED"
+}

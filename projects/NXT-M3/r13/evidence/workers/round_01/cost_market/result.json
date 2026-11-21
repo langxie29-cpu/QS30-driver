@@ -1,0 +1,13 @@
+{
+  "task_id": "cost_market",
+  "status": "PASS",
+  "notes": "Bounded review complete. HV-60 cap sum is ¥55.50 vs ¥60, but all caps are TARGET_NOT_QUOTED; LT3757 qty-1 quote ¥62.77 alone exceeds ¥60. LM3488 ¥28.37 exceeds the ¥6 controller cap; LM3488X ¥24.15 has 0 stock. M3-60 frozen material subset is ¥74.44, already ¥14.44 over ¥60. R10 figures are historical estimates, not cash quotes. No full same-batch BOM quote or exact stock verification exists. Review PASS does not qualify cost or design gates.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

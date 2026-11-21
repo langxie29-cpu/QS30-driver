@@ -1,0 +1,47 @@
+[
+  {
+    "source": "r11/GATE0_SAFETY_ASSESSMENT.md",
+    "locator": "危险场景表：PWM 停止与上游供能",
+    "assertion": "5.5 V 输入仅停 PWM 时 7 s 仍为 5.114 V；强制 U11 打开为 0.0313 V；R40 原生 DNP；代理开关未证明绝缘隔离。"
+  },
+  {
+    "source": "r11/GATE0_SAFETY_ASSESSMENT.md",
+    "locator": "危险场景表：OVP 与 OCP",
+    "assertion": "OVP 阈值 188.901 V；30 ms 到 188.522 V 未触发，空载代理 21.893 ms 切断、峰值 188.876 V；OCP 121.242 mV=2.425 A，150 mV 刺激 18.0014 ms 撤销授权。"
+  },
+  {
+    "source": "r11/GATE0_SAFETY_ASSESSMENT.md",
+    "locator": "危险场景表：双泄放、单路失效和残压",
+    "assertion": "195 V、3.63 µF、500.96 kΩ 每路；双/单路至 60 V 为 1.07168/2.14337 s，至 54.92 V 为 1.15212/2.30424 s；60 V 为计算窗。"
+  },
+  {
+    "source": "r11/GATE0_SAFETY_ASSESSMENT.md",
+    "locator": "危险场景表：半导通与持续供能；C47 段",
+    "assertion": "97.50 V、4.924 mA、0.4801 W；一次电容放电 29.80 mJ；上游维持 195 V 时 4 s 积分 1.920 J 并继续累积；C47 170 V 47.69 mJ、+10% 52.45 mJ，195 V 62.74 mJ、+10% 69.02 mJ。"
+  },
+  {
+    "source": "r11/GATE0_SAFETY_ASSESSMENT.md",
+    "locator": "危险场景表：高压器件周边与整机触达；末段",
+    "assertion": "原生 DRC 保留高压封装及开关净距问题，交接处无正式管座焊盘；防护与泄放来自 SPICE 台架，无危险实物故障注入或高压上电。"
+  },
+  {
+    "source": "r12/HV_COST_CEILINGS.csv",
+    "locator": "hv_cutoff_reverse, ovp_ocp_latch, residual_bleeders, branch_fault, TOTAL",
+    "assertion": "PWM off 不是输入断开；安全逻辑不得与预算交换；泄放须考虑单路开路；分支故障须保留或证明等效；TOTAL 55.50 为目标上限，非实际 BOM。"
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "UCC3803; FDS2672; LM3488; IRFH7185; LM5155",
+    "assertion": "FDS2672 为 200 V 且 A R13 测试开关为代理；IRFH7185 静态 RDS(on) 仅保证 VGS=10 V；LM5155 80 kHz 低于推荐下限；LM3488 基准/斜坡范围与上游 ASC 1.22 V 假设存在差异。"
+  },
+  {
+    "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/film/mkp_mfp/data_sheet/20/20/ds/mkp_b32774m_778m.pdf",
+    "locator": "B32774M4335K000",
+    "assertion": "3.3 µF/450 V ±10%，70 °C、10 kHz 下 5.5 A RMS，典型 ESR 13.4 mΩ、ESL 17 nH，450 V 档 dV/dt 30 V/µs。"
+  },
+  {
+    "source": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "locator": "TPS259474L",
+    "assertion": "eFuse 器件手册；反向保护、斜率、关断延时等仍需按实际电路独立验证。"
+  }
+]

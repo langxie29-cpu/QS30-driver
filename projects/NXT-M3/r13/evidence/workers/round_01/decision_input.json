@@ -1,0 +1,43 @@
+{
+  "audits": {
+    "source_power": "round_01/source_power/audit.json",
+    "source_protection": "round_01/source_protection/audit.json",
+    "cost_market": "round_01/cost_market/audit.json",
+    "triage_boost": "round_01/triage_boost/audit.json",
+    "triage_flyback": "round_01/triage_flyback/audit.json",
+    "native_baseline_review": "round_01/native_baseline_review/audit.json",
+    "analytic_ranking_review": "round_01/analytic_ranking_review/audit.json",
+    "baseline_replay_review": "round_01/baseline_replay_review/audit.json"
+  },
+  "gates": {},
+  "snapshot": {
+    "head": "ac71825fec39f5692956cd71dc26866f9bbd004c",
+    "controls": {
+      "config.json": "ae1ca1a5e458bb72e36299dd21588b6dcdb6ffc9cdabbacb24342f27d8f25280",
+      "tasks.json": "ef229a2af0c236df9cbc26719905571755df4923bfd66c3d2f43ea2c1acec36b",
+      "acceptance.json": "d3bcf576428233c7e6ef668fb4f413013abe7f8de639226eedee881c2d78883a",
+      "decision.schema.json": "fcce482053a9351db75eb7e4586f386b54b9a971acec6b1acce6d6a4e2356bf8",
+      "prompts/FLASH_WORKER.md": "6d0d72177ea08c2aac2f04de4e7baf366274f97570ca873b8624cb48a86549af",
+      "prompts/CODEX_DECISION.md": "686f86ad6752fea18d9b7b43fe870e9d1d85901334fbb3e056511e7d08552ed9",
+      "orchestrate.py": "d77f7051989bd5782614563a123d1bfbf5e1b9bc45f6ac33dec5c5a597ef4766",
+      "evidence/source_manifest.json": "d87060843ab58729aeca5ac5de27a6b34d4c48d4765948fed83d168349008887",
+      "sim/model_pins.json": "7f806660ce36e13ccae6817088bed878b32f7977aa97a3b4e63abda1a25989c5",
+      "sim_cases.json": "4eca303e86a89a2cc09d428cfda38e7af317bb2e68169b646b9f502d73ced2d6",
+      "sim_followup.json": "6ddbd2cda9d9e0419d62ad5af760387fe1c4a36f158d8dc6d4b8f2cbc5638a49",
+      "simulate.py": "5688552795ecb81d0f5abaf49d48ada3a2c03814baabeed922e98bab66057835",
+      "sim/common.inc": "ff8793dc8cecbfc5d1b0990b4452c98ae64b0f3c1347582b276bfa78deb6d421",
+      "sim/a_boost.inc": "71e47d59b8fe8d48297df63e0fa167f9dcba63c8c702eed2138ac77c851f5393",
+      "sim/b_flyback.inc": "4e5537ae7a32c1948fa32703f1fd46733ee49eaf28ecaa2759d6f60f2b8a021d",
+      "headless.py": "9f7a13d2f2011b642a29d7102edc33d80105e5e79fdc84bc8c318646667bb1b2",
+      "headless.patch.yml": "e1ab77ad1797001bb64c32ee83f166876884c595b90a8266f0dd8c79cd386c35"
+    },
+    "archived_source_bytes": {}
+  },
+  "decision_model": "codex-main-session",
+  "decision_provider": "openai",
+  "calls": 8,
+  "rounds": 1,
+  "calls_remaining": 10,
+  "rounds_remaining": 5,
+  "manufacturing": "ENGINEERING HOLD"
+}

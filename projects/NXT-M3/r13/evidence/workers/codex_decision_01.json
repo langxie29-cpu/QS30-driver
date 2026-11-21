@@ -1,0 +1,39 @@
+{
+  "accepted_utc": "2026-11-21T16:48:04.069476+00:00",
+  "decision": {
+    "decision": "HOLD",
+    "rationale": "B is the priority verification route, D the engineering fallback. No complete regulated vendor-model run or complete traceable CNY price remains available. Full candidate schematic, routing and physical socket closure depend on these gates.",
+    "next_task_ids": [],
+    "issues": [
+      "LM3488 closure and clamp/transformer stress",
+      "Missing complete CNY quotes and MOQ",
+      "Board and socket qualification",
+      "Sustained branch fault and independent protection"
+    ],
+    "controlling_assumptions": [
+      "170 V, 165–175 V and ≤1 Vpp acceptance unchanged",
+      "R11 native CAD baseline read only",
+      "Manufacturing, procurement and high-voltage bench HOLD"
+    ]
+  },
+  "independent_review": {
+    "model": "codex-main-session",
+    "provider": "openai",
+    "independent_evidence_review": "Independent TI and onsemi datasheet checks, revision and raw-log checks, binary waveform integration, authorization and DRC parity audit. B b_sw#branch is the standalone loss probe, not the zero-volt current sensor; issue moved to b_vds#branch and ultimately v.x_q.vfi2#branch when those probe sources were removed. B remains unqualified. Worker file review does not qualify devices, BOM, assembly, or safety.",
+    "approved_audits": {
+      "source_protection": "9a7e2ea4ad06af78497fb372e177aef6e7928bf7ba440ab63830e0fe42204d88",
+      "cost_market": "50b94c22eaa5987dfe9e9a77fe071fae44ab78e7332bbbe9f1fda6be43c00e89",
+      "triage_boost": "9862014b7d1869091b66dab38446241ff9b7ee4e39cca577e40e7a294a864225",
+      "native_baseline_review": "0c2d14310c1184aa5c3bca86d38202b85efb180ceffd4f6c2e2b068cc2628a90",
+      "analytic_ranking_review": "741c1206058b9d728cfde16d6039d0f7dd3faea0775d7ba5a4beb88b93550d9d",
+      "baseline_replay_review": "e3b0e4860d85a46523c1722ee6524277f078058e1ee3e0928cb34e257e667dfa"
+    },
+    "gate_decisions": {
+      "G0": "INCONCLUSIVE",
+      "G1": "REWORK",
+      "G2": "INCONCLUSIVE",
+      "G3": "REWORK",
+      "G4": "INCONCLUSIVE"
+    }
+  }
+}

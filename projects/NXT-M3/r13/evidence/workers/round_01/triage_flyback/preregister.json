@@ -1,0 +1,27 @@
+{
+  "task_id": "triage_flyback",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Diagnose why the LM3488 run stalls at early time or stops, using original log excerpts and fixture source. Check winding polarity and reference voltage against source. Propose a minimal reproducible fix without replacing real silicon with a proxy.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/spice/round1/b_low/run.log",
+      "sha256": "9a20505911812d57b80a8d958ec2ca683e5b0acfe9916f9cfbf027236cc5895d"
+    },
+    {
+      "file": "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+      "sha256": "229c2546cd4f5164efb0b3f0f77245874b176d6f1c2f0c541b9c73e040fe1051"
+    },
+    {
+      "file": "r13/sim/b_flyback.inc",
+      "sha256": "4e5537ae7a32c1948fa32703f1fd46733ee49eaf28ecaa2759d6f60f2b8a021d"
+    },
+    {
+      "file": "r13/evidence/device_facts.md",
+      "sha256": "d35443f94e5a685e3be39ed213558a239bca870020bfea2afee08cae45a6c560"
+    }
+  ]
+}

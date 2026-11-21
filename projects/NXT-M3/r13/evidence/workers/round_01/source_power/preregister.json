@@ -1,0 +1,27 @@
+{
+  "task_id": "source_power",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Verify route lineage and model pin orders. Extract A/B/C/D intrinsic blockers, including newest A UVLO and B feedback voltage. Give topology evidence and source limits.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/source_manifest.json",
+      "sha256": "d87060843ab58729aeca5ac5de27a6b34d4c48d4765948fed83d168349008887"
+    },
+    {
+      "file": "r13/sim/model_pins.json",
+      "sha256": "7f806660ce36e13ccae6817088bed878b32f7977aa97a3b4e63abda1a25989c5"
+    },
+    {
+      "file": "r12/R12_MODEL_INVENTORY.md",
+      "sha256": "6d74643a81aff35c5272e77c013faf1f21f67897c0c82b63e008e3586f19c4d9"
+    },
+    {
+      "file": "r13/evidence/device_facts.md",
+      "sha256": "d35443f94e5a685e3be39ed213558a239bca870020bfea2afee08cae45a6c560"
+    }
+  ]
+}

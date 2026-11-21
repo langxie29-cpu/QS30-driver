@@ -1,0 +1,13 @@
+{
+  "task_id": "baseline_replay_review",
+  "status": "PASS",
+  "notes": "Bounded replay review completed. Demonstrated only in ngspice proxy at 27 °C, 4.75 V/0.19 Ω/2.475 W/9.9 mA, 22 µH, 65 ms: 100 kHz cold_nominal_repeat is REWORK (HV 155.843 V, ripple 1.10835 Vpp); 80 kHz diagnostic_80khz_22u is LIMITED_PASS proxy screen (HV 169.847 V, ripple 0.541549 Vpp). 80 kHz raises final HV by 14.004 V (+8.99%) and reduces ripple by 0.566801 Vpp (-51.1%), but increases IL peak 1.62694→1.69714 A (+4.3%) and Q Vds peak 157.652→171.428 V (+8.7%); input average rises 4.34621→4.38466 V. No efficiency, thermal, magnetics, or physical validation is demonstrated. 80 kHz is outside the LM5155 100 kHz–2.2 MHz range (device-spec baseline; not re-verified from excerpts), so it is not a valid LM5155 fix. Claims of 'Real controller' qualification, 80 kHz LM5155 feasibility, or LIMITED_PASS as design pass are unsupported; R12 itself labels lower-frequency/L root cause as hypothesis and says the actual controller must be proven. Design action: stay at ≥100 kHz for LM5155, evaluate 100 kHz/17.6–18 µH proxy-limited-pass options with saturation/thermal margin, or change controller if 80 kHz is essential; retain independent HV OVP/OCP and latch/watchdog, not controller-only protection. Verify with actual LM5155 model/bench and tolerance sweep.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

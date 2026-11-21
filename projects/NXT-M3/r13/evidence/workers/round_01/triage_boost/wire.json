@@ -1,0 +1,45 @@
+{
+  "result": {
+    "task_id": "triage_boost",
+    "status": "PASS",
+    "notes": "Bounded review completed. Demonstrated: both decks abort with 'Timestep too small' at the same internal UCC3803 node, e.x_ctl.xea.eb1#branch, with timestep 1.25e-19: round1 after 87,080 rows at t=2.85837 ms; round2 after 25,589 rows at t=1.30254 ms. Round2 added cshunt (187 capacitors at 1e-14 F) and did not remove the failure. The repeated failure is localized to the controller/error-amplifier branch, not the power-switch node; it does not establish silicon or power-stage behavior. Fixture assumptions: UIC skips the operating point; v.x_ctl.vr2 has no value and is assumed DC 0; the switch/rectifier are proxy models; cshunt is nonphysical. Hypotheses, not proven: an ill-conditioned/ideal behavioral branch in the UCC3803 error-amp model, error-amp saturation/limiting, or UIC initialization driving an invalid state. One-input discriminating test: keep all passives, initial conditions, timestep and cshunt identical and change only the analysis initialization by removing 'uic' so a DC operating point is computed first. If the eb1 failure disappears, UIC/initialization is causal; if it persists at the same branch, the UCC3803 error-amp model/numerics is implicated. Physical UVLO is separate: UCC3803 startup threshold is min/typ/max 3.7/4.1/4.5 V, stop 3.2/3.6/4.0 V. A 4.30 V rail is inside the min-max window but is not a guaranteed start for worst-case units, since units may require up to 4.5 V; if already running, 4.30 V is above the 4.0 V max stop, so UVLO should not stop it. A 4.30 V startup design gate therefore needs margin above 4.5 V or a different device, plus physical bench verification over units/temperature. The 0.9 V worst high-output drop at 5 V/50 mA is a separate drive-margin fact, not a UVLO threshold.",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [
+      "https://www.ti.com/lit/ds/symlink/ucc3803.pdf"
+    ],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "## 清点\n- round1/a_low_50k：87,080 行后 t=2.85837 ms 报 `TRAN: Timestep too small`，步长 1.25e-19，节点 `e.x_ctl.xea.eb1#branch`；`uic` 跳过工作点，`v.x_ctl.vr2` 无值按 DC 0。\n- round2/a_low_ea_trap：加 `cshunt` 187×1e-14 F 后 25,589 行，t=1.30254 ms 同一分支同类报错；加电容未消除。\n- a_boost.inc：UCC3803 子电路；开关/整流为代理；反馈 645.12k/7.68k，补偿 220p，R_CT 60.4k。\n- device_facts：UCC3803 UVLO 启动 3.7/4.1/4.5 V，停止 3.2/3.6/4.0 V；4.30 V 不能保证最坏器件启动。\n- 限制：未运行仿真、未做物理测试；根因仍为待验证假设。",
+  "sources": [
+    {
+      "source": "r13/evidence/spice/round1/a_low_50k/run.log",
+      "locator": "stderr doAnalyses; operating-point/UIC and v.x_ctl.vr2 notes; No. of Data Rows",
+      "assertion": "Round1 aborts at t=2.85837 ms with timestep 1.25e-19 at e.x_ctl.xea.eb1#branch after 87,080 rows; UIC skipped the operating point and vr2 defaulted to DC 0."
+    },
+    {
+      "source": "r13/evidence/spice/round2/a_low_ea_trap/run.log",
+      "locator": "cshunt notice; stderr doAnalyses; No. of Data Rows",
+      "assertion": "With cshunt 187×1e-14 F, round2 still aborts at t=1.30254 ms with timestep 1.25e-19 at the same eb1 branch after 25,589 rows."
+    },
+    {
+      "source": "r13/sim/a_boost.inc",
+      "locator": "X_CTL instance and R_FB1/R_FB2/C_COMP/R_CT/C_CT/S_Q lines",
+      "assertion": "Fixture uses a UCC3803 subcircuit with a proxy switch/rectifier, 645.12k/7.68k feedback divider, 220 pF compensation capacitor and 60.4 kΩ R_CT."
+    },
+    {
+      "source": "r13/evidence/device_facts.md",
+      "locator": "UCC3803 bullet",
+      "assertion": "UCC3803 UVLO startup min/typ/max is 3.7/4.1/4.5 V and stop is 3.2/3.6/4.0 V; at 5 V/50 mA the worst high-output drop is 0.9 V."
+    },
+    {
+      "source": "https://www.ti.com/lit/ds/symlink/ucc3803.pdf",
+      "locator": "Electrical characteristics, UVLO",
+      "assertion": "TI datasheet gives the UCC3803 UVLO startup and stop threshold ranges cited in device_facts; 4.30 V is not guaranteed startup for worst-case units because startup max is 4.5 V."
+    }
+  ]
+}

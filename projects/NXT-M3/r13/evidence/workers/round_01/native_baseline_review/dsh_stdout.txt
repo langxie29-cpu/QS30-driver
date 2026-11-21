@@ -1,0 +1,38 @@
+{
+  "result": {
+    "task_id": "native_baseline_review",
+    "status": "PASS",
+    "notes": "仅据摘录做文件级审查，未运行工具或打开原始 PCB/完整 DRC，不能独立复算；PASS 仅指审查完成，不是设计门或发布结论。ERC 0/0 但 4 项检查被忽略，零错误只覆盖已启用检查。summary 显示 263 clearance error、345 unconnected、parity 空对象；R11 另有 DRC 退出 5、166 网络、parity 0 的叙述，故 parity 需重跑，空对象不能当作通过。Gerber/Drill/BOM 退出码 0 只证明导出成功。R11 的 Gate 0 REWORK/工程 HOLD/制造 HOLD、USB-C 与阴极开项、U3 工艺确认、四层仅 CC1 局部可行性、低线仿真 4/10 通过等均为发布阻塞。新建工程须重布/修复开项和净距、显式处理 ignored ERC、补齐 parity、移植并验证 U3 封装、完成管座与高压绝缘复核，且不得放宽规则。四层若采用需整板重跑与报价。blocking_issues=[] 仅表示审查无阻塞。",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "## 结论\n继承基线不可直接发布/制造；PASS 仅表示本次文件级审查完成，未作布局发布。\n\n## 原生检查\n- ERC：0 errors/0 warnings；但 4 项 Ignored checks（全局标签单次、四点相连、SPICE 模型、封装过滤器）未覆盖，不能视为全检查通过。\n- DRC：263 clearance errors（severity.error=263）、345 unconnected，集中于 166 网络；R11 记录 DRC 退出 5。摘要仅列 clearance，不能推断其他类别通过。\n- 一致性：schematic_parity 为空对象；R11 叙述 0 项，但缺机器可读结果，需重跑。\n- 导出：Gerber/Drill/BOM 退出码均 0，仅证明导出命令成功。\n\n## 发布阻塞\n- Gate 0 REWORK；ENGINEERING HOLD；MANUFACTURING HOLD。\n- USB-C 供电链未闭合：U1 5V_FUSED 1 开项；U26 VBUS/5V_RAW 2 开项。33 个交接焊盘仅 2 个原生导通；30 路阴极及 ANODE_1 未连。\n- U3 本地封装仅局部改善 DRC（12 孔径+2 丝印），GND 开项 124→122；填孔/回流待板厂确认。\n- 管座孔距/定位键/线序待 1:1 实物核对；高压绝缘与封装/布局未闭环。\n- 四层比较板仍有 344 未连接和 263 净距违规；仅证明 CC1 可在 In1.Cu 交叉，不证明整板可布通/电源回流；5V_PROT 移层尝试已撤回。\n- 低线 10 工况 4 通过/6 返工，均为仿真代理；R40 硬件 DNP，厂商 LM5155 闭环无有效波形。\n\n## 新项目所需实质变更\n1. 重布/修复 263 clearance 和 345 opens（166 网络），优先 USB-C/eFuse、电源分配、连续回流、30 路阴极及 ANODE_1。\n2. 显式启用或豁免 4 项 ERC ignored checks；不得用 0/0 代替。\n3. 在新工程重跑 ERC、DRC、网表导出和 schematic/PCB parity，保留机器可读结果。\n4. 移植 U3 本地封装与 F.Fab 修改，验证 0.30 mm 孔/0.15 mm 环宽及板厂填孔回流。\n5. 完成 1:1 管座、高压封装/绝缘选型与布线；保持 DRC 规则和板厂孔径下限。\n6. 四层若采用，需完整叠层、布通、回流和报价复核；现有预览不可作为发布证据。\n\n## 限制\n仅文件级摘录审查；未运行工具、未验证原始 DRC/PCB/网表，计数不可独立复算；仿真非实测。",
+  "sources": [
+    {
+      "source": "r13/evidence/eda_baseline/summary.json",
+      "locator": "violations.clearance; severity.error; unconnected_items; schematic_parity",
+      "assertion": "Clearance 263 均为 error；unconnected 345；schematic_parity 为空对象，不能证明 parity 通过。"
+    },
+    {
+      "source": "r13/evidence/eda_baseline/ERC_REPORT.txt",
+      "locator": "ERC messages; Ignored checks",
+      "assertion": "ERC 0 errors/0 warnings，但四项检查被忽略，故零错误仅限已启用检查。"
+    },
+    {
+      "source": "r13/evidence/eda_baseline/export_exits.json",
+      "locator": "gerber; drill; bom",
+      "assertion": "三个导出退出码均为 0；仅证明导出命令成功。"
+    },
+    {
+      "source": "r11/BLOCKER_CLOSURE_REPORT.md",
+      "locator": "实物设计文件与原生检查; Type-C 四层实布分支; 从 0 V 启动的低线和容差复验",
+      "assertion": "记录 Gate 0 REWORK/工程与制造 HOLD、DRC 退出 5、166 网络、开项、U3 局部改善、四层仅 CC1 局部、低线仿真 4/10 通过。"
+    }
+  ]
+}

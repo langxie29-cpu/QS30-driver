@@ -1,0 +1,41 @@
+{
+  "case": "b_low",
+  "nominal_v": 170,
+  "endpoint_required_s": 0.065,
+  "command": [
+    "D:\\PROJECTS\\dsharness\\QS30-1\\projects\\QS30-9_24V\\toolchain\\ltspice26\\extracted\\LTspice.exe",
+    "-b",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r13\\.local\\lt_replay\\b_low\\circuit.cir"
+  ],
+  "exe_sha256": "17f5efb978c0df2e164328b7352801fdc1ed0225827e41669bd9da25893fe96d",
+  "exit_code": 1,
+  "raw_size": 0,
+  "raw_sha256": null,
+  "measurements": {},
+  "log_errors": [
+    "    Error: undefined symbol in: \"(plv)/max([v](vin),3)*(0.5+0.5*tanh(15*(v(vin)-3.1)))\"",
+    "    Error: undefined symbol in: \"(ihv)*min(1,max(0,([v](hv)-120)/15))\"",
+    "    Error: undefined symbol in: \"[v](sw,source)\"",
+    "    Error: undefined symbol in: \"[v](gate,source)\"",
+    "    Error: undefined symbol in: \"-[v](supply)*i(v_in)\"",
+    "    Error: undefined symbol in: \"[v](hv)*((ihv)*min(1,max(0,(v(hv)-120)/15))+2*v(hv)/496k+v(hv)/2.0093meg+v(hv)/1.8542meg+v(hv)/((rfb_sum)))\"",
+    "    Error: undefined symbol in: \"[v](vds)*i(vq)\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh))&v(c)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))|v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](yint2)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](yint2)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vdd)),((vss)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh)),((vss)),((vdd)))\"",
+    "    Error: undefined symbol in: \"if([v](a)>((vthresh))&v(b)>((vthresh)),((vdd)),((vss)))\"",
+    "Fatal Error: _ctl:v_iss_tst: requires a minimum of 5 parameters.  Only 3 specified."
+  ]
+}

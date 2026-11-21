@@ -1,0 +1,64 @@
+R13 a_pin_4v30 isolated fixture
+.param VIN=4.3 RPATH=1e-06 PLV=2.475 IHV=0.0099 CEFF=2u CT=430p LMAG=33u RATIO=14.5 COUPLING=0.95 SHUNT=33m RFA=47k RFB_SUM=652800.0
+* A: UCC3803 reference-derived DCM fixture; actual TI controller, proxy switch/rectifier.
+.include uccx813-3.lib
+LPOWER vin lx {LMAG} ic=0
+R_DCR lx drain 45m
+VQ drain sw 0
+S_Q sw source gate source SWITCH_A
+.model SWITCH_A SW(Ron=0.25 Roff=500Meg Vt=2.5 Vh=0.12)
+C_OSS sw source 85p
+C_GATE gate source 450p
+D_BODY source sw D_BODY_A
+.model D_BODY_A D(Is=10n Rs=0.1 BV=250 IBV=0.25m Cjo=35p Tt=35n)
+D_HV drain hv D_RECT_A
+.model D_RECT_A D(Is=10n Rs=0.1 BV=400 IBV=1u Cjo=12p Tt=25n)
+R_SENSE source 0 100m
+R_GATE drv gate 10
+R_CS source cs 1k
+C_CS cs 0 1n
+R_CT ref ct 60.4k
+C_CT ct 0 {CT}
+C_REF ref 0 100n
+R_FB1 hv fb 645.12k
+R_FB2 fb 0 7680
+C_COMP comp fb 220p
+X_CTL comp fb cs ct 0 drv vin ref UCC3803
+
+* Common input, output and load fixture. System eFuse/OVP/branch logic excluded.
+* 4.30 V pin mode uses zero nominal series drop (1 micro-ohm numeric floor).
+V_IN supply 0 PWL(0 0 100u 0 300u {VIN})
+R_PATH supply vin {RPATH}
+C_IN vin 0 100u ic=0
+B_LV vin 0 I={PLV/max(v(vin),3)*(0.5+0.5*tanh(15*(v(vin)-3.1)))}
+B_TUBES hv 0 I={IHV*min(1,max(0,(v(hv)-120)/15))}
+R_BLEED1 hv 0 496k
+R_BLEED2 hv 0 496k
+R_OVP_EQ hv 0 2.0093Meg
+R_RESID_EQ hv 0 1.8542Meg
+V_CAP hv cb 0
+R_ESR cb hvc 100m
+C_HV hvc 0 {CEFF} ic=0
+B_VDS vds 0 V={v(sw,source)}
+B_VGS vgs 0 V={v(gate,source)}
+B_PWR p_in 0 V={-v(supply)*i(V_IN)}
+B_HV p_hv 0 V={v(hv)*(IHV*min(1,max(0,(v(hv)-120)/15))+2*v(hv)/496k+v(hv)/2.0093Meg+v(hv)/1.8542Meg+v(hv)/(RFB_SUM))}
+B_SW p_sw 0 V={v(vds)*i(VQ)}
+.save v(hv) v(hvc) v(vin) v(vds) v(vgs) v(fb) v(comp) v(p_in) v(p_hv) v(p_sw) i(LPOWER) i(VQ) i(V_CAP) i(V_IN)
+
+.options method=gear reltol=0.003 abstol=1n
+.tran 100n 0.065 0 100n uic
+
+.options plotwinsize=0 numdgt=15
+.meas tran hv_min MIN v(hv) FROM=0.062 TO=0.065
+.meas tran hv_max MAX v(hv) FROM=0.062 TO=0.065
+.meas tran hv_avg AVG v(hv) FROM=0.062 TO=0.065
+.meas tran hv_peak MAX v(hv)
+.meas tran startup_hv FIND v(hvc) AT=1n
+.meas tran vin_avg AVG v(vin) FROM=0.062 TO=0.065
+.meas tran vds_peak MAX v(vds)
+.meas tran vgs_peak MAX v(vgs)
+.meas tran i_power_peak MAX i(LPOWER)
+.meas tran i_switch_peak MAX i(VQ)
+.meas tran first_95 WHEN v(hv)=161.5 RISE=1
+.end

@@ -1,0 +1,23 @@
+{
+  "task_id": "native_baseline_review",
+  "worker_claim": "PASS",
+  "grade": "CLAIMED_PASS_AUDITED_FILES",
+  "evidence_sha256": {
+    "inventory.md": "8b0f617213e23d2bd6583589518e4eec1d4091980a64a5e0bec625f33a7b8da4",
+    "sources.json": "a7a196d97658ebad96dbd4b6bd2776db7d28b39fef05127bbce30091c3f19f33"
+  },
+  "rc": 0,
+  "failure": null,
+  "started": "2026-11-21T16:42:56.874751+00:00",
+  "seconds": 55.735,
+  "identity": {
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "configuration_sha256": "39b8d1a4c0641ec6843ea44de6095a17b6120ffd7285cecd40f826c948b053b2",
+    "mode": "SEALED_TEXT_ONLY",
+    "worker_tools": [],
+    "background_model_requests": false
+  }
+}

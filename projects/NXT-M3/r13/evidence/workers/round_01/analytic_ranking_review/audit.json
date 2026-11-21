@@ -1,0 +1,23 @@
+{
+  "task_id": "analytic_ranking_review",
+  "worker_claim": "PASS",
+  "grade": "CLAIMED_PASS_AUDITED_FILES",
+  "evidence_sha256": {
+    "inventory.md": "7def9374f9200da2f353897101442ce3f657bf1cef27e83ee54e522713888e24",
+    "sources.json": "cb17570dd0040dc835d9952876a360d7d88e3ff667d1c0eb30c09b48b127e93d"
+  },
+  "rc": 0,
+  "failure": null,
+  "started": "2026-11-21T16:43:53.182187+00:00",
+  "seconds": 93.844,
+  "identity": {
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "configuration_sha256": "39b8d1a4c0641ec6843ea44de6095a17b6120ffd7285cecd40f826c948b053b2",
+    "mode": "SEALED_TEXT_ONLY",
+    "worker_tools": [],
+    "background_model_requests": false
+  }
+}

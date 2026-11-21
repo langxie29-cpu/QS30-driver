@@ -1,0 +1,25 @@
+{
+  "task_id": "source_power",
+  "status": "PASS",
+  "notes": "Bounded static review completed; no review-blocking issue. Route revisions/models are anchored. Only B .SUBCKT pin order is explicit; A/C/D pin order and actual KiCad symbol/node mapping remain unverified. A UVLO/headroom, B FB setpoint mismatch, C model/isolation gap and D frequency-floor/LM5155 precedent are intrinsic technical constraints, not demonstrated failures. No simulator run or measurement; design gates remain open.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [
+    "https://github.com/drkmsmithjr/NixiePowerSupply",
+    "https://github.com/esynr3z/nixie-ps",
+    "https://github.com/tonyp7/170v-nixie-power-supply",
+    "https://github.com/langxie29-cpu/QS30-driver",
+    "https://www.ti.com/lit/ds/symlink/ucc3803.pdf",
+    "https://www.onsemi.com/pdf/datasheet/fds2672-d.pdf",
+    "https://www.ti.com/lit/ds/symlink/lm3488.pdf",
+    "https://github.com/esynr3z/nixie-ps/tree/9df409c9770b6c32111396fc9dea318ff907d41d",
+    "https://www.infineon.com/part/IRFH7185",
+    "https://www.analog.com/en/products/lt3757.html",
+    "https://www.ti.com/product/LM5155"
+  ],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "round": "reference_and_fixture",
+    "decision": "CONTINUE",
+    "rationale": "Pin the agreed R12 inputs and execute two distinct reference-derived circuits plus the R11 proxy replay.",
+    "next_task_ids": [
+      "a_boost_cold_start",
+      "b_flyback_cold_start",
+      "d_proxy_replay"
+    ],
+    "evidence": [
+      "evidence/source_manifest.json",
+      "sim_cases.json"
+    ]
+  },
+  {
+    "round": "diagnostic",
+    "decision": "CONTINUE",
+    "rationale": "A fails at the controller error amplifier. B fails first in isolated measurement equations. Remove the probes without altering B power hardware or vendor model. Delegate the eight static audit tasks.",
+    "next_task_ids": [
+      "native_node_probes",
+      "headless_evidence_wave"
+    ],
+    "evidence": [
+      "sim_followup.json",
+      "evidence/spice/probe_isolation",
+      "evidence/harness_doctor.json"
+    ]
+  },
+  {
+    "round": "qualified_gate_review",
+    "decision": "HOLD",
+    "rationale": "B remains a research lead. Full regulated vendor-model corners, complete CNY prices, and working candidate CAD are unmet.",
+    "next_task_ids": [],
+    "evidence": [
+      "evidence/workers/codex_decision_01.json",
+      "SIMULATION_QUALIFICATION_MATRIX.csv",
+      "COST_COMPARISON.csv",
+      "evidence/eda_baseline/native_audit.json"
+    ]
+  }
+]

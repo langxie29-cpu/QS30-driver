@@ -1,0 +1,27 @@
+[
+  {
+    "source": "r13/evidence/spice/round1/a_low_50k/run.log",
+    "locator": "stderr doAnalyses; operating-point/UIC and v.x_ctl.vr2 notes; No. of Data Rows",
+    "assertion": "Round1 aborts at t=2.85837 ms with timestep 1.25e-19 at e.x_ctl.xea.eb1#branch after 87,080 rows; UIC skipped the operating point and vr2 defaulted to DC 0."
+  },
+  {
+    "source": "r13/evidence/spice/round2/a_low_ea_trap/run.log",
+    "locator": "cshunt notice; stderr doAnalyses; No. of Data Rows",
+    "assertion": "With cshunt 187×1e-14 F, round2 still aborts at t=1.30254 ms with timestep 1.25e-19 at the same eb1 branch after 25,589 rows."
+  },
+  {
+    "source": "r13/sim/a_boost.inc",
+    "locator": "X_CTL instance and R_FB1/R_FB2/C_COMP/R_CT/C_CT/S_Q lines",
+    "assertion": "Fixture uses a UCC3803 subcircuit with a proxy switch/rectifier, 645.12k/7.68k feedback divider, 220 pF compensation capacitor and 60.4 kΩ R_CT."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "UCC3803 bullet",
+    "assertion": "UCC3803 UVLO startup min/typ/max is 3.7/4.1/4.5 V and stop is 3.2/3.6/4.0 V; at 5 V/50 mA the worst high-output drop is 0.9 V."
+  },
+  {
+    "source": "https://www.ti.com/lit/ds/symlink/ucc3803.pdf",
+    "locator": "Electrical characteristics, UVLO",
+    "assertion": "TI datasheet gives the UCC3803 UVLO startup and stop threshold ranges cited in device_facts; 4.30 V is not guaranteed startup for worst-case units because startup max is 4.5 V."
+  }
+]

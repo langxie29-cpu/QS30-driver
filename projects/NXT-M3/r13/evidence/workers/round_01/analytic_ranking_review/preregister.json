@@ -1,0 +1,23 @@
+{
+  "task_id": "analytic_ranking_review",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Audit physics and meaningful DCM route performance. Quantify frequency and margin sensitivity. See whether shunt, ratio and effective capacitance bound justified. Never qualify an unrealized model.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/analytical_summary.txt",
+      "sha256": "504b059a553cd24aa46cd2a39fe4a26065f492e40e35529d794f0a1ccd2a72c9"
+    },
+    {
+      "file": "r13/screen.py",
+      "sha256": "47483975a893850cf35adda9ae364007bacb509c0f092382287c5c6e7523aa26"
+    },
+    {
+      "file": "r13/evidence/device_facts.md",
+      "sha256": "d35443f94e5a685e3be39ed213558a239bca870020bfea2afee08cae45a6c560"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "source": "r13/evidence/source_manifest.json",
+    "locator": "route entries A-D",
+    "assertion": "Pins revisions, model paths/versions, and redistribution constraints: A 14d6…/TI Final 1.11; B 9df4…/TI Final 1.10 21APR2017 with no license found; C 964c…/no bundled controller model; D 9a0b…/LM5155-Q1 SNVMBL2H R11 receipts."
+  },
+  {
+    "source": "r13/sim/model_pins.json",
+    "locator": "keys A/SimCalcFiles/uccx813-3.lib and B/ltspice/LM3488_TRANS.LIB",
+    "assertion": "Provides SHA-256 pins for A and B controller models and B MOSFET/diode models; C/D model hashes are absent."
+  },
+  {
+    "source": "r12/R12_MODEL_INVENTORY.md",
+    "locator": "inventory table; Model-porting Gate M1",
+    "assertion": "Static readout only: A UCC3803 32/32 .SUBCKT/.ENDS with IF/VALUE/PARAMS; B LM3488/LM3478 21/21; no execution or ngspice 46 compatibility; M1 requires pin-order/symbol cross-check and a simulator run."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "UCC3803 bullet",
+    "assertion": "UCC3803 SLUS270H UVLO start 3.7/4.1/4.5 V and stop 3.2/3.6/4.0 V; at 5 V/50 mA worst high-output drop 0.9 V."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "LM3488 bullet",
+    "assertion": "LM3488 Rev P: FB 1.26 V typ, 1.24–1.28 V full range; upstream ASC divider uses 1.22 V; TI model header uses 1.26 V; .SUBCKT pin order is AGND COMP DR FA_SD FB ISEN PGND VIN."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "B physical upstream README and ASC/BOM bullet",
+    "assertion": "Reports 4.61 V→179.5 V/19.2 mA/63.9% and 5.07 V→180.0 V/9.5 mA/61.43% with resistive load; 10:145 EFD15 original; ASC uses 10 µH/K=.95/33 mΩ/47 kΩ/0.47 µF/IRFH7185/SMDJ70CA while BOM calls SMBJ70CA and E1G."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "IRFH7185 and FDS2672 bullets",
+    "assertion": "FDS2672 is 200 V, RDS(on) rated at 6/10 V, max threshold 4 V at 250 µA; R13 switch is a proxy. IRFH7185 static RDS(on) guarantee applies at VGS=10 V, max VDS=100 V; low-gate pulse cannot establish hot qualified on-resistance."
+  },
+  {
+    "source": "r13/evidence/device_facts.md",
+    "locator": "C and D bullets",
+    "assertion": "C: LT3757(A) 2.9–40 V, nominal 10 µH 1:10 coupled inductor, common-ground, no isolation safety claim. D: LM5155 specified 100 kHz–2.2 MHz; 80 kHz R11 point is diagnostic and below floor; supporting vendor evidence absent."
+  },
+  {
+    "source": "r12/R12_MODEL_INVENTORY.md",
+    "locator": "Known LM5155 precedent",
+    "assertion": "R11 reported COMP initialization parser errors and unresolved transient numerical convergence; do not claim M1 pass without full log, repeatable waveform, and source hash."
+  }
+]

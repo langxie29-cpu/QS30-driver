@@ -1,0 +1,48 @@
+{
+  "result": {
+    "task_id": "triage_flyback",
+    "status": "PASS",
+    "notes": "Evidence anchors: round2 run.log ends with TRAN: Timestep too small; time = 0.000390766, timestep = 1.25e-19: trouble with node \"b_sw#branch\", followed by run simulation(s) aborted, after No. of Data Rows : 140493. The last Reference value 3.90743e-04 coincides with the abort time, so those lines are simulation-time stamps, not Vref measurements. Round1 b_low excerpt only shows time stamps to about 1.77e-3 s and no abort text; it does not demonstrate a stall. Fixture b_flyback.inc has VQ drain sw 0 in series with X_Q sw gate source, so b_sw#branch is the VQ drain-current branch; an ideal 0-V source with a switched MOSFET model and only 1e-14 F cshunt per added capacitor can produce discontinuous branch current at a switching edge. The demonstrated failure is numerical timestep collapse localized to the switch branch, not proof of controller latch, transformer saturation, or hardware shutdown. Winding polarity: SPICE dot is the first node; LPOWER(primary,drain) has its dot on the input side and LSEC(0,secondary) has its dot at ground. In this orientation the on-state drives the secondary non-dot negative (diode reverse-biased) and the off-state drives it positive (diode forward), so relative polarity is flyback-correct; the excerpts contain no original transformer dot data to prove a source mismatch. Reference: device_facts gives LM3488 FB 1.26 V typ (1.24-1.28 V), TI model header 1.26 V, upstream ASC 1.22 V. The vref126 fixture already uses 1.26 V and still aborts at 0.391 ms, so Vref mismatch is not a sufficient cause. R_FB1=1.2Meg/R_FB2=8674 gives about 175.6 V at 1.26 V (170.0 V at 1.22 V); the upstream 179.5-180 V is not reproduced by this arithmetic, so the setpoint is unverified. Limitations: no terminal error in the b_low excerpt, no complete original deck, no transformer dot/polarity data, no board parasitics or measurements; model abort cannot be equated to hardware behavior. Decision-relevant verification: (1) rerun the exact b_pin_step_vref126 deck and confirm t=390.766 us and b_sw#branch; (2) keep LM3488_TRANS and IRFH7185, add a physical drain-source RC snubber or measured drain loop inductance (start from board Coss/layout; 100 pF + 10 ohm is only a diagnostic) and rerun; a numerical-only check is .options cshunt=1e-12 or method=gear, and if the abort moves or clears treat it as switching-edge numerical stiffness; (3) verify the transformer dot convention against the original transformer drawing and the FB divider against the 1.26 V datasheet before using 1.22 V. Minimal fix hypothesis: retain both real-device models, damp the switch node physically, and accept only if the abort clears without replacing the controller or MOSFET with a behavioral proxy.",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "## 结论\n- 唯一明确中止：`b_pin_step_vref126` 在 `time=0.000390766 s`、`timestep=1.25e-19` 报 `TRAN: Timestep too small ... trouble with node b_sw#branch`，随后 `run simulation(s) aborted`。这是开关支路数值收敛失败，不等同硬件停振。\n- `b_low` 摘录仅见时间推进至约 `1.77e-3 s`，无中止文本；不能据此判定其停摆。\n\n## 电路锚点\n- `VQ drain sw 0` 与 `X_Q sw gate source` 串联，`b_sw#branch` 即 VQ 的 0 V 电流支路；理想 0 V 源叠加开关边沿、仅 10 fF/节点 cshunt，易造成支路电流不连续。\n- 绕组：SPICE 首节点为 dot。`LPOWER primary drain` 的 dot 在输入侧，`LSEC 0 secondary` 的 dot 在地；该相对极性在导通时使次级非 dot 端为负、二极管反偏，关断时为正、二极管导通，属 flyback 正确取向。摘录无原始点极性数据，不能证实与源不符。\n- 基准：数据手册/模型为 1.26 V（1.24–1.28），上游 ASC 用 1.22 V；`vref126` 已用 1.26 V 仍在 0.391 ms 中止，故基准差异不是充分原因。分压 1.2Meg/8674 在 1.26 V 下约 175.6 V（1.22 V 下约 170.0 V），与上游 179.5–180 V 不符，设定值仍未验证。\n\n## 最小修复/验证\n- 保留 `LM3488_TRANS` 与 `IRFH7185` 模型；先复现同一 `t≈390.766 µs`/`b_sw#branch` 中止。\n- 在 `X_Q` 漏源间加物理 RC 吸收或按板级寄生加漏极串联电感（不用行为开关替代硅）；数值诊断可试 `.options cshunt=1e-12` 或 `method=gear`，仅用于判断是否开关边沿数值刚度。\n- 对照原变压器图核对点极性；对照 1.26 V 数据手册核对 FB 分压，未解决前不要用 1.22 V 定稿。\n\n## 限制\n- `b_low` 摘录无终止错误；无完整 deck、原始点极性、板级寄生/测量；不能把模型中止等同硬件故障。",
+  "sources": [
+    {
+      "source": "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+      "locator": "stderr final TRAN error",
+      "assertion": "At time 0.000390766 s with timestep 1.25e-19, TRAN reports Timestep too small and trouble with node b_sw#branch; next line reports run simulation(s) aborted."
+    },
+    {
+      "source": "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+      "locator": "stdout near end",
+      "assertion": "No. of Data Rows : 140493; cshunt added 204 capacitors at 1e-14 F each; last Reference value 3.90743e-4 matches the abort time, consistent with time stamps."
+    },
+    {
+      "source": "r13/evidence/spice/round1/b_low/run.log",
+      "locator": "stdout excerpt",
+      "assertion": "Reference value sequence reaches about 1.77e-3; the provided excerpt has no TRAN error or aborted line, so it does not demonstrate a stall."
+    },
+    {
+      "source": "r13/sim/b_flyback.inc",
+      "locator": "VQ, X_Q, LPOWER, LSEC, K_XF, R_FB lines",
+      "assertion": "VQ is a 0-V source between drain and sw in series with X_Q drain, so b_sw#branch is VQ current. LPOWER dot is at primary/input and LSEC dot at 0; relative polarity is flyback-correct. FB divider is 1.2Meg/8674."
+    },
+    {
+      "source": "r13/evidence/device_facts.md",
+      "locator": "LM3488 bullet",
+      "assertion": "LM3488 FB is 1.26 V typ, 1.24-1.28 V full range; TI model header sets 1.26 V; upstream ASC uses 1.22 V; transformer is a custom 10:145 EFD15 with no dot convention given."
+    },
+    {
+      "source": "r13/evidence/device_facts.md",
+      "locator": "LM3488 model bullet",
+      "assertion": "LM3488_TRANS pin order and oscillator syntax are model details; do not infer model speed, oscillation, or silicon behavior from syntax alone."
+    }
+  ]
+}

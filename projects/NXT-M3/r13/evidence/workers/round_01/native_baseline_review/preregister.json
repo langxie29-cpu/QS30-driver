@@ -1,0 +1,27 @@
+{
+  "task_id": "native_baseline_review",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "decision_relevant_verification"
+  ],
+  "brief": "Review inherited KiCad reports for ERC, DRC, opens, parity, release blockers and previews. Distinguish zero errors from ignored checks. Identify actual changes required to build a new project. Make no layout release claim.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/eda_baseline/summary.json",
+      "sha256": "34b3823bc0a625d81bbb21ebb291e39c20c8cb2da768a18feba6c848b643b618"
+    },
+    {
+      "file": "r13/evidence/eda_baseline/ERC_REPORT.txt",
+      "sha256": "cc189964f4b294ed4b3e560734892a87496c7d93d1b3deeab156f1ab98665066"
+    },
+    {
+      "file": "r13/evidence/eda_baseline/export_exits.json",
+      "sha256": "c77ebcdd232194b4cc23ab78da2caae9a4c65c5db0b8ee97c830286f2284a210"
+    },
+    {
+      "file": "r11/BLOCKER_CLOSURE_REPORT.md",
+      "sha256": "267d1aaabe7a8a663bb5a812b45de1187e5254980a142bc147bb4f54af27b5bf"
+    }
+  ]
+}

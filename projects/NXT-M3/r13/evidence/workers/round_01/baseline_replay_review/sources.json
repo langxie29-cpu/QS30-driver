@@ -1,0 +1,22 @@
+[
+  {
+    "source": "r11/LOWLINE_BLOCKER_SWEEP.csv",
+    "locator": "rows cold_nominal_repeat and diagnostic_80khz_22u; columns status,hv_final,hv_ripple,hv_input_avg,il_peak,q_vds",
+    "assertion": "100 kHz/22 µH: REWORK, 155.843 V, 1.10835 Vpp; 80 kHz/22 µH: LIMITED_PASS, 169.847 V, 0.541549 Vpp; both are proxy-screen rows."
+  },
+  {
+    "source": "r13/evidence/spice/d_replay/cold_nominal_repeat/run.log",
+    "locator": "ngspice-46 metrics near end",
+    "assertion": "Confirms 100 kHz proxy metrics: hv_final 1.55843e+02, hv_ripple 1.10835e+00, il_peak 1.62694e+00, q_vds 1.57652e+02, hv_input_avg 4.34621e+00."
+  },
+  {
+    "source": "r13/evidence/spice/d_replay/diagnostic_80khz_22u/run.log",
+    "locator": "ngspice-46 metrics near end",
+    "assertion": "Confirms 80 kHz proxy metrics: hv_final 1.69847e+02, hv_ripple 5.41549e-01, il_peak 1.69714e+00, q_vds 1.71428e+02, hv_input_avg 4.38466e+00."
+  },
+  {
+    "source": "r12/R12_ANALYTICAL_SCREEN.md",
+    "locator": "header; Sections A–C; cost table",
+    "assertion": "Evidence level is idealized estimate only; 22→26.4 µH root cause is hypothesis; actual controller must be proven; proxy has synthetic slope compensation/timing; UCC3803 UVLO caveat; independent HV OVP/OCP is a BOM line."
+  }
+]

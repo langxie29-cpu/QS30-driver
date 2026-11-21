@@ -1,0 +1,15 @@
+{
+  "task_id": "triage_boost",
+  "status": "PASS",
+  "notes": "Bounded review completed. Demonstrated: both decks abort with 'Timestep too small' at the same internal UCC3803 node, e.x_ctl.xea.eb1#branch, with timestep 1.25e-19: round1 after 87,080 rows at t=2.85837 ms; round2 after 25,589 rows at t=1.30254 ms. Round2 added cshunt (187 capacitors at 1e-14 F) and did not remove the failure. The repeated failure is localized to the controller/error-amplifier branch, not the power-switch node; it does not establish silicon or power-stage behavior. Fixture assumptions: UIC skips the operating point; v.x_ctl.vr2 has no value and is assumed DC 0; the switch/rectifier are proxy models; cshunt is nonphysical. Hypotheses, not proven: an ill-conditioned/ideal behavioral branch in the UCC3803 error-amp model, error-amp saturation/limiting, or UIC initialization driving an invalid state. One-input discriminating test: keep all passives, initial conditions, timestep and cshunt identical and change only the analysis initialization by removing 'uic' so a DC operating point is computed first. If the eb1 failure disappears, UIC/initialization is causal; if it persists at the same branch, the UCC3803 error-amp model/numerics is implicated. Physical UVLO is separate: UCC3803 startup threshold is min/typ/max 3.7/4.1/4.5 V, stop 3.2/3.6/4.0 V. A 4.30 V rail is inside the min-max window but is not a guaranteed start for worst-case units, since units may require up to 4.5 V; if already running, 4.30 V is above the 4.0 V max stop, so UVLO should not stop it. A 4.30 V startup design gate therefore needs margin above 4.5 V or a different device, plus physical bench verification over units/temperature. The 0.9 V worst high-output drop at 5 V/50 mA is a separate drive-margin fact, not a UVLO threshold.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [
+    "https://www.ti.com/lit/ds/symlink/ucc3803.pdf"
+  ],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}
