@@ -11,6 +11,7 @@
 | 半导通与持续供能 | 零管压降、19.8 kΩ 阳极电阻和等阻故障时，97.50 V、4.924 mA、0.4801 W。一次电容放电吸收 29.80 mJ，上游维持 195 V 则 4 s 积分达 1.920 J 并继续累积。 | 晶导全温 SOA、二次击穿、实际瞬态热阻、相邻器件温升和独立支路诊断。损坏与过热风险保持 P0。 |
 | 高压器件周边与整机触达 | 最终原生 DRC 保留高压封装及开关净距问题。交接处没有正式管座焊盘。 | 绝缘协调、板边/金属安装件、阻燃/防触碰和壳体互锁需要具体验证。 |
 
-C47 名义 170 V 为 47.69 mJ，+10% 为 52.45 mJ。195 V 边界名义 62.74 mJ，+10% 为 69.02 mJ。TDK 实际候选 B32774M4335K000 为 3.3 µF／450 V、±10%，目录给出 17 A 峰值、13.4 mΩ ESR 和 19 × 11 mm 截面参数。功率模型的 25 mΩ 属于筛选假设。频率/温度下纹波、脉冲 dV/dt、ESL、安装高度及脚距须按具体样件和制造数据复核。 [TDK 产品目录](https://www.tdk-electronics.tdk.com/de/3295452/produkte/produktkatalog/folien-kondensatoren/kondensatoren-fuer-dc-link-/search-results-deltacap-capacitors?so=%7B%22orderingCode%22%3A%22B32774M%2A%2A%22%7D)
+C47 名义 170 V 为 47.69 mJ，+10% 为 52.45 mJ。195 V 边界名义 62.74 mJ，+10% 为 69.02 mJ。TDK 实际候选 B32774M4335K000 为 3.3 µF／450 V、±10%，厂商数据为 70 °C、10 kHz 下 5.5 A RMS 与典型 ESR 13.4 mΩ，典型 ESL 17 nH，最大体积包络 11 × 19 × 31.5 mm，脚距 27.5 mm。450 V 档脉冲 dV/dt 上限 30 V/µs。功率模型使用 25 mΩ 且省略 ESL。约 100 kHz 开关频谱、实际温度、安装及寿命仍待复核。 [TDK B3277*M 数据手册](https://product.tdk.com/system/files/dam/doc/product/capacitor/film/mkp_mfp/data_sheet/20/20/ds/mkp_b32774m_778m.pdf)
 
 Protection 与 discharge 结果来自实际 SPICE 台架文件，对应比较、锁存和切断使用边界代理。无危险实物故障注入或高压上电。 [关断](evidence/r2/cutoff/measurement.json) · [过压](evidence/r2/ovp_feedback_fault_noload/measurement.json) · [过流](evidence/r2/ocp_sense_fault_r4/measurement.json) · [残压与半导通](evidence/r2/residual/measurement.json) · [TI eFuse 器件手册](https://www.ti.com/lit/ds/symlink/tps25947.pdf)
+

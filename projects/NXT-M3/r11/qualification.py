@@ -147,7 +147,10 @@ def mapping():
             group = ("BLOAD / VSTRIKE","yes","Current envelope with extinction ramp or fixed arc offset; no reignition dynamics","Load sensitivity")
         if group:
             model,proxy,difference,scope = group
-            rows.append((ref,part["mpn"],part["value"],model,part["datasheet"] or "R10 schematic value",
+            datasheet = part["datasheet"] or "R10 schematic value"
+            if ref == "C47":
+                datasheet = "https://product.tdk.com/system/files/dam/doc/product/capacitor/film/mkp_mfp/data_sheet/20/20/ds/mkp_b32774m_778m.pdf"
+            rows.append((ref,part["mpn"],part["value"],model,datasheet,
                          proxy,difference,scope))
     write_csv(HERE/"SCHEMATIC_TO_SIMULATION_MAP.csv",
               ("reference","MPN","schematic_value","spice_model","model_source_or_part_datasheet",
@@ -220,3 +223,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
