@@ -1,0 +1,27 @@
+R11 PWM-disabled feedthrough and imposed U11 open
+* Ideal switching schedule, diode reverse leakage parameters illustrative.
+V5 src 0 5.5
+VCTRL arm 0 PWL(0 3.3 1 3.3 1.001 0)
+Sup src in arm 0 SW11
+.model SW11 SW(Ron=28m Roff=1G Vt=1.6 Vh=.05)
+Cin in 0 26.8u IC=0
+R45 in 0 10k
+Lin in sw 22u
+D3 sw hv ES_PROXY
+.model ES_PROXY D(Is=8n N=1.9 Rs=.32 Cjo=13p Tt=20n BV=400)
+C47 hv 0 3.3u IC=170
+RBA hv 0 496k
+RBB hv 0 496k
+VSHORT supply 0 5.5
+LSTUCK supply d 22u
+Dstuck d pwmoff ES_PROXY
+Co pwmoff 0 3.3u IC=170
+RCA pwmoff 0 496k
+RCB pwmoff 0 496k
+.tran 50u 7 0 50u uic
+.meas tran pwm_off_feed_v FIND v(pwmoff) AT=7
+.meas tran cut_residual_v FIND v(hv) AT=7
+.meas tran cut_input_v FIND v(in) AT=7
+.meas tran upstream_reverse_peak MAX i(V5)
+.meas tran upstream_after_open FIND i(V5) AT=5
+.end

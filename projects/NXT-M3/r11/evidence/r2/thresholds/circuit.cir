@@ -1,0 +1,41 @@
+R11 analog protection thresholds and latch response with bounded comparators
+* The TLV1702, U8/U9 and U11 are proxies. Delays are scenario assumptions.
+.param OVPSLOPE=20k DELAY=2u
+Vref ref 0 1.25
+V33 rail 0 3.3
+Vbus hv 0 PWL(0 0 1m 0 11m 200)
+Vcs sns 0 PWL(0 0 3m 0 3.001m .14 4m .14 4.001m 0)
+R60 hv ov1 499k
+R61 ov1 ov2 499k
+R62 ov2 ov3 499k
+R63 ov3 ov 499k
+R64 ov 0 13.3k
+C35 ov 0 100p
+R65 hv res1 453k
+R66 res1 res2 453k
+R67 res2 res3 453k
+R68 res3 residual 453k
+R69 residual 0 42.2k
+C36 residual 0 100p
+R47 ref ocp 93.1k
+R48 ocp 0 10k
+R49 sns cs 470
+C31 cs 0 100p
+B_O ovraw 0 V={v(ov)>v(ref)}
+B_C ocraw 0 V={v(cs)>v(ocp)}
+RDO ovraw ovdel 1k
+RDC ocraw ocdel 1k
+CDO ovdel 0 {DELAY/1000}
+CDC ocdel 0 {DELAY/1000}
+CARM armed 0 1n IC=3.3
+RARM armed 0 1T
+B_TRIP trip 0 V={max(v(ovdel),v(ocdel))}
+SCLR armed 0 trip 0 CL
+.model CL SW(Ron=100 Roff=1T Vt=.5 Vh=.02)
+.tran 200n 12m 0 400n uic
+.meas tran ovp_trip_hv FIND v(hv) WHEN v(ovdel)=.5 RISE=1
+.meas tran ocp_reference FIND v(ocp) AT=2m
+.meas tran ocp_trip_sense FIND v(sns) WHEN v(ocraw)=.5 RISE=1
+.meas tran ocp_latch_t WHEN v(armed)=1.6 FALL=1
+.meas tran residual_rising_hv FIND v(hv) WHEN v(residual)=1.25 RISE=1
+.end

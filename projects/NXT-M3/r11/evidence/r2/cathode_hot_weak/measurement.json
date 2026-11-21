@@ -1,0 +1,27 @@
+{
+  "case": "cathode_hot_weak",
+  "model": "bounded proxy; see deck header",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\cathode_hot_weak\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.093,
+  "measurements": {
+    "voh": 2.26995,
+    "ib_on": 0.000470148,
+    "collector_on": 0.00329508,
+    "vce_on": 0.0984067,
+    "collector_off": 1.48479e-10,
+    "base_tristate": 0.1515,
+    "base_no_pd": 0.458394,
+    "droop_v": 3.25869,
+    "unpowered_rail_v": 2.44041,
+    "clamp_drive_a": -0.00244041
+  },
+  "raw_points": 5074,
+  "waveform_sha256": "108b69462ecefefb584bb4e3a0d10f56d25a8a2fc0d43fb8b4a4ce16bc675d0a",
+  "vendor_model_sha256": null
+}

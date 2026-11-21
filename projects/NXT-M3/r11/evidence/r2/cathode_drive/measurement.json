@@ -1,0 +1,27 @@
+{
+  "case": "cathode_drive",
+  "model": "bounded proxy; see deck header",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\cathode_drive\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.093,
+  "measurements": {
+    "voh": 3.16827,
+    "ib_on": 0.000722657,
+    "collector_on": 0.00329655,
+    "vce_on": 0.0690262,
+    "collector_off": 1.32006e-10,
+    "base_tristate": 0.1515,
+    "base_no_pd": 0.577624,
+    "droop_v": 3.25869,
+    "unpowered_rail_v": 2.35598,
+    "clamp_drive_a": -0.00235598
+  },
+  "raw_points": 5075,
+  "waveform_sha256": "e8e1b22b85a781f3d0c9bf7aa8843a345abfa0dfebb1ff423a31de2f16ee91b1",
+  "vendor_model_sha256": null
+}

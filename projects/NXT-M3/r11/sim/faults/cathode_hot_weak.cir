@@ -1,0 +1,45 @@
+R11 candidate cathode drive and static fault boundaries
+* Generic BJT only. High-voltage vendor hot leakage and secondary breakdown not represented.
+* Independent 10 uA + 5 uA hot/tri-state boundary current assumptions.
+.param VO=2.27 RO=0.1 BF0=25
+VHV hv 0 170
+VSTRIKE hv arc 104
+R1 arc mid 10k
+R2 mid c 10k
+VOUT driver 0 PWL(0 0 100u 0 101u {VO} 700u {VO} 701u 0)
+RDRV driver pin {RO}
+RBASE pin b 3030
+RPD b 0 9900
+VBASE b bi 0
+Q1 c bi 0 NPN_BOUND
+.model NPN_BOUND NPN(IS=3e-15 BF={BF0} VAF=60 IKF=.03 RB=25 RC=4 RE=.5 CJE=12p CJC=4p TF=.6n)
+Ihot 0 hot 15u
+RPDHOT hot 0 10.1k
+Ileak 0 floating 15u
+Rmissing floating 0 100Meg
+Dclamp floating 0 DCLAMP
+.model DCLAMP D(IS=3e-15)
+* Shared-rail load step, bounded no converter response for 50 us.
+Iall rail 0 PULSE(0 36.36m 100u 10n 10n 50u 1m)
+Crail rail 0 44u IC=3.3
+Rrail rail vs 100Meg
+Vrail vs 0 3.3
+* Supply-sequence diode is a qualitative stand-in, no Ioff claim.
+Vin GPIO 0 3.3
+Rsrc GPIO unclamped 100
+Dseq unclamped offrail DCLAMP
+Rload offrail 0 1k
+.temp 85
+.tran 200n 1m 0 200n uic
+.meas tran voh FIND v(pin) AT=500u
+.meas tran ib_on FIND i(VBASE) AT=500u
+.meas tran collector_on FIND par('(v(mid)-v(c))/10000') AT=500u
+.meas tran vce_on FIND v(c) AT=500u
+.meas tran collector_off FIND par('(v(mid)-v(c))/10000') AT=900u
+.meas tran base_tristate FIND v(hot) AT=900u
+.meas tran base_no_pd FIND v(floating) AT=900u
+.meas tran droop_v FIND v(rail) AT=150u
+.meas tran unpowered_rail_v FIND v(offrail) AT=900u
+.meas tran clamp_drive_a FIND i(Vin) AT=900u
+.end
+

@@ -1,0 +1,29 @@
+R11 residual paths and sustained half-conduction, 195 V initial fault proxy
+* Worst-tolerance 3.63 uF and 500.96k per path. No sensor-divider discharge credit.
+Cdual vd 0 3.63u IC=195
+Rdual1 vd 0 500.96k
+Rdual2 vd 0 500.96k
+Csingle vs 0 3.63u IC=195
+Rsingle vs 0 500.96k
+Cfault vf 0 3.63u IC=195
+Rfa vf qc 19.8k
+Rfb qc 0 19.8k
+Rbleed1 vf 0 500.96k
+Rbleed2 vf 0 500.96k
+Bpower p 0 V={v(qc)*v(qc)/19800}
+VKEEP maint 0 195
+Rkeep1 maint qkeep 19.8k
+Rkeep2 qkeep 0 19.8k
+Bkeep pk 0 V={v(qkeep)*v(qkeep)/19800}
+.tran 100u 4 0 100u uic
+.meas tran dual_t60 WHEN v(vd)=60 FALL=1
+.meas tran single_t60 WHEN v(vs)=60 FALL=1
+.meas tran dual_t5492 WHEN v(vd)=54.92 FALL=1
+.meas tran single_t5492 WHEN v(vs)=54.92 FALL=1
+.meas tran fault_vce MAX v(qc)
+.meas tran fault_ic MAX par('v(qc)/19800')
+.meas tran fault_w MAX v(p)
+.meas tran fault_energy INTEG v(p) FROM=0 TO=4
+.meas tran sustained_w AVG v(pk) FROM=3 TO=4
+.meas tran sustained_energy INTEG v(pk) FROM=0 TO=4
+.end

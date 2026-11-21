@@ -1,0 +1,35 @@
+{
+  "case": "lowline",
+  "model": "current-mode/controller and peripheral proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\lowline\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 25.265,
+  "measurements": {
+    "hv_final": 150.736,
+    "hv_ripple": 1.64757,
+    "hv_peak": 151.589,
+    "il_peak": 1.63496,
+    "q_vds": 152.88,
+    "q_current": 1.71225,
+    "d_if": 1.5419,
+    "d_irev": -0.607635,
+    "input_peak": -134.483,
+    "cs_peak": 0.0818054,
+    "cap_charge": 1.54159,
+    "cap_discharge": -0.607947,
+    "cap_rms": 0.098513,
+    "q_loss": 0.255903,
+    "d_loss": 0.01447,
+    "l_copper": 0.0269857,
+    "sense_loss": 0.0335581,
+    "bias_peak": 11.6547
+  },
+  "raw_points": 1003563,
+  "waveform_sha256": "4271a55e424f1aee2a53a1de1358c81002e54265314b043945c3ee7f8ac4b4e4",
+  "vendor_model_sha256": null
+}

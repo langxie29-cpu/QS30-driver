@@ -1,0 +1,22 @@
+{
+  "case": "thresholds",
+  "model": "bounded proxy; see deck header",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\thresholds\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.204,
+  "measurements": {
+    "ovp_trip_hv": 188.901,
+    "ocp_reference": 0.121242,
+    "ocp_trip_sense": 0.123718,
+    "ocp_latch_t": 0.00300235,
+    "residual_rising_hv": 55.0055
+  },
+  "raw_points": 30063,
+  "waveform_sha256": "2afe97626fea472eb81286dc81af470c8dd6d21532935d8adf30f5c1719463df",
+  "vendor_model_sha256": null
+}

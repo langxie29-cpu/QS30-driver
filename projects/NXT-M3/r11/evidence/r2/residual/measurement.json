@@ -1,0 +1,27 @@
+{
+  "case": "residual",
+  "model": "bounded proxy; see deck header",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\residual\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.218,
+  "measurements": {
+    "dual_t60": 1.07168,
+    "single_t60": 2.14337,
+    "dual_t5492": 1.15212,
+    "single_t5492": 2.30424,
+    "fault_vce": 97.4992,
+    "fault_ic": 0.0049242,
+    "fault_w": 0.480106,
+    "fault_energy": 0.0297964,
+    "sustained_w": 0.480114,
+    "sustained_energy": 1.92045
+  },
+  "raw_points": 40011,
+  "waveform_sha256": "22a22dfb8856635742569ffe0b9f45f37b48904555b8b7da8118a2013beaf94c",
+  "vendor_model_sha256": null
+}

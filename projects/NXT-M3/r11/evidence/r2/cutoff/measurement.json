@@ -1,0 +1,22 @@
+{
+  "case": "cutoff",
+  "model": "bounded proxy; see deck header",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\cutoff\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 3.156,
+  "measurements": {
+    "pwm_off_feed_v": 5.11397,
+    "cut_residual_v": 0.0313219,
+    "cut_input_v": 0.000101958,
+    "upstream_reverse_peak": -3.25767e-13,
+    "upstream_after_open": -5.49986e-09
+  },
+  "raw_points": 656097,
+  "waveform_sha256": "031dc16ef57c29dce07d3f2ef02e86d366ea473877e310886f988aec6bef6cf5",
+  "vendor_model_sha256": null
+}

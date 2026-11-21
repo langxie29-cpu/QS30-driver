@@ -1,0 +1,36 @@
+{
+  "case": "ocp_sense_fault",
+  "model": "dynamically coupled comparator, latch and U11 boundary proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\ocp_sense_fault\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 35.875,
+  "measurements": {
+    "hv_final": 133.024,
+    "hv_ripple": 4.47727,
+    "hv_peak": 161.105,
+    "il_peak": 1.7354,
+    "q_vds": 162.474,
+    "q_current": 1.87032,
+    "d_if": 1.63344,
+    "d_irev": -0.140083,
+    "input_peak": -152.821,
+    "cs_peak": 0.0868178,
+    "cap_charge": 1.63308,
+    "cap_discharge": -0.148639,
+    "cap_rms": 0.00741705,
+    "q_loss": 3.51824e-09,
+    "d_loss": 7.16106e-07,
+    "l_copper": 1.6512e-18,
+    "sense_loss": 4.98507e-09,
+    "bias_peak": 11.6564,
+    "hv_25ms": 143.048
+  },
+  "raw_points": 996565,
+  "waveform_sha256": "1c2c0d9512cd324cdd3d79c6c0d647d3ff9b105f03d4b66c1a5bced82771999c",
+  "vendor_model_sha256": null
+}

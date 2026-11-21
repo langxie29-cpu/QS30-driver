@@ -1,0 +1,35 @@
+{
+  "case": "dnp_open",
+  "model": "current-mode/controller and peripheral proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\r2\\dnp_open\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 13.25,
+  "measurements": {
+    "hv_final": 9.13628e-13,
+    "hv_ripple": 7.42569e-14,
+    "hv_peak": 9.50754e-13,
+    "il_peak": 4.54522e-16,
+    "q_vds": 7.86505e-10,
+    "q_current": 2.17032e-16,
+    "d_if": 2.46884e-16,
+    "d_irev": -1.38484e-16,
+    "input_peak": -5e-12,
+    "cs_peak": 1.08493e-17,
+    "cap_charge": 2.43722e-16,
+    "cap_discharge": -1.38569e-16,
+    "cap_rms": 1.23215e-16,
+    "q_loss": 2.51802e-26,
+    "d_loss": 1.00529e-25,
+    "l_copper": 1.04791e-33,
+    "sense_loss": 4.98873e-35,
+    "bias_peak": 6.70095e-10
+  },
+  "raw_points": 838522,
+  "waveform_sha256": "95ba15cb1b8f1f1b9cf20c766056b1284e02c645d0fa4225af302769246c9bef",
+  "vendor_model_sha256": null
+}
