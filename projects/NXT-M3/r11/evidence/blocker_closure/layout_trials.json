@@ -1,0 +1,178 @@
+[
+  {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\start.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "start.json"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\fuse_rotated_reconnected.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "fuse_rotated_reconnected.json",
+    "accepted": true,
+    "added_violations": [],
+    "new_trace_items": 25,
+    "open_before": 349,
+    "open_after_trial": 348
+  },
+  {
+    "case": "route_01_5V_RAW",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_02_USBC_CC1",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_03_USBC_1V2",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_04_USBC_2V7",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_05_USBC_VALID_N",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_06_USBC_3A_N",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_07_USBC_3A_N",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_08_5V_RAW",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_09_5V_RAW",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_10_LV_SW",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_11_ANODE_1",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\route_12_ANODE_2.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "route_12_ANODE_2.json",
+    "accepted": true,
+    "added_violations": [],
+    "new_trace_items": 78,
+    "open_before": 348,
+    "open_after_trial": 347
+  },
+  {
+    "case": "route_13_SER1",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_14_SER2",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_15_SER3",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_16_SR_CLK_BUS",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_17_SR_CLK_BUS",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_18_HV_CS",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "case": "route_19_HV_CS",
+    "accepted": false,
+    "reason": "no candidate with existing pad geometry and rules"
+  },
+  {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\end.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "end.json"
+  }
+]

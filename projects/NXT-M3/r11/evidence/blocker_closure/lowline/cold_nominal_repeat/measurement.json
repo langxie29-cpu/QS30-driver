@@ -1,0 +1,43 @@
+{
+  "case": "cold_nominal_repeat",
+  "model": "Type-C and switching-controller proxies, L3 tolerance sensitivity",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\blocker_closure\\lowline\\cold_nominal_repeat\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 65.734,
+  "measurements": {
+    "vbus_low": 4.45655,
+    "protected_low": 4.35505,
+    "first_on": 0.00954209,
+    "protected_at_end": 4.36267,
+    "a3_at_end": 1.0,
+    "cc1_max": 1.68852,
+    "cc2_max": 8.61311e-06,
+    "hv_final": 155.843,
+    "hv_ripple": 1.10835,
+    "hv_peak": 156.382,
+    "il_peak": 1.62694,
+    "q_vds": 157.652,
+    "q_current": 1.97978,
+    "d_if": 1.54311,
+    "d_irev": -1.48798,
+    "input_peak": -5.13781,
+    "cs_peak": 0.0991282,
+    "cap_charge": 1.54281,
+    "cap_discharge": -1.48828,
+    "cap_rms": 0.0898486,
+    "q_loss": 0.248698,
+    "d_loss": 0.0117154,
+    "l_copper": 0.02604,
+    "sense_loss": 0.0324464,
+    "bias_peak": 11.6545,
+    "hv_input_avg": 4.34621
+  },
+  "raw_points": 1940417,
+  "waveform_sha256": "581c9c16f024b8521b11a2e3625686c8dd348a8fb2c94c739cd694929a6029f7",
+  "vendor_model_sha256": null
+}

@@ -13,7 +13,7 @@ from route import EDA,box,pos
 from socket_fit import PIN,coordinates,crosses_disk,distance,meta,rows
 
 HERE=Path(__file__).resolve().parent
-OUT=HERE/"evidence/socket_fit/final"
+OUT=Path(sys.argv[2]) if len(sys.argv)>2 else HERE/"evidence/socket_fit/final"
 
 
 def pins(filename):

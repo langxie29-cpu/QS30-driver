@@ -1,6 +1,6 @@
 # NXT-M3 R11 工程最终报告
 
-后续 5 V Type-C 更改及 R10 管座复核见 [Type-C 续轮报告](TYPEC_ECO_REPORT.md)。以下保留原 R0–R5 阶段结果。
+后续工程见 [5 V Type-C](TYPEC_ECO_REPORT.md)、[管座手焊接口](SOCKET_FIT_AND_RELEASE_REVIEW.md) 和 [最新堵塞复核](BLOCKER_CLOSURE_REPORT.md)。以下保留原 R0–R5 阶段结果。
 
 **2026-11-21 · GATE_0 = REWORK · ENGINEERING HOLD · MANUFACTURING_RELEASE = HOLD**
 

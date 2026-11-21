@@ -1,0 +1,94 @@
+{
+  "retained": true,
+  "before": {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\ground_return_before.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "ground_return_before.json"
+  },
+  "trial": {
+    "command": [
+      "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--refill-zones",
+      "--save-board",
+      "--schematic-parity",
+      "--all-track-errors",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\blocker_closure\\ground_return_trial.json",
+      "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-r11-socket\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+    ],
+    "exit": 5,
+    "raw": "ground_return_trial.json"
+  },
+  "open_before": 347,
+  "open_trial": 345,
+  "new_rule_violations": [],
+  "zone_outline": [
+    [
+      70,
+      54
+    ],
+    [
+      120,
+      54
+    ],
+    [
+      120,
+      87
+    ],
+    [
+      50.35,
+      87
+    ],
+    [
+      50.35,
+      62
+    ],
+    [
+      70,
+      62
+    ]
+  ],
+  "u3_connections": [
+    {
+      "pin": "1",
+      "pad": [
+        51.44,
+        83.75
+      ],
+      "via": [
+        51.44,
+        85.0
+      ]
+    },
+    {
+      "pin": "40",
+      "pad": [
+        51.44,
+        66.25
+      ],
+      "via": [
+        51.44,
+        65.0
+      ]
+    }
+  ]
+}

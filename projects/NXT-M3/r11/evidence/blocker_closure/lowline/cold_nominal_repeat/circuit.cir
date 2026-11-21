@@ -1,0 +1,222 @@
+NXT R11 5 V boost, populated candidate in simulation only
+* R40 installed as a simulation assumption. V5 is upstream equivalent 5 V rail.
+* U11 RON / disconnect, U16 timed bias switch, U18 gate paths, Q32/D3 are proxies.
+.param RLINK=1m CIN=26.8u COUT=3.3u LSER=39.5m LMAIN=22u
+* GCT J1, Type-C source, STUSB4500L boundaries, and front TPS259474L.
+.param VIN=4.75 CABLE=0.19 CONTACT=.050 RFUSE=.055 CRP=10k PLOAD=2.475
+.param ORIENT=1 TREVOKE=100m TDROP=100m FRONT_RAMP=425.532 FRONT_ILIM=2.03
+* Cable loop resistance includes return. One CC conductor is active.
+V5 SOURCE 0 PWL(0 0 0.499m 0 0.5m {VIN} {TDROP} {VIN} {TDROP+5u} 0)
+RCABLE SOURCE CONTACTNODE {CABLE}
+RCONTACT CONTACTNODE VBUS {CONTACT}
+C52 VBUS 0 1u
+R_FUSE VBUS FUSED {RFUSE}
+C1 FUSED 0 100n
+D4 0 FUSED TVS_APPROX
+.model TVS_APPROX D(Is=5n Rs=.22 BV=6.67 IBV=1m)
+VCCSRC SOURCE_CC 0 5
+VREVOKE REVOKE 0 PULSE(0 1 {TREVOKE} 1u 1u 1 2)
+R_CCSOURCE SOURCE_CC RPNORM {CRP}
+S_RPNOM RPNORM RPPIN RPNOM_EN 0 CCWIRE
+B_RPNOM RPNOM_EN 0 V={1-v(REVOKE)}
+S_CC1 RPPIN CC1 OR1 0 CCWIRE
+S_CC2 RPPIN CC2 OR2 0 CCWIRE
+V_OR1 OR1 0 {ORIENT}
+V_OR2 OR2 0 {1-ORIENT}
+.model CCWIRE SW(Ron=1 Roff=1G Vt=.5 Vh=.01)
+R_RD1 CC1 0 5.1k
+R_RD2 CC2 0 5.1k
+* Switch source advertisement to 1.5 A equivalent on downgrade.
+R_RPDOWN SOURCE_CC RPMID 22k
+S_RPDOWN RPMID RPPIN REVOKE 0 CCWIRE
+R234 VBUS VBUS_SENSE 1k
+RMON VBUS_SENSE 0 10Meg
+V_DEBOUNCE DET 0 PULSE(0 1 1.5m 1u 1u 1 2)
+B_VALID VALID 0 V={v(DET)*(v(VBUS_SENSE)>3.8)*(v(VBUS_SENSE)<5.65)}
+B_3A A3 0 V={v(VALID)*(max(v(CC1),v(CC2))>1.23)}
+R230 VBUS FLAG_VALID_N 100k
+R231 FLAG_VALID_N 0 180k
+R232 VBUS FLAG_3A_N 100k
+R233 FLAG_3A_N 0 180k
+S_VALID FLAG_VALID_N 0 VALID 0 CCFET
+S_3A FLAG_3A_N 0 A3 0 CCFET
+.model CCFET SW(Ron=25 Roff=1G Vt=.5 Vh=.03)
+R1 FUSED FRONT_EN 360k
+R2 FRONT_EN 0 150k
+R3 FUSED FRONT_OVLO 390k
+R4 FRONT_OVLO 0 110k
+S_Q33 FRONT_EN 0 FLAG_VALID_N 0 ENCLAMP
+S_Q34 FRONT_EN 0 FLAG_3A_N 0 ENCLAMP
+.model ENCLAMP SW(Ron=25 Roff=1G Vt=1.7 Vh=.08)
+B_FRONT_ON FRONT_ON 0 V={0.5+0.5*tanh((v(FRONT_EN)-1.2)*90)}
+B_SLEW 0 SLEW I={v(FRONT_ON)*FRONT_RAMP*1u*(v(SLEW)<6)-(1-v(FRONT_ON))*v(SLEW)/100}
+C_SLEW SLEW 0 1u
+B_EFUSE FUSED PROT I={v(FRONT_ON)*min(FRONT_ILIM,max(0,(min(v(FUSED),v(SLEW))-v(PROT))/.028))+(v(FUSED)-v(PROT))/1G}
+C4 PROT 0 22u
+C5 PROT 0 100u
+C6 PROT 0 10u
+* TPS62162 is a bounded input load, not a regulator dynamics model.
+B_LV PROT 0 I={PLOAD/max(v(PROT),3)*(0.5+0.5*tanh((v(PROT)-3.1)*15))}
+B_3V3 V33 0 V={3.3*(0.5+0.5*tanh((v(PROT)-3.4)*15))}
+
+.meas tran vbus_low MIN v(VBUS) FROM=62m TO=65m
+.meas tran protected_low MIN v(PROT) FROM=62m TO=65m
+.meas tran first_on WHEN v(PROT)=3.4 RISE=1
+.meas tran protected_at_end FIND v(PROT) AT=65m
+.meas tran a3_at_end FIND v(A3) AT=65m
+.meas tran cc1_max MAX v(CC1)
+.meas tran cc2_max MAX v(CC2)
+R40 PROT ISOLATE {RLINK}
+B_HVON HVON 0 V={0.5+0.5*tanh((v(ARMED)-1.6)*90)}
+B_HVSLEW 0 HVSLEW I={v(HVON)*425.532*1u*(v(HVSLEW)<6)-(1-v(HVON))*v(HVSLEW)/50}
+C_HVSLEW HVSLEW 0 1u
+B_U11 ISOLATE VHV I={v(HVON)*min(1.65,max(0,(min(v(ISOLATE),v(HVSLEW))-v(VHV))/.028))+(v(ISOLATE)-v(VHV))/1G}
+V_ARM ARMCMD 0 PWL(0 0 14.99m 0 15m 3.3)
+B_ARMED ARMED 0 V={min(v(ARMCMD),v(V33))}
+C28 VHV 0 22u
+C37 VHV 0 4.7u
+C46 VHV 0 100n
+R45 VHV 0 10k
+L2 VHV BSW 10u
+D2 BSW BIAS SS14_PROXY
+.model SS14_PROXY D(Is=15u N=1.15 Rs=0.07 Cjo=80p BV=40)
+V_BCLOCK BCLK 0 PULSE(0 1 15.05m 10n 10n 440n 1.66u)
+B_BCTL BCTL 0 V={v(BCLK)*(0.5+0.5*tanh((1.233-v(BFB))*500))*v(ARMED)/3.3}
+S16 BSW 0 BCTL 0 BIAS_SWITCH
+.model BIAS_SWITCH SW(Ron=1.2 Roff=1G Vt=.5 Vh=.04)
+R70 BIAS BFB 845k
+R71 BFB 0 100k
+C38 BIAS 0 4.7u
+C39 BIAS 0 100n
+C45 BIAS 0 1u
+R50 BIAS BSENSE 64.9k
+R51 BSENSE 0 10k
+B_PERMIT PERMIT 0 V={v(ARMED)*(0.5+0.5*tanh((v(BSENSE)-1.25)*500))}
+R77 PERMIT UVLO 10k
+R78 UVLO 0 47k
+* Current-mode controller proxy, no manufacturer qualification.
+* R79 determines the screening clock at 100 kHz. COMP scaling and timing are assumptions.
+VCLK CLK 0 PULSE(0 1 2u 10n 10n 95n 10u)
+B_ENABLED ENABLE 0 V={0.5+0.5*tanh((v(UVLO)-1.5)*100)}
+B_SS 0 SS I={10u*v(ENABLE)}
+R_SS SS 0 1G
+S_RESET_SS SS 0 DISABLE 0 SS_SW
+B_DISABLE DISABLE 0 V={1-v(ENABLE)}
+.model SS_SW SW(Ron=100 Roff=1G Vt=.5 Vh=.02)
+B_GM 0 COMP I={max(-200u,min(200u,0.002*(min(v(SS),1)-v(FB))))}
+D_C_HI COMP CLAMP_HI CLAMP_D
+D_C_LO CLAMP_LO COMP CLAMP_D
+VCLH CLAMP_HI 0 2.2
+VCLL CLAMP_LO 0 1.53
+.model CLAMP_D D(Is=1n N=1)
+B_DUTY PHASE 0 V={time-floor((time-2u)/10u)*10u-2u}
+V_ONE ONE 0 1
+S_SET ONE LATCH CLK 0 PWM_SET
+.model PWM_SET SW(Ron=1 Roff=1G Vt=.5 Vh=.05)
+C_LATCH LATCH 0 100p
+R_LATCH LATCH 0 100Meg
+B_RESET RESET 0 V={max(v(DISABLE),max(v(PHASE)>9.25u,(v(PHASE)>200n)*(v(CS)+v(PHASE)*1600>min(.1,max(0,(v(COMP)-1.14)*.082)))))}
+S_LRST LATCH 0 RESET 0 PWM_RESET
+.model PWM_RESET SW(Ron=.12 Roff=1G Vt=.5 Vh=.05)
+B_PWM PWM 0 V={v(VHV)*(0.5+0.5*tanh((v(LATCH)-.5)*50))}
+R_RTLOAD RT 0 1G
+R_READY READY 0 1G
+R_VCC VHV VCC 1
+R53 V33 READY 10k
+
+C40 VCC 0 2.2u
+C41 SS 0 100n
+R79 RT 0 220k
+R80 COMP CZ 10k
+C43 CZ 0 10n
+C44 COMP 0 100p
+R72 SNS CS 100
+C42 CS 0 100p
+R73 SNS 0 50m
+R49 SNS CS_FILT 470
+C31 CS_FILT 0 100p
+R47 VREF OCP_REF 93.1k
+R48 OCP_REF 0 10k
+VREF VREF 0 1.25
+B_GCTL GH 0 V={0.5+0.5*tanh((v(PWM)-2.2)*50)}
+B_GLO GL 0 V={1-v(GH)}
+S18_H BIAS GP GH 0 OUTSW
+S18_L GN 0 GL 0 OUTSW
+.model OUTSW SW(Ron=1.2 Roff=1G Vt=.5 Vh=.02)
+R74 GP G 10
+R75 GN G 4.7
+R76 G SNS 10k
+RLD VHV LI {LSER}
+L3 LI SW {LMAIN}
+VQ SW DRAIN 0
+M32 DRAIN G SNS SNS ST_PROXY
+.model ST_PROXY NMOS(Level=1 VTO=3.5 KP=12 RD=.32 RS=.03 CGSO=900p CGDO=90p CBD=45p PB=.8 IS=1n)
+* Q32 breakdown is outside the proxy.
+B_VDS VDS 0 V={v(SW,SNS)}
+VD SW DA 0
+D3 DA HV ES1G_PROXY
+.model ES1G_PROXY D(Is=8n N=1.9 Rs=.32 Cjo=13p Tt=20n BV=400 IBV=10u)
+R86 SW SNUB 100
+C48 SNUB 0 100p
+VC HV CO 0
+RESR CO FILM 25m
+C47 FILM 0 {COUT}
+R81 HV FB1 422k
+R82 FB1 FB2 422k
+R83 FB2 FB3 422k
+R84 FB3 FB 422k
+R85 FB 0 10k
+R60 HV OVP1 499k
+R61 OVP1 OVP2 499k
+R62 OVP2 OVP3 499k
+R63 OVP3 OVP 499k
+R64 OVP 0 13.3k
+C35 OVP 0 100p
+R65 HV RES1 453k
+R66 RES1 RES2 453k
+R67 RES2 RES3 453k
+R68 RES3 RESID 453k
+R69 RESID 0 42.2k
+C36 RESID 0 100p
+R400 HV B11 124k
+R401 B11 B12 124k
+R402 B12 B13 124k
+R403 B13 0 124k
+R404 HV B21 124k
+R405 B21 B22 124k
+R406 B22 B23 124k
+R407 B23 0 124k
+* Equivalent three static tubes at nominal current; extinction proxy below 120 V.
+VLOAD REQUEST 0 9.9m
+BLOAD HV 0 I={v(REQUEST)*min(1,max(0,(v(HV)-120)/15))}
+B_PQ PQ 0 V={v(SW,SNS)*i(VQ)}
+B_PD PD 0 V={v(DA,HV)*i(VD)}
+B_RL PL 0 V={i(L3)*i(L3)*LSER}
+B_RCS PCS 0 V={v(SNS)*v(SNS)/.05}
+.options method=gear reltol=0.003 abstol=1n
+.save v(VBUS) v(PROT) v(CC1) v(CC2) v(FRONT_EN) v(A3) v(ARMED) v(V33) v(HV) v(BIAS) v(FB) v(OVP) v(COMP) v(CS) v(SNS) v(SW) v(G) v(VHV) v(PWM) v(VDS) v(DA) v(PQ) v(PD) v(PL) v(PCS) i(L3) i(VQ) i(VD) i(VC) i(V5)
+.tran 200n 65m 0 150n uic
+.meas tran hv_final AVG v(HV) FROM=62m TO=65m
+.meas tran hv_ripple PP v(HV) FROM=62m TO=65m
+.meas tran hv_peak MAX v(HV)
+.meas tran t_95 WHEN v(HV)=161.5 RISE=1
+.meas tran il_peak MAX i(L3)
+.meas tran q_vds MAX v(VDS)
+.meas tran q_current MAX i(VQ)
+
+.meas tran d_if MAX i(VD)
+.meas tran d_irev MIN i(VD)
+.meas tran input_peak MIN i(V5)
+.meas tran cs_peak MAX v(SNS)
+.meas tran cap_charge MAX i(VC)
+.meas tran cap_discharge MIN i(VC)
+.meas tran cap_rms RMS i(VC) FROM=62m TO=65m
+.meas tran q_loss AVG v(PQ) FROM=62m TO=65m
+.meas tran d_loss AVG v(PD) FROM=62m TO=65m
+.meas tran l_copper AVG v(PL) FROM=62m TO=65m
+.meas tran sense_loss AVG v(PCS) FROM=62m TO=65m
+.meas tran bias_peak MAX v(BIAS)
+* Rail voltage at the boost terminals, after both eFuses
+.meas tran hv_input_avg AVG v(VHV) FROM=62m TO=65m
+.end
+
