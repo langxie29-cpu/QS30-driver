@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe",
+    "pcb",
+    "drc",
+    "--refill-zones",
+    "--save-board",
+    "--schematic-parity",
+    "--all-track-errors",
+    "--format",
+    "json",
+    "--exit-code-violations",
+    "-o",
+    "D:\\PROJECTS\\dsharness\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\evidence\\typec\\pcb_typec_placement.json",
+    "D:\\PROJECTS\\dsharness\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\eda\\NXT-M3-R11.kicad_pcb"
+  ],
+  "exit": 5,
+  "output": "发现 280 条违规项\r\n发现 338 个未连接的项目\r\n发现 3 个原理图一致性问题\r\n保存 DRC 报告到 D:/PROJECTS/dsharness/QS30-NXT-M3-R11/projects/NXT-M3/r11/evidence/typec/pcb_typec_placement.json\r\n已保存电路板\r\n",
+  "stderr": ""
+}

@@ -1,5 +1,7 @@
 # NXT-M3 R11 工程最终报告
 
+后续 5 V Type-C 更改及 R10 管座复核见 [Type-C 续轮报告](TYPEC_ECO_REPORT.md)。以下保留原 R0–R5 阶段结果。
+
 **2026-11-21 · GATE_0 = REWORK · ENGINEERING HOLD · MANUFACTURING_RELEASE = HOLD**
 
 R11 基线为本地真实 R10 提交 `28de4da83d4c02a80e16f68dae0151824e51d968`，其父提交为 R9 `f74f626d798407439c17ac635eb7946727dec628`，再继承 R8 分立阴极 `b264d74dce5b799ecd13286fa3c2880b1b7135d2`。工作在 `nxt/nxt-m3-routing-simulation-r11`。R10 工作树中的未提交项目选项和机械预览保留。R11 采用 R10 已提交的工程及候选机械尺寸。

@@ -1,0 +1,25 @@
+Type-C R11 U1 front overvoltage threshold and hysteresis screen, three cases
+* Native R3/R4 only. TPS259474L thresholds from table, comparator ideal.
+* Policy already permits 3 A. VIN sweeps 4.7, 5.5, 5.0 then 4.9 V.
+VIN src 0 PWL(0 0 1m 4.7 2m 4.7 12m 5.5 13m 5.5 14m 5.0 17m 5.0 18m 4.9 20m 4.9)
+R3 src ovlo 390k
+R4 ovlo 0 110k
+VONE one 0 1
+SMAX one rising_min ovlo 0 COMP_MIN
+STYP one rising_typ ovlo 0 COMP_TYP
+SMIN one rising_max ovlo 0 COMP_MAX
+.model COMP_MIN SW(Ron=1 Roff=1G Vt=1.1295 Vh=.0535)
+.model COMP_TYP SW(Ron=1 Roff=1G Vt=1.145 Vh=.055)
+.model COMP_MAX SW(Ron=1 Roff=1G Vt=1.1695 Vh=.0535)
+RMIN rising_min 0 1k
+RTYP rising_typ 0 1k
+RMAX rising_max 0 1k
+.tran 2u 20m 0 2u uic
+.meas tran min_trip_input FIND v(src) WHEN v(rising_min)=.5 RISE=1
+.meas tran typ_trip_input FIND v(src) WHEN v(rising_typ)=.5 RISE=1
+.meas tran typ_reset_input FIND v(src) WHEN v(rising_typ)=.5 FALL=1
+.meas tran min_ovlo_at_5p5 FIND v(rising_min) AT=12.5m
+.meas tran typ_ovlo_at_5p5 FIND v(rising_typ) AT=12.5m
+.meas tran max_ovlo_at_5p5 FIND v(rising_max) AT=12.5m
+.meas tran typ_ovlo_after_return_to_5 FIND v(rising_typ) AT=15m
+.end

@@ -1,0 +1,41 @@
+{
+  "case": "one_point_five_amp",
+  "model": "Type-C/eFuse/buck/current-mode engineering proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\typec\\runs\\one_point_five_amp\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 33.312,
+  "measurements": {
+    "vbus_low": 4.99999,
+    "protected_low": 2.32955e-06,
+    "protected_at_end": 2.44319e-06,
+    "a3_at_end": 0.0,
+    "cc1_max": 0.940903,
+    "cc2_max": 4.79952e-06,
+    "hv_final": 2.21698e-15,
+    "hv_ripple": 3.03207e-16,
+    "hv_peak": 2.3708e-15,
+    "il_peak": 9.55697e-19,
+    "q_vds": 2.21946e-12,
+    "q_current": 1.36399e-17,
+    "d_if": 2.84087e-17,
+    "d_irev": -1.4142e-17,
+    "input_peak": -5.49739,
+    "cs_peak": 6.81429e-19,
+    "cap_charge": 2.84083e-17,
+    "cap_discharge": -1.4142e-17,
+    "cap_rms": 3.3393e-19,
+    "q_loss": 1.80438e-31,
+    "d_loss": 7.34472e-31,
+    "l_copper": 7.55688e-39,
+    "sense_loss": 3.24667e-40,
+    "bias_peak": 1.56046e-12
+  },
+  "raw_points": 1303489,
+  "waveform_sha256": "8dfcfec54e3f1befe177e010b28fb65192a9a9cd389ca6a5b109135e812a6d8e",
+  "vendor_model_sha256": null
+}

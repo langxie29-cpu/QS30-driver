@@ -46,7 +46,7 @@ def raw_points(raw):
     return int(match[1]) if match else 0
 
 
-def run(name, circuit, model, lib=None):
+def run(name, circuit, model, lib=None, timeout=None):
     dest = CASE_DIR / name
     dest.mkdir(parents=True, exist_ok=True)
     raw = dest / "waveform.raw"
@@ -59,7 +59,7 @@ def run(name, circuit, model, lib=None):
     start = time.monotonic()
     with (dest / "run.log").open("wb") as log:
         try:
-            process = subprocess.run(command, cwd=HERE.parent, stdout=log, stderr=subprocess.STDOUT, timeout=55 if name.startswith("vendor") else 110)
+            process = subprocess.run(command, cwd=HERE.parent, stdout=log, stderr=subprocess.STDOUT, timeout=timeout or (55 if name.startswith("vendor") else 110))
             code = process.returncode
         except subprocess.TimeoutExpired:
             code = "TIMEOUT"
@@ -135,8 +135,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-

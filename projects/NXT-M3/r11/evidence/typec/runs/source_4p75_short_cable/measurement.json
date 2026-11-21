@@ -1,0 +1,43 @@
+{
+  "case": "source_4p75_short_cable",
+  "model": "Type-C/eFuse/buck/current-mode engineering proxies",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\typec\\runs\\source_4p75_short_cable\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 70.828,
+  "measurements": {
+    "vbus_low": 4.6253,
+    "protected_low": 4.52179,
+    "first_on": 0.00954209,
+    "protected_at_end": 4.52972,
+    "a3_at_end": 1.0,
+    "cc1_max": 1.68852,
+    "cc2_max": 8.61311e-06,
+    "hv_final": 163.309,
+    "hv_ripple": 1.45826,
+    "hv_peak": 163.994,
+    "t_95": 0.0599613,
+    "il_peak": 1.66341,
+    "q_vds": 165.277,
+    "q_current": 1.76241,
+    "d_if": 1.56779,
+    "d_irev": -0.433245,
+    "input_peak": -5.32187,
+    "cs_peak": 0.0832278,
+    "cap_charge": 1.56747,
+    "cap_discharge": -0.433261,
+    "cap_rms": 0.0937593,
+    "q_loss": 0.266884,
+    "d_loss": 0.0123239,
+    "l_copper": 0.0279576,
+    "sense_loss": 0.0348246,
+    "bias_peak": 11.6548
+  },
+  "raw_points": 1934654,
+  "waveform_sha256": "5c922b03052900dd9a88bfce70003c93b24c14ac61c38cddefac1cac490a767d",
+  "vendor_model_sha256": null
+}

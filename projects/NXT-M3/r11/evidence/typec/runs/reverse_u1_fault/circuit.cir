@@ -1,0 +1,22 @@
+Type-C R11 downstream back-drive with U1 off and hypothetical failed bridge
+* Each channel includes Type-C cable, connector and fuse resistances.
+* Remote VBUS held at zero by a test source. Injection is a SPICE diagnostic only.
+VIN_NORMAL source_n 0 0
+VIN_FAILED source_f 0 0
+RPATH_N raw_n source_n .210
+RPATH_F raw_f source_f .210
+CF_ECO raw_n 0 1.1u
+CF_FAIL raw_f 0 1.1u
+VBACK bv 0 PWL(0 0 2m 0 2.1m 5)
+RB_N bv prot_n 10
+RB_F bv prot_f 10
+COUT_N prot_n 0 132u
+COUT_F prot_f 0 132u
+R_U1_HI_Z prot_n raw_n 1G
+R_U1_BYPASS prot_f raw_f .10
+.tran 10u 15m 0 10u uic
+.meas tran intact_back_current FIND i(VIN_NORMAL) AT=15m
+.meas tran failed_back_current FIND i(VIN_FAILED) AT=15m
+.meas tran intact_receptacle_v FIND v(raw_n) AT=15m
+.meas tran failed_receptacle_v FIND v(raw_f) AT=15m
+.end

@@ -1,0 +1,77 @@
+{
+  "source": "local R10 socket-preview working copy",
+  "reference": "GZC13-F",
+  "overlay_layer": "Cmts.User",
+  "unmeasured_socket_terminals": true,
+  "handoffs": 33,
+  "support_candidates": 6,
+  "hardware_envelope_Box_intersections": [
+    {
+      "reference": "MH5L",
+      "xy_mm": [
+        63,
+        102
+      ],
+      "BBOX_pad_hits": [
+        "SW1:BOOT_N",
+        "SW1:GND"
+      ],
+      "BBOX_track_net_hits": [
+        "BOOT_N"
+      ]
+    },
+    {
+      "reference": "MH5R",
+      "xy_mm": [
+        91,
+        102
+      ],
+      "BBOX_pad_hits": [],
+      "BBOX_track_net_hits": []
+    },
+    {
+      "reference": "MH6L",
+      "xy_mm": [
+        101,
+        102
+      ],
+      "BBOX_pad_hits": [],
+      "BBOX_track_net_hits": []
+    },
+    {
+      "reference": "MH6R",
+      "xy_mm": [
+        129,
+        102
+      ],
+      "BBOX_pad_hits": [],
+      "BBOX_track_net_hits": []
+    },
+    {
+      "reference": "MH7L",
+      "xy_mm": [
+        139,
+        102
+      ],
+      "BBOX_pad_hits": [],
+      "BBOX_track_net_hits": [
+        "DRV_27"
+      ]
+    },
+    {
+      "reference": "MH7R",
+      "xy_mm": [
+        167,
+        102
+      ],
+      "BBOX_pad_hits": [
+        "C47:HV_BUS"
+      ],
+      "BBOX_track_net_hits": []
+    }
+  ],
+  "source_sha256": {
+    "handwire-pads.csv": "88d41684458509b41e417cdf150112f2f3d58a79c61ee493f8705e2071df009d",
+    "socket-mechanics.json": "a6c525546af9947e461da2b067eca56fc0cbf75087a42994fd0ebf3aaca54779"
+  }
+}

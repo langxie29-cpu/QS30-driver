@@ -1,0 +1,53 @@
+{
+  "unchanged_pre_eco_pin_entries_excluding_j1": 825,
+  "typec_pin_checks": 32,
+  "matched": true,
+  "expected": {
+    "J1": {
+      "A9": "5V_RAW",
+      "B9": "5V_RAW",
+      "A12": "GND",
+      "B12": "GND",
+      "SH": "GND",
+      "A5": "USBC_CC1",
+      "B5": "USBC_CC2"
+    },
+    "U26": {
+      "1": "USBC_CC1",
+      "2": "USBC_CC1",
+      "4": "USBC_CC2",
+      "5": "USBC_CC2",
+      "16": "USBC_VALID_N",
+      "18": "USBC_VS",
+      "20": "USBC_3A_N",
+      "21": "USBC_1V2",
+      "22": "GND",
+      "23": "USBC_2V7",
+      "24": "5V_RAW",
+      "25": "GND"
+    },
+    "Q33": {
+      "1": "USBC_VALID_N",
+      "2": "GND",
+      "3": "FRONT_EN"
+    },
+    "Q34": {
+      "1": "USBC_3A_N",
+      "2": "GND",
+      "3": "FRONT_EN"
+    },
+    "F1": {
+      "1": "5V_RAW",
+      "2": "5V_FUSED"
+    },
+    "U1": {
+      "1": "FRONT_EN",
+      "5": "5V_FUSED",
+      "6": "5V_PROT"
+    },
+    "R40": {
+      "1": "5V_PROT",
+      "2": "HV_ISOLATE_IN"
+    }
+  }
+}

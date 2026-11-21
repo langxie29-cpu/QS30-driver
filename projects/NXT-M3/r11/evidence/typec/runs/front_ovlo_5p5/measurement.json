@@ -1,0 +1,24 @@
+{
+  "case": "front_ovlo_5p5",
+  "model": "TPS259474L OVLO thresholds with ideal hysteresis",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\typec\\runs\\front_ovlo_5p5\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.094,
+  "measurements": {
+    "min_trip_input": 5.37728,
+    "typ_trip_input": 5.45456,
+    "typ_reset_input": 4.9546,
+    "min_ovlo_at_5p5": 0.999001,
+    "typ_ovlo_at_5p5": 0.999001,
+    "max_ovlo_at_5p5": 9.99999e-07,
+    "typ_ovlo_after_return_to_5": 0.999001
+  },
+  "raw_points": 10032,
+  "waveform_sha256": "f1aa703b16b86a39266162a6d81d43f65baf63ad3f4a519fdf4faaa567b46a85",
+  "vendor_model_sha256": null
+}

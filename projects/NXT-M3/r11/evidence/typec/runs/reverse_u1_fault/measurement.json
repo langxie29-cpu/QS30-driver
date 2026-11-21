@@ -1,0 +1,21 @@
+{
+  "case": "reverse_u1_fault",
+  "model": "U1 leakage and failed low-ohmic bypass bounds",
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "sim/dll_run.py",
+    "evidence\\typec\\runs\\reverse_u1_fault\\circuit.cir"
+  ],
+  "exit": 0,
+  "seconds": 0.062,
+  "measurements": {
+    "intact_back_current": 4.99973e-09,
+    "failed_back_current": 0.484966,
+    "intact_receptacle_v": 1.04994e-09,
+    "failed_receptacle_v": 0.101843
+  },
+  "raw_points": 1522,
+  "waveform_sha256": "925e650483c140a0baf0f4e15e06a186416e1fa0925c39889038d477b7ccf660",
+  "vendor_model_sha256": null
+}
