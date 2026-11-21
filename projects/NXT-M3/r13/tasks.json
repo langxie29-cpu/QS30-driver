@@ -1,0 +1,312 @@
+[
+  {
+    "id": "source_power",
+    "brief": "Verify route lineage and model pin orders. Extract A/B/C/D intrinsic blockers, including newest A UVLO and B feedback voltage. Give topology evidence and source limits.",
+    "inputs": [
+      "r13/evidence/source_manifest.json",
+      "r13/sim/model_pins.json",
+      "r12/R12_MODEL_INVENTORY.md",
+      "r13/evidence/device_facts.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "source_protection",
+    "brief": "Audit the R11 safety chain for indispensable functions and possible conditional simplifications. Calculate energy/time or thermal bounds only when input values are available. Provide pass/fail evidence requirements for the partially conducting cathode and one failed bleeder.",
+    "inputs": [
+      "r11/GATE0_SAFETY_ASSESSMENT.md",
+      "r12/HV_COST_CEILINGS.csv",
+      "r13/evidence/device_facts.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "cost_market",
+    "brief": "Compute CNY verified subtotal limits and evaluate HV-60 and M3-60. Compare material and actual cash scope. Give three concrete component RFP target prices, keep caps separate from quotes. Acknowledge exact stock and pricing limitations.",
+    "inputs": [
+      "r13/evidence/quote_observations.md",
+      "r12/HV_COST_CEILINGS.csv",
+      "r12/R12_HV_REDESIGN_PROGRAM.md",
+      "r13/evidence/cost_history_excerpt.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "triage_boost",
+    "brief": "Explain the repeated UCC3803 error-amplifier numerical failure and separately the physical 4.30 V UVLO constraint. Review fixture assumptions, propose one test which changes one input and discriminates the failure cause.",
+    "inputs": [
+      "r13/evidence/spice/round1/a_low_50k/run.log",
+      "r13/evidence/spice/round2/a_low_ea_trap/run.log",
+      "r13/sim/a_boost.inc",
+      "r13/evidence/device_facts.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "triage_flyback",
+    "brief": "Diagnose why the LM3488 run stalls at early time or stops, using original log excerpts and fixture source. Check winding polarity and reference voltage against source. Propose a minimal reproducible fix without replacing real silicon with a proxy.",
+    "inputs": [
+      "r13/evidence/spice/round1/b_low/run.log",
+      "r13/evidence/spice/round2/b_pin_step_vref126/run.log",
+      "r13/sim/b_flyback.inc",
+      "r13/evidence/device_facts.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "native_baseline_review",
+    "brief": "Review inherited KiCad reports for ERC, DRC, opens, parity, release blockers and previews. Distinguish zero errors from ignored checks. Identify actual changes required to build a new project. Make no layout release claim.",
+    "inputs": [
+      "r13/evidence/eda_baseline/summary.json",
+      "r13/evidence/eda_baseline/ERC_REPORT.txt",
+      "r13/evidence/eda_baseline/export_exits.json",
+      "r11/BLOCKER_CLOSURE_REPORT.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "analytic_ranking_review",
+    "brief": "Audit physics and meaningful DCM route performance. Quantify frequency and margin sensitivity. See whether shunt, ratio and effective capacitance bound justified. Never qualify an unrealized model.",
+    "inputs": [
+      "r13/evidence/analytical_summary.txt",
+      "r13/screen.py",
+      "r13/evidence/device_facts.md"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "baseline_replay_review",
+    "brief": "Analyze the R11 proxy replay 100 kHz vs 80 kHz. Quantify any improvement, isolate false claims, and propose design action based on correct LM5155 frequency range and independent protection.",
+    "inputs": [
+      "r11/LOWLINE_BLOCKER_SWEEP.csv",
+      "r12/R12_ANALYTICAL_SCREEN.md",
+      "r13/evidence/spice/d_replay/cold_nominal_repeat/run.log",
+      "r13/evidence/spice/d_replay/diagnostic_80khz_22u/run.log"
+    ],
+    "stage": 0,
+    "kind": "analysis",
+    "mode": "sealed_analysis",
+    "depends": [],
+    "acceptance": [
+      "evidence_anchors",
+      "limitations",
+      "decision_relevant_verification"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "boost_vendor",
+    "stage": 1,
+    "kind": "spice",
+    "depends": [
+      "source_power"
+    ],
+    "acceptance": [
+      "cold_start",
+      "endpoint",
+      "line_load_set",
+      "hv_window",
+      "ripple",
+      "device_stress"
+    ],
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json",
+      "model_sources.json"
+    ],
+    "target_end_s": 0.065,
+    "maxstep_s": 1E-07
+  },
+  {
+    "id": "flyback_vendor",
+    "stage": 1,
+    "kind": "spice",
+    "depends": [
+      "source_power"
+    ],
+    "acceptance": [
+      "cold_start",
+      "endpoint",
+      "line_load_set",
+      "hv_window",
+      "ripple",
+      "clamp_stress"
+    ],
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json",
+      "model_sources.json"
+    ],
+    "target_end_s": 0.065,
+    "maxstep_s": 1E-07
+  },
+  {
+    "id": "lm5155_replay",
+    "stage": 1,
+    "kind": "analysis",
+    "depends": [
+      "source_power"
+    ],
+    "acceptance": [
+      "separate_proxy_from_vendor",
+      "raw_replay_and_model_hashes"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "protection_faults",
+    "stage": 1,
+    "kind": "spice",
+    "depends": [
+      "source_protection"
+    ],
+    "acceptance": [
+      "cold_start",
+      "physical_cutoff",
+      "feedback_open_short",
+      "ovp_ocp",
+      "reverse",
+      "residual",
+      "branch_partial_conduction"
+    ],
+    "expected": [
+      "circuit.cir",
+      "run.log",
+      "waves.txt",
+      "metrics.json",
+      "model_sources.json"
+    ],
+    "target_end_s": 0.065,
+    "maxstep_s": 1E-07
+  },
+  {
+    "id": "native_eda",
+    "stage": 3,
+    "kind": "analysis",
+    "depends": [
+      "cost_market",
+      "protection_faults"
+    ],
+    "acceptance": [
+      "verified_selection",
+      "erc_drc_zero",
+      "parity_and_netlist",
+      "socket_and_insulation",
+      "manufacturing_output_audit"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  },
+  {
+    "id": "evt_evidence",
+    "stage": 4,
+    "kind": "analysis",
+    "depends": [
+      "native_eda"
+    ],
+    "acceptance": [
+      "independent_evt_review",
+      "manufacturing_hold"
+    ],
+    "expected": [
+      "inventory.md",
+      "sources.json"
+    ]
+  }
+]

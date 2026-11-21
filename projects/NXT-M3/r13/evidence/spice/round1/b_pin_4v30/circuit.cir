@@ -1,0 +1,50 @@
+R13 b_pin_4v30 isolated fixture
+.param VIN=4.3 RPATH=1e-06 PLV=2.475 IHV=0.0099 CEFF=2u CT=430p LMAG=10u RATIO=14.5 COUPLING=0.95 SHUNT=33m RFA=47k RFB_SUM=1208674.0135087096
+* B: LM3488 nonisolated flyback; TI controller, reference-provided Infineon switch.
+.include LM3488_TRANS.LIB
+.include irfh7185pbf.spi
+.include ES3J.lib
+.include SMDJxxxCA.lib
+R_PRI vin primary 25m
+LPOWER primary drain {LMAG} ic=0
+LSEC 0 secondary {LMAG*RATIO*RATIO} ic=0
+K_XF LPOWER LSEC {COUPLING}
+R_SEC secondary diode_a 1.5
+D_HV diode_a hv ES3J
+VQ drain sw 0
+X_Q sw gate source irfh7185pbf
+X_CLAMP source drain SMDJ70CA
+R_SENSE source 0 {SHUNT}
+C_SENSE source 0 10n
+R_GATE drv gate 0.1
+R_FA fa 0 {RFA}
+R_FB1 hv fb 1.2Meg
+R_FB2 fb 0 8674.01351
+C_COMP comp comp_r 22n
+R_COMP comp_r 0 4.7k
+X_CTL 0 comp drv fa fb source 0 vin LM3488_TRANS PARAMS: SS=0
+
+* Common input, output and load fixture. System eFuse/OVP/branch logic excluded.
+* 4.30 V pin mode uses zero nominal series drop (1 micro-ohm numeric floor).
+V_IN supply 0 PWL(0 0 100u 0 300u {VIN})
+R_PATH supply vin {RPATH}
+C_IN vin 0 100u ic=0
+B_LV vin 0 I={PLV/max(v(vin),3)*(0.5+0.5*tanh(15*(v(vin)-3.1)))}
+B_TUBES hv 0 I={IHV*min(1,max(0,(v(hv)-120)/15))}
+R_BLEED1 hv 0 496k
+R_BLEED2 hv 0 496k
+R_OVP_EQ hv 0 2.0093Meg
+R_RESID_EQ hv 0 1.8542Meg
+V_CAP hv cb 0
+R_ESR cb hvc 100m
+C_HV hvc 0 {CEFF} ic=0
+B_VDS vds 0 V={v(sw,source)}
+B_VGS vgs 0 V={v(gate,source)}
+B_PWR p_in 0 V={-v(supply)*i(V_IN)}
+B_HV p_hv 0 V={v(hv)*(IHV*min(1,max(0,(v(hv)-120)/15))+2*v(hv)/496k+v(hv)/2.0093Meg+v(hv)/1.8542Meg+v(hv)/(RFB_SUM))}
+B_SW p_sw 0 V={v(vds)*i(VQ)}
+.save v(hv) v(hvc) v(vin) v(vds) v(vgs) v(fb) v(comp) v(p_in) v(p_hv) v(p_sw) i(LPOWER) i(VQ) i(V_CAP) i(V_IN)
+
+.options method=gear reltol=0.003 abstol=1n
+.tran 100n 0.065 0 100n uic
+.end

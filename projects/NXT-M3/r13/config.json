@@ -1,0 +1,30 @@
+{
+  "schema": "nxt.m3.r13.v1",
+  "repository": "https://github.com/langxie29-cpu/QS30-driver.git",
+  "baseline_branch": "nxt/nxt-m3-hv-cost-r12",
+  "baseline_sha": "40126f897bef6f849a68987f2daa0c1afd8a2c2d",
+  "branch": "nxt/nxt-m3-hv-release-r13",
+  "manufacturing": "ENGINEERING HOLD",
+  "hardware_high_voltage": false,
+  "decision_model": "codex-main-session",
+  "decision_provider": "openai",
+  "worker_model": "deepseek-v4-flash",
+  "worker_provider": "deepseek-official",
+  "worker_profile": "headless",
+  "max_rounds": 6,
+  "max_worker_calls": 18,
+  "worker_timeout_s": 120,
+  "decision_timeout_s": 900,
+  "max_output_bytes": 2000000,
+  "max_evidence_bytes": 536870912,
+  "entry_task_ids": [
+    "source_power",
+    "source_protection",
+    "cost_market",
+    "triage_boost",
+    "triage_flyback",
+    "native_baseline_review",
+    "analytic_ranking_review",
+    "baseline_replay_review"
+  ]
+}

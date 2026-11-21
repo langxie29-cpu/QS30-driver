@@ -1,0 +1,26 @@
+{
+  "case": {
+    "id": "b_pin_step_vref126",
+    "route": "b",
+    "vin": 4.3,
+    "rpath": 1e-06,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "vref": 1.26,
+    "duration": 0.012,
+    "method": "gear",
+    "ramp_s": 2e-06,
+    "extra_options": "cshunt=10f trtol=5 itl4=40"
+  },
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\sim\\dll_run.py",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r13\\evidence\\spice\\round2\\b_pin_step_vref126\\circuit.cir"
+  ],
+  "solver_dll_sha256": "44fc701b514080a3f9bf37afe3dd333ddb0b5f2e5e508ec8a2896a802e90ca91",
+  "host_sha256": "db6142a20f003e058706e69c1f0092f401e03305c51d51afbf1964be54d058a6",
+  "netlist_sha256": "b6ffe4f94f116817660322081c86f112e53aa9d3a098a818f6ede41c5ce88155",
+  "exit_code": 2,
+  "status": "SOLVER_ERROR"
+}

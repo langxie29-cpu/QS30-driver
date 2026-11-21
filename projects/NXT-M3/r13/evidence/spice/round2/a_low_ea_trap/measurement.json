@@ -1,0 +1,25 @@
+{
+  "case": {
+    "id": "a_low_ea_trap",
+    "route": "a",
+    "vin": 4.75,
+    "rpath": 0.19,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "ct": "680p",
+    "duration": 0.012,
+    "method": "trap",
+    "extra_options": "cshunt=10f trtol=2"
+  },
+  "command": [
+    "C:\\Program Files\\KiCad\\10.0\\bin\\python.exe",
+    "-u",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r11\\sim\\dll_run.py",
+    "C:\\Users\\Administrator\\.codex\\worktrees\\nxt-m3-r13\\QS30-NXT-M3-R11\\projects\\NXT-M3\\r13\\evidence\\spice\\round2\\a_low_ea_trap\\circuit.cir"
+  ],
+  "solver_dll_sha256": "44fc701b514080a3f9bf37afe3dd333ddb0b5f2e5e508ec8a2896a802e90ca91",
+  "host_sha256": "db6142a20f003e058706e69c1f0092f401e03305c51d51afbf1964be54d058a6",
+  "netlist_sha256": "765d0a289f1fed3de1557395dbf2741a658dbbe52032e68c66c811a8f426824b",
+  "exit_code": 2,
+  "status": "SOLVER_ERROR"
+}

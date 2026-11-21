@@ -1,0 +1,53 @@
+[
+  {
+    "id": "a_low_ea_trap",
+    "route": "a",
+    "vin": 4.75,
+    "rpath": 0.19,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "ct": "680p",
+    "duration": 0.012,
+    "method": "trap",
+    "extra_options": "cshunt=10f trtol=2"
+  },
+  {
+    "id": "b_low_trap_vref126",
+    "route": "b",
+    "vin": 4.75,
+    "rpath": 0.19,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "vref": 1.26,
+    "duration": 0.012,
+    "method": "trap",
+    "extra_options": "cshunt=10f itl4=40"
+  },
+  {
+    "id": "b_pin_4v30_sense_filter",
+    "route": "b",
+    "vin": 4.3,
+    "rpath": 0.000001,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "vref": 1.26,
+    "duration": 0.012,
+    "method": "trap",
+    "rfa": "82k",
+    "sense_filter": true,
+    "extra_options": "cshunt=10f itl4=40"
+  },
+  {
+    "id": "b_pin_step_vref126",
+    "route": "b",
+    "vin": 4.3,
+    "rpath": 0.000001,
+    "plv": 2.475,
+    "ihv": 0.0099,
+    "vref": 1.26,
+    "duration": 0.012,
+    "method": "gear",
+    "ramp_s": 0.000002,
+    "extra_options": "cshunt=10f trtol=5 itl4=40"
+  }
+]

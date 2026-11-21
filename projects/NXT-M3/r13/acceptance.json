@@ -1,0 +1,45 @@
+{
+  "vin_source_v": [
+    4.75,
+    5,
+    5.25
+  ],
+  "input_path_ohm": 0.19,
+  "vin_at_controller_v": 4.3,
+  "vout_nominal_v": 170,
+  "vout_range_v": [
+    165,
+    175
+  ],
+  "ripple_max_vpp": 1,
+  "hv_load_ma": [
+    0,
+    7.65,
+    9.9
+  ],
+  "lv_load_w": [
+    0.76,
+    2.475
+  ],
+  "cold_start_zero_stored_energy": true,
+  "critical_faults": [
+    "feedback_open",
+    "feedback_short",
+    "input_backfeed",
+    "input_disconnect",
+    "ovp",
+    "ocp",
+    "latch",
+    "brownout_restart",
+    "one_bleeder_open",
+    "false_residual_low",
+    "sustained_cathode_partially_on"
+  ],
+  "cost_targets_cny": {
+    "hv": 60,
+    "whole_module": 60
+  },
+  "erc_drc_unconnected_parity_max": 0,
+  "manufacturing_release": "HOLD"
+}
+

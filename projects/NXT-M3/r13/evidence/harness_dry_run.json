@@ -1,0 +1,29 @@
+{
+  "status": "DRY_RUN",
+  "baseline": "40126f897bef6f849a68987f2daa0c1afd8a2c2d",
+  "entry_task_ids": [
+    "source_power",
+    "source_protection",
+    "cost_market",
+    "triage_boost",
+    "triage_flyback",
+    "native_baseline_review",
+    "analytic_ranking_review",
+    "baseline_replay_review"
+  ],
+  "task_count": 14,
+  "max_rounds": 6,
+  "max_worker_calls": 18,
+  "worker": {
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "profile": "headless"
+  },
+  "decision": {
+    "model": "codex-main-session",
+    "provider": "openai",
+    "mode": "external-decisions"
+  },
+  "model_requests": 0,
+  "manufacturing": "ENGINEERING HOLD"
+}
