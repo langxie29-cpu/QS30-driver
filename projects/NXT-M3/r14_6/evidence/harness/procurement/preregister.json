@@ -1,0 +1,23 @@
+{
+  "task_id": "procurement",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Audit BOM and cost boundaries for one module and three modules. Identify obsolete evidence and missing quote, MOQ, and inventory treatment. No new prices can be inferred.",
+  "input_receipts": [
+    {
+      "file": "r13/evidence/quote_observations.md",
+      "sha256": "488dc3f4974234145b3f525ed264f20f072f0f1cb90056aced6415a47fd66fdd"
+    },
+    {
+      "file": "r13/BOM_R13_3PC.csv",
+      "sha256": "a525846589e25a5e22a3d2e3f0e151f90591ae03a81a06044e704648f8c34804"
+    },
+    {
+      "file": "r14_5/R14_5_FINAL_REPORT.md",
+      "sha256": "397bf687bc3098628b618a181113b260d047dc8e8e30d4c87b2d1c466f616ee6"
+    }
+  ]
+}

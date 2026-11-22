@@ -1,0 +1,27 @@
+{
+  "task_id": "pcb",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Audit the routing approach and baseline counts. Identify topological obstacles and concrete regression evidence required for all-track DRC, parity, 595 and J6.",
+  "input_receipts": [
+    {
+      "file": "r14_5/R14_5_FINAL_REPORT.md",
+      "sha256": "397bf687bc3098628b618a181113b260d047dc8e8e30d4c87b2d1c466f616ee6"
+    },
+    {
+      "file": "r14_5/ROUTING_ARCHITECTURE.md",
+      "sha256": "e9563dde53fac7f643516e671bc9e4ae58bc801017b54c29d8d0bae786e8741e"
+    },
+    {
+      "file": "r14_5/UNCONNECTED_NETS.csv",
+      "sha256": "e9c6d7f2baae3f7ab8937a14ff9bfdcee0476f612444dff24a119d4365d3e50e"
+    },
+    {
+      "file": "r14_5/ROUTING_GATE_RESULTS.json",
+      "sha256": "e66b4c1601e92bd450842dfc6ebf5a2568f8837efc5756bc4edaf34ffa310252"
+    }
+  ]
+}

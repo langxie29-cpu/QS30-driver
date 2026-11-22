@@ -1,0 +1,102 @@
+{
+  "kiCad_version": "10.0.8",
+  "native": {
+    "before": {
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "clearance": 103,
+      "drc_other": 0,
+      "unconnected": 84,
+      "parity": 0
+    },
+    "after": {
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "clearance": 79,
+      "drc_other": 0,
+      "unconnected": 65,
+      "parity": 0
+    },
+    "before_all_tracks": {
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "clearance": 103,
+      "drc_other": 0,
+      "unconnected": 84,
+      "parity": 0
+    },
+    "after_all_tracks": {
+      "erc_errors": 0,
+      "erc_warnings": 0,
+      "clearance": 79,
+      "drc_other": 0,
+      "unconnected": 65,
+      "parity": 0
+    }
+  },
+  "drc_groups_before": {
+    "mmbta42_candidate_exception": 60,
+    "lv_same_package": 34,
+    "hv_internal_external": 5,
+    "switch_package": 4
+  },
+  "drc_groups_after": {
+    "mmbta42_candidate_exception": 60,
+    "lv_same_package": 16,
+    "switch_package": 3
+  },
+  "added_violations": 0,
+  "prior_connections_lost": 0,
+  "cathodes": "30/30",
+  "cathode_endpoints": "180/180",
+  "protection": {
+    "OVP/FB/SNUB": {
+      "before": 14,
+      "after": 20
+    },
+    "J6": {
+      "before": 39,
+      "after": 39
+    }
+  },
+  "register_opens": {
+    "SER0": 0,
+    "SER1": 0,
+    "SER2": 1,
+    "SER3": 1,
+    "SR_CLK_BUS": 1,
+    "SR_LATCH_BUS": 0,
+    "HC_CLEAR_N": 1,
+    "HC_OE_N": 0
+  },
+  "rule_sha256": "ce7c9d5cc1ea15c8674c560083917b07135b97c5e0987eb8d4bbf57b29b138bb",
+  "board_sha256": "dfcaf08632f003871ee453f28e9b88e3a48c1bd9b742a3dec1958136bd20f807",
+  "baseline_board_sha256": "aabebc0b0cf39b6ee9c7fc70241dec6025ec9a0c76911e3b871fd8f0ec1c333c",
+  "board_size_mm": [
+    130,
+    80
+  ],
+  "copper_layers": 4,
+  "wire_pads": 33,
+  "frozen_refs": [
+    "MH1",
+    "MH2",
+    "MH3",
+    "MH4",
+    "J2",
+    "J3",
+    "J4",
+    "J5",
+    "J6"
+  ],
+  "footprint_changes": [
+    "C35",
+    "C48",
+    "R81",
+    "R82",
+    "R83",
+    "U13",
+    "U14",
+    "U6"
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "source": "r14_5/R14_5_FINAL_REPORT.md",
+    "locator": "Gate table; 保护与电源; 净距与原生验证; 放行决策",
+    "assertion": "Reports 30/30 cathode, G1–G4 PASS, G5 J6 39/49 and G6 BLOCKED, unconnected 325→84, clearance 122→103, 19 external HV/LV cleared with 5 remaining, 2,466 tracks/170 vias; P01/EVT/manufacturing HOLD and HV power prohibited."
+  },
+  {
+    "source": "r14_5/ROUTING_ARCHITECTURE.md",
+    "locator": "外置管座; 阵列与层分工; 基线和方案试验; 布线筛查",
+    "assertion": "Describes external socket, V1–V3 B.Cu SMD pads, 7.50 mm pitch, F/In1/In2 low-voltage routing, outer HV routing, via sizes, grid/endpoint search, 0.045 mm entry overlap, save-reopen verification, and historical R101/Q3–Q4 narrow-corridor obstacle."
+  },
+  {
+    "source": "r14_5/UNCONNECTED_NETS.csv",
+    "locator": "net,before,after; GND/3V3/HV_BUS; SER2/SER3/SR_CLK_BUS/SR_LATCH_BUS/HC_CLEAR_N rows",
+    "assertion": "Quantifies per-net opens: GND 117→16, 3V3 21→6, HV_BUS 5→5; SER2 1→1, SER3 1→1, SR_CLK_BUS 3→2, SR_LATCH_BUS 1→1, HC_CLEAR_N 4→2."
+  },
+  {
+    "source": "r14_5/ROUTING_GATE_RESULTS.json",
+    "locator": "gates; metrics.before/after; remaining_register_control_opens; j6; final_board_sha256; inherited_rules_sha256",
+    "assertion": "Machine-readable record: G1–G4 PASS, G5/G6 BLOCKED; clearance 122→103; unconnected 325→84; parity 0→0; added all-track violations 0; J6 39/49; register-control opens; final-board and inherited-rule SHA-256 values."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "task_id": "manufacturing",
+  "status": "PASS",
+  "notes": "基于四份摘录的文档级审查完成；未打开 R14.5 kicad_pcb、Gerber、层叠、3D/装配文件，不能验证实物几何、焊点或板厂能力。R14.5 可确认四层铜与 33 个 B.Cu SMD 线束焊盘，但 30/30 仅覆盖阴极，阳极 3/3 未在摘录中给出。EVT_RELEASE 与 MANUFACTURING_RELEASE 均为 HOLD，HV_POWER_ON=PROHIBITED；inventory 中列出的项目是下一门槛所需证据，不代表已取得资格。",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [
+    "https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf",
+    "https://webstore.iec.ch/en/publication/107319",
+    "https://webstore.iec.ch/en/publication/2804"
+  ],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

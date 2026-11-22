@@ -1,0 +1,27 @@
+{
+  "task_id": "safety",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Audit HV package insulation, switch peaks, and the five external gaps. Identify single-fault and insulation evidence required for release.",
+  "input_receipts": [
+    {
+      "file": "r14_5/R14_5_FINAL_REPORT.md",
+      "sha256": "397bf687bc3098628b618a181113b260d047dc8e8e30d4c87b2d1c466f616ee6"
+    },
+    {
+      "file": "r14_4/P01_CLEARANCE_DECISION.md",
+      "sha256": "d922f320d2b72031237a71e34759ab0e29b3019ec96ba9f44014c8289d6d56f6"
+    },
+    {
+      "file": "r14_5/eda/NXT-M3-R14.5.kicad_dru",
+      "sha256": "ce7c9d5cc1ea15c8674c560083917b07135b97c5e0987eb8d4bbf57b29b138bb"
+    },
+    {
+      "file": "r14_3/BREAKDOWN_FAULT_MATRIX.csv",
+      "sha256": "e08b045d942c0e656e9ecc8d9bdb88d3b54c0ca4735aae4f36e35e9fee32930e"
+    }
+  ]
+}

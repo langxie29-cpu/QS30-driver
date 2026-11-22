@@ -1,0 +1,38 @@
+{
+  "result": {
+    "task_id": "pcb",
+    "status": "PASS",
+    "notes": "Bounded documentary audit completed using only the supplied excerpts; no simulator, URL access, tools, or physical measurement. Demonstrated: baseline counts, G1–G4 PASS, G5/G6 BLOCKED, remaining 595/J6 opens, clearance categories, and final-board/rules hashes. Hypotheses or limits: exact geometry/endpoint CSVs are not supplied; SW_HV repetitive peak is UNKNOWN; C48 ECR, assembly spacing/tolerance, and physical tests are not evidenced. G5/G6 and release HOLD/PROHIBITED remain engineering blockers, not review blockers.",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "# R14.5 布线审计（文档证据）\n\n## 方案与基线\n- 外置管座：130×80 mm；移除 6×Ø3.5 孔及禁布区；V1–V3 改 B.Cu 1.80×2.60 mm SMD 无孔焊盘，共 33 端点；阵列 X 节距 7.50 mm，B.Cu 集电极朝线束。\n- 层分工：F.Cu/In1.Cu/In2.Cu 走长 DRV 与 595 干线；内层低压避外层高压投影，新增高压限外层；0.60/0.30 通孔，U20/U21 局部 0.50/0.30；U20 控制脚过孔先分配。\n- 筛查：按实际铜/钻孔/保留区/板边/层净距建网格，先查两端可达区再搜路径；写入前复核连续几何与 ≥0.045 mm 入铜帽；保存重开后查 KiCad 连通和原生 DRC；同 net 两层裸露不算连通。\n- 基线：未连接 325→84；净距/all-track 122→103，新增 0；parity 0→0；ERC 0/0；新增 2,466 走线、170 过孔。GND 117→16、3V3 21→6、HV_BUS 5→5；GND 铜组 118→17、3V3 22→7；无基线分组回退。G1–G4 PASS；G5 J6 39/49、保护 14/23；G6 84 未连接、5 净距，均 BLOCKED。30/30 阴极连通，Q3–Q30 隔离焊盘 84→0。\n\n## 拓扑障碍\n- OVP：新闭合 R64.1→U13.2、R64.2→U13.4；R61.2(F.Cu 128.5375,92.0)→R62.1(B.Cu 133.0,56.0375) 与 C35.1→U13.2 仍开路，双面换层/细网格/扩窗后仍处分离可达铜区；前层迁移受 V2 阳极及 DRV_18/21/23 铜约束。\n- 反馈/残压：新闭合 R85.2→U17.7；R83.2→R84.1、R81.1→C47.1 仍开路；R83.2/R67.2 B.Cu 1.1728 mm；5 项 2.00 mm 外部筛查余 1.5852、1.5852、1.1621、1.1728、1.1728 mm。\n- C48：同形焊盘中心距 2.95 mm、名义铜距 1.80 mm，不能达 3.20 mm 筛查，需带实际器件/焊盘的 ECR 候选；SW_HV/SNUB 3.20 mm 保留，重复峰值 UNKNOWN。\n- 595：余 HC_CLEAR_N 2、SR_CLK_BUS 2、SR_LATCH_BUS 1、SER2 1、SER3 1；SER2/SER3 级联输入及部分公共时钟/清除/锁存支路开路。30/30 仅证明 595 输出到线束端点，整机显示控制未完成。\n- J6：39/49；新闭合 U14.1→U8.2、U15.3→J6.2、R25.2→J6.2；余硬件许可电源/地、HV_READY、DIGITS_REQ、消隐地及部分 U11 端点；U11/R40 DNP。\n- 历史原管座分支：R101.1 B.Cu 孤立走廊，Q3/Q4 集电极共享 y≈116.5 mm 窄走廊，仅 Q1/Q2 完整；最终板已转外置管座并达 30/30，不能视为最终板残余障碍。\n\n## 下一门证据\n- all-track DRC：保存重开后的全板报告，按类别对比基线，新增违规=0、意外短路/悬空走线/过孔=0，附对象差异与规则哈希。\n- parity：重开网表映射、ERC 0/0、原理图一致性 0，parity=0 的报告与哈希。\n- 595：逐端点闭合证据覆盖 SER2/SER3 级联、SR_CLK_BUS、SR_LATCH_BUS、HC_CLEAR_N，且无基线回退；仅 30 路阴极审计不足以放行。\n- J6：49/49 逐端点记录或 DNP/许可豁免，覆盖电源/地、HV_READY、DIGITS_REQ、消隐地及 U11，并附原生 DRC/连通重开证据。\n- 限制：未提供 BLOCKED_ROUTES.csv、原生报告明细及逐端点 CSV，不能独立核验几何/端点记录；未做实板测量、装配间距/工差、SW_HV 重复峰值、C48 ECR。",
+  "sources": [
+    {
+      "source": "r14_5/R14_5_FINAL_REPORT.md",
+      "locator": "Gate table; 保护与电源; 净距与原生验证; 放行决策",
+      "assertion": "Reports 30/30 cathode, G1–G4 PASS, G5 J6 39/49 and G6 BLOCKED, unconnected 325→84, clearance 122→103, 19 external HV/LV cleared with 5 remaining, 2,466 tracks/170 vias; P01/EVT/manufacturing HOLD and HV power prohibited."
+    },
+    {
+      "source": "r14_5/ROUTING_ARCHITECTURE.md",
+      "locator": "外置管座; 阵列与层分工; 基线和方案试验; 布线筛查",
+      "assertion": "Describes external socket, V1–V3 B.Cu SMD pads, 7.50 mm pitch, F/In1/In2 low-voltage routing, outer HV routing, via sizes, grid/endpoint search, 0.045 mm entry overlap, save-reopen verification, and historical R101/Q3–Q4 narrow-corridor obstacle."
+    },
+    {
+      "source": "r14_5/UNCONNECTED_NETS.csv",
+      "locator": "net,before,after; GND/3V3/HV_BUS; SER2/SER3/SR_CLK_BUS/SR_LATCH_BUS/HC_CLEAR_N rows",
+      "assertion": "Quantifies per-net opens: GND 117→16, 3V3 21→6, HV_BUS 5→5; SER2 1→1, SER3 1→1, SR_CLK_BUS 3→2, SR_LATCH_BUS 1→1, HC_CLEAR_N 4→2."
+    },
+    {
+      "source": "r14_5/ROUTING_GATE_RESULTS.json",
+      "locator": "gates; metrics.before/after; remaining_register_control_opens; j6; final_board_sha256; inherited_rules_sha256",
+      "assertion": "Machine-readable record: G1–G4 PASS, G5/G6 BLOCKED; clearance 122→103; unconnected 325→84; parity 0→0; added all-track violations 0; J6 39/49; register-control opens; final-board and inherited-rule SHA-256 values."
+    }
+  ]
+}

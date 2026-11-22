@@ -1,0 +1,162 @@
+[
+  {
+    "case": "off_170",
+    "source": "r14_3/evidence/spice/off_170_25_none/circuit.cir",
+    "source_sha256": "872af299aaa3eb7ff8be7291902261602ef5be0da20bf5e3c2eaf12d0c29e173",
+    "replay_input_sha256": "8bfbdf06e365ad761a07dd84d94738a8e1ba0769e95be740a394e0efe17adeeb",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "off_170/circuit.cir"
+    ],
+    "waveform_bytes": 732647,
+    "waveform_sha256": "bdd59f35c57f24e292f88dd8d4e4a4cb06297f887687f9f497bd017e54ce178c",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 99",
+      "No. Points: 922"
+    ]
+  },
+  {
+    "case": "off_195",
+    "source": "r14_3/evidence/spice/off_195_25_none/circuit.cir",
+    "source_sha256": "df718367da372790b7b814ec6a089c37fdb3ed373f779f42214b0493a6cac4cf",
+    "replay_input_sha256": "c81544b61942d7956b6fd1b6abe679258770a09c939bdac46da7bbe7769c9376",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "off_195/circuit.cir"
+    ],
+    "waveform_bytes": 732647,
+    "waveform_sha256": "8800e2decc8ef3c0156d192fee467561577583a62bc064e6ea1956e0ae3082dc",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 99",
+      "No. Points: 922"
+    ]
+  },
+  {
+    "case": "partial_195",
+    "source": "r14/evidence/simulation/half_195_sustain/circuit.cir",
+    "source_sha256": "4b0c678694ff0b2d5d1b9aff14a8a3bd95cbf883dd59634b8cdbba8a48b53965",
+    "replay_input_sha256": "4b0c678694ff0b2d5d1b9aff14a8a3bd95cbf883dd59634b8cdbba8a48b53965",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "partial_195/circuit.cir"
+    ],
+    "waveform_bytes": 209634,
+    "waveform_sha256": "6cac0b282c12b3111085bc15aed057ef2998abf624b83e3e7faac6af863e575c",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 13",
+      "No. Points: 2011"
+    ]
+  },
+  {
+    "case": "stop_nominal",
+    "source": "r14/evidence/simulation/stop_nominal/circuit.cir",
+    "source_sha256": "cac47adfd807ecda2ade0957182c18ad11c190cd35d7b4ec93b80ebb03227697",
+    "replay_input_sha256": "cac47adfd807ecda2ade0957182c18ad11c190cd35d7b4ec93b80ebb03227697",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "stop_nominal/circuit.cir"
+    ],
+    "waveform_bytes": 414657,
+    "waveform_sha256": "be7c69953484f0c7564ad0ca300224f324411c06ac691a7a1d2bc1951d6c4c71",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 10",
+      "No. Points: 5178"
+    ]
+  },
+  {
+    "case": "stop_one_bleeder",
+    "source": "r14/evidence/simulation/stop_one_bleeder/circuit.cir",
+    "source_sha256": "875c846f2f00cfb5bc1f5fc7fa324a3fde2b230f5cc3f626bd21355f3eb97bb6",
+    "replay_input_sha256": "875c846f2f00cfb5bc1f5fc7fa324a3fde2b230f5cc3f626bd21355f3eb97bb6",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "stop_one_bleeder/circuit.cir"
+    ],
+    "waveform_bytes": 412261,
+    "waveform_sha256": "fd0e28a4b6796ae989bd516b6b6d88a05c0017abff3f6a9097fddccf3cd5b51a",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 10",
+      "No. Points: 5148"
+    ]
+  },
+  {
+    "case": "stop_u11_stuck",
+    "source": "r14/evidence/simulation/stop_u11_stuck/circuit.cir",
+    "source_sha256": "90dbbc37908d972204869b27562e7032632071f081385ff125a26ebb94e258c6",
+    "replay_input_sha256": "90dbbc37908d972204869b27562e7032632071f081385ff125a26ebb94e258c6",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "stop_u11_stuck/circuit.cir"
+    ],
+    "waveform_bytes": 413859,
+    "waveform_sha256": "be85179a881ae8ad499c7cda50d42fc2246d72999c1f092ef29be3181c39d7a0",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 10",
+      "No. Points: 5168"
+    ]
+  },
+  {
+    "case": "watchdog_proxy",
+    "source": "r14_3/evidence/interlock/watchdog_fault_asserted/circuit.cir",
+    "source_sha256": "23ef9b4dc4898aee48cc61267afe0a5e45126e2f7cb36d4440e44d62d50aea45",
+    "replay_input_sha256": "4bdc6c3a6ee35408f6e52008dc1e7ebf8e1964015552d9ff52010559d6be53be",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "watchdog_proxy/circuit.cir"
+    ],
+    "waveform_bytes": 4420784,
+    "waveform_sha256": "d7ff45ded77b0f9546e25ff9c1922fa38e63c442a6090f4b6c01c981a98517b5",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 54",
+      "No. Points: 10230"
+    ]
+  },
+  {
+    "case": "ovp_proxy",
+    "source": "r11/evidence/r2/ovp_feedback_fault_noload/circuit.cir",
+    "source_sha256": "265d768d7362c3b6892da5eecb62feea67a3f95ad30e1bdf253ae4c0b551ffb4",
+    "replay_input_sha256": "265d768d7362c3b6892da5eecb62feea67a3f95ad30e1bdf253ae4c0b551ffb4",
+    "exit": 0,
+    "command": [
+      "KiCad 10.0.8 python.exe",
+      "r11/sim/dll_run.py",
+      "ovp_proxy/circuit.cir"
+    ],
+    "waveform_bytes": 219491054,
+    "waveform_sha256": "72e91d67e453a91849f2e73ef92db9b2a8a6a854e17cf8a395f3f81bb5953c95",
+    "solver": "ngspice-46 DLL",
+    "applied_to_final_hardware": false,
+    "raw_point_rows": [
+      "No. Variables: 26",
+      "No. Points: 1055242"
+    ]
+  }
+]

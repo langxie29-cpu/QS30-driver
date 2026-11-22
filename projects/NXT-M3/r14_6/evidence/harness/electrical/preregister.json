@@ -1,0 +1,27 @@
+{
+  "task_id": "electrical",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Review actual boost, hardware STOP, latch, and residual detection evidence. Separate 170/195 V proxies from the final hardware, state what remains unknown.",
+  "input_receipts": [
+    {
+      "file": "r14_5/R14_5_FINAL_REPORT.md",
+      "sha256": "397bf687bc3098628b618a181113b260d047dc8e8e30d4c87b2d1c466f616ee6"
+    },
+    {
+      "file": "r14_3/FAULT_CONTAINMENT_OPTIONS.md",
+      "sha256": "4e5ed633b6667b25af5f78ec21a4c5b2e67f3b357896060b076e89903ce14265"
+    },
+    {
+      "file": "r14_3/evidence/interlock_metrics.csv",
+      "sha256": "6d5c35d790fe0ffeeeda73267b223a4f19e33aa551acb12c0ef9b26bd6076a84"
+    },
+    {
+      "file": "r14_3/evidence/energy_audit.json",
+      "sha256": "adce57e017a70ae56d8a505f7b3f63914ba894d025b69add4d42781cacc9be7d"
+    }
+  ]
+}

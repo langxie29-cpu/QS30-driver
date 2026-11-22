@@ -1,0 +1,62 @@
+[
+  {
+    "source": "r14_5/ROUTING_ARCHITECTURE.md",
+    "locator": "外置管座与 PCB 线束接口",
+    "assertion": "V1–V3 为背面线束焊盘，每组 10 阴极+1 阳极；1.80×2.60 mm SMD 无钻孔；外置管座在独立塑料板，机械应力由外壳承担；装配前需确认塑件、焊点、线束立体间距。"
+  },
+  {
+    "source": "r14_5/ROUTING_ARCHITECTURE.md",
+    "locator": "阵列与层分工",
+    "assertion": "F.Cu/In1.Cu/In2.Cu/B.Cu 四层；Q1–Q30 保留 MMBTA42 原厂焊盘，组内 X 节距 7.50 mm；阴极焊盘与晶体管中心 4.50 mm；板 130×80 mm，MH1–MH4/J2–J6 沿用。"
+  },
+  {
+    "source": "r14_5/ROUTING_ARCHITECTURE.md",
+    "locator": "布线筛查",
+    "assertion": "MMBTA42 的 C–B/C–E 约 1.1102 mm 仍待评估；焊盘搭接与制造公差需钢网、贴装、焊接确认；单层同 NetName 不等于连通。"
+  },
+  {
+    "source": "r14_5/R14_5_FINAL_REPORT.md",
+    "locator": "路由与连通 Gate",
+    "assertion": "30/30 阴极通过；G5 J6 39/49、保护 14/23；G6 5 项 HV 净距、84 未连接；30 路仅证明 595 输出至线束端点，整机显示控制未完成。"
+  },
+  {
+    "source": "r14_5/R14_5_FINAL_REPORT.md",
+    "locator": "净距与原生验证",
+    "assertion": "103 项净距含 60 MMBTA42、34 低压 IC、4 开关本征；阵列外部最小同层铜距 2.016451 mm；边界结果需结合装配间距和公差。"
+  },
+  {
+    "source": "r14_5/R14_5_FINAL_REPORT.md",
+    "locator": "放行决策",
+    "assertion": "P01_LAYOUT、EVT_RELEASE、MANUFACTURING_RELEASE 均 HOLD；HV_POWER_ON PROHIBITED。"
+  },
+  {
+    "source": "r13/PCB_MANUFACTURING_REVIEW.md",
+    "locator": "检查表及绝缘段",
+    "assertion": "旧冻结 R11：ERC 0/0，DRC 263 净距/345 开项，Gerber/Excellon/BOM 退出 0（7 层 Gerber）；候选板未达建板门槛，需绝缘矩阵、CTI、海拔/污染等级及机械确认。"
+  },
+  {
+    "source": "r14_4/R14_4_FINAL_REPORT.md",
+    "locator": "MMBTA42 原厂封装",
+    "assertion": "30 颗 C4749118 名义 0.90×0.80 mm；B/E/C 相对位置；阻焊/钢网补偿 0；Q1/Q2 局部验证，60 项封装内候选例外保留。"
+  },
+  {
+    "source": "r14_4/R14_4_FINAL_REPORT.md",
+    "locator": "高压与低压边界",
+    "assertion": "R302/R303 处于 V1 两排手焊焊盘间，后续外壳阶段需核对管座、线束与 1 W 电阻的高度和受热空间。"
+  },
+  {
+    "source": "https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf",
+    "locator": "LCSC C4749118 datasheet",
+    "assertion": "引用为 MMBTA42 原厂封装来源；未独立打开核验。"
+  },
+  {
+    "source": "https://webstore.iec.ch/en/publication/107319",
+    "locator": "IEC 60664-1",
+    "assertion": "引用用于绝缘配合；工作电压、污染等级、海拔、CTI 等需按实际条件确认。"
+  },
+  {
+    "source": "https://webstore.iec.ch/en/publication/2804",
+    "locator": "IEC 60664-4",
+    "assertion": "引用用于高于 30 kHz 的周期应力评估；需先确定适用产品标准。"
+  }
+]

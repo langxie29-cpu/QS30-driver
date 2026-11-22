@@ -1,0 +1,22 @@
+{
+  "git_head": "c6d06aa91fb576c8d9e9445ddb89328288922457",
+  "identity": {
+    "status": "VERIFIED",
+    "model": "deepseek-v4-flash",
+    "provider": "deepseek-official",
+    "endpoint": "https://api.deepseek.com",
+    "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+    "mode": "SEALED_TEXT_ONLY",
+    "worker_tools": [],
+    "background_model_requests": false
+  },
+  "max_worker_invocations": 5,
+  "worker_timeout_s": 120,
+  "tasks": [
+    "electrical",
+    "pcb",
+    "safety",
+    "manufacturing",
+    "procurement"
+  ]
+}

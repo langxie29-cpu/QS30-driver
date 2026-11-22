@@ -1,0 +1,13 @@
+{
+  "task_id": "procurement",
+  "status": "PASS",
+  "notes": "已完成对给定节选的 BOM/成本边界审计，结论为不可报价、不可汇总；这不是采购或设计放行。证据锚点：BOM_R13_3PC.csv 的 Candidate A/D 行；quote_observations.md 的 C/B/A/D 条；R14_5_FINAL_REPORT.md 的外置管座与放行段。限制：BOM 为节选，完整行未提供；报价观察是单件公开快照而非正式报价；未打开 URL、未运行成本模型、未从数量或历史价推导新价。下一门证据：R14.5 对齐的 BOM/AVL，逐 MPN 正式报价（日期、币种、数量档、MOQ、交期、税运、有效期、库存），自有库存台账与可用量，单模块/三模块 rollup，MOQ 超采和 PCB/SMT/钢网/运税/手装同批报价。",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

@@ -1,0 +1,77 @@
+{
+  "CATHODE_ROUTING": {
+    "state": "PASS",
+    "basis": "30/30 channels and 180/180 endpoint pairs; zero inherited copper membership losses.",
+    "evidence": "CATHODE_30_CHANNEL_AUDIT.csv"
+  },
+  "SHIFT_REGISTER_CHAIN": {
+    "state": "FAIL",
+    "basis": "SER2, SER3, SR_CLK_BUS and HC_CLEAR_N each have one native open.",
+    "evidence": "SHIFT_REGISTER_CONNECTIVITY.csv"
+  },
+  "FULL_BOARD_ROUTING": {
+    "state": "FAIL",
+    "basis": "65 native opens; protection and power connectivity incomplete.",
+    "evidence": "BLOCKED_ROUTES.csv"
+  },
+  "LV_IC_CLEARANCE": {
+    "state": "HOLD",
+    "basis": "18 TI DGK copper reworks; 16 RPW violations, assembly and fault-voltage qualifications open.",
+    "evidence": "LV_IC_CLEARANCE_QUALIFICATION.csv"
+  },
+  "MMBTA42_INSULATION": {
+    "state": "HOLD",
+    "basis": "60 native C-B/C-E violations retained; final stress, creepage and mounted air gap unqualified.",
+    "evidence": "MMBTA42_INSULATION.csv"
+  },
+  "SWITCH_NODE_CLEARANCE": {
+    "state": "HOLD",
+    "basis": "D3/Q32 retain three violations; C48 routing candidate is DNP; repetitive peak unknown.",
+    "evidence": "SWITCH_PACKAGE_ECR.md"
+  },
+  "HV_EXTERNAL_CLEARANCE": {
+    "state": "PASS",
+    "basis": "All five inherited violations resolved on saved copper; scope is native 2 mm external copper screening.",
+    "evidence": "HV_EXTERNAL_CLEARANCE.csv"
+  },
+  "PROTECTION_CONNECTIVITY": {
+    "state": "FAIL",
+    "basis": "J6 39/49; other reviewed pairs 20/23.",
+    "evidence": "PROTECTION_NET_CONNECTIVITY.csv"
+  },
+  "POWER_SIMULATION": {
+    "state": "HOLD",
+    "basis": "Eight archived behavioral fixtures ran; actual assembly and switching stress model unverified.",
+    "evidence": "POWER_AND_PROTECTION_REVIEW.md"
+  },
+  "MECHANICAL_ASSEMBLY": {
+    "state": "HOLD",
+    "basis": "33 mapped board pads; physical socket, terminals, stress relief and electrical insulation unverified.",
+    "evidence": "MECHANICAL_ASSEMBLY.md"
+  },
+  "BOM_COMPLETENESS": {
+    "state": "CONDITIONAL",
+    "basis": "322 native reference rows and 61 DNP; 170 missing exact MPN plus generic/order-code ambiguity.",
+    "evidence": "BOM_R14_6.csv"
+  },
+  "PROCUREMENT_READINESS": {
+    "state": "HOLD",
+    "basis": "6/80 current design groups have public prices; no checkout quote.",
+    "evidence": "COST_R14_6.md"
+  },
+  "EVT_RELEASE": {
+    "state": "HOLD",
+    "basis": "Unconnected protection paths and manufacturing and voltage qualifications remain open.",
+    "evidence": "R14_6_FINAL_REPORT.md"
+  },
+  "MANUFACTURING_RELEASE": {
+    "state": "HOLD",
+    "basis": "Production configuration, physical process, stress and qualification evidence open.",
+    "evidence": "R14_6_FINAL_REPORT.md"
+  },
+  "HV_POWER_ON": {
+    "state": "HOLD",
+    "basis": "Release withheld; no high-voltage operation authorized for this board.",
+    "evidence": "POWER_AND_PROTECTION_REVIEW.md"
+  }
+}

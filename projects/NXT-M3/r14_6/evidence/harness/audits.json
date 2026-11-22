@@ -1,0 +1,139 @@
+[
+  {
+    "task_id": "electrical",
+    "grade": "INCONCLUSIVE",
+    "reason": "Missing notes",
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T10:58:18.135057+00:00",
+    "seconds": 68.735,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  },
+  {
+    "task_id": "pcb",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "49ad1a84ac0a59374118f39f2241228bea23ca928f34f43073069ab05f68a9e2",
+      "sources.json": "df492d9c597f59b2c6837bd5c360da35dc1fb52e5bd424af437db0d9b1137ad1"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T10:59:27.090488+00:00",
+    "seconds": 68.078,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  },
+  {
+    "task_id": "safety",
+    "grade": "INCONCLUSIVE",
+    "reason": "Missing or oversized JSON: result.json",
+    "rc": 1,
+    "failure": "PROCESS_TIMEOUT",
+    "started": "2026-11-22T11:00:35.429395+00:00",
+    "seconds": 120.0,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  },
+  {
+    "task_id": "manufacturing",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "1d4516c28f752dca8514e55cb1e925861e241734a217a4012b5f2e62b0c4eebc",
+      "sources.json": "68eb407bb78f8a1a44829ae136ef10a5f14ac13a7b5f509879b585495dacf8ed"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T11:02:35.696596+00:00",
+    "seconds": 76.844,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  },
+  {
+    "task_id": "procurement",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "77ac07046d7093d3f433451c3c69e9ce9b847364f2ca75868b6fa18df1e3f82f",
+      "sources.json": "7d61d23588df82d630258bbe070e8be44ffee4293d2a86ce33cf319d0fa9f5d1"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T11:03:52.784229+00:00",
+    "seconds": 76.968,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  }
+]

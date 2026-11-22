@@ -1,0 +1,48 @@
+{
+  "result": {
+    "task_id": "procurement",
+    "status": "PASS",
+    "notes": "已完成对给定节选的 BOM/成本边界审计，结论为不可报价、不可汇总；这不是采购或设计放行。证据锚点：BOM_R13_3PC.csv 的 Candidate A/D 行；quote_observations.md 的 C/B/A/D 条；R14_5_FINAL_REPORT.md 的外置管座与放行段。限制：BOM 为节选，完整行未提供；报价观察是单件公开快照而非正式报价；未打开 URL、未运行成本模型、未从数量或历史价推导新价。下一门证据：R14.5 对齐的 BOM/AVL，逐 MPN 正式报价（日期、币种、数量档、MOQ、交期、税运、有效期、库存），自有库存台账与可用量，单模块/三模块 rollup，MOQ 超采和 PCB/SMT/钢网/运税/手装同批报价。",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "## 采购/BOM 边界审计（仅据节选）\n- 范围：R13 BOM 可见 A（HV_STAGE）与 D（M3_NON_HV/CASH_ONLY）行；输入 BOM 省略中间行，不能证明全表完整。\n- 单模块/三模块数量：A 行 Qty=3 可归一为 1/模块；D 的 TUBE-1..3 Qty=9（3/模块）、OLED-PANEL 与 FASTENERS-AND-WIRE Qty=3（1/模块）；CASH_ONLY 各 Qty=3，但未定义按模块还是整批。数量仅为边界，不产生价格。\n- 报价缺口：A/D 可见行 Unit Price、Quote Date、MOQ 均空，Verification Status=UNQUOTED；无正式报价、数量档、交期、税/运、有效期。\n- 报价观察：2026-11-22 仅有单件公开快照——C LT3757EMSE#PBF ¥62.77000@1（库存1,436）；B LM3488MM/NOPB ¥28.37000@1（2件），LM3488MMX/NOPB ¥24.15000@1（0件）；均非篮子/税/运报价。A UCC3803DTR 无已验证 CNY 档；¥14.93 关联 UCC3803D 且来源不全，不可采用。D LM5155DSSR 档位未开。\n- 过时/受限：R14.5 改外置管座、删除 6×Ø3.5 mm 孔及禁布区、V1–V3 改 B.Cu 线束焊盘、33 端点；R13 BOM 的 6×Ø3.5 mm holes 机械描述已过时。C DA2032-ALB 被 Mouser 标受限，厂家列 DA2032-ALD；供应/引脚/报价未闭。\n- MOQ/库存：MOQ-OVERBUY 为 TBD/UNQUOTED，未计算超采现金。TUBE 仅 R10 owned pool 提示，无可用数量/状态/估值；OLED R10 ¥9.78 仅历史；其他库存未核。\n- 成本结论：单模块与三模块均只能界定数量/范围，不能给出材料或现金总成本；CASH_ONLY 服务（PCB、SMT、钢网、运税、手装、MOQ 超采）均需同批报价。R14.5 无成本证据且 MANUFACTURING_RELEASE=HOLD。\n- 下一门证据：R14.5 对齐 BOM/AVL；逐 MPN 正式报价（日期、币种、数量档、MOQ、交期、税运、有效期、库存）；自有库存台账与可用量；单模块/三模块 rollup；服务同批报价与超采计算。",
+  "sources": [
+    {
+      "source": "r13/BOM_R13_3PC.csv",
+      "locator": "Candidate A, Scope=HV_STAGE; Unit Price/Quote Date/MOQ/Verification Status columns",
+      "assertion": "A/HV_STAGE 可见行 Qty=3；Unit Price、Quote Date、MOQ 为空；Verification Status=UNQUOTED；Risk 为 schematic reference, stock unverified。"
+    },
+    {
+      "source": "r13/BOM_R13_3PC.csv",
+      "locator": "Candidate D, Scope=M3_NON_HV and CASH_ONLY",
+      "assertion": "TUBE-1..3 Qty=9；OLED-PANEL、FASTENERS-AND-WIRE Qty=3；CASH_ONLY 服务行 Qty=3；均 UNQUOTED；TUBE 注 R10 owned pool，OLED 注 R10 historical ¥9.78，服务行注 Requires same-lot quote。"
+    },
+    {
+      "source": "r13/evidence/quote_observations.md",
+      "locator": "C LT3757EMSE#PBF; B LM3488MM/NOPB; B LM3488MMX/NOPB",
+      "assertion": "¥62.77000@1 库存1,436；¥28.37000@1 库存2；¥24.15000@1 库存0；仅 single-price tier，无 basket/tax/shipping，其他档未确认。"
+    },
+    {
+      "source": "r13/evidence/quote_observations.md",
+      "locator": "A UCC3803DTR; D LM5155DSSR",
+      "assertion": "UCC3803DTR 无已验证 CNY tier；¥14.93 关联 UCC3803D alternative 且来源细节不全；LM5155DSSR 的 CNY quantity tiers 仍开放。"
+    },
+    {
+      "source": "r13/evidence/quote_observations.md",
+      "locator": "C DA2032-ALB",
+      "assertion": "Mouser 标为 restricted；厂家列 DA2032-ALD；supply、pinout equivalence 与 quote 均未闭合。"
+    },
+    {
+      "source": "r14_5/R14_5_FINAL_REPORT.md",
+      "locator": "工程采用外置管座段；放行决策块",
+      "assertion": "外置管座；删除六个 Ø3.5 mm 管座安装孔及禁布区；V1–V3 改 B.Cu 线束焊盘；33 个接线端点；MANUFACTURING_RELEASE=HOLD，HV_POWER_ON=PROHIBITED。"
+    }
+  ]
+}

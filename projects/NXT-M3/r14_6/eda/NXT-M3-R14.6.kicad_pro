@@ -1,0 +1,1302 @@
+{
+  "board": {
+    "3dviewports": [],
+    "design_settings": {
+      "defaults": {
+        "apply_defaults_to_fp_barcodes": false,
+        "apply_defaults_to_fp_dimensions": false,
+        "apply_defaults_to_fp_fields": false,
+        "apply_defaults_to_fp_shapes": false,
+        "apply_defaults_to_fp_text": false,
+        "board_outline_line_width": 0.05,
+        "copper_line_width": 0.2,
+        "copper_text_italic": false,
+        "copper_text_size_h": 1.5,
+        "copper_text_size_v": 1.5,
+        "copper_text_thickness": 0.3,
+        "copper_text_upright": false,
+        "courtyard_line_width": 0.05,
+        "dimension_precision": 4,
+        "dimension_units": 3,
+        "dimensions": {
+          "arrow_length": 1270000,
+          "extension_offset": 500000,
+          "keep_text_aligned": true,
+          "suppress_zeroes": true,
+          "text_position": 0,
+          "units_format": 0
+        },
+        "fab_line_width": 0.1,
+        "fab_text_italic": false,
+        "fab_text_size_h": 1.0,
+        "fab_text_size_v": 1.0,
+        "fab_text_thickness": 0.15,
+        "fab_text_upright": false,
+        "other_line_width": 0.1,
+        "other_text_italic": false,
+        "other_text_size_h": 1.0,
+        "other_text_size_v": 1.0,
+        "other_text_thickness": 0.15,
+        "other_text_upright": false,
+        "pads": {
+          "drill": 0.8,
+          "height": 1.27,
+          "width": 1.27
+        },
+        "silk_line_width": 0.1,
+        "silk_text_italic": false,
+        "silk_text_size_h": 1.0,
+        "silk_text_size_v": 1.0,
+        "silk_text_thickness": 0.1,
+        "silk_text_upright": false,
+        "zones": {
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.5,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
+        }
+      },
+      "diff_pair_dimensions": [],
+      "drc_exclusions": [],
+      "meta": {
+        "version": 2
+      },
+      "rule_severities": {
+        "annular_width": "error",
+        "clearance": "error",
+        "connection_width": "warning",
+        "copper_edge_clearance": "error",
+        "copper_sliver": "warning",
+        "courtyards_overlap": "error",
+        "creepage": "error",
+        "diff_pair_gap_out_of_range": "error",
+        "diff_pair_uncoupled_length_too_long": "error",
+        "drill_out_of_range": "error",
+        "duplicate_footprints": "warning",
+        "extra_footprint": "warning",
+        "footprint": "error",
+        "footprint_filters_mismatch": "ignore",
+        "footprint_symbol_field_mismatch": "warning",
+        "footprint_symbol_mismatch": "warning",
+        "footprint_type_mismatch": "ignore",
+        "hole_clearance": "error",
+        "hole_to_hole": "warning",
+        "holes_co_located": "warning",
+        "invalid_outline": "error",
+        "isolated_copper": "warning",
+        "item_on_disabled_layer": "error",
+        "items_not_allowed": "error",
+        "length_out_of_range": "error",
+        "lib_footprint_issues": "warning",
+        "lib_footprint_mismatch": "warning",
+        "malformed_courtyard": "error",
+        "microvia_drill_out_of_range": "error",
+        "mirrored_text_on_front_layer": "warning",
+        "missing_courtyard": "ignore",
+        "missing_footprint": "warning",
+        "missing_tuning_profile": "warning",
+        "net_conflict": "warning",
+        "nonmirrored_text_on_back_layer": "warning",
+        "npth_inside_courtyard": "error",
+        "padstack": "warning",
+        "pth_inside_courtyard": "error",
+        "shorting_items": "error",
+        "silk_edge_clearance": "warning",
+        "silk_over_copper": "warning",
+        "silk_overlap": "warning",
+        "skew_out_of_range": "error",
+        "solder_mask_bridge": "error",
+        "starved_thermal": "error",
+        "text_height": "warning",
+        "text_on_edge_cuts": "error",
+        "text_thickness": "warning",
+        "through_hole_pad_without_hole": "error",
+        "too_many_vias": "error",
+        "track_angle": "error",
+        "track_dangling": "warning",
+        "track_not_centered_on_via": "ignore",
+        "track_on_post_machined_layer": "error",
+        "track_segment_length": "error",
+        "track_width": "error",
+        "tracks_crossing": "error",
+        "tuning_profile_track_geometries": "ignore",
+        "unconnected_items": "error",
+        "unresolved_variable": "error",
+        "via_dangling": "warning",
+        "zones_intersect": "error"
+      },
+      "rules": {
+        "max_error": 0.005,
+        "min_clearance": 0.0,
+        "min_connection": 0.0,
+        "min_copper_edge_clearance": 0.5,
+        "min_groove_width": 0.0,
+        "min_hole_clearance": 0.25,
+        "min_hole_to_hole": 0.25,
+        "min_microvia_diameter": 0.2,
+        "min_microvia_drill": 0.1,
+        "min_resolved_spokes": 2,
+        "min_silk_clearance": 0.0,
+        "min_text_height": 0.8,
+        "min_text_thickness": 0.08,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.2,
+        "min_via_annular_width": 0.1,
+        "min_via_diameter": 0.5,
+        "solder_mask_to_copper_clearance": 0.0,
+        "use_height_for_length_calcs": true
+      },
+      "teardrop_options": [
+        {
+          "td_onpthpad": true,
+          "td_onroundshapesonly": false,
+          "td_onsmdpad": true,
+          "td_ontrackend": false,
+          "td_onvia": true
+        }
+      ],
+      "teardrop_parameters": [
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_enabled": false,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_round_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_enabled": false,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_rect_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_enabled": false,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_track_end",
+          "td_width_to_size_filter_ratio": 0.9
+        }
+      ],
+      "track_widths": [],
+      "tuning_pattern_settings": {
+        "diff_pair_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 1.0
+        },
+        "diff_pair_skew_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 0.6
+        },
+        "single_track_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 0.6
+        }
+      },
+      "via_dimensions": [],
+      "zones_allow_external_fillets": false
+    },
+    "ipc2581": {
+      "bom_rev": "",
+      "dist": "",
+      "distpn": "",
+      "internal_id": "",
+      "mfg": "",
+      "mpn": "",
+      "sch_revision": ""
+    },
+    "layer_pairs": [],
+    "layer_presets": [],
+    "viewports": []
+  },
+  "boards": [],
+  "component_class_settings": {
+    "assignments": [],
+    "meta": {
+      "version": 0
+    },
+    "sheet_component_classes": {
+      "enabled": false
+    }
+  },
+  "cvpcb": {
+    "equivalence_files": []
+  },
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "meta": {
+    "filename": "NXT-M3-R14.6.kicad_pro",
+    "version": 3
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": -1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "DIGITAL_SIGNAL",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 2.0,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HIGH_VOLTAGE_BUS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 2.0,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HIGH_VOLTAGE_CATHODE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "HV_FEEDBACK",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "LOW_VOLTAGE_POWER",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 3.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "POWER_SWITCH_NODE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 5,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "SAFETY_CONTROL",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 6,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 5
+    },
+    "net_colors": {},
+    "netclass_assignments": {},
+    "netclass_patterns": [
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "3V3"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "5V_FUSED"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "5V_HV"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "5V_PROT"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "5V_RAW"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ALIM_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ALIM_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ALIM_3"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ANODE_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ANODE_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "ANODE_3"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "ARMED"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "ARM_STROBE"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_00"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_01"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_02"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_03"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_04"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_05"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_06"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_07"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_08"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_09"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_10"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_11"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_12"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_13"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_14"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_15"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_16"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_17"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_18"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_19"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_20"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_21"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_22"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_23"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_24"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_25"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_26"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_27"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_28"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BASE_29"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BIAS_FB"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "BIAS_OK"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BIAS_S"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BIAS_SW"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_1_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_1_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_1_3"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_2_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_2_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "BLEED_2_3"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BOOT_N"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "BUCK_PG"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "COMP_Z"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "CS_FILT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "CUT_DVDT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "CUT_ILM"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "CUT_OVLO"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "CUT_PGTH"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "CUT_TIMER"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DIGITS_REQ"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "DRIVE_OK"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_00"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_01"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_02"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_03"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_04"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_05"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_06"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_07"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_08"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_09"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_10"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_11"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_12"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_13"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_14"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_15"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_16"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_17"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_18"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_19"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_20"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_21"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_22"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_23"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_24"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_25"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_26"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_27"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_28"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "DRV_29"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "FAULT_N"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_DVDT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_EN"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_ILM"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_OVLO"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_PGTH"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "FRONT_TIMER"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "GATE_BIAS"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "GATE_HV"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "GATE_SNK"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "GATE_SRC"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HC_CLEAR_N"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HC_OE_N"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_BUS",
+        "pattern": "HV_BUS"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "HV_COMP"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HV_CS"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_FB"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_FB_1"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_FB_2"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_FB_3"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HV_ISENSE"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "HV_ISOLATE_IN"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_OVP_S"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_OVP_S_1"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_OVP_S_2"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_OVP_S_3"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HV_READY"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_RES_S"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_RES_S_1"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_RES_S_2"
+      },
+      {
+        "netclass": "HV_FEEDBACK",
+        "pattern": "HV_RES_S_3"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "HV_RT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "HV_SS"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "HV_UVLO"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "HV_VCC"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_0"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_3"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_4"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_5"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_6"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_7"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_8"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K1_9"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_0"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_3"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_4"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_5"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_6"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_7"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_8"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K2_9"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_0"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_1"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_2"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_3"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_4"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_5"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_6"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_7"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_8"
+      },
+      {
+        "netclass": "HIGH_VOLTAGE_CATHODE",
+        "pattern": "K3_9"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "LATCH_CLR_N"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "LV_SW"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "MCU_EN"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "MCU_SCL"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "MCU_SDA"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "OCP_REF"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OE_SINK"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "OLED_3V3"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_CT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_ON"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_QOD"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_REQ"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_SCL"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "OLED_SDA"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "PWM_PERMIT"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "PWM_RAW"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "REF_1V25"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "RESIDUAL_OK"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "RST_REQ_N"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SER0"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SER1"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SER2"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SER3"
+      },
+      {
+        "netclass": "POWER_SWITCH_NODE",
+        "pattern": "SNUB"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SR_CLK"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SR_CLK_BUS"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SR_LATCH"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SR_LATCH_BUS"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "SR_SER"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "STRAP3"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "STRAP45"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "STRAP46"
+      },
+      {
+        "netclass": "POWER_SWITCH_NODE",
+        "pattern": "SW_HV"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "UART_HDR_RX"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "UART_HDR_TX"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "UART_RX"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "UART_RX_BUF"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "UART_TX"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "WDI"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "USBC_CC1"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "USBC_CC2"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "USBC_1V2"
+      },
+      {
+        "netclass": "LOW_VOLTAGE_POWER",
+        "pattern": "USBC_2V7"
+      },
+      {
+        "netclass": "DIGITAL_SIGNAL",
+        "pattern": "USBC_VS"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "USBC_VALID_N"
+      },
+      {
+        "netclass": "SAFETY_CONTROL",
+        "pattern": "USBC_3A_N"
+      }
+    ]
+  },
+  "pcbnew": {
+    "last_paths": {
+      "idf": "",
+      "netlist": "",
+      "plot": "",
+      "specctra_dsn": "",
+      "step": "",
+      "vrml": ""
+    },
+    "page_layout_descr_file": ""
+  },
+  "schematic": {
+    "bus_aliases": {},
+    "legacy_lib_dir": "",
+    "legacy_lib_list": [],
+    "meta": {
+      "version": 1
+    },
+    "top_level_sheets": [
+      {
+        "filename": "NXT-M3-R14.6.kicad_sch",
+        "name": "NXT-M3-R14.6",
+        "uuid": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
+  },
+  "sheets": [],
+  "text_variables": {
+    "QUALIFICATION": "HOLD"
+  },
+  "tuning_profiles": {
+    "meta": {
+      "version": 0
+    },
+    "tuning_profiles_impedance_geometric": []
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "source": "r14_5/R14_5_FINAL_REPORT.md",
+    "locator": "导言；路由与连通 Gate G4–G6；保护与电源；放行决策",
+    "assertion": "30/30阴极铜连；J6 39/49；84未连接；5项净距；保护/整板PARTIAL；HV_POWER_ON=PROHIBITED；SER2/SER3等仍开路。"
+  },
+  {
+    "source": "r14_3/FAULT_CONTAINMENT_OPTIONS.md",
+    "locator": "被动限流与反向阻断；硬件断供与残压；检测段",
+    "assertion": "R302/R303 195V限流/功耗代理；R100风险；ES1G候选及1k负载；STOP路径、Q4候选、U25约1s未测；检测阈值仿真。"
+  },
+  {
+    "source": "r14_3/evidence/interlock_metrics.csv",
+    "locator": "rows stuck_u11, contact_bridged, stuck_u11_and_mos_short, control_power_interrupted; columns t_stop_*, *_after_open",
+    "assertion": "仿真停止时间约1.90µs；桥接行无停止时间且armed/oe/gate高；U11+MOS短路无gate停止且gate=3.3V。"
+  },
+  {
+    "source": "r14_3/evidence/energy_audit.json",
+    "locator": "case_count; max_absolute_electrical_energy_residual_J; stored_energy_170V_J; stored_energy_195V_J; stored_energy_60V_J",
+    "assertion": "509例；最大残差58.8µJ；170/195/60V储能52.45/69.02/6.53mJ，均为审计值。"
+  }
+]
