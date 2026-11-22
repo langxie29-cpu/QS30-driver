@@ -1,0 +1,73 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: r14.3 low-voltage stop proxy / control_power_interrupted
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+in                                           5
+mcu_en                                     3.3
+contact                                    3.3
+ovp_ocp_wdo                                  0
+res_ok                                     3.3
+strobe                                       0
+loop                               0.000937234
+stop_gate                             0.207129
+q35_drive                                    0
+fault_n                                    3.3
+latch_clr_n                                3.3
+clear                                        0
+armed                                      1.1
+edge                                         0
+sample_data                                3.3
+ready_latch                                  0
+feed                               4.54545e-09
+bias_ok                                    3.3
+hv_ready                                   3.3
+digits_req                                 3.3
+pwm_permit                                   0
+drive_ok                                     0
+oe_sink                                      0
+hc_oe_n                                    3.3
+gate_bias                                 11.6
+in_minus                                  11.6
+permit                                       0
+gmos                                         0
+pwm                                          0
+gate_out                                     0
+bstatus#branch                               0
+bpermit#branch                               0
+bu10#branch                                  0
+bu19#branch                                  0
+bu15#branch                                  0
+brepl#branch                                 0
+bdata#branch                          -2.2e-12
+bclear#branch                                0
+bu9#branch                                   0
+bdrive#branch                                0
+vrequest#branch                              0
+vbias2#branch                        -1.16e-11
+vdigits#branch                               0
+vhv_ready#branch                             0
+vbias#branch                                 0
+varm#branch                                  0
+vres#branch                                  0
+vfault#branch                                0
+vloop#branch                                 0
+vmcu#branch                                  0
+vsup#branch                             -5e-12
+vdd#branch                        -0.000937234
+
+
+No. of Data Rows : 10212
+binary raw file "waveform.raw"
+ngspice-47 done

@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\Administrator\.codex\worktrees\nxt-m3-r14-3\QS30-NXT-M3-R14\projects\NXT-M3\r14_3\candidate\R14_3-protection-coupon.kicad_sch</source>
+    <date>2026-11-22T12:23:02</date>
+    <tool>Eeschema 10.0.8</tool>
+    <textvar name="QUALIFICATION">HOLD</textvar>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>NXT-M3 R14.3 protection coupon</title>
+        <company/>
+        <rev>ENGINEERING HOLD</rev>
+        <date/>
+        <source>R14_3-protection-coupon.kicad_sch</source>
+        <comment number="1" value="Low-voltage fixture only. No HV or manufacture."/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D1">
+      <value>ES1G-13-F</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>https://www.diodes.com/datasheet/download/ES1G.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/ES1G.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="Diode" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57564140-9eaf-545c-ae0f-24558be0b990</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>ES1G-13-F</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>https://www.diodes.com/datasheet/download/ES1G.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/ES1G.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="Diode" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dc39f72c-52f3-5141-a1cf-bbb5f4636ef1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>ES1G-13-F</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>https://www.diodes.com/datasheet/download/ES1G.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Diode_SMD:D_SMA</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/ES1G.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="Diode" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7c47d6dd-cdf5-5fec-ab37-0569f9432bf0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q1">
+      <value>Jingdao MMBTA42</value>
+      <footprint>R14_3:Jingdao_MMBTA42_nominal</footprint>
+      <datasheet>https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</datasheet>
+      <fields>
+        <field name="Footprint">R14_3:Jingdao_MMBTA42_nominal</field>
+        <field name="Datasheet">https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="NPN" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38fdc152-f28d-5b1a-827b-1a29afc4072b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q2">
+      <value>Jingdao MMBTA42</value>
+      <footprint>R14_3:Jingdao_MMBTA42_nominal</footprint>
+      <datasheet>https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</datasheet>
+      <fields>
+        <field name="Footprint">R14_3:Jingdao_MMBTA42_nominal</field>
+        <field name="Datasheet">https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="NPN" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ee130b8c-c32f-5cd0-862c-071a19b44901</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q3">
+      <value>Jingdao MMBTA42</value>
+      <footprint>R14_3:Jingdao_MMBTA42_nominal</footprint>
+      <datasheet>https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</datasheet>
+      <fields>
+        <field name="Footprint">R14_3:Jingdao_MMBTA42_nominal</field>
+        <field name="Datasheet">https://ruelectronics.com/files/Datasheet_MMBTA42_Jingdao-f4487c6fcbed9717aa589a3e4524c22c.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="NPN" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46a6fa2f-e286-5ae4-ae18-ce596e3e00df</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Q4">
+      <value>2N7002BK</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://www.nexperia.com/product/2N7002BK</datasheet>
+      <fields>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">https://www.nexperia.com/product/2N7002BK</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="MOS" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bb6dab19-2394-5c15-a184-018a5a61038f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>3.0k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2f3141a-9e47-5056-b88a-3bdcb31a713d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>3.0k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f4afbf7-4fc4-51b2-a993-7a1caf45664d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>3.0k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e4167a8f-84b9-56f8-9777-9b73fe80d9f3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08cab904-90df-5a5b-8970-2b6d0b1a0715</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0e290bde-c4bf-5069-9322-accb3445bfe8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>17f15db8-8b34-5360-a978-cd096bb32e35</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3b7e9e55-bad7-5837-85b3-e78b536dbd6d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c8defe3-8aba-5bc7-9d59-8c2452096e2e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="R" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>53ac34d6-3ac9-59cd-a279-b98e36e0b325</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP1">
+      <value>DRV1</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e173ce27-d6e2-5f26-b904-92c6896782f7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP2">
+      <value>DRV2</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ae61a9a-5b3c-5750-a182-87ae8c0863ef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP3">
+      <value>DRV3</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d019253d-8a18-521c-a008-05f852224537</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP4">
+      <value>K1</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>36a75d8f-5949-5c7d-8e5b-3eefc1f6600c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP5">
+      <value>K2</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>912d9d6e-a9e9-575b-8834-add397ec4fe1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP6">
+      <value>K3</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6dc78599-da2f-5d81-8a3f-c82af02e5c7d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP7">
+      <value>PWM_PERMIT</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3c1ab3ff-7956-5c3c-a0e4-09c6a785d63b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP8">
+      <value>DRV_IN_MINUS</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27c52c31-635a-526e-aca9-007d9e1fef28</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP9">
+      <value>GATE_BIAS</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c5250a86-4d26-52d2-b6db-4669f4c1f268</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP10">
+      <value>3V3_TAP</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db3b02ee-9036-5437-8470-a340c12adf6e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP11">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.5mm</footprint>
+      <fields>
+        <field name="Footprint">TestPoint:TestPoint_Pad_D1.5mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="R14_3" part="TP" description=""/>
+      <property name="Sheetname" value="R14_3-protection-coupon"/>
+      <property name="Sheetfile" value="R14_3-protection-coupon.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f66c0471-c7d0-5bdc-af6a-07b600ac1d56</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="R14_3" part="Diode">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Diode</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="R14_3" part="MOS">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MOS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="R14_3" part="NPN">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NPN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="R14_3" part="R">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="R14_3" part="TP">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TP</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="Probe" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="R14_3">
+      <uri>${KIPRJMOD}/R14_3.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="3V3_TAP" class="Default">
+      <node ref="R9" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP10" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="2" name="BASE1" class="Default">
+      <node ref="Q1" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R4" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="3" name="BASE2" class="Default">
+      <node ref="Q2" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R5" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="4" name="BASE3" class="Default">
+      <node ref="Q3" pin="1" pinfunction="B_1" pintype="input"/>
+      <node ref="R3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R6" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="5" name="DRV1" class="Default">
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="6" name="DRV2" class="Default">
+      <node ref="D2" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="7" name="DRV3" class="Default">
+      <node ref="D3" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="8" name="DRV_IN_MINUS" class="Default">
+      <node ref="Q4" pin="3" pinfunction="D_3" pintype="passive"/>
+      <node ref="R8" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP8" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="9" name="FIELD1" class="Default">
+      <node ref="D1" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="10" name="FIELD2" class="Default">
+      <node ref="D2" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R2" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="11" name="FIELD3" class="Default">
+      <node ref="D3" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="R3" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="12" name="GATE_BIAS" class="LOW_VOLTAGE_POWER">
+      <node ref="R8" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="13" name="GND" class="LOW_VOLTAGE_POWER">
+      <node ref="Q1" pin="2" pinfunction="E_2" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="E_2" pintype="passive"/>
+      <node ref="Q3" pin="2" pinfunction="E_2" pintype="passive"/>
+      <node ref="Q4" pin="2" pinfunction="S_2" pintype="passive"/>
+      <node ref="R4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R9" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP11" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="14" name="K1" class="Default">
+      <node ref="Q1" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="15" name="K2" class="Default">
+      <node ref="Q2" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="TP5" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="16" name="K3" class="Default">
+      <node ref="Q3" pin="3" pinfunction="C_3" pintype="passive"/>
+      <node ref="TP6" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+    <net code="17" name="PWM_PERMIT" class="SAFETY_CONTROL">
+      <node ref="Q4" pin="1" pinfunction="G_1" pintype="input"/>
+      <node ref="R7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP7" pin="1" pinfunction="Probe_1" pintype="passive"/>
+    </net>
+  </nets>
+</export>

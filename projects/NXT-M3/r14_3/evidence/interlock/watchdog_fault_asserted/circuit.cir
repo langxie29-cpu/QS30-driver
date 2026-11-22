@@ -1,0 +1,65 @@
+R14.3 low-voltage stop proxy / watchdog_fault_asserted
+VDD vdd 0 3.3
+VSUP in 0 5
+VMCU mcu_en 0 PWL(0 3.3)
+VLOOP contact 0 PWL(0 3.3)
+VFAULT ovp_ocp_wdo 0 PWL(0 0 0.039999 0 0.04 3.3 0.064999 3.3 0.065 0)
+VRES res_ok 0 PWL(0 3.3)
+VARM strobe 0 PWL(0 0 0.019999 0 0.02 3.3 0.089999 3.3 0.09 0
++ 0.109999 0 0.11 3.3 0.124999 3.3 0.125 0 0.159999 0 0.16 3.3 0.179999 3.3 0.18 0)
+SNC loop 0 contact 0 SW_CTL
+R509 loop stop_gate 220
+R510 vdd stop_gate 3300
+C64 stop_gate 0 1n
+BDRIVE q35_drive 0 V=(v(stop_gate)>1.6 ? 3.3 : 0)
+SQ35 fault_n 0 q35_drive 0 SW_CTL
+SOTHER fault_n 0 ovp_ocp_wdo 0 SW_CTL
+R27 vdd fault_n 10k
+BU9 latch_clr_n 0 V=(v(fault_n)>2 && v(mcu_en)>2 ? 3.3 : 0)
+BCLEAR clear 0 V=(v(latch_clr_n)<1 ? 3.3 : 0)
+SCLEAR armed 0 clear 0 SW_CTL
+CEDGE strobe edge 10n
+REDGE edge 0 10k
+BDATA sample_data 0 V=(v(res_ok)>2 && v(latch_clr_n)>2 ? 3.3 : 0)
+SCLK sample_data armed edge 0 SW_CLK
+CQ armed 0 1n
+RQ armed 0 1T
+R26 ready_latch 0 47k
+BREPL ready_latch 0 V=(v(armed)>2 ? 3.3 : 0)
+S11 in feed ready_latch 0 SW_EF
+C28 feed 0 22u
+R45 feed 0 10k
+RDUMMY feed 0 1k
+VBIAS bias_ok 0 3.3
+VHV_READY hv_ready 0 3.3
+VDIGITS digits_req 0 3.3
+BU15 pwm_permit 0 V=(v(ready_latch)>2 && v(bias_ok)>2 ? 3.3 : 0)
+BU19 drive_ok 0 V=(v(pwm_permit)>2 && v(hv_ready)>2 ? 3.3 : 0)
+BU10 oe_sink 0 V=(v(drive_ok)>2 && v(digits_req)>2 ? 3.3 : 0)
+SQ31 hc_oe_n 0 oe_sink 0 SW_CTL
+R24 vdd hc_oe_n 10k
+.model SW_CTL SW(Ron=1 Roff=1T Vt=1.2 Vh=.02)
+.model SW_CLK SW(Ron=100 Roff=1T Vt=1.3 Vh=.04)
+.model SW_EF SW(Ron=.028 Roff=1T Vt=1.2 Vh=.02)
+
+Vbias2 gate_bias 0 11.6
+Rpint gate_bias in_minus 200k
+Rpext gate_bias in_minus 10k
+Cinput in_minus 0 2.2e-10
+Bpermit permit 0 V=v(pwm_permit)
+Rlogic permit gmos 100
+Rgate gmos 0 100k
+Cgate gmos 0 40p
+Spermit in_minus 0 gmos 0 SWMOS
+.model SWMOS SW(Ron=2 Roff=1T Vt=1.5 Vh=.03)
+Vrequest pwm 0 PWL(0 0 .015 0 .015001 3.3)
+Bstatus gate_out 0 V=(v(pwm)>2 && v(in_minus)<2.1 && v(gate_bias)>4.4 ? 3.3 : 0)
+.tran 20u .20 0 20u
+.control
+run
+set filetype=binary
+write waveform.raw v(vdd) v(contact) v(strobe) v(stop_gate) v(fault_n) v(latch_clr_n) v(mcu_en)
++ v(res_ok) v(armed) v(pwm_permit) v(hc_oe_n) v(feed) v(pwm) v(gmos) v(in_minus) v(gate_out)
+quit
+.endc
+.end

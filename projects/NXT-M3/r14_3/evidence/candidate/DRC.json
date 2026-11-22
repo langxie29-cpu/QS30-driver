@@ -1,0 +1,452 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-22T12:23:02",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "R14_3-protection-coupon.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.9142 mm)",
+            "items": [
+                {
+                    "description": "走线 [GND] (F.Cu), 长度: 4.0500 mm",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 50.95
+                    },
+                    "uuid": "40e0ece2-c1c7-48c9-8229-ec97c1cd23e9"
+                },
+                {
+                    "description": "走线 [K2] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 50.0
+                    },
+                    "uuid": "ae6afc02-66d8-4224-839f-7cf821962b53"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.9142 mm)",
+            "items": [
+                {
+                    "description": "走线 [K3] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 66.0
+                    },
+                    "uuid": "6964ff9f-7881-409c-8b4f-2e61da9bc801"
+                },
+                {
+                    "description": "走线 [BASE3] (F.Cu), 长度: 11.0000 mm",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 65.05
+                    },
+                    "uuid": "bd027428-7dbd-4535-a0a6-cc564df63af4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.9142 mm)",
+            "items": [
+                {
+                    "description": "走线 [K1] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 34.0
+                    },
+                    "uuid": "49c7fdcd-0325-4524-abb2-5501592a6a04"
+                },
+                {
+                    "description": "走线 [BASE1] (F.Cu), 长度: 11.0000 mm",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 33.049999
+                    },
+                    "uuid": "c36ef3d2-3590-45dd-88b8-3b742c80ea19"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.4947 mm)",
+            "items": [
+                {
+                    "description": "走线 [K2] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 50.0
+                    },
+                    "uuid": "ae6afc02-66d8-4224-839f-7cf821962b53"
+                },
+                {
+                    "description": "F.Cu 上 Q2 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 50.95
+                    },
+                    "uuid": "b3707f22-a4af-4666-a090-8350a3160715"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.4947 mm)",
+            "items": [
+                {
+                    "description": "走线 [GND] (F.Cu), 长度: 4.0500 mm",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 34.95
+                    },
+                    "uuid": "589176f8-339f-4f3a-9bb8-8dd56ed46f60"
+                },
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 3 [K1]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 34.0
+                    },
+                    "uuid": "b4fcecc2-94a0-4f5d-b483-0f3546d1a60e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.4947 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 3 [K1]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 34.0
+                    },
+                    "uuid": "b4fcecc2-94a0-4f5d-b483-0f3546d1a60e"
+                },
+                {
+                    "description": "走线 [BASE1] (F.Cu), 长度: 11.0000 mm",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 33.049999
+                    },
+                    "uuid": "c36ef3d2-3590-45dd-88b8-3b742c80ea19"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.9142 mm)",
+            "items": [
+                {
+                    "description": "走线 [BASE2] (F.Cu), 长度: 11.0000 mm",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 49.05
+                    },
+                    "uuid": "66466697-249e-41a1-bbf3-34a34028b335"
+                },
+                {
+                    "description": "走线 [K2] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 50.0
+                    },
+                    "uuid": "ae6afc02-66d8-4224-839f-7cf821962b53"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.9142 mm)",
+            "items": [
+                {
+                    "description": "走线 [GND] (F.Cu), 长度: 4.0500 mm",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 66.95
+                    },
+                    "uuid": "059261b7-5490-4b4e-b9fa-7aa644ac7eeb"
+                },
+                {
+                    "description": "走线 [K3] (F.Cu), 长度: 22.0000 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 66.0
+                    },
+                    "uuid": "6964ff9f-7881-409c-8b4f-2e61da9bc801"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.4947 mm)",
+            "items": [
+                {
+                    "description": "走线 [BASE3] (F.Cu), 长度: 11.0000 mm",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 65.05
+                    },
+                    "uuid": "bd027428-7dbd-4535-a0a6-cc564df63af4"
+                },
+                {
+                    "description": "F.Cu 上 Q3 的焊盘 3 [K3]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 66.0
+                    },
+                    "uuid": "dfc2ae3e-4b02-43cc-9464-21072c34b025"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 1 [BASE1]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 33.05
+                    },
+                    "uuid": "3dcbfa87-f461-43d5-98ba-ff438ca9aec7"
+                },
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 3 [K1]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 34.0
+                    },
+                    "uuid": "b4fcecc2-94a0-4f5d-b483-0f3546d1a60e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q3 的焊盘 1 [BASE3]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 65.05
+                    },
+                    "uuid": "07fb802f-bedc-4521-8c3c-fd1d9fe58d55"
+                },
+                {
+                    "description": "F.Cu 上 Q3 的焊盘 3 [K3]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 66.0
+                    },
+                    "uuid": "dfc2ae3e-4b02-43cc-9464-21072c34b025"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q3 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 66.95
+                    },
+                    "uuid": "3c29b73a-18ef-44ac-bb32-77d56eeddc2f"
+                },
+                {
+                    "description": "F.Cu 上 Q3 的焊盘 3 [K3]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 66.0
+                    },
+                    "uuid": "dfc2ae3e-4b02-43cc-9464-21072c34b025"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 3 [K1]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 34.0
+                    },
+                    "uuid": "b4fcecc2-94a0-4f5d-b483-0f3546d1a60e"
+                },
+                {
+                    "description": "F.Cu 上 Q1 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 34.95
+                    },
+                    "uuid": "dc3b3f57-928d-42d5-9cec-47d858d7a675"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'Reverse-block copper screening across diode' 间距 2.0000 mm; 实际 1.5000 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 D3 的焊盘 2 [DRV3]",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 65.05
+                    },
+                    "uuid": "1d4d2131-87e4-443d-a3c7-69fa620b3793"
+                },
+                {
+                    "description": "F.Cu 上 D3 的焊盘 1 [FIELD3]",
+                    "pos": {
+                        "x": 44.0,
+                        "y": 65.05
+                    },
+                    "uuid": "e0cabf47-9ece-44de-b548-4701faf483f9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q2 的焊盘 1 [BASE2]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 49.05
+                    },
+                    "uuid": "4a16c1c0-8cc8-455f-9dd6-38d7842e5a9b"
+                },
+                {
+                    "description": "F.Cu 上 Q2 的焊盘 3 [K2]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 50.0
+                    },
+                    "uuid": "822f6c4c-2600-4335-8c31-b421a10eccd4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'Reverse-block copper screening across diode' 间距 2.0000 mm; 实际 1.5000 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 D1 的焊盘 2 [DRV1]",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 33.049999
+                    },
+                    "uuid": "ba2bc0f0-df57-4ee1-a111-39ff7efdfff3"
+                },
+                {
+                    "description": "F.Cu 上 D1 的焊盘 1 [FIELD1]",
+                    "pos": {
+                        "x": 44.0,
+                        "y": 33.049999
+                    },
+                    "uuid": "f92e1866-03dc-4d4d-80d4-0b9993687f69"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'Reverse-block copper screening across diode' 间距 2.0000 mm; 实际 1.5000 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 D2 的焊盘 2 [DRV2]",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 49.05
+                    },
+                    "uuid": "c104fa51-c737-4759-9cb6-b53887c0b467"
+                },
+                {
+                    "description": "F.Cu 上 D2 的焊盘 1 [FIELD2]",
+                    "pos": {
+                        "x": 44.0,
+                        "y": 49.05
+                    },
+                    "uuid": "f7ff6aca-04c7-42bd-816f-d4770210240c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 Q2 的焊盘 3 [K2]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 50.0
+                    },
+                    "uuid": "822f6c4c-2600-4335-8c31-b421a10eccd4"
+                },
+                {
+                    "description": "F.Cu 上 Q2 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 69.0,
+                        "y": 50.95
+                    },
+                    "uuid": "b3707f22-a4af-4666-a090-8350a3160715"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

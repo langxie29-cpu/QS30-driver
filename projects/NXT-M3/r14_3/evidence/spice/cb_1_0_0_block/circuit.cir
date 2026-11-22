@@ -1,0 +1,92 @@
+NXT-M3 R14.3 | cb_1_0_0_block | electrical terminal-power screening
+.temp 25
+.options reltol=2e-5 abstol=1e-11 method=gear
+.model QPROXY NPN(IS=1e-14 BF=60 VAF=80 BR=2 IKF=.05)
+.model DCLAMP D(IS=1e-12 N=1 RS=2)
+.model DBLOCK D(IS=2e-9 N=1.7 RS=1 BV=400 IBV=100u CJO=12p TT=12n)
+.model SFAULT SW(RON=.001 ROFF=1e12 VT=.5 VH=0)
+.model SDRIVE SW(RON=50 ROFF=1e12 VT=.5 VH=0)
+.model SCONTACT SW(RON=10 ROFF=1e12 VT=.5 VH=0)
+Vtarget target 0 195
+Bfeed 0 hfeed I=min(max((v(target)-v(hv))/.1,0),0.03)
+Vfeed hfeed hv 0
+Resr hv hcap 0.25
+Chv hcap 0 3.63u
+Rbleed1 hv 0 500960
+Rbleed2 hv 0 500960
+Vlimit rlimit 0 0
+Breg 0 reg I=min(max((v(rlimit)-v(rail))/.1,0),.25)
+Vreg reg rail 0
+Crail rail 0 10u
+.ic V(hcap)=195 V(rail)=0
+Rrail rail 0 1000
+Vevent event 0 PWL(0 0 4.999m 0 5m 1)
+Vmid middle 0 0
+Sbusfault hv faultto never 0 SCONTACT
+Vbusfault faultto 0 0
+Vmiden miden 0 1
+Vbursts bursts 0 PULSE(0 1 5m 1u 1u 1m 4m)
+
+Ra1 hv an1 19800
+Vana1 an1 tube1 0
+Bignition1 command1 0 V=.5+.5*tanh((v(tube1,k1)-155+(155-130-.12)*v(lit1))/.25)
+Rstate1 command1 lit1 10k
+Cstate1 lit1 0 2n ic=0
+Btube1 tube1 k1 I=v(tube1,k1)/1e9+max(v(tube1,k1)-130-.35,0)*1/100
+Rfloat1 k1 0 1e10
+Vup1 up1 0 0
+Vdown1 down1 0 0
+Smid1 middle mdrive1 0 0 SDRIVE
+Vmidmeter1 mdrive1 out1 0
+Sup1 rail out1 up1 0 SDRIVE
+Sdown1 out1 0 down1 0 SDRIVE
+Vcmon1 out1 clamp1 0
+Dhigh1 clamp1 rail DCLAMP
+Dblock1 out1 driven1 DBLOCK
+Vdrive1 driven1 rbase1 0
+Rbase1 rbase1 b1 3000
+Rpd1 b1 0 4700
+Rpu1 b1 rail 1000000000000.0
+Vb1 b1 qb1 0
+Vc1 k1 c1 0
+Q1 c1 qb1 0 QPROXY
+Rcb1 k1 cblink1 1
+Scb1 cblink1 cbmon1 event 0 SFAULT
+Vcbmeter1 cbmon1 b1 0
+Rce1 k1 celink1 1000000000000.0
+Sce1 celink1 cemon1 event 0 SFAULT
+Vcemeter1 cemon1 0 0
+Ssurface1 k1 surface1 0 0 SCONTACT
+Vsurface1 surface1 0 0
+Bpq1 pq1 0 V=v(c1)*i(Vc1)+v(qb1)*i(Vb1)
+Bpra1 pra1 0 V=v(hv,an1)*i(Vana1)
+Bptube1 ptube1 0 V=v(tube1,k1)*i(Vana1)
+Bprbase1 prbase1 0 V=v(rbase1,b1)*i(Vdrive1)
+Bprpd1 prpd1 0 V=v(b1)^2/4700
+Bprcb1 prcb1 0 V=v(k1,b1)*i(Vcbmeter1)
+Bprce1 prce1 0 V=v(k1)*i(Vcemeter1)
+Bpsurface1 psurface1 0 V=v(k1,surface1)*i(Vsurface1)
+Bpdiode1 pdiode1 0 V=v(out1,driven1)*i(Vdrive1)
+Bpdriver1 pdriver1 0 V=v(rail,out1)^2/({50+(1e12-50)*(v(up1)<.5)})+v(out1)^2/({50+(1e12-50)*(v(down1)<.5)})
+Bclamp1 pclamp1 0 V=v(out1,rail)*i(Vcmon1)+v(out1)*i(Vlowmeter1)
+Vlowmeter1 out1 lower1 0
+Dreturn1 0 lower1 DCLAMP
+Bpmid1 pmid1 0 V=v(middle)*i(Vmidmeter1)
+Bpmidloss1 pmidloss1 0 V=v(middle,mdrive1)*i(Vmidmeter1)
+Bpleak1 pleak1 0 V=v(k1)^2/1e10+v(b1,rail)^2/1000000000000.0
+
+Vnever never 0 0
+Bhvpower hvpower 0 V=v(hv)*i(Vfeed)
+Blvpower lvpower 0 V=v(rail)*i(Vreg)
+Bbleed pbleed 0 V=v(hv)^2*(1/500960+1/500960)
+Bcaploss pcaploss 0 V=v(hv,hcap)^2/0.25
+Bbusfault pbusfault 0 V=v(hv,faultto)*i(Vbusfault)
+Brail prail 0 V=v(rail)^2/1000
+.tran 0.0001 0.1 0 0.0001
+.control
+run
+set filetype=binary
+write waveform.raw v(hv) v(hcap) v(rail) i(vfeed) i(vreg) i(vbusfault) v(hvpower) v(lvpower) v(pbleed) v(pcaploss) v(pbusfault) v(prail) v(c1) i(vc1) v(qb1) i(vb1) i(vana1) v(out1) i(vcmon1) i(vdrive1) i(vsurface1) v(pmid1) v(pq1) v(pra1) v(ptube1) v(prbase1) v(prpd1) v(prcb1) v(prce1) v(psurface1) v(pdiode1) v(pdriver1) v(pclamp1) v(pmidloss1) v(pleak1)
+quit
+.endc
+.end

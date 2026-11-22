@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.cir text eol=lf
+*.py text eol=lf
+*.csv text eol=lf
+evidence/** -text whitespace=cr-at-eol
+evidence/**/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+*.gz binary

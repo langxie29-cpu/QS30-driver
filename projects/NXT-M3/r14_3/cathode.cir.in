@@ -1,0 +1,41 @@
+NXT-M3 R14.3 | {name} | electrical terminal-power screening
+.temp {temp}
+.options reltol=2e-5 abstol=1e-11 method=gear
+.model QPROXY NPN(IS=1e-14 BF={gain} VAF=80 BR=2 IKF=.05)
+.model DCLAMP D(IS=1e-12 N=1 RS=2)
+.model DBLOCK D(IS=2e-9 N=1.7 RS=1 BV=400 IBV=100u CJO=12p TT=12n)
+.model SFAULT SW(RON=.001 ROFF=1e12 VT=.5 VH=0)
+.model SDRIVE SW(RON=50 ROFF=1e12 VT=.5 VH=0)
+.model SCONTACT SW(RON={fault_r} ROFF=1e12 VT=.5 VH=0)
+Vtarget target 0 {target}
+Bfeed 0 hfeed I=min(max((v(target)-v(hv))/.1,0),{source_limit})
+Vfeed hfeed hv 0
+Resr hv hcap {esr}
+Chv hcap 0 3.63u
+Rbleed1 hv 0 500960
+Rbleed2 hv 0 {bleed2}
+Vlimit rlimit 0 {regulator}
+Breg 0 reg I=min(max((v(rlimit)-v(rail))/.1,0),.25)
+Vreg reg rail 0
+Crail rail 0 10u
+.ic V(hcap)={initial} V(rail)={rail_initial}
+Rrail rail 0 {rail_load}
+Vevent event 0 {event}
+Vmid middle 0 {middle}
+Sbusfault hv faultto event 0 SCONTACT
+Vbusfault faultto {bypass_node} 0
+{channels}
+Bhvpower hvpower 0 V=v(hv)*i(Vfeed)
+Blvpower lvpower 0 V=v(rail)*i(Vreg)
+Bbleed pbleed 0 V=v(hv)^2*(1/500960+1/{bleed2})
+Bcaploss pcaploss 0 V=v(hv,hcap)^2/{esr}
+Bbusfault pbusfault 0 V=v(hv,faultto)*i(Vbusfault)
+Brail prail 0 V=v(rail)^2/{rail_load}
+.tran {step} {end} 0 {step}
+.control
+run
+set filetype=binary
+write waveform.raw {vectors}
+quit
+.endc
+.end
