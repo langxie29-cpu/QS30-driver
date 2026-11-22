@@ -1,0 +1,28 @@
+case,condition,evidence_kind,model_peak_abs_bus_V,model_peak_abs_CB_V,model_peak_abs_CE_V,model_peak_abs_BE_V,qualified_actual_peak,evidence,limits
+off,正常截止及170V稳态,NGSPICE_PROXY,170,169.9982841,169.9982849,7.946396785e-07,UNKNOWN,../r14/evidence/simulation/off/waveform.raw,理想电源与无寄生模型
+on,正常导通,NGSPICE_PROXY,170,0.6643050242,0.0290772681,0.6933538283,UNKNOWN,../r14/evidence/simulation/on/waveform.raw,130V固定管压降，C-B按同一时刻的VCE减VBE
+off_195,195V持续异常供能并截止,NGSPICE_PROXY,195,194.9980409,194.9980418,9.114967792e-07,UNKNOWN,evidence/off_195/waveform.raw,R14截止网表仅母线及C47初值升至195V
+half_170_sustain,170V持续半导通,NGSPICE_PROXY,170,84.83014812,84.83014852,3.965357489e-07,UNKNOWN,../r14/evidence/simulation/half_170_sustain/waveform.raw,19.8k欧等效故障，持续供能
+half_195_sustain,195V持续半导通,NGSPICE_PROXY,195,97.3280547,97.32805516,4.549550822e-07,UNKNOWN,../r14/evidence/simulation/half_195_sustain/waveform.raw,19.8k欧等效故障，持续供能
+half_195_isolated,195V理想切断后储能,NGSPICE_PROXY,194.9686328,97.31237352,97.31237398,4.548817832e-07,UNKNOWN,../r14/evidence/simulation/half_195_isolated/waveform.raw,C47=3.63uF，切断从初始时刻生效
+half_195_tube130,195V半导通有管压降,NGSPICE_PROXY,195,32.34394507,32.34394522,1.511979421e-07,UNKNOWN,../r14/evidence/simulation/half_195_tube130/waveform.raw,130V管压降敏感性
+ce_short,C-E短路,NGSPICE_PROXY,195,0.0009829913775,0.0009829913826,5.030609751e-12,UNKNOWN,../r14/evidence/simulation/ce_short/waveform.raw,0.1欧短路，误点亮及阳极耗散
+cb_10meg,C-B高阻泄漏,NGSPICE_PROXY,195,194.3738073,194.4192361,0.04542881528,UNKNOWN,../r14/evidence/simulation/cb_10meg/waveform.raw,10M欧，接近完整母线应力
+cb_1meg,C-B高阻泄漏,NGSPICE_PROXY,195,190.5074512,190.9526873,0.4452360909,UNKNOWN,../r14/evidence/simulation/cb_1meg/waveform.raw,1M欧
+cb_100k,C-B泄漏,NGSPICE_PROXY,195,39.067915,39.76708623,0.6991712284,UNKNOWN,../r14/evidence/simulation/cb_100k/waveform.raw,100k欧，局部功率上升
+cb_10k,C-B泄漏,NGSPICE_PROXY,195,4.732501259,5.447291023,0.714790616,UNKNOWN,../r14/evidence/simulation/cb_10k/waveform.raw,10k欧
+cb_short,C-B短路,NGSPICE_PROXY,195,4.907733851e-05,0.7172683389,0.7172192616,UNKNOWN,../r14/evidence/simulation/cb_short/waveform.raw,0.1欧，GPIO通路为代理
+leak_ce_1meg,C-E泄漏,NGSPICE_PROXY,195,190.9637559,190.9637568,8.926392019e-07,UNKNOWN,../r14/evidence/simulation/leak_ce_1meg/waveform.raw,1M欧
+leak_ce_100k,C-E泄漏,NGSPICE_PROXY,195,162.5108714,162.5108722,7.596410446e-07,UNKNOWN,../r14/evidence/simulation/leak_ce_100k/waveform.raw,100k欧
+leak_ce_10k,C-E泄漏,NGSPICE_PROXY,195,65.317833,65.31783331,3.053287589e-07,UNKNOWN,../r14/evidence/simulation/leak_ce_10k/waveform.raw,10k欧
+open_cathode,开路阴极且驱动开启,NGSPICE_PROXY,170,0.6657505983,0.01093908114,0.6766874305,UNKNOWN,../r14/evidence/simulation/open_cathode/waveform.raw,模型无实际浮置耦合或点火
+erroneous_on,195V误导通,NGSPICE_PROXY,195,0.6571464275,0.06605382921,0.7232000724,UNKNOWN,../r14/evidence/simulation/erroneous_on/waveform.raw,0V管压降的包络工况
+three_half,195V三路半导通,NGSPICE_PROXY,195,97.3280547,97.32805516,4.549550822e-07,UNKNOWN,../r14/evidence/simulation/three_half/waveform.raw,各支路与总电流须分别考虑
+logic_off_cb_short,逻辑失供与C-B短路,NGSPICE_PROXY,195,4.907733851e-05,0.7172683389,0.7172192617,UNKNOWN,../r14/evidence/simulation/logic_off_cb_short/waveform.raw,简单驱动及钳位代理
+highz_cb_short,驱动高阻与C-B短路,NGSPICE_PROXY,195,3.411609945e-05,0.7177306668,0.7176965513,UNKNOWN,../r14/evidence/simulation/highz_cb_short/waveform.raw,简单钳位代理，可回灌
+intermediate_output,驱动中间电平,NGSPICE_PROXY,195,178.4612373,179.0800281,0.6187907678,UNKNOWN,../r14/evidence/simulation/intermediate_output/waveform.raw,0.82V代理输出
+startup,启动及首次点火,UNBOUNDED,,,,,UNKNOWN,../r14/HV_STOP_VALIDATION.md,含高压上升超调、欠压高阻、点火跃迁及寄生；无板级Q1波形
+shutdown,关断与STOP,UNBOUNDED,,,,,UNKNOWN,../r14/HV_STOP_VALIDATION.md,正常关断、掉电次序及切断卡通；代理不提供Q1逐针峰值
+feedback_fault,反馈短路及OVP动作,HISTORICAL_HV_BUS_ONLY,188.876,,,,UNKNOWN,../r11/GATE0_SAFETY_ASSESSMENT.md,R11空载代理母线峰值；R14 Q1瞬态未定
+floating,阴极积荷、寄生耦合及实际重复峰值,UNBOUNDED,,,,,UNKNOWN,../r14/INSULATION_COORDINATION.md,缺寄生、真实管模型和最坏实测，需覆盖正负峰及频谱
+base_fault,基极回路开路、关断负向及故障回灌,UNBOUNDED,,,,,UNKNOWN,../r14/FAULT_COVERAGE_MATRIX.csv,V_EBO 5V为器件额定；真实反向V_BE及失供状态未限定

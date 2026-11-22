@@ -1,0 +1,1614 @@
+{
+  "copper_layers": 4,
+  "tracks": [
+    {
+      "layer": "B.Cu",
+      "hv_screened": false,
+      "count": 1265
+    },
+    {
+      "layer": "B.Cu",
+      "hv_screened": true,
+      "count": 43
+    },
+    {
+      "layer": "F.Cu",
+      "hv_screened": false,
+      "count": 1575
+    },
+    {
+      "layer": "F.Cu",
+      "hv_screened": true,
+      "count": 139
+    },
+    {
+      "layer": "In1.Cu",
+      "hv_screened": false,
+      "count": 131
+    },
+    {
+      "layer": "In2.Cu",
+      "hv_screened": false,
+      "count": 42
+    }
+  ],
+  "r40_dnp": true,
+  "u11_dnp": true,
+  "cathode": [
+    {
+      "item": "drive",
+      "a": "U20.15",
+      "b": "R100.1",
+      "net": "DRV_00",
+      "copper_connected": true,
+      "connected_item_count": 20
+    },
+    {
+      "item": "base_feed",
+      "a": "R100.2",
+      "b": "Q1.1",
+      "net": "BASE_00",
+      "copper_connected": true,
+      "connected_item_count": 10
+    },
+    {
+      "item": "base_pulldown",
+      "a": "R200.1",
+      "b": "Q1.1",
+      "net": "BASE_00",
+      "copper_connected": true,
+      "connected_item_count": 10
+    },
+    {
+      "item": "return_local",
+      "a": "R200.2",
+      "b": "Q1.2",
+      "net": "GND",
+      "copper_connected": true,
+      "connected_item_count": 337
+    },
+    {
+      "item": "return_driver",
+      "a": "U20.8",
+      "b": "Q1.2",
+      "net": "GND",
+      "copper_connected": true,
+      "connected_item_count": 337
+    },
+    {
+      "item": "cathode_socket",
+      "a": "Q1.3",
+      "b": "V1.3",
+      "net": "K1_0",
+      "copper_connected": true,
+      "connected_item_count": 27
+    }
+  ],
+  "stop": [
+    {
+      "item": "contact",
+      "a": "J6.1",
+      "b": "R509.1",
+      "net": "STOP_LOOP",
+      "copper_connected": true,
+      "connected_item_count": 11
+    },
+    {
+      "item": "ESD",
+      "a": "J6.1",
+      "b": "D15.1",
+      "net": "STOP_LOOP",
+      "copper_connected": true,
+      "connected_item_count": 11
+    },
+    {
+      "item": "gate",
+      "a": "R509.2",
+      "b": "Q35.1",
+      "net": "STOP_GATE",
+      "copper_connected": true,
+      "connected_item_count": 25
+    },
+    {
+      "item": "gate_bias",
+      "a": "R510.2",
+      "b": "Q35.1",
+      "net": "STOP_GATE",
+      "copper_connected": true,
+      "connected_item_count": 25
+    },
+    {
+      "item": "gate_cap",
+      "a": "C64.1",
+      "b": "Q35.1",
+      "net": "STOP_GATE",
+      "copper_connected": true,
+      "connected_item_count": 25
+    },
+    {
+      "item": "loop_return",
+      "a": "J6.2",
+      "b": "Q35.2",
+      "net": "GND",
+      "copper_connected": true,
+      "connected_item_count": 337
+    },
+    {
+      "item": "latch_return",
+      "a": "J6.2",
+      "b": "U8.4",
+      "net": "GND",
+      "copper_connected": true,
+      "connected_item_count": 337
+    },
+    {
+      "item": "gate_supply",
+      "a": "R510.1",
+      "b": "U8.8",
+      "net": "3V3",
+      "copper_connected": true,
+      "connected_item_count": 332
+    },
+    {
+      "item": "fault",
+      "a": "Q35.3",
+      "b": "U9.2",
+      "net": "FAULT_N",
+      "copper_connected": true,
+      "connected_item_count": 153
+    },
+    {
+      "item": "fault_watchdog",
+      "a": "U25.8",
+      "b": "U9.2",
+      "net": "FAULT_N",
+      "copper_connected": true,
+      "connected_item_count": 153
+    },
+    {
+      "item": "fault_ovp",
+      "a": "U13.1",
+      "b": "U9.2",
+      "net": "FAULT_N",
+      "copper_connected": true,
+      "connected_item_count": 153
+    },
+    {
+      "item": "fault_ocp",
+      "a": "U13.7",
+      "b": "U9.2",
+      "net": "FAULT_N",
+      "copper_connected": true,
+      "connected_item_count": 153
+    },
+    {
+      "item": "fault_log",
+      "a": "Q35.3",
+      "b": "U3.9",
+      "net": "FAULT_N",
+      "copper_connected": true,
+      "connected_item_count": 153
+    },
+    {
+      "item": "latch_reset",
+      "a": "U9.4",
+      "b": "U8.6",
+      "net": "LATCH_CLR_N",
+      "copper_connected": true,
+      "connected_item_count": 10
+    },
+    {
+      "item": "latch_clock",
+      "a": "J4.2",
+      "b": "U8.1",
+      "net": "ARM_STROBE",
+      "copper_connected": true,
+      "connected_item_count": 21
+    },
+    {
+      "item": "latch_preset",
+      "a": "U8.7",
+      "b": "U8.8",
+      "net": "3V3",
+      "copper_connected": true,
+      "connected_item_count": 332
+    },
+    {
+      "item": "latch_vdd",
+      "a": "U8.8",
+      "b": "U9.5",
+      "net": "3V3",
+      "copper_connected": true,
+      "connected_item_count": 332
+    },
+    {
+      "item": "reset_supervisor",
+      "a": "U4.1",
+      "b": "U9.1",
+      "net": "MCU_EN",
+      "copper_connected": true,
+      "connected_item_count": 165
+    },
+    {
+      "item": "residual_pullup",
+      "a": "R28.2",
+      "b": "U8.2",
+      "net": "RESIDUAL_OK",
+      "copper_connected": true,
+      "connected_item_count": 10
+    },
+    {
+      "item": "residual_observer",
+      "a": "U14.1",
+      "b": "U8.2",
+      "net": "RESIDUAL_OK",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "clear_to_cutoff_en",
+      "a": "U8.5",
+      "b": "U11.1",
+      "net": "ARMED",
+      "copper_connected": true,
+      "connected_item_count": 82
+    },
+    {
+      "item": "clear_to_pwm_gate",
+      "a": "U8.5",
+      "b": "U15.1",
+      "net": "ARMED",
+      "copper_connected": true,
+      "connected_item_count": 82
+    },
+    {
+      "item": "bias_comp",
+      "a": "U14.7",
+      "b": "U15.2",
+      "net": "BIAS_OK",
+      "copper_connected": true,
+      "connected_item_count": 86
+    },
+    {
+      "item": "pwm_gate_supply",
+      "a": "U15.5",
+      "b": "U8.8",
+      "net": "3V3",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "pwm_gate_return",
+      "a": "U15.3",
+      "b": "J6.2",
+      "net": "GND",
+      "copper_connected": false,
+      "connected_item_count": 130
+    },
+    {
+      "item": "pwm_to_blanking",
+      "a": "U15.4",
+      "b": "U19.1",
+      "net": "PWM_PERMIT",
+      "copper_connected": true,
+      "connected_item_count": 60
+    },
+    {
+      "item": "pwm_to_converter",
+      "a": "U15.4",
+      "b": "R77.1",
+      "net": "PWM_PERMIT",
+      "copper_connected": true,
+      "connected_item_count": 60
+    },
+    {
+      "item": "ready_to_blanking",
+      "a": "U17.11",
+      "b": "U19.2",
+      "net": "HV_READY",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "blanking_to_request_gate",
+      "a": "U19.4",
+      "b": "U10.1",
+      "net": "DRIVE_OK",
+      "copper_connected": true,
+      "connected_item_count": 7
+    },
+    {
+      "item": "display_request",
+      "a": "U3.7",
+      "b": "U10.2",
+      "net": "DIGITS_REQ",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "blanking_gate",
+      "a": "U10.4",
+      "b": "Q31.1",
+      "net": "OE_SINK",
+      "copper_connected": true,
+      "connected_item_count": 16
+    },
+    {
+      "item": "blanking_pulldown",
+      "a": "Q31.1",
+      "b": "R25.1",
+      "net": "OE_SINK",
+      "copper_connected": true,
+      "connected_item_count": 16
+    },
+    {
+      "item": "blanking_source_return",
+      "a": "Q31.2",
+      "b": "J6.2",
+      "net": "GND",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "blanking_pulldown_return",
+      "a": "R25.2",
+      "b": "J6.2",
+      "net": "GND",
+      "copper_connected": false,
+      "connected_item_count": 130
+    },
+    {
+      "item": "blanking_oe_pullup",
+      "a": "Q31.3",
+      "b": "R24.2",
+      "net": "HC_OE_N",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "blanking_u20",
+      "a": "Q31.3",
+      "b": "U20.13",
+      "net": "HC_OE_N",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "blanking_u21",
+      "a": "Q31.3",
+      "b": "U21.13",
+      "net": "HC_OE_N",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "blanking_u22",
+      "a": "Q31.3",
+      "b": "U22.13",
+      "net": "HC_OE_N",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "blanking_u23",
+      "a": "Q31.3",
+      "b": "U23.13",
+      "net": "HC_OE_N",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "efuse_input",
+      "a": "R40.2",
+      "b": "U11.5",
+      "net": "HV_ISOLATE_IN",
+      "copper_connected": true,
+      "connected_item_count": 32
+    },
+    {
+      "item": "efuse_output_cap",
+      "a": "U11.6",
+      "b": "C28.1",
+      "net": "5V_HV",
+      "copper_connected": true,
+      "connected_item_count": 63
+    },
+    {
+      "item": "efuse_output_converter",
+      "a": "U11.6",
+      "b": "U17.1",
+      "net": "5V_HV",
+      "copper_connected": false,
+      "connected_item_count": 63
+    },
+    {
+      "item": "efuse_ground",
+      "a": "U11.8",
+      "b": "C27.2",
+      "net": "GND",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "efuse_ovlo_high",
+      "a": "U11.2",
+      "b": "R41.2",
+      "net": "CUT_OVLO",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "efuse_ovlo_low",
+      "a": "U11.2",
+      "b": "R42.1",
+      "net": "CUT_OVLO",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "efuse_ilim",
+      "a": "U11.9",
+      "b": "R43.1",
+      "net": "CUT_ILM",
+      "copper_connected": false,
+      "connected_item_count": 1
+    },
+    {
+      "item": "efuse_timer",
+      "a": "U11.10",
+      "b": "C26.1",
+      "net": "CUT_TIMER",
+      "copper_connected": false,
+      "connected_item_count": 2
+    },
+    {
+      "item": "efuse_dvdt",
+      "a": "U11.7",
+      "b": "C25.1",
+      "net": "CUT_DVDT",
+      "copper_connected": true,
+      "connected_item_count": 10
+    },
+    {
+      "item": "efuse_pgth",
+      "a": "U11.4",
+      "b": "R44.1",
+      "net": "CUT_PGTH",
+      "copper_connected": true,
+      "connected_item_count": 9
+    }
+  ],
+  "selected_footprints": {
+    "Q1": {
+      "footprint": "R10_R10:SOT-23_MMBTA42_route_tails",
+      "at_mm": [
+        60.5,
+        115.0
+      ],
+      "pads": [
+        {
+          "pin": "",
+          "position_mm": [
+            59.5625,
+            114.05
+          ],
+          "size_mm": [
+            1.475,
+            0.6
+          ],
+          "net": "",
+          "layers": [
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "",
+          "position_mm": [
+            59.5625,
+            115.95
+          ],
+          "size_mm": [
+            1.475,
+            0.6
+          ],
+          "net": "",
+          "layers": [
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "",
+          "position_mm": [
+            61.4375,
+            115.0
+          ],
+          "size_mm": [
+            1.475,
+            0.6
+          ],
+          "net": "",
+          "layers": [
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "1",
+          "position_mm": [
+            59.125,
+            115.95
+          ],
+          "size_mm": [
+            2.35,
+            0.6
+          ],
+          "net": "BASE_00",
+          "layers": [
+            "B.Cu"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            59.125,
+            114.05
+          ],
+          "size_mm": [
+            2.35,
+            0.6
+          ],
+          "net": "GND",
+          "layers": [
+            "B.Cu"
+          ]
+        },
+        {
+          "pin": "3",
+          "position_mm": [
+            61.875,
+            115.0
+          ],
+          "size_mm": [
+            2.35,
+            0.6
+          ],
+          "net": "K1_0",
+          "layers": [
+            "B.Cu"
+          ]
+        }
+      ]
+    },
+    "R100": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "at_mm": [
+        57.4,
+        117.5
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            57.4,
+            116.675
+          ],
+          "size_mm": [
+            0.8,
+            0.95
+          ],
+          "net": "DRV_00",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            57.4,
+            118.325
+          ],
+          "size_mm": [
+            0.8,
+            0.95
+          ],
+          "net": "BASE_00",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        }
+      ]
+    },
+    "R200": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "at_mm": [
+        60.5,
+        119.25
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            60.5,
+            118.425
+          ],
+          "size_mm": [
+            0.8,
+            0.95
+          ],
+          "net": "BASE_00",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            60.5,
+            120.075
+          ],
+          "size_mm": [
+            0.8,
+            0.95
+          ],
+          "net": "GND",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        }
+      ]
+    },
+    "V1": {
+      "footprint": "R10_R10:GZC13F_HandWire_11_SMD",
+      "at_mm": [
+        77.0,
+        102.0
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            67.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "ANODE_1",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "3",
+          "position_mm": [
+            71.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_0",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "4",
+          "position_mm": [
+            85.0,
+            110.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_9",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "5",
+          "position_mm": [
+            81.0,
+            110.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_8",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "6",
+          "position_mm": [
+            77.0,
+            110.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_7",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "7",
+          "position_mm": [
+            73.0,
+            110.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_6",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "9",
+          "position_mm": [
+            69.0,
+            110.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_5",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "10",
+          "position_mm": [
+            87.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_4",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "11",
+          "position_mm": [
+            83.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_3",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "12",
+          "position_mm": [
+            79.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_2",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        {
+          "pin": "13",
+          "position_mm": [
+            75.0,
+            95.5
+          ],
+          "size_mm": [
+            1.8,
+            2.6
+          ],
+          "net": "K1_1",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        }
+      ]
+    },
+    "U8": {
+      "footprint": "Package_SO:SSOP-8_2.95x2.8mm_P0.65mm",
+      "at_mm": [
+        97.25,
+        58.0
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            98.225,
+            59.7
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "ARM_STROBE",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            97.575,
+            59.7
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "RESIDUAL_OK",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "3",
+          "position_mm": [
+            96.925,
+            59.7
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "unconnected-(U8-Q_N-Pad3)",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "4",
+          "position_mm": [
+            96.275,
+            59.7
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "GND",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "5",
+          "position_mm": [
+            96.275,
+            56.3
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "ARMED",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "6",
+          "position_mm": [
+            96.925,
+            56.3
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "LATCH_CLR_N",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "7",
+          "position_mm": [
+            97.575,
+            56.3
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "3V3",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        },
+        {
+          "pin": "8",
+          "position_mm": [
+            98.225,
+            56.3
+          ],
+          "size_mm": [
+            0.3,
+            1.6
+          ],
+          "net": "3V3",
+          "layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ]
+        }
+      ]
+    },
+    "U11": {
+      "footprint": "R10_R10:TI_RPW0010A_IN_OUT_escape",
+      "at_mm": [
+        140.0,
+        61.0
+      ],
+      "pads": [
+        {
+          "pin": "",
+          "position_mm": [
+            139.7625,
+            61.0
+          ],
+          "size_mm": [
+            0.25,
+            1.75
+          ],
+          "net": "",
+          "layers": [
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "",
+          "position_mm": [
+            140.2375,
+            61.0
+          ],
+          "size_mm": [
+            0.25,
+            1.75
+          ],
+          "net": "",
+          "layers": [
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "1",
+          "position_mm": [
+            139.1,
+            60.2875
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "ARMED",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "1",
+          "position_mm": [
+            139.35,
+            60.2875
+          ],
+          "size_mm": [
+            0.25,
+            0.325
+          ],
+          "net": "ARMED",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            139.1,
+            60.7625
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "CUT_OVLO",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "3",
+          "position_mm": [
+            139.1,
+            61.2375
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "unconnected-(U11-PG-Pad3)",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "4",
+          "position_mm": [
+            139.1,
+            61.7125
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "CUT_PGTH",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "4",
+          "position_mm": [
+            139.35,
+            61.7125
+          ],
+          "size_mm": [
+            0.25,
+            0.325
+          ],
+          "net": "CUT_PGTH",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "5",
+          "position_mm": [
+            139.7625,
+            61.4375
+          ],
+          "size_mm": [
+            0.25,
+            2.625
+          ],
+          "net": "HV_ISOLATE_IN",
+          "layers": [
+            "F.Cu"
+          ]
+        },
+        {
+          "pin": "6",
+          "position_mm": [
+            140.2375,
+            60.5625
+          ],
+          "size_mm": [
+            0.25,
+            2.625
+          ],
+          "net": "5V_HV",
+          "layers": [
+            "F.Cu"
+          ]
+        },
+        {
+          "pin": "7",
+          "position_mm": [
+            140.65,
+            61.7125
+          ],
+          "size_mm": [
+            0.25,
+            0.325
+          ],
+          "net": "CUT_DVDT",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "7",
+          "position_mm": [
+            140.9,
+            61.7125
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "CUT_DVDT",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "8",
+          "position_mm": [
+            140.9,
+            61.2375
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "9",
+          "position_mm": [
+            140.9,
+            60.7625
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "CUT_ILM",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "10",
+          "position_mm": [
+            140.65,
+            60.2875
+          ],
+          "size_mm": [
+            0.25,
+            0.325
+          ],
+          "net": "CUT_TIMER",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "10",
+          "position_mm": [
+            140.9,
+            60.2875
+          ],
+          "size_mm": [
+            0.6,
+            0.25
+          ],
+          "net": "CUT_TIMER",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        }
+      ]
+    },
+    "J6": {
+      "footprint": "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal",
+      "at_mm": [
+        64.75,
+        57.25
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            64.75,
+            57.25
+          ],
+          "size_mm": [
+            1.2,
+            1.75
+          ],
+          "net": "STOP_LOOP",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "B.Cu",
+            "B.Mask",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "In5.Cu",
+            "In6.Cu",
+            "In7.Cu",
+            "In8.Cu",
+            "In9.Cu",
+            "In10.Cu",
+            "In11.Cu",
+            "In12.Cu",
+            "In13.Cu",
+            "In14.Cu",
+            "In15.Cu",
+            "In16.Cu",
+            "In17.Cu",
+            "In18.Cu",
+            "In19.Cu",
+            "In20.Cu",
+            "In21.Cu",
+            "In22.Cu",
+            "In23.Cu",
+            "In24.Cu",
+            "In25.Cu",
+            "In26.Cu",
+            "In27.Cu",
+            "In28.Cu",
+            "In29.Cu",
+            "In30.Cu"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            62.75,
+            57.25
+          ],
+          "size_mm": [
+            1.2,
+            1.75
+          ],
+          "net": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "B.Cu",
+            "B.Mask",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "In5.Cu",
+            "In6.Cu",
+            "In7.Cu",
+            "In8.Cu",
+            "In9.Cu",
+            "In10.Cu",
+            "In11.Cu",
+            "In12.Cu",
+            "In13.Cu",
+            "In14.Cu",
+            "In15.Cu",
+            "In16.Cu",
+            "In17.Cu",
+            "In18.Cu",
+            "In19.Cu",
+            "In20.Cu",
+            "In21.Cu",
+            "In22.Cu",
+            "In23.Cu",
+            "In24.Cu",
+            "In25.Cu",
+            "In26.Cu",
+            "In27.Cu",
+            "In28.Cu",
+            "In29.Cu",
+            "In30.Cu"
+          ]
+        }
+      ]
+    },
+    "R40": {
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "at_mm": [
+        138.5,
+        58.0
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "position_mm": [
+            137.0375,
+            58.0
+          ],
+          "size_mm": [
+            1.125,
+            1.75
+          ],
+          "net": "5V_PROT",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        {
+          "pin": "2",
+          "position_mm": [
+            139.9625,
+            58.0
+          ],
+          "size_mm": [
+            1.125,
+            1.75
+          ],
+          "net": "HV_ISOLATE_IN",
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        }
+      ]
+    }
+  },
+  "mounts": {
+    "MH7R": {
+      "at_mm": [
+        167.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    },
+    "MH4": {
+      "at_mm": [
+        174.0,
+        124.0
+      ],
+      "holes_mm": [
+        [
+          3.2,
+          3.2
+        ]
+      ]
+    },
+    "MH3": {
+      "at_mm": [
+        56.0,
+        124.0
+      ],
+      "holes_mm": [
+        [
+          3.2,
+          3.2
+        ]
+      ]
+    },
+    "MH6L": {
+      "at_mm": [
+        101.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    },
+    "MH2": {
+      "at_mm": [
+        174.0,
+        56.0
+      ],
+      "holes_mm": [
+        [
+          3.2,
+          3.2
+        ]
+      ]
+    },
+    "MH5R": {
+      "at_mm": [
+        91.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    },
+    "MH1": {
+      "at_mm": [
+        56.0,
+        56.0
+      ],
+      "holes_mm": [
+        [
+          3.2,
+          3.2
+        ]
+      ]
+    },
+    "MH5L": {
+      "at_mm": [
+        63.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    },
+    "MH7L": {
+      "at_mm": [
+        139.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    },
+    "MH6R": {
+      "at_mm": [
+        129.0,
+        102.0
+      ],
+      "holes_mm": [
+        [
+          3.5,
+          3.5
+        ]
+      ]
+    }
+  },
+  "qa": {
+    "baseline_sha": "5470020e10f5d6d98f6e21cc93951ca573e20965",
+    "version": "10.0.8",
+    "erc": {},
+    "drc": {
+      "clearance": 253
+    },
+    "opens": 337,
+    "parity": 0,
+    "q1_violations": [
+      {
+        "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 0.6552 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 Q1 的焊盘 1 [BASE_00]",
+            "pos": {
+              "x": 59.125,
+              "y": 115.95
+            },
+            "uuid": "2f4639cd-0e38-46f3-bdc7-117de78a1cab"
+          },
+          {
+            "description": "B.Cu 上 Q1 的焊盘 3 [K1_0]",
+            "pos": {
+              "x": 61.875,
+              "y": 115.0
+            },
+            "uuid": "ec13bb20-4773-4182-b021-2254917f0d2e"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 0.6552 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 Q1 的焊盘 2 [GND]",
+            "pos": {
+              "x": 59.125,
+              "y": 114.05
+            },
+            "uuid": "6a715318-aaf6-4cdf-9b02-c98c53b11d8d"
+          },
+          {
+            "description": "B.Cu 上 Q1 的焊盘 3 [K1_0]",
+            "pos": {
+              "x": 61.875,
+              "y": 115.0
+            },
+            "uuid": "ec13bb20-4773-4182-b021-2254917f0d2e"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      }
+    ],
+    "clearance_and_parity_uuid_sets_match_archive": true,
+    "opens_per_net_match_archive": true,
+    "native_open_endpoint_pairs_changed": 64,
+    "pin_net_assignments_identical": true,
+    "source_sha256": {
+      "NXT-M3-R14.kicad_dru": "44e9d6d4526b1dd8a456c948b177a32a770ce06bd6f3dd8f95e3805126315f8f",
+      "NXT-M3-R14.kicad_pcb": "1687c4b78cf15b5c5a27fdead8d27bc01026c73a546e8371385178b6289e8a1d",
+      "NXT-M3-R14.kicad_pro": "d937fbf7df11110c9fccea4e671c0a7b21f8d6c36d126aabe4a43c04848d2a9b",
+      "NXT-M3-R14.kicad_sch": "b7f6a2ab725aef7172b7ee72a8f1ab71d92c2b9d450a88aa5223a0fb1d174822"
+    }
+  }
+}
