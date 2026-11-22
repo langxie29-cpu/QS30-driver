@@ -1,0 +1,20 @@
+{
+  "task_id": "manufacturing",
+  "status": "PASS",
+  "notes": "Documentary manufacturing audit completed against the three supplied excerpts. The evidence supports board-level routing/DFM status and external socket pad geometry, but it does not qualify the fab process, assembly, QS30-1/GZC13-F socket hardware, harness, insulation, or voltage/fault behavior. Mechanical assembly remains HOLD; remaining unknowns and next-gate evidence are enumerated in the inventory. No issue blocking this documentary review was found in the supplied evidence.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [
+    "https://www.tube-tester.com/sites/nixie/dat_arch/QS30-1.pdf",
+    "https://www.ti.com/lit/ds/symlink/tca9517a.pdf",
+    "https://www.ti.com/lit/ds/symlink/tlv1701.pdf",
+    "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "https://jlcpcb.com/capabilities/pcb-capabilities/",
+    "https://jlcpcb.com/capabilities/pcb-assembly-capabilities"
+  ],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "task_id": "pcb",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "32a63b09a591b82d05688433290fc17bdc0878d82848951cd371583d9957cd6d",
+      "sources.json": "caac1f3bdceb6d82c7199bc2badea4547dd4fcbe0e1e4d804a02ead14adf28b6"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T22:45:50.617081+00:00",
+    "seconds": 39.859,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  }
+]

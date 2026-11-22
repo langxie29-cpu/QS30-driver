@@ -1,0 +1,72 @@
+[
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "native.after; drc_groups_after; added_violations; prior_connections_lost",
+    "assertion": "KiCad 10.0.8 after 为 ERC 0/0、clearance 79、drc_other 0、unconnected 65、parity 0；after 分组 60/16/3；新增违规 0、丢失连接 0。"
+  },
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "cathodes; cathode_endpoints; protection; register_opens; board_size_mm; copper_layers; wire_pads; frozen_refs; footprint_changes",
+    "assertion": "阴极 30/30、端点 180/180；OVP/FB/SNUB 14→20、J6 39→39；SER2/SER3/SR_CLK_BUS/HC_CLEAR_N 各 1；板 130×80 mm、4 层、33 焊盘；冻结与封装变更如摘录。"
+  },
+  {
+    "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+    "locator": "板框/焊盘/阳极/HV_BUS 段",
+    "assertion": "V1–V3 各 11 个 1.80×2.60 mm B.Cu SMD 焊盘无钻孔；六孔未恢复；最小同层铜距 2.65 mm；三组阳极分别通 R303.2/R305.2/R307.2；HV_BUS 仍 4 开路。"
+  },
+  {
+    "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+    "locator": "管脚映射表及来源句",
+    "assertion": "丝印 A/0–9 映射管脚 1/3/13/12/11/10/9/7/6/5/4；来源称原生网表及管资料。"
+  },
+  {
+    "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+    "locator": "第二段与状态 HOLD",
+    "assertion": "GZC13-F 定位键、触点-焊片、孔距、接合深度、绝缘未测；2/8 待首件；仅板级几何/电气映射；管座实件、焊点抗拉、线束应力释放、外壳绝缘未见证；J6 待闭合。"
+  },
+  {
+    "source": "r14_6/LV_IC_DFM.md",
+    "locator": "首段",
+    "assertion": "34 同封装铜对；18 对 DGK0008A 整改尺寸 4.225→4.40 mm、1.625×0.50→1.40×0.45 mm、0.65 mm 保持；18 旧错误消除但器件/装配电压资格开放；U1/U11 16 个 RPW0010A 违规保留；无规则例外。"
+  },
+  {
+    "source": "r14_6/LV_IC_DFM.md",
+    "locator": "第二段",
+    "assertion": "JLCPCB 候选公示 1 oz 0.09 mm 线距、0.10 mm 桥、部分颜色 0.13 mm 焊盘间距、2 oz 0.20 mm；仅为初筛；实际铜重/蚀刻/阻焊/桥宽/钢网/贴装需书面审核；TI RPW 0.10 mm 钢网；验收需桥连/润湿/尺寸样片。"
+  },
+  {
+    "source": "r14_6/LV_IC_DFM.md",
+    "locator": "第三段",
+    "assertion": "U14.2 在 170/195 V 约 3.869/4.438 V（假定正确装配且忽略钳位），3.3 V 供电可能钳位；下臂开路、回灌、失供、响应、钳位寿命未证明；U1/U11 5.25 V、U6 3.3 V 包络保留启动/关断/故障未知。"
+  },
+  {
+    "source": "https://www.tube-tester.com/sites/nixie/dat_arch/QS30-1.pdf",
+    "locator": "管资料链接",
+    "assertion": "被 MECHANICAL_ASSEMBLY.md 引作 QS30-1 管资料来源；摘录未给出实测。"
+  },
+  {
+    "source": "https://www.ti.com/lit/ds/symlink/tca9517a.pdf",
+    "locator": "器件资料链接",
+    "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+  },
+  {
+    "source": "https://www.ti.com/lit/ds/symlink/tlv1701.pdf",
+    "locator": "器件资料链接",
+    "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+  },
+  {
+    "source": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "locator": "器件资料链接",
+    "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+  },
+  {
+    "source": "https://jlcpcb.com/capabilities/pcb-capabilities/",
+    "locator": "板厂能力链接",
+    "assertion": "被 LV_IC_DFM.md 引作候选板厂公示 PCB 能力来源；摘录明确仅为初筛。"
+  },
+  {
+    "source": "https://jlcpcb.com/capabilities/pcb-assembly-capabilities",
+    "locator": "贴装能力链接",
+    "assertion": "被 LV_IC_DFM.md 引作候选板厂贴装能力来源；摘录未给出实际审核结果。"
+  }
+]

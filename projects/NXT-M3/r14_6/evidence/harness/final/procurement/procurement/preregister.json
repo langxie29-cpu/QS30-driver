@@ -1,0 +1,19 @@
+{
+  "task_id": "procurement",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Audit the final coverage and priced subset, MOQ and DNP boundaries. Report notes as a nonempty string.",
+  "input_receipts": [
+    {
+      "file": "r14_6/evidence/procurement-totals.json",
+      "sha256": "6ee7acb1060403224959dc121a42062d4dbd49b5faacf9e6a1a34e9bf6c58c91"
+    },
+    {
+      "file": "r14_6/COST_R14_6.md",
+      "sha256": "318e63671630ceb1df639b59d735d5b89b8d65c65ca047546a51cf255950d2f2"
+    }
+  ]
+}

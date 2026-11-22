@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-23T06:44:58",
+    "date": "2026-11-23T06:50:59",
     "ignored_checks": [
         {
             "description": "Footprint has no courtyard defined",
@@ -436,12 +436,12 @@
                     "uuid": "878605ed-0e02-4ea0-b4d3-3f2c18510f6a"
                 },
                 {
-                    "description": "走线 [HV_ISENSE] (B.Cu), 长度: 0.2610 mm",
+                    "description": "B.Cu 上 R76 的焊盘 2 [HV_ISENSE]",
                     "pos": {
                         "x": 167.825,
                         "y": 58.0
                     },
-                    "uuid": "bc3d8f85-521f-4c8b-bd59-ab205ba5a1e5"
+                    "uuid": "634e69e5-9140-4b0b-bc0e-53031fbdbda6"
                 }
             ],
             "severity": "error",
@@ -459,12 +459,12 @@
                     "uuid": "e564710f-b411-43b5-a10e-9637927b019a"
                 },
                 {
-                    "description": "走线 [CS_FILT] (F.Cu), 长度: 0.3363 mm",
+                    "description": "F.Cu 上 C31 的焊盘 1 [CS_FILT]",
                     "pos": {
                         "x": 135.225,
                         "y": 76.0
                     },
-                    "uuid": "8ff9899f-4a49-4f8f-895f-da6702650bdc"
+                    "uuid": "35afaec3-9e40-4fb5-ad89-0acdc7843cb8"
                 }
             ],
             "severity": "error",
@@ -474,12 +474,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "过孔 [CUT_OVLO] (F.Cu - B.Cu)",
+                    "description": "走线 [CUT_OVLO] (B.Cu), 长度: 2.4000 mm",
                     "pos": {
                         "x": 139.6,
                         "y": 55.6
                     },
-                    "uuid": "68006e71-5eb4-5b56-adc2-73ff0462b710"
+                    "uuid": "c89827ef-a945-5b51-a5fb-e9d80f3c5345"
                 },
                 {
                     "description": "F.Cu 上 U11 的焊盘 2 [CUT_OVLO]",
@@ -773,12 +773,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "走线 [HV_UVLO] (B.Cu), 长度: 0.2500 mm",
+                    "description": "走线 [HV_UVLO] (B.Cu), 长度: 4.0000 mm",
                     "pos": {
-                        "x": 169.0,
+                        "x": 173.0,
                         "y": 62.0
                     },
-                    "uuid": "f2568b5d-2ee5-4bec-a83c-8d28bd2dc9cd"
+                    "uuid": "988e7c97-86b4-4109-ae04-082d3842e36f"
                 },
                 {
                     "description": "F.Cu 上 U17 的焊盘 12 [HV_UVLO]",
@@ -798,10 +798,10 @@
                 {
                     "description": "走线 [3V3] (B.Cu), 长度: 2.7500 mm",
                     "pos": {
-                        "x": 104.5,
+                        "x": 101.75,
                         "y": 77.25
                     },
-                    "uuid": "69142d52-088f-4a4e-ae56-3cf76d2a8f7e"
+                    "uuid": "54668ee8-e633-44bd-8ef6-9cd262b28a55"
                 },
                 {
                     "description": "F.Cu 上 U25 的焊盘 6 [3V3]",
@@ -1026,12 +1026,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "走线 [AUX2_GPIO] (B.Cu), 长度: 0.3000 mm",
+                    "description": "走线 [AUX2_GPIO] (B.Cu), 长度: 0.1414 mm",
                     "pos": {
                         "x": 76.2,
-                        "y": 75.9
+                        "y": 75.6
                     },
-                    "uuid": "d3fc799f-4132-54f3-b018-ede79f130ba2"
+                    "uuid": "a256e13d-8ecc-5296-886b-85025d0a80db"
                 },
                 {
                     "description": "B.Cu 上 C63 的焊盘 1 [AUX2_GPIO]",
@@ -1082,10 +1082,10 @@
                 {
                     "description": "走线 [5V_FUSED] (F.Cu), 长度: 3.7500 mm",
                     "pos": {
-                        "x": 73.25,
+                        "x": 77.0,
                         "y": 67.25
                     },
-                    "uuid": "6a627d99-fcf5-4753-ba63-bd63fc66ebba"
+                    "uuid": "869464a5-e3f3-4a2d-8055-d92e3a5815f1"
                 }
             ],
             "severity": "error",
@@ -1187,12 +1187,12 @@
             "description": "Missing connection between items",
             "items": [
                 {
-                    "description": "走线 [USBC_CC1] (B.Cu), 长度: 0.3710 mm",
+                    "description": "B.Cu 上 D5 的焊盘 1 [USBC_CC1]",
                     "pos": {
                         "x": 117.95,
                         "y": 58.4375
                     },
-                    "uuid": "44c5ce0f-3f6d-4d31-947a-c254daef8bc9"
+                    "uuid": "e200999b-906a-4e93-82cc-b231a244cebf"
                 },
                 {
                     "description": "F.Cu 上 J1 的焊盘 A5 [USBC_CC1]",
@@ -1218,12 +1218,12 @@
                     "uuid": "de53c958-cfad-425c-9e01-867aca2253fc"
                 },
                 {
-                    "description": "走线 [AUX1] (F.Cu), 长度: 0.7198 mm",
+                    "description": "F.Cu 上 J5 的焊盘 4 [AUX1]",
                     "pos": {
                         "x": 62.625,
                         "y": 90.95
                     },
-                    "uuid": "24c30863-2850-4c58-8fd5-11919b86c2ee"
+                    "uuid": "a1467954-efb3-49bf-94e4-0b0df961737b"
                 }
             ],
             "severity": "error",
@@ -1402,12 +1402,12 @@
                     "uuid": "786aadb7-4779-4fe8-abf4-5ed0d99087ad"
                 },
                 {
-                    "description": "走线 [OLED_SCL] (F.Cu), 长度: 0.3233 mm",
+                    "description": "走线 [OLED_SCL] (F.Cu), 长度: 0.2625 mm",
                     "pos": {
                         "x": 112.92,
                         "y": 71.0
                     },
-                    "uuid": "44408927-4547-4a77-a16a-eebd6559cc12"
+                    "uuid": "eff4bce1-d9a8-44d1-86a9-b3bb3cf892af"
                 }
             ],
             "severity": "error",
@@ -1580,20 +1580,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q7 的焊盘 1 [BASE_06]",
+                    "description": "B.Cu 上 Q25 的焊盘 1 [BASE_24]",
                     "pos": {
-                        "x": 71.95,
-                        "y": 121.75
+                        "x": 167.45,
+                        "y": 108.25
                     },
-                    "uuid": "14281a60-50fb-484d-a24d-fc0937ab80b3"
+                    "uuid": "577b8d64-c6b5-4a60-b1ce-811d1719d1ac"
                 },
                 {
-                    "description": "B.Cu 上 Q7 的焊盘 3 [K1_6]",
+                    "description": "B.Cu 上 Q25 的焊盘 3 [K3_4]",
                     "pos": {
-                        "x": 71.0,
-                        "y": 119.75
+                        "x": 166.5,
+                        "y": 106.25
                     },
-                    "uuid": "a0eb0d18-5537-4248-a803-be78cdffb184"
+                    "uuid": "85ab9a17-d23d-408a-893a-2cdadb02f67e"
                 }
             ],
             "severity": "error",
@@ -1626,12 +1626,35 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q25 的焊盘 1 [BASE_24]",
+                    "description": "B.Cu 上 Q7 的焊盘 1 [BASE_06]",
                     "pos": {
-                        "x": 167.45,
+                        "x": 71.95,
+                        "y": 121.75
+                    },
+                    "uuid": "14281a60-50fb-484d-a24d-fc0937ab80b3"
+                },
+                {
+                    "description": "B.Cu 上 Q7 的焊盘 3 [K1_6]",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 119.75
+                    },
+                    "uuid": "a0eb0d18-5537-4248-a803-be78cdffb184"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q25 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 165.55,
                         "y": 108.25
                     },
-                    "uuid": "577b8d64-c6b5-4a60-b1ce-811d1719d1ac"
+                    "uuid": "596e726e-d629-456d-93b8-dc37dd0e8308"
                 },
                 {
                     "description": "B.Cu 上 Q25 的焊盘 3 [K3_4]",
@@ -1640,6 +1663,52 @@
                         "y": 106.25
                     },
                     "uuid": "85ab9a17-d23d-408a-893a-2cdadb02f67e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q23 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 150.55,
+                        "y": 108.25
+                    },
+                    "uuid": "5f0236b2-e646-4fd5-816c-1b845eb43ca6"
+                },
+                {
+                    "description": "B.Cu 上 Q23 的焊盘 3 [K3_2]",
+                    "pos": {
+                        "x": 151.5,
+                        "y": 106.25
+                    },
+                    "uuid": "b3c9d365-886b-40cf-87f1-82b721ac130f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q21 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 135.55,
+                        "y": 108.25
+                    },
+                    "uuid": "479f744c-b9ec-45d3-9a78-c9b30b931b1a"
+                },
+                {
+                    "description": "B.Cu 上 Q21 的焊盘 3 [K3_0]",
+                    "pos": {
+                        "x": 136.5,
+                        "y": 106.25
+                    },
+                    "uuid": "560d07b7-24cd-4c6a-8047-c7ee0973996e"
                 }
             ],
             "severity": "error",
@@ -1672,20 +1741,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q25 的焊盘 2 [GND]",
+                    "description": "B.Cu 上 Q21 的焊盘 3 [K3_0]",
                     "pos": {
-                        "x": 165.55,
-                        "y": 108.25
-                    },
-                    "uuid": "596e726e-d629-456d-93b8-dc37dd0e8308"
-                },
-                {
-                    "description": "B.Cu 上 Q25 的焊盘 3 [K3_4]",
-                    "pos": {
-                        "x": 166.5,
+                        "x": 136.5,
                         "y": 106.25
                     },
-                    "uuid": "85ab9a17-d23d-408a-893a-2cdadb02f67e"
+                    "uuid": "560d07b7-24cd-4c6a-8047-c7ee0973996e"
+                },
+                {
+                    "description": "B.Cu 上 Q21 的焊盘 1 [BASE_20]",
+                    "pos": {
+                        "x": 137.45,
+                        "y": 108.25
+                    },
+                    "uuid": "83aefe69-d21c-45d6-b510-dd246fd06bff"
                 }
             ],
             "severity": "error",
@@ -1764,6 +1833,29 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
+                    "description": "B.Cu 上 Q27 的焊盘 3 [K3_6]",
+                    "pos": {
+                        "x": 144.0,
+                        "y": 119.75
+                    },
+                    "uuid": "75326c94-b47a-41fa-869f-425c772c8f6f"
+                },
+                {
+                    "description": "B.Cu 上 Q27 的焊盘 1 [BASE_26]",
+                    "pos": {
+                        "x": 144.95,
+                        "y": 121.75
+                    },
+                    "uuid": "933c329b-dc12-44f8-a34d-d23ca6da78f2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
                     "description": "B.Cu 上 Q30 的焊盘 1 [BASE_29]",
                     "pos": {
                         "x": 167.45,
@@ -1787,20 +1879,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q27 的焊盘 3 [K3_6]",
+                    "description": "B.Cu 上 Q30 的焊盘 2 [GND]",
                     "pos": {
-                        "x": 144.0,
-                        "y": 119.75
-                    },
-                    "uuid": "75326c94-b47a-41fa-869f-425c772c8f6f"
-                },
-                {
-                    "description": "B.Cu 上 Q27 的焊盘 1 [BASE_26]",
-                    "pos": {
-                        "x": 144.95,
+                        "x": 165.55,
                         "y": 121.75
                     },
-                    "uuid": "933c329b-dc12-44f8-a34d-d23ca6da78f2"
+                    "uuid": "31094ed9-eb26-47b7-a72b-78e872a7e544"
+                },
+                {
+                    "description": "B.Cu 上 Q30 的焊盘 3 [K3_9]",
+                    "pos": {
+                        "x": 166.5,
+                        "y": 119.75
+                    },
+                    "uuid": "b9e68d95-2c24-42d8-8473-e5995e08db4d"
                 }
             ],
             "severity": "error",
@@ -1824,29 +1916,6 @@
                         "y": 61.7125
                     },
                     "uuid": "8d3d445e-2365-4d0f-9654-58fae8382539"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q30 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 165.55,
-                        "y": 121.75
-                    },
-                    "uuid": "31094ed9-eb26-47b7-a72b-78e872a7e544"
-                },
-                {
-                    "description": "B.Cu 上 Q30 的焊盘 3 [K3_9]",
-                    "pos": {
-                        "x": 166.5,
-                        "y": 119.75
-                    },
-                    "uuid": "b9e68d95-2c24-42d8-8473-e5995e08db4d"
                 }
             ],
             "severity": "error",
@@ -1899,29 +1968,6 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)",
-            "items": [
-                {
-                    "description": "F.Cu 上 U11 的焊盘 4 [CUT_PGTH]",
-                    "pos": {
-                        "x": 139.35,
-                        "y": 61.7125
-                    },
-                    "uuid": "8d3d445e-2365-4d0f-9654-58fae8382539"
-                },
-                {
-                    "description": "F.Cu 上 U11 的焊盘 5 [HV_ISOLATE_IN]",
-                    "pos": {
-                        "x": 139.7625,
-                        "y": 61.4375
-                    },
-                    "uuid": "a299519d-9125-4d9b-aafb-1c19e1ad95c2"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
@@ -1939,29 +1985,6 @@
                         "y": 119.75
                     },
                     "uuid": "d4bcd81c-c6de-4e21-a69d-13f864fc9e72"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q17 的焊盘 1 [BASE_16]",
-                    "pos": {
-                        "x": 107.45,
-                        "y": 121.75
-                    },
-                    "uuid": "1f70e4a3-1efc-496e-ad66-49b1f29e1f2d"
-                },
-                {
-                    "description": "B.Cu 上 Q17 的焊盘 3 [K2_6]",
-                    "pos": {
-                        "x": 106.5,
-                        "y": 119.75
-                    },
-                    "uuid": "3f86f8cb-28fc-4775-b540-f13dc485099c"
                 }
             ],
             "severity": "error",
@@ -1991,8 +2014,16 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (网络类 'SAFETY_CONTROL' 间距 0.2000 mm; 实际 0.1625 mm)",
+            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)",
             "items": [
+                {
+                    "description": "F.Cu 上 U11 的焊盘 4 [CUT_PGTH]",
+                    "pos": {
+                        "x": 139.35,
+                        "y": 61.7125
+                    },
+                    "uuid": "8d3d445e-2365-4d0f-9654-58fae8382539"
+                },
                 {
                     "description": "F.Cu 上 U11 的焊盘 5 [HV_ISOLATE_IN]",
                     "pos": {
@@ -2000,14 +2031,6 @@
                         "y": 61.4375
                     },
                     "uuid": "a299519d-9125-4d9b-aafb-1c19e1ad95c2"
-                },
-                {
-                    "description": "F.Cu 上 U11 的焊盘 1 [ARMED]",
-                    "pos": {
-                        "x": 139.35,
-                        "y": 60.2875
-                    },
-                    "uuid": "b5af7129-3fc1-4a1e-b3c8-d09eee059b1b"
                 }
             ],
             "severity": "error",
@@ -2017,12 +2040,12 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q17 的焊盘 2 [GND]",
+                    "description": "B.Cu 上 Q17 的焊盘 1 [BASE_16]",
                     "pos": {
-                        "x": 105.55,
+                        "x": 107.45,
                         "y": 121.75
                     },
-                    "uuid": "0a92e723-4c76-4c23-b200-26e357e403ca"
+                    "uuid": "1f70e4a3-1efc-496e-ad66-49b1f29e1f2d"
                 },
                 {
                     "description": "B.Cu 上 Q17 的焊盘 3 [K2_6]",
@@ -2083,6 +2106,75 @@
             "type": "clearance"
         },
         {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q17 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 105.55,
+                        "y": 121.75
+                    },
+                    "uuid": "0a92e723-4c76-4c23-b200-26e357e403ca"
+                },
+                {
+                    "description": "B.Cu 上 Q17 的焊盘 3 [K2_6]",
+                    "pos": {
+                        "x": 106.5,
+                        "y": 119.75
+                    },
+                    "uuid": "3f86f8cb-28fc-4775-b540-f13dc485099c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'SAFETY_CONTROL' 间距 0.2000 mm; 实际 0.1625 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 U11 的焊盘 5 [HV_ISOLATE_IN]",
+                    "pos": {
+                        "x": 139.7625,
+                        "y": 61.4375
+                    },
+                    "uuid": "a299519d-9125-4d9b-aafb-1c19e1ad95c2"
+                },
+                {
+                    "description": "F.Cu 上 U11 的焊盘 1 [ARMED]",
+                    "pos": {
+                        "x": 139.35,
+                        "y": 60.2875
+                    },
+                    "uuid": "b5af7129-3fc1-4a1e-b3c8-d09eee059b1b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q28 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 150.55,
+                        "y": 121.75
+                    },
+                    "uuid": "124313db-1a4a-47e7-9b0c-d2b2fb9622ee"
+                },
+                {
+                    "description": "B.Cu 上 Q28 的焊盘 3 [K3_7]",
+                    "pos": {
+                        "x": 151.5,
+                        "y": 119.75
+                    },
+                    "uuid": "81001204-ad03-4408-aabd-ad9ef540ca08"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
             "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)",
             "items": [
                 {
@@ -2123,29 +2215,6 @@
                         "y": 106.25
                     },
                     "uuid": "7f47441a-2d82-4c2e-ab9a-2733801a78e9"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q28 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 150.55,
-                        "y": 121.75
-                    },
-                    "uuid": "124313db-1a4a-47e7-9b0c-d2b2fb9622ee"
-                },
-                {
-                    "description": "B.Cu 上 Q28 的焊盘 3 [K3_7]",
-                    "pos": {
-                        "x": 151.5,
-                        "y": 119.75
-                    },
-                    "uuid": "81001204-ad03-4408-aabd-ad9ef540ca08"
                 }
             ],
             "severity": "error",
@@ -2247,29 +2316,6 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q24 的焊盘 3 [K3_3]",
-                    "pos": {
-                        "x": 159.0,
-                        "y": 106.25
-                    },
-                    "uuid": "80aa3155-f75d-4d48-9c17-20afac6fa75f"
-                },
-                {
-                    "description": "B.Cu 上 Q24 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 158.05,
-                        "y": 108.25
-                    },
-                    "uuid": "8d751b79-455c-4a4b-8248-28d8aa4cc3d9"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
                     "description": "B.Cu 上 Q29 的焊盘 2 [GND]",
                     "pos": {
                         "x": 158.05,
@@ -2284,6 +2330,29 @@
                         "y": 119.75
                     },
                     "uuid": "f7ca96b0-0d08-42ce-bcf0-d773a33955e9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
+                    "description": "B.Cu 上 Q24 的焊盘 3 [K3_3]",
+                    "pos": {
+                        "x": 159.0,
+                        "y": 106.25
+                    },
+                    "uuid": "80aa3155-f75d-4d48-9c17-20afac6fa75f"
+                },
+                {
+                    "description": "B.Cu 上 Q24 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 158.05,
+                        "y": 108.25
+                    },
+                    "uuid": "8d751b79-455c-4a4b-8248-28d8aa4cc3d9"
                 }
             ],
             "severity": "error",
@@ -2336,23 +2405,23 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1875 mm)",
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "F.Cu 上 U11 的焊盘 8 [GND]",
+                    "description": "B.Cu 上 Q19 的焊盘 1 [BASE_18]",
                     "pos": {
-                        "x": 140.9,
-                        "y": 61.2375
+                        "x": 122.45,
+                        "y": 121.75
                     },
-                    "uuid": "3b0ac966-772e-48df-843d-43a21fdbb7ab"
+                    "uuid": "51d0c7d3-385f-4992-b6d4-182c275bbcf6"
                 },
                 {
-                    "description": "F.Cu 上 U11 的焊盘 7 [CUT_DVDT]",
+                    "description": "B.Cu 上 Q19 的焊盘 3 [K2_8]",
                     "pos": {
-                        "x": 140.65,
-                        "y": 61.7125
+                        "x": 121.5,
+                        "y": 119.75
                     },
-                    "uuid": "e628e768-ff59-46f6-938c-3071f1b4c83b"
+                    "uuid": "a0a1ee36-660d-444e-8efe-033962ff75a0"
                 }
             ],
             "severity": "error",
@@ -2385,20 +2454,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q19 的焊盘 1 [BASE_18]",
+                    "description": "B.Cu 上 Q4 的焊盘 2 [GND]",
                     "pos": {
-                        "x": 122.45,
-                        "y": 121.75
+                        "x": 85.05,
+                        "y": 108.25
                     },
-                    "uuid": "51d0c7d3-385f-4992-b6d4-182c275bbcf6"
+                    "uuid": "4715a4e7-e512-426f-a998-1f05cfbd8b40"
                 },
                 {
-                    "description": "B.Cu 上 Q19 的焊盘 3 [K2_8]",
+                    "description": "B.Cu 上 Q4 的焊盘 3 [K1_3]",
                     "pos": {
-                        "x": 121.5,
-                        "y": 119.75
+                        "x": 86.0,
+                        "y": 106.25
                     },
-                    "uuid": "a0a1ee36-660d-444e-8efe-033962ff75a0"
+                    "uuid": "71b0c114-cc98-4041-bf79-83315e681ba8"
                 }
             ],
             "severity": "error",
@@ -2428,23 +2497,23 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1875 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q4 的焊盘 2 [GND]",
+                    "description": "F.Cu 上 U11 的焊盘 8 [GND]",
                     "pos": {
-                        "x": 85.05,
-                        "y": 108.25
+                        "x": 140.9,
+                        "y": 61.2375
                     },
-                    "uuid": "4715a4e7-e512-426f-a998-1f05cfbd8b40"
+                    "uuid": "3b0ac966-772e-48df-843d-43a21fdbb7ab"
                 },
                 {
-                    "description": "B.Cu 上 Q4 的焊盘 3 [K1_3]",
+                    "description": "F.Cu 上 U11 的焊盘 7 [CUT_DVDT]",
                     "pos": {
-                        "x": 86.0,
-                        "y": 106.25
+                        "x": 140.65,
+                        "y": 61.7125
                     },
-                    "uuid": "71b0c114-cc98-4041-bf79-83315e681ba8"
+                    "uuid": "e628e768-ff59-46f6-938c-3071f1b4c83b"
                 }
             ],
             "severity": "error",
@@ -2543,29 +2612,6 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)",
-            "items": [
-                {
-                    "description": "F.Cu 上 U11 的焊盘 10 [CUT_TIMER]",
-                    "pos": {
-                        "x": 140.65,
-                        "y": 60.2875
-                    },
-                    "uuid": "40a347ab-8f48-46bb-8a09-5bd85075dfa1"
-                },
-                {
-                    "description": "F.Cu 上 U11 的焊盘 6 [5V_HV]",
-                    "pos": {
-                        "x": 140.2375,
-                        "y": 60.5625
-                    },
-                    "uuid": "dedb4ced-9b05-4f02-bc10-0591efdc7a7f"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
@@ -2583,52 +2629,6 @@
                         "y": 106.25
                     },
                     "uuid": "cb8c514f-c1d4-4c42-a650-3378e517e3f0"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q13 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 113.05,
-                        "y": 108.25
-                    },
-                    "uuid": "677ffddb-e84d-49e5-beb4-1f1c33445d2b"
-                },
-                {
-                    "description": "B.Cu 上 Q13 的焊盘 3 [K2_2]",
-                    "pos": {
-                        "x": 114.0,
-                        "y": 106.25
-                    },
-                    "uuid": "784b7388-ffef-430a-af7f-8f38c01efee0"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q13 的焊盘 3 [K2_2]",
-                    "pos": {
-                        "x": 114.0,
-                        "y": 106.25
-                    },
-                    "uuid": "784b7388-ffef-430a-af7f-8f38c01efee0"
-                },
-                {
-                    "description": "B.Cu 上 Q13 的焊盘 1 [BASE_12]",
-                    "pos": {
-                        "x": 114.95,
-                        "y": 108.25
-                    },
-                    "uuid": "adfe9360-b36e-4e91-b8ff-119b53ced6a4"
                 }
             ],
             "severity": "error",
@@ -2658,29 +2658,6 @@
             "type": "clearance"
         },
         {
-            "description": "间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)",
-            "items": [
-                {
-                    "description": "F.Cu 上 U11 的焊盘 10 [CUT_TIMER]",
-                    "pos": {
-                        "x": 140.65,
-                        "y": 60.2875
-                    },
-                    "uuid": "40a347ab-8f48-46bb-8a09-5bd85075dfa1"
-                },
-                {
-                    "description": "F.Cu 上 U11 的焊盘 9 [CUT_ILM]",
-                    "pos": {
-                        "x": 140.9,
-                        "y": 60.7625
-                    },
-                    "uuid": "840b36b3-86f3-480f-af73-d330771f225c"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
@@ -2698,6 +2675,29 @@
                         "y": 106.25
                     },
                     "uuid": "0f7e4d52-0cd6-46f7-90c5-d0a4d724ccdf"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 U11 的焊盘 10 [CUT_TIMER]",
+                    "pos": {
+                        "x": 140.65,
+                        "y": 60.2875
+                    },
+                    "uuid": "40a347ab-8f48-46bb-8a09-5bd85075dfa1"
+                },
+                {
+                    "description": "F.Cu 上 U11 的焊盘 6 [5V_HV]",
+                    "pos": {
+                        "x": 140.2375,
+                        "y": 60.5625
+                    },
+                    "uuid": "dedb4ced-9b05-4f02-bc10-0591efdc7a7f"
                 }
             ],
             "severity": "error",
@@ -2796,23 +2796,46 @@
             "type": "clearance"
         },
         {
+            "description": "间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)",
+            "items": [
+                {
+                    "description": "F.Cu 上 U11 的焊盘 10 [CUT_TIMER]",
+                    "pos": {
+                        "x": 140.65,
+                        "y": 60.2875
+                    },
+                    "uuid": "40a347ab-8f48-46bb-8a09-5bd85075dfa1"
+                },
+                {
+                    "description": "F.Cu 上 U11 的焊盘 9 [CUT_ILM]",
+                    "pos": {
+                        "x": 140.9,
+                        "y": 60.7625
+                    },
+                    "uuid": "840b36b3-86f3-480f-af73-d330771f225c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q21 的焊盘 2 [GND]",
+                    "description": "B.Cu 上 Q13 的焊盘 2 [GND]",
                     "pos": {
-                        "x": 135.55,
+                        "x": 113.05,
                         "y": 108.25
                     },
-                    "uuid": "479f744c-b9ec-45d3-9a78-c9b30b931b1a"
+                    "uuid": "677ffddb-e84d-49e5-beb4-1f1c33445d2b"
                 },
                 {
-                    "description": "B.Cu 上 Q21 的焊盘 3 [K3_0]",
+                    "description": "B.Cu 上 Q13 的焊盘 3 [K2_2]",
                     "pos": {
-                        "x": 136.5,
+                        "x": 114.0,
                         "y": 106.25
                     },
-                    "uuid": "560d07b7-24cd-4c6a-8047-c7ee0973996e"
+                    "uuid": "784b7388-ffef-430a-af7f-8f38c01efee0"
                 }
             ],
             "severity": "error",
@@ -2845,29 +2868,6 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q8 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 77.55,
-                        "y": 121.75
-                    },
-                    "uuid": "55616834-9ff7-4819-9550-dfc20b266f78"
-                },
-                {
-                    "description": "B.Cu 上 Q8 的焊盘 3 [K1_7]",
-                    "pos": {
-                        "x": 78.5,
-                        "y": 119.75
-                    },
-                    "uuid": "e69c3b8c-b73d-480e-99fd-d5c3534b1ea9"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
                     "description": "B.Cu 上 Q18 的焊盘 3 [K2_7]",
                     "pos": {
                         "x": 114.0,
@@ -2891,20 +2891,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q21 的焊盘 3 [K3_0]",
+                    "description": "B.Cu 上 Q13 的焊盘 3 [K2_2]",
                     "pos": {
-                        "x": 136.5,
+                        "x": 114.0,
                         "y": 106.25
                     },
-                    "uuid": "560d07b7-24cd-4c6a-8047-c7ee0973996e"
+                    "uuid": "784b7388-ffef-430a-af7f-8f38c01efee0"
                 },
                 {
-                    "description": "B.Cu 上 Q21 的焊盘 1 [BASE_20]",
+                    "description": "B.Cu 上 Q13 的焊盘 1 [BASE_12]",
                     "pos": {
-                        "x": 137.45,
+                        "x": 114.95,
                         "y": 108.25
                     },
-                    "uuid": "83aefe69-d21c-45d6-b510-dd246fd06bff"
+                    "uuid": "adfe9360-b36e-4e91-b8ff-119b53ced6a4"
                 }
             ],
             "severity": "error",
@@ -3006,6 +3006,29 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
+                    "description": "B.Cu 上 Q20 的焊盘 3 [K2_9]",
+                    "pos": {
+                        "x": 129.0,
+                        "y": 119.75
+                    },
+                    "uuid": "2eb69135-213b-49e5-bb19-eaca899c017a"
+                },
+                {
+                    "description": "B.Cu 上 Q20 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 128.05,
+                        "y": 121.75
+                    },
+                    "uuid": "49774e4a-e99d-4f0e-a13b-f4488e3b9081"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
+            "items": [
+                {
                     "description": "B.Cu 上 Q16 的焊盘 3 [K2_5]",
                     "pos": {
                         "x": 99.0,
@@ -3043,29 +3066,6 @@
                         "y": 121.75
                     },
                     "uuid": "37668109-7aa6-4b51-a156-19853cd65aa0"
-                }
-            ],
-            "severity": "error",
-            "type": "clearance"
-        },
-        {
-            "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
-            "items": [
-                {
-                    "description": "B.Cu 上 Q20 的焊盘 3 [K2_9]",
-                    "pos": {
-                        "x": 129.0,
-                        "y": 119.75
-                    },
-                    "uuid": "2eb69135-213b-49e5-bb19-eaca899c017a"
-                },
-                {
-                    "description": "B.Cu 上 Q20 的焊盘 2 [GND]",
-                    "pos": {
-                        "x": 128.05,
-                        "y": 121.75
-                    },
-                    "uuid": "49774e4a-e99d-4f0e-a13b-f4488e3b9081"
                 }
             ],
             "severity": "error",
@@ -3167,20 +3167,20 @@
             "description": "间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)",
             "items": [
                 {
-                    "description": "B.Cu 上 Q23 的焊盘 2 [GND]",
+                    "description": "B.Cu 上 Q8 的焊盘 2 [GND]",
                     "pos": {
-                        "x": 150.55,
-                        "y": 108.25
+                        "x": 77.55,
+                        "y": 121.75
                     },
-                    "uuid": "5f0236b2-e646-4fd5-816c-1b845eb43ca6"
+                    "uuid": "55616834-9ff7-4819-9550-dfc20b266f78"
                 },
                 {
-                    "description": "B.Cu 上 Q23 的焊盘 3 [K3_2]",
+                    "description": "B.Cu 上 Q8 的焊盘 3 [K1_7]",
                     "pos": {
-                        "x": 151.5,
-                        "y": 106.25
+                        "x": 78.5,
+                        "y": 119.75
                     },
-                    "uuid": "b3c9d365-886b-40cf-87f1-82b721ac130f"
+                    "uuid": "e69c3b8c-b73d-480e-99fd-d5c3534b1ea9"
                 }
             ],
             "severity": "error",

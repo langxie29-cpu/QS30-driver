@@ -1,0 +1,17 @@
+[
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "native.after; protection; register_opens; added_violations; prior_connections_lost; cathodes; cathode_endpoints",
+    "assertion": "KiCad 10.0.8 native after: ERC 0/0, clearance 79, unconnected 65, parity 0; added_violations 0; prior_connections_lost 0; cathodes 30/30; cathode_endpoints 180/180; protection OVP/FB/SNUB 14→20 and J6 39→39; register opens SER2/SER3/SR_CLK_BUS/HC_CLEAR_N=1."
+  },
+  {
+    "source": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+    "locator": "opening paragraph and validation-scope table",
+    "assertion": "R61.2→R62.1, D3.1→C47.1, watchdog and some J6/permit/hardware blanking endpoints remain unconnected; no signoff for board STOP, OVP, OCP, re-enable, bleed; OVP trip 约21.893 ms and 25 ms bus 约187.86 V are R11 no-load feedback fault fixture; POWER_SIMULATION/EVT_RELEASE/HV_POWER_ON HOLD."
+  },
+  {
+    "source": "r14_6/evidence/simulation/commands-and-hashes.json",
+    "locator": "visible case objects: solver, exit, applied_to_final_hardware",
+    "assertion": "Visible cases off_170, off_195, partial_195, stop_nominal, stop_one_bleeder, stop_u11_stuck, watchdog_proxy, ovp_proxy have exit 0, solver ngspice-46 DLL, and applied_to_final_hardware false; these are model/proxy runs only."
+  }
+]

@@ -59,4 +59,4 @@
 
 ## 独立审查
 
-本任务的独立 Worker 使用 DeepSeek Harness。主会话负责 PCB 串行集成、原生工具核验、证据复核和门禁决定。 [Harness 记录](evidence/harness) · [复现说明](REPRODUCE.md)
+对五个领域使用 DeepSeek Harness，计 11 次 Worker 启动，含一次电气格式合同重试。实际请求、token 与账单金额未获得可信回执。主会话负责 PCB 串行集成、原生验证、证据复核和最终门禁。 [独立审查和主会话复核](HARNESS_REVIEW.md) · [复现说明](REPRODUCE.md)

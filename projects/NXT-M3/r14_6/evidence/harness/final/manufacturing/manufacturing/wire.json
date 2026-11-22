@@ -1,0 +1,95 @@
+{
+  "result": {
+    "task_id": "manufacturing",
+    "status": "PASS",
+    "notes": "Documentary manufacturing audit completed against the three supplied excerpts. The evidence supports board-level routing/DFM status and external socket pad geometry, but it does not qualify the fab process, assembly, QS30-1/GZC13-F socket hardware, harness, insulation, or voltage/fault behavior. Mechanical assembly remains HOLD; remaining unknowns and next-gate evidence are enumerated in the inventory. No issue blocking this documentary review was found in the supplied evidence.",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [
+      "https://www.tube-tester.com/sites/nixie/dat_arch/QS30-1.pdf",
+      "https://www.ti.com/lit/ds/symlink/tca9517a.pdf",
+      "https://www.ti.com/lit/ds/symlink/tlv1701.pdf",
+      "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "https://jlcpcb.com/capabilities/pcb-capabilities/",
+      "https://jlcpcb.com/capabilities/pcb-assembly-capabilities"
+    ],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": []
+  },
+  "inventory": "## 制造与外部管座资格审计（仅据三份摘录）\n\n**板级/路由证据（不构成制造放行）**：KiCad 10.0.8 原生 after：ERC 0/0、clearance 79、其他 DRC 0、unconnected 65、parity 0；added_violations 0、prior_connections_lost 0。after DRC 分组仅列 mmbta42_candidate_exception 60、lv_same_package 16、switch_package 3。cathodes 30/30、端点 180/180；保护项 OVP/FB/SNUB 14→20，J6 39→39。寄存器开路计数：SER2、SER3、SR_CLK_BUS、HC_CLEAR_N 各 1，SER0/SER1/SR_LATCH_BUS/HC_OE_N 为 0。板 130×80 mm、4 层、33 个接线焊盘；冻结 MH1–MH4/J2–J6；封装变更 C35/C48/R81/R82/R83/U13/U14/U6。\n\n**外部 QS30-1 管座/线束**：V1–V3 各 11 个 B.Cu 1.80×2.60 mm SMD 接线焊盘、无钻孔；六个已删除管座孔未恢复；最小同层铜距 2.65 mm（V1.1/V1.13）；三组阳极焊盘分别导通 R303.2/R305.2/R307.2；整板 HV_BUS 仍有 4 处开路。丝印 A/0–9 映射管脚 1/3/13/12/11/10/9/7/6/5/4，来源称来自原生网表及管资料；摘录另链 R11 管座证据边界，未提供内容。二手 GZC13-F 的定位键视角、触点到焊片、孔距、接合深度、绝缘未测；未用脚 2/8 本体功能/断开状态待首件核对。**状态 HOLD**：仅有板级几何和电气映射；管座实件、焊点抗拉、线束应力释放、外壳绝缘未见证；J6 地回路及端点待闭合。\n\n**低压 IC/板厂 DFM**：34 个同封装铜对；U6/U13/U14 的 18 对按 TI DGK0008A 整改：中心行距 4.225→4.40 mm，焊盘 1.625×0.50→1.40×0.45 mm，0.65 mm 节距保持；U14.3/.4/.6 旧铜入口随新焊盘延长。18 个旧错误在当前规则下消除，但器件选择与装配电压资格仍开放；U1/U11 的 16 个 RPW0010A 违规保留；无规则例外。候选 JLCPCB 公示：1 oz 多层最小线距 0.09 mm、1 oz 阻焊桥 0.10 mm、部分颜色最小焊盘间距 0.13 mm、2 oz 0.20 mm；仅为初筛。实际铜重、局部蚀刻公差、阻焊注册、桥宽、RPW 中央大焊盘钢网开口及贴装偏差需书面审核；TI RPW 推荐 0.10 mm 钢网及不同开口比例，DGK 用独立 VSSOP 钢网图；验收需对应样片的桥连、润湿和尺寸记录。\n\n**下一门证据/剩余未知**：管座首件断电逐触点 33/33 连续性、批次与照片；按装配图标记键位/管侧/焊接侧视图；可拆绝缘支撑及插拔轨迹、螺栓头、座焊片、外壳、线束三维包络；每模块三组双端编号线束、两端夹持/服务弯、先试装再定线长；按工艺样片定剥线/预镀锡/焊接/检查，并验证焊点裂纹、翘盘、润湿、保持力、振动、多次拆装；按实际焊料、线端、带电金属量净距，考虑污染/海拔/CTI，阻焊不计永久绝缘。板厂须书面确认叠层/铜重/蚀刻/阻焊/钢网/贴装并提交桥连、润湿、尺寸样片。电气侧须证明 U14.2 在 170/195 V 下钳位、关断回灌、失供极限、响应准确性、钳位寿命；U1/U11（5.25 V 筛查包络）和 U6（3.3 V 逻辑包络）的启动/关断/故障峰值不能由名义电压推出。HV_BUS 4 开路、上述寄存器开路及 65 unconnected 仍未闭合。",
+  "sources": [
+    {
+      "source": "r14_6/ROUTING_GATE_RESULTS.json",
+      "locator": "native.after; drc_groups_after; added_violations; prior_connections_lost",
+      "assertion": "KiCad 10.0.8 after 为 ERC 0/0、clearance 79、drc_other 0、unconnected 65、parity 0；after 分组 60/16/3；新增违规 0、丢失连接 0。"
+    },
+    {
+      "source": "r14_6/ROUTING_GATE_RESULTS.json",
+      "locator": "cathodes; cathode_endpoints; protection; register_opens; board_size_mm; copper_layers; wire_pads; frozen_refs; footprint_changes",
+      "assertion": "阴极 30/30、端点 180/180；OVP/FB/SNUB 14→20、J6 39→39；SER2/SER3/SR_CLK_BUS/HC_CLEAR_N 各 1；板 130×80 mm、4 层、33 焊盘；冻结与封装变更如摘录。"
+    },
+    {
+      "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+      "locator": "板框/焊盘/阳极/HV_BUS 段",
+      "assertion": "V1–V3 各 11 个 1.80×2.60 mm B.Cu SMD 焊盘无钻孔；六孔未恢复；最小同层铜距 2.65 mm；三组阳极分别通 R303.2/R305.2/R307.2；HV_BUS 仍 4 开路。"
+    },
+    {
+      "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+      "locator": "管脚映射表及来源句",
+      "assertion": "丝印 A/0–9 映射管脚 1/3/13/12/11/10/9/7/6/5/4；来源称原生网表及管资料。"
+    },
+    {
+      "source": "r14_6/MECHANICAL_ASSEMBLY.md",
+      "locator": "第二段与状态 HOLD",
+      "assertion": "GZC13-F 定位键、触点-焊片、孔距、接合深度、绝缘未测；2/8 待首件；仅板级几何/电气映射；管座实件、焊点抗拉、线束应力释放、外壳绝缘未见证；J6 待闭合。"
+    },
+    {
+      "source": "r14_6/LV_IC_DFM.md",
+      "locator": "首段",
+      "assertion": "34 同封装铜对；18 对 DGK0008A 整改尺寸 4.225→4.40 mm、1.625×0.50→1.40×0.45 mm、0.65 mm 保持；18 旧错误消除但器件/装配电压资格开放；U1/U11 16 个 RPW0010A 违规保留；无规则例外。"
+    },
+    {
+      "source": "r14_6/LV_IC_DFM.md",
+      "locator": "第二段",
+      "assertion": "JLCPCB 候选公示 1 oz 0.09 mm 线距、0.10 mm 桥、部分颜色 0.13 mm 焊盘间距、2 oz 0.20 mm；仅为初筛；实际铜重/蚀刻/阻焊/桥宽/钢网/贴装需书面审核；TI RPW 0.10 mm 钢网；验收需桥连/润湿/尺寸样片。"
+    },
+    {
+      "source": "r14_6/LV_IC_DFM.md",
+      "locator": "第三段",
+      "assertion": "U14.2 在 170/195 V 约 3.869/4.438 V（假定正确装配且忽略钳位），3.3 V 供电可能钳位；下臂开路、回灌、失供、响应、钳位寿命未证明；U1/U11 5.25 V、U6 3.3 V 包络保留启动/关断/故障未知。"
+    },
+    {
+      "source": "https://www.tube-tester.com/sites/nixie/dat_arch/QS30-1.pdf",
+      "locator": "管资料链接",
+      "assertion": "被 MECHANICAL_ASSEMBLY.md 引作 QS30-1 管资料来源；摘录未给出实测。"
+    },
+    {
+      "source": "https://www.ti.com/lit/ds/symlink/tca9517a.pdf",
+      "locator": "器件资料链接",
+      "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+    },
+    {
+      "source": "https://www.ti.com/lit/ds/symlink/tlv1701.pdf",
+      "locator": "器件资料链接",
+      "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+    },
+    {
+      "source": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "locator": "器件资料链接",
+      "assertion": "被 LV_IC_DFM.md 列为 TI 器件资料参考；摘录未展开具体参数。"
+    },
+    {
+      "source": "https://jlcpcb.com/capabilities/pcb-capabilities/",
+      "locator": "板厂能力链接",
+      "assertion": "被 LV_IC_DFM.md 引作候选板厂公示 PCB 能力来源；摘录明确仅为初筛。"
+    },
+    {
+      "source": "https://jlcpcb.com/capabilities/pcb-assembly-capabilities",
+      "locator": "贴装能力链接",
+      "assertion": "被 LV_IC_DFM.md 引作候选板厂贴装能力来源；摘录未给出实际审核结果。"
+    }
+  ]
+}

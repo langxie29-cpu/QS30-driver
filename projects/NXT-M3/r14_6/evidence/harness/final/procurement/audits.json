@@ -1,0 +1,31 @@
+[
+  {
+    "task_id": "procurement",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "82df7b9761483dc8ff6677c5b9957f071ba233beadd85703f33cf2beb15f01ce",
+      "sources.json": "fa7931cb84d6964d247b29f203a1960e11e9952be0c91c082dd1f5cbaa44a3a3"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T22:45:50.669634+00:00",
+    "seconds": 47.297,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "task_id": "pcb",
+  "status": "PASS",
+  "notes": "Bounded review completed. evidence_anchors: native.after.clearance=79 equals drc_groups_after 60+16+3=79; native.after.unconnected=65 equals UNCONNECTED_NETS.csv after-column sum 65 (before sum 84=native.before.unconnected); native.after.parity=0 and drc_other=0; register_opens sum 4 matches CSV after values SER2=1,SER3=1,SR_CLK_BUS=1,HC_CLEAR_N=1. Reproducibility: delivered=first_build=independent_rebuild=dfcaf08632f003871ee453f28e9b88e3a48c1bd9b742a3dec1958136bd20f807, identical=true, equals board_sha256; build_exit_code=0, replay_exit_code=0; KiCad 10.0.8 matches. Limitations: 79 clearance groups remain (60+16+3) and 65 unconnected remain; parity is only a reported field with no separate parity artifact in excerpts; no per-pin connection history or standalone KiCad DRC report file in excerpts; rule_sha256, cathode 30/30, endpoint 180/180 and protection counts were not independently cross-checked. PASS is bounded-review completion only, not a DRC-clean or fully-routed design gate. next_gate_evidence: machine-readable DRC report with zero/waived groups, zero unconnected nets or accepted waivers, independent parity report, and a reproducible manifest covering board plus rule/DRC/CSV inputs.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

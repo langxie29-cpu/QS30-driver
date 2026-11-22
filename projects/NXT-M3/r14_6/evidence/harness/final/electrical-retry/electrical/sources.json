@@ -1,0 +1,22 @@
+[
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "native.after; protection; register_opens; added_violations; prior_connections_lost; cathodes; cathode_endpoints",
+    "assertion": "KiCad 10.0.8 native after shows ERC 0/0, clearance 79, unconnected 65, added_violations 0, prior_connections_lost 0, cathodes 30/30, cathode_endpoints 180/180; OVP/FB/SNUB 20 after vs 14 before; J6 39 after; register opens include SER2=1, SER3=1, SR_CLK_BUS=1, HC_CLEAR_N=1."
+  },
+  {
+    "source": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+    "locator": "opening paragraph",
+    "assertion": "Saved-board copper audit says R81.1→C47.1, R83.2→R84.1, SNUB both ends, and C35.1→U13.2 are connected, but R61.2→R62.1, D3.1→C47.1, watchdog and some J6/permit/hardware-blanking endpoints remain unconnected; STOP/OVP/OCP/re-enable/bleed signoff is prohibited."
+  },
+  {
+    "source": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+    "locator": "table rows: 170/195 V, OVP/OCP and startup, STOP/latch/watchdog, bleed/residual, real power model",
+    "assertion": "Reported model limits include ideal target voltage with 30 mA current limit; OVP proxy trip about 21.893 ms and 25 ms bus about 187.86 V; OCP injection dependence with base proxy no trip and R4 proxy about 18.001 ms; U11/R40 DNP and U18.5 GND; bus_to_60_s measured from simulation start; no final PCB/parasitic-consistent LM5155 model; POWER_SIMULATION, EVT_RELEASE, HV_POWER_ON HOLD."
+  },
+  {
+    "source": "r14_6/evidence/simulation/commands-and-hashes.json",
+    "locator": "entries off_170, off_195, partial_195, stop_nominal, stop_one_bleeder, stop_u11_stuck, watchdog_proxy, ovp_proxy",
+    "assertion": "Each listed case has exit 0 and solver ngspice-46 DLL with applied_to_final_hardware false."
+  }
+]

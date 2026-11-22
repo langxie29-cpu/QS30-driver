@@ -1,15 +1,15 @@
 # 电源、故障和硬件 STOP
 
-[原生保护连通表](PROTECTION_NET_CONNECTIVITY.csv) 是已保存实板的铜组审计。电路逻辑网表及 DNP 保持原始状态。反馈 R81.1→C47.1 和 R83.2→R84.1、SNUB 两端和 C35.1→U13.2 已接通。R61.2→R62.1、D3.1→C47.1 、看门狗以及部分 J6/许可/硬件消隐端点仍未接通。不能给实板 STOP、过压、过流、重新使能和泄放签字。
+[原生保护连通表](PROTECTION_NET_CONNECTIVITY.csv) 是已保存实板的铜组审计。电路逻辑网表及 DNP 保持原始状态。反馈 R81.1→C47.1 和 R83.2→R84.1、SNUB 两端和 C35.1→U13.2 已接通。R61.2→R62.1、D3.1→C47.1、看门狗以及部分 J6/许可/硬件消隐端点仍未接通。不能给实板 STOP、过压、过流、重新使能和泄放签字。
 
 | 验证范围 | 当前证据与边界 |
 | --- | --- |
 | 170/195 V 停态和部分导通 | 复跑电流受限母线、行为模型晶体管及管模型筛查。R14.3 fixture 以理想目标电压及 30 mA 限流产生母线，这验证模型工况，实板连续稳压、阴极浮置峰值、温升和器件 SOA 仍未验证。 |
-| OVP/OCP 与启动 | 复跑既有 R11 空载反馈故障 fixture，行为模型 trip 约 21.893 ms，25 ms 母线约 187.86 V。实际 OVP/OCP 共因、前级启动掉电、控制器开路及短路、噪声与钳位需对最终电路建模及验证。 |
+| OVP/OCP 与启动 | 复跑既有 R11 空载反馈故障 fixture，行为模型 trip 约 21.893 ms，25 ms 母线约 187.86 V。既有 R11 OCP 基础代理未报 trip，R4 重塑注入的代理约 18.001 ms 报 trip。该差异显示结果依赖注入形态。实际 OVP/OCP 共因、前级启动掉电、控制器开路及短路、噪声与钳位需对最终电路建模及验证。 |
 | STOP、锁存和看门狗 | R14 代理核查 STOP、单泄放开路、U11 卡通。R14.3 的另一路 U18 IN− 禁止是独立样片候选。现交付 U18.5 原生接 GND，U11/R40 保持 DNP。J6 桥接、持续喂狗故障、U8/U9 失效、共用偏置失供均未证明可覆盖。 |
 | 泄放及残压 | R14 早期代理的 `bus_to_60_s` 为以仿真起点计量。阈值和单失效的实板复测仍缺。U14.2 的输入裕量参见低压 IC 资格台账。 |
 | 真实电源模型与开关应力 | LM5155 候选器件及过往模型搜索可追溯到 R13/R11，当前缺少与实际 PCB、已确认装配配置和寄生参数一致的相关模型。重复峰值、D3 的超快整流换流、MOSFET SOA 和实际吸收效果均未知。 |
 
-[代理复跑日志和命令](evidence/simulation) · [R14.3 硬件模型边界](../r14_3/FAULT_CONTAINMENT_OPTIONS.md) · [R13 仿真资格表](../r13/SIMULATION_QUALIFICATION_MATRIX.csv) · [R14 STOP 模型量测](../r14/evidence/simulation/stop_measurements.json)
+[代理复跑日志和命令](evidence/simulation) · [R14.3 硬件模型边界](../r14_3/FAULT_CONTAINMENT_OPTIONS.md) · [R13 仿真资格表](../r13/SIMULATION_QUALIFICATION_MATRIX.csv) · [R14 STOP 模型量测](../r14/evidence/simulation/stop_measurements.json) · [R11 OCP 两种注入](../r11/evidence/r2/ocp_sense_fault/measurement.json) · [R11 OCP R4](../r11/evidence/r2/ocp_sense_fault_r4/measurement.json)
 
 下一轮优先恢复电源和保护端到端布线、确认 DNP 设计配置与独立硬件保护路径。原理图/PCB 闭合后才可确定包含模型参数与供电约束的试验计划。**POWER_SIMULATION、EVT_RELEASE 和 HV_POWER_ON 均 HOLD。**

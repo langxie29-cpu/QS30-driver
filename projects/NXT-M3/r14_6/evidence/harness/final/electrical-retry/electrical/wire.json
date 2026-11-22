@@ -1,0 +1,45 @@
+{
+  "result": {
+    "task_id": "electrical",
+    "status": "INCONCLUSIVE",
+    "notes": "Bounded review completed against the supplied R14.6 excerpts. Protection endpoints and model limits remain unresolved; nonempty blocking_issues prevents gate signoff, and no gate approval is given.",
+    "evidence_files": [
+      "inventory.md",
+      "sources.json"
+    ],
+    "source_urls": [],
+    "solver": "none",
+    "model_hashes": {},
+    "blocking_issues": [
+      "Saved-board protection connectivity is incomplete: R61.2→R62.1, D3.1→C47.1, watchdog and some J6/permit/hardware-blanking endpoints remain unconnected, so STOP/OVP/OCP/re-enable/bleed signoff is prohibited.",
+      "All listed simulation cases have applied_to_final_hardware=false; model results do not qualify final PCB behavior, including continuous regulation, cathode floating peak, thermal rise, device SOA, OVP/OCP common cause, startup, noise, or clamping.",
+      "DNP and assembly configuration remain unresolved: U11/R40 DNP and U18.5 tied to GND; coverage is unproven for J6 bridging, continuous watchdog fault, U8/U9 failure, and shared-bias loss.",
+      "No LM5155 model consistent with the final PCB, confirmed assembly configuration, and parasitics is available; repetitive peak, D3 ultrafast commutation, MOSFET SOA, and actual snubber effect remain unknown.",
+      "Bleeder residual-voltage threshold and single-failure board retest are missing; bus_to_60_s is measured from the simulation origin.",
+      "Register opens remain: SER2=1, SER3=1, SR_CLK_BUS=1, HC_CLEAR_N=1."
+    ]
+  },
+  "inventory": "# R14.6 保护端点与模型边界审查\n\n## 证据锚点\n- KiCad 10.0.8 原生 after：ERC 0/0，clearance 79，unconnected 65，added_violations 0，prior_connections_lost 0；cathodes 30/30，cathode_endpoints 180/180。\n- 保护计数：OVP/FB/SNUB before 14 → after 20；J6 before 39 → after 39。\n- 保护连通：R81.1→C47.1、R83.2→R84.1、SNUB 两端、C35.1→U13.2 已接通；但 R61.2→R62.1、D3.1→C47.1、看门狗及部分 J6/许可/硬件消隐端点仍未接通，不能给 STOP、OVP、OCP、重新使能、泄放签字。\n- 仿真：off_170、off_195、partial_195、stop_nominal、stop_one_bleeder、stop_u11_stuck、watchdog_proxy、ovp_proxy 均 exit 0，solver 为 ngspice-46 DLL，且 applied_to_final_hardware=false。\n- 代理结果：OVP/FB 空载故障 trip 约 21.893 ms，25 ms 母线约 187.86 V；OCP 基础代理未报 trip，R4 重塑注入约 18.001 ms 报 trip，显示注入形态依赖。\n\n## 限制\n- 170/195 V 工况仅验证理想目标电压及 30 mA 限流模型；连续稳压、阴极浮置峰值、温升、器件 SOA 未验证。\n- OVP/OCP 共因、前级启动掉电、控制器开路/短路、噪声与钳位未验证；泄放 bus_to_60_s 以仿真起点计量，阈值及单失效实板复测缺失。\n- U11/R40 为 DNP，U18.5 原生接 GND；J6 桥接、持续喂狗故障、U8/U9 失效、共用偏置失供覆盖未证明。\n- 缺少与最终 PCB、已确认装配配置及寄生参数一致的 LM5155 模型；重复峰值、D3 超快整流换流、MOSFET SOA、实际吸收效果未知。\n\n## 下一门证据\n- 恢复电源和保护端到端布线，闭合原理图/PCB，确认 DNP 配置和独立硬件保护路径。\n- 使用与最终板一致的模型参数、供电约束和寄生参数完成 OVP/OCP/STOP/泄放/开关应力验证，并制定实板阈值、单失效、温升和 SOA 试验计划。\n- POWER_SIMULATION、EVT_RELEASE、HV_POWER_ON 均为 HOLD；本审查不构成任何门批准。",
+  "sources": [
+    {
+      "source": "r14_6/ROUTING_GATE_RESULTS.json",
+      "locator": "native.after; protection; register_opens; added_violations; prior_connections_lost; cathodes; cathode_endpoints",
+      "assertion": "KiCad 10.0.8 native after shows ERC 0/0, clearance 79, unconnected 65, added_violations 0, prior_connections_lost 0, cathodes 30/30, cathode_endpoints 180/180; OVP/FB/SNUB 20 after vs 14 before; J6 39 after; register opens include SER2=1, SER3=1, SR_CLK_BUS=1, HC_CLEAR_N=1."
+    },
+    {
+      "source": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+      "locator": "opening paragraph",
+      "assertion": "Saved-board copper audit says R81.1→C47.1, R83.2→R84.1, SNUB both ends, and C35.1→U13.2 are connected, but R61.2→R62.1, D3.1→C47.1, watchdog and some J6/permit/hardware-blanking endpoints remain unconnected; STOP/OVP/OCP/re-enable/bleed signoff is prohibited."
+    },
+    {
+      "source": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+      "locator": "table rows: 170/195 V, OVP/OCP and startup, STOP/latch/watchdog, bleed/residual, real power model",
+      "assertion": "Reported model limits include ideal target voltage with 30 mA current limit; OVP proxy trip about 21.893 ms and 25 ms bus about 187.86 V; OCP injection dependence with base proxy no trip and R4 proxy about 18.001 ms; U11/R40 DNP and U18.5 GND; bus_to_60_s measured from simulation start; no final PCB/parasitic-consistent LM5155 model; POWER_SIMULATION, EVT_RELEASE, HV_POWER_ON HOLD."
+    },
+    {
+      "source": "r14_6/evidence/simulation/commands-and-hashes.json",
+      "locator": "entries off_170, off_195, partial_195, stop_nominal, stop_one_bleeder, stop_u11_stuck, watchdog_proxy, ovp_proxy",
+      "assertion": "Each listed case has exit 0 and solver ngspice-46 DLL with applied_to_final_hardware false."
+    }
+  ]
+}

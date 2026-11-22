@@ -1,5 +1,5 @@
 ** Drc report for NXT-M3-R14.6.kicad_pcb **
-** Created on 2026-11-23T06:45:01 **
+** Created on 2026-11-23T06:51:02 **
 ** Report includes: Errors, Warnings, Exclusions **
 
 ** Found 79 DRC violations **
@@ -7,14 +7,6 @@
     Rule: Switch node provisional repetitive-peak screen; error
     @(163.5000 mm, 79.5000 mm): Pad 1 [HV_BUS] of D3 on F.Cu
     @(167.5000 mm, 79.5000 mm): Pad 2 [SW_HV] of D3 on F.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(94.4500 mm, 121.7500 mm): Pad 1 [BASE_09] of Q10 on B.Cu
-    @(93.5000 mm, 119.7500 mm): Pad 3 [K1_9] of Q10 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(92.5500 mm, 121.7500 mm): Pad 2 [GND] of Q10 on B.Cu
-    @(93.5000 mm, 119.7500 mm): Pad 3 [K1_9] of Q10 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(167.4500 mm, 108.2500 mm): Pad 1 [BASE_24] of Q25 on B.Cu
@@ -59,18 +51,6 @@
     Rule: HV bus and display conservative creepage screen; error
     @(86.0000 mm, 119.7500 mm): Pad 3 [K1_8] of Q9 on B.Cu
     @(86.9500 mm, 121.7500 mm): Pad 1 [BASE_08] of Q9 on B.Cu
-[clearance]: 间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)
-    Rule: 网络类 'DIGITAL_SIGNAL'; error
-    @(139.1000 mm, 61.2375 mm): Pad 3 [unconnected-(U11-PG-Pad3)] of U11 on F.Cu
-    @(139.3500 mm, 61.7125 mm): Pad 4 [CUT_PGTH] of U11 on F.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(167.4500 mm, 121.7500 mm): Pad 1 [BASE_29] of Q30 on B.Cu
-    @(166.5000 mm, 119.7500 mm): Pad 3 [K3_9] of Q30 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(165.5500 mm, 121.7500 mm): Pad 2 [GND] of Q30 on B.Cu
-    @(166.5000 mm, 119.7500 mm): Pad 3 [K3_9] of Q30 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(143.0500 mm, 121.7500 mm): Pad 2 [GND] of Q27 on B.Cu
@@ -79,6 +59,18 @@
     Rule: HV bus and display conservative creepage screen; error
     @(144.0000 mm, 119.7500 mm): Pad 3 [K3_6] of Q27 on B.Cu
     @(144.9500 mm, 121.7500 mm): Pad 1 [BASE_26] of Q27 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(167.4500 mm, 121.7500 mm): Pad 1 [BASE_29] of Q30 on B.Cu
+    @(166.5000 mm, 119.7500 mm): Pad 3 [K3_9] of Q30 on B.Cu
+[clearance]: 间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)
+    Rule: 网络类 'DIGITAL_SIGNAL'; error
+    @(139.1000 mm, 61.2375 mm): Pad 3 [unconnected-(U11-PG-Pad3)] of U11 on F.Cu
+    @(139.3500 mm, 61.7125 mm): Pad 4 [CUT_PGTH] of U11 on F.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(165.5500 mm, 121.7500 mm): Pad 2 [GND] of Q30 on B.Cu
+    @(166.5000 mm, 119.7500 mm): Pad 3 [K3_9] of Q30 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(92.5500 mm, 108.2500 mm): Pad 2 [GND] of Q5 on B.Cu
@@ -91,22 +83,30 @@
     Rule: 网络类 'LOW_VOLTAGE_POWER'; error
     @(139.3500 mm, 61.7125 mm): Pad 4 [CUT_PGTH] of U11 on F.Cu
     @(139.7625 mm, 61.4375 mm): Pad 5 [HV_ISOLATE_IN] of U11 on F.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(94.4500 mm, 121.7500 mm): Pad 1 [BASE_09] of Q10 on B.Cu
+    @(93.5000 mm, 119.7500 mm): Pad 3 [K1_9] of Q10 on B.Cu
 [clearance]: 间距违规 (网络类 'SAFETY_CONTROL' 间距 0.2000 mm; 实际 0.1625 mm)
     Rule: 网络类 'SAFETY_CONTROL'; error
     @(139.7625 mm, 61.4375 mm): Pad 5 [HV_ISOLATE_IN] of U11 on F.Cu
     @(139.3500 mm, 60.2875 mm): Pad 1 [ARMED] of U11 on F.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
+    @(92.5500 mm, 121.7500 mm): Pad 2 [GND] of Q10 on B.Cu
+    @(93.5000 mm, 119.7500 mm): Pad 3 [K1_9] of Q10 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
     @(107.4500 mm, 121.7500 mm): Pad 1 [BASE_16] of Q17 on B.Cu
     @(106.5000 mm, 119.7500 mm): Pad 3 [K2_6] of Q17 on B.Cu
-[clearance]: 间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)
-    Rule: 网络类 'LOW_VOLTAGE_POWER'; error
-    @(140.2375 mm, 60.5625 mm): Pad 6 [5V_HV] of U11 on F.Cu
-    @(140.6500 mm, 61.7125 mm): Pad 7 [CUT_DVDT] of U11 on F.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(144.0000 mm, 106.2500 mm): Pad 3 [K3_1] of Q22 on B.Cu
     @(144.9500 mm, 108.2500 mm): Pad 1 [BASE_21] of Q22 on B.Cu
+[clearance]: 间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)
+    Rule: 网络类 'LOW_VOLTAGE_POWER'; error
+    @(140.2375 mm, 60.5625 mm): Pad 6 [5V_HV] of U11 on F.Cu
+    @(140.6500 mm, 61.7125 mm): Pad 7 [CUT_DVDT] of U11 on F.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(144.0000 mm, 106.2500 mm): Pad 3 [K3_1] of Q22 on B.Cu
@@ -133,24 +133,32 @@
     @(70.0500 mm, 108.2500 mm): Pad 2 [GND] of Q2 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
+    @(159.0000 mm, 106.2500 mm): Pad 3 [K3_3] of Q24 on B.Cu
+    @(159.9500 mm, 108.2500 mm): Pad 1 [BASE_23] of Q24 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
     @(159.9500 mm, 121.7500 mm): Pad 1 [BASE_28] of Q29 on B.Cu
     @(159.0000 mm, 119.7500 mm): Pad 3 [K3_8] of Q29 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(159.0000 mm, 106.2500 mm): Pad 3 [K3_3] of Q24 on B.Cu
-    @(159.9500 mm, 108.2500 mm): Pad 1 [BASE_23] of Q24 on B.Cu
+    @(158.0500 mm, 108.2500 mm): Pad 2 [GND] of Q24 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(158.0500 mm, 121.7500 mm): Pad 2 [GND] of Q29 on B.Cu
     @(159.0000 mm, 119.7500 mm): Pad 3 [K3_8] of Q29 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(159.0000 mm, 106.2500 mm): Pad 3 [K3_3] of Q24 on B.Cu
-    @(158.0500 mm, 108.2500 mm): Pad 2 [GND] of Q24 on B.Cu
 [clearance]: 间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1875 mm)
     Rule: 网络类 'LOW_VOLTAGE_POWER'; error
     @(140.9000 mm, 61.2375 mm): Pad 8 [GND] of U11 on F.Cu
     @(140.6500 mm, 61.7125 mm): Pad 7 [CUT_DVDT] of U11 on F.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(78.5000 mm, 106.2500 mm): Pad 3 [K1_2] of Q3 on B.Cu
+    @(77.5500 mm, 108.2500 mm): Pad 2 [GND] of Q3 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(78.5000 mm, 106.2500 mm): Pad 3 [K1_2] of Q3 on B.Cu
+    @(79.4500 mm, 108.2500 mm): Pad 1 [BASE_02] of Q3 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(122.4500 mm, 121.7500 mm): Pad 1 [BASE_18] of Q19 on B.Cu
@@ -179,45 +187,41 @@
     Rule: HV bus and display conservative creepage screen; error
     @(137.4500 mm, 121.7500 mm): Pad 1 [BASE_25] of Q26 on B.Cu
     @(136.5000 mm, 119.7500 mm): Pad 3 [K3_5] of Q26 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(135.5500 mm, 121.7500 mm): Pad 2 [GND] of Q26 on B.Cu
-    @(136.5000 mm, 119.7500 mm): Pad 3 [K3_5] of Q26 on B.Cu
 [clearance]: 间距违规 (网络类 'LOW_VOLTAGE_POWER' 间距 0.2000 mm; 实际 0.1625 mm)
     Rule: 网络类 'LOW_VOLTAGE_POWER'; error
     @(140.6500 mm, 60.2875 mm): Pad 10 [CUT_TIMER] of U11 on F.Cu
     @(140.2375 mm, 60.5625 mm): Pad 6 [5V_HV] of U11 on F.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
-    @(113.0500 mm, 108.2500 mm): Pad 2 [GND] of Q13 on B.Cu
-    @(114.0000 mm, 106.2500 mm): Pad 3 [K2_2] of Q13 on B.Cu
+    @(135.5500 mm, 121.7500 mm): Pad 2 [GND] of Q26 on B.Cu
+    @(136.5000 mm, 119.7500 mm): Pad 3 [K3_5] of Q26 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(105.5500 mm, 108.2500 mm): Pad 2 [GND] of Q12 on B.Cu
     @(106.5000 mm, 106.2500 mm): Pad 3 [K2_1] of Q12 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(114.0000 mm, 106.2500 mm): Pad 3 [K2_2] of Q13 on B.Cu
-    @(114.9500 mm, 108.2500 mm): Pad 1 [BASE_12] of Q13 on B.Cu
 [clearance]: 间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)
     Rule: 网络类 'DIGITAL_SIGNAL'; error
     @(140.6500 mm, 60.2875 mm): Pad 10 [CUT_TIMER] of U11 on F.Cu
     @(140.9000 mm, 60.7625 mm): Pad 9 [CUT_ILM] of U11 on F.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
-    @(106.5000 mm, 106.2500 mm): Pad 3 [K2_1] of Q12 on B.Cu
-    @(107.4500 mm, 108.2500 mm): Pad 1 [BASE_11] of Q12 on B.Cu
+    @(113.0500 mm, 108.2500 mm): Pad 2 [GND] of Q13 on B.Cu
+    @(114.0000 mm, 106.2500 mm): Pad 3 [K2_2] of Q13 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(114.0000 mm, 106.2500 mm): Pad 3 [K2_2] of Q13 on B.Cu
+    @(114.9500 mm, 108.2500 mm): Pad 1 [BASE_12] of Q13 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(129.9500 mm, 108.2500 mm): Pad 1 [BASE_14] of Q15 on B.Cu
     @(129.0000 mm, 106.2500 mm): Pad 3 [K2_4] of Q15 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
-    @(64.4500 mm, 121.7500 mm): Pad 1 [BASE_05] of Q6 on B.Cu
-    @(63.5000 mm, 119.7500 mm): Pad 3 [K1_5] of Q6 on B.Cu
+    @(106.5000 mm, 106.2500 mm): Pad 3 [K2_1] of Q12 on B.Cu
+    @(107.4500 mm, 108.2500 mm): Pad 1 [BASE_11] of Q12 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
-    @(62.5500 mm, 121.7500 mm): Pad 2 [GND] of Q6 on B.Cu
+    @(64.4500 mm, 121.7500 mm): Pad 1 [BASE_05] of Q6 on B.Cu
     @(63.5000 mm, 119.7500 mm): Pad 3 [K1_5] of Q6 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
@@ -225,16 +229,20 @@
     @(128.0500 mm, 108.2500 mm): Pad 2 [GND] of Q15 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
+    @(62.5500 mm, 121.7500 mm): Pad 2 [GND] of Q6 on B.Cu
+    @(63.5000 mm, 119.7500 mm): Pad 3 [K1_5] of Q6 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
     @(79.4500 mm, 121.7500 mm): Pad 1 [BASE_07] of Q8 on B.Cu
+    @(78.5000 mm, 119.7500 mm): Pad 3 [K1_7] of Q8 on B.Cu
+[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
+    Rule: HV bus and display conservative creepage screen; error
+    @(77.5500 mm, 121.7500 mm): Pad 2 [GND] of Q8 on B.Cu
     @(78.5000 mm, 119.7500 mm): Pad 3 [K1_7] of Q8 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(114.0000 mm, 119.7500 mm): Pad 3 [K2_7] of Q18 on B.Cu
     @(114.9500 mm, 121.7500 mm): Pad 1 [BASE_17] of Q18 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(77.5500 mm, 121.7500 mm): Pad 2 [GND] of Q8 on B.Cu
-    @(78.5000 mm, 119.7500 mm): Pad 3 [K1_7] of Q8 on B.Cu
 [clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
     Rule: HV bus and display conservative creepage screen; error
     @(114.0000 mm, 119.7500 mm): Pad 3 [K2_7] of Q18 on B.Cu
@@ -283,14 +291,6 @@
     Rule: 网络类 'DIGITAL_SIGNAL'; error
     @(80.1000 mm, 61.7625 mm): Pad 2 [FRONT_OVLO] of U1 on F.Cu
     @(80.3500 mm, 61.2875 mm): Pad 1 [FRONT_EN] of U1 on F.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(78.5000 mm, 106.2500 mm): Pad 3 [K1_2] of Q3 on B.Cu
-    @(77.5500 mm, 108.2500 mm): Pad 2 [GND] of Q3 on B.Cu
-[clearance]: 间距违规 (规则 'HV bus and display conservative creepage screen' 间距 2.0000 mm; 实际 1.1102 mm)
-    Rule: HV bus and display conservative creepage screen; error
-    @(78.5000 mm, 106.2500 mm): Pad 3 [K1_2] of Q3 on B.Cu
-    @(79.4500 mm, 108.2500 mm): Pad 1 [BASE_02] of Q3 on B.Cu
 [clearance]: 间距违规 (网络类 'DIGITAL_SIGNAL' 间距 0.2000 mm; 实际 0.1875 mm)
     Rule: 网络类 'DIGITAL_SIGNAL'; error
     @(80.3500 mm, 62.7125 mm): Pad 4 [FRONT_PGTH] of U1 on F.Cu
@@ -392,14 +392,14 @@
 [unconnected_items]: Missing connection between items
     Local override; error
     @(176.7800 mm, 83.0400 mm): Pad 3 [HV_ISENSE] of Q32 on F.Cu
-    @(167.8250 mm, 58.0000 mm): Track [HV_ISENSE] on B.Cu, length 0.2610 mm
+    @(167.8250 mm, 58.0000 mm): Pad 2 [HV_ISENSE] of R76 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(146.2000 mm, 76.8250 mm): Pad 6 [CS_FILT] of U13 on F.Cu
-    @(135.2250 mm, 76.0000 mm): Track [CS_FILT] on F.Cu, length 0.3363 mm
+    @(135.2250 mm, 76.0000 mm): Pad 1 [CS_FILT] of C31 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(139.6000 mm, 55.6000 mm): Track [CUT_OVLO] on B.Cu, length 2.4000 mm
+    @(139.6000 mm, 55.6000 mm): Via [CUT_OVLO] on F.Cu - B.Cu
     @(139.1000 mm, 60.7625 mm): Pad 2 [CUT_OVLO] of U11 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
@@ -455,7 +455,7 @@
     @(163.4500 mm, 73.7500 mm): Pad 12 [HV_UVLO] of U17 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(104.5000 mm, 77.2500 mm): Track [3V3] on B.Cu, length 2.7500 mm
+    @(101.7500 mm, 77.2500 mm): Track [3V3] on B.Cu, length 2.7500 mm
     @(105.4000 mm, 77.0000 mm): Pad 6 [3V3] of U25 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
@@ -491,11 +491,11 @@
     @(105.4000 mm, 76.5000 mm): Pad 7 [WDI] of U25 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(77.4000 mm, 74.6000 mm): Track [BTN2_GPIO] on B.Cu, length 1.1000 mm
+    @(76.7000 mm, 75.3000 mm): Track [BTN2_GPIO] on B.Cu, length 0.9899 mm
     @(79.9500 mm, 74.2250 mm): Pad 1 [BTN2_GPIO] of C61 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(76.2000 mm, 75.6000 mm): Track [AUX2_GPIO] on B.Cu, length 0.1414 mm
+    @(76.2000 mm, 75.9000 mm): Track [AUX2_GPIO] on B.Cu, length 0.3000 mm
     @(84.7000 mm, 74.6750 mm): Pad 1 [AUX2_GPIO] of C63 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
@@ -523,16 +523,16 @@
     @(86.1750 mm, 53.0000 mm): Pad 1 [FRONT_ILM] of R5 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(117.9500 mm, 58.4375 mm): Pad 1 [USBC_CC1] of D5 on B.Cu
+    @(117.9500 mm, 58.4375 mm): Track [USBC_CC1] on B.Cu, length 0.3710 mm
     @(119.2500 mm, 55.9050 mm): Pad A5 [USBC_CC1] of J1 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(72.1750 mm, 74.8000 mm): Pad 1 [AUX1] of R502 on B.Cu
-    @(62.6250 mm, 90.9500 mm): Track [AUX1] on F.Cu, length 0.7198 mm
+    @(62.6250 mm, 90.9500 mm): Pad 4 [AUX1] of J5 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(141.8000 mm, 76.8250 mm): Pad 3 [REF_1V25] of U13 on F.Cu
-    @(147.2500 mm, 72.2500 mm): Track [REF_1V25] on F.Cu, length 2.5000 mm
+    @(147.2500 mm, 74.7500 mm): Track [REF_1V25] on F.Cu, length 5.0000 mm
 [unconnected_items]: Missing connection between items
     Local override; error
     @(82.9500 mm, 73.7500 mm): Pad 7 [LV_SW] of U2 on F.Cu
@@ -560,7 +560,7 @@
 [unconnected_items]: Missing connection between items
     Local override; error
     @(102.8000 mm, 69.3250 mm): Pad 2 [OLED_SCL] of U6 on B.Cu
-    @(112.9200 mm, 71.0000 mm): Track [OLED_SCL] on F.Cu, length 0.2625 mm
+    @(112.9200 mm, 71.0000 mm): PTH pad 3 [OLED_SCL] of J3
 [unconnected_items]: Missing connection between items
     Local override; error
     @(119.2000 mm, 73.7000 mm): Track [SR_CLK_BUS] on In2.Cu, length 1.1314 mm

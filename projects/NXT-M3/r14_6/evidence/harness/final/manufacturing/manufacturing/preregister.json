@@ -1,0 +1,23 @@
+{
+  "task_id": "manufacturing",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Audit fab and external socket qualifications and remaining unknowns. Report notes as a nonempty string.",
+  "input_receipts": [
+    {
+      "file": "r14_6/ROUTING_GATE_RESULTS.json",
+      "sha256": "5928bf8429e4ab3b54c85079a6a5b7ce77ed7900ada72f454d0c83961b2b48ac"
+    },
+    {
+      "file": "r14_6/MECHANICAL_ASSEMBLY.md",
+      "sha256": "4b6aa3aa24a21e5d483896db39924b9e56dd18146c7c908988e42d8696a68ea2"
+    },
+    {
+      "file": "r14_6/LV_IC_DFM.md",
+      "sha256": "8e1cf1bcf66054ead217fe38c6788b9777dec1d4570eddb187a597383957f80d"
+    }
+  ]
+}

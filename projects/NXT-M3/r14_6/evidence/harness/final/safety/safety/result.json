@@ -1,0 +1,24 @@
+{
+  "task_id": "safety",
+  "status": "PASS",
+  "notes": "Bounded desktop review completed from the three supplied excerpts. This is screening/ECR review only, not release: after routing screen reports clearance count 79 and unconnected count 65; 60 MMBTA42 pairs, D3, and Q32 remain HOLD; C48/R86 remain DNP; switch-node repetitive peak, ground bounce, and turn-off overshoot are UNKNOWN; D3.1→C47.1 remains open. Release needs pair-level CSV ledgers, stackup/dielectric verification, C48 electrical/thermal/solder measurement, switch-node waveform/loop data, and independent D3/Q32 qualification. No issue blocks this bounded review; absent CSVs limit verification only.",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [
+    "https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf",
+    "https://www.onsemi.com/pdf/datasheet/mje340-d.pdf",
+    "https://webstore.iec.ch/en/publication/59671",
+    "https://webstore.iec.ch/en/publication/2804",
+    "https://www.mouser.com/datasheet/3/508/1/KEM_C1009_C0G_HV_SMD.pdf",
+    "https://no.farnell.com/kemet/c2220c101jdgactu/cap-100pf-1kv-mlcc-2220/dp/3505448",
+    "https://www.diodes.com/datasheet/download/ES1G.pdf",
+    "https://www.onsemi.com/download/application-notes/pdf/and8226-d.pdf",
+    "https://www.st.com/resource/en/datasheet/std13n60m2.pdf",
+    "https://www.st.com/resource/en/datasheet/stw26n60m2.pdf"
+  ],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": []
+}

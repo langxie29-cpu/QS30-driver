@@ -1,0 +1,62 @@
+[
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "native.before; native.after; added_violations; prior_connections_lost",
+    "assertion": "KiCad 10.0.8 native before/after: ERC errors/warnings 0/0; clearance counts 103→79; unconnected 84→65; added_violations 0; prior_connections_lost 0. Counts are screening outputs, not release qualification."
+  },
+  {
+    "source": "r14_6/ROUTING_GATE_RESULTS.json",
+    "locator": "drc_groups_after; protection; register_opens",
+    "assertion": "After DRC groups: MMBTA42 60, LV same-package 16, switch package 3; protection counts OVP/FB/SNUB 14→20 and J6 39→39; register_opens SER2/SER3/SR_CLK_BUS/HC_CLEAR_N each 1."
+  },
+  {
+    "source": "r14_6/INSULATION_REVIEW.md",
+    "locator": "Q1–Q30 section",
+    "assertion": "60 C–B/C–E pairs ~1.1102 mm, below 2.00 mm screen, all 60 HOLD; 300 V C–E/C–B is device electrical rating, not assembled-package insulation certification; state peaks unmeasured."
+  },
+  {
+    "source": "r14_6/INSULATION_REVIEW.md",
+    "locator": "外部铜与分压电阻 section",
+    "assertion": "R81–R83 B.Cu→F.Cu; document states five cross-layer pairs pass native 2.00 mm screen; dielectric stack must be verified; ideal static divider voltages given, with pulse/coupling/creepage/part number pending; listed DNP parts retained."
+  },
+  {
+    "source": "r14_6/SWITCH_PACKAGE_ECR.md",
+    "locator": "opening paragraph; C48 row",
+    "assertion": "SW_HV/SNUB use 3.20 mm native screen and repetitive peak/ground bounce/turn-off overshoot are UNKNOWN; C48 2220 100 pF 1 kVDC C0G DNP retained, ends reconnected and 1.80 mm violation removed per ECR; measurements required before assembly."
+  },
+  {
+    "source": "r14_6/SWITCH_PACKAGE_ECR.md",
+    "locator": "D3 row; Q32 row",
+    "assertion": "D3 native clearance HOLD and D3.1→C47.1 open; Q32 native drain-gate/source two HOLD; replacements need independent electrical/thermal/layout qualification."
+  },
+  {
+    "source": "https://datasheet.lcsc.com/lcsc/2208091800_Shandong-Jingdao-Microelectronics-MMBTA42_C4749118.pdf",
+    "locator": "p.3, as cited in INSULATION_REVIEW.md",
+    "assertion": "Excerpt cites recommended pads 0.90×0.80 mm, 2.00 mm row pitch, and 300 V C–E/C–B rating; URL not independently opened."
+  },
+  {
+    "source": "https://www.mouser.com/datasheet/3/508/1/KEM_C1009_C0G_HV_SMD.pdf",
+    "locator": "Table 3, as cited in SWITCH_PACKAGE_ECR.md",
+    "assertion": "Excerpt cites C1009 Table 3 for 2220 median land; URL not independently opened."
+  },
+  {
+    "source": "https://webstore.iec.ch/en/publication/59671",
+    "locator": "as cited in INSULATION_REVIEW.md",
+    "assertion": "Excerpt states IEC 60664-1 applicability is decided by the end-product standard; URL not independently opened."
+  },
+  {
+    "source": "https://webstore.iec.ch/en/publication/2804",
+    "locator": "as cited in INSULATION_REVIEW.md",
+    "assertion": "Excerpt requires IEC 60664-4 review against measured repetitive waveform; URL not independently opened."
+  },
+  {
+    "source": "https://www.diodes.com/datasheet/download/ES1G.pdf",
+    "locator": "pp.2,4, as cited in SWITCH_PACKAGE_ECR.md",
+    "assertion": "Excerpt cites 400 V repetitive reverse voltage, 1 A, and 25 ns specified-condition recovery; URL not independently opened."
+  },
+  {
+    "source": "https://www.st.com/resource/en/datasheet/std13n60m2.pdf",
+    "locator": "p.12, as cited in SWITCH_PACKAGE_ECR.md",
+    "assertion": "Excerpt cites DPAK pinout/thermal pad and Fig.21 for TO-247 candidate re-evaluation; URL not independently opened."
+  }
+]

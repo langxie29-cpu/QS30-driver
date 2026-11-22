@@ -1,0 +1,31 @@
+[
+  {
+    "task_id": "manufacturing",
+    "worker_claim": "PASS",
+    "grade": "CLAIMED_PASS_AUDITED_FILES",
+    "evidence_sha256": {
+      "inventory.md": "9f7787f6db5c2b7d216da65894036b7c9f557d64f5e0cdd3e3de7903d8a73137",
+      "sources.json": "ca4a3b4523d29563399e43dc61022ce07c07b838a40de5e7fb94779e42cb2aad"
+    },
+    "rc": 0,
+    "failure": null,
+    "started": "2026-11-22T22:45:50.669634+00:00",
+    "seconds": 61.485,
+    "identity": {
+      "status": "VERIFIED",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek-official",
+      "endpoint": "https://api.deepseek.com",
+      "configuration_sha256": "c367e9af05a2a969e4eda586a777a6b7efbec3208cf8d8d6ed9b9f658fd3f5da",
+      "mode": "SEALED_TEXT_ONLY",
+      "worker_tools": [],
+      "background_model_requests": false
+    },
+    "provider_usage": {
+      "requests": null,
+      "failed_requests": null,
+      "tokens": null,
+      "cost": "COST_UNKNOWN"
+    }
+  }
+]

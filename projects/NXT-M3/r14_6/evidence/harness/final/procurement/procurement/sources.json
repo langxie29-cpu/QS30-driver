@@ -1,0 +1,42 @@
+[
+  {
+    "source": "r14_6/evidence/procurement-totals.json",
+    "locator": "1 / 3 / native_bom",
+    "assertion": "Qty 1 and 3: active_groups=80, priced_groups=6; priced_refs=67/261 and 201/783; confirmed_checkout_quote_CNY=null; pcb_verified_moq=null; native BOM refs=322, dnp=61, missing_mpn=170."
+  },
+  {
+    "source": "r14_6/COST_R14_6.md",
+    "locator": "首段与覆盖段",
+    "assertion": "Procurement status HOLD; 6/80 groups=7.5%; 67/261 and 201/783=25.7%; formal settlement quote coverage 0%; price snapshots 2026-11-22 to 23; ESP32-S3-WROOM-1-N8 snapshot 0 stock; D3/Q32 DNP priced for ECR."
+  },
+  {
+    "source": "r14_6/COST_R14_6.md",
+    "locator": "费用和未报价项/PCB",
+    "assertion": "PCB 4-layer 130x80 mm, one 5-board batch ¥90–240 is a budget scenario; actual MOQ, copper thickness, material, surface finish and DFM pending; board length exceeds some public 100 mm promo boundary."
+  },
+  {
+    "source": "r14_6/COST_R14_6.md",
+    "locator": "费用和未报价项/SMT与备件",
+    "assertion": "SMT/stencil estimates use public fee schedule at 7.2 CNY/USD; cut-tape prices include 13% VAT; 5% spares per group; reel-only purchase requires MOQ/packaging recalculation; DNP conversion changes budget."
+  },
+  {
+    "source": "https://www.digikey.cn/zh/products/detail/espressif-systems/ESP32-S3-WROOM-1-N8/15200089",
+    "locator": "excerpt link",
+    "assertion": "Cited in excerpt as MCU price and stock snapshot; not a checkout quote."
+  },
+  {
+    "source": "https://cart.jlcpcb.com/",
+    "locator": "excerpt link",
+    "assertion": "Cited as PCB quote entry; no formal quote is included in the excerpt."
+  },
+  {
+    "source": "https://jlcpcb.com/ads/pcb-prototype",
+    "locator": "excerpt link",
+    "assertion": "Cited for public 5-board prototype condition; used only as a promo boundary reference."
+  },
+  {
+    "source": "https://jlcpcb.com/help/article/pcb-assembly-price",
+    "locator": "excerpt link",
+    "assertion": "Cited as public assembly fee schedule basis for SMT/stencil estimates."
+  }
+]

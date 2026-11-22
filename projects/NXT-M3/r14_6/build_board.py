@@ -140,7 +140,14 @@ def main():
     ti_dgk_lands(board)
     previous = compare(board, evidence / "04-dgk.json", previous)
 
-    write_json(evidence / "05-remaining-routes.json", close_native(board, previous["unconnected_items"]))
+    # Native ratsnest uses equivalent endpoint choices for tied copper groups.
+    # Keep the actual solver input used for the delivered board and retain a fresh
+    # DRC at this stage for verification against the current project.
+    seed_path = HERE / "evidence/stages/04-dgk.json"
+    seed = json.loads(seed_path.read_text(encoding="utf-8"))["unconnected_items"]
+    if len(seed) != len(previous["unconnected_items"]):
+        raise RuntimeError("The current board no longer matches the archived routing stage")
+    write_json(evidence / "05-remaining-routes.json", close_native(board, seed))
     previous = compare(board, evidence / "05-main-routing.json", previous)
     write_json(evidence / "06-ovp-routes.json", ovp_capacitor(board))
     compare(board, evidence / "06-final.json", previous)

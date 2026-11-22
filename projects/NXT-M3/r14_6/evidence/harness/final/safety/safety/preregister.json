@@ -1,0 +1,23 @@
+{
+  "task_id": "safety",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Review final insulation and C48 engineering changes. Distinguish screening and release. Report notes as a nonempty string.",
+  "input_receipts": [
+    {
+      "file": "r14_6/ROUTING_GATE_RESULTS.json",
+      "sha256": "5928bf8429e4ab3b54c85079a6a5b7ce77ed7900ada72f454d0c83961b2b48ac"
+    },
+    {
+      "file": "r14_6/INSULATION_REVIEW.md",
+      "sha256": "11e099361149cb2d7ce48501b3040256932de76d6881f782daaada57dd765bdc"
+    },
+    {
+      "file": "r14_6/SWITCH_PACKAGE_ECR.md",
+      "sha256": "2a0a1f9b3199100ddd3cc49f6a116d9b7524ba2210f0624784a2a7500143182f"
+    }
+  ]
+}

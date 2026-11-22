@@ -11,5 +11,28 @@
     "C:\\Users\\Administrator\\AppData\\Local\\Temp\\nxt-r146-release-d54432e2/eda/NXT-M3-R14.6.kicad_pcb",
     "C:\\Users\\Administrator\\AppData\\Local\\Temp\\nxt-r146-replay-41fc4039/eda/NXT-M3-R14.6.kicad_pcb"
   ],
-  "entry": "build_board.py --out <fresh-temp-dir>"
+  "entry": "build_board.py --out <fresh-temp-dir>",
+  "complete_rebuilds": [
+    {
+      "mode": "clean",
+      "input_usage": "fresh native DRC",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\nxt-r146-clean-replay-d74a065d/eda/NXT-M3-R14.6.kicad_pcb",
+      "exit": 0,
+      "board_sha256": "dfcaf08632f003871ee453f28e9b88e3a48c1bd9b742a3dec1958136bd20f807",
+      "drc": 79,
+      "unconnected": 65,
+      "parity": 0
+    },
+    {
+      "mode": "pinned",
+      "input_usage": "archived native DRC 04-dgk.json as routing seed",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\nxt-r146-pinned-replay-78d35cbe/eda/NXT-M3-R14.6.kicad_pcb",
+      "exit": 0,
+      "board_sha256": "dfcaf08632f003871ee453f28e9b88e3a48c1bd9b742a3dec1958136bd20f807",
+      "drc": 79,
+      "unconnected": 65,
+      "parity": 0
+    }
+  ],
+  "routing_seed_sha256": "812f727bfc5b89c0cd6c031d94ca097626044392f853e79a3f86d76e9500a022"
 }

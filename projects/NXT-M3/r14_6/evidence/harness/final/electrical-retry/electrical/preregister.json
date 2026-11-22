@@ -1,0 +1,23 @@
+{
+  "task_id": "electrical",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Review the R14.6 protection endpoints and model limits. Use INCONCLUSIVE if blocking_issues is nonempty. Report notes as a nonempty string. No gate approval.",
+  "input_receipts": [
+    {
+      "file": "r14_6/ROUTING_GATE_RESULTS.json",
+      "sha256": "5928bf8429e4ab3b54c85079a6a5b7ce77ed7900ada72f454d0c83961b2b48ac"
+    },
+    {
+      "file": "r14_6/POWER_AND_PROTECTION_REVIEW.md",
+      "sha256": "d163e4c738663896c7117700b33286109344044b57087c8edf286a3ec8aadcde"
+    },
+    {
+      "file": "r14_6/evidence/simulation/commands-and-hashes.json",
+      "sha256": "4b3ea0bb095992a71346395afc9c91eac0ace5c788f6203a181d4c7a1016221c"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "electrical",
+  "status": "PASS",
+  "notes": "PASS 仅指基于所给摘录的有界复核完成，不构成设计、测量或放行结论。证据锚点：ROUTING_GATE_RESULTS.json 的 native.after（ERC 0/0、unconnected 65、parity 0、added_violations 0、prior_connections_lost 0、cathodes 30/30、cathode_endpoints 180/180）、protection（OVP/FB/SNUB 14→20、J6 39→39）及 register_opens；POWER_AND_PROTECTION_REVIEW.md 明确 R61.2→R62.1、D3.1→C47.1、看门狗及部分 J6/许可/硬件消隐端点仍未接通，不能给实板 STOP/OVP/OCP/重新使能/泄放签字；commands-and-hashes.json 可见 8 个 case 均 exit 0、ngspice-46 DLL、applied_to_final_hardware=false。限制：R14.3 fixture 以理想目标电压及 30 mA 限流产生母线；OVP 代理 trip 约 21.893 ms、25 ms 母线约 187.86 V 仅为 R11 空载反馈故障 fixture；实板连续稳压、阴极浮置峰值、温升、SOA、真实吸收、OVP/OCP 共因、前级启动掉电、控制器开路/短路、噪声/钳位、J6 桥接、持续喂狗故障、U8/U9 失效、共用偏置失供、泄放阈值/单失效复测均未证明。下一门禁证据：恢复并验证电源/保护端到端布线，确认 DNP 与独立硬件保护路径，建立与最终 PCB/装配/寄生一致的模型，再提交含供电约束、单失效和实板复测的试验计划；POWER_SIMULATION、EVT_RELEASE、HV_POWER_ON 维持 HOLD。",
+  "evidence_files": [
+    "inventory.md",
+    "sources.json"
+  ],
+  "source_urls": [],
+  "solver": "none",
+  "model_hashes": {},
+  "blocking_issues": [
+    "设计门禁阻塞（非本次有界复核阻塞）：R61.2→R62.1、D3.1→C47.1、看门狗及部分 J6/许可/硬件消隐端点未接通，实板 STOP/OVP/OCP/重新使能/泄放不能签字。",
+    "设计门禁阻塞（非本次有界复核阻塞）：可见仿真均为模型/代理运行且 applied_to_final_hardware=false，缺少最终 PCB/装配/寄生一致的电源与保护模型及实板复测。"
+  ]
+}

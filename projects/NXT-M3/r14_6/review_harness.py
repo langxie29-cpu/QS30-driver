@@ -34,7 +34,7 @@ TASKS = {
 
 
 FINAL_TASKS = {
-    "electrical": ("Review the R14.6 protection endpoints and model limits. Report notes as a nonempty string. No gate approval.",
+    "electrical": ("Review the R14.6 protection endpoints and model limits. Use INCONCLUSIVE if blocking_issues is nonempty. Report notes as a nonempty string. No gate approval.",
                    ["r14_6/ROUTING_GATE_RESULTS.json", "r14_6/POWER_AND_PROTECTION_REVIEW.md",
                     "r14_6/evidence/simulation/commands-and-hashes.json"]),
     "pcb": ("Cross-check the final DRC, opens, parity and independent hash against the metrics. Report notes as a nonempty string.",

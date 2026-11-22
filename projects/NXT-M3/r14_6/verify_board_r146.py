@@ -129,6 +129,12 @@ def validate(root):
     assert schematic_pins(reports[0] / "netlist.xml") == schematic_pins(reports[1] / "netlist.xml")
     rules = [sha(s.with_suffix(s.suffix+".kicad_dru")) for s in (before_stem, after_stem)]
     assert rules[0] == rules[1]
+    projects = [json.loads(s.with_suffix(s.suffix+".kicad_pro").read_text(encoding="utf-8"))
+                for s in (before_stem, after_stem)]
+    for project in projects:
+        project["meta"].pop("filename", None)
+        project["schematic"].pop("top_level_sheets", None)
+    assert projects[0] == projects[1]
     assert before.board.GetCopperLayerCount() == after.board.GetCopperLayerCount() == 4
     assert before.refs.keys() == after.refs.keys() and not REMOVED_MOUNTS & after.refs.keys()
     changes = object_diff(before, after)
@@ -182,7 +188,8 @@ def validate(root):
     result = dict(kiCad_version=records[0]["stdout"], native=dict(zip(
                   ("before", "after", "before_all_tracks", "after_all_tracks"), native_counts)),
                   drc_groups_before=counts[0], drc_groups_after=counts[1],
-                  added_violations=0, prior_connections_lost=0, cathodes="30/30",
+                  added_violations=0, prior_connections_lost=0, project_settings_unchanged=True,
+                  cathodes="30/30",
                   cathode_endpoints="180/180", protection=protection, register_opens=all_registers,
                   rule_sha256=rules[0], board_sha256=sha(new_path),
                   baseline_board_sha256=sha(old_path), board_size_mm=[130,80], copper_layers=4,

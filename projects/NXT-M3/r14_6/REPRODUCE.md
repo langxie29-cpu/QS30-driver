@@ -22,7 +22,7 @@ python bom_r146.py
 & $edaPython -u replay_proxies.py
 ```
 
-每个布局阶段以真实保存的 KiCad PCB 运行 DRC、全走线模式和原理图一致性检查。布局阶段使用 `--refill-zones --save-board`。最终回归以交付文件直接重新打开，再分别导出标准 DRC、all-track DRC、ERC 及 XML。原生 DRC 命令退出 5 代表发现违规，报告照实归档。构建脚本会拒绝新增违规、原理图不一致或未连接净增加。审计会拒绝丢失原有焊盘铜分组。 [阶段回归](evidence/stages) · [原生复跑命令](evidence/native_commands.json) · [SHA-256 比对](evidence/reproducibility.json)
+每个布局阶段以真实保存的 KiCad PCB 运行 DRC、全走线模式和原理图一致性检查。整板寻路复用已归档的 04 阶段原生开路端点，固定 KiCad 在同距铜分组中的取舍。布局阶段使用 `--refill-zones --save-board`。最终回归以交付文件直接重新打开，再分别导出标准 DRC、all-track DRC、ERC 及 XML。原生 DRC 命令退出 5 代表发现违规，报告照实归档。构建脚本会拒绝新增违规、原理图不一致或未连接净增加。审计会拒绝丢失原有焊盘铜分组。 [阶段回归](evidence/stages) · [原生复跑命令](evidence/native_commands.json) · [SHA-256 比对](evidence/reproducibility.json)
 
 R13 密封配置的本地检视和单元测试见 [Harness 预检](evidence/harness/preflight)。实际 Worker 审查为 DeepSeek 官方 `deepseek-v4-flash` 上的 text-only 任务。复跑含模型费用，按需选择角色。每次输出使用新的目录。
 

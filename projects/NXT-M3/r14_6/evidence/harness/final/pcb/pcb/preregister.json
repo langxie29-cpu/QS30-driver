@@ -1,0 +1,23 @@
+{
+  "task_id": "pcb",
+  "acceptance": [
+    "evidence_anchors",
+    "limitations",
+    "next_gate_evidence"
+  ],
+  "brief": "Cross-check the final DRC, opens, parity and independent hash against the metrics. Report notes as a nonempty string.",
+  "input_receipts": [
+    {
+      "file": "r14_6/ROUTING_GATE_RESULTS.json",
+      "sha256": "5928bf8429e4ab3b54c85079a6a5b7ce77ed7900ada72f454d0c83961b2b48ac"
+    },
+    {
+      "file": "r14_6/evidence/reproducibility.json",
+      "sha256": "5404cae05f913b945248e4a6a7d51aea1dfde374acea9d929ea7b46ab8ce67b9"
+    },
+    {
+      "file": "r14_6/UNCONNECTED_NETS.csv",
+      "sha256": "943209927a84966c774bf13a8b3934a2d303dde710514856d4ac5ee71eed664c"
+    }
+  ]
+}
