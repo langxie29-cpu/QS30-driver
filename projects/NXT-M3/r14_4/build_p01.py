@@ -47,6 +47,49 @@ ROUTES = (
                                (152.375, 70.50), (152.25, 70.625), (152.25, 70.875),
                                (152.125, 71), (152.125, 75.875))),
 )
+MONITOR_FANOUT = (
+    ("HV_FB", pcb.B_Cu, .20, ((168.625, 72.375), (168.625, 73.375),
+                             (168.375, 73.625), (166, 73.625))),
+    ("HV_FB", pcb.F_Cu, .20, ((166, 73.625), (163.875, 75.75), (163.625, 75.75))),
+    ("HV_BUS", pcb.B_Cu, .30, ((145.5, 79.375), (145.5, 82.25))),
+    ("HV_BUS", pcb.F_Cu, .30, ((145.5, 82.25), (145.5, 83))),
+)
+LOCAL_PLACEMENTS = (
+    ("C33", (.125, 0), 270),
+    ("C42", (-2.25, -2), 90),
+    ("C43", (.5, -.875), 0),
+    ("C44", (0, -.625), 0),
+    ("R65", (2, 2.875), 270),
+)
+BIAS_PLACEMENTS = (
+    ((101, 102, 103, 111, 112, 113, 121, 122, 123), (-.45, -.15)),
+    ((104, 106, 107, 108, 114, 116, 117, 118, 119, 124, 127, 128), (0, -.15)),
+    ((205, 208, 215, 216, 225), (0, .15)),
+)
+Q2_SHIFT = (-.75, 0)
+Q2_ROUTES = (
+    ("GND", pcb.B_Cu, .20, ((69.745, 115.65), (69.745, 115.005), (70, 114.75),
+                           (70, 111.625), (70.625, 111), (72, 111), (72.5, 111.5))),
+    ("GND", pcb.B_Cu, .20, ((70, 114.75), (70, 115), (68.5, 116.5), (64.75, 116.5))),
+    ("GND", pcb.F_Cu, .20, ((64.75, 116.5), (61.5, 116.5), (61.375, 116.375))),
+    ("K1_1", pcb.B_Cu, .30, ((72.785, 116.6), (72.875, 116.5), (73.125, 116.5))),
+    ("K1_1", pcb.F_Cu, .30, ((73.125, 116.5), (70.625, 114), (67.5, 114))),
+    ("K1_1", pcb.B_Cu, .30, ((67.5, 114), (67.5, 110.125), (74.875, 102.75),
+                            (74.875, 97.375), (75, 97.25))),
+    ("K1_1", pcb.F_Cu, .30, ((75, 97.25), (75, 96.75))),
+    ("BASE_01", pcb.B_Cu, .20, ((69.875, 117.875), (69.875, 118.25), (70.625, 119))),
+    ("BASE_01", pcb.In1_Cu, .20, ((70.625, 119), (70.875, 119), (71.875, 120),
+                                (72.625, 120), (73.5, 119.125), (73.625, 119.125))),
+    ("BASE_01", pcb.F_Cu, .20, ((73.625, 119.125), (73.875, 118.875), (74, 118.875),
+                               (74.125, 118.75), (74.375, 118.75), (75.625, 117.5),
+                               (75.625, 115.375), (74.5, 114.25))),
+    ("BASE_01", pcb.B_Cu, .20, ((74.5, 114.25), (74.125, 114.25), (73.875, 114), (72.75, 114))),
+)
+Q2_VIAS = {
+    "GND": ((64.75, 116.5),),
+    "K1_1": ((73.125, 116.5), (67.5, 114), (75, 97.25)),
+    "BASE_01": ((70.625, 119), (73.625, 119.125), (74.5, 114.25)),
+}
 
 
 def xy(vector):
@@ -232,15 +275,7 @@ def route_boundaries(board):
     for i, (net, layer, width, vertices) in enumerate(ROUTES):
         track_chain(board, net, layer, width, vertices, f"{net}/boundary/{i}")
     for i, at in enumerate(((71.875, 99.375), (65.75, 95.25))):
-        via = pcb.PCB_VIA(board)
-        via.SetUuidDirect(new_id(f"ANODE_1/boundary/via/{i}"))
-        via.SetPosition(point(*at))
-        via.SetViaType(pcb.VIATYPE_THROUGH)
-        via.SetLayerPair(pcb.F_Cu, pcb.B_Cu)
-        via.SetWidth(pcb.FromMM(.60))
-        via.SetDrill(pcb.FromMM(.30))
-        via.SetNet(board.FindNet("ANODE_1"))
-        board.Add(via)
+        through_via(board, "ANODE_1", at, f"ANODE_1/boundary/via/{i}")
     # R60.1 is now on the existing same-net R306–C47 trunk. Make its
     # tap a trace endpoint within the land, preserving the two trunk branches.
     trunk = next(t for t in board.GetTracks()
@@ -249,6 +284,48 @@ def route_boundaries(board):
     assert trunk.GetNetname() == "HV_BUS" and end == (146.25, 90.75)
     trunk.SetEnd(point(*junction))
     trace(board, "HV_BUS", pcb.F_Cu, .30, junction, end, "R60.1/HV_BUS/tap")
+
+
+def through_via(board, net, position, label):
+    via = pcb.PCB_VIA(board)
+    via.SetUuidDirect(new_id(label))
+    via.SetPosition(point(*position))
+    via.SetViaType(pcb.VIATYPE_THROUGH)
+    via.SetLayerPair(pcb.F_Cu, pcb.B_Cu)
+    via.SetWidth(pcb.FromMM(.60))
+    via.SetDrill(pcb.FromMM(.30))
+    via.SetNet(board.FindNet(net))
+    board.Add(via)
+
+
+def refine_boundaries(board):
+    for refs, shift in BIAS_PLACEMENTS:
+        for index in refs:
+            board.FindFootprintByReference(f"R{index}").Move(point(*shift))
+    for ref, shift, clockwise in LOCAL_PLACEMENTS:
+        footprint = board.FindFootprintByReference(ref)
+        footprint.Rotate(footprint.GetPosition(), pcb.EDA_ANGLE(-clockwise, pcb.DEGREES_T))
+        footprint.Move(point(*shift))
+    relocate_group(board, ("R84", "R85"), (171, 73), 180, (0, -1))
+
+    # C33's ground branch terminates on the rotated decoupler's land.
+    ground = next(t for t in board.GetTracks()
+                  if uid(t) == "ab72f857-2f7d-47dd-a180-4877e349886f")
+    assert ground.GetNetname() == "GND" and xy(ground.GetStart()) == (125.775, 83)
+    ground.SetStart(pads(board.FindFootprintByReference("C33"))["2"].GetPosition())
+    for i, (net, layer, width, vertices) in enumerate(MONITOR_FANOUT):
+        track_chain(board, net, layer, width, vertices, f"{net}/monitor/{i}")
+    through_via(board, "HV_FB", (166, 73.625), "HV_FB/monitor/via")
+    through_via(board, "HV_BUS", (145.5, 82.25), "HV_BUS/monitor/via")
+
+
+def route_q2(board):
+    board.FindFootprintByReference("Q2").Move(point(*Q2_SHIFT))
+    for i, (net, layer, width, vertices) in enumerate(Q2_ROUTES):
+        track_chain(board, net, layer, width, vertices, f"Q2/{net}/route/{i}")
+    for net, positions in Q2_VIAS.items():
+        for i, at in enumerate(positions):
+            through_via(board, net, at, f"Q2/{net}/via/{i}")
 
 
 def rules(out):
@@ -328,6 +405,8 @@ def build(out, q1_only):
             relocate_group(board, *placement)
         retract_base_vias(board)
         route_boundaries(board)
+        refine_boundaries(board)
+        route_q2(board)
     assert pcb.SaveBoard(str(out / f"{STEM}.kicad_pcb"), board)
 
 

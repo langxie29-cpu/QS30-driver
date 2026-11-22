@@ -19,9 +19,9 @@
     "after": {
       "erc_errors": 0,
       "erc_warnings": 0,
-      "clearance": 157,
+      "clearance": 122,
       "drc_other": 0,
-      "unconnected": 331,
+      "unconnected": 325,
       "parity": 0
     }
   },
@@ -100,20 +100,23 @@
     ]
   },
   "before_pad_components": 589,
-  "after_pad_components": 583,
+  "after_pad_components": 577,
   "comparable_pads": 958,
   "lost_pad_memberships": [],
   "change_in_native_open_nets": {
     "ANODE_1": -1,
-    "HV_BUS": -1,
-    "HV_FB": -1,
+    "BASE_01": -1,
+    "GND": -2,
+    "HV_BUS": -2,
+    "HV_FB": -2,
     "HV_FB_1": -1,
     "HV_OVP_S": -1,
+    "K1_1": -1,
     "SW_HV": -1
   },
   "all_track_drc": {
     "before": 253,
-    "after": 157
+    "after": 122
   },
   "added_all_track_signatures": 0,
   "stop_terminals": {
@@ -131,15 +134,19 @@
       "switch_package": 4
     },
     "after": {
-      "hv_lv_external": 52,
       "mmbta42_candidate_exception": 60,
       "lv_same_package": 34,
-      "hv_internal_external": 7,
+      "hv_lv_external": 19,
+      "hv_internal_external": 5,
       "switch_package": 4
     }
   },
-  "q2_through_q30_pins_without_local_track": 87,
-  "boundary_rows": 126,
+  "q2_through_q30_pins_without_local_track": 84,
+  "q2_terminal_check": {
+    "before": 0,
+    "after": 5
+  },
+  "boundary_rows": 140,
   "terminals": [
     {
       "first": "R302.2",
@@ -257,6 +264,83 @@
       "first": "R60.1",
       "second": "C47.1",
       "net": "HV_BUS",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "R304.2",
+      "second": "R305.1",
+      "net": "ALIM_2",
+      "before": true,
+      "after": true
+    },
+    {
+      "first": "R305.2",
+      "second": "V2.1",
+      "net": "ANODE_2",
+      "before": true,
+      "after": true
+    },
+    {
+      "first": "R306.1",
+      "second": "R65.1",
+      "net": "HV_BUS",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "R85.1",
+      "second": "U17.8",
+      "net": "HV_FB",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "R83.2",
+      "second": "R84.1",
+      "net": "HV_FB_3",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "U20.1",
+      "second": "R101.1",
+      "net": "DRV_01",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "R101.2",
+      "second": "Q2.1",
+      "net": "BASE_01",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "R201.1",
+      "second": "Q2.1",
+      "net": "BASE_01",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "R201.2",
+      "second": "Q2.2",
+      "net": "GND",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "U20.8",
+      "second": "Q2.2",
+      "net": "GND",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "Q2.3",
+      "second": "V1.13",
+      "net": "K1_1",
       "before": false,
       "after": true
     }

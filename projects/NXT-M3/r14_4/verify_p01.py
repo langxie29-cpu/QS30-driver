@@ -17,7 +17,7 @@ import xml.etree.ElementTree as xml
 
 import pcbnew as pcb
 
-from build_p01 import FROZEN, FPID, HERE, OLD_STEM, STEM, pads, q1_terminals, uid, xy
+from build_p01 import FROZEN, FPID, HERE, OLD_STEM, Q2_SHIFT, STEM, pads, point, q1_terminals, uid, xy
 sys.path.insert(0, str(FROZEN.parent))
 from verify_r14_1 import audit_board
 
@@ -41,6 +41,13 @@ TERMINALS = (
     ("D3", "2", "Q32", "2"), ("D3", "2", "R86", "1"),
     ("R86", "2", "C48", "1"),
     ("R60", "1", "R306", "1"), ("R60", "1", "C47", "1"),
+    ("R304", "2", "R305", "1"), ("R305", "2", "V2", "1"),
+    ("R306", "1", "R65", "1"), ("R85", "1", "U17", "8"),
+    ("R83", "2", "R84", "1"),
+)
+Q2_TERMINALS = (
+    ("U20", "1", "R101", "1"), ("R101", "2", "Q2", "1"), ("R201", "1", "Q2", "1"),
+    ("R201", "2", "Q2", "2"), ("U20", "8", "Q2", "2"), ("Q2", "3", "V1", "13"),
 )
 
 # Targets are intentionally voltage- and pin-specific. The same-layer connector
@@ -59,6 +66,10 @@ TARGETS = (
     ("R61", "1", "U13", "5"), ("R61", "2", "U14", "4"),
     ("R61", "2", "U14", "3"), ("R62", "1", "D1", "1"),
     ("R62", "1", "J3", "1"), ("R65", "1", "R64", "2"),
+    ("R305", "2", "C33", "1"), ("R81", "2", "C42", "2"),
+    ("R81", "2", "C43", "1"), ("R83", "1", "C44", "1"),
+    ("R84", "1", "R67", "2"), ("R81", "1", "R65", "2"),
+    ("Q2", "3", "R101", "2"),
     ("D3", "2", "U17", "7"), ("D3", "2", "U17", "8"),
     ("D3", "1", "D3", "2"), ("C48", "1", "C48", "2"),
     ("C48", "1", "R82", "1"), ("R86", "1", "R65", "1"),
@@ -387,7 +398,7 @@ def q_audit(out, before, after):
         ref = f"Q{k+1}"
         old, new = (board.refs[ref] for board in (before, after))
         assert new.GetFPIDAsString() == FPID and new.GetOrientation().AsDegrees() == 0 and new.IsFlipped()
-        assert old.GetPosition() == new.GetPosition()
+        assert new.GetPosition() - old.GetPosition() == point(*(Q2_SHIFT if ref == "Q2" else (0, 0)))
         assert len(list(new.Pads())) == 3
         expected = (f"BASE_{k:02d}", "GND", f"K{k//10+1}_{k%10}")
         prior, final = pads(old), pads(new)
@@ -408,7 +419,9 @@ def q_audit(out, before, after):
             assert xy(pad.GetSolderPasteMargin(pcb.B_Paste)) == (0, 0)
             connected_count = [len(board.conn.GetConnectedItems(item))
                                for board, item in ((before, old_pad), (after, pad))]
-            if k:
+            if ref == "Q2":
+                assert connected_count[0] == 1 and connected_count[1] > 1, (pin, connected_count)
+            elif k:
                 assert connected_count == [1, 1], (ref, pin, connected_count)
             rows.append(dict(ref=ref, pin=pin, pin_function=role, net=expected[i], uuid=uid(pad),
                              layers="B.Cu|B.Mask|B.Paste", angle=new.GetOrientation().AsDegrees(),
@@ -531,6 +544,10 @@ def unresolved(out, drc, integrated):
     for obj, net, reason, change in (
         ("R61.2/R62.1", "HV_OVP_S_2", "Existing open after split-layer relocation",
          "Place upper OVP stages and controlled through-via in a common HV corridor; close whole OVP chain"),
+        ("U20.1/R101.1", "DRV_01", "Existing open upstream of the newly routed Q2 cell",
+         "Provide a low-voltage driver route through the congested cathode fan-out"),
+        ("R83.2/R84.1", "HV_FB_3", "Existing open between upper feedback stages",
+         "Lay out the feedback and residual dividers in separate corridors and complete the feedback ladder"),
         ("R86.1/D3.2", "SW_HV", "Existing open; switch-to-snubber loop remains incomplete",
          "Route a short 3.20 mm switch branch using actual power-loop geometry"),
         ("R86.2/C48.1", "SNUB", "Existing open; C48 current land blocks a compliant launch",
@@ -616,13 +633,15 @@ def main():
     unresolved(out, diff, rows)
     divider_audit(out)
     terminals = []
-    for a, i, b, j in TERMINALS:
+    for a, i, b, j in (*TERMINALS, *Q2_TERMINALS):
         row = dict(first=f"{a}.{i}", second=f"{b}.{j}", net=after.pad(a, i).GetNetname())
         for state, board in (("before", before), ("after", after)):
             x, y = board.pad(a, i), board.pad(b, j)
             assert x.GetNetname() == y.GetNetname()
             row[state] = board.connected(x, y)
         terminals.append(row)
+    q2 = terminals[-len(Q2_TERMINALS):]
+    assert [row["after"] for row in q2] == [False, True, True, True, True, True], q2
     write_csv(out / "terminal_pairs.csv", list(terminals[0]), terminals)
     write_csv(out / "opens_by_net.csv", ("net", "before", "after", "delta"), [
         dict(net=net, before=opens["before"][net], after=opens["after"][net],
@@ -663,6 +682,7 @@ def main():
                                for state in ("before", "after")},
                    q2_through_q30_pins_without_local_track=sum(row["ref"] != "Q1" and
                                                                not row["after_direct_tracks"] for row in rows),
+                   q2_terminal_check={state: sum(row[state] for row in q2) for state in ("before", "after")},
                    boundary_rows=len(boundary), terminals=terminals)
     write_json(out / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
