@@ -1,0 +1,8 @@
+(footprint "TDK_B32774M4335K000" (version 20241229) (generator pcbnew) (layer "F.Cu") (attr through_hole)
+ (fp_text reference "REF**" (at 0 -7) (layer "F.SilkS") (effects (font (size 1 1) (thickness .15))))
+ (fp_text value "TDK_B32774M4335K000" (at 0 7) (layer "F.Fab") (effects (font (size 1 1) (thickness .15))))
+ (fp_rect (start -15.75 -5.5) (end 15.75 5.5) (stroke (width .1) (type solid)) (fill none) (layer "F.Fab"))
+ (fp_rect (start -16.25 -6) (end 16.25 6) (stroke (width .05) (type solid)) (fill none) (layer "F.CrtYd"))
+ (pad "1" thru_hole rect (at -13.75 0) (size 2.3 2.3) (drill 1.3) (layers "*.Cu" "*.Mask"))
+ (pad "2" thru_hole circle (at 13.75 0) (size 2.3 2.3) (drill 1.3) (layers "*.Cu" "*.Mask"))
+)

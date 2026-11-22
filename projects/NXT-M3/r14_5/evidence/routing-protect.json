@@ -1,0 +1,1784 @@
+[
+  {
+    "label": "OVP R61.2 -> R62.1",
+    "net": "HV_OVP_S_2",
+    "width_mm": 0.3,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          117.5,
+          50.0,
+          144.0,
+          103.0
+        ],
+        "start_access": 486,
+        "end_access": 486,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          113.5,
+          50.0,
+          148.0,
+          107.0
+        ],
+        "start_access": 2017,
+        "end_access": 2017,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          112.5,
+          50.0,
+          149.0,
+          108.0
+        ],
+        "start_access": 486,
+        "end_access": 486,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "1ea69b53-d389-44a9-b000-32e96bd60702",
+        [
+          128.5375,
+          92.0
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "efc57c17-1a67-457b-8011-16f8f7426a54",
+        [
+          133.0,
+          56.0375
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "OVP comparator R64.1 -> U13.2",
+    "net": "HV_OVP_S",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          122.0,
+          58.900000000000006,
+          152.9,
+          87.2
+        ],
+        "start_access": 651,
+        "end_access": 34,
+        "visited": 10429,
+        "limit": 130000
+      }
+    ],
+    "left": [
+      [
+        "59bb03fa-b9dd-46c5-8eb3-598d35132ee1",
+        [
+          137.5,
+          72.175
+        ]
+      ],
+      [
+        "ceb7e66e-d970-5864-a4de-f0cba95694e5",
+        [
+          135.625,
+          70.375
+        ]
+      ],
+      [
+        "b29644d6-d735-5c36-bb5f-67fbd3c70918",
+        [
+          134.625,
+          70.375
+        ]
+      ],
+      [
+        "809460c7-53b6-4f40-baf3-9414bc01bdf8",
+        [
+          133.0,
+          69.9625
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "f27deb7e-f565-4fe2-a997-848c04f1419b",
+        [
+          141.8875,
+          76.175
+        ]
+      ]
+    ],
+    "committed": true,
+    "objects": [
+      "79b3cd60-0cc8-5ca0-b64d-2cc1d3e1dacd",
+      "b8b20f3e-5415-5141-85dd-7ee7aeb59d0e",
+      "c8e7f27d-a3bb-5d7a-adc7-54f84e1d1275",
+      "28def29e-78db-5b50-b626-1e7bcc06eeab",
+      "b0736e29-bf05-5be9-854c-56ed995cf59e",
+      "74a5b3b3-7474-52aa-b27d-70c8e557bb5e",
+      "e26dc45a-17fd-5fe3-bd84-2d04b0b19fd6"
+    ],
+    "vias": 1,
+    "length_mm": 4.984
+  },
+  {
+    "label": "feedback R83.2 -> R84.1",
+    "net": "HV_FB_3",
+    "width_mm": 0.3,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          152.9,
+          57.5,
+          180.0,
+          83.0
+        ],
+        "start_access": 28,
+        "end_access": 478,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          148.95000000000002,
+          53.5,
+          180.0,
+          87.0
+        ],
+        "start_access": 142,
+        "end_access": 1987,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          147.9,
+          52.5,
+          180.0,
+          88.0
+        ],
+        "start_access": 22,
+        "end_access": 474,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "96cbe8e1-e282-4efb-bcbe-a1a55d713736",
+        [
+          163.9625,
+          68.5
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "12a02482-d74a-4ed5-81be-e70e7c074b32",
+        [
+          176.9625,
+          72.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "SW snubber D3.2 -> R86.1",
+    "net": "SW_HV",
+    "width_mm": 0.5,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          159.0,
+          63.7,
+          177.5,
+          85.0
+        ],
+        "start_access": 4210,
+        "end_access": 538,
+        "visited": 6686,
+        "limit": 130000
+      }
+    ],
+    "left": [
+      [
+        "eb9d4d05-4b62-445d-9a7e-7f84bae2c999",
+        [
+          167.5,
+          79.5
+        ]
+      ],
+      [
+        "8aa69284-4a3c-56dc-8014-d842e7795e80",
+        [
+          168.5,
+          78.75
+        ]
+      ],
+      [
+        "92bf27fe-d7f7-5598-bd91-0dc58a50139b",
+        [
+          170.0,
+          78.75
+        ]
+      ],
+      [
+        "f609a126-217c-55b8-a4c6-5a38711f0ccf",
+        [
+          170.5,
+          78.25
+        ]
+      ],
+      [
+        "66d842a4-f667-428d-b353-8a9e5cd5df79",
+        [
+          174.5,
+          76.74
+        ]
+      ],
+      [
+        "d3810f41-d884-4970-a7b7-e88673a88c48",
+        [
+          174.5,
+          76.74
+        ]
+      ],
+      [
+        "98149f49-d8b2-4b82-8995-334cd373c490",
+        [
+          174.25,
+          74.5
+        ]
+      ],
+      [
+        "06109e1d-57bb-475d-a3a5-b91b0d62cc43",
+        [
+          173.5,
+          66.75
+        ]
+      ],
+      [
+        "ad63919f-c1fa-4ae4-93d2-97237ee0ead9",
+        [
+          173.5,
+          74.5
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "adda8ed2-cd6e-4777-9c39-9af27a022c47",
+        [
+          162.0375,
+          82.0
+        ]
+      ]
+    ],
+    "committed": true,
+    "objects": [
+      "52ac79d7-406c-56a7-8e6f-c8145f709959",
+      "ad85db3f-2bc0-5db6-8e7c-6a4e875087ec",
+      "93e9c39a-5518-5df3-81a2-859ed548fe69",
+      "c1723a7f-0e67-562f-aad0-abfabf33544e",
+      "f0cb3e34-3e80-5b25-ba48-f67919ed5c46",
+      "26f8487e-08ae-5b2c-847d-bb260b3843bb",
+      "50a73d07-3b06-55b5-985f-04ffc2f5c475",
+      "7c45550f-7fe2-5083-affa-a70f867c8669",
+      "1c808054-7a8b-5aed-b9ce-bda1224c575b",
+      "767c9559-ec52-543e-a21d-6320bddc8a43",
+      "a2f64c4b-c6c7-5686-b13f-4634bfe3898f",
+      "04ea01cb-c741-5064-8d9d-e833be17fe92",
+      "8267bc68-249b-5d4a-92e2-1e6f12128b72",
+      "533da7f1-0a55-5d40-ae80-5d3ebde7a7ef",
+      "35e7456f-1626-5fa6-ae1c-5eec05ecd064",
+      "30a49caa-0a88-5543-aec4-15ce4ddae09b",
+      "176bcfcc-1534-5691-9232-4fd61726b09c",
+      "3317e25c-72ae-5f0e-9ad9-ba2c94ed48ee",
+      "51774fde-93b0-58f1-a5a0-736d19f810de",
+      "48d1b806-4744-5c52-8c0d-12b4bedf02ff",
+      "8a2de9a6-cfad-5b19-b62c-0e5b17e2bf14",
+      "9d224dde-1bc1-5e97-9f99-8ce63c32429a",
+      "9736f160-be71-5abf-8a41-dde5917530bf",
+      "468aa759-e4e4-5871-b309-c705c09abaab",
+      "d2f67400-a1ee-5e6c-a6f1-1d161253c815",
+      "5b633991-ff19-596a-a412-bb3f3c8b34b9",
+      "ecb7b881-539b-523a-9459-98e4ff8571d6",
+      "be511c3f-5fd4-5fb6-bbb4-8c5a33470574",
+      "8274fe5c-59f0-5bf0-b5bb-2d4fb4210ab4",
+      "8aa63af7-25bd-5db3-a48e-923695e513a5",
+      "ade5ebd6-2498-55b4-8e73-9495548373e5",
+      "7d593ef1-7e71-5522-b186-0e458231cf7d",
+      "0165aa69-c0b1-5a6a-8097-43cc928fc40d",
+      "8b4582ce-5fb0-5981-997c-4002aab4ea51",
+      "304bcd72-f3e5-578c-a7dc-6987a283f928",
+      "59942fdf-d81a-596e-9122-67ea6b725fda",
+      "0456eeb5-6926-5b7c-9086-093627488246",
+      "305bc57e-bf77-5f2b-a15f-dfb0ee9aeeb2",
+      "f9959682-27c0-518b-bcd0-91f1d6e152fa",
+      "89f3cf34-1208-558e-964b-8bfa41c9bb4f",
+      "e346a9ac-d124-5f19-82df-8004b3100011",
+      "e3e44115-cd6a-51fd-a0a6-c04100e3a48b",
+      "f60b9d96-2c83-59d4-ba28-24453d0da39c",
+      "144bacd2-1796-5b3e-8a2a-6b21e61d43e7"
+    ],
+    "vias": 1,
+    "length_mm": 8.75
+  },
+  {
+    "label": "SNUB capacitor R86.2 -> C48.1",
+    "net": "SNUB",
+    "width_mm": 0.5,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          164.9,
+          78.0,
+          173.10000000000002,
+          85.0
+        ],
+        "start_access": 542,
+        "end_access": 0,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "6dec84c7-6075-4a7d-b9c9-0b0b53987436",
+        [
+          167.9625,
+          82.0
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "18679a26-9f34-4d0f-8e33-11c07d89bce9",
+        [
+          170.025,
+          81.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "SNUB return C48.2 -> R79.2",
+    "net": "GND",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          139.70000000000002,
+          51.0,
+          180.0,
+          92.0
+        ],
+        "start_access": 0,
+        "end_access": 698,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          135.75,
+          50.0,
+          180.0,
+          96.0
+        ],
+        "start_access": 0,
+        "end_access": 2757,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          134.70000000000002,
+          50.0,
+          180.0,
+          97.0
+        ],
+        "start_access": 0,
+        "end_access": 692,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "933a3d56-0529-46bd-93c8-9331c23398f4",
+        [
+          172.975,
+          81.0
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "c55cbe6f-204c-48a4-8c86-ef69017a2066",
+        [
+          155.825,
+          63.0
+        ]
+      ],
+      [
+        "c561f63a-a58a-43a5-913c-3e0ee6dbcf1d",
+        [
+          155.825,
+          63.0
+        ]
+      ],
+      [
+        "e8d7354e-07c7-49c6-b7a8-23949cdb762a",
+        [
+          155.75,
+          62.75
+        ]
+      ],
+      [
+        "f0b93467-0421-47e3-9699-5762436c890c",
+        [
+          155.0,
+          62.75
+        ]
+      ],
+      [
+        "ef437b25-f395-4bad-8602-f78dd372b9bc",
+        [
+          155.0,
+          62.0
+        ]
+      ],
+      [
+        "1c33e898-ab37-45ca-bedf-e74eace0e396",
+        [
+          152.75,
+          63.75
+        ]
+      ],
+      [
+        "a1a33d7f-e564-4df0-a0b7-8cc7d2704639",
+        [
+          152.75,
+          63.75
+        ]
+      ],
+      [
+        "af0a6690-73dc-452c-a2fd-106e7d13bf70",
+        [
+          150.75,
+          63.75
+        ]
+      ],
+      [
+        "c1d91588-c1f5-4adf-a4de-b2c6ebfab34f",
+        [
+          152.0,
+          64.25
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "residual_observer U14.1 -> U8.2",
+    "net": "RESIDUAL_OK",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          86.60000000000001,
+          50.0,
+          161.9,
+          86.60000000000001
+        ],
+        "start_access": 68,
+        "end_access": 879,
+        "visited": 117652,
+        "limit": 130000
+      }
+    ],
+    "left": [
+      [
+        "26010e31-8095-4f22-9625-a33b38caea89",
+        [
+          150.8875,
+          75.525
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "e089e134-d2bf-4c14-9c78-859c0b91f4c6",
+        [
+          112.125,
+          56.375
+        ]
+      ],
+      [
+        "57f85945-45a7-4519-bc53-e52326b2b47f",
+        [
+          112.325,
+          55.5
+        ]
+      ],
+      [
+        "439d0065-39fa-40b6-89e8-d62138bdffb4",
+        [
+          112.125,
+          56.375
+        ]
+      ],
+      [
+        "ffbe3df0-cff2-4d68-93d0-c916e32140db",
+        [
+          112.125,
+          55.875
+        ]
+      ],
+      [
+        "7290546b-c5e4-45b9-95e3-bd53f7a31393",
+        [
+          106.125,
+          56.375
+        ]
+      ],
+      [
+        "8fb2da47-54d3-4773-9eaf-54de29b0ad27",
+        [
+          105.375,
+          57.125
+        ]
+      ],
+      [
+        "ab5c6d93-8e8b-40ee-b532-508f970e5922",
+        [
+          101.375,
+          57.125
+        ]
+      ],
+      [
+        "3117d83b-7a66-4cfc-87a6-b5e78fbd2674",
+        [
+          97.625,
+          60.875
+        ]
+      ],
+      [
+        "538a0820-f195-40b3-9687-3c37c6a253c5",
+        [
+          97.625,
+          60.875
+        ]
+      ]
+    ],
+    "committed": true,
+    "objects": [
+      "d3cbf6c6-e880-55f5-b5da-4039c5434973",
+      "1bf7e3e6-e66b-5f6e-bee8-8669804aa6c2",
+      "5fd07f7b-d388-5a35-9362-c1f99f6c757d",
+      "953166fc-a118-5ba8-968e-ebb9d1aaf6a1",
+      "b2da7d60-515b-5d25-8cf6-6ffe5b5375b9",
+      "2e56be90-1195-5a95-885d-12803383f68d",
+      "1d5e072c-1742-5c66-8b90-ee89f0947dca",
+      "984d7b8c-7550-5ec2-ac6a-b8781ebf9a37",
+      "efa60aaa-6880-5696-b104-d60bee9c1fdc",
+      "1e0b0a44-5219-5631-8b25-6c791535a7b1",
+      "48e49da7-0102-5396-9a1e-cb4aebe9e6e2",
+      "c25fadcd-0bbd-57e2-947a-d29a1eeb8262",
+      "eec5e95a-8e66-525a-adc1-b38b6407b185",
+      "67a38f74-8e1e-5c42-821f-cb9b08596bc9",
+      "acd0870a-5b78-5a1d-9592-d3da8a2c9c06",
+      "3fcf79d8-dbdd-55d9-90b1-addb45510c33",
+      "6b2928b4-7e62-55a1-b0ba-f7f1bb5b64e9",
+      "83c8a883-e3c9-5930-97ab-f91047326cba",
+      "68fcdeaf-6532-55f2-9570-8ff5f2f77329",
+      "3e50871b-8faa-5914-b65d-2a3048965bd6",
+      "6bcfe5d5-bca8-576b-ad37-8908966c8879",
+      "84c5b530-1776-59a6-bb8a-bccd148da072",
+      "461bd998-d37e-50c4-9bb2-68219aa4e525",
+      "34bfda7c-a572-5c23-b584-bdc46549e0a3",
+      "cc2386d0-3fd1-558a-aec7-5231fcb92b4a",
+      "03108011-7e94-5789-83e6-35e872a7ac93",
+      "b6299f79-f144-593f-b851-5aa6f29a21d1"
+    ],
+    "vias": 1,
+    "length_mm": 49.662
+  },
+  {
+    "label": "pwm_gate_supply U15.5 -> U8.8",
+    "net": "3V3",
+    "width_mm": 0.3,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          91.7,
+          58.900000000000006,
+          119.5,
+          86.0
+        ],
+        "start_access": 87,
+        "end_access": 672,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          87.75,
+          54.95,
+          123.5,
+          90.0
+        ],
+        "start_access": 320,
+        "end_access": 2681,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          86.7,
+          53.900000000000006,
+          124.5,
+          91.0
+        ],
+        "start_access": 55,
+        "end_access": 614,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "d3b5b939-fdb0-4147-a18d-d9e2e7fb5cf8",
+        [
+          105.8,
+          70.1125
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "f9cd0d03-d031-43cc-b3c4-77ac03182909",
+        [
+          104.25,
+          70.0
+        ]
+      ],
+      [
+        "cfdaa0eb-ed2a-4b48-be87-bd69dd6d6772",
+        [
+          107.1125,
+          69.975
+        ]
+      ],
+      [
+        "72865427-536e-4f8a-8bf9-dc6e929d4871",
+        [
+          107.1125,
+          69.975
+        ]
+      ],
+      [
+        "460dfc2d-349b-4f53-b3e6-84b261ed9dd1",
+        [
+          107.1125,
+          69.975
+        ]
+      ],
+      [
+        "99113dc9-5411-4cad-a7fb-356114fd86de",
+        [
+          104.25,
+          70.0
+        ]
+      ],
+      [
+        "969aed7e-3429-440f-a776-e11b778043b4",
+        [
+          107.25,
+          70.0
+        ]
+      ],
+      [
+        "e88a8079-dda1-4dc4-93a6-638c0f0e795d",
+        [
+          102.75,
+          70.0
+        ]
+      ],
+      [
+        "9a669eb3-e02a-4019-a17e-3a39400275b7",
+        [
+          108.5,
+          70.0
+        ]
+      ],
+      [
+        "e77661ea-08c4-44be-8b93-2aedbf0e41e5",
+        [
+          102.75,
+          75.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "pwm_gate_return U15.3 -> J6.2",
+    "net": "GND",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          82.7,
+          52.2,
+          112.80000000000001,
+          90.0
+        ],
+        "start_access": 559,
+        "end_access": 485,
+        "visited": 12922,
+        "limit": 130000
+      }
+    ],
+    "left": [
+      [
+        "3b706064-30ab-4b44-9df7-9fd8f148ceba",
+        [
+          100.8625,
+          64.05
+        ]
+      ],
+      [
+        "64da8a72-82e5-47eb-b502-f89e898d2daf",
+        [
+          100.8625,
+          64.05
+        ]
+      ],
+      [
+        "2b376fd8-7d15-4efe-9a76-58e8161022c2",
+        [
+          101.0,
+          63.25
+        ]
+      ],
+      [
+        "76ed1515-1d75-4da4-b750-dae479d29d4c",
+        [
+          101.75,
+          63.25
+        ]
+      ],
+      [
+        "5842e6ce-3892-4811-afe2-cbdec71a8380",
+        [
+          101.5,
+          63.25
+        ]
+      ],
+      [
+        "f9adc382-75a0-4f77-ac70-3a021ad65928",
+        [
+          101.5,
+          67.5
+        ]
+      ],
+      [
+        "dc38cdb9-f8bb-4758-8c27-0897095d414b",
+        [
+          101.75,
+          63.25
+        ]
+      ],
+      [
+        "7b40e46b-f0e7-47dd-8414-c89d5efa3610",
+        [
+          101.5,
+          67.5
+        ]
+      ],
+      [
+        "88b9eb88-7c4c-4cc2-9e12-32ceba82ff8d",
+        [
+          101.5,
+          68.0
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "cee30baa-1fb7-4e13-a3d8-17495771f7a2",
+        [
+          98.825,
+          79.0
+        ]
+      ],
+      [
+        "5ddeb5f3-b7a4-49c2-9104-721b05734ca9",
+        [
+          95.8625,
+          76.45
+        ]
+      ],
+      [
+        "8a60e3ff-d8b0-4a31-a26c-03b9d2dd8eb4",
+        [
+          95.8625,
+          76.45
+        ]
+      ],
+      [
+        "ee4ab6a7-d7c8-4b79-ba08-2deeb7440527",
+        [
+          95.75,
+          76.25
+        ]
+      ],
+      [
+        "0181ef49-5891-4306-9a47-b5d8a172442e",
+        [
+          94.875,
+          66.375
+        ]
+      ],
+      [
+        "9198dccc-9353-4a35-9c3a-043eb612d0b0",
+        [
+          94.875,
+          68.0
+        ]
+      ],
+      [
+        "80643b85-16a1-4bc1-a9ac-52371a790dc9",
+        [
+          93.775,
+          74.5
+        ]
+      ],
+      [
+        "6b4665df-cb96-4e4c-80fa-5ba44d85daac",
+        [
+          95.125,
+          64.625
+        ]
+      ],
+      [
+        "dbac4231-749d-49c4-98ab-33f5bf1d783c",
+        [
+          95.125,
+          66.125
+        ]
+      ]
+    ],
+    "committed": true,
+    "objects": [
+      "026ca483-327e-5a77-9bfb-487df3d67805",
+      "b2c3e6a4-cd15-5e2e-994d-3f845ff042a2",
+      "16dfa45a-b579-5fe1-b053-ab5690c2f12a",
+      "c4a257f2-823b-5eeb-8c7b-2e533bd62335",
+      "84ff58a2-c7e6-5795-8ea5-7071706b3055",
+      "b1a03dc5-fabc-5f43-8fbc-92e337248f3b"
+    ],
+    "vias": 0,
+    "length_mm": 6.697
+  },
+  {
+    "label": "ready_to_blanking U17.11 -> U19.2",
+    "net": "HV_READY",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          107.10000000000001,
+          63.2,
+          174.5,
+          97.5
+        ],
+        "start_access": 8,
+        "end_access": 713,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          103.10000000000001,
+          59.25,
+          178.45000000000002,
+          101.5
+        ],
+        "start_access": 27,
+        "end_access": 2984,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          102.10000000000001,
+          58.2,
+          179.5,
+          102.5
+        ],
+        "start_access": 0,
+        "end_access": 692,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "80d0875d-f9d1-48ab-9eaa-59fd2d4f5963",
+        [
+          163.45,
+          74.25
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "c4e214cd-7a3c-4e83-94f1-0391d1a6922b",
+        [
+          136.825,
+          86.0
+        ]
+      ],
+      [
+        "0fbe5325-a358-47d4-a661-d8075104b26d",
+        [
+          136.375,
+          86.5
+        ]
+      ],
+      [
+        "9d0bd3ec-c805-4e43-9e13-4dff67ed706a",
+        [
+          136.125,
+          86.5
+        ]
+      ],
+      [
+        "3d8b5355-c0b1-4b56-87fc-42f55c8c9439",
+        [
+          136.125,
+          86.5
+        ]
+      ],
+      [
+        "31d3d477-61b0-43b8-ab21-329ae8af7efb",
+        [
+          135.625,
+          86.0
+        ]
+      ],
+      [
+        "af17afb5-a9c7-4dec-b92e-dab09da2fe0f",
+        [
+          127.0,
+          86.0
+        ]
+      ],
+      [
+        "cb12e66c-0014-49f6-baf1-16606bbb5a11",
+        [
+          126.375,
+          85.375
+        ]
+      ],
+      [
+        "b5e3176e-b0de-47d3-a54b-8c8059d25b7e",
+        [
+          118.625,
+          85.375
+        ]
+      ],
+      [
+        "1bc547da-2f46-449e-82d2-e20353d638f6",
+        [
+          118.125,
+          85.875
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "display_request U3.7 -> U10.2",
+    "net": "DIGITS_REQ",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          50.0,
+          70.10000000000001,
+          101.80000000000001,
+          96.5
+        ],
+        "start_access": 160,
+        "end_access": 437,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          50.0,
+          66.10000000000001,
+          105.75,
+          100.5
+        ],
+        "start_access": 651,
+        "end_access": 1799,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          50.0,
+          65.10000000000001,
+          106.80000000000001,
+          101.5
+        ],
+        "start_access": 139,
+        "end_access": 412,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "628552ff-6185-4e3a-b130-1b97be535fc7",
+        [
+          59.06,
+          83.75
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "3b4e7e97-5225-48fe-be89-e8f8dde2b738",
+        [
+          88.5,
+          85.5
+        ]
+      ],
+      [
+        "398e3317-6df2-40f2-99aa-af78ca5b59f5",
+        [
+          89.0,
+          85.0
+        ]
+      ],
+      [
+        "41a5404c-19aa-4b93-a9cf-41256e80dd2c",
+        [
+          89.5,
+          84.5
+        ]
+      ],
+      [
+        "4635a095-0a3d-4a4c-96ad-3b24be9313fc",
+        [
+          90.375,
+          82.5
+        ]
+      ],
+      [
+        "feb0498e-f686-4161-a88a-e9185f007bfc",
+        [
+          90.5,
+          82.625
+        ]
+      ],
+      [
+        "6392586e-6aa7-4e97-afdd-711cf7a08e65",
+        [
+          90.5,
+          81.125
+        ]
+      ],
+      [
+        "80d2ad4c-019c-4158-9696-a848c903d87b",
+        [
+          90.375,
+          81.25
+        ]
+      ],
+      [
+        "4c4d729d-8fea-46aa-b866-b8870704533e",
+        [
+          90.75,
+          83.0
+        ]
+      ],
+      [
+        "bd7b1b56-1ef3-4b97-b475-f06cce455ed0",
+        [
+          90.5,
+          82.75
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "blanking_source_return Q31.2 -> J6.2",
+    "net": "GND",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          91.7,
+          62.800000000000004,
+          115.30000000000001,
+          91.7
+        ],
+        "start_access": 122,
+        "end_access": 1026,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          87.75,
+          58.85,
+          119.25,
+          95.65
+        ],
+        "start_access": 460,
+        "end_access": 4022,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          86.7,
+          57.800000000000004,
+          120.30000000000001,
+          96.7
+        ],
+        "start_access": 109,
+        "end_access": 991,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "cac390f6-c31e-4f95-8ed7-87a88db788ec",
+        [
+          102.9375,
+          79.05
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "e291157f-3949-42c4-95e2-281ccf9f45d8",
+        [
+          103.0,
+          78.175
+        ]
+      ],
+      [
+        "ebbf316d-c780-411c-be57-b0d4daf253e8",
+        [
+          104.0,
+          79.125
+        ]
+      ],
+      [
+        "e68d8525-c4ed-48f7-bc3d-85cd67514fbc",
+        [
+          104.0,
+          80.25
+        ]
+      ],
+      [
+        "5cdbe680-70cd-4b30-bbfc-e10869eeb53b",
+        [
+          104.25,
+          73.875
+        ]
+      ],
+      [
+        "8ec47690-6020-46b1-9efc-17d60bc2f51f",
+        [
+          104.25,
+          80.5
+        ]
+      ],
+      [
+        "60366c07-322e-4e55-a42b-26ffb6c240e6",
+        [
+          104.0,
+          76.0
+        ]
+      ],
+      [
+        "35e93eb3-4f34-49fc-801a-a956bc8153e1",
+        [
+          104.25,
+          80.625
+        ]
+      ],
+      [
+        "19997641-8bac-43c1-9e08-5a277eece35a",
+        [
+          104.25,
+          80.625
+        ]
+      ],
+      [
+        "6a6a0a70-7440-4ad8-bd12-2645c43cd93d",
+        [
+          102.75,
+          77.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_output_converter U11.6 -> U17.1",
+    "net": "5V_HV",
+    "width_mm": 0.5,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          145.20000000000002,
+          55.5,
+          178.3,
+          84.80000000000001
+        ],
+        "start_access": 3946,
+        "end_access": 2,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          141.25,
+          51.5,
+          180.0,
+          88.75
+        ],
+        "start_access": 15778,
+        "end_access": 8,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          140.20000000000002,
+          50.5,
+          180.0,
+          89.80000000000001
+        ],
+        "start_access": 3875,
+        "end_access": 0,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "fc2da341-d4c8-41fe-a1ba-a9a871fe55ad",
+        [
+          164.75,
+          66.5
+        ]
+      ],
+      [
+        "484be906-f502-4772-9290-622a797b5688",
+        [
+          159.75,
+          66.75
+        ]
+      ],
+      [
+        "92574b31-4b60-4916-8687-a85af2700da1",
+        [
+          159.75,
+          67.5
+        ]
+      ],
+      [
+        "8081496d-257f-4bf3-8131-03d271c81a5c",
+        [
+          164.5,
+          66.75
+        ]
+      ],
+      [
+        "07f3265b-eb77-49fc-a449-38d89cf0a0a5",
+        [
+          164.75,
+          66.5
+        ]
+      ],
+      [
+        "f038767c-4c53-4a9a-b847-17a761ed55ba",
+        [
+          164.75,
+          66.5
+        ]
+      ],
+      [
+        "6be2bd95-f558-4bb0-a481-b0a0169ea5b8",
+        [
+          165.0,
+          66.5
+        ]
+      ],
+      [
+        "cf1e58c0-3152-4dcf-95dc-e98001bbf1f0",
+        [
+          156.25,
+          67.5
+        ]
+      ],
+      [
+        "3223b5aa-d686-49b0-9845-726bada63f1a",
+        [
+          167.25,
+          66.75
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "632f5945-e1de-406a-820d-fbed6ede34c5",
+        [
+          161.55,
+          73.75
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_ground U11.8 -> C27.2",
+    "net": "GND",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          127.7,
+          50.2,
+          151.9,
+          76.0
+        ],
+        "start_access": 6,
+        "end_access": 102,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          123.75,
+          50.0,
+          155.9,
+          80.0
+        ],
+        "start_access": 21,
+        "end_access": 396,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          122.7,
+          50.0,
+          156.9,
+          81.0
+        ],
+        "start_access": 0,
+        "end_access": 102,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "3b0ac966-772e-48df-843d-43a21fdbb7ab",
+        [
+          140.9,
+          61.2375
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "cb644b5d-0357-4dfe-9538-b4c462c4b9a8",
+        [
+          138.775,
+          65.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_ovlo_high U11.2 -> R41.2",
+    "net": "CUT_OVLO",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          126.80000000000001,
+          50.0,
+          150.1,
+          71.8
+        ],
+        "start_access": 6,
+        "end_access": 85,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          122.80000000000001,
+          50.0,
+          154.10000000000002,
+          75.8
+        ],
+        "start_access": 21,
+        "end_access": 330,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          121.80000000000001,
+          50.0,
+          155.10000000000002,
+          76.80000000000001
+        ],
+        "start_access": 0,
+        "end_access": 77,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "48a7a161-e003-42a3-90b4-bc21bfb5632a",
+        [
+          139.1,
+          60.7625
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "b1d31324-f570-4c57-a3b3-4f8b48c2ca93",
+        [
+          137.825,
+          55.5
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_ovlo_low U11.2 -> R42.1",
+    "net": "CUT_OVLO",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          128.0,
+          50.0,
+          154.20000000000002,
+          71.8
+        ],
+        "start_access": 6,
+        "end_access": 91,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          124.05000000000001,
+          50.0,
+          158.20000000000002,
+          75.8
+        ],
+        "start_access": 21,
+        "end_access": 358,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          123.0,
+          50.0,
+          159.20000000000002,
+          76.80000000000001
+        ],
+        "start_access": 0,
+        "end_access": 91,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "48a7a161-e003-42a3-90b4-bc21bfb5632a",
+        [
+          139.1,
+          60.7625
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "62e23fac-dcbb-44ca-b930-fb14500da071",
+        [
+          143.175,
+          56.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_ilim U11.9 -> R43.1",
+    "net": "CUT_ILM",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          129.9,
+          50.0,
+          158.20000000000002,
+          71.8
+        ],
+        "start_access": 6,
+        "end_access": 88,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          125.9,
+          50.0,
+          162.20000000000002,
+          75.8
+        ],
+        "start_access": 21,
+        "end_access": 352,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          124.9,
+          50.0,
+          163.20000000000002,
+          76.80000000000001
+        ],
+        "start_access": 0,
+        "end_access": 87,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "no access"
+      }
+    ],
+    "left": [
+      [
+        "840b36b3-86f3-480f-af73-d330771f225c",
+        [
+          140.9,
+          60.7625
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "85fdc2fa-8c96-4ac2-8a63-755159679148",
+        [
+          147.175,
+          56.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  },
+  {
+    "label": "efuse_timer U11.10 -> C26.1",
+    "net": "CUT_TIMER",
+    "width_mm": 0.2,
+    "attempts": [
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          129.6,
+          50.0,
+          158.3,
+          72.0
+        ],
+        "start_access": 13,
+        "end_access": 102,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.05,
+        "window_mm": [
+          125.65,
+          50.0,
+          162.25,
+          76.0
+        ],
+        "start_access": 43,
+        "end_access": 396,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      },
+      {
+        "grid_mm": 0.1,
+        "window_mm": [
+          124.60000000000001,
+          50.0,
+          163.3,
+          77.0
+        ],
+        "start_access": 1,
+        "end_access": 102,
+        "visited": 0,
+        "limit": 130000,
+        "failure": "isolated corridor"
+      }
+    ],
+    "left": [
+      [
+        "f92eb421-2e30-460e-937d-968bcfeb1fe2",
+        [
+          140.9,
+          60.2875
+        ]
+      ],
+      [
+        "40a347ab-8f48-46bb-8a09-5bd85075dfa1",
+        [
+          140.65,
+          60.2875
+        ]
+      ]
+    ],
+    "right": [
+      [
+        "aeac3784-1b0c-4c97-bd22-6f44ebd39a17",
+        [
+          147.225,
+          61.0
+        ]
+      ]
+    ],
+    "committed": false,
+    "objects": []
+  }
+]
